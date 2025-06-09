@@ -1,0 +1,22 @@
+scn TESOShrineActivatorScript
+
+short bActivated
+
+Begin OnActivate
+	if isActionRef player == 1
+		if bActivated == 0
+			set bActivated to 1
+			set TEQQShrineInitilizationQuest.fQuestDelayTime to 0.01
+			set TEQQShrineInitilizationQuest.iDisplayedMenu to 0
+			set TEQQShrineInitilizationQuest.iPlayerLevel to Player.GetLevel
+			StartQuest TEQQShrineInitilizationQuest
+		endif
+		Activate Player 0
+	endif
+end
+
+Begin MenuMode 1001
+	if bActivated == 1
+		set bActivated to 0
+	endif
+end

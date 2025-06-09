@@ -1,0 +1,226 @@
+scn SE03TsaesciBladeScript
+
+
+
+;DawnfangScript related
+;DuskfangScript related
+short Dawnblade				;This is the trigger variable to make the change (sets off the gamemode block) to Dawnfang
+short Duskblade				;This is the trigger variable to make the change (sets off the gamemode block) to Duskfang
+short Exchange				;This is a DoOnce variable that is set after the change then reset in the timing blocks
+short Daytime					;This is a DoOnce variable for the timing block in the daytime mode
+short Dusktime					;This is a DoOnce variable for the timing block in the evening mode
+short Test						;This is a DoOnce variable for the original rewarding of the weapon
+short Reward					;This is a trigger variable for the original rewarding of the weapon from Kiliban in SE03
+
+
+
+float fQuestDelayTime
+
+
+
+begin gamemode
+;These blocks determine when the blades will "change form"
+	if ( Daytime == 0 )
+		if ( Gamehour >= 6 ) && ( Gamehour < 18 )
+			Set Dusktime to 0
+			Set Exchange to 0
+			Set Duskblade to 0
+			Set Dawnblade to 1
+			Set Daytime to 1
+		endif
+	endif
+	if ( Dusktime == 0 )
+		if ( Gamehour >= 18 ) || ( Gamehour < 6 )
+			Set Daytime to 0
+			Set Exchange to 0
+			Set Dawnblade to 0
+			Set Duskblade to 1
+			Set Dusktime to 1
+		endif
+	endif
+;These blocks handle the actual exchange. Because we don't know what type of blade (level) the player will have, we test for all of them.
+	if ( Dawnblade == 1 )
+		if ( Player.IsInCombat == 0 ) && Player.IsRidingHorse == 0 
+			if ( Exchange == 0 )
+				if ( Player.GetItemCount SE03Duskfang01 == 1 ) || ( Player.GetItemCount SE03DuskFang01A == 1 )
+					if ( SESwordDuskfangKills < 12 )
+						Player.Additem SE03Dawnfang01 1
+						Player.Removeitem SE03Duskfang01 1
+						Player.Removeitem SE03Duskfang01A 1
+						Set Exchange to 1
+					else
+						Player.Additem SE03Dawnfang01A 1
+						Player.Removeitem SE03Duskfang01 1
+						Player.Removeitem SE03Duskfang01A 1
+						Set Exchange to 1
+					endif
+				elseif ( Player.GetItemCount SE03Duskfang05 == 1 ) || ( Player.GetItemCount SE03DuskFang05A == 1 )
+					if ( SESwordDuskfangKills < 12 )
+						Player.Additem SE03Dawnfang05 1
+						Player.Removeitem SE03Duskfang05 1
+						Player.Removeitem SE03Duskfang05A 1
+						Set Exchange to 1
+					else
+						Player.Additem SE03Dawnfang05A 1
+						Player.Removeitem SE03Duskfang05 1
+						Player.Removeitem SE03Duskfang05A 1
+						Set Exchange to 1
+					endif
+				elseif ( Player.GetItemCount SE03Duskfang10 == 1 ) || ( Player.GetItemCount SE03DuskFang10A == 1 )
+					if ( SESwordDuskfangKills < 12 )
+						Player.Additem SE03Dawnfang10 1
+						Player.Removeitem SE03Duskfang10 1
+						Player.Removeitem SE03Duskfang10A 1
+						Set Exchange to 1
+					else
+						Player.Additem SE03Dawnfang10A 1
+						Player.Removeitem SE03Duskfang10 1
+						Player.Removeitem SE03Duskfang10A 1
+						Set Exchange to 1
+					endif
+				elseif ( Player.GetItemCount SE03Duskfang15 == 1 ) || ( Player.GetItemCount SE03DuskFang15A == 1 )
+					if ( SESwordDuskfangKills < 12 )
+						Player.Additem SE03Dawnfang15 1
+						Player.Removeitem SE03Duskfang15 1
+						Player.Removeitem SE03Duskfang15A 1
+						Set Exchange to 1
+					else
+						Player.Additem SE03Dawnfang15A 1
+						Player.Removeitem SE03Duskfang15 1
+						Player.Removeitem SE03Duskfang15A 1
+						Set Exchange to 1
+					endif
+				elseif ( Player.GetItemCount SE03Duskfang20 == 1 ) || ( Player.GetItemCount SE03DuskFang20A == 1 )
+					if ( SESwordDuskfangKills < 12 )
+						Player.Additem SE03Dawnfang20 1
+						Player.Removeitem SE03Duskfang20 1
+						Player.Removeitem SE03Duskfang20A 1
+						Set Exchange to 1
+					else
+						Player.Additem SE03Dawnfang20A 1
+						Player.Removeitem SE03Duskfang20 1
+						Player.Removeitem SE03Duskfang20A 1
+						Set Exchange to 1
+					endif
+				elseif ( Player.GetItemCount SE03Duskfang25 == 1 ) || ( Player.GetItemCount SE03DuskFang25A == 1 )
+					if ( SESwordDuskfangKills < 12 )
+						Player.Additem SE03Dawnfang25 1
+						Player.Removeitem SE03Duskfang25 1
+						Player.Removeitem SE03Duskfang25A 1
+						Set Exchange to 1
+					else
+						Player.Additem SE03Dawnfang25A 1
+						Player.Removeitem SE03Duskfang25 1
+						Player.Removeitem SE03Duskfang25A 1
+						Set Exchange to 1
+					endif
+				elseif ( Player.GetItemCount SE03Duskfang30 == 1 ) || ( Player.GetItemCount SE03DuskFang30A == 1 )
+					if ( SESwordDuskfangKills < 12 )
+						Player.Additem SE03Dawnfang30 1
+						Player.Removeitem SE03Duskfang30 1
+						Player.Removeitem SE03Duskfang30A 1
+						Set Exchange to 1
+					else
+						Player.Additem SE03Dawnfang30A 1
+						Player.Removeitem SE03Duskfang30 1
+						Player.Removeitem SE03Duskfang30A 1
+						Set Exchange to 1
+					endif
+				endif
+			endif
+		endif
+	endif
+	if ( Duskblade == 1 )
+		if ( Player.IsInCombat == 0 ) && Player.IsRidingHorse == 0
+			if ( Exchange == 0 )
+				if ( Player.GetItemCount SE03Dawnfang01 == 1 ) || ( Player.GetItemCount SE03Dawnfang01A == 1 )
+					if ( SESwordDawnfangKills < 12 )
+						Player.Additem SE03Duskfang01 1
+						Player.Removeitem SE03Dawnfang01 1
+						Player.Removeitem SE03Dawnfang01A 1
+						Set Exchange to 1
+					else
+						Player.Additem SE03Duskfang01A 1
+						Player.Removeitem SE03Dawnfang01 1
+						Player.Removeitem SE03Dawnfang01A 1
+						Set Exchange to 1
+					endif
+				elseif ( Player.GetItemCount SE03Dawnfang05 == 1 ) || ( Player.GetItemCount SE03Dawnfang05A == 1 )
+					if ( SESwordDawnfangKills < 12 )
+						Player.Additem SE03Duskfang05 1
+						Player.Removeitem SE03Dawnfang05 1
+						Player.Removeitem SE03Dawnfang05A 1
+						Set Exchange to 1
+					else
+						Player.Additem SE03Duskfang05A 1
+						Player.Removeitem SE03Dawnfang05 1
+						Player.Removeitem SE03Dawnfang05A 1
+						Set Exchange to 1
+					endif
+				elseif ( Player.GetItemCount SE03Dawnfang10 == 1 ) || ( Player.GetItemCount SE03Dawnfang10A == 1 )
+					if ( SESwordDawnfangKills < 12 )
+						Player.Additem SE03Duskfang10 1
+						Player.Removeitem SE03Dawnfang10 1
+						Player.Removeitem SE03Dawnfang10A 1
+						Set Exchange to 1
+					else
+						Player.Additem SE03Duskfang10A 1
+						Player.Removeitem SE03Dawnfang10 1
+						Player.Removeitem SE03Dawnfang10A 1
+						Set Exchange to 1
+					endif
+				elseif ( Player.GetItemCount SE03Dawnfang15 == 1 ) || ( Player.GetItemCount SE03Dawnfang15A == 1 )
+					if ( SESwordDawnfangKills < 12 )
+						Player.Additem SE03Duskfang15 1
+						Player.Removeitem SE03Dawnfang15 1
+						Player.Removeitem SE03Dawnfang15A 1
+						Set Exchange to 1
+					else
+						Player.Additem SE03Duskfang15A 1
+						Player.Removeitem SE03Dawnfang15 1
+						Player.Removeitem SE03Dawnfang15A 1
+						Set Exchange to 1
+					endif
+				elseif ( Player.GetItemCount SE03Dawnfang20 == 1 ) || ( Player.GetItemCount SE03Dawnfang20A == 1 )
+					if ( SESwordDawnfangKills < 12 )
+						Player.Additem SE03Duskfang20 1
+						Player.Removeitem SE03Dawnfang20 1
+						Player.Removeitem SE03Dawnfang20A 1
+						Set Exchange to 1
+					else
+						Player.Additem SE03Duskfang20A 1
+						Player.Removeitem SE03Dawnfang20 1
+						Player.Removeitem SE03Dawnfang20A 1
+						Set Exchange to 1
+					endif
+				elseif ( Player.GetItemCount SE03Dawnfang25 == 1 ) || ( Player.GetItemCount SE03Dawnfang25A == 1 )
+					if ( SESwordDawnfangKills < 12 )
+						Player.Additem SE03Duskfang25 1
+						Player.Removeitem SE03Dawnfang25 1
+						Player.Removeitem SE03Dawnfang25A 1
+						Set Exchange to 1
+					else
+						Player.Additem SE03Duskfang25A 1
+						Player.Removeitem SE03Dawnfang25 1
+						Player.Removeitem SE03Dawnfang25A 1
+						Set Exchange to 1
+					endif
+				elseif ( Player.GetItemCount SE03Dawnfang30 == 1 ) || ( Player.GetItemCount SE03Dawnfang30A == 1 )
+					if ( SESwordDawnfangKills < 12 )
+						Player.Additem SE03Duskfang30 1
+						Player.Removeitem SE03Dawnfang30 1
+						Player.Removeitem SE03Dawnfang30A 1
+						Set Exchange to 1
+					else
+						Player.Additem SE03Duskfang30A 1
+						Player.Removeitem SE03Dawnfang30 1
+						Player.Removeitem SE03Dawnfang30A 1
+						Set Exchange to 1
+					endif
+				endif
+			endif
+		endif
+	endif
+
+
+end

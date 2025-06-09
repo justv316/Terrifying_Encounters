@@ -1,0 +1,39 @@
+scn SEDawnfangSpellEffectScript
+
+ref Target
+ref self
+
+short KillingBlow
+
+
+
+begin ScriptEffectStart
+	set KillingBlow to 0
+	set target to GetSelf
+	set self to GetSelf
+
+end
+
+
+
+begin ScriptEffectUpdate
+	if ( KillingBlow == 0 )
+		if ( Target.GetDead == 1 )
+			if ( SESwordDawnfangKills < 1 )
+				Set SESwordDawnfangKills to ( SESwordDawnfangKills + 1 )
+				Message "Dawnfang has extinguished %.0f life.", SESwordDawnfangKills
+				Set KillingBlow to 1				
+			elseif ( SESwordDawnfangKills >= 1 ) && ( SESwordDawnfangKills < 11 )
+				Set SESwordDawnfangKills to ( SESwordDawnfangKills + 1 )
+				Message "Dawnfang has extinguished %.0f lives.", SESwordDawnfangKills
+				Set KillingBlow to 1
+			elseif ( SESwordDawnfangKills == 11 )
+				Set SESwordDawnfangKills to ( SESwordDawnfangKills + 1 )
+				Message "Dawnfang's bloodthirst has been quenched."
+				Set KillingBlow to 1
+			elseif ( SESwordDawnfangKills >= 12 )
+				Set KillingBlow to 1
+			endif
+		endif
+	endif
+end

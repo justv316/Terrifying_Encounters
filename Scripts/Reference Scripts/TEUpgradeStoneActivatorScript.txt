@@ -1,0 +1,29 @@
+scn TEUpgradeStoneActivatorScript
+
+short activated
+short button
+
+Begin OnEquip player
+	Messagebox "What would you like to upgrade?" "Crystal Sword"
+	
+	
+	
+	if Player.GetItemCount Gold001 > 10000
+		set activated to 1
+		StartQuest TEUpgradeCrystalSwordQuest
+	else
+		Message "10,000 Gold is required to upgrade this item."
+	endif
+	Activate Player 0
+end
+
+begin OnAdd player
+	if activated == 1
+		set activated to 2
+	endif
+End
+
+Begin MenuMode 1001
+	if activated == 2 
+	endif
+End

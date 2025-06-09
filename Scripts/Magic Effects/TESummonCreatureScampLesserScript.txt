@@ -1,0 +1,68 @@
+ScriptName TESummonCreatureScampLesserScript
+
+float timer
+float fade
+short playonce
+ref SUMN
+
+Begin ScriptEffectStart
+    set SUMN to TEREFSummonCreatureScampLesser                                     
+    SUMN.disable        
+    SUMN.moveto Player 32 32 10
+    SUMN.enable                        
+    set fade to 1 
+End
+
+Begin ScriptEffectUpdate
+
+    if ( timer > 120 )    ;Creature is dead and fade timer passed
+        ;Move our creature back to its holding cell
+        SUMN.kill
+        SUMN.moveto TEREFHoldingCellLight01 0 0 10 
+        ;Reset our creature if dead
+        SUMN.resurrect    
+        ;Set our creature to an unprocessed state                            
+        SUMN.disable                                    
+    endif
+
+    ;Adjust timer state for early fade/disable upon death
+    if ( SUMN.getdead == 1 ) && ( timer < 118 )                
+        set timer to 118
+    endif
+
+    if ( timer > 0.1 ) && ( playonce == 0 )
+        ;Play effect for creature entrance
+        SUMN.pms effectSummonMythicDawn 1            
+        set playonce to 1
+    endif
+
+    
+    ;Increment timer
+    set timer to timer + GetSecondsPassed        
+
+
+    if ( timer > 118 ) && ( playonce == 1 )
+        ;Play effect for creature exit/death
+        SUMN.kill            
+        set playonce to 2
+    endif
+
+    if ( playonce == 2 )    
+        ;Fade creature for exit/death                                            
+        set fade to fade - 0.03
+        SUMN.saa fade
+    endif
+        
+
+End
+
+Begin ScriptEffectFinish
+
+    ;Move our creature back to its holding cell
+    SUMN.moveto TEREFHoldingCellLight01 0 0 10    
+    ;Reset our creature if dead                        
+    SUMN.resurrect        
+    ;Set our creature to an unprocessed state                                        
+    SUMN.disable                                                    
+
+End

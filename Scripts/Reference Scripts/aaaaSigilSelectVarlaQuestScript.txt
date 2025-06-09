@@ -1,0 +1,252 @@
+scn aaaaSigilSelectVarlaQuestScript
+
+float fQuestDelayTime
+short displayedMenu
+short choosing
+short choice
+short chosenSigil
+
+begin gameMode
+
+	if chosenSigil == -1
+		if displayedMenu == 1
+			if choosing == 0
+				MessageBox "Transmute the Sigil Stone at the cost of a Varla Stone?" "No" "Yes"
+				set choosing to 1
+			else
+				set choice to GetButtonPressed
+				if choice == 1
+					set choosing to 0
+					set displayedMenu to -1
+					Player.RemoveItem VarlaStone 1
+				elseif choice == 0
+					set choosing to 0
+					set chosenSigil to -2
+					StopQuest SigilSelectVarlaQuest
+					return
+				endif
+			endif
+		elseif displayedMenu == -1
+			if choosing == 0
+				MessageBox "Which Sigil Stone would you like?" "Absorb Agility / Fortify Agility" "Absorb Endurance / Resist Disease" "Absorb Fatigue / Fortify Fatigue" "Next"
+				set choosing to 1
+			else
+				set choice to GetButtonPressed
+				if choice == 3
+					set displayedMenu to -2
+					set choosing to 0
+				elseif choice > -1
+					set chosenSigil to choice
+				endif				
+			endif
+		elseif displayedMenu == -2
+			if choosing == 0
+				MessageBox "Which Sigil Stone would you like?" "Back" "Absorb Health / Fortify Health" "Absorb Intelligence / Fortify Intelligence" "Absorb Magicka / Fortify Magicka" "Next"
+				set choosing to 1
+			else
+				set choice to GetButtonPressed
+				if choice == 0
+					set displayedMenu to -1
+					set choosing to 0
+				elseif choice == 4
+					set displayedMenu to -3
+					set choosing to 0
+				elseif choice > -1
+					set chosenSigil to choice + 2
+				endif				
+			endif
+		elseif displayedMenu == -3
+			if choosing == 0
+				MessageBox "Which Sigil Stone would you like?" "Back" "Absorb Speed / Fortify Speed" "Absorb Strength / Fortify Strength" "Burden / Feather" "Next"
+				set choosing to 1
+			else
+				set choice to GetButtonPressed
+				if choice == 0
+					set displayedMenu to -2
+					set choosing to 0
+				elseif choice == 4
+					set displayedMenu to -4
+					set choosing to 0
+				elseif choice > -1
+					set chosenSigil to choice + 5
+				endif				
+			endif
+		elseif displayedMenu == -4
+			if choosing == 0
+				MessageBox "Which Sigil Stone would you like?" "Back" "Damage Fatigue / Fortify Fatigue" "Damage Health / Fortify Health" "Damage Magicka / Fortify Magicka" "Next"
+				set choosing to 1
+			else
+				set choice to GetButtonPressed
+				if choice == 0
+					set displayedMenu to -2
+					set choosing to 0
+				elseif choice == 4
+					set displayedMenu to -5
+					set choosing to 0
+				elseif choice > -1
+					set chosenSigil to choice + 8
+				endif				
+			endif
+		elseif displayedMenu == -5
+			if choosing == 0
+				MessageBox "Which Sigil Stone would you like?" "Back" "Demoralize / Fortify Willpower" "Disintegrate Armor / Shield" "Disintegrate Weapon / Fortify Blade" "Next"
+				set choosing to 1
+			else
+				set choice to GetButtonPressed
+				if choice == 0
+					set displayedMenu to -2
+					set choosing to 0
+				elseif choice == 4
+					set displayedMenu to -6
+					set choosing to 0
+				elseif choice > -1
+					set chosenSigil to choice + 11
+				endif				
+			endif
+		elseif displayedMenu == -6
+			if choosing == 0
+				MessageBox "Which Sigil Stone would you like?" "Back" "Disintegrate Weapon / Fortify Blunt" "Dispel / Spell Absorption" "Fire Damage / Fire Shield" "Next"
+				set choosing to 1
+			else
+				set choice to GetButtonPressed
+				if choice == 0
+					set displayedMenu to -2
+					set choosing to 0
+				elseif choice == 4
+					set displayedMenu to -7
+					set choosing to 0
+				elseif choice > -1
+					set chosenSigil to choice + 14
+				endif				
+			endif
+		elseif displayedMenu == -7
+			if choosing == 0
+				MessageBox "Which Sigil Stone would you like?" "Back" "Fire Damage / Light" "Fire Damage / Resist Fire" "Frost Damage / Frost Shield" "Next"
+				set choosing to 1
+			else
+				set choice to GetButtonPressed
+				if choice == 0
+					set displayedMenu to -2
+					set choosing to 0
+				elseif choice == 4
+					set displayedMenu to -8
+					set choosing to 0
+				elseif choice > -1
+					set chosenSigil to choice + 17
+				endif				
+			endif
+		elseif displayedMenu == -8
+			if choosing == 0
+				MessageBox "Which Sigil Stone would you like?" "Back" "Frost Damage / Resist Frost" "Frost Damage / Water Walking" "Shock Damage / Night-Eye" "Next"
+				set choosing to 1
+			else
+				set choice to GetButtonPressed
+				if choice == 0
+					set displayedMenu to -2
+					set choosing to 0
+				elseif choice == 4
+					set displayedMenu to -9
+					set choosing to 0
+				elseif choice > -1
+					set chosenSigil to choice + 20
+				endif				
+			endif
+		elseif displayedMenu == -9
+			if choosing == 0
+				MessageBox "Which Sigil Stone would you like?" "Back" "Shock Damage / Resist Shock" "Shock Damage / Shock Shield" "Silence / Chameleon" "Next"
+				set choosing to 1
+			else
+				set choice to GetButtonPressed
+				if choice == 0
+					set displayedMenu to -2
+					set choosing to 0
+				elseif choice == 4
+					set displayedMenu to -10
+					set choosing to 0
+				elseif choice > -1
+					set chosenSigil to choice + 23
+				endif				
+			endif				
+		elseif displayedMenu == -10
+			if choosing == 0
+				MessageBox "Which Sigil Stone would you like?" "Back" "Silence / Resist Magic" "Soul Trap / Resist Magic" "Turn Undead / Detect Life" "Random"
+				set choosing to 1
+			else
+				set choice to GetButtonPressed
+				if choice == 0
+					set displayedMenu to -3
+					set choosing to 0
+				elseif choice > -1
+					set chosenSigil to choice + 26
+				endif				
+			endif
+		endif
+	elseif chosenSigil > -1
+
+		if chosenSigil == 0
+			player.additem QLLSSAbsAGIForAGI 1
+		elseif chosenSigil == 1
+			player.additem QLLSSAbsENDResistDis 1
+		elseif chosenSigil == 2
+			player.additem QLLSSAbsFATForFAT 1
+		elseif chosenSigil == 3
+			player.additem QLLSSAbsHLTHForHLTH 1
+		elseif chosenSigil == 4
+			player.additem QLLSSAbsINTForINT 1
+		elseif chosenSigil == 5
+			player.additem QLLSSAbsMAGForMAG 1
+		elseif chosenSigil == 6
+			player.additem QLLSSAbsSPDFortSPD 1
+		elseif chosenSigil == 7
+			player.additem QLLSSAbsSTRForSTR 1
+		elseif chosenSigil == 8
+			player.additem QLLSSBrdnFeath 1
+		elseif chosenSigil == 9
+			player.additem QLLSSDamFATResFAT 1
+		elseif chosenSigil == 10
+			player.additem QLLSSDamHLTHResHLTH 1
+		elseif chosenSigil == 11
+			player.additem QLLSSDamMAGResMAG 1
+		elseif chosenSigil == 12
+			player.additem QLLSSDemoFortWIL 1
+		elseif chosenSigil == 13
+			player.additem QLLSSDisARMShield 1
+		elseif chosenSigil == 14
+			player.additem QLLSSDisWEAPForBLADE 1
+		elseif chosenSigil == 15
+			player.additem QLLSSDisWEAPForBLUNT 1
+		elseif chosenSigil == 16
+			player.additem QLLSSDispelSplAbs 1
+		elseif chosenSigil == 17
+			player.additem QLLSSFireDmgFireShld 1
+		elseif chosenSigil == 18
+			player.additem QLLSSFireDmgLight 1
+		elseif chosenSigil == 19
+			player.additem QLLSSFireDmgRstFire 1
+		elseif chosenSigil == 20
+			player.additem QLLSSFrostDmgFrostShld 1
+		elseif chosenSigil == 21
+			player.additem QLLSSFrostDmgRstFrost 1
+		elseif chosenSigil == 22
+			player.additem QLLSSFrostDmgWaterWalk 1
+		elseif chosenSigil == 23
+			player.additem QLLSSShockDmgNiEye 1
+		elseif chosenSigil == 24
+			player.additem QLLSSShockDmgRstShock 1
+		elseif chosenSigil == 25
+			player.additem QLLSSShockDmgShockShld 1
+		elseif chosenSigil == 26
+			player.additem QLLSSSilenceInvis 1
+		elseif chosenSigil == 27
+			player.additem QLLSSSilenceResistMAG 1
+		elseif chosenSigil == 28
+			player.additem QLLSSSoulTrapResistMAG 1
+		elseif chosenSigil == 29
+			player.additem QLLSSTurnUnDetLife 1
+		else
+			player.additem LL2SigilStones100 1
+		endif
+		MessageBox "Sigil Stone transmuted!" ; Do NOT delete! The other script only runs in MessageBox MenuMode to check if the old Sigil Stone needs to be removed!
+		StopQuest SigilSelectVarlaQuest
+	endif
+end

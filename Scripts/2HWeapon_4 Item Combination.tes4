@@ -1,0 +1,178 @@
+		elseif iSelectedWeaponSet == 4 ;2H Weapon
+			if iFound2HWeaponSet == 1
+				set iSelectedSubWeaponSet to 11
+			elseif iFound2HWeaponSet == 2
+				set iSelectedSubWeaponSet to 12
+			elseif iFound2HWeaponSet == 4 
+				set iSelectedSubWeaponSet to 13
+			elseif iFound2HWeaponSet == 8 
+				set iSelectedSubWeaponSet to 14
+			elseif iFound2HWeaponSet == 3
+				MessageBox "Found Multiple 2H Weaponsets", "Cancel", "Back", "Battleaxe", "Claymore"
+				set iChoosingSubWeaponSet to 19
+			elseif iFound2HWeaponSet == 5
+				MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Warhammer/Claymore"
+				set iChoosingSubWeaponSet to 20
+			elseif iFound2HWeaponSet == 9
+				MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Warhammer"
+				set iChoosingSubWeaponSet to 21
+			elseif iFound2HWeaponSet == 6
+				MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Claymore", "Warhammer/Claymore"
+				set iChoosingSubWeaponSet to 22
+			elseif iFound2HWeaponSet == 10
+				MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Claymore", "Warhammer"
+				set iChoosingSubWeaponSet to 23
+			elseif iFound2HWeaponSet == 12
+				MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Warhammer/Claymore", "Warhammer"
+				set iChoosingSubWeaponSet to 24
+			elseif iFound2HWeaponSet == 7
+				MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Claymore", "Warhammer/Claymore"
+				set iChoosingSubWeaponSet to 25
+			elseif iFound2HWeaponSet == 11
+				MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Claymore", "Warhammer"
+				set iChoosingSubWeaponSet to 26
+			elseif iFound2HWeaponSet == 13
+				MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Warhammer/Claymore", "Warhammer"
+				set iChoosingSubWeaponSet to 27
+			elseif iFound2HWeaponSet == 14
+				MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Claymore", "Warhammer/Claymore", "Warhammer"
+				set iChoosingSubWeaponSet to 28
+			elseif iFound2HWeaponSet == 15
+				MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Claymore", "Warhammer/Claymore", "Warhammer"
+				set iChoosingSubWeaponSet to 29
+				
+				
+		elseif iChoosingSubWeaponSet == 19
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iSelectedSubWeaponSet to 11
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 12
+			endif
+		elseif iChoosingSubWeaponSet == 20
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iSelectedSubWeaponSet to 11
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 13
+			endif
+		elseif iChoosingSubWeaponSet == 21
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iSelectedSubWeaponSet to 11
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 14
+			endif
+		elseif iChoosingSubWeaponSet == 22
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iSelectedSubWeaponSet to 12
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 13
+			endif
+		elseif iChoosingSubWeaponSet == 23
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iSelectedSubWeaponSet to 12
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 14
+			endif
+		elseif iChoosingSubWeaponSet == 24
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iSelectedSubWeaponSet to 13
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 14
+			endif
+		elseif iChoosingSubWeaponSet == 25
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iSelectedSubWeaponSet to 11
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 12
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 13
+			endif
+		elseif iChoosingSubWeaponSet == 26
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iSelectedSubWeaponSet to 11
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 12
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 14
+			endif
+		elseif iChoosingSubWeaponSet == 27
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iSelectedSubWeaponSet to 11
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 13
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 14
+			endif
+		elseif iChoosingSubWeaponSet == 28
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iSelectedSubWeaponSet to 12
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 13
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 14
+			endif
+		elseif iChoosingSubWeaponSet == 29
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iSelectedSubWeaponSet to 11
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 12
+			elseif iChoice == 4
+				set iSelectedSubWeaponSet to 13
+			elseif iChoice == 5
+				set iSelectedSubWeaponSet to 14
+			endif
+		endif

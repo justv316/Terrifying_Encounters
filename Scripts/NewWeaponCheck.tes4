@@ -1,0 +1,3142 @@
+float fQuestDelayTime
+short iDisplayedMenu
+short iSelectedArmorSet
+short iChoosingArmorSet
+short iSelectedSubWeaponSet
+short iChoosingSubWeaponSet
+short iSelectedWeaponSet
+short iChoosingWeaponSet
+short iChoosing
+short iSearchItem
+
+short bFoundItem
+
+short bFoundFirstHArmorSet
+short bFoundFirstLArmorSet
+short bFoundSecondHArmorSet
+short bFoundSecondLArmorSet
+short bFoundThirdHArmorSet
+short bFoundThirdLArmorSet
+short bFoundFourthHArmorSet
+short bFoundFourthLArmorSet
+short bFoundFifthHArmorSet
+short bFoundFifthLArmorSet
+
+short bFoundHArmorSet
+short bFoundLArmorSet
+short iFoundHArmorSet
+short iFoundLArmorSet
+short bFoundArmorSet
+
+
+short bFoundFirst0HWeaponSet
+short bFoundSecond0HWeaponSet
+short bFoundThird0HWeaponSet
+short iFound0HWeaponSet
+
+short bFoundFirst1HBladeWeaponSet
+short bFoundSecond1HBladeWeaponSet
+short bFoundThird1HBladeWeaponSet
+short bFoundFourth1HBladeWeaponSet
+short iFound1HBladeWeaponSet
+
+short bFoundFirst1HBluntWeaponSet
+short bFoundSecond1HBluntWeaponSet
+short bFoundThird1HBluntWeaponSet
+short iFound1HBluntWeaponSet
+
+short bFoundFirst2HWeaponSet
+short bFoundSecond2HWeaponSet
+short bFoundThird2HWeaponSet
+short bFoundFourth2HWeaponSet
+short iFound2HWeaponSet
+
+short bFoundFirstBowWeaponSet
+short bFoundSecondBowWeaponSet
+short iFoundBowWeaponSet
+
+short iFoundWeaponSet
+short iChoosingSubWeaponSet
+
+begin gamemode
+	if iDisplayedMenu == 0
+		if iSelectedArmorSet == 0
+			if iChoosingArmorSet == 0
+				if iSelectedSubWeaponSet == 0
+					if iChoosingSubWeaponSet == 0
+						if iSelectedWeaponSet == 0
+							if iChoosingWeaponSet == 0
+								if iChoosing == 0
+									if iSearchItem == 0
+										if Player.GetItemCount TE01ArmorObsidianHBoots > 0 || Player.GetItemCount TE02ArmorObsidianHBoots > 0 || Player.GetItemCount TE03ArmorObsidianHBoots > 0 || Player.GetItemCount TE04ArmorObsidianHBoots > 0 || Player.GetItemCount TE05ArmorObsidianHBoots > 0
+											set TEQQShrineUpgradeObsidianArmorQuest.bObsidianHBoots to 1
+											set bFoundItem to 1
+											set bFoundFirstHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorObsidianHCuirass > 0 || Player.GetItemCount TE02ArmorObsidianHCuirass > 0 || Player.GetItemCount TE03ArmorObsidianHCuirass > 0 || Player.GetItemCount TE04ArmorObsidianHCuirass > 0 || Player.GetItemCount TE05ArmorObsidianHCuirass > 0
+											set TEQQShrineUpgradeObsidianArmorQuest.bObsidianHCuirass to 1
+											set bFoundItem to 1
+											set bFoundFirstHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorObsidianHGauntlets > 0 || Player.GetItemCount TE02ArmorObsidianHGauntlets > 0 || Player.GetItemCount TE03ArmorObsidianHGauntlets > 0 || Player.GetItemCount TE04ArmorObsidianHGauntlets > 0 || Player.GetItemCount TE05ArmorObsidianHGauntlets > 0
+											set TEQQShrineUpgradeObsidianArmorQuest.bObsidianHGauntlets to 1
+											set bFoundItem to 1
+											set bFoundFirstHArmorSet to 1
+											set bFoundHArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorObsidianHGreaves > 0 || Player.GetItemCount TE02ArmorObsidianHGreaves > 0 || Player.GetItemCount TE03ArmorObsidianHGreaves > 0 || Player.GetItemCount TE04ArmorObsidianHGreaves > 0 || Player.GetItemCount TE05ArmorObsidianHGreaves > 0
+											set TEQQShrineUpgradeObsidianArmorQuest.bObsidianHGreaves to 1
+											set bFoundItem to 1
+											set bFoundFirstHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorObsidianHHelmet > 0 || Player.GetItemCount TE02ArmorObsidianHHelmet > 0 || Player.GetItemCount TE03ArmorObsidianHHelmet > 0 || Player.GetItemCount TE04ArmorObsidianHHelmet > 0 || Player.GetItemCount TE05ArmorObsidianHHelmet > 0
+											set TEQQShrineUpgradeObsidianArmorQuest.bObsidianHHelmet to 1
+											set bFoundItem to 1
+											set bFoundFirstHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorObsidianHShield > 0 || Player.GetItemCount TE02ArmorObsidianHShield > 0 || Player.GetItemCount TE03ArmorObsidianHShield > 0 || Player.GetItemCount TE04ArmorObsidianHShield > 0 || Player.GetItemCount TE05ArmorObsidianHShield > 0
+											set TEQQShrineUpgradeObsidianArmorQuest.bObsidianHShield to 1
+											set bFoundItem to 1
+											set bFoundFirstHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorCursedHBoots > 0 || Player.GetItemCount TE02ArmorCursedHBoots > 0 || Player.GetItemCount TE03ArmorCursedHBoots > 0 || Player.GetItemCount TE04ArmorCursedHBoots > 0 || Player.GetItemCount TE05ArmorCursedHBoots > 0
+											set TEQQShrineUpgradeCursedArmorQuest.bCursedHBoots to 1
+											set bFoundItem to 1
+											set bFoundSecondHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorCursedHCuirass > 0 || Player.GetItemCount TE02ArmorCursedHCuirass > 0 || Player.GetItemCount TE03ArmorCursedHCuirass > 0 || Player.GetItemCount TE04ArmorCursedHCuirass > 0 || Player.GetItemCount TE05ArmorCursedHCuirass > 0
+											set TEQQShrineUpgradeCursedArmorQuest.bCursedHCuirass to 1
+											set bFoundItem to 1
+											set bFoundSecondHArmorSet to 1
+											set bFoundHArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorCursedHGauntlets > 0 || Player.GetItemCount TE02ArmorCursedHGauntlets > 0 || Player.GetItemCount TE03ArmorCursedHGauntlets > 0 || Player.GetItemCount TE04ArmorCursedHGauntlets > 0 || Player.GetItemCount TE05ArmorCursedHGauntlets > 0
+											set TEQQShrineUpgradeCursedArmorQuest.bCursedHGauntlets to 1
+											set bFoundItem to 1
+											set bFoundSecondHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorCursedHGreaves > 0 || Player.GetItemCount TE02ArmorCursedHGreaves > 0 || Player.GetItemCount TE03ArmorCursedHGreaves > 0 || Player.GetItemCount TE04ArmorCursedHGreaves > 0 || Player.GetItemCount TE05ArmorCursedHGreaves > 0
+											set TEQQShrineUpgradeCursedArmorQuest.bCursedHGreaves to 1
+											set bFoundItem to 1
+											set bFoundSecondHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorCursedHHelmet > 0 || Player.GetItemCount TE02ArmorCursedHHelmet > 0 || Player.GetItemCount TE03ArmorCursedHHelmet > 0 || Player.GetItemCount TE04ArmorCursedHHelmet > 0 || Player.GetItemCount TE05ArmorCursedHHelmet > 0
+											set TEQQShrineUpgradeCursedArmorQuest.bCursedHHelmet to 1
+											set bFoundItem to 1
+											set bFoundSecondHArmorSet to 1
+											set bFoundHArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorCursedHShield > 0 || Player.GetItemCount TE02ArmorCursedHShield > 0 || Player.GetItemCount TE03ArmorCursedHShield > 0 || Player.GetItemCount TE04ArmorCursedHShield > 0 || Player.GetItemCount TE05ArmorCursedHShield > 0
+											set TEQQShrineUpgradeCursedArmorQuest.bCursedHShield to 1
+											set bFoundItem to 1
+											set bFoundSecondHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorDwemerHBoots > 0 || Player.GetItemCount TE02ArmorDwemerHBoots > 0 || Player.GetItemCount TE03ArmorDwemerHBoots > 0 || Player.GetItemCount TE04ArmorDwemerHBoots > 0 || Player.GetItemCount TE05ArmorDwemerHBoots > 0
+											set TEQQShrineUpgradeDwemerArmorQuest.bDwemerHBoots to 1
+											set bFoundItem to 1
+											set bFoundThirdHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorDwemerHCuirass > 0 || Player.GetItemCount TE02ArmorDwemerHCuirass > 0 || Player.GetItemCount TE03ArmorDwemerHCuirass > 0 || Player.GetItemCount TE04ArmorDwemerHCuirass > 0 || Player.GetItemCount TE05ArmorDwemerHCuirass > 0
+											set TEQQShrineUpgradeDwemerArmorQuest.bDwemerHCuirass to 1
+											set bFoundItem to 1
+											set bFoundThirdHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorDwemerHGauntlets > 0 || Player.GetItemCount TE02ArmorDwemerHGauntlets > 0 || Player.GetItemCount TE03ArmorDwemerHGauntlets > 0 || Player.GetItemCount TE04ArmorDwemerHGauntlets > 0 || Player.GetItemCount TE05ArmorDwemerHGauntlets > 0
+											set TEQQShrineUpgradeDwemerArmorQuest.bDwemerHGauntlets to 1
+											set bFoundItem to 1
+											set bFoundThirdHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorDwemerHGreaves > 0 || Player.GetItemCount TE02ArmorDwemerHGreaves > 0 || Player.GetItemCount TE03ArmorDwemerHGreaves > 0 || Player.GetItemCount TE04ArmorDwemerHGreaves > 0 || Player.GetItemCount TE05ArmorDwemerHGreaves > 0
+											set TEQQShrineUpgradeDwemerArmorQuest.bDwemerHGreaves to 1
+											set bFoundItem to 1
+											set bFoundThirdHArmorSet to 1
+											set bFoundHArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorDwemerHHelmet > 0 || Player.GetItemCount TE02ArmorDwemerHHelmet > 0 || Player.GetItemCount TE03ArmorDwemerHHelmet > 0 || Player.GetItemCount TE04ArmorDwemerHHelmet > 0 || Player.GetItemCount TE05ArmorDwemerHHelmet > 0
+											set TEQQShrineUpgradeDwemerArmorQuest.bDwemerHHelmet to 1
+											set bFoundItem to 1
+											set bFoundThirdHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorDwemerHShield > 0 || Player.GetItemCount TE02ArmorDwemerHShield > 0 || Player.GetItemCount TE03ArmorDwemerHShield > 0 || Player.GetItemCount TE04ArmorDwemerHShield > 0 || Player.GetItemCount TE05ArmorDwemerHShield > 0
+											set TEQQShrineUpgradeDwemerArmorQuest.bDwemerHShield to 1
+											set bFoundItem to 1
+											set bFoundThirdHArmorSet to 1
+											set bFoundHArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMaddeningHBoots > 0 || Player.GetItemCount TE02ArmorMaddeningHBoots > 0 || Player.GetItemCount TE03ArmorMaddeningHBoots > 0 || Player.GetItemCount TE04ArmorMaddeningHBoots > 0 || Player.GetItemCount TE05ArmorMaddeningHBoots > 0
+											set TEQQShrineUpgradeMaddeningHArmorQuest.bMaddeningHBoots to 1
+											set bFoundItem to 1
+											set bFoundFourthHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMaddeningHCuirass > 0 || Player.GetItemCount TE02ArmorMaddeningHCuirass > 0 || Player.GetItemCount TE03ArmorMaddeningHCuirass > 0 || Player.GetItemCount TE04ArmorMaddeningHCuirass > 0 || Player.GetItemCount TE05ArmorMaddeningHCuirass > 0
+											set TEQQShrineUpgradeMaddeningHArmorQuest.bMaddeningHCuirass to 1
+											set bFoundItem to 1
+											set bFoundFourthHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMaddeningHGauntlets > 0 || Player.GetItemCount TE02ArmorMaddeningHGauntlets > 0 || Player.GetItemCount TE03ArmorMaddeningHGauntlets > 0 || Player.GetItemCount TE04ArmorMaddeningHGauntlets > 0 || Player.GetItemCount TE05ArmorMaddeningHGauntlets > 0
+											set TEQQShrineUpgradeMaddeningHArmorQuest.bMaddeningHGauntlets to 1
+											set bFoundItem to 1
+											set bFoundFourthHArmorSet to 1
+											set bFoundHArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMaddeningHGreaves > 0 || Player.GetItemCount TE02ArmorMaddeningHGreaves > 0 || Player.GetItemCount TE03ArmorMaddeningHGreaves > 0 || Player.GetItemCount TE04ArmorMaddeningHGreaves > 0 || Player.GetItemCount TE05ArmorMaddeningHGreaves > 0
+											set TEQQShrineUpgradeMaddeningHArmorQuest.bMaddeningHGreaves to 1
+											set bFoundItem to 1
+											set bFoundFourthHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMaddeningHHelmet > 0 || Player.GetItemCount TE02ArmorMaddeningHHelmet > 0 || Player.GetItemCount TE03ArmorMaddeningHHelmet > 0 || Player.GetItemCount TE04ArmorMaddeningHHelmet > 0 || Player.GetItemCount TE05ArmorMaddeningHHelmet > 0
+											set TEQQShrineUpgradeMaddeningHArmorQuest.bMaddeningHHelmet to 1
+											set bFoundItem to 1
+											set bFoundFourthHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMaddeningHShield > 0 || Player.GetItemCount TE02ArmorMaddeningHShield > 0 || Player.GetItemCount TE03ArmorMaddeningHShield > 0 || Player.GetItemCount TE04ArmorMaddeningHShield > 0 || Player.GetItemCount TE05ArmorMaddeningHShield > 0
+											set TEQQShrineUpgradeMaddeningHArmorQuest.bMaddeningHShield to 1
+											set bFoundItem to 1
+											set bFoundFourthHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorResiniteHBoots > 0 || Player.GetItemCount TE02ArmorResiniteHBoots > 0 || Player.GetItemCount TE03ArmorResiniteHBoots > 0 || Player.GetItemCount TE04ArmorResiniteHBoots > 0 || Player.GetItemCount TE05ArmorResiniteHBoots > 0
+											set TEQQShrineUpgradeResiniteHArmorQuest.bResiniteHBoots to 1
+											set bFoundItem to 1
+											set bFoundFifthHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorResiniteHCuirass > 0 || Player.GetItemCount TE02ArmorResiniteHCuirass > 0 || Player.GetItemCount TE03ArmorResiniteHCuirass > 0 || Player.GetItemCount TE04ArmorResiniteHCuirass > 0 || Player.GetItemCount TE05ArmorResiniteHCuirass > 0
+											set TEQQShrineUpgradeResiniteHArmorQuest.bResiniteHCuirass to 1
+											set bFoundItem to 1
+											set bFoundFifthHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorResiniteHGauntlets > 0 || Player.GetItemCount TE02ArmorResiniteHGauntlets > 0 || Player.GetItemCount TE03ArmorResiniteHGauntlets > 0 || Player.GetItemCount TE04ArmorResiniteHGauntlets > 0 || Player.GetItemCount TE05ArmorResiniteHGauntlets > 0
+											set TEQQShrineUpgradeResiniteHArmorQuest.bResiniteHGauntlets to 1
+											set bFoundItem to 1
+											set bFoundFifthHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorResiniteHGreaves > 0 || Player.GetItemCount TE02ArmorResiniteHGreaves > 0 || Player.GetItemCount TE03ArmorResiniteHGreaves > 0 || Player.GetItemCount TE04ArmorResiniteHGreaves > 0 || Player.GetItemCount TE05ArmorResiniteHGreaves > 0
+											set TEQQShrineUpgradeResiniteHArmorQuest.bResiniteHGreaves to 1
+											set bFoundItem to 1
+											set bFoundFifthHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorResiniteHHelmet > 0 || Player.GetItemCount TE02ArmorResiniteHHelmet > 0 || Player.GetItemCount TE03ArmorResiniteHHelmet > 0 || Player.GetItemCount TE04ArmorResiniteHHelmet > 0 || Player.GetItemCount TE05ArmorResiniteHHelmet > 0
+											set TEQQShrineUpgradeResiniteHArmorQuest.bResiniteHHelmet to 1
+											set bFoundItem to 1
+											set bFoundFifthHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorResiniteHShield > 0 || Player.GetItemCount TE02ArmorResiniteHShield > 0 || Player.GetItemCount TE03ArmorResiniteHShield > 0 || Player.GetItemCount TE04ArmorResiniteHShield > 0 || Player.GetItemCount TE05ArmorResiniteHShield > 0
+											set TEQQShrineUpgradeResiniteHArmorQuest.bResiniteHShield to 1
+											set bFoundItem to 1
+											set bFoundFifthHArmorSet to 1
+											set bFoundHArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorAyleidicLBoots > 0 || Player.GetItemCount TE02ArmorAyleidicLBoots > 0 || Player.GetItemCount TE03ArmorAyleidicLBoots > 0 || Player.GetItemCount TE04ArmorAyleidicLBoots > 0 || Player.GetItemCount TE05ArmorAyleidicLBoots > 0
+											set TEQQShrineUpgradeAyleidicArmorQuest.bAyleidicLBoots to 1
+											set bFoundItem to 1
+											set bFoundFirstLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorAyleidicLCuirass > 0 || Player.GetItemCount TE02ArmorAyleidicLCuirass > 0 || Player.GetItemCount TE03ArmorAyleidicLCuirass > 0 || Player.GetItemCount TE04ArmorAyleidicLCuirass > 0 || Player.GetItemCount TE05ArmorAyleidicLCuirass > 0
+											set TEQQShrineUpgradeAyleidicArmorQuest.bAyleidicLCuirass to 1
+											set bFoundItem to 1
+											set bFoundFirstLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorAyleidicLGauntlets > 0 || Player.GetItemCount TE02ArmorAyleidicLGauntlets > 0 || Player.GetItemCount TE03ArmorAyleidicLGauntlets > 0 || Player.GetItemCount TE04ArmorAyleidicLGauntlets > 0 || Player.GetItemCount TE05ArmorAyleidicLGauntlets > 0
+											set TEQQShrineUpgradeAyleidicArmorQuest.bAyleidicLGauntlets to 1
+											set bFoundItem to 1
+											set bFoundFirstLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorAyleidicLGreaves > 0 || Player.GetItemCount TE02ArmorAyleidicLGreaves > 0 || Player.GetItemCount TE03ArmorAyleidicLGreaves > 0 || Player.GetItemCount TE04ArmorAyleidicLGreaves > 0 || Player.GetItemCount TE05ArmorAyleidicLGreaves > 0
+											set TEQQShrineUpgradeAyleidicArmorQuest.bAyleidicLGreaves to 1
+											set bFoundItem to 1
+											set bFoundFirstLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorAyleidicLHelmet > 0 || Player.GetItemCount TE02ArmorAyleidicLHelmet > 0 || Player.GetItemCount TE03ArmorAyleidicLHelmet > 0 || Player.GetItemCount TE04ArmorAyleidicLHelmet > 0 || Player.GetItemCount TE05ArmorAyleidicLHelmet > 0
+											set TEQQShrineUpgradeAyleidicArmorQuest.bAyleidicLHelmet to 1
+											set bFoundItem to 1
+											set bFoundFirstLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorAyleidicLShield > 0 || Player.GetItemCount TE02ArmorAyleidicLShield > 0 || Player.GetItemCount TE03ArmorAyleidicLShield > 0 || Player.GetItemCount TE04ArmorAyleidicLShield > 0 || Player.GetItemCount TE05ArmorAyleidicLShield > 0
+											set TEQQShrineUpgradeAyleidicArmorQuest.bAyleidicLShield to 1
+											set bFoundItem to 1
+											set bFoundFirstLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMythrilLBoots > 0 || Player.GetItemCount TE02ArmorMythrilLBoots > 0 || Player.GetItemCount TE03ArmorMythrilLBoots > 0 || Player.GetItemCount TE04ArmorMythrilLBoots > 0 || Player.GetItemCount TE05ArmorMythrilLBoots > 0
+											set TEQQShrineUpgradeMythrilArmorQuest.bMythrilLBoots to 1
+											set bFoundItem to 1
+											set bFoundSecondLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMythrilLCuirass > 0 || Player.GetItemCount TE02ArmorMythrilLCuirass > 0 || Player.GetItemCount TE03ArmorMythrilLCuirass > 0 || Player.GetItemCount TE04ArmorMythrilLCuirass > 0 || Player.GetItemCount TE05ArmorMythrilLCuirass > 0
+											set TEQQShrineUpgradeMythrilArmorQuest.bMythrilLCuirass to 1
+											set bFoundItem to 1
+											set bFoundSecondLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMythrilLGauntlets > 0 || Player.GetItemCount TE02ArmorMythrilLGauntlets > 0 || Player.GetItemCount TE03ArmorMythrilLGauntlets > 0 || Player.GetItemCount TE04ArmorMythrilLGauntlets > 0 || Player.GetItemCount TE05ArmorMythrilLGauntlets > 0
+											set TEQQShrineUpgradeMythrilArmorQuest.bMythrilLGauntlets to 1
+											set bFoundItem to 1
+											set bFoundSecondLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMythrilLGreaves > 0 || Player.GetItemCount TE02ArmorMythrilLGreaves > 0 || Player.GetItemCount TE03ArmorMythrilLGreaves > 0 || Player.GetItemCount TE04ArmorMythrilLGreaves > 0 || Player.GetItemCount TE05ArmorMythrilLGreaves > 0
+											set TEQQShrineUpgradeMythrilArmorQuest.bMythrilLGreaves to 1
+											set bFoundItem to 1
+											set bFoundSecondLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMythrilLHelmet > 0 || Player.GetItemCount TE02ArmorMythrilLHelmet > 0 || Player.GetItemCount TE03ArmorMythrilLHelmet > 0 || Player.GetItemCount TE04ArmorMythrilLHelmet > 0 || Player.GetItemCount TE05ArmorMythrilLHelmet > 0
+											set TEQQShrineUpgradeMythrilArmorQuest.bMythrilLHelmet to 1
+											set bFoundItem to 1
+											set bFoundSecondLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMythrilLShield > 0 || Player.GetItemCount TE02ArmorMythrilLShield > 0 || Player.GetItemCount TE03ArmorMythrilLShield > 0 || Player.GetItemCount TE04ArmorMythrilLShield > 0 || Player.GetItemCount TE05ArmorMythrilLShield > 0
+											set TEQQShrineUpgradeMythrilArmorQuest.bMythrilLShield to 1
+											set bFoundItem to 1
+											set bFoundSecondLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMalachiteLBoots > 0 || Player.GetItemCount TE02ArmorMalachiteLBoots > 0 || Player.GetItemCount TE03ArmorMalachiteLBoots > 0 || Player.GetItemCount TE04ArmorMalachiteLBoots > 0 || Player.GetItemCount TE05ArmorMalachiteLBoots > 0
+											set TEQQShrineUpgradeMalachiteArmorQuest.bMalachiteLBoots to 1
+											set bFoundItem to 1
+											set bFoundThirdLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMalachiteLCuirass > 0 || Player.GetItemCount TE02ArmorMalachiteLCuirass > 0 || Player.GetItemCount TE03ArmorMalachiteLCuirass > 0 || Player.GetItemCount TE04ArmorMalachiteLCuirass > 0 || Player.GetItemCount TE05ArmorMalachiteLCuirass > 0
+											set TEQQShrineUpgradeMalachiteArmorQuest.bMalachiteLCuirass to 1
+											set bFoundItem to 1
+											set bFoundThirdLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMalachiteLGauntlets > 0 || Player.GetItemCount TE02ArmorMalachiteLGauntlets > 0 || Player.GetItemCount TE03ArmorMalachiteLGauntlets > 0 || Player.GetItemCount TE04ArmorMalachiteLGauntlets > 0 || Player.GetItemCount TE05ArmorMalachiteLGauntlets > 0
+											set TEQQShrineUpgradeMalachiteArmorQuest.bMalachiteLGauntlets to 1
+											set bFoundItem to 1
+											set bFoundThirdLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMalachiteLGreaves > 0 || Player.GetItemCount TE02ArmorMalachiteLGreaves > 0 || Player.GetItemCount TE03ArmorMalachiteLGreaves > 0 || Player.GetItemCount TE04ArmorMalachiteLGreaves > 0 || Player.GetItemCount TE05ArmorMalachiteLGreaves > 0
+											set TEQQShrineUpgradeMalachiteArmorQuest.bMalachiteLGreaves to 1
+											set bFoundItem to 1
+											set bFoundThirdLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMalachiteLHelmet > 0 || Player.GetItemCount TE02ArmorMalachiteLHelmet > 0 || Player.GetItemCount TE03ArmorMalachiteLHelmet > 0 || Player.GetItemCount TE04ArmorMalachiteLHelmet > 0 || Player.GetItemCount TE05ArmorMalachiteLHelmet > 0
+											set TEQQShrineUpgradeMalachiteArmorQuest.bMalachiteLHelmet to 1
+											set bFoundItem to 1
+											set bFoundThirdLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMalachiteLShield > 0 || Player.GetItemCount TE02ArmorMalachiteLShield > 0 || Player.GetItemCount TE03ArmorMalachiteLShield > 0 || Player.GetItemCount TE04ArmorMalachiteLShield > 0 || Player.GetItemCount TE05ArmorMalachiteLShield > 0
+											set TEQQShrineUpgradeMalachiteArmorQuest.bMalachiteLShield to 1
+											set bFoundItem to 1
+											set bFoundThirdLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMaddeningLBoots > 0 || Player.GetItemCount TE02ArmorMaddeningLBoots > 0 || Player.GetItemCount TE03ArmorMaddeningLBoots > 0 || Player.GetItemCount TE04ArmorMaddeningLBoots > 0 || Player.GetItemCount TE05ArmorMaddeningLBoots > 0
+											set TEQQShrineUpgradeMaddeningLArmorQuest.bMaddeningLBoots to 1
+											set bFoundItem to 1
+											set bFoundFourthLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMaddeningLCuirass > 0 || Player.GetItemCount TE02ArmorMaddeningLCuirass > 0 || Player.GetItemCount TE03ArmorMaddeningLCuirass > 0 || Player.GetItemCount TE04ArmorMaddeningLCuirass > 0 || Player.GetItemCount TE05ArmorMaddeningLCuirass > 0
+											set TEQQShrineUpgradeMaddeningLArmorQuest.bMaddeningLCuirass to 1
+											set bFoundItem to 1
+											set bFoundFourthLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMaddeningLGauntlets > 0 || Player.GetItemCount TE02ArmorMaddeningLGauntlets > 0 || Player.GetItemCount TE03ArmorMaddeningLGauntlets > 0 || Player.GetItemCount TE04ArmorMaddeningLGauntlets > 0 || Player.GetItemCount TE05ArmorMaddeningLGauntlets > 0
+											set TEQQShrineUpgradeMaddeningLArmorQuest.bMaddeningLGauntlets to 1
+											set bFoundItem to 1
+											set bFoundFourthLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMaddeningLGreaves > 0 || Player.GetItemCount TE02ArmorMaddeningLGreaves > 0 || Player.GetItemCount TE03ArmorMaddeningLGreaves > 0 || Player.GetItemCount TE04ArmorMaddeningLGreaves > 0 || Player.GetItemCount TE05ArmorMaddeningLGreaves > 0
+											set TEQQShrineUpgradeMaddeningLArmorQuest.bMaddeningLGreaves to 1
+											set bFoundItem to 1
+											set bFoundFourthLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMaddeningLHelmet > 0 || Player.GetItemCount TE02ArmorMaddeningLHelmet > 0 || Player.GetItemCount TE03ArmorMaddeningLHelmet > 0 || Player.GetItemCount TE04ArmorMaddeningLHelmet > 0 || Player.GetItemCount TE05ArmorMaddeningLHelmet > 0
+											set TEQQShrineUpgradeMaddeningLArmorQuest.bMaddeningLHelmet to 1
+											set bFoundItem to 1
+											set bFoundFourthLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorMaddeningLShield > 0 || Player.GetItemCount TE02ArmorMaddeningLShield > 0 || Player.GetItemCount TE03ArmorMaddeningLShield > 0 || Player.GetItemCount TE04ArmorMaddeningLShield > 0 || Player.GetItemCount TE05ArmorMaddeningLShield > 0
+											set TEQQShrineUpgradeMaddeningLArmorQuest.bMaddeningLShield to 1
+											set bFoundItem to 1
+											set bFoundFourthLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorResiniteLBoots > 0 || Player.GetItemCount TE02ArmorResiniteLBoots > 0 || Player.GetItemCount TE03ArmorResiniteLBoots > 0 || Player.GetItemCount TE04ArmorResiniteLBoots > 0 || Player.GetItemCount TE05ArmorResiniteLBoots > 0
+											set TEQQShrineUpgradeResiniteLArmorQuest.bResiniteLBoots to 1
+											set bFoundItem to 1
+											set bFoundFifthLArmorSet to 1
+											set bFoundLArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorResiniteLCuirass > 0 || Player.GetItemCount TE02ArmorResiniteLCuirass > 0 || Player.GetItemCount TE03ArmorResiniteLCuirass > 0 || Player.GetItemCount TE04ArmorResiniteLCuirass > 0 || Player.GetItemCount TE05ArmorResiniteLCuirass > 0
+											set TEQQShrineUpgradeResiniteLArmorQuest.bResiniteLCuirass to 1
+											set bFoundItem to 1
+											set bFoundFifthLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorResiniteLGauntlets > 0 || Player.GetItemCount TE02ArmorResiniteLGauntlets > 0 || Player.GetItemCount TE03ArmorResiniteLGauntlets > 0 || Player.GetItemCount TE04ArmorResiniteLGauntlets > 0 || Player.GetItemCount TE05ArmorResiniteLGauntlets > 0
+											set TEQQShrineUpgradeResiniteLArmorQuest.bResiniteLGauntlets to 1
+											set bFoundItem to 1
+											set bFoundFifthLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorResiniteLGreaves > 0 || Player.GetItemCount TE02ArmorResiniteLGreaves > 0 || Player.GetItemCount TE03ArmorResiniteLGreaves > 0 || Player.GetItemCount TE04ArmorResiniteLGreaves > 0 || Player.GetItemCount TE05ArmorResiniteLGreaves > 0
+											set TEQQShrineUpgradeResiniteLArmorQuest.bResiniteLGreaves to 1
+											set bFoundItem to 1
+											set bFoundFifthLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorResiniteLHelmet > 0 || Player.GetItemCount TE02ArmorResiniteLHelmet > 0 || Player.GetItemCount TE03ArmorResiniteLHelmet > 0 || Player.GetItemCount TE04ArmorResiniteLHelmet > 0 || Player.GetItemCount TE05ArmorResiniteLHelmet > 0
+											set TEQQShrineUpgradeResiniteLArmorQuest.bResiniteLHelmet to 1
+											set bFoundItem to 1
+											set bFoundFifthLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01ArmorResiniteLShield > 0 || Player.GetItemCount TE02ArmorResiniteLShield > 0 || Player.GetItemCount TE03ArmorResiniteLShield > 0 || Player.GetItemCount TE04ArmorResiniteLShield > 0 || Player.GetItemCount TE05ArmorResiniteLShield > 0
+											set TEQQShrineUpgradeResiniteLArmorQuest.bResiniteLShield to 1
+											set bFoundItem to 1
+											set bFoundFifthLArmorSet to 1
+											set bFoundLArmorSet to 1
+											set bFoundArmorSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponCrystalLongsword > 0 || Player.GetItemCount TE02WeaponCrystalLongsword > 0 || Player.GetItemCount TE03WeaponCrystalLongsword > 0 || Player.GetItemCount TE04WeaponCrystalLongsword > 0 || Player.GetItemCount TE05WeaponCrystalLongsword > 0
+											set TEQQShrineUpgradeArtifactQuest.bCrystalLongsword to 1
+											set bFoundItem to 1
+											set bFoundFirst0HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponEbonyUchigatana > 0 || Player.GetItemCount TE02WeaponEbonyUchigatana > 0 || Player.GetItemCount TE03WeaponEbonyUchigatana > 0 || Player.GetItemCount TE04WeaponEbonyUchigatana > 0 || Player.GetItemCount TE05WeaponEbonyUchigatana > 0
+											set TEQQShrineUpgradeArtifactQuest.bEbonyUchigatana to 1
+											set bFoundItem to 1
+											set bFoundFirst0HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponGoldUchigatana > 0 || Player.GetItemCount TE02WeaponGoldUchigatana > 0 || Player.GetItemCount TE03WeaponGoldUchigatana > 0 || Player.GetItemCount TE04WeaponGoldUchigatana > 0 || Player.GetItemCount TE05WeaponGoldUchigatana > 0
+											set TEQQShrineUpgradeArtifactQuest.bGoldUchigatana to 1
+											set bFoundItem to 1
+											set bFoundFirst0HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponStalrihmShortsword > 0 || Player.GetItemCount TE02WeaponStalrihmShortsword > 0 || Player.GetItemCount TE03WeaponStalrihmShortsword > 0 || Player.GetItemCount TE04WeaponStalrihmShortsword > 0 || Player.GetItemCount TE05WeaponStalrihmShortsword > 0
+											set TEQQShrineUpgradeArtifactQuest.bStalrihmShortsword to 1
+											set bFoundItem to 1
+											set bFoundFirst0HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponQuicksilverDagger > 0 || Player.GetItemCount TE02WeaponQuicksilverDagger > 0 || Player.GetItemCount TE03WeaponQuicksilverDagger > 0 || Player.GetItemCount TE04WeaponQuicksilverDagger > 0 || Player.GetItemCount TE05WeaponQuicksilverDagger > 0
+											set TEQQShrineUpgradeArtifactQuest.bQuicksilverDagger to 1
+											set bFoundItem to 1
+											set bFoundFirst0HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponEbonyRazor > 0 || Player.GetItemCount TE02WeaponEbonyRazor > 0 || Player.GetItemCount TE03WeaponEbonyRazor > 0 || Player.GetItemCount TE04WeaponEbonyRazor > 0 || Player.GetItemCount TE05WeaponEbonyRazor > 0
+											set TEQQShrineUpgradeArtifactQuest.bEbonyRazor to 1
+											set bFoundItem to 1
+											set bFoundFirst0HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponIntricateEbonyMace > 0 || Player.GetItemCount TE02WeaponIntricateEbonyMace > 0 || Player.GetItemCount TE03WeaponIntricateEbonyMace > 0 || Player.GetItemCount TE04WeaponIntricateEbonyMace > 0 || Player.GetItemCount TE05WeaponIntricateEbonyMace > 0
+											set TEQQShrineUpgradeArtifactTwoQuest.bIntricateEbonyMace to 1
+											set bFoundItem to 1
+											set bFoundSecond0HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponIntricateSilverClaymore > 0 || Player.GetItemCount TE02WeaponIntricateSilverClaymore > 0 || Player.GetItemCount TE03WeaponIntricateSilverClaymore > 0 || Player.GetItemCount TE04WeaponIntricateSilverClaymore > 0 || Player.GetItemCount TE05WeaponIntricateSilverClaymore > 0
+											set TEQQShrineUpgradeArtifactTwoQuest.bIntricateSilverClaymore to 1
+											set bFoundItem to 1
+											set bFoundSecond0HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponIntricateSilverLongsword > 0 || Player.GetItemCount TE02WeaponIntricateSilverLongsword > 0 || Player.GetItemCount TE03WeaponIntricateSilverLongsword > 0 || Player.GetItemCount TE04WeaponIntricateSilverLongsword > 0 || Player.GetItemCount TE05WeaponIntricateSilverLongsword > 0
+											set TEQQShrineUpgradeArtifactTwoQuest.bIntricateSilverLongsword to 1
+											set bFoundItem to 1
+											set bFoundSecond0HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponResiniteMaddeningWarhammer > 0 || Player.GetItemCount TE02WeaponResiniteMaddeningWarhammer > 0 || Player.GetItemCount TE03WeaponResiniteMaddeningWarhammer > 0 || Player.GetItemCount TE04WeaponResiniteMaddeningWarhammer > 0 || Player.GetItemCount TE05WeaponResiniteMaddeningWarhammer > 0
+											set TEQQShrineUpgradeArtifactTwoQuest.bResiniteMaddeningWarhammer to 1
+											set bFoundItem to 1
+											set bFoundSecond0HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponRisingBloodRipper > 0 || Player.GetItemCount TE02WeaponRisingBloodRipper > 0 || Player.GetItemCount TE03WeaponRisingBloodRipper > 0 || Player.GetItemCount TE04WeaponRisingBloodRipper > 0 || Player.GetItemCount TE05WeaponRisingBloodRipper > 0
+											set TEQQShrineUpgradeArtifactTwoQuest.bRisingBloodRipper to 1
+											set bFoundItem to 1
+											set bFoundSecond0HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponWaningBloodRipper > 0 || Player.GetItemCount TE02WeaponWaningBloodRipper > 0 || Player.GetItemCount TE03WeaponWaningBloodRipper > 0 || Player.GetItemCount TE04WeaponWaningBloodRipper > 0 || Player.GetItemCount TE05WeaponWaningBloodRipper > 0
+											set TEQQShrineUpgradeArtifactTwoQuest.bWaningBloodRipper to 1
+											set bFoundItem to 1
+											set bFoundSecond0HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponAkaviriOdachi > 0 || Player.GetItemCount TE02WeaponAkaviriOdachi > 0 || Player.GetItemCount TE03WeaponAkaviriOdachi > 0 || Player.GetItemCount TE04WeaponAkaviriOdachi > 0 || Player.GetItemCount TE05WeaponAkaviriOdachi > 0
+											set TEQQShrineUpgrade0H3WeaponQuest.bAkaviriOdachi to 1
+											set bFoundItem to 1
+											set bFoundThird0HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponAkaviriUchigatana > 0 || Player.GetItemCount TE02WeaponAkaviriUchigatana > 0 || Player.GetItemCount TE03WeaponAkaviriUchigatana > 0 || Player.GetItemCount TE04WeaponAkaviriUchigatana > 0 || Player.GetItemCount TE05WeaponAkaviriUchigatana > 0
+											set TEQQShrineUpgrade0H3WeaponQuest.bAkaviriUchigatana to 1
+											set bFoundItem to 1
+											set bFoundThird0HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponIntricateSilverShortsword > 0 || Player.GetItemCount TE02WeaponIntricateSilverShortsword > 0 || Player.GetItemCount TE03WeaponIntricateSilverShortsword > 0 || Player.GetItemCount TE04WeaponIntricateSilverShortsword > 0 || Player.GetItemCount TE05WeaponIntricateSilverShortsword > 0
+											set TEQQShrineUpgrade0H3WeaponQuest.bIntricateSilverShortsword to 1
+											set bFoundItem to 1
+											set bFoundThird0HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										;Placeholder for 4th-6th item in 3rd 0HGroup
+										if Player.GetItemCount TE01WeaponAyleidicLongsword > 0 || Player.GetItemCount TE02WeaponAyleidicLongsword > 0 || Player.GetItemCount TE03WeaponAyleidicLongsword > 0 || Player.GetItemCount TE04WeaponAyleidicLongsword > 0 || Player.GetItemCount TE05WeaponAyleidicLongsword > 0
+											set TEQQShrineUpgradeFirst1HBladeWeaponQuest.bAyleidicLongsword to 1
+											set bFoundItem to 1
+											set bFoundFirst1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponCursedLongsword > 0 || Player.GetItemCount TE02WeaponCursedLongsword > 0 || Player.GetItemCount TE03WeaponCursedLongsword > 0 || Player.GetItemCount TE04WeaponCursedLongsword > 0 || Player.GetItemCount TE05WeaponCursedLongsword > 0
+											set TEQQShrineUpgradeFirst1HBladeWeaponQuest.bCursedLongsword to 1
+											set bFoundItem to 1
+											set bFoundFirst1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponDarkLongsword > 0 || Player.GetItemCount TE02WeaponDarkLongsword > 0 || Player.GetItemCount TE03WeaponDarkLongsword > 0 || Player.GetItemCount TE04WeaponDarkLongsword > 0 || Player.GetItemCount TE05WeaponDarkLongsword > 0
+											set TEQQShrineUpgradeFirst1HBladeWeaponQuest.bDarkLongsword to 1
+											set bFoundItem to 1
+											set bFoundFirst1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponDwemerLongsword > 0 || Player.GetItemCount TE02WeaponDwemerLongsword > 0 || Player.GetItemCount TE03WeaponDwemerLongsword > 0 || Player.GetItemCount TE04WeaponDwemerLongsword > 0 || Player.GetItemCount TE05WeaponDwemerLongsword > 0
+											set TEQQShrineUpgradeFirst1HBladeWeaponQuest.bDwemerLongsword to 1
+											set bFoundItem to 1
+											set bFoundFirst1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponGoldenLongsword > 0 || Player.GetItemCount TE02WeaponGoldenLongsword > 0 || Player.GetItemCount TE03WeaponGoldenLongsword > 0 || Player.GetItemCount TE04WeaponGoldenLongsword > 0 || Player.GetItemCount TE05WeaponGoldenLongsword > 0
+											set TEQQShrineUpgradeFirst1HBladeWeaponQuest.bGoldenLongsword to 1
+											set bFoundItem to 1
+											set bFoundFirst1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponMaddeningLongsword > 0 || Player.GetItemCount TE02WeaponMaddeningLongsword > 0 || Player.GetItemCount TE03WeaponMaddeningLongsword > 0 || Player.GetItemCount TE04WeaponMaddeningLongsword > 0 || Player.GetItemCount TE05WeaponMaddeningLongsword > 0
+											set TEQQShrineUpgradeFirst1HBladeWeaponQuest.bMaddeningLongsword to 1
+											set bFoundItem to 1
+											set bFoundFirst1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponMalachiteLongsword > 0 || Player.GetItemCount TE02WeaponMalachiteLongsword > 0 || Player.GetItemCount TE03WeaponMalachiteLongsword > 0 || Player.GetItemCount TE04WeaponMalachiteLongsword > 0 || Player.GetItemCount TE05WeaponMalachiteLongsword > 0
+											set TEQQShrineUpgradeSecond1HBladeWeaponQuest.bMalachiteLongsword to 1
+											set bFoundItem to 1
+											set bFoundSecond1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponObsidianLongsword > 0 || Player.GetItemCount TE02WeaponObsidianLongsword > 0 || Player.GetItemCount TE03WeaponObsidianLongsword > 0 || Player.GetItemCount TE04WeaponObsidianLongsword > 0 || Player.GetItemCount TE05WeaponObsidianLongsword > 0
+											set TEQQShrineUpgradeSecond1HBladeWeaponQuest.bObsidianLongsword to 1
+											set bFoundItem to 1
+											set bFoundSecond1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponResiniteLongsword > 0 || Player.GetItemCount TE02WeaponResiniteLongsword > 0 || Player.GetItemCount TE03WeaponResiniteLongsword > 0 || Player.GetItemCount TE04WeaponResiniteLongsword > 0 || Player.GetItemCount TE05WeaponResiniteLongsword > 0
+											set TEQQShrineUpgradeSecond1HBladeWeaponQuest.bResiniteLongsword to 1
+											set bFoundItem to 1
+											set bFoundSecond1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponSilvriteLongsword > 0 || Player.GetItemCount TE02WeaponSilvriteLongsword > 0 || Player.GetItemCount TE03WeaponSilvriteLongsword > 0 || Player.GetItemCount TE04WeaponSilvriteLongsword > 0 || Player.GetItemCount TE05WeaponSilvriteLongsword > 0
+											set TEQQShrineUpgradeSecond1HBladeWeaponQuest.bSilvriteLongsword to 1
+											set bFoundItem to 1
+											set bFoundSecond1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponObsidianShortsword > 0 || Player.GetItemCount TE02WeaponObsidianShortsword > 0 || Player.GetItemCount TE03WeaponObsidianShortsword > 0 || Player.GetItemCount TE04WeaponObsidianShortsword > 0 || Player.GetItemCount TE05WeaponObsidianShortsword > 0
+											set TEQQShrineUpgradeSecond1HBladeWeaponQuest.bObsidianShortsword to 1
+											set bFoundItem to 1
+											set bFoundSecond1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponSilvriteShortsword > 0 || Player.GetItemCount TE02WeaponSilvriteShortsword > 0 || Player.GetItemCount TE03WeaponSilvriteShortsword > 0 || Player.GetItemCount TE04WeaponSilvriteShortsword > 0 || Player.GetItemCount TE05WeaponSilvriteShortsword > 0
+											set TEQQShrineUpgradeSecond1HBladeWeaponQuest.bSilvriteShortsword to 1
+											set bFoundItem to 1
+											set bFoundSecond1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponAyleidicShortsword > 0 || Player.GetItemCount TE02WeaponAyleidicShortsword > 0 || Player.GetItemCount TE03WeaponAyleidicShortsword > 0 || Player.GetItemCount TE04WeaponAyleidicShortsword > 0 || Player.GetItemCount TE05WeaponAyleidicShortsword > 0
+											set TEQQShrineUpgradeThird1HBladeWeaponQuest.bAyleidicShortsword to 1
+											set bFoundItem to 1
+											set bFoundThird1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponCursedShortsword > 0 || Player.GetItemCount TE02WeaponCursedShortsword > 0 || Player.GetItemCount TE03WeaponCursedShortsword > 0 || Player.GetItemCount TE04WeaponCursedShortsword > 0 || Player.GetItemCount TE05WeaponCursedShortsword > 0
+											set TEQQShrineUpgradeThird1HBladeWeaponQuest.bCursedShortsword to 1
+											set bFoundItem to 1
+											set bFoundThird1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponDarkShortsword > 0 || Player.GetItemCount TE02WeaponDarkShortsword > 0 || Player.GetItemCount TE03WeaponDarkShortsword > 0 || Player.GetItemCount TE04WeaponDarkShortsword > 0 || Player.GetItemCount TE05WeaponDarkShortsword > 0
+											set TEQQShrineUpgradeThird1HBladeWeaponQuest.bDarkShortsword to 1
+											set bFoundItem to 1
+											set bFoundThird1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponDwemerShortsword > 0 || Player.GetItemCount TE02WeaponDwemerShortsword > 0 || Player.GetItemCount TE03WeaponDwemerShortsword > 0 || Player.GetItemCount TE04WeaponDwemerShortsword > 0 || Player.GetItemCount TE05WeaponDwemerShortsword > 0
+											set TEQQShrineUpgradeThird1HBladeWeaponQuest.bDwemerShortsword to 1
+											set bFoundItem to 1
+											set bFoundThird1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponGoldenShortsword > 0 || Player.GetItemCount TE02WeaponGoldenShortsword > 0 || Player.GetItemCount TE03WeaponGoldenShortsword > 0 || Player.GetItemCount TE04WeaponGoldenShortsword > 0 || Player.GetItemCount TE05WeaponGoldenShortsword > 0
+											set TEQQShrineUpgradeThird1HBladeWeaponQuest.bGoldenShortsword to 1
+											set bFoundItem to 1
+											set bFoundThird1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponMalachiteShortsword > 0 || Player.GetItemCount TE02WeaponMalachiteShortsword > 0 || Player.GetItemCount TE03WeaponMalachiteShortsword > 0 || Player.GetItemCount TE04WeaponMalachiteShortsword > 0 || Player.GetItemCount TE05WeaponMalachiteShortsword > 0
+											set TEQQShrineUpgradeThird1HBladeWeaponQuest.bMalachiteShortsword to 1
+											set bFoundItem to 1
+											set bFoundThird1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponAyleidicDagger > 0 || Player.GetItemCount TE02WeaponAyleidicDagger > 0 || Player.GetItemCount TE03WeaponAyleidicDagger > 0 || Player.GetItemCount TE04WeaponAyleidicDagger > 0 || Player.GetItemCount TE05WeaponAyleidicDagger > 0
+											set TEQQShrineUpgradeFourth1HBladeWeaponQuest.bAyleidicDagger to 1
+											set bFoundItem to 1
+											set bFoundFourth1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponCursedDagger > 0 || Player.GetItemCount TE02WeaponCursedDagger > 0 || Player.GetItemCount TE03WeaponCursedDagger > 0 || Player.GetItemCount TE04WeaponCursedDagger > 0 || Player.GetItemCount TE05WeaponCursedDagger > 0
+											set TEQQShrineUpgradeFourth1HBladeWeaponQuest.bCursedDagger to 1
+											set bFoundItem to 1
+											set bFoundFourth1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponDwemerDagger > 0 || Player.GetItemCount TE02WeaponDwemerDagger > 0 || Player.GetItemCount TE03WeaponDwemerDagger > 0 || Player.GetItemCount TE04WeaponDwemerDagger > 0 || Player.GetItemCount TE05WeaponDwemerDagger > 0
+											set TEQQShrineUpgradeFourth1HBladeWeaponQuest.bDwemerDagger to 1
+											set bFoundItem to 1
+											set bFoundFourth1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponMalachiteDagger > 0 || Player.GetItemCount TE02WeaponMalachiteDagger > 0 || Player.GetItemCount TE03WeaponMalachiteDagger > 0 || Player.GetItemCount TE04WeaponMalachiteDagger > 0 || Player.GetItemCount TE05WeaponMalachiteDagger > 0
+											set TEQQShrineUpgradeFourth1HBladeWeaponQuest.bMalachiteDagger to 1
+											set bFoundItem to 1
+											set bFoundFourth1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponObsidianDagger > 0 || Player.GetItemCount TE02WeaponObsidianDagger > 0 || Player.GetItemCount TE03WeaponObsidianDagger > 0 || Player.GetItemCount TE04WeaponObsidianDagger > 0 || Player.GetItemCount TE05WeaponObsidianDagger > 0
+											set TEQQShrineUpgradeFourth1HBladeWeaponQuest.bObsidianDagger to 1
+											set bFoundItem to 1
+											set bFoundFourth1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponSilvriteDagger > 0 || Player.GetItemCount TE02WeaponSilvriteDagger > 0 || Player.GetItemCount TE03WeaponSilvriteDagger > 0 || Player.GetItemCount TE04WeaponSilvriteDagger > 0 || Player.GetItemCount TE05WeaponSilvriteDagger > 0
+											set TEQQShrineUpgradeFourth1HBladeWeaponQuest.bSilvriteDagger to 1
+											set bFoundItem to 1
+											set bFoundFourth1HBladeWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponAyleidicMace > 0 || Player.GetItemCount TE02WeaponAyleidicMace > 0 || Player.GetItemCount TE03WeaponAyleidicMace > 0 || Player.GetItemCount TE04WeaponAyleidicMace > 0 || Player.GetItemCount TE05WeaponAyleidicMace > 0
+											set TEQQShrineUpgradeFirst2HBluntWeaponQuest.bAyleidicMace to 1
+											set bFoundItem to 1
+											set bFoundFirst1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponCursedMace > 0 || Player.GetItemCount TE02WeaponCursedMace > 0 || Player.GetItemCount TE03WeaponCursedMace > 0 || Player.GetItemCount TE04WeaponCursedMace > 0 || Player.GetItemCount TE05WeaponCursedMace > 0
+											set TEQQShrineUpgradeFirst2HBluntWeaponQuest.bCursedMace to 1
+											set bFoundItem to 1
+											set bFoundFirst1HBluntWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponDarkMace > 0 || Player.GetItemCount TE02WeaponDarkMace > 0 || Player.GetItemCount TE03WeaponDarkMace > 0 || Player.GetItemCount TE04WeaponDarkMace > 0 || Player.GetItemCount TE05WeaponDarkMace > 0
+											set TEQQShrineUpgradeFirst2HBluntWeaponQuest.bDarkMace to 1
+											set bFoundItem to 1
+											set bFoundFirst1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponDwemerMace > 0 || Player.GetItemCount TE02WeaponDwemerMace > 0 || Player.GetItemCount TE03WeaponDwemerMace > 0 || Player.GetItemCount TE04WeaponDwemerMace > 0 || Player.GetItemCount TE05WeaponDwemerMace > 0
+											set TEQQShrineUpgradeFirst2HBluntWeaponQuest.bDwemerMace to 1
+											set bFoundItem to 1
+											set bFoundFirst1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponGoldenMace > 0 || Player.GetItemCount TE02WeaponGoldenMace > 0 || Player.GetItemCount TE03WeaponGoldenMace > 0 || Player.GetItemCount TE04WeaponGoldenMace > 0 || Player.GetItemCount TE05WeaponGoldenMace > 0
+											set TEQQShrineUpgradeFirst2HBluntWeaponQuest.bGoldenMace to 1
+											set bFoundItem to 1
+											set bFoundFirst1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponMalachiteMace > 0 || Player.GetItemCount TE02WeaponMalachiteMace > 0 || Player.GetItemCount TE03WeaponMalachiteMace > 0 || Player.GetItemCount TE04WeaponMalachiteMace > 0 || Player.GetItemCount TE05WeaponMalachiteMace > 0
+											set TEQQShrineUpgradeFirst2HBluntWeaponQuest.bMalachiteMace to 1
+											set bFoundItem to 1
+											set bFoundFirst1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponObsidianMace > 0 || Player.GetItemCount TE02WeaponObsidianMace > 0 || Player.GetItemCount TE03WeaponObsidianMace > 0 || Player.GetItemCount TE04WeaponObsidianMace > 0 || Player.GetItemCount TE05WeaponObsidianMace > 0
+											set TEQQShrineUpgradeSecond2HBluntWeaponQuest.bObsidianMace to 1
+											set bFoundItem to 1
+											set bFoundSecond1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponResiniteMace > 0 || Player.GetItemCount TE02WeaponResiniteMace > 0 || Player.GetItemCount TE03WeaponResiniteMace > 0 || Player.GetItemCount TE04WeaponResiniteMace > 0 || Player.GetItemCount TE05WeaponResiniteMace > 0
+											set TEQQShrineUpgradeSecond2HBluntWeaponQuest.bResiniteMace to 1
+											set bFoundItem to 1
+											set bFoundSecond1HBluntWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponSilvriteMace > 0 || Player.GetItemCount TE02WeaponSilvriteMace > 0 || Player.GetItemCount TE03WeaponSilvriteMace > 0 || Player.GetItemCount TE04WeaponSilvriteMace > 0 || Player.GetItemCount TE05WeaponSilvriteMace > 0
+											set TEQQShrineUpgradeSecond2HBluntWeaponQuest.bSilvriteMace to 1
+											set bFoundItem to 1
+											set bFoundSecond1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponMalachiteWaraxe > 0 || Player.GetItemCount TE02WeaponMalachiteWaraxe > 0 || Player.GetItemCount TE03WeaponMalachiteWaraxe > 0 || Player.GetItemCount TE04WeaponMalachiteWaraxe > 0 || Player.GetItemCount TE05WeaponMalachiteWaraxe > 0
+											set TEQQShrineUpgradeSecond2HBluntWeaponQuest.bMalachiteWaraxe to 1
+											set bFoundItem to 1
+											set bFoundSecond1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponObsidianWaraxe > 0 || Player.GetItemCount TE02WeaponObsidianWaraxe > 0 || Player.GetItemCount TE03WeaponObsidianWaraxe > 0 || Player.GetItemCount TE04WeaponObsidianWaraxe > 0 || Player.GetItemCount TE05WeaponObsidianWaraxe > 0
+											set TEQQShrineUpgradeSecond2HBluntWeaponQuest.bObsidianWaraxe to 1
+											set bFoundItem to 1
+											set bFoundSecond1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponSilvriteWaraxe > 0 || Player.GetItemCount TE02WeaponSilvriteWaraxe > 0 || Player.GetItemCount TE03WeaponSilvriteWaraxe > 0 || Player.GetItemCount TE04WeaponSilvriteWaraxe > 0 || Player.GetItemCount TE05WeaponSilvriteWaraxe > 0
+											set TEQQShrineUpgradeSecond2HBluntWeaponQuest.bSilvriteWaraxe to 1
+											set bFoundItem to 1
+											set bFoundSecond1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponAyleidicWaraxe > 0 || Player.GetItemCount TE02WeaponAyleidicWaraxe > 0 || Player.GetItemCount TE03WeaponAyleidicWaraxe > 0 || Player.GetItemCount TE04WeaponAyleidicWaraxe > 0 || Player.GetItemCount TE05WeaponAyleidicWaraxe > 0
+											set TEQQShrineUpgradeThird1HBluntWeaponQuest.bAyleidicWaraxe to 1
+											set bFoundItem to 1
+											set bFoundThird1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponCursedWaraxe > 0 || Player.GetItemCount TE02WeaponCursedWaraxe > 0 || Player.GetItemCount TE03WeaponCursedWaraxe > 0 || Player.GetItemCount TE04WeaponCursedWaraxe > 0 || Player.GetItemCount TE05WeaponCursedWaraxe > 0
+											set TEQQShrineUpgradeThird1HBluntWeaponQuest.bCursedWaraxe to 1
+											set bFoundItem to 1
+											set bFoundThird1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponDarkWaraxe > 0 || Player.GetItemCount TE02WeaponDarkWaraxe > 0 || Player.GetItemCount TE03WeaponDarkWaraxe > 0 || Player.GetItemCount TE04WeaponDarkWaraxe > 0 || Player.GetItemCount TE05WeaponDarkWaraxe > 0
+											set TEQQShrineUpgradeThird1HBluntWeaponQuest.bDarkWaraxe to 1
+											set bFoundItem to 1
+											set bFoundThird1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponDwemerWaraxe > 0 || Player.GetItemCount TE02WeaponDwemerWaraxe > 0 || Player.GetItemCount TE03WeaponDwemerWaraxe > 0 || Player.GetItemCount TE04WeaponDwemerWaraxe > 0 || Player.GetItemCount TE05WeaponDwemerWaraxe > 0
+											set TEQQShrineUpgradeThird1HBluntWeaponQuest.bDwemerWaraxe to 1
+											set bFoundItem to 1
+											set bFoundThird1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponGoldenWaraxe > 0 || Player.GetItemCount TE02WeaponGoldenWaraxe > 0 || Player.GetItemCount TE03WeaponGoldenWaraxe > 0 || Player.GetItemCount TE04WeaponGoldenWaraxe > 0 || Player.GetItemCount TE05WeaponGoldenWaraxe > 0
+											set TEQQShrineUpgradeThird1HBluntWeaponQuest.bGoldenWaraxe to 1
+											set bFoundItem to 1
+											set bFoundThird1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponMaddeningWaraxe > 0 || Player.GetItemCount TE02WeaponMaddeningWaraxe > 0 || Player.GetItemCount TE03WeaponMaddeningWaraxe > 0 || Player.GetItemCount TE04WeaponMaddeningWaraxe > 0 || Player.GetItemCount TE05WeaponMaddeningWaraxe > 0
+											set TEQQShrineUpgradeThird1HBluntWeaponQuest.bMaddeningWaraxe to 1
+											set bFoundItem to 1
+											set bFoundThird1HBluntWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponAyleidicBattleaxe > 0 || Player.GetItemCount TE02WeaponAyleidicBattleaxe > 0 || Player.GetItemCount TE03WeaponAyleidicBattleaxe > 0 || Player.GetItemCount TE04WeaponAyleidicBattleaxe > 0 || Player.GetItemCount TE05WeaponAyleidicBattleaxe > 0
+											set TEQQShrineUpgradeFirst2HWeaponQuest.bAyleidicBattleaxe to 1
+											set bFoundItem to 1
+											set bFoundFirst2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponCursedBattleaxe > 0 || Player.GetItemCount TE02WeaponCursedBattleaxe > 0 || Player.GetItemCount TE03WeaponCursedBattleaxe > 0 || Player.GetItemCount TE04WeaponCursedBattleaxe > 0 || Player.GetItemCount TE05WeaponCursedBattleaxe > 0
+											set TEQQShrineUpgradeFirst2HWeaponQuest.bCursedBattleaxe to 1
+											set bFoundItem to 1
+											set bFoundFirst2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponDwemerBattleaxe > 0 || Player.GetItemCount TE02WeaponDwemerBattleaxe > 0 || Player.GetItemCount TE03WeaponDwemerBattleaxe > 0 || Player.GetItemCount TE04WeaponDwemerBattleaxe > 0 || Player.GetItemCount TE05WeaponDwemerBattleaxe > 0
+											set TEQQShrineUpgradeFirst2HWeaponQuest.bDwemerBattleaxe to 1
+											set bFoundItem to 1
+											set bFoundFirst2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponMalachiteBattleaxe > 0 || Player.GetItemCount TE02WeaponMalachiteBattleaxe > 0 || Player.GetItemCount TE03WeaponMalachiteBattleaxe > 0 || Player.GetItemCount TE04WeaponMalachiteBattleaxe > 0 || Player.GetItemCount TE05WeaponMalachiteBattleaxe > 0
+											set TEQQShrineUpgradeFirst2HWeaponQuest.bMalachiteBattleaxe to 1
+											set bFoundItem to 1
+											set bFoundFirst2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponObsidianBattleaxe > 0 || Player.GetItemCount TE02WeaponObsidianBattleaxe > 0 || Player.GetItemCount TE03WeaponObsidianBattleaxe > 0 || Player.GetItemCount TE04WeaponObsidianBattleaxe > 0 || Player.GetItemCount TE05WeaponObsidianBattleaxe > 0
+											set TEQQShrineUpgradeFirst2HWeaponQuest.bObsidianBattleaxe to 1
+											set bFoundItem to 1
+											set bFoundFirst2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponSilvriteBattleaxe > 0 || Player.GetItemCount TE02WeaponSilvriteBattleaxe > 0 || Player.GetItemCount TE03WeaponSilvriteBattleaxe > 0 || Player.GetItemCount TE04WeaponSilvriteBattleaxe > 0 || Player.GetItemCount TE05WeaponSilvriteBattleaxe > 0
+											set TEQQShrineUpgradeFirst2HWeaponQuest.bSilvriteBattleaxe to 1
+											set bFoundItem to 1
+											set bFoundFirst2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponAyleidicClaymore > 0 || Player.GetItemCount TE02WeaponAyleidicClaymore > 0 || Player.GetItemCount TE03WeaponAyleidicClaymore > 0 || Player.GetItemCount TE04WeaponAyleidicClaymore > 0 || Player.GetItemCount TE05WeaponAyleidicClaymore > 0
+											set TEQQShrineUpgradeSecond2HWeaponQuest.bAyleidicClaymore to 1
+											set bFoundItem to 1
+											set bFoundSecond2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponCursedClaymore > 0 || Player.GetItemCount TE02WeaponCursedClaymore > 0 || Player.GetItemCount TE03WeaponCursedClaymore > 0 || Player.GetItemCount TE04WeaponCursedClaymore > 0 || Player.GetItemCount TE05WeaponCursedClaymore > 0
+											set TEQQShrineUpgradeSecond2HWeaponQuest.bCursedClaymore to 1
+											set bFoundItem to 1
+											set bFoundSecond2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponDwemerClaymore > 0 || Player.GetItemCount TE02WeaponDwemerClaymore > 0 || Player.GetItemCount TE03WeaponDwemerClaymore > 0 || Player.GetItemCount TE04WeaponDwemerClaymore > 0 || Player.GetItemCount TE05WeaponDwemerClaymore > 0
+											set TEQQShrineUpgradeSecond2HWeaponQuest.bDwemerClaymore to 1
+											set bFoundItem to 1
+											set bFoundSecond2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponMaddeningClaymore > 0 || Player.GetItemCount TE02WeaponMaddeningClaymore > 0 || Player.GetItemCount TE03WeaponMaddeningClaymore > 0 || Player.GetItemCount TE04WeaponMaddeningClaymore > 0 || Player.GetItemCount TE05WeaponMaddeningClaymore > 0
+											set TEQQShrineUpgradeSecond2HWeaponQuest.bMaddeningClaymore to 1
+											set bFoundItem to 1
+											set bFoundSecond2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponMalachiteClaymore > 0 || Player.GetItemCount TE02WeaponMalachiteClaymore > 0 || Player.GetItemCount TE03WeaponMalachiteClaymore > 0 || Player.GetItemCount TE04WeaponMalachiteClaymore > 0 || Player.GetItemCount TE05WeaponMalachiteClaymore > 0
+											set TEQQShrineUpgradeSecond2HWeaponQuest.bMalachiteClaymore to 1
+											set bFoundItem to 1
+											set bFoundSecond2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponObsidianClaymore > 0 || Player.GetItemCount TE02WeaponObsidianClaymore > 0 || Player.GetItemCount TE03WeaponObsidianClaymore > 0 || Player.GetItemCount TE04WeaponObsidianClaymore > 0 || Player.GetItemCount TE05WeaponObsidianClaymore > 0
+											set TEQQShrineUpgradeSecond2HWeaponQuest.bObsidianClaymore to 1
+											set bFoundItem to 1
+											set bFoundSecond2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponSilvriteClaymore > 0 || Player.GetItemCount TE02WeaponSilvriteClaymore > 0 || Player.GetItemCount TE03WeaponSilvriteClaymore > 0 || Player.GetItemCount TE04WeaponSilvriteClaymore > 0 || Player.GetItemCount TE05WeaponSilvriteClaymore > 0
+											set TEQQShrineUpgradeThird2HWeaponQuest.bSilvriteClaymore to 1
+											set bFoundItem to 1
+											set bFoundThird2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponAyleidicWarhammer > 0 || Player.GetItemCount TE02WeaponAyleidicWarhammer > 0 || Player.GetItemCount TE03WeaponAyleidicWarhammer > 0 || Player.GetItemCount TE04WeaponAyleidicWarhammer > 0 || Player.GetItemCount TE05WeaponAyleidicWarhammer > 0
+											set TEQQShrineUpgradeThird2HWeaponQuest.bAyleidicWarhammer to 1
+											set bFoundItem to 1
+											set bFoundThird2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponCursedWarhammer > 0 || Player.GetItemCount TE02WeaponCursedWarhammer > 0 || Player.GetItemCount TE03WeaponCursedWarhammer > 0 || Player.GetItemCount TE04WeaponCursedWarhammer > 0 || Player.GetItemCount TE05WeaponCursedWarhammer > 0
+											set TEQQShrineUpgradeThird2HWeaponQuest.bCursedWarhammer to 1
+											set bFoundItem to 1
+											set bFoundThird2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponDwemerWarhammer > 0 || Player.GetItemCount TE02WeaponDwemerWarhammer > 0 || Player.GetItemCount TE03WeaponDwemerWarhammer > 0 || Player.GetItemCount TE04WeaponDwemerWarhammer > 0 || Player.GetItemCount TE05WeaponDwemerWarhammer > 0
+											set TEQQShrineUpgradeThird2HWeaponQuest.bDwemerWarhammer to 1
+											set bFoundItem to 1
+											set bFoundThird2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponMalachiteWarhammer > 0 || Player.GetItemCount TE02WeaponMalachiteWarhammer > 0 || Player.GetItemCount TE03WeaponMalachiteWarhammer > 0 || Player.GetItemCount TE04WeaponMalachiteWarhammer > 0 || Player.GetItemCount TE05WeaponMalachiteWarhammer > 0
+											set TEQQShrineUpgradeThird2HWeaponQuest.bMalachiteWarhammer to 1
+											set bFoundItem to 1
+											set bFoundThird2HWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponObsidianWarhammer > 0 || Player.GetItemCount TE02WeaponObsidianWarhammer > 0 || Player.GetItemCount TE03WeaponObsidianWarhammer > 0 || Player.GetItemCount TE04WeaponObsidianWarhammer > 0 || Player.GetItemCount TE05WeaponObsidianWarhammer > 0
+											set TEQQShrineUpgradeThird2HWeaponQuest.bObsidianWarhammer to 1
+											set bFoundItem to 1
+											set bFoundThird2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponResiniteWarhammer > 0 || Player.GetItemCount TE02WeaponResiniteWarhammer > 0 || Player.GetItemCount TE03WeaponResiniteWarhammer > 0 || Player.GetItemCount TE04WeaponResiniteWarhammer > 0 || Player.GetItemCount TE05WeaponResiniteWarhammer > 0
+											set TEQQShrineUpgradeFourth2HWeaponQuest.bResiniteWarhammer to 1
+											set bFoundItem to 1
+											set bFoundFourth2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponSilvriteWarhammer > 0 || Player.GetItemCount TE02WeaponSilvriteWarhammer > 0 || Player.GetItemCount TE03WeaponSilvriteWarhammer > 0 || Player.GetItemCount TE04WeaponSilvriteWarhammer > 0 || Player.GetItemCount TE05WeaponSilvriteWarhammer > 0
+											set TEQQShrineUpgradeFourth2HWeaponQuest.bSilvriteWarhammer to 1
+											set bFoundItem to 1
+											set bFoundFourth2HWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										;Placeholder for 3rd-6th item in 4th 2HGroup
+										if Player.GetItemCount TE01WeaponAyleidicBow > 0 || Player.GetItemCount TE02WeaponAyleidicBow > 0 || Player.GetItemCount TE03WeaponAyleidicBow > 0 || Player.GetItemCount TE04WeaponAyleidicBow > 0 || Player.GetItemCount TE05WeaponAyleidicBow > 0
+											set TEQQShrineUpgradeFirstBowWeaponQuest.bAyleidicBow to 1
+											set bFoundItem to 1
+											set bFoundFirstBowWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponCursedBow > 0 || Player.GetItemCount TE02WeaponCursedBow > 0 || Player.GetItemCount TE03WeaponCursedBow > 0 || Player.GetItemCount TE04WeaponCursedBow > 0 || Player.GetItemCount TE05WeaponCursedBow > 0
+											set TEQQShrineUpgradeFirstBowWeaponQuest.bCursedBow to 1
+											set bFoundItem to 1
+											set bFoundFirstBowWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponDarkBow > 0 || Player.GetItemCount TE02WeaponDarkBow > 0 || Player.GetItemCount TE03WeaponDarkBow > 0 || Player.GetItemCount TE04WeaponDarkBow > 0 || Player.GetItemCount TE05WeaponDarkBow > 0
+											set TEQQShrineUpgradeFirstBowWeaponQuest.bDarkBow to 1
+											set bFoundItem to 1
+											set bFoundFirstBowWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponDwemerBow > 0 || Player.GetItemCount TE02WeaponDwemerBow > 0 || Player.GetItemCount TE03WeaponDwemerBow > 0 || Player.GetItemCount TE04WeaponDwemerBow > 0 || Player.GetItemCount TE05WeaponDwemerBow > 0
+											set TEQQShrineUpgradeFirstBowWeaponQuest.bDwemerBow to 1
+											set bFoundItem to 1
+											set bFoundFirstBowWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponGoldenBow > 0 || Player.GetItemCount TE02WeaponGoldenBow > 0 || Player.GetItemCount TE03WeaponGoldenBow > 0 || Player.GetItemCount TE04WeaponGoldenBow > 0 || Player.GetItemCount TE05WeaponGoldenBow > 0
+											set TEQQShrineUpgradeFirstBowWeaponQuest.bGoldenBow to 1
+											set bFoundItem to 1
+											set bFoundFirstBowWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponMaddeningBow > 0 || Player.GetItemCount TE02WeaponMaddeningBow > 0 || Player.GetItemCount TE03WeaponMaddeningBow > 0 || Player.GetItemCount TE04WeaponMaddeningBow > 0 || Player.GetItemCount TE05WeaponMaddeningBow > 0
+											set TEQQShrineUpgradeFirstBowWeaponQuest.bMaddeningBow to 1
+											set bFoundItem to 1
+											set bFoundFirstBowWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponMalachiteBow > 0 || Player.GetItemCount TE02WeaponMalachiteBow > 0 || Player.GetItemCount TE03WeaponMalachiteBow > 0 || Player.GetItemCount TE04WeaponMalachiteBow > 0 || Player.GetItemCount TE05WeaponMalachiteBow > 0
+											set TEQQShrineUpgradeSecondBowWeaponQuest.bMalachiteBow to 1
+											set bFoundItem to 1
+											set bFoundSecondBowWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponObsidianBow > 0 || Player.GetItemCount TE02WeaponObsidianBow > 0 || Player.GetItemCount TE03WeaponObsidianBow > 0 || Player.GetItemCount TE04WeaponObsidianBow > 0 || Player.GetItemCount TE05WeaponObsidianBow > 0
+											set TEQQShrineUpgradeSecondBowWeaponQuest.bObsidianBow to 1
+											set bFoundItem to 1
+											set bFoundSecondBowWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponResiniteBow > 0 || Player.GetItemCount TE02WeaponResiniteBow > 0 || Player.GetItemCount TE03WeaponResiniteBow > 0 || Player.GetItemCount TE04WeaponResiniteBow > 0 || Player.GetItemCount TE05WeaponResiniteBow > 0
+											set TEQQShrineUpgradeSecondBowWeaponQuest.bResiniteBow to 1
+											set bFoundItem to 1
+											set bFoundSecondBowWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										if Player.GetItemCount TE01WeaponSilvriteBow > 0 || Player.GetItemCount TE02WeaponSilvriteBow > 0 || Player.GetItemCount TE03WeaponSilvriteBow > 0 || Player.GetItemCount TE04WeaponSilvriteBow > 0 || Player.GetItemCount TE05WeaponSilvriteBow > 0
+											set TEQQShrineUpgradeSecondBowWeaponQuest.bSilvriteBow to 1
+											set bFoundItem to 1
+											set bFoundSecondBowWeaponSet to 1
+											set bFoundWeaponSet to 1
+										endif
+										;Placeholder for 4th-6th item in 2nd BowGroup
+										set iSearchItem to 1
+									elseif iSearchItem == -1
+									set iChoice to GetButtonPressed
+										if iChoice == 0
+											set iDisplayedMenu to -2
+										elseif iChoice == 1
+											set iSearchItem to 2
+										elseif iChoice == 2
+											set iSearchItem to 3
+										endif
+									elseif iSearchItem == 1
+										if bFoundItem == 0
+											set iDisplayedMenu to -1
+										elseif bFoundItem == 1
+											if bFoundWeaponSet == 1 && bFoundArmorSet == 1
+												MessageBox "Found Both Weapons and Armor to Upgrade", "Cancel", "Weapons", "Armor"
+												set iSearchItem to -1
+											elseif bFoundWeaponSet == 1 && bFoundArmorSet == 0
+												set iSearchItem to 2
+											elseif bFoundWeaponSet == 0 && bFoundArmorSet == 1
+												set iSearchItem to 3
+											endif
+										endif
+									elseif iSearchItem == 2 ;Weapon Menu Math
+										if bFoundFirst0HWeaponSet == 1
+											set iFound0HWeaponSet to iFound0HWeaponSet + ( 1 * 1 )
+										endif
+										if bFoundSecond0HWeaponSet == 1
+											set iFound0HWeaponSet to iFound0HWeaponSet + ( 2 * 1 )
+											set bFoundWeaponSet to 1
+										endif
+										if bFoundThird0HWeaponSet == 1
+											set iFound0HWeaponSet to iFound0HWeaponSet + ( 2 * 2 )
+											set bFoundWeaponSet to 1
+										endif
+										if bFoundFirst1HBladeWeaponSet == 1
+											set iFound1HBladeWeaponSet to iFound1HBladeWeaponSet + ( 1 * 1 )
+											set bFoundWeaponSet to 1
+										endif
+										if bFoundSecond1HBladeWeaponSet == 1
+											set iFound1HBladeWeaponSet to iFound1HBladeWeaponSet + ( 2 * 1 )
+											set bFoundWeaponSet to 1
+										endif
+										if bFoundThird1HBladeWeaponSet == 1
+											set iFound1HBladeWeaponSet to iFound1HBladeWeaponSet + ( 2 * 2 )
+											set bFoundWeaponSet to 1
+										endif
+										if bFoundFourth1HBladeWeaponSet == 1
+											set iFound1HBladeWeaponSet to iFound1HBladeWeaponSet + ( 2 * 2 * 2 )
+											set bFoundWeaponSet to 1
+										endif
+										if bFoundFirst1HBluntWeaponSet == 1
+											set iFound1HBluntWeaponSet to iFound1HBluntWeaponSet + ( 1 * 1 )
+											set bFoundWeaponSet to 1
+										endif
+										if bFoundSecond1HBluntWeaponSet == 1
+											set iFound1HBluntWeaponSet to iFound1HBluntWeaponSet + ( 2 * 1 )
+											set bFoundWeaponSet to 1
+										endif
+										if bFoundThird1HBluntWeaponSet == 1
+											set iFound1HBluntWeaponSet to iFound1HBluntWeaponSet + ( 2 * 2 )
+											set bFoundWeaponSet to 1
+										endif
+										if bFoundFirst2HWeaponSet == 1
+											set iFound2HWeaponSet to iFound2HWeaponSet + ( 1 * 1 )
+											set bFoundWeaponSet to 1
+										endif
+										if bFoundSecond2HWeaponSet == 1
+											set iFound2HWeaponSet to iFound2HWeaponSet + ( 2 * 1 )
+											set bFoundWeaponSet to 1
+										endif
+										if bFoundThird2HWeaponSet == 1
+											set iFound2HWeaponSet to iFound2HWeaponSet + ( 2 * 2 )
+											set bFoundWeaponSet to 1
+										endif
+										if bFoundFourth2HWeaponSet == 1
+											set iFound2HWeaponSet to iFound2HWeaponSet + ( 2 * 2 * 2 )
+											set bFoundWeaponSet to 1
+										endif
+										if bFoundFirstBowWeaponSet == 1
+											set iFoundBowWeaponSet to iFoundBowWeaponSet + ( 1 * 1 )
+											set bFoundWeaponSet to 1
+										endif
+										if bFoundSecondBowWeaponSet == 1
+											set iFoundBowWeaponSet to iFoundBowWeaponSet + ( 2 * 1 )
+											set bFoundWeaponSet to 1
+										endif
+										if bFoundFirst0HWeaponSet == 1 || bFoundSecond0HWeaponSet == 1 || bFoundThird0HWeaponSet
+											set iFoundWeaponSet to iFoundWeaponSet + ( 1 * 1 )
+										endif
+										if bFoundFirst1HBladeWeaponSet == 1 || bFoundSecond1HBladeWeaponSet == 1 || bFoundThird1HBladeWeaponSet == 1 || bFoundFourth1HBladeWeaponSet == 1
+											set iFoundWeaponSet to iFoundWeaponSet + ( 2 * 1 )
+										endif
+										if bFoundFirst1HBluntWeaponSet == 1 || bFoundSecond1HBluntWeaponSet == 1 || bFoundThird1HBluntWeaponSet == 1
+											set iFoundWeaponSet to iFoundWeaponSet + ( 2 * 2 )
+										endif
+										if bFoundFirst2HWeaponSet == 1 || bFoundSecond2HWeaponSet == 1 || bFoundThird2HWeaponSet == 1 || bFoundFourth2HWeaponSet == 1
+											set iFoundWeaponSet to iFoundWeaponSet + ( 2 * 2 * 2 )
+										endif
+										if bFoundFirstBowWeaponSet == 1 || bFoundSecondBowWeaponSet == 1
+											set iFoundWeaponSet to iFoundWeaponSet + ( 2 * 2 * 2 * 2 )
+										endif
+										set iChoosing to 3
+									elseif iSearchItem == 3 ;Armor Menu Math
+										if bFoundFirstHArmorSet == 1
+											set iFoundHArmorSet to iFoundHArmorSet + ( 1 * 1 )
+											set bFoundArmorSet to 1
+										endif
+										if bFoundSecondHArmorSet == 1
+											set iFoundHArmorSet to iFoundHArmorSet + ( 2 * 1 )
+											set bFoundArmorSet to 1
+										endif
+										if bFoundThirdHArmorSet == 1
+											set iFoundHArmorSet to iFoundHArmorSet + ( 2 * 2 )
+											set bFoundArmorSet to 1
+										endif
+										if bFoundFourthHArmorSet == 1
+											set iFoundHArmorSet to iFoundHArmorSet + ( 2 * 2 * 2 )
+											set bFoundArmorSet to 1
+										endif
+										if bFoundFifthHArmorSet == 1
+											set iFoundHArmorSet to iFoundHArmorSet + ( 2 * 2 * 2 * 2 )
+											set bFoundArmorSet to 1
+										endif
+										if bFoundFirstLArmorSet == 1
+											set iFoundLArmorSet to iFoundLArmorSet + ( 1 * 1 )
+											set bFoundArmorSet to 1
+										endif
+										if bFoundSecondLArmorSet == 1
+											set iFoundLArmorSet to iFoundLArmorSet + ( 2 * 1 )
+											set bFoundArmorSet to 1
+										endif
+										if bFoundThirdLArmorSet == 1
+											set iFoundLArmorSet to iFoundLArmorSet + ( 2 * 2 )
+											set bFoundArmorSet to 1
+										endif
+										if bFoundFourthLArmorSet == 1
+											set iFoundLArmorSet to iFoundLArmorSet + ( 2 * 2 * 2 )
+											set bFoundArmorSet to 1
+										endif
+										if bFoundFifthLArmorSet == 1
+											set iFoundLArmorSet to iFoundLArmorSet + ( 2 * 2 * 2 * 2 )
+											set bFoundArmorSet to 1
+										endif
+										set iChoosing to 4
+									endif ;EndSearchItem
+								elseif iChoosing == 3 ;Weapons
+										if iFoundWeaponSet == 1 ;Only Artifacts
+											set iSelectedWeaponSet to 1
+										elseif iFoundWeaponSet == 2 ;Only 1H Blade
+											set iSelectedWeaponSet to 2
+										elseif iFoundWeaponSet == 4 ;Only 1H Blunt
+											set iSelectedWeaponSet to 3
+										elseif iFoundWeaponSet == 8 ;Only 2H Weapon
+											set iSelectedWeaponSet to 4
+										elseif iFoundWeaponSet == 16 ;Only Bows
+											set iSelectedWeaponSet to 5
+										elseif iFoundWeaponSet == 3
+											MessageBox "Found Multiple Weapon Types", "Cancel", "Back", "Artifacts", "1H Blade"
+											set iChoosingWeaponSet to 1
+										elseif iFoundWeaponSet == 5
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blunt"
+											set iChoosingWeaponSet to 2
+										elseif iFoundWeaponSet == 9
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "2H Weapon"
+											set iChoosingWeaponSet to 3
+										elseif iFoundWeaponSet == 17
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "Bows"
+											set iChoosingWeaponSet to 4
+										elseif iFoundWeaponSet == 6
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blade", "1H Blunt"
+											set iChoosingWeaponSet to 5
+										elseif iFoundWeaponSet == 10
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blade", "2H Weapon"
+											set iChoosingWeaponSet to 6
+										elseif iFoundWeaponSet == 18
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blade", "Bows"
+											set iChoosingWeaponSet to 7
+										elseif iFoundWeaponSet == 12
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blunt", "2H Weapon"
+											set iChoosingWeaponSet to 8
+										elseif iFoundWeaponSet == 20
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blunt", "Bows"
+											set iChoosingWeaponSet to 9
+										elseif iFoundWeaponSet == 24
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "2H Weapon", "Bows"
+											set iChoosingWeaponSet to 10
+										elseif iFoundWeaponSet == 7
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blade", "1H Blunt"
+											set iChoosingWeaponSet to 11
+										elseif iFoundWeaponSet == 11
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blade", "2H Weapon"
+											set iChoosingWeaponSet to 12
+										elseif iFoundWeaponSet == 19
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blade", "Bows"
+											set iChoosingWeaponSet to 13
+										elseif iFoundWeaponSet == 13
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blunt", "2H Weapon"
+											set iChoosingWeaponSet to 14
+										elseif iFoundWeaponSet == 21
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blunt", "Bows"
+											set iChoosingWeaponSet to 15
+										elseif iFoundWeaponSet == 25
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "2H Weapon", "Bows"
+											set iChoosingWeaponSet to 16
+										elseif iFoundWeaponSet == 14
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blade", "1H Blunt", "2H Weapon"
+											set iChoosingWeaponSet to 17
+										elseif iFoundWeaponSet == 22
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blade", "1H Blunt", "Bows"
+											set iChoosingWeaponSet to 18
+										elseif iFoundWeaponSet == 26
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blade", "2H Weapon", "Bows"
+											set iChoosingWeaponSet to 19
+										elseif iFoundWeaponSet == 28
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blunt", "2H Weapon", "Bows"
+											set iChoosingWeaponSet to 20
+										elseif iFoundWeaponSet == 15
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blade", "1H Blunt", "2H Weapon"
+											set iChoosingWeaponSet to 21
+										elseif iFoundWeaponSet == 23
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blade", "1H Blunt", "Bows"
+											set iChoosingWeaponSet to 22
+										elseif iFoundWeaponSet == 27
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blade", "2H Weapon", "Bows"
+											set iChoosingWeaponSet to 23
+										elseif iFoundWeaponSet == 29
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blunt", "2H Weapon", "Bows"
+											set iChoosingWeaponSet to 24
+										elseif iFoundWeaponSet == 30
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blade", "1H Blunt", "2H Weapon", "Bows"
+											set iChoosingWeaponSet to 25
+										elseif iFoundWeaponSet == 31
+											MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blade", "1H Blunt", "2H Weapon", "Bows"
+											set iChoosingWeaponSet to 26
+										endif
+								elseif iChoosing == 2 ;Heavy/Light Armor Check
+									set iChoice to GetButtonPressed
+									if iChoice == 0
+										set iDisplayedMenu to -2
+									elseif iChoice == 1
+										set iDisplayedMenu to -3
+									elseif iChoice == 2
+										set bFoundLArmorSet to 0
+										set iChoosing to 4
+									elseif iChoice == 3
+										set bFoundHArmorSet to 0
+										set iChoosing to 4
+									endif
+								elseif iChoosing == 4 ;Armor
+									if bFoundHArmorSet == 1 && bFoundLArmorSet == 1
+										MessageBox "Found Heavy and Light Armor to Upgrade", "Cancel", "Back", "Heavy", "Light"
+										set iChoosing to 2
+									elseif bFoundHArmorSet == 1 && bFoundLArmorSet == 0
+										if iFoundHArmorSet == 1
+											set iSelectedArmorSet to 1
+										elseif iFoundHArmorSet == 2
+											set iSelectedArmorSet to 2
+										elseif iFoundHArmorSet == 4 
+											set iSelectedArmorSet to 3
+										elseif iFoundHArmorSet == 8 
+											set iSelectedArmorSet to 4
+										elseif iFoundHArmorSet == 16 
+											set iSelectedArmorSet to 5
+										elseif iFoundHArmorSet == 3
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Back", "Obsidian", "Cursed"
+											set iChoosingArmorSet to 1
+										elseif iFoundHArmorSet == 5
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Obsidian", "Dwemer"
+											set iChoosingArmorSet to 2
+										elseif iFoundHArmorSet == 9
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Obsidian", "Maddening"
+											set iChoosingArmorSet to 3
+										elseif iFoundHArmorSet == 17
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Obsidian", "Resinite"
+											set iChoosingArmorSet to 4
+										elseif iFoundHArmorSet == 6
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Cursed", "Dwemer"
+											set iChoosingArmorSet to 5
+										elseif iFoundHArmorSet == 10
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Cursed", "Maddening"
+											set iChoosingArmorSet to 6
+										elseif iFoundHArmorSet == 18
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Cursed", "Resinite"
+											set iChoosingArmorSet to 7
+										elseif iFoundHArmorSet == 12
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Dwemer", "Maddening"
+											set iChoosingArmorSet to 8
+										elseif iFoundHArmorSet == 20
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Dwemer", "Resinite"
+											set iChoosingArmorSet to 9
+										elseif iFoundHArmorSet == 24
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Maddening", "Resinite"
+											set iChoosingArmorSet to 10
+										elseif iFoundHArmorSet == 7
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Obsidian", "Cursed", "Dwemer"
+											set iChoosingArmorSet to 11
+										elseif iFoundHArmorSet == 11
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Obsidian", "Cursed", "Maddening"
+											set iChoosingArmorSet to 12
+										elseif iFoundHArmorSet == 19
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Obsidian", "Cursed", "Resinite"
+											set iChoosingArmorSet to 13
+										elseif iFoundHArmorSet == 13
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Obsidian", "Dwemer", "Maddening"
+											set iChoosingArmorSet to 14
+										elseif iFoundHArmorSet == 21
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Obsidian", "Dwemer", "Resinite"
+											set iChoosingArmorSet to 15
+										elseif iFoundHArmorSet == 25
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Obsidian", "Maddening", "Resinite"
+											set iChoosingArmorSet to 16
+										elseif iFoundHArmorSet == 14
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Cursed", "Dwemer", "Maddening"
+											set iChoosingArmorSet to 17
+										elseif iFoundHArmorSet == 22
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Cursed", "Dwemer", "Resinite"
+											set iChoosingArmorSet to 18
+										elseif iFoundHArmorSet == 26
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Cursed", "Maddening", "Resinite"
+											set iChoosingArmorSet to 19
+										elseif iFoundHArmorSet == 28
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Dwemer", "Maddening", "Resinite"
+											set iChoosingArmorSet to 20
+										elseif iFoundHArmorSet == 15
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Obsidian", "Cursed", "Dwemer", "Maddening"
+											set iChoosingArmorSet to 21
+										elseif iFoundHArmorSet == 23
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Obsidian", "Cursed", "Dwemer", "Resinite"
+											set iChoosingArmorSet to 22
+										elseif iFoundHArmorSet == 27
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Obsidian", "Cursed", "Maddening", "Resinite"
+											set iChoosingArmorSet to 23
+										elseif iFoundHArmorSet == 29
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Obsidian", "Dwemer", "Maddening", "Resinite"
+											set iChoosingArmorSet to 24
+										elseif iFoundHArmorSet == 30
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Cursed", "Dwemer", "Maddening", "Resinite"
+											set iChoosingArmorSet to 25
+										elseif iFoundHArmorSet == 31
+											MessageBox "Found Multiple Sets of Heavy Armor", "Cancel" , "Back", "Obsidian", "Cursed", "Dwemer", "Maddening", "Resinite"
+											set iChoosingArmorSet to 26
+										endif
+									elseif bFoundHArmorSet == 0 && bFoundLArmorSet == 1
+										if iFoundLArmorSet == 1
+											set iSelectedArmorSet to 7
+										elseif iFoundLArmorSet == 2
+											set iSelectedArmorSet to 8
+										elseif iFoundLArmorSet == 4 
+											set iSelectedArmorSet to 9
+										elseif iFoundLArmorSet == 8 
+											set iSelectedArmorSet to 10
+										elseif iFoundLArmorSet == 16 
+											set iSelectedArmorSet to 11
+										elseif iFoundLArmorSet == 3
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Back", "Ayleidic", "Mythril"
+											set iChoosingArmorSet to 1
+										elseif iFoundLArmorSet == 5
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Ayleidic", "Malachite"
+											set iChoosingArmorSet to 2
+										elseif iFoundLArmorSet == 9
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Ayleidic", "Maddening"
+											set iChoosingArmorSet to 3
+										elseif iFoundLArmorSet == 17
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Ayleidic", "Resinite"
+											set iChoosingArmorSet to 4
+										elseif iFoundLArmorSet == 6
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Mythril", "Malachite"
+											set iChoosingArmorSet to 5
+										elseif iFoundLArmorSet == 10
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Mythril", "Maddening"
+											set iChoosingArmorSet to 6
+										elseif iFoundLArmorSet == 18
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Mythril", "Resinite"
+											set iChoosingArmorSet to 7
+										elseif iFoundLArmorSet == 12
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Malachite", "Maddening"
+											set iChoosingArmorSet to 8
+										elseif iFoundLArmorSet == 20
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Malachite", "Resinite"
+											set iChoosingArmorSet to 9
+										elseif iFoundLArmorSet == 24
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Maddening", "Resinite"
+											set iChoosingArmorSet to 10
+										elseif iFoundLArmorSet == 7
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Ayleidic", "Mythril", "Malachite"
+											set iChoosingArmorSet to 11
+										elseif iFoundLArmorSet == 11
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Ayleidic", "Mythril", "Maddening"
+											set iChoosingArmorSet to 12
+										elseif iFoundLArmorSet == 19
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Ayleidic", "Mythril", "Resinite"
+											set iChoosingArmorSet to 13
+										elseif iFoundLArmorSet == 13
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Ayleidic", "Malachite", "Maddening"
+											set iChoosingArmorSet to 14
+										elseif iFoundLArmorSet == 21
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Ayleidic", "Malachite", "Resinite"
+											set iChoosingArmorSet to 15
+										elseif iFoundLArmorSet == 25
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Ayleidic", "Maddening", "Resinite"
+											set iChoosingArmorSet to 16
+										elseif iFoundLArmorSet == 14
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Mythril", "Malachite", "Maddening"
+											set iChoosingArmorSet to 17
+										elseif iFoundLArmorSet == 22
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Mythril", "Malachite", "Resinite"
+											set iChoosingArmorSet to 18
+										elseif iFoundLArmorSet == 26
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Mythril", "Maddening", "Resinite"
+											set iChoosingArmorSet to 19
+										elseif iFoundLArmorSet == 28
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Malachite", "Maddening", "Resinite"
+											set iChoosingArmorSet to 20
+										elseif iFoundLArmorSet == 15
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Ayleidic", "Mythril", "Malachite", "Maddening"
+											set iChoosingArmorSet to 21
+										elseif iFoundLArmorSet == 23
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Ayleidic", "Mythril", "Malachite", "Resinite"
+											set iChoosingArmorSet to 22
+										elseif iFoundLArmorSet == 27
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Ayleidic", "Mythril", "Maddening", "Resinite"
+											set iChoosingArmorSet to 23
+										elseif iFoundLArmorSet == 29
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Ayleidic", "Malachite", "Maddening", "Resinite"
+											set iChoosingArmorSet to 24
+										elseif iFoundLArmorSet == 30
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Mythril", "Malachite", "Maddening", "Resinite"
+											set iChoosingArmorSet to 25
+										elseif iFoundLArmorSet == 31
+											MessageBox "Found Multiple Sets of Light Armor", "Cancel" , "Back", "Ayleidic", "Mythril", "Malachite", "Maddening", "Resinite"
+											set iChoosingArmorSet to 26
+										endif
+									endif
+								endif ;Choosing
+							elseif iChoosingWeaponSet == 1
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 1                                                          
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 2
+								endif
+							elseif iChoosingWeaponSet == 2
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 1
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 3
+								endif
+							elseif iChoosingWeaponSet == 3
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 1
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 4
+								endif
+							elseif iChoosingWeaponSet == 4
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 1
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 5
+								endif
+							elseif iChoosingWeaponSet == 5
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 2
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 3
+								endif
+							elseif iChoosingWeaponSet == 6
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 2
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 4
+								endif
+							elseif iChoosingWeaponSet == 7
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 2
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 5
+								endif
+							elseif iChoosingWeaponSet == 8
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 3
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 4
+								endif
+							elseif iChoosingWeaponSet == 9
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 3
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 5
+								endif
+							elseif iChoosingWeaponSet == 10
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 4
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 5
+								endif
+							elseif iChoosingWeaponSet == 11
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 1
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 2
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 3
+								endif
+							elseif iChoosingWeaponSet == 12
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 1
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 2
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 4
+								endif
+							elseif iChoosingWeaponSet == 13
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 1
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 2
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 5
+								endif
+							elseif iChoosingWeaponSet == 14
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 1
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 3
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 4
+								endif
+							elseif iChoosingWeaponSet == 15
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 1
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 3
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 5
+								endif
+							elseif iChoosingWeaponSet == 16
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 1
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 4
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 5
+								endif
+							elseif iChoosingWeaponSet == 17
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 2
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 3
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 4
+								endif
+							elseif iChoosingWeaponSet == 18
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 2
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 3
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 5
+								endif
+							elseif iChoosingWeaponSet == 19
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 2
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 4
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 5
+								endif
+							elseif iChoosingWeaponSet == 20
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 3
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 4
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 5
+								endif
+							elseif iChoosingWeaponSet == 21
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 1
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 2
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 3
+								elseif iChoice == 5
+									set iSelectedWeaponSet to 4
+								endif
+							elseif iChoosingWeaponSet == 22
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 1
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 2
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 3
+								elseif iChoice == 5
+									set iSelectedWeaponSet to 5
+								endif
+							elseif iChoosingWeaponSet == 23
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 1
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 2
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 4
+								elseif iChoice == 5
+									set iSelectedWeaponSet to 5
+								endif
+							elseif iChoosingWeaponSet == 24
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 1
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 3
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 4
+								elseif iChoice == 5
+									set iSelectedWeaponSet to 5
+								endif
+							elseif iChoosingWeaponSet == 25
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 2
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 3
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 4
+								elseif iChoice == 5
+									set iSelectedWeaponSet to 5
+								endif
+							elseif iChoosingWeaponSet == 26
+								set iChoice to GetButtonPressed
+								if iChoice == 0
+									set iDisplayedMenu to -2
+								elseif iChoice == 1
+									set iDisplayedMenu to -3
+								elseif iChoice == 2
+									set iSelectedWeaponSet to 1
+								elseif iChoice == 3
+									set iSelectedWeaponSet to 2
+								elseif iChoice == 4
+									set iSelectedWeaponSet to 3
+								elseif iChoice == 5
+									set iSelectedWeaponSet to 4
+								elseif iChoice == 6
+									set iSelectedWeaponSet to 5
+								endif
+							endif
+						elseif iSelectedWeaponSet == 1 ;Artifacts
+							if iFound0HWeaponSet == 1
+								set iSelectedWeaponSet to 6
+							elseif iFound0HWeaponSet == 2
+								set iSelectedWeaponSet to 7
+							elseif iFound0HWeaponSet == 3
+								MessageBox "Found Multiple sets of Weapons", "Cancel", "Back", "Artifacts(1/3)", "Artifacts(2/3)"
+								set iChoosingSubWeaponSet to 1
+							elseif iFound0HWeaponSet == 4
+								set iSelectedWeaponSet to 8
+							endif iFound0HWeaponSet == 5
+								MessageBox "Found Multiple sets of Weapons", "Cancel", "Back", "Artifacts(1/3)", "Artifacts(3/3)"
+								set iChoosingSubWeaponSet to 2
+							elseif iFound0HWeaponSet == 6
+								MessageBox "Found Multiple sets of Weapons", "Cancel", "Back", "Artifacts(1/3)","Artifacts(2/3)", "Artifacts(3/3)"
+								set iChoosingSubWeaponSet to 3
+							elseif iFound0HWeaponSet == 7
+								MessageBox "Found Multiple sets of Weapons", "Cancel", "Back", "Artifacts(2/3)", "Artifacts(3/3)"
+								set iChoosingSubWeaponSet to 4
+							endif
+						elseif iSelectedWeaponSet == 2 ;1H Blade
+							if iFound1HBladeWeaponSet == 1
+								set iSelectedSubWeaponSet to 4
+							elseif iFound1HBladeWeaponSet == 2
+								set iSelectedSubWeaponSet to 5
+							elseif iFound1HBladeWeaponSet == 4 
+								set iSelectedSubWeaponSet to 6
+							elseif iFound1HBladeWeaponSet == 8 
+								set iSelectedSubWeaponSet to 7
+							elseif iFound1HBladeWeaponSet == 3
+								MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel", "Back", "Longsword", "Longsword/Shortsword"
+								set iChoosingSubWeaponSet to 5
+							elseif iFound1HBladeWeaponSet == 5
+								MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword", "Shortswords"
+								set iChoosingSubWeaponSet to 6
+							elseif iFound1HBladeWeaponSet == 9
+								MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword", "Daggers"
+								set iChoosingSubWeaponSet to 7
+							elseif iFound1HBladeWeaponSet == 6
+								MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword/Shortsword", "Shortswords"
+								set iChoosingSubWeaponSet to 8
+							elseif iFound1HBladeWeaponSet == 10
+								MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword/Shortsword", "Daggers"
+								set iChoosingSubWeaponSet to 9
+							elseif iFound1HBladeWeaponSet == 12
+								MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Shortswords", "Daggers"
+								set iChoosingSubWeaponSet to 10
+							elseif iFound1HBladeWeaponSet == 7
+								MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword", "Longsword/Shortsword", "Shortswords"
+								set iChoosingSubWeaponSet to 11
+							elseif iFound1HBladeWeaponSet == 11
+								MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword", "Longsword/Shortsword", "Daggers"
+								set iChoosingSubWeaponSet to 12
+							elseif iFound1HBladeWeaponSet == 13
+								MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword", "Shortswords", "Daggers"
+								set iChoosingSubWeaponSet to 13
+							elseif iFound1HBladeWeaponSet == 14
+								MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword/Shortsword", "Shortswords", "Daggers"
+								set iChoosingSubWeaponSet to 14
+							elseif iFound1HBladeWeaponSet == 15
+								MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword", "Longsword/Shortsword", "Shortswords", "Daggers"
+								set iChoosingSubWeaponSet to 15
+							endif
+						elseif iSelectedWeaponSet == 3 ;1H Blunt
+							if iFound1HBluntWeaponSet == 1
+								set iSelectedSubWeaponSet to 8
+							elseif iFound1HBluntWeaponSet == 2
+								set iSelectedSubWeaponSet to 9
+							elseif iFound1HBluntWeaponSet == 4 
+								set iSelectedSubWeaponSet to 10
+							elseif iFound1HBluntWeaponSet == 3
+								MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel", "Back", "Mace", "Mace/Waraxe"
+								set iChoosingSubWeaponSet to 15
+							elseif iFound1HBluntWeaponSet == 5
+								MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel" , "Back", "Mace", "Waraxe"
+								set iChoosingSubWeaponSet to 16
+							elseif iFound1HBluntWeaponSet == 6
+								MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel" , "Back", "Mace/Waraxe", "Waraxe"
+								set iChoosingSubWeaponSet to 17
+							elseif iFound1HBluntWeaponSet == 7
+								MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel" , "Back", "Mace", "Mace/Waraxe", "Waraxe"
+								set iChoosingSubWeaponSet to 18
+						elseif iSelectedWeaponSet == 4 ;2H Weapon
+							if iFound2HWeaponSet == 1
+								set iSelectedSubWeaponSet to 11
+							elseif iFound2HWeaponSet == 2
+								set iSelectedSubWeaponSet to 12
+							elseif iFound2HWeaponSet == 4 
+								set iSelectedSubWeaponSet to 13
+							elseif iFound2HWeaponSet == 8 
+								set iSelectedSubWeaponSet to 14
+							elseif iFound2HWeaponSet == 3
+								MessageBox "Found Multiple 2H Weaponsets", "Cancel", "Back", "Battleaxe", "Claymore"
+								set iChoosingSubWeaponSet to 19
+							elseif iFound2HWeaponSet == 5
+								MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Warhammer/Claymore"
+								set iChoosingSubWeaponSet to 20
+							elseif iFound2HWeaponSet == 9
+								MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Warhammer"
+								set iChoosingSubWeaponSet to 21
+							elseif iFound2HWeaponSet == 6
+								MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Claymore", "Warhammer/Claymore"
+								set iChoosingSubWeaponSet to 22
+							elseif iFound2HWeaponSet == 10
+								MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Claymore", "Warhammer"
+								set iChoosingSubWeaponSet to 23
+							elseif iFound2HWeaponSet == 12
+								MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Warhammer/Claymore", "Warhammer"
+								set iChoosingSubWeaponSet to 24
+							elseif iFound2HWeaponSet == 7
+								MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Claymore", "Warhammer/Claymore"
+								set iChoosingSubWeaponSet to 25
+							elseif iFound2HWeaponSet == 11
+								MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Claymore", "Warhammer"
+								set iChoosingSubWeaponSet to 26
+							elseif iFound2HWeaponSet == 13
+								MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Warhammer/Claymore", "Warhammer"
+								set iChoosingSubWeaponSet to 27
+							elseif iFound2HWeaponSet == 14
+								MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Claymore", "Warhammer/Claymore", "Warhammer"
+								set iChoosingSubWeaponSet to 28
+							elseif iFound2HWeaponSet == 15
+								MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Claymore", "Warhammer/Claymore", "Warhammer"
+								set iChoosingSubWeaponSet to 29
+						elseif iSelectedWeaponSet == 5 ;Bows
+							if iFoundBowWeaponSet == 1
+								set iSelectedSubWeaponSet to 15
+							elseif iFoundBowWeaponSet == 2
+								set iSelectedSubWeaponSet to 16
+							elseif iFoundBowWeaponSet == 3
+								MessageBox "Found Multiple Bow Weaponsets", "Cancel" , "Back", "Bows 1/2", "Bows 2/2"
+								set iChoosingSubWeaponSet to 30
+							endif
+						endif
+					elseif iChoosingSubWeaponSet == 1
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 1
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 2
+						endif
+					elseif iChoosingSubWeaponSet == 2
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 1
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 3
+						endif
+					elseif iChoosingSubWeaponSet == 3
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 1
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 2
+						elseif iChoice == 4
+							set iSelectedSubWeaponSet to 3
+						endif
+					elseif iChoosingSubWeaponSet == 4
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 2
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 3
+						endif
+					elseif iChoosingSubWeaponSet == 5
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 4
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 5
+						endif
+					elseif iChoosingSubWeaponSet == 6
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 4
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 6
+						endif
+					elseif iChoosingSubWeaponSet == 7
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 4
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 7
+						endif
+					elseif iChoosingSubWeaponSet == 8
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 5
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 6
+						endif
+					elseif iChoosingSubWeaponSet == 9
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 5
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 7
+						endif
+					elseif iChoosingSubWeaponSet == 10
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 6
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 7
+						endif
+					elseif iChoosingSubWeaponSet == 11
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 4
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 5
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 6
+						endif
+					elseif iChoosingSubWeaponSet == 12
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 4
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 5
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 7
+						endif
+					elseif iChoosingSubWeaponSet == 13
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 4
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 6
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 7
+						endif
+					elseif iChoosingSubWeaponSet == 14
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 5
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 6
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 7
+						endif
+					elseif iChoosingSubWeaponSet == 15
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 4
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 5
+						elseif iChoice == 4
+							set iSelectedSubWeaponSet to 6
+						elseif iChoice == 5
+							set iSelectedSubWeaponSet to 7
+						endif
+					elseif iChoosingSubWeaponSet == 15
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 8
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 9
+						endif
+					elseif iChoosingSubWeaponSet == 16
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 8
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 10
+						endif
+					elseif iChoosingSubWeaponSet == 17
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 9
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 10
+						endif
+					elseif iChoosingSubWeaponSet == 18
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 8
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 9
+						elseif iChoice == 4
+							set iSelectedSubWeaponSet to 10
+						endif
+					elseif iChoosingSubWeaponSet == 19
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 11
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 12
+						endif
+					elseif iChoosingSubWeaponSet == 20
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 11
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 13
+						endif
+					elseif iChoosingSubWeaponSet == 21
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 11
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 14
+						endif
+					elseif iChoosingSubWeaponSet == 22
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 12
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 13
+						endif
+					elseif iChoosingSubWeaponSet == 23
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 12
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 14
+						endif
+					elseif iChoosingSubWeaponSet == 24
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 13
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 14
+						endif
+					elseif iChoosingSubWeaponSet == 25
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 11
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 12
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 13
+						endif
+					elseif iChoosingSubWeaponSet == 26
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 11
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 12
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 14
+						endif
+					elseif iChoosingSubWeaponSet == 27
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 11
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 13
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 14
+						endif
+					elseif iChoosingSubWeaponSet == 28
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 12
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 13
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 14
+						endif
+					elseif iChoosingSubWeaponSet == 29
+						set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 11
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 12
+						elseif iChoice == 4
+							set iSelectedSubWeaponSet to 13
+						elseif iChoice == 5
+							set iSelectedSubWeaponSet to 14
+						endif
+					elseif iChoosingSubWeaponSet == 30
+					set iChoice to GetButtonPressed
+						if iChoice == 0
+							set iDisplayedMenu to -2
+						elseif iChoice == 1
+							set iDisplayedMenu to -3
+						elseif iChoice == 2
+							set iSelectedSubWeaponSet to 15
+						elseif iChoice == 3
+							set iSelectedSubWeaponSet to 16
+					endif
+				elseif iSelectedSubWeaponSet == 1
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeArtifactQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeArtifactQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeArtifactQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeArtifactQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeArtifactQuest
+				elseif iSelectedSubWeaponSet == 2
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeArtifactTwoQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeArtifactTwoQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeArtifactTwoQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeArtifactTwoQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeArtifactTwoQuest
+				elseif iSelectedSubWeaponSet == 3
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeArtifactThreeQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeArtifactThreeQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeArtifactThreeQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeArtifactThreeQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeArtifactThreeQuest
+				elseif iSelectedSubWeaponSet == 4
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeFirst1HBladeWeaponQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeFirst1HBladeWeaponQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeFirst1HBladeWeaponQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeFirst1HBladeWeaponQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeFirst1HBladeWeaponQuest
+				elseif iSelectedSubWeaponSet == 5
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeSecond1HBladeWeaponQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeSecond1HBladeWeaponQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeSecond1HBladeWeaponQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeSecond1HBladeWeaponQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeSecond1HBladeWeaponQuest
+				elseif iSelectedSubWeaponSet == 6
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeThird1HBladeWeaponQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeThird1HBladeWeaponQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeThird1HBladeWeaponQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeThird1HBladeWeaponQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeThird1HBladeWeaponQuest
+				elseif iSelectedSubWeaponSet == 7
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeFourth1HBladeWeaponQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeFourth1HBladeWeaponQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeFourth1HBladeWeaponQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeFourth1HBladeWeaponQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeFourth1HBladeWeaponQuest
+				elseif iSelectedSubWeaponSet == 8
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeFirst1HBluntWeaponQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeFirst1HBluntWeaponQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeFirst1HBluntWeaponQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeFirst1HBluntWeaponQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeFirst1HBluntWeaponQuest
+				elseif iSelectedSubWeaponSet == 9
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeSecond1HBluntWeaponQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeSecond1HBluntWeaponQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeSecond1HBluntWeaponQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeSecond1HBluntWeaponQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeSecond1HBluntWeaponQuest
+				elseif iSelectedSubWeaponSet == 10
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeThird1HBluntWeaponQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeThird1HBluntWeaponQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeThird1HBluntWeaponQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeThird1HBluntWeaponQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeThird1HBluntWeaponQuest
+				elseif iSelectedSubWeaponSet == 11
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeFirst2HWeaponQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeFirst2HWeaponQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeFirst2HWeaponQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeFirst2HWeaponQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeFirst2HWeaponQuest
+				elseif iSelectedSubWeaponSet == 12
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeSecond2HWeaponQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeSecond2HWeaponQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeSecond2HWeaponQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeSecond2HWeaponQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeSecond2HWeaponQuest
+				elseif iSelectedSubWeaponSet == 13
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeThird2HWeaponQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeThird2HWeaponQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeThird2HWeaponQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeThird2HWeaponQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeThird2HWeaponQuest
+				elseif iSelectedSubWeaponSet == 14
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeFourth2HWeaponQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeFourth2HWeaponQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeFourth2HWeaponQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeFourth2HWeaponQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeFourth2HWeaponQuest
+				elseif iSelectedSubWeaponSet == 15
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeFirstBowWeaponQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeFirstBowWeaponQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeFirstBowWeaponQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeFirstBowWeaponQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeFirstBowWeaponQuest
+				elseif iSelectedSubWeaponSet == 16
+					StopQuest TEQQShrineInventoryCheckQuest
+					set TEQQShrineUpgradeSecondBowWeaponQuest.fQuestDelayTime to 0.01
+					set TEQQShrineUpgradeSecondBowWeaponQuest.iDisplayedMenu to 0
+					set TEQQShrineUpgradeSecondBowWeaponQuest.iChoosingItem to 0
+					set TEQQShrineUpgradeSecondBowWeaponQuest.iInventoryTier to 0
+					StartQuest TEQQShrineUpgradeSecondBowWeaponQuest
+				endif
+			elseif iChoosingArmorSet == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				endif
+			elseif iChoosingArmorSet == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				endif
+			elseif iChoosingArmorSet == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 4
+				endif
+			elseif iChoosingArmorSet == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 5
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 2
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				endif
+			elseif iChoosingArmorSet == 6
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 2
+				elseif iChoice == 3
+					set iSelectedArmorSet to 4
+				endif
+			elseif iChoosingArmorSet == 7
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 2
+				elseif iChoice == 3
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 8
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 3
+				elseif iChoice == 3
+					set iSelectedArmorSet to 4
+				endif
+			elseif iChoosingArmorSet == 9
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 3
+				elseif iChoice == 3
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 10
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 4
+				elseif iChoice == 3
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 11
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				elseif iChoice == 4
+					set iSelectedArmorSet to 3
+				endif
+			elseif iChoosingArmorSet == 12
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				elseif iChoice == 4
+					set iSelectedArmorSet to 4
+				endif
+			elseif iChoosingArmorSet == 13
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				elseif iChoice == 4
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 14
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				elseif iChoice == 4
+					set iSelectedArmorSet to 4
+				endif
+			elseif iChoosingArmorSet == 15
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				elseif iChoice == 4
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 16
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 4
+				elseif iChoice == 4
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 17
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 2
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				elseif iChoice == 4
+					set iSelectedArmorSet to 4
+				endif
+			elseif iChoosingArmorSet == 18
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 2
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				elseif iChoice == 4
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 19
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 2
+				elseif iChoice == 3
+					set iSelectedArmorSet to 4
+				elseif iChoice == 4
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 20
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 3
+				elseif iChoice == 3
+					set iSelectedArmorSet to 4
+				elseif iChoice == 4
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 21
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				elseif iChoice == 4
+					set iSelectedArmorSet to 3
+				elseif iChoice == 5
+					set iSelectedArmorSet to 4
+				endif
+			elseif iChoosingArmorSet == 22
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				elseif iChoice == 4
+					set iSelectedArmorSet to 3
+				elseif iChoice == 5
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 23
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				elseif iChoice == 4
+					set iSelectedArmorSet to 4
+				elseif iChoice == 5
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 24
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				elseif iChoice == 4
+					set iSelectedArmorSet to 4
+				elseif iChoice == 5
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 25
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 2
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				elseif iChoice == 4
+					set iSelectedArmorSet to 4
+				elseif iChoice == 5
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 26
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				elseif iChoice == 4
+					set iSelectedArmorSet to 3
+				elseif iChoice == 5
+					set iSelectedArmorSet to 4
+				elseif iChoice == 6
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 27
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				endif
+			elseif iChoosingArmorSet == 28
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				endif
+			elseif iChoosingArmorSet == 29
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 10
+				endif
+			elseif iChoosingArmorSet == 30
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 31
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 8
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				endif
+			elseif iChoosingArmorSet == 32
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 8
+				elseif iChoice == 3
+					set iSelectedArmorSet to 10
+				endif
+			elseif iChoosingArmorSet == 33
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 8
+				elseif iChoice == 3
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 34
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 9
+				elseif iChoice == 3
+					set iSelectedArmorSet to 10
+				endif
+			elseif iChoosingArmorSet == 35
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 9
+				elseif iChoice == 3
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 36
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 10
+				elseif iChoice == 3
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 37
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				elseif iChoice == 4
+					set iSelectedArmorSet to 9
+				endif
+			elseif iChoosingArmorSet == 38
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				elseif iChoice == 4
+					set iSelectedArmorSet to 10
+				endif
+			elseif iChoosingArmorSet == 39
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				elseif iChoice == 4
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 40
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				elseif iChoice == 4
+					set iSelectedArmorSet to 10
+				endif
+			elseif iChoosingArmorSet == 41
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				elseif iChoice == 4
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 42
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 10
+				elseif iChoice == 4
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 43
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 8
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				elseif iChoice == 4
+					set iSelectedArmorSet to 10
+				endif
+			elseif iChoosingArmorSet == 44
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 8
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				elseif iChoice == 4
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 45
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 8
+				elseif iChoice == 3
+					set iSelectedArmorSet to 10
+				elseif iChoice == 4
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 46
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 9
+				elseif iChoice == 3
+					set iSelectedArmorSet to 10
+				elseif iChoice == 4
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 47
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				elseif iChoice == 4
+					set iSelectedArmorSet to 9
+				elseif iChoice == 5
+					set iSelectedArmorSet to 10
+				endif
+			elseif iChoosingArmorSet == 48
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				elseif iChoice == 4
+					set iSelectedArmorSet to 9
+				elseif iChoice == 5
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 49
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				elseif iChoice == 4
+					set iSelectedArmorSet to 10
+				elseif iChoice == 5
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 50
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				elseif iChoice == 4
+					set iSelectedArmorSet to 10
+				elseif iChoice == 5
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 51
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 8
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				elseif iChoice == 4
+					set iSelectedArmorSet to 10
+				elseif iChoice == 5
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 52
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				elseif iChoice == 4
+					set iSelectedArmorSet to 9
+				elseif iChoice == 5
+					set iSelectedArmorSet to 10
+				elseif iChoice == 6
+					set iSelectedArmorSet to 11
+				endif
+			endif
+		elseif iSelectedArmorSet == 1
+			StopQuest TEQQShrineInventoryCheckQuest
+			set TEQQShrineUpgradeObsidianArmorQuest.fQuestDelayTime to 0.01
+			set TEQQShrineUpgradeObsidianArmorQuest.iDisplayedMenu to 0
+			set TEQQShrineUpgradeObsidianArmorQuest.iChoosingItem to 0
+			set TEQQShrineUpgradeObsidianArmorQuest.iInventoryTier to 0
+			StartQuest TEQQShrineUpgradeObsidianArmorQuest
+		elseif iSelectedArmorSet == 2
+			StopQuest TEQQShrineInventoryCheckQuest
+			set TEQQShrineUpgradeCursedArmorQuest.fQuestDelayTime to 0.01
+			set TEQQShrineUpgradeCursedArmorQuest.iDisplayedMenu to 0
+			set TEQQShrineUpgradeCursedArmorQuest.iChoosingItem to 0
+			set TEQQShrineUpgradeCursedArmorQuest.iInventoryTier to 0
+			StartQuest TEQQShrineUpgradeCursedArmorQuest
+		elseif iSelectedArmorSet == 3
+			StopQuest TEQQShrineInventoryCheckQuest
+			set TEQQShrineUpgradeDwemerArmorQuest.fQuestDelayTime to 0.01
+			set TEQQShrineUpgradeDwemerArmorQuest.iDisplayedMenu to 0
+			set TEQQShrineUpgradeDwemerArmorQuest.iChoosingItem to 0
+			set TEQQShrineUpgradeDwemerArmorQuest.iInventoryTier to 0
+			StartQuest TEQQShrineUpgradeDwemerArmorQuest
+		elseif iSelectedArmorSet == 4
+			StopQuest TEQQShrineInventoryCheckQuest
+			set TEQQShrineUpgradeMaddeningHArmorQuest.fQuestDelayTime to 0.01
+			set TEQQShrineUpgradeMaddeningHArmorQuest.iDisplayedMenu to 0
+			set TEQQShrineUpgradeMaddeningHArmorQuest.iChoosingItem to 0
+			set TEQQShrineUpgradeMaddeningHArmorQuest.iInventoryTier to 0
+			StartQuest TEQQShrineUpgradeMaddeningHArmorQuest
+		elseif iSelectedArmorSet == 5
+			StopQuest TEQQShrineInventoryCheckQuest
+			set TEQQShrineUpgradeResiniteHArmorQuest.fQuestDelayTime to 0.01
+			set TEQQShrineUpgradeResiniteHArmorQuest.iDisplayedMenu to 0
+			set TEQQShrineUpgradeResiniteHArmorQuest.iChoosingItem to 0
+			set TEQQShrineUpgradeResiniteHArmorQuest.iInventoryTier to 0
+			StartQuest TEQQShrineUpgradeResiniteHArmorQuest
+		elseif iSelectedArmorSet == 6
+			Message "There is no Heavy Armor Set 6 but theres a spot for it"
+		elseif iSelectedArmorSet == 7
+			StopQuest TEQQShrineInventoryCheckQuest
+			set TEQQShrineUpgradeAyleidicArmorQuest.fQuestDelayTime to 0.01
+			set TEQQShrineUpgradeAyleidicArmorQuest.iDisplayedMenu to 0
+			set TEQQShrineUpgradeAyleidicArmorQuest.iChoosingItem to 0
+			set TEQQShrineUpgradeAyleidicArmorQuest.iInventoryTier to 0
+			StartQuest TEQQShrineUpgradeAyleidicArmorQuest
+		elseif iSelectedArmorSet == 8
+			StopQuest TEQQShrineInventoryCheckQuest
+			set TEQQShrineUpgradeMythrilArmorQuest.fQuestDelayTime to 0.01
+			set TEQQShrineUpgradeMythrilArmorQuest.iDisplayedMenu to 0
+			set TEQQShrineUpgradeMythrilArmorQuest.iChoosingItem to 0
+			set TEQQShrineUpgradeMythrilArmorQuest.iInventoryTier to 0
+			StartQuest TEQQShrineUpgradeMythrilArmorQuest
+		elseif iSelectedArmorSet == 9
+			StopQuest TEQQShrineInventoryCheckQuest
+			set TEQQShrineUpgradeMalachiteArmorQuest.fQuestDelayTime to 0.01
+			set TEQQShrineUpgradeMalachiteArmorQuest.iDisplayedMenu to 0
+			set TEQQShrineUpgradeMalachiteArmorQuest.iChoosingItem to 0
+			set TEQQShrineUpgradeMalachiteArmorQuest.iInventoryTier to 0
+			StartQuest TEQQShrineUpgradeMalachiteArmorQuest
+		elseif iSelectedArmorSet == 10
+			StopQuest TEQQShrineInventoryCheckQuest
+			set TEQQShrineUpgradeMaddeningLArmorQuest.fQuestDelayTime to 0.01
+			set TEQQShrineUpgradeMaddeningLArmorQuest.iDisplayedMenu to 0
+			set TEQQShrineUpgradeMaddeningLArmorQuest.iChoosingItem to 0
+			set TEQQShrineUpgradeMaddeningLArmorQuest.iInventoryTier to 0
+			StartQuest TEQQShrineUpgradeMaddeningLArmorQuest
+		elseif iSelectedArmorSet == 11
+			StopQuest TEQQShrineInventoryCheckQuest
+			set TEQQShrineUpgradeResiniteLArmorQuest.fQuestDelayTime to 0.01
+			set TEQQShrineUpgradeResiniteLArmorQuest.iDisplayedMenu to 0
+			set TEQQShrineUpgradeResiniteLArmorQuest.iChoosingItem to 0
+			set TEQQShrineUpgradeResiniteLArmorQuest.iInventoryTier to 0
+			StartQuest TEQQShrineUpgradeResiniteLArmorQuest
+		elseif iSelectedArmorSet == 12
+			Message "There is no Light Armor Set 6 but theres a spot for it"
+		endif
+	elseif iDisplayedMenu == -1
+		Message "Nothing found to upgrade!"
+		StopQuest TEQQShrineInventoryCheckQuest
+	elseif iDisplayedMenu == -2
+		Message "Return when you are ready!"
+		StopQuest TEQQShrineInventoryCheckQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.fQuestDelayTime to 0.01
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to 0
+		StopQuest TEQQShrineInventoryCheckQuest
+		StartQuest TEQQShrineInitilizationQuest
+	endif
+end

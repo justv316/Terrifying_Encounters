@@ -1,0 +1,39 @@
+scriptname TeSummonFireElementalScript
+
+; Created by Fox
+
+ref refCaster
+ref refName
+float timer
+
+Begin ScriptEffectStart
+		set refCaster to GetSelf
+		set refName to refCaster.PlaceAtMe TESummonCreatureAtronachFlameLesser, 1, 32, 0
+		PlaySound3D SPLConjurationCast
+end
+
+Begin ScriptEffectUpdate
+	set timer to timer + GetSecondsPassed
+
+	if refName.GetDead == 1
+		refName.disable
+		return
+	endif
+	
+
+	if ( timer > 59 )
+		if refName.GetDead == 0
+			refName.disable
+		endif
+		return	
+	endif
+end
+
+Begin ScriptEffectFinish
+
+	if refName.GetDead == 0
+		refName.disable
+		return
+	endif
+	
+end
