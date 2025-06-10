@@ -493,14 +493,14 @@ begin gamemode
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount TE01WeaponRisingBloodRipper > 0 || Player.GetItemCount TE02WeaponRisingBloodRipper > 0 || Player.GetItemCount TE03WeaponRisingBloodRipper > 0 || Player.GetItemCount TE04WeaponRisingBloodRipper > 0 || Player.GetItemCount TE05WeaponRisingBloodRipper > 0
-				set TEQQShrineUpgradeArtifactTwoQuest.bRisingBloodRipper to 1
+			if Player.GetItemCount TE01WeaponRisingBloodDrinker > 0 || Player.GetItemCount TE02WeaponRisingBloodDrinker > 0 || Player.GetItemCount TE03WeaponRisingBloodDrinker > 0 || Player.GetItemCount TE04WeaponRisingBloodDrinker > 0 || Player.GetItemCount TE05WeaponRisingBloodDrinker > 0
+				set TEQQShrineUpgradeArtifactTwoQuest.bRisingBloodDrinker to 1
 				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond0HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount TE01WeaponWaningBloodRipper > 0 || Player.GetItemCount TE02WeaponWaningBloodRipper > 0 || Player.GetItemCount TE03WeaponWaningBloodRipper > 0 || Player.GetItemCount TE04WeaponWaningBloodRipper > 0 || Player.GetItemCount TE05WeaponWaningBloodRipper > 0
-				set TEQQShrineUpgradeArtifactTwoQuest.bWaningBloodRipper to 1
+			if Player.GetItemCount TE01WeaponWaningBloodDrinker > 0 || Player.GetItemCount TE02WeaponWaningBloodDrinker > 0 || Player.GetItemCount TE03WeaponWaningBloodDrinker > 0 || Player.GetItemCount TE04WeaponWaningBloodDrinker > 0 || Player.GetItemCount TE05WeaponWaningBloodDrinker > 0
+				set TEQQShrineUpgradeArtifactTwoQuest.bWaningBloodDrinker to 1
 				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond0HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1

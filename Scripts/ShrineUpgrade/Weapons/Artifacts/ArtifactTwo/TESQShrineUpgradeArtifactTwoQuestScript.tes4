@@ -9,8 +9,8 @@ short bIntricateEbonyMace
 short bIntricateSilverClaymore
 short bIntricateSilverLongsword
 short bResiniteMaddeningWarhammer
-short bRisingBloodripper
-short bWaningBloodripper
+short bRisingBloodDrinker
+short bWaningBloodDrinker
 
 begin gamemode
 	if iDisplayedMenu == 0 
@@ -27,10 +27,10 @@ begin gamemode
 			if bResiniteMaddeningWarhammer > 0
 				set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 )
 			endif
-			if bRisingBloodripper > 0
+			if bRisingBloodDrinker > 0
 				set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 * 2 )
 			endif
-			if bWaningBloodripper > 0
+			if bWaningBloodDrinker > 0
 				set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 * 2 * 2 )
 			endif
 			set iChoosingItem to -1	
@@ -57,7 +57,7 @@ begin gamemode
 				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Resinite Maddening Warhammer"
 				set iChoosingItem to 9
 			elseif iInventoryTier == 17
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Rising-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Rising, The Blood Drinker"
 				set iChoosingItem to 10
 			elseif iInventoryTier == 6
 				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Intricate Silver Longsword"
@@ -66,16 +66,16 @@ begin gamemode
 				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Resinite Maddening Warhammer"
 				set iChoosingItem to 12
 			elseif iInventoryTier == 18
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Rising-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Rising, The Blood Drinker"
 				set iChoosingItem to 13
 			elseif iInventoryTier == 12
 				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Longsword", "Resinite Maddening Warhammer"
 				set iChoosingItem to 14
 			elseif iInventoryTier == 20
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Longsword", "Rising-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Longsword", "Rising, The Blood Drinker"
 				set iChoosingItem to 15
 			elseif iInventoryTier == 24
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Resinite Maddening Warhammer", "Rising-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Resinite Maddening Warhammer", "Rising, The Blood Drinker"
 				set iChoosingItem to 16
 			elseif iInventoryTier == 7
 				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Intricate Silver Longsword"
@@ -84,139 +84,139 @@ begin gamemode
 				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Resinite Maddening Warhammer"
 				set iChoosingItem to 18
 			elseif iInventoryTier == 19
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Rising-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Rising, The Blood Drinker"
 				set iChoosingItem to 19
 			elseif iInventoryTier == 13
 				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Longsword", "Resinite Maddening Warhammer"
 				set iChoosingItem to 20
 			elseif iInventoryTier == 21
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Longsword", "Rising-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Longsword", "Rising, The Blood Drinker"
 				set iChoosingItem to 21
 			elseif iInventoryTier == 25
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Resinite Maddening Warhammer", "Rising-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Resinite Maddening Warhammer", "Rising, The Blood Drinker"
 				set iChoosingItem to 22
 			elseif iInventoryTier == 14
 				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Intricate Silver Longsword", "Resinite Maddening Warhammer"
 				set iChoosingItem to 23
 			elseif iInventoryTier == 22
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Intricate Silver Longsword", "Rising-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Intricate Silver Longsword", "Rising, The Blood Drinker"
 				set iChoosingItem to 24
 			elseif iInventoryTier == 26
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Resinite Maddening Warhammer", "Rising-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Resinite Maddening Warhammer", "Rising, The Blood Drinker"
 				set iChoosingItem to 25
 			elseif iInventoryTier == 28
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising, The Blood Drinker"
 				set iChoosingItem to 26
 			elseif iInventoryTier == 15
 				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Intricate Silver Longsword", "Resinite Maddening Warhammer"
 				set iChoosingItem to 27
 			elseif iInventoryTier == 23
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Intricate Silver Longsword", "Rising-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Intricate Silver Longsword", "Rising, The Blood Drinker"
 				set iChoosingItem to 28
 			elseif iInventoryTier == 27
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Resinite Maddening Warhammer", "Rising-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Resinite Maddening Warhammer", "Rising, The Blood Drinker"
 				set iChoosingItem to 29
 			elseif iInventoryTier == 29
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising, The Blood Drinker"
 				set iChoosingItem to 30
 			elseif iInventoryTier == 30
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising, The Blood Drinker"
 				set iChoosingItem to 31
 			elseif iInventoryTier == 31
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising, The Blood Drinker"
 				set iChoosingItem to 32
 			elseif iInventoryTier == 33
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Waning, The Blood Drinker"
 				set iChoosingItem to 33
 			elseif iInventoryTier == 34
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Waning, The Blood Drinker"
 				set iChoosingItem to 34
 			elseif iInventoryTier == 35
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Waning, The Blood Drinker"
 				set iChoosingItem to 35
 			elseif iInventoryTier == 36
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Longsword", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Longsword", "Waning, The Blood Drinker"
 				set iChoosingItem to 36
 			elseif iInventoryTier == 37
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Longsword", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Longsword", "Waning, The Blood Drinker"
 				set iChoosingItem to 37
 			elseif iInventoryTier == 38
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Intricate Silver Longsword", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Intricate Silver Longsword", "Waning, The Blood Drinker"
 				set iChoosingItem to 38
 			elseif iInventoryTier == 39
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Intricate Silver Longsword", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Intricate Silver Longsword", "Waning, The Blood Drinker"
 				set iChoosingItem to 39
 			elseif iInventoryTier == 40
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Resinite Maddening Warhammer", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Resinite Maddening Warhammer", "Waning, The Blood Drinker"
 				set iChoosingItem to 40
 			elseif iInventoryTier == 41
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Resinite Maddening Warhammer", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Resinite Maddening Warhammer", "Waning, The Blood Drinker"
 				set iChoosingItem to 41
 			elseif iInventoryTier == 42
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Resinite Maddening Warhammer", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Resinite Maddening Warhammer", "Waning, The Blood Drinker"
 				set iChoosingItem to 42
 			elseif iInventoryTier == 43
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Resinite Maddening Warhammer", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Resinite Maddening Warhammer", "Waning, The Blood Drinker"
 				set iChoosingItem to 43
 			elseif iInventoryTier == 44
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Waning, The Blood Drinker"
 				set iChoosingItem to 44
 			elseif iInventoryTier == 45
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Waning, The Blood Drinker"
 				set iChoosingItem to 45
 			elseif iInventoryTier == 46
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Waning, The Blood Drinker"
 				set iChoosingItem to 46
 			elseif iInventoryTier == 47
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Waning, The Blood Drinker"
 				set iChoosingItem to 47
 			elseif iInventoryTier == 48
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 48
 			elseif iInventoryTier == 49
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 49
 			elseif iInventoryTier == 50
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 50
 			elseif iInventoryTier == 51
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 51
 			elseif iInventoryTier == 52
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Longsword", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Longsword", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 52
 			elseif iInventoryTier == 53
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Longsword", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Longsword", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 53
 			elseif iInventoryTier == 54
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Intricate Silver Longsword", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Intricate Silver Longsword", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 54
 			elseif iInventoryTier == 55
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Item 3", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Item 3", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 55
 			elseif iInventoryTier == 56
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Resinite Maddening Warhammer", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Resinite Maddening Warhammer", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 56
 			elseif iInventoryTier == 57
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Resinite Maddening Warhammer", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Resinite Maddening Warhammer", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 57
 			elseif iInventoryTier == 58
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Resinite Maddening Warhammer", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Resinite Maddening Warhammer", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 58
 			elseif iInventoryTier == 59
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Resinite Maddening Warhammer", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Resinite Maddening Warhammer", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 59
 			elseif iInventoryTier == 60
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 60
 			elseif iInventoryTier == 61
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 61
 			elseif iInventoryTier == 62
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Silver Claymore", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 62
 			elseif iInventoryTier == 63
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising-Bloodripper", "Waning-Bloodripper"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Intricate Ebony Mace", "Intricate Silver Claymore", "Intricate Silver Longsword", "Resinite Maddening Warhammer", "Rising, The Blood Drinker", "Waning, The Blood Drinker"
 				set iChoosingItem to 63
 			endif
 		elseif iChoosingItem == 1
@@ -1055,25 +1055,25 @@ begin gamemode
 		StopQuest TEQQShrineUpgradeArtifactTwoQuest
 		StartQuest TEQQUpgradeResiniteMaddeningWarhammerQuest
 	elseif iDisplayedMenu == 5
-		set TEQQUpgradeRisingBloodripperQuest.fQuestDelayTime to 0.01
-		set TEQQUpgradeRisingBloodripperQuest.iDisplayedMenu to 1
-		set TEQQUpgradeRisingBloodripperQuest.iUpgradePerformed to 0
-		set TEQQUpgradeRisingBloodripperQuest.iChoosing to 0
-		set TEQQUpgradeRisingBloodripperQuest.iChoosingTier to 0
-		set TEQQUpgradeRisingBloodripperQuest.iPlayerGold to Player.GetItemCount Gold001
-		set TEQQUpgradeRisingBloodripperQuest.iPlayerLevel to Player.GetLevel
+		set TEQQUpgradeRisingBloodDrinkerQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeRisingBloodDrinkerQuest.iDisplayedMenu to 1
+		set TEQQUpgradeRisingBloodDrinkerQuest.iUpgradePerformed to 0
+		set TEQQUpgradeRisingBloodDrinkerQuest.iChoosing to 0
+		set TEQQUpgradeRisingBloodDrinkerQuest.iChoosingTier to 0
+		set TEQQUpgradeRisingBloodDrinkerQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeRisingBloodDrinkerQuest.iPlayerLevel to Player.GetLevel
 		StopQuest TEQQShrineUpgradeArtifactTwoQuest
-		StartQuest TEQQUpgradeRisingBloodripperQuest
+		StartQuest TEQQUpgradeRisingBloodDrinkerQuest
 	elseif iDisplayedMenu == 6 	
-		set TEQQUpgradeWaningBloodripperQuest.fQuestDelayTime to 0.01
-		set TEQQUpgradeWaningBloodripperQuest.iDisplayedMenu to 1
-		set TEQQUpgradeWaningBloodripperQuest.iUpgradePerformed to 0
-		set TEQQUpgradeWaningBloodripperQuest.iChoosing to 0
-		set TEQQUpgradeWaningBloodripperQuest.iChoosingTier to 0
-		set TEQQUpgradeWaningBloodripperQuest.iPlayerGold to Player.GetItemCount Gold001
-		set TEQQUpgradeWaningBloodripperQuest.iPlayerLevel to Player.GetLevel
+		set TEQQUpgradeWaningBloodDrinkerQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeWaningBloodDrinkerQuest.iDisplayedMenu to 1
+		set TEQQUpgradeWaningBloodDrinkerQuest.iUpgradePerformed to 0
+		set TEQQUpgradeWaningBloodDrinkerQuest.iChoosing to 0
+		set TEQQUpgradeWaningBloodDrinkerQuest.iChoosingTier to 0
+		set TEQQUpgradeWaningBloodDrinkerQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeWaningBloodDrinkerQuest.iPlayerLevel to Player.GetLevel
 		StopQuest TEQQShrineUpgradeArtifactTwoQuest
-		StartQuest TEQQUpgradeWaningBloodripperQuest
+		StartQuest TEQQUpgradeWaningBloodDrinkerQuest
 	elseif iDisplayedMenu == -1
 		Message "Nothing found to upgrade."
 		StopQuest TEQQShrineUpgradeArtifactTwoQuest

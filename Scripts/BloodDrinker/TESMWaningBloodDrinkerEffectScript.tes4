@@ -1,0 +1,31 @@
+scn TESMWaningBloodDrinkerEffectScript
+
+ref rTarget
+
+short bKillingBlow
+
+begin ScriptEffectStart
+	set bKillingBlow to 0
+	set rTarget to GetSelf
+end
+
+begin ScriptEffectUpdate
+	if bKillingBlow == 0
+		if rTarget.GetDead == 1
+			if TEiWeaponWaningKills < 1
+				set TEiWeaponWaningKills to TEiWeaponWaningKills + 1
+				Message "Waning, The Blood Drinker has consumed a life."
+				set bKillingBlow to 1
+			elseif TEiWeaponWaningKills >= 1 && TEiWeaponWaningKills < 9
+				set TEiWeaponWaningKills to TEiWeaponWaningKills + 1
+				set bKillingBlow to 1
+			elseif TEiWeaponWaningKills == 9
+				set TEiWeaponWaningKills to TEiWeaponWaningKills + 1
+				Message "Waning has become Blood Drunk."
+				set bKillingBlow to 1
+			elseif TEiWeaponWaningKills >= 10
+				set bKillingBlow to 1
+			endif
+		endif
+	endif
+end

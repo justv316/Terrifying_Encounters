@@ -121,8 +121,8 @@ begin gamemode
 		set TEQQShrineUpgradeArtifactTwoQuest.bIntricateSilverClaymore to 0
 		set TEQQShrineUpgradeArtifactTwoQuest.bIntricateSilverLongsword to 0
 		set TEQQShrineUpgradeArtifactTwoQuest.bResiniteMaddeningWarhammer to 0
-		set TEQQShrineUpgradeArtifactTwoQuest.bRisingBloodRipper to 0
-		set TEQQShrineUpgradeArtifactTwoQuest.bWaningBloodRipper to 0
+		set TEQQShrineUpgradeArtifactTwoQuest.bRisingBloodDrinker to 0
+		set TEQQShrineUpgradeArtifactTwoQuest.bWaningBloodDrinker to 0
 		set TEQQShrineUpgradeArtifactThreeQuest.bAkaviriOdachi to 0
 		set TEQQShrineUpgradeArtifactThreeQuest.bAkaviriUchigatana to 0
 		set TEQQShrineUpgradeArtifactThreeQuest.bIntricateSilverShortsword to 0
