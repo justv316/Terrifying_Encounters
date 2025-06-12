@@ -1,0 +1,35 @@
+scn TESMWeapTsaesciRisingBloodDrinkerEffectScript
+
+ref rTarget
+
+short bKillingBlow
+
+begin ScriptEffectStart
+	set bKillingBlow to 0
+	set rTarget to GetSelf
+end
+
+begin ScriptEffectUpdate
+	if bKillingBlow == 0
+		if rTarget.GetDead == 1
+			if TEiWeaponRisingKills < 1
+				set TEiWeaponRisingKills to TEiWeaponRisingKills + 1
+				Message "Rising has consumed a life."
+			elseif TEiWeaponRisingKills >= 1 && TEiWeaponRisingKills < 9
+				set TEiWeaponRisingKills to TEiWeaponRisingKills + 1
+			elseif TEiWeaponRisingKills == 10
+				set TEiWeaponRisingKills to TEiWeaponRisingKills + 1
+				Message "Rising has become Blood Drunk."
+			endif
+			set bKillingBlow to 1
+			if TEiWeaponTwinspiritKills < 50
+				set TEiWeaponTwinspiritKills to TEiWeaponTwinspiritKills + 1
+			elseif TEiWeaponTwinspiritKills == 50
+				Message "The Twinspirits Waning & Rising have become permanently Blood Drunk."
+				set TEiWeaponTwinspiritKills to TEiWeaponTwinspiritKills + 1
+			elseif TEiWeaponTwinspiritKills >= 51
+			set TEiWeaponTwinspiritKills to TEiWeaponTwinspiritKills + 1
+			endif
+		endif
+	endif
+end

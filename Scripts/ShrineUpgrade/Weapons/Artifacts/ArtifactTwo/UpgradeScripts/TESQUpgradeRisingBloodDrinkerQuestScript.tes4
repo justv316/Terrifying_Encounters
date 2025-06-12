@@ -16,22 +16,22 @@ begin gameMode
 			if iChoosing == 0
 				if iChoosingTier == 0
 					set iInventoryTier to 0
-					if Player.GetItemCount TE01WeaponRisingBloodDrinker > 0
+					if Player.GetItemCount TE01WeaponRisingBloodDrinker > 0 || Player.GetItemCount TE01WeaponRisingBloodDrinkerA > 0
 						set iInventoryTier to iInventoryTier + ( 1 * 1 )
 					endif
-					if Player.GetItemCount TE02WeaponRisingBloodDrinker > 0
+					if Player.GetItemCount TE02WeaponRisingBloodDrinker > 0 || Player.GetItemCount TE02WeaponRisingBloodDrinkerA > 0
 						set iInventoryTier to iInventoryTier + ( 2 * 1 )
 					endif
-					if Player.GetItemCount TE03WeaponRisingBloodDrinker > 0
+					if Player.GetItemCount TE03WeaponRisingBloodDrinker > 0 || Player.GetItemCount TE03WeaponRisingBloodDrinkerA > 0
 						set iInventoryTier to iInventoryTier + ( 2 * 2 )
 					endif
-					if Player.GetItemCount TE04WeaponRisingBloodDrinker > 0
+					if Player.GetItemCount TE04WeaponRisingBloodDrinker > 0 || Player.GetItemCount TE04WeaponRisingBloodDrinkerA > 0
 						set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 )
 					endif
-					if Player.GetItemCount TE05WeaponRisingBloodDrinker > 0
+					if Player.GetItemCount TE05WeaponRisingBloodDrinker > 0 || Player.GetItemCount TE05WeaponRisingBloodDrinkerA > 0
 						set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 * 2 )
 					endif
-					if Player.GetItemCount TE06WeaponRisingBloodDrinker > 0
+					if Player.GetItemCount TE06WeaponRisingBloodDrinker > 0 || Player.GetItemCount TE06WeaponRisingBloodDrinkerA > 0
 						set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 * 2 * 2 )
 					endif
 					set iChoosingTier to 1
@@ -580,9 +580,15 @@ begin gameMode
 			endif
 		elseif iUpgradePerformed == 1
 			if iPlayerGold >= 100000
-				Player.RemoveItem Gold001 100000
-				Player.RemoveItem TE01WeaponRisingBloodDrinker 1
-				Player.Additem TE02WeaponRisingBloodDrinker 1
+							Player.RemoveItem Gold001 100000
+				if Player.GetItemCount TE01WeaponRisingBloodDrinkerA == 1
+					Player.RemoveItem TE01WeaponRisingBloodDrinkerA 1
+					Player.Additem TE02WeaponRisingBloodDrinkerA 1
+				else
+					Player.RemoveItem TE01WeaponRisingBloodDrinker 1
+					Player.Additem TE02WeaponRisingBloodDrinker 1
+					
+				endif
 				set iDisplayedMenu to -1
 			elseif iPlayerGold < 100000
 				Message "You require 100,000 gold to perform this upgrade"
@@ -592,8 +598,13 @@ begin gameMode
 			if iPlayerLevel >= 29
 				if iPlayerGold >= 250000
 					Player.RemoveItem Gold001 250000
-					Player.RemoveItem TE02WeaponRisingBloodDrinker 1
-					Player.Additem TE03WeaponRisingBloodDrinker 1
+					if Player.GetItemCount TE02WeaponRisingBloodDrinkerA == 1
+						Player.RemoveItem TE02WeaponRisingBloodDrinkerA 1
+						Player.Additem TE03WeaponRisingBloodDrinkerA 1
+					else
+						Player.RemoveItem TE02WeaponRisingBloodDrinker 1
+						Player.Additem TE03WeaponRisingBloodDrinker 1
+					endif
 					set iDisplayedMenu to -1
 				elseif iPlayerGold < 250000
 					Message "You require 250,000 gold to perform this upgrade"
@@ -607,8 +618,13 @@ begin gameMode
 			if iPlayerLevel >= 34
 				if iPlayerGold >= 500000
 					Player.RemoveItem Gold001 500000
-					Player.RemoveItem TE03WeaponRisingBloodDrinker 1
-					Player.Additem TE04WeaponRisingBloodDrinker 1
+					if Player.GetItemCount TE03WeaponRisingBloodDrinkerA == 1
+						Player.RemoveItem TE03WeaponRisingBloodDrinkerA 1
+						Player.Additem TE04WeaponRisingBloodDrinkerA 1
+					else
+						Player.RemoveItem TE03WeaponRisingBloodDrinker 1
+						Player.Additem TE04WeaponRisingBloodDrinker 1
+					endif
 					set iDisplayedMenu to -1
 				elseif iPlayerGold < 500000
 					Message "You require 500,000 gold to perform this upgrade"
@@ -622,8 +638,13 @@ begin gameMode
 			if iPlayerLevel >= 39
 				if iPlayerGold >= 750000
 					Player.RemoveItem Gold001 750000
-					Player.RemoveItem TE04WeaponRisingBloodDrinker 1
-					Player.Additem TE05WeaponRisingBloodDrinker 1
+					if Player.GetItemCount TE04WeaponRisingBloodDrinkerA == 1
+						Player.RemoveItem TE04WeaponRisingBloodDrinkerA 1
+						Player.Additem TE05WeaponRisingBloodDrinkerA 1
+					else
+						Player.RemoveItem TE04WeaponRisingBloodDrinker 1
+						Player.Additem TE05WeaponRisingBloodDrinker 1
+					endif
 					set iDisplayedMenu to -1
 				elseif iPlayerGold < 750000
 					Message "You require 750,000 gold to perform this upgrade"
@@ -637,8 +658,13 @@ begin gameMode
 			if iPlayerLevel >= 44
 				if iPlayerGold >= 1000000
 					Player.RemoveItem Gold001 1000000
-					Player.RemoveItem TE05WeaponRisingBloodDrinker 1
-					Player.Additem TE06WeaponRisingBloodDrinker 1
+					if Player.GetItemCount TE04WeaponRisingBloodDrinkerA == 1
+						Player.RemoveItem TE05WeaponRisingBloodDrinkerA 1
+						Player.Additem TE06WeaponRisingBloodDrinkerA 1
+					else
+						Player.RemoveItem TE05WeaponRisingBloodDrinker 1
+						Player.Additem TE06WeaponRisingBloodDrinker 1
+					endif
 					set iDisplayedMenu to -1
 				elseif iPlayerGold < 1000000
 					Message "You require 1,000,000 gold to perform this upgrade"

@@ -505,6 +505,18 @@ begin gamemode
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
+			if Player.GetItemCount TE01WeaponRisingBloodDrinkerA > 0 || Player.GetItemCount TE02WeaponRisingBloodDrinkerA > 0 || Player.GetItemCount TE03WeaponRisingBloodDrinkerA > 0 || Player.GetItemCount TE04WeaponRisingBloodDrinkerA > 0 || Player.GetItemCount TE05WeaponRisingBloodDrinkerA > 0
+				set TEQQShrineUpgradeArtifactTwoQuest.bRisingBloodDrinker to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponWaningBloodDrinkerA > 0 || Player.GetItemCount TE02WeaponWaningBloodDrinkerA > 0 || Player.GetItemCount TE03WeaponWaningBloodDrinkerA > 0 || Player.GetItemCount TE04WeaponWaningBloodDrinkerA > 0 || Player.GetItemCount TE05WeaponWaningBloodDrinkerA > 0
+				set TEQQShrineUpgradeArtifactTwoQuest.bWaningBloodDrinker to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
 			if Player.GetItemCount TE01WeaponAkaviriOdachi > 0 || Player.GetItemCount TE02WeaponAkaviriOdachi > 0 || Player.GetItemCount TE03WeaponAkaviriOdachi > 0 || Player.GetItemCount TE04WeaponAkaviriOdachi > 0 || Player.GetItemCount TE05WeaponAkaviriOdachi > 0
 				set TEQQShrineUpgradeArtifactThreeQuest.bAkaviriOdachi to 1
 				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird0HWeaponSet to 1

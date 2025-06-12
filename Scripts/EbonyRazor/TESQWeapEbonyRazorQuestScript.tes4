@@ -1,0 +1,35 @@
+scn TESQWeapEbonyRazorQuestScript
+
+float fQuestDelayTime
+short bActivated
+
+begin gamemode
+	if bActivated == 1
+		if TEiWeaponEbonyRazorKills >= 15 && Player.IsInCombat == 0  && Player.IsRidingHorse == 0
+			if Player.GetItemCount TE01WeaponEbonyRazor == 1
+				Player.RemoveItem TE01WeaponEbonyRazor 1
+				Player.AddItem TE01WeaponEbonyRazorA 1
+			endif
+			if Player.GetItemCount TE02WeaponEbonyRazor == 1
+				Player.RemoveItem TE02WeaponEbonyRazor 1
+				Player.AddItem TE02WeaponEbonyRazorA 1
+			endif
+			if Player.GetItemCount TE03WeaponEbonyRazor == 1
+				Player.RemoveItem TE03WeaponEbonyRazor 1
+				Player.AddItem TE03WeaponEbonyRazorA 1
+			endif
+			if Player.GetItemCount TE04WeaponEbonyRazor == 1
+				Player.RemoveItem TE04WeaponEbonyRazor 1
+				Player.AddItem TE04WeaponEbonyRazorA 1
+			endif
+			if Player.GetItemCount TE05WeaponEbonyRazor == 1
+				Player.RemoveItem TE05WeaponEbonyRazor 1
+				Player.AddItem TE05WeaponEbonyRazorA 1
+			endif
+			if Player.GetItemCount TE06WeaponEbonyRazor == 1
+				Player.RemoveItem TE06WeaponEbonyRazor 1
+				Player.AddItem TE06WeaponEbonyRazorA 1
+			endif
+		endif
+	endif
+end

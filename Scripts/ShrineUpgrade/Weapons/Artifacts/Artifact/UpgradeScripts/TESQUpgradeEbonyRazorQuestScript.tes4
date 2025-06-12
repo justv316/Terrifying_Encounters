@@ -16,22 +16,22 @@ begin gameMode
 			if iChoosing == 0
 				if iChoosingTier == 0
 					set iInventoryTier to 0
-					if Player.GetItemCount TE01WeaponEbonyRazor > 0
+					if Player.GetItemCount TE01WeaponEbonyRazor > 0 || Player.GetItemCount TE01WeaponEbonyRazorA > 0
 						set iInventoryTier to iInventoryTier + ( 1 * 1 )
 					endif
-					if Player.GetItemCount TE02WeaponEbonyRazor > 0
+					if Player.GetItemCount TE02WeaponEbonyRazor > 0 || Player.GetItemCount TE02WeaponEbonyRazorA > 0
 						set iInventoryTier to iInventoryTier + ( 2 * 1 )
 					endif
-					if Player.GetItemCount TE03WeaponEbonyRazor > 0
+					if Player.GetItemCount TE03WeaponEbonyRazor > 0 || Player.GetItemCount TE03WeaponEbonyRazorA > 0
 						set iInventoryTier to iInventoryTier + ( 2 * 2 )
 					endif
-					if Player.GetItemCount TE04WeaponEbonyRazor > 0
+					if Player.GetItemCount TE04WeaponEbonyRazor > 0 || Player.GetItemCount TE04WeaponEbonyRazorA > 0
 						set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 )
 					endif
-					if Player.GetItemCount TE05WeaponEbonyRazor > 0
+					if Player.GetItemCount TE05WeaponEbonyRazor > 0 || Player.GetItemCount TE05WeaponEbonyRazorA > 0
 						set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 * 2 )
 					endif
-					if Player.GetItemCount TE06WeaponEbonyRazor > 0
+					if Player.GetItemCount TE06WeaponEbonyRazor > 0 || Player.GetItemCount TE06WeaponEbonyRazorA > 0
 						set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 * 2 * 2 )
 					endif
 					set iChoosingTier to 1
@@ -581,8 +581,13 @@ begin gameMode
 		elseif iUpgradePerformed == 1
 			if iPlayerGold >= 100000
 				Player.RemoveItem Gold001 100000
-				Player.Removeitem TE01WeaponEbonyRazor 1
-				Player.Additem TE02WeaponEbonyRazor 1
+					if Player.GetItemCount TE01WeaponEbonyRazorA == 1
+						Player.Removeitem TE01WeaponEbonyRazorA 1
+						Player.Additem TE02WeaponEbonyRazorA 1
+					else
+						Player.Removeitem TE01WeaponEbonyRazor 1
+						Player.Additem TE02WeaponEbonyRazor 1
+					endif
 				set iDisplayedMenu to -1
 			elseif iPlayerGold < 100000
 				Message "You require 100,000 gold to perform this upgrade"
@@ -592,8 +597,13 @@ begin gameMode
 			if iPlayerLevel >= 29
 				if iPlayerGold >= 250000
 					Player.RemoveItem Gold001 250000
-					Player.Removeitem TE02WeaponEbonyRazor 1
-					Player.Additem TE03WeaponEbonyRazor 1
+					if Player.GetItemCount TE02WeaponEbonyRazorA == 1
+						Player.Removeitem TE02WeaponEbonyRazorA 1
+						Player.Additem TE03WeaponEbonyRazorA 1
+					else
+						Player.Removeitem TE02WeaponEbonyRazor 1
+						Player.Additem TE03WeaponEbonyRazor 1
+					endif
 					set iDisplayedMenu to -1
 				elseif iPlayerGold < 250000
 					Message "You require 250,000 gold to perform this upgrade"
@@ -607,8 +617,13 @@ begin gameMode
 			if iPlayerLevel >= 34
 				if iPlayerGold >= 500000
 					Player.RemoveItem Gold001 500000
-					Player.Removeitem TE03WeaponEbonyRazor 1
-					Player.Additem TE04WeaponEbonyRazor 1
+					if Player.GetItemCount TE03WeaponEbonyRazorA == 1
+						Player.Removeitem TE03WeaponEbonyRazorA 1
+						Player.Additem TE04WeaponEbonyRazorA 1
+					else
+						Player.Removeitem TE03WeaponEbonyRazor 1
+						Player.Additem TE04WeaponEbonyRazor 1
+					endif
 					set iDisplayedMenu to -1
 				elseif iPlayerGold < 500000
 					Message "You require 500,000 gold to perform this upgrade"
@@ -622,8 +637,13 @@ begin gameMode
 			if iPlayerLevel >= 39
 				if iPlayerGold >= 750000
 					Player.RemoveItem Gold001 750000
-					Player.Removeitem TE04WeaponEbonyRazor 1
-					Player.Additem TE05WeaponEbonyRazor 1
+					if Player.GetItemCount TE04WeaponEbonyRazorA == 1
+						Player.Removeitem TE04WeaponEbonyRazorA 1
+						Player.Additem TE05WeaponEbonyRazorA 1
+					else
+						Player.Removeitem TE04WeaponEbonyRazor 1
+						Player.Additem TE05WeaponEbonyRazor 1
+					endif
 					set iDisplayedMenu to -1
 				elseif iPlayerGold < 750000
 					Message "You require 750,000 gold to perform this upgrade"
@@ -637,8 +657,13 @@ begin gameMode
 			if iPlayerLevel >= 44
 				if iPlayerGold >= 1000000
 					Player.RemoveItem Gold001 1000000
-					Player.Removeitem TE05WeaponEbonyRazor 1
-					Player.Additem TE06WeaponEbonyRazor 1
+					if Player.GetItemCount TE05WeaponEbonyRazorA == 1
+						Player.Removeitem TE05WeaponEbonyRazorA 1
+						Player.Additem TE06WeaponEbonyRazorA 1
+					else
+						Player.Removeitem TE05WeaponEbonyRazor 1
+						Player.Additem TE06WeaponEbonyRazor 1
+					endif
 					set iDisplayedMenu to -1
 				elseif iPlayerGold < 1000000
 					Message "You require 1,000,000 gold to perform this upgrade"
