@@ -1,0 +1,67 @@
+scn TESMSetBonusCursed6EffectScript
+
+short bBonusAdded
+short bCombatMod
+short bMagickaMultiplierMod
+
+begin ScriptEffectStart
+	if bBonusAdded == 0
+		Player.ModActorValue Destruction -25
+		Player.ModActorValue Conjuration -25
+		Player.ModActorValue Illusion -25
+		Player.ModActorValue Mysticism -25
+		Player.ModActorValue Restoration -25
+		Player.ModActorValue Alteration -25
+		if bMagickaMultiplierMod == 0
+			if Player.GetActorValue MagickaMultiplier == 0
+				Player.SetActorValue MagickaMultiplier 10
+			endif
+			Player.ModActorValue MagickaMultiplier -1
+			set bMagickaMultiplierMod to 1
+		endif
+		Player.ModActorValue ResistFire 100
+		Player.ModActorValue ResistNormalWeapons 35
+		Player.ModActorValue HeavyArmor 50
+		Player.ModActorValue Blade 50
+		Player.ModActorValue Blunt 50
+		Player.ModActorValue Block 50
+		Player.ModActorValue AttackBonus 25
+		set bBonusAdded to 1
+		set TEbAuraCursed to 1
+	endif
+end
+
+begin ScriptEffectUpdate
+	if Player.IsInCombat == 1 && bCombatMod == 0 
+		Player.ModActorValue Speed -20
+		set bCombatMod to 1
+	endif
+	if Player.IsInCombat == 0 && bCombatMod == 1
+		Player.ModActorValue Speed 20
+		set bCombatMod to 0
+	endif
+end
+
+begin ScriptEffectFinish
+	if bBonusAdded == 1
+		Player.ModActorValue Destruction 25
+		Player.ModActorValue Conjuration 25
+		Player.ModActorValue Illusion 25
+		Player.ModActorValue Mysticism 25
+		Player.ModActorValue Restoration 25
+		Player.ModActorValue Alteration 25
+		if bMagickaMultiplierMod == 1
+			Player.ModActorValue MagickaMultiplier 1
+			Set bMagickaMultiplierMod to 0
+		endif
+		Player.ModActorValue ResistFire -100
+		Player.ModActorValue ResistNormalWeapons -35
+		Player.ModActorValue HeavyArmor -50
+		Player.ModActorValue Blade -50
+		Player.ModActorValue Blunt -50
+		Player.ModActorValue Block -50
+		Player.ModActorValue AttackBonus -25
+		set bBonusAdded to 0
+		set TEbAuraCursed to 0
+	endif
+end

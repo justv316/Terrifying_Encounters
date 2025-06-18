@@ -1,0 +1,69 @@
+scn TESOWeapGoldenBowObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponGoldenBowEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponGoldenBowEquip > 0
+		set TEiWeaponGoldenBowEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	if Player.GetEquipped TE01WeaponGoldenBow
+		set TEiWeaponGoldenBowEquip to 1
+	elseif Player.GetEquipped TE02WeaponGoldenBow
+		set TEiWeaponGoldenBowEquip to 2
+	elseif Player.GetEquipped TE03WeaponGoldenBow
+		set TEiWeaponGoldenBowEquip to 3
+	elseif Player.GetEquipped TE04WeaponGoldenBow 
+		set TEiWeaponGoldenBowEquip to 4
+	elseif Player.GetEquipped TE05WeaponGoldenBow 
+		set TEiWeaponGoldenBowEquip to 5
+	elseif Player.GetEquipped TE06WeaponGoldenBow
+		set TEiWeaponGoldenBowEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	if TEiWeaponGoldenBowEquip > 0
+		set TEiWeaponGoldenBowEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponGoldenBowEquip == 1
+			Player.EquipItem TE02WeaponGoldenBow
+			set TEiWeaponGoldenBowEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponGoldenBowEquip == 2
+			Player.EquipItem TE03WeaponGoldenBow
+			set TEiWeaponGoldenBowEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponGoldenBowEquip == 3
+			Player.EquipItem TE04WeaponGoldenBow
+			set TEiWeaponGoldenBowEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponGoldenBowEquip == 4
+			Player.EquipItem TE05WeaponGoldenBow
+			set TEiWeaponGoldenBowEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponGoldenBowEquip == 5
+			Player.EquipItem TE06WeaponGoldenBow
+			set TEiWeaponGoldenBowEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

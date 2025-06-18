@@ -1,0 +1,71 @@
+scn TESOWeapSilvriteDaggerObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponSilvriteDaggerEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponSilvriteDaggerEquip > 0
+		set TEiWeaponSilvriteDaggerEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetMythrilSilvriteEquip to TEiSetMythrilSilvriteEquip + 1
+	if Player.GetEquipped TE01WeaponSilvriteDagger
+		set TEiWeaponSilvriteDaggerEquip to 1
+	elseif Player.GetEquipped TE02WeaponSilvriteDagger
+		set TEiWeaponSilvriteDaggerEquip to 2
+	elseif Player.GetEquipped TE03WeaponSilvriteDagger
+		set TEiWeaponSilvriteDaggerEquip to 3
+	elseif Player.GetEquipped TE04WeaponSilvriteDagger 
+		set TEiWeaponSilvriteDaggerEquip to 4
+	elseif Player.GetEquipped TE05WeaponSilvriteDagger 
+		set TEiWeaponSilvriteDaggerEquip to 5
+	elseif Player.GetEquipped TE06WeaponSilvriteDagger
+		set TEiWeaponSilvriteDaggerEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetMythrilSilvriteEquip to TEiSetMythrilSilvriteEquip - 1
+	if TEiWeaponSilvriteDaggerEquip > 0
+		set TEiWeaponSilvriteDaggerEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponSilvriteDaggerEquip == 1
+			Player.EquipItem TE02WeaponSilvriteDagger
+			set TEiWeaponSilvriteDaggerEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponSilvriteDaggerEquip == 2
+			Player.EquipItem TE03WeaponSilvriteDagger
+			set TEiWeaponSilvriteDaggerEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponSilvriteDaggerEquip == 3
+			Player.EquipItem TE04WeaponSilvriteDagger
+			set TEiWeaponSilvriteDaggerEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponSilvriteDaggerEquip == 4
+			Player.EquipItem TE05WeaponSilvriteDagger
+			set TEiWeaponSilvriteDaggerEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponSilvriteDaggerEquip == 5
+			Player.EquipItem TE06WeaponSilvriteDagger
+			set TEiWeaponSilvriteDaggerEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

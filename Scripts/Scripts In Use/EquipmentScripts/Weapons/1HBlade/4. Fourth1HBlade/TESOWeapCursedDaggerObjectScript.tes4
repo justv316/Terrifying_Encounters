@@ -1,0 +1,71 @@
+scn TESOWeapCursedDaggerObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponCursedDaggerEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponCursedDaggerEquip > 0
+		set TEiWeaponCursedDaggerEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetCursedEquip to TEiSetCursedEquip + 1
+	if Player.GetEquipped TE01WeaponCursedDagger
+		set TEiWeaponCursedDaggerEquip to 1
+	elseif Player.GetEquipped TE02WeaponCursedDagger
+		set TEiWeaponCursedDaggerEquip to 2
+	elseif Player.GetEquipped TE03WeaponCursedDagger
+		set TEiWeaponCursedDaggerEquip to 3
+	elseif Player.GetEquipped TE04WeaponCursedDagger 
+		set TEiWeaponCursedDaggerEquip to 4
+	elseif Player.GetEquipped TE05WeaponCursedDagger 
+		set TEiWeaponCursedDaggerEquip to 5
+	elseif Player.GetEquipped TE06WeaponCursedDagger
+		set TEiWeaponCursedDaggerEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetCursedEquip to TEiSetCursedEquip - 1
+	if TEiWeaponCursedDaggerEquip > 0
+		set TEiWeaponCursedDaggerEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponCursedDaggerEquip == 1
+			Player.EquipItem TE02WeaponCursedDagger
+			set TEiWeaponCursedDaggerEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponCursedDaggerEquip == 2
+			Player.EquipItem TE03WeaponCursedDagger
+			set TEiWeaponCursedDaggerEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponCursedDaggerEquip == 3
+			Player.EquipItem TE04WeaponCursedDagger
+			set TEiWeaponCursedDaggerEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponCursedDaggerEquip == 4
+			Player.EquipItem TE05WeaponCursedDagger
+			set TEiWeaponCursedDaggerEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponCursedDaggerEquip == 5
+			Player.EquipItem TE06WeaponCursedDagger
+			set TEiWeaponCursedDaggerEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

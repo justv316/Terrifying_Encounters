@@ -1,0 +1,71 @@
+scn TESOArmorCursedHGauntletsObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiArmorCursedHGauntletsEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiArmorCursedHGauntletsEquip > 0
+		set TEiArmorCursedHGauntletsEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetCursedEquip to TEiSetCursedEquip + 1
+	if Player.GetEquipped TE01ArmorCursedHGauntlets
+		set TEiArmorCursedHGauntletsEquip to 1
+	elseif Player.GetEquipped TE02ArmorCursedHGauntlets
+		set TEiArmorCursedHGauntletsEquip to 2
+	elseif Player.GetEquipped TE03ArmorCursedHGauntlets
+		set TEiArmorCursedHGauntletsEquip to 3
+	elseif Player.GetEquipped TE04ArmorCursedHGauntlets 
+		set TEiArmorCursedHGauntletsEquip to 4
+	elseif Player.GetEquipped TE05ArmorCursedHGauntlets 
+		set TEiArmorCursedHGauntletsEquip to 5
+	elseif Player.GetEquipped TE06ArmorCursedHGauntlets
+		set TEiArmorCursedHGauntletsEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetCursedEquip to TEiSetCursedEquip - 1
+	if TEiArmorCursedHGauntletsEquip > 0
+		set TEiArmorCursedHGauntletsEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiArmorCursedHGauntletsEquip == 1
+			Player.EquipItem TE02ArmorCursedHGauntlets
+			set TEiArmorCursedHGauntletsEquip to 2
+			set bShouldEquip to 0
+		elseif TEiArmorCursedHGauntletsEquip == 2
+			Player.EquipItem TE03ArmorCursedHGauntlets
+			set TEiArmorCursedHGauntletsEquip to 3
+			set bShouldEquip to 0
+		elseif TEiArmorCursedHGauntletsEquip == 3
+			Player.EquipItem TE04ArmorCursedHGauntlets
+			set TEiArmorCursedHGauntletsEquip to 4
+			set bShouldEquip to 0
+		elseif TEiArmorCursedHGauntletsEquip == 4
+			Player.EquipItem TE05ArmorCursedHGauntlets
+			set TEiArmorCursedHGauntletsEquip to 5
+			set bShouldEquip to 0
+		elseif TEiArmorCursedHGauntletsEquip == 5
+			Player.EquipItem TE06ArmorCursedHGauntlets
+			set TEiArmorCursedHGauntletsEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

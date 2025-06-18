@@ -1,0 +1,54 @@
+scn TESQSetBonusCursedQuestScript
+
+float fQuestDelayTime
+short iCursedBonusAdded
+
+
+begin GameMode
+	set fQuestDelayTime to 0.01 
+	if TEiSetCursedEquip < 4
+		Player.RemoveSpell TEAbEquipCursedSetBonus4
+		Player.RemoveSpell TEAbEquipCursedSetBonus5
+		Player.RemoveSpell TEAbEquipCursedSetBonus6
+		set iCursedBonusAdded to 0
+	elseif TEiSetCursedEquip == 4
+		if iCursedBonusAdded == 0
+			Player.AddSpell TEAbEquipCursedSetBonus4
+			set iCursedBonusAdded to 4
+		elseif iCursedBonusAdded == 5
+			Player.RemoveSpell TEAbEquipCursedSetBonus5
+			Player.AddSpell TEAbEquipCursedSetBonus4
+			set iCursedBonusAdded to 4
+		elseif iCursedBonusAdded == 6
+			Player.RemoveSpell TEAbEquipCursedSetBonus6
+			Player.AddSpell TEAbEquipCursedSetBonus4
+			set iCursedBonusAdded to 4
+		endif
+	elseif TEiSetCursedEquip == 5
+		if iCursedBonusAdded == 0
+			Player.AddSpell TEAbEquipCursedSetBonus5
+			set iCursedBonusAdded to 5
+		elseif iCursedBonusAdded == 4
+			Player.RemoveSpell TEAbEquipCursedSetBonus4
+			Player.AddSpell TEAbEquipCursedSetBonus5
+			set iCursedBonusAdded to 5
+		elseif iCursedBonusAdded == 6
+			Player.RemoveSpell TEAbEquipCursedSetBonus6
+			Player.AddSpell TEAbEquipCursedSetBonus5
+			set iCursedBonusAdded to 5
+		endif
+	elseif TEiSetCursedEquip == 6 || TEiSetCursedEquip == 7
+		if iCursedBonusAdded == 0
+			Player.AddSpell TEAbEquipCursedSetBonus6
+			set iCursedBonusAdded to 6
+		elseif iCursedBonusAdded == 4
+			Player.RemoveSpell TEAbEquipCursedSetBonus4
+			Player.AddSpell TEAbEquipCursedSetBonus6
+			set iCursedBonusAdded to 6
+		elseif iCursedBonusAdded == 5
+			Player.RemoveSpell TEAbEquipCursedSetBonus5
+			Player.AddSpell TEAbEquipCursedSetBonus6
+			set iCursedBonusAdded to 6
+		endif
+	endif
+end

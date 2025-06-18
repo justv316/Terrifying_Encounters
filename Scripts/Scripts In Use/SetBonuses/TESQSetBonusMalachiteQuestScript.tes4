@@ -1,0 +1,52 @@
+scn TESQSetBonusMalachiteQuestScript
+
+short iMalachiteBonusAdded
+
+
+begin GameMode
+	if TEiSetMalachiteEquip < 4
+		Player.RemoveSpell TEAbEquipMalachiteSetBonus4
+		Player.RemoveSpell TEAbEquipMalachiteSetBonus5
+		Player.RemoveSpell TEAbEquipMalachiteSetBonus6
+		set iMalachiteBonusAdded to 0
+	elseif TEiSetMalachiteEquip == 4
+		if iMalachiteBonusAdded == 0
+			Player.AddSpell TEAbEquipMalachiteSetBonus4
+			set iMalachiteBonusAdded to 4
+		elseif iMalachiteBonusAdded == 5
+			Player.RemoveSpell TEAbEquipMalachiteSetBonus5
+			Player.AddSpell TEAbEquipMalachiteSetBonus4
+			set iMalachiteBonusAdded to 4
+		elseif iMalachiteBonusAdded == 6
+			Player.RemoveSpell TEAbEquipMalachiteSetBonus6
+			Player.AddSpell TEAbEquipMalachiteSetBonus4
+			set iMalachiteBonusAdded to 4
+		endif
+	elseif TEiSetMalachiteEquip == 5
+		if iMalachiteBonusAdded == 0
+			Player.AddSpell TEAbEquipMalachiteSetBonus5
+			set iMalachiteBonusAdded to 5
+		elseif iMalachiteBonusAdded == 4
+			Player.RemoveSpell TEAbEquipMalachiteSetBonus4
+			Player.AddSpell TEAbEquipMalachiteSetBonus5
+			set iMalachiteBonusAdded to 5
+		elseif iMalachiteBonusAdded == 6
+			Player.RemoveSpell TEAbEquipMalachiteSetBonus6
+			Player.AddSpell TEAbEquipMalachiteSetBonus5
+			set iMalachiteBonusAdded to 5
+		endif
+	elseif TEiSetMalachiteEquip == 6 || TEiSetMalachiteEquip == 7
+		if iMalachiteBonusAdded == 0
+			Player.AddSpell TEAbEquipMalachiteSetBonus6
+			set iMalachiteBonusAdded to 6
+		elseif iMalachiteBonusAdded == 4
+			Player.RemoveSpell TEAbEquipMalachiteSetBonus4
+			Player.AddSpell TEAbEquipMalachiteSetBonus6
+			set iMalachiteBonusAdded to 6
+		elseif iMalachiteBonusAdded == 5
+			Player.RemoveSpell TEAbEquipMalachiteSetBonus5
+			Player.AddSpell TEAbEquipMalachiteSetBonus6
+			set iMalachiteBonusAdded to 6
+		endif
+	endif
+end

@@ -1,0 +1,71 @@
+scn TESOWeapMaddeningWaraxeObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponMaddeningWaraxeEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponMaddeningWaraxeEquip > 0
+		set TEiWeaponMaddeningWaraxeEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetMaddeningEquip to TEiSetMaddeningEquip + 1
+	if Player.GetEquipped TE01WeaponMaddeningWaraxe
+		set TEiWeaponMaddeningWaraxeEquip to 1
+	elseif Player.GetEquipped TE02WeaponMaddeningWaraxe
+		set TEiWeaponMaddeningWaraxeEquip to 2
+	elseif Player.GetEquipped TE03WeaponMaddeningWaraxe
+		set TEiWeaponMaddeningWaraxeEquip to 3
+	elseif Player.GetEquipped TE04WeaponMaddeningWaraxe 
+		set TEiWeaponMaddeningWaraxeEquip to 4
+	elseif Player.GetEquipped TE05WeaponMaddeningWaraxe 
+		set TEiWeaponMaddeningWaraxeEquip to 5
+	elseif Player.GetEquipped TE06WeaponMaddeningWaraxe
+		set TEiWeaponMaddeningWaraxeEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetMaddeningEquip to TEiSetMaddeningEquip - 1
+	if TEiWeaponMaddeningWaraxeEquip > 0
+		set TEiWeaponMaddeningWaraxeEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponMaddeningWaraxeEquip == 1
+			Player.EquipItem TE02WeaponMaddeningWaraxe
+			set TEiWeaponMaddeningWaraxeEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponMaddeningWaraxeEquip == 2
+			Player.EquipItem TE03WeaponMaddeningWaraxe
+			set TEiWeaponMaddeningWaraxeEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponMaddeningWaraxeEquip == 3
+			Player.EquipItem TE04WeaponMaddeningWaraxe
+			set TEiWeaponMaddeningWaraxeEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponMaddeningWaraxeEquip == 4
+			Player.EquipItem TE05WeaponMaddeningWaraxe
+			set TEiWeaponMaddeningWaraxeEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponMaddeningWaraxeEquip == 5
+			Player.EquipItem TE06WeaponMaddeningWaraxe
+			set TEiWeaponMaddeningWaraxeEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

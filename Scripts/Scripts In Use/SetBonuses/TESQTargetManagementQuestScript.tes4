@@ -1,0 +1,67 @@
+scn TESQTargetManagementQuestScript
+
+float fQuestDelayTime
+short bTargetManagement
+ref rRef1
+ref rRef2
+ref rRef3
+short bRef1
+short bRef2
+short bRef3
+short bRef1Debuff
+short bRef2Debuff
+short bRef3Debuff
+
+begin GameMode
+	set fQuestDelayTime to 0.1
+	if bTargetManagement == 1
+		if bRef1 == 1
+			if rRef1.GetDead == 0
+				if bRef1Debuff == 0
+					if TEbAuraCursed == 1
+						rRef1.AddSpell TEAbAuraCursedDebuff
+						Message "Ref1 is cursed"
+						set bRef1Debuff to 1
+					endif
+				endif
+			elseif rRef1.GetDead == 1
+				set bRef1 to 0
+				set bRef1Debuff to 0
+				Message "Ref1 is dead"
+				rRef1.RemoveSpell TEAbAuraCursedDebuff
+			endif
+		elseif bRef2 == 1
+			if rRef2.GetDead == 0
+				if bRef2Debuff == 0
+					if TEbAuraCursed == 1
+						rRef2.AddSpell TEAbAuraCursedDebuff
+						Message "Ref2 is cursed"
+						set bRef2Debuff to 1
+					endif
+				endif
+			elseif rRef2.GetDead == 1
+				set bRef2 to 0
+				set bRef2Debuff to 0
+				Message "Ref2 is dead"
+				rRef2.RemoveSpell TEAbAuraCursedDebuff
+			endif
+		elseif bRef3 == 1
+			if rRef3.GetDead == 0
+				if bRef3Debuff == 0
+					if TEbAuraCursed == 1
+						rRef3.AddSpell TEAbAuraCursedDebuff
+						Message "Ref3 is cursed"
+						set bRef3Debuff to 1
+					endif
+				endif
+			elseif rRef3.GetDead == 1
+				set bRef3 to 0
+				set bRef3Debuff to 0
+				Message "Ref3 is dead"
+				rRef3.RemoveSpell TEAbAuraCursedDebuff
+			endif
+		elseif bRef1 == 0 && bRef2 == 0 && bRef3 == 0
+			set bTargetManagement to 0
+		endif
+	endif
+end

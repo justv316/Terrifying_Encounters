@@ -1,0 +1,52 @@
+scn TESQSetBonusMythrilSilvriteQuestScript
+
+short iMythrilSilvriteBonusAdded
+
+
+begin GameMode
+	if TEiSetMythrilSilvriteEquip < 4
+		Player.RemoveSpell TEAbEquipMythrilSilvriteSetBonus4
+		Player.RemoveSpell TEAbEquipMythrilSilvriteSetBonus5
+		Player.RemoveSpell TEAbEquipMythrilSilvriteSetBonus6
+		set iMythrilSilvriteBonusAdded to 0
+	elseif TEiSetMythrilSilvriteEquip == 4
+		if iMythrilSilvriteBonusAdded == 0
+			Player.AddSpell TEAbEquipMythrilSilvriteSetBonus4
+			set iMythrilSilvriteBonusAdded to 4
+		elseif iMythrilSilvriteBonusAdded == 5
+			Player.RemoveSpell TEAbEquipMythrilSilvriteSetBonus5
+			Player.AddSpell TEAbEquipMythrilSilvriteSetBonus4
+			set iMythrilSilvriteBonusAdded to 4
+		elseif iMythrilSilvriteBonusAdded == 6
+			Player.RemoveSpell TEAbEquipMythrilSilvriteSetBonus6
+			Player.AddSpell TEAbEquipMythrilSilvriteSetBonus4
+			set iMythrilSilvriteBonusAdded to 4
+		endif
+	elseif TEiSetMythrilSilvriteEquip == 5
+		if iMythrilSilvriteBonusAdded == 0
+			Player.AddSpell TEAbEquipMythrilSilvriteSetBonus5
+			set iMythrilSilvriteBonusAdded to 5
+		elseif iMythrilSilvriteBonusAdded == 4
+			Player.RemoveSpell TEAbEquipMythrilSilvriteSetBonus4
+			Player.AddSpell TEAbEquipMythrilSilvriteSetBonus5
+			set iMythrilSilvriteBonusAdded to 5
+		elseif iMythrilSilvriteBonusAdded == 6
+			Player.RemoveSpell TEAbEquipMythrilSilvriteSetBonus6
+			Player.AddSpell TEAbEquipMythrilSilvriteSetBonus5
+			set iMythrilSilvriteBonusAdded to 5
+		endif
+	elseif TEiSetMythrilSilvriteEquip == 6 || TEiSetMythrilSilvriteEquip == 7
+		if iMythrilSilvriteBonusAdded == 0
+			Player.AddSpell TEAbEquipMythrilSilvriteSetBonus6
+			set iMythrilSilvriteBonusAdded to 6
+		elseif iMythrilSilvriteBonusAdded == 4
+			Player.RemoveSpell TEAbEquipMythrilSilvriteSetBonus4
+			Player.AddSpell TEAbEquipMythrilSilvriteSetBonus6
+			set iMythrilSilvriteBonusAdded to 6
+		elseif iMythrilSilvriteBonusAdded == 5
+			Player.RemoveSpell TEAbEquipMythrilSilvriteSetBonus5
+			Player.AddSpell TEAbEquipMythrilSilvriteSetBonus6
+			set iMythrilSilvriteBonusAdded to 6
+		endif
+	endif
+end

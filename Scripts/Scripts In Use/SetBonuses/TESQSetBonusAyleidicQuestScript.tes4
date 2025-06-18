@@ -1,0 +1,52 @@
+scn TESQSetBonusAyleidicQuestScript
+
+short iAyleidicBonusAdded
+
+
+begin GameMode
+	if TEiSetAyleidicEquip < 4
+		Player.RemoveSpell TEAbEquipAyleidicSetBonus4
+		Player.RemoveSpell TEAbEquipAyleidicSetBonus5
+		Player.RemoveSpell TEAbEquipAyleidicSetBonus6
+		set iAyleidicBonusAdded to 0
+	elseif TEiSetAyleidicEquip == 4
+		if iAyleidicBonusAdded == 0
+			Player.AddSpell TEAbEquipAyleidicSetBonus4
+			set iAyleidicBonusAdded to 4
+		elseif iAyleidicBonusAdded == 5
+			Player.RemoveSpell TEAbEquipAyleidicSetBonus5
+			Player.AddSpell TEAbEquipAyleidicSetBonus4
+			set iAyleidicBonusAdded to 4
+		elseif iAyleidicBonusAdded == 6
+			Player.RemoveSpell TEAbEquipAyleidicSetBonus6
+			Player.AddSpell TEAbEquipAyleidicSetBonus4
+			set iAyleidicBonusAdded to 4
+		endif
+	elseif TEiSetAyleidicEquip == 5
+		if iAyleidicBonusAdded == 0
+			Player.AddSpell TEAbEquipAyleidicSetBonus5
+			set iAyleidicBonusAdded to 5
+		elseif iAyleidicBonusAdded == 4
+			Player.RemoveSpell TEAbEquipAyleidicSetBonus4
+			Player.AddSpell TEAbEquipAyleidicSetBonus5
+			set iAyleidicBonusAdded to 5
+		elseif iAyleidicBonusAdded == 6
+			Player.RemoveSpell TEAbEquipAyleidicSetBonus6
+			Player.AddSpell TEAbEquipAyleidicSetBonus5
+			set iAyleidicBonusAdded to 5
+		endif
+	elseif TEiSetAyleidicEquip == 6 || TEiSetAyleidicEquip == 7
+		if iAyleidicBonusAdded == 0
+			Player.AddSpell TEAbEquipAyleidicSetBonus6
+			set iAyleidicBonusAdded to 6
+		elseif iAyleidicBonusAdded == 4
+			Player.RemoveSpell TEAbEquipAyleidicSetBonus4
+			Player.AddSpell TEAbEquipAyleidicSetBonus6
+			set iAyleidicBonusAdded to 6
+		elseif iAyleidicBonusAdded == 5
+			Player.RemoveSpell TEAbEquipAyleidicSetBonus5
+			Player.AddSpell TEAbEquipAyleidicSetBonus6
+			set iAyleidicBonusAdded to 6
+		endif
+	endif
+end

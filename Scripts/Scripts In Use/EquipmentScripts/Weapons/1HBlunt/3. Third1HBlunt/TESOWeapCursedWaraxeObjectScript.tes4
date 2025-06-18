@@ -1,0 +1,71 @@
+scn TESOWeapCursedWaraxeObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponCursedWaraxeEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponCursedWaraxeEquip > 0
+		set TEiWeaponCursedWaraxeEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetCursedEquip to TEiSetCursedEquip + 1
+	if Player.GetEquipped TE01WeaponCursedWaraxe
+		set TEiWeaponCursedWaraxeEquip to 1
+	elseif Player.GetEquipped TE02WeaponCursedWaraxe
+		set TEiWeaponCursedWaraxeEquip to 2
+	elseif Player.GetEquipped TE03WeaponCursedWaraxe
+		set TEiWeaponCursedWaraxeEquip to 3
+	elseif Player.GetEquipped TE04WeaponCursedWaraxe 
+		set TEiWeaponCursedWaraxeEquip to 4
+	elseif Player.GetEquipped TE05WeaponCursedWaraxe 
+		set TEiWeaponCursedWaraxeEquip to 5
+	elseif Player.GetEquipped TE06WeaponCursedWaraxe
+		set TEiWeaponCursedWaraxeEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetCursedEquip to TEiSetCursedEquip - 1
+	if TEiWeaponCursedWaraxeEquip > 0
+		set TEiWeaponCursedWaraxeEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponCursedWaraxeEquip == 1
+			Player.EquipItem TE02WeaponCursedWaraxe
+			set TEiWeaponCursedWaraxeEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponCursedWaraxeEquip == 2
+			Player.EquipItem TE03WeaponCursedWaraxe
+			set TEiWeaponCursedWaraxeEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponCursedWaraxeEquip == 3
+			Player.EquipItem TE04WeaponCursedWaraxe
+			set TEiWeaponCursedWaraxeEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponCursedWaraxeEquip == 4
+			Player.EquipItem TE05WeaponCursedWaraxe
+			set TEiWeaponCursedWaraxeEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponCursedWaraxeEquip == 5
+			Player.EquipItem TE06WeaponCursedWaraxe
+			set TEiWeaponCursedWaraxeEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

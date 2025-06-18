@@ -1,0 +1,14 @@
+scn TESMTargetDetectedEffectScript
+
+ref rSelf
+
+begin ScriptEffectStart
+	set rSelf to GetSelf
+	if TEQQTargetDetectionQuest.rIncomingRef == 0
+		set TEQQTargetDetectionQuest.rIncomingRef to rSelf
+	endif
+end
+
+begin ScriptEffectFinish
+	Return
+End

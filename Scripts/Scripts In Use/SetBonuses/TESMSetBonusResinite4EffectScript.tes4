@@ -1,0 +1,15 @@
+scn TESMSetBonusResinite4EffectScript
+
+short bBonusAdded
+
+begin ScriptEffectStart
+	if bBonusAdded == 0 
+		set bBonusAdded to 1
+	endif
+end
+
+begin ScriptEffectFinish
+	if bBonusAdded == 1
+		set bBonusAdded to 0
+	endif
+end

@@ -1,0 +1,17 @@
+scn TESMSetBonusDwemer4EffectScript
+
+short bBonusAdded
+
+begin ScriptEffectStart
+	if bBonusAdded == 0 
+		set bBonusAdded to 1
+		player.ModActorValue Health -75
+	endif
+end
+
+begin ScriptEffectFinish
+	if bBonusAdded == 1
+		set bBonusAdded to 0
+		player.ModActorValue Health 75
+	endif
+end

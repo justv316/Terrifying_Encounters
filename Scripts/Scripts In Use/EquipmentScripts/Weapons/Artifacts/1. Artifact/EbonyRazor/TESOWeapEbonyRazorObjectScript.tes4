@@ -1,0 +1,134 @@
+scn TESOWeapEbonyRazorObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEQQWeapEbonyRazorQuest.bActivated == 0
+		set TEQQWeapEbonyRazorQuest.bActivated to 1
+		StartQuest TEQQWeapEbonyRazorQuest
+	endif
+	if TEQQWeapEbonyRazorQuest.bShouldEquip == 1
+		set bShouldEquip to 1
+	endif
+	if TEiWeaponEbonyRazorEquip >= 1 && TEQQWeapEbonyRazorQuest.bShouldEquip == 0
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEQQWeapEbonyRazorQuest.bActivated == 1
+		set TEQQWeapEbonyRazorQuest.bActivated to 0
+		set TEQQWeapEbonyRazorQuest.bShouldEquip to 0
+		StopQuest TEQQWeapEbonyRazorQuest
+	endif
+	if TEiWeaponEbonyRazorEquip > 0
+		set TEiWeaponEbonyRazorEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	if Player.GetEquipped TE01WeaponEbonyRazor
+		set TEiWeaponEbonyRazorEquip to 1
+	elseif Player.GetEquipped TE02WeaponEbonyRazor
+		set TEiWeaponEbonyRazorEquip to 2
+	elseif Player.GetEquipped TE03WeaponEbonyRazor
+		set TEiWeaponEbonyRazorEquip to 3
+	elseif Player.GetEquipped TE04WeaponEbonyRazor 
+		set TEiWeaponEbonyRazorEquip to 4
+	elseif Player.GetEquipped TE05WeaponEbonyRazor 
+		set TEiWeaponEbonyRazorEquip to 5
+	elseif Player.GetEquipped TE06WeaponEbonyRazor
+		set TEiWeaponEbonyRazorEquip to 6
+	elseif Player.GetEquipped TE01WeaponEbonyRazorA
+		set TEiWeaponEbonyRazorEquip to 7
+	elseif Player.GetEquipped TE02WeaponEbonyRazorA
+		set TEiWeaponEbonyRazorEquip to 8
+	elseif Player.GetEquipped TE03WeaponEbonyRazorA
+		set TEiWeaponEbonyRazorEquip to 9
+	elseif Player.GetEquipped TE04WeaponEbonyRazorA
+		set TEiWeaponEbonyRazorEquip to 10
+	elseif Player.GetEquipped TE05WeaponEbonyRazorA
+		set TEiWeaponEbonyRazorEquip to 11
+	elseif Player.GetEquipped TE06WeaponEbonyRazorA
+		set TEiWeaponEbonyRazorEquip to 12
+	endif
+end
+
+begin OnUnEquip
+	if TEiWeaponEbonyRazorEquip > 0
+		set TEiWeaponEbonyRazorEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 1
+		if TEiWeaponEbonyRazorEquip == 1
+			Player.EquipItem TE01WeaponEbonyRazorA
+			set bShouldEquip to 0
+		elseif TEiWeaponEbonyRazorEquip == 2
+			Player.EquipItem TE02WeaponEbonyRazorA
+			set bShouldEquip to 0
+		elseif TEiWeaponEbonyRazorEquip == 3
+			Player.EquipItem TE03WeaponEbonyRazorA
+			set bShouldEquip to 0
+		elseif TEiWeaponEbonyRazorEquip == 4
+			Player.EquipItem TE04WeaponEbonyRazorA
+			set bShouldEquip to 0
+		elseif TEiWeaponEbonyRazorEquip == 5
+			Player.EquipItem TE05WeaponEbonyRazorA
+			set bShouldEquip to 0
+		elseif TEiWeaponEbonyRazorEquip == 6
+			Player.EquipItem TE06WeaponEbonyRazorA
+			set bShouldEquip to 0
+		endif
+		set TEQQWeapEbonyRazorQuest.bShouldEquip to 0
+	elseif bShouldEquip == 2
+		if TEiWeaponEbonyRazorEquip == 1
+			Player.EquipItem TE02WeaponEbonyRazor
+			set TEiWeaponEbonyRazorEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponEbonyRazorEquip == 2
+			Player.EquipItem TE03WeaponEbonyRazor
+			set TEiWeaponEbonyRazorEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponEbonyRazorEquip == 3
+			Player.EquipItem TE04WeaponEbonyRazor
+			set TEiWeaponEbonyRazorEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponEbonyRazorEquip == 4
+			Player.EquipItem TE05WeaponEbonyRazor
+			set TEiWeaponEbonyRazorEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponEbonyRazorEquip == 5
+			Player.EquipItem TE06WeaponEbonyRazor
+			set TEiWeaponEbonyRazorEquip to 6
+			set bShouldEquip to 0
+		elseif TEiWeaponEbonyRazorEquip == 7
+			Player.EquipItem TE02WeaponEbonyRazorA
+			set TEiWeaponEbonyRazorEquip to 8
+			set bShouldEquip to 0
+		elseif TEiWeaponEbonyRazorEquip == 8
+			Player.EquipItem TE03WeaponEbonyRazorA
+			set TEiWeaponEbonyRazorEquip to 9
+			set bShouldEquip to 0
+		elseif TEiWeaponEbonyRazorEquip == 9
+			Player.EquipItem TE04WeaponEbonyRazorA
+			set TEiWeaponEbonyRazorEquip to 10
+			set bShouldEquip to 0
+		elseif TEiWeaponEbonyRazorEquip == 10
+			Player.EquipItem TE05WeaponEbonyRazorA
+			set TEiWeaponEbonyRazorEquip to 11
+			set bShouldEquip to 0
+		elseif TEiWeaponEbonyRazorEquip == 11
+			Player.EquipItem TE06WeaponEbonyRazorA
+			set TEiWeaponEbonyRazorEquip to 12
+			set bShouldEquip to 0
+		endif
+	endif
+end

@@ -1,0 +1,614 @@
+scn TESQTargetDetectionQuestScript
+
+float fQuestDelayTime
+
+ref rIncomingRef
+ref rRef1
+ref rRef2
+ref rRef3
+ref rRef4
+ref rRef5
+ref rRef6
+ref rRef7
+ref rRef8
+ref rRef9
+ref rRef10
+ref rRef11
+ref rRef12
+ref rRef13
+ref rRef14
+ref rRef15
+ref rRef16
+ref rRef17
+ref rRef18
+ref rRef19
+ref rRef20
+short bRef1Debuff
+short bRef2Debuff
+short bRef3Debuff
+short bRef4Debuff
+short bRef5Debuff
+short bRef6Debuff
+short bRef7Debuff
+short bRef8Debuff
+short bRef9Debuff
+short bRef10Debuff
+short bRef11Debuff
+short bRef12Debuff
+short bRef13Debuff
+short bRef14Debuff
+short bRef15Debuff
+short bRef16Debuff
+short bRef17Debuff
+short bRef18Debuff
+short bRef19Debuff
+short bRef20Debuff
+
+begin GameMode	
+set fQuestDelayTime to 0.05
+	if rIncomingRef != 0
+		if rRef1 == 0
+			set rRef1 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef2 == 0
+			set rRef2 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef3 == 0
+			set rRef3 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef4 == 0
+			set rRef4 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef5 == 0
+			set rRef5 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef6 == 0
+			set rRef6 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef7 == 0
+			set rRef7 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef8 == 0
+			set rRef8 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef9 == 0
+			set rRef9 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef10 == 0
+			set rRef10 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef11 == 0
+			set rRef11 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef12 == 0
+			set rRef12 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef13 == 0
+			set rRef13 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef14 == 0
+			set rRef14 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef15 == 0
+			set rRef15 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef16 == 0
+			set rRef16 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef17 == 0
+			set rRef17 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef18 == 0
+			set rRef18 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef19 == 0
+			set rRef19 to rIncomingRef
+			set rIncomingRef to 0
+		elseif rRef20 == 0
+			set rRef20 to rIncomingRef
+			set rIncomingRef to 0
+		endif
+	endif
+
+		
+	if rRef1.GetDead == 0
+		if bRef1Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef1
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef1
+				set bRef1Debuff to 1
+			endif
+		elseif bRef1Debuff == 1
+			if Player.GetDistance rRef1 > 150
+				set bRef1Debuff to 0
+				set rRef1 to 0
+				TEDispellRef.MoveTo rRef1
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef1
+			endif
+			if rRef1.GetCombatTarget != Player
+				set bRef1Debuff to 0
+				set rRef1 to 0
+				TEDispellRef.MoveTo rRef1
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef1
+			endif
+		endif
+	elseif rRef1.GetDead == 1
+		set bRef1Debuff to 0
+		set rRef1 to 0
+	endif
+	if rRef2.GetDead == 0
+		if bRef2Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef2
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef2
+				set bRef2Debuff to 1
+			endif
+		elseif bRef2Debuff == 1
+			if Player.GetDistance rRef2 > 150
+				set bRef2Debuff to 0
+				set rRef2 to 0
+				TEDispellRef.MoveTo rRef2
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef2
+			endif
+			if rRef2.GetCombatTarget != Player
+				set bRef2Debuff to 0
+				set rRef2 to 0
+				TEDispellRef.MoveTo rRef2
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef2
+			endif
+		endif
+	elseif rRef2.GetDead == 1
+		set bRef2Debuff to 0
+		set rRef2 to 0
+	endif
+	if rRef3.GetDead == 0
+		if bRef3Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef3
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef3
+				set bRef3Debuff to 1
+			endif
+		elseif bRef3Debuff == 1
+			if Player.GetDistance rRef3 > 150
+				set bRef3Debuff to 0
+				set rRef3 to 0
+				TEDispellRef.MoveTo rRef3
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef3
+			endif
+			if rRef3.GetCombatTarget != Player
+				set bRef3Debuff to 0
+				set rRef3 to 0
+				TEDispellRef.MoveTo rRef3
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef3
+			endif
+		endif
+	elseif rRef3.GetDead == 1
+		set bRef3Debuff to 0
+		set rRef3 to 0
+	endif
+	if rRef4.GetDead == 0
+		if bRef4Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef4
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef4
+				set bRef4Debuff to 1
+			endif
+		elseif bRef4Debuff == 1
+			if Player.GetDistance rRef4 > 150
+				set bRef4Debuff to 0
+				set rRef4 to 0
+				TEDispellRef.MoveTo rRef4
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef4
+			endif
+			if rRef4.GetCombatTarget != Player
+				set bRef4Debuff to 0
+				set rRef4 to 0
+				TEDispellRef.MoveTo rRef4
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef4
+			endif
+		endif
+	elseif rRef4.GetDead == 1
+		set bRef4Debuff to 0
+		set rRef4 to 0
+	endif
+	if rRef5.GetDead == 0
+		if bRef5Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef5
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef5
+				set bRef5Debuff to 1
+			endif
+		elseif bRef5Debuff == 1
+			if Player.GetDistance rRef5 > 150
+				set bRef5Debuff to 0
+				set rRef5 to 0
+				TEDispellRef.MoveTo rRef5
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef5
+			endif
+			if rRef5.GetCombatTarget != Player
+				set bRef5Debuff to 0
+				set rRef5 to 0
+				TEDispellRef.MoveTo rRef5
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef5
+			endif
+		endif
+	elseif rRef5.GetDead == 1
+		set bRef5Debuff to 0
+		set rRef5 to 0
+	endif
+	if rRef6.GetDead == 0
+		if bRef6Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef6
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef6
+				set bRef6Debuff to 1
+			endif
+		elseif bRef6Debuff == 1
+			if Player.GetDistance rRef6 > 150
+				set bRef6Debuff to 0
+				set rRef6 to 0
+				TEDispellRef.MoveTo rRef6
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef6
+			endif
+			if rRef6.GetCombatTarget != Player
+				set bRef6Debuff to 0
+				set rRef6 to 0
+				TEDispellRef.MoveTo rRef6
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef6
+			endif
+		endif
+	elseif rRef6.GetDead == 1
+		set bRef6Debuff to 0
+		set rRef6 to 0
+	endif
+	if rRef7.GetDead == 0
+		if bRef7Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef7
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef7
+				set bRef7Debuff to 1
+			endif
+		elseif bRef7Debuff == 1
+			if Player.GetDistance rRef7 > 150
+				set bRef7Debuff to 0
+				set rRef7 to 0
+				TEDispellRef.MoveTo rRef7
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef7
+			endif
+			if rRef7.GetCombatTarget != Player
+				set bRef7Debuff to 0
+				set rRef7 to 0
+				TEDispellRef.MoveTo rRef7
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef7
+			endif
+		endif
+	elseif rRef7.GetDead == 1
+		set bRef7Debuff to 0
+		set rRef7 to 0
+	endif
+	if rRef8.GetDead == 0
+		if bRef8Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef8
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef8
+				set bRef8Debuff to 1
+			endif
+		elseif bRef8Debuff == 1
+			if Player.GetDistance rRef8 > 150
+				set bRef8Debuff to 0
+				set rRef8 to 0
+				TEDispellRef.MoveTo rRef8
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef8
+			endif
+			if rRef8.GetCombatTarget != Player
+				set bRef8Debuff to 0
+				set rRef8 to 0
+				TEDispellRef.MoveTo rRef8
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef8
+			endif
+		endif
+	elseif rRef8.GetDead == 1
+		set bRef8Debuff to 0
+		set rRef8 to 0
+	endif
+	if rRef9.GetDead == 0
+		if bRef9Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef9
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef9
+				set bRef9Debuff to 1
+			endif
+		elseif bRef9Debuff == 1
+			if Player.GetDistance rRef9 > 150
+				set bRef9Debuff to 0
+				set rRef9 to 0
+				TEDispellRef.MoveTo rRef9
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef9
+			endif
+			if rRef9.GetCombatTarget != Player
+				set bRef9Debuff to 0
+				set rRef9 to 0
+				TEDispellRef.MoveTo rRef9
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef9
+			endif
+		endif
+	elseif rRef9.GetDead == 1
+		set bRef9Debuff to 0
+		set rRef9 to 0
+	endif
+	if rRef10.GetDead == 0
+		if bRef10Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef10
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef10
+				set bRef10Debuff to 1
+			endif
+		elseif bRef10Debuff == 1
+			if Player.GetDistance rRef10 > 150
+				set bRef10Debuff to 0
+				set rRef10 to 0
+				TEDispellRef.MoveTo rRef10
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef10
+			endif
+			if rRef10.GetCombatTarget != Player
+				set bRef10Debuff to 0
+				set rRef10 to 0
+				TEDispellRef.MoveTo rRef10
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef10
+			endif
+		endif
+	elseif rRef10.GetDead == 1
+		set bRef10Debuff to 0
+		set rRef10 to 0
+	endif
+	if rRef11.GetDead == 0
+		if bRef11Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef11
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef11
+				set bRef1Debuff to 1
+			endif
+		elseif bRef11Debuff == 1
+			if Player.GetDistance rRef11 > 150
+				set bRef11Debuff to 0
+				set rRef11 to 0
+				TEDispellRef.MoveTo rRef11
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef11
+			endif
+			if rRef11.GetCombatTarget != Player
+				set bRef11Debuff to 0
+				set rRef11 to 0
+				TEDispellRef.MoveTo rRef11
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef11
+			endif
+		endif
+	elseif rRef11.GetDead == 1
+		set bRef11Debuff to 0
+		set rRef11 to 0
+	endif
+	if rRef12.GetDead == 0
+		if bRef12Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef12
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef12
+				set bRef2Debuff to 1
+			endif
+		elseif bRef12Debuff == 1
+			if Player.GetDistance rRef12 > 150
+				set bRef12Debuff to 0
+				set rRef12 to 0
+				TEDispellRef.MoveTo rRef12
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef12
+			endif
+			if rRef12.GetCombatTarget != Player
+				set bRef12Debuff to 0
+				set rRef12 to 0
+				TEDispellRef.MoveTo rRef12
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef12
+			endif
+		endif
+	elseif rRef12.GetDead == 1
+		set bRef12Debuff to 0
+		set rRef12 to 0
+	endif
+	if rRef13.GetDead == 0
+		if bRef13Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef13
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef13
+				set bRef3Debuff to 1
+			endif
+		elseif bRef13Debuff == 1
+			if Player.GetDistance rRef13 > 150
+				set bRef13Debuff to 0
+				set rRef13 to 0
+				TEDispellRef.MoveTo rRef13
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef13
+			endif
+			if rRef13.GetCombatTarget != Player
+				set bRef13Debuff to 0
+				set rRef13 to 0
+				TEDispellRef.MoveTo rRef13
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef13
+			endif
+		endif
+	elseif rRef13.GetDead == 1
+		set bRef13Debuff to 0
+		set rRef13 to 0
+	endif
+	if rRef14.GetDead == 0
+		if bRef14Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef14
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef14
+				set bRef4Debuff to 1
+			endif
+		elseif bRef14Debuff == 1
+			if Player.GetDistance rRef14 > 150
+				set bRef14Debuff to 0
+				set rRef14 to 0
+				TEDispellRef.MoveTo rRef14
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef14
+			endif
+			if rRef14.GetCombatTarget != Player
+				set bRef14Debuff to 0
+				set rRef14 to 0
+				TEDispellRef.MoveTo rRef14
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef14
+			endif
+		endif
+	elseif rRef14.GetDead == 1
+		set bRef14Debuff to 0
+		set rRef14 to 0
+	endif
+	if rRef15.GetDead == 0
+		if bRef15Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef15
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef15
+				set bRef5Debuff to 1
+			endif
+		elseif bRef15Debuff == 1
+			if Player.GetDistance rRef15 > 150
+				set bRef15Debuff to 0
+				set rRef15 to 0
+				TEDispellRef.MoveTo rRef15
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef15
+			endif
+			if rRef15.GetCombatTarget != Player
+				set bRef15Debuff to 0
+				set rRef15 to 0
+				TEDispellRef.MoveTo rRef15
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef15
+			endif
+		endif
+	elseif rRef15.GetDead == 1
+		set bRef15Debuff to 0
+		set rRef15 to 0
+	endif
+	if rRef16.GetDead == 0
+		if bRef6Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef16
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef16
+				set bRef16Debuff to 1
+			endif
+		elseif bRef16Debuff == 1
+			if Player.GetDistance rRef16 > 150
+				set bRef16Debuff to 0
+				set rRef16 to 0
+				TEDispellRef.MoveTo rRef16
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef16
+			endif
+			if rRef16.GetCombatTarget != Player
+				set bRef16Debuff to 0
+				set rRef16 to 0
+				TEDispellRef.MoveTo rRef16
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef16
+			endif
+		endif
+	elseif rRef16.GetDead == 1
+		set bRef16Debuff to 0
+		set rRef16 to 0
+	endif
+	if rRef17.GetDead == 0
+		if bRef17Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef17
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef17
+				set bRef17Debuff to 1
+			endif
+		elseif bRef17Debuff == 1
+			if Player.GetDistance rRef17 > 150
+				set bRef17Debuff to 0
+				set rRef17 to 0
+				TEDispellRef.MoveTo rRef17
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef17
+			endif
+			if rRef17.GetCombatTarget != Player
+				set bRef17Debuff to 0
+				set rRef17 to 0
+				TEDispellRef.MoveTo rRef17
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef17
+			endif
+		endif
+	elseif rRef17.GetDead == 1
+		set bRef17Debuff to 0
+		set rRef17 to 0
+	endif
+	if rRef18.GetDead == 0
+		if bRef18Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef18
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef18
+				set bRef18Debuff to 1
+			endif
+		elseif bRef18Debuff == 1
+			if Player.GetDistance rRef18 > 150
+				set bRef18Debuff to 0
+				set rRef18 to 0
+				TEDispellRef.MoveTo rRef18
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef18
+			endif
+			if rRef18.GetCombatTarget != Player
+				set bRef18Debuff to 0
+				set rRef18 to 0
+				TEDispellRef.MoveTo rRef18
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef18
+			endif
+		endif
+	elseif rRef18.GetDead == 1
+		set bRef18Debuff to 0
+		set rRef18 to 0
+	endif
+	if rRef19.GetDead == 0
+		if bRef9Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef19
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef19
+				set bRef19Debuff to 1
+			endif
+		elseif bRef19Debuff == 1
+			if Player.GetDistance rRef19 > 150
+				set bRef19Debuff to 0
+				set rRef19 to 0
+				TEDispellRef.MoveTo rRef19
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef19
+			endif
+			if rRef19.GetCombatTarget != Player
+				set bRef19Debuff to 0
+				set rRef19 to 0
+				TEDispellRef.MoveTo rRef19
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef19
+			endif
+		endif
+	elseif rRef19.GetDead == 1
+		set bRef19Debuff to 0
+		set rRef19 to 0
+	endif
+	if rRef20.GetDead == 0
+		if bRef20Debuff == 0
+			if TEbAuraCursed == 1
+				TEAuraRef.MoveTo rRef20
+				TEAuraRef.Cast TESpAuraCursedDebuff rRef20
+				set bRef20Debuff to 1
+			endif
+		elseif bRef20Debuff == 1
+			if Player.GetDistance rRef20 > 150
+				set bRef20Debuff to 0
+				set rRef20 to 0
+				TEDispellRef.MoveTo rRef20
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef20
+			endif
+			if rRef20.GetCombatTarget != Player
+				set bRef20Debuff to 0
+				set rRef20 to 0
+				TEDispellRef.MoveTo rRef20
+				TEDispellRef.Cast TESpAuraDispellDebuff rRef20
+			endif
+		endif
+	elseif rRef20.GetDead == 1
+		set bRef20Debuff to 0
+		set rRef20 to 0
+	endif
+end

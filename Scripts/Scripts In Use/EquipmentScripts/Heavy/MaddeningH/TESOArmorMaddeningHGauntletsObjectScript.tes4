@@ -1,0 +1,71 @@
+scn TESOArmorMaddeningHGauntletsObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiArmorMaddeningHGauntletsEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiArmorMaddeningHGauntletsEquip > 0
+		set TEiArmorMaddeningHGauntletsEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetMaddeningEquip to TEiSetMaddeningEquip + 1
+	if Player.GetEquipped TE01ArmorMaddeningHGauntlets
+		set TEiArmorMaddeningHGauntletsEquip to 1
+	elseif Player.GetEquipped TE02ArmorMaddeningHGauntlets
+		set TEiArmorMaddeningHGauntletsEquip to 2
+	elseif Player.GetEquipped TE03ArmorMaddeningHGauntlets
+		set TEiArmorMaddeningHGauntletsEquip to 3
+	elseif Player.GetEquipped TE04ArmorMaddeningHGauntlets 
+		set TEiArmorMaddeningHGauntletsEquip to 4
+	elseif Player.GetEquipped TE05ArmorMaddeningHGauntlets 
+		set TEiArmorMaddeningHGauntletsEquip to 5
+	elseif Player.GetEquipped TE06ArmorMaddeningHGauntlets
+		set TEiArmorMaddeningHGauntletsEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetMaddeningEquip to TEiSetMaddeningEquip - 1
+	if TEiArmorMaddeningHGauntletsEquip > 0
+		set TEiArmorMaddeningHGauntletsEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiArmorMaddeningHGauntletsEquip == 1
+			Player.EquipItem TE02ArmorMaddeningHGauntlets
+			set TEiArmorMaddeningHGauntletsEquip to 2
+			set bShouldEquip to 0
+		elseif TEiArmorMaddeningHGauntletsEquip == 2
+			Player.EquipItem TE03ArmorMaddeningHGauntlets
+			set TEiArmorMaddeningHGauntletsEquip to 3
+			set bShouldEquip to 0
+		elseif TEiArmorMaddeningHGauntletsEquip == 3
+			Player.EquipItem TE04ArmorMaddeningHGauntlets
+			set TEiArmorMaddeningHGauntletsEquip to 4
+			set bShouldEquip to 0
+		elseif TEiArmorMaddeningHGauntletsEquip == 4
+			Player.EquipItem TE05ArmorMaddeningHGauntlets
+			set TEiArmorMaddeningHGauntletsEquip to 5
+			set bShouldEquip to 0
+		elseif TEiArmorMaddeningHGauntletsEquip == 5
+			Player.EquipItem TE06ArmorMaddeningHGauntlets
+			set TEiArmorMaddeningHGauntletsEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

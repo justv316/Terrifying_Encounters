@@ -1,0 +1,69 @@
+scn TESOWeapIntricateSilverShortswordObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponIntricateSilverShortswordEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponIntricateSilverShortswordEquip > 0
+		set TEiWeaponIntricateSilverShortswordEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	if Player.GetEquipped TE01WeaponIntricateSilverShortsword
+		set TEiWeaponIntricateSilverShortswordEquip to 1
+	elseif Player.GetEquipped TE02WeaponIntricateSilverShortsword
+		set TEiWeaponIntricateSilverShortswordEquip to 2
+	elseif Player.GetEquipped TE03WeaponIntricateSilverShortsword
+		set TEiWeaponIntricateSilverShortswordEquip to 3
+	elseif Player.GetEquipped TE04WeaponIntricateSilverShortsword 
+		set TEiWeaponIntricateSilverShortswordEquip to 4
+	elseif Player.GetEquipped TE05WeaponIntricateSilverShortsword 
+		set TEiWeaponIntricateSilverShortswordEquip to 5
+	elseif Player.GetEquipped TE06WeaponIntricateSilverShortsword
+		set TEiWeaponIntricateSilverShortswordEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	if TEiWeaponIntricateSilverShortswordEquip > 0
+		set TEiWeaponIntricateSilverShortswordEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponIntricateSilverShortswordEquip == 1
+			Player.EquipItem TE02WeaponIntricateSilverShortsword
+			set TEiWeaponIntricateSilverShortswordEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponIntricateSilverShortswordEquip == 2
+			Player.EquipItem TE03WeaponIntricateSilverShortsword
+			set TEiWeaponIntricateSilverShortswordEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponIntricateSilverShortswordEquip == 3
+			Player.EquipItem TE04WeaponIntricateSilverShortsword
+			set TEiWeaponIntricateSilverShortswordEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponIntricateSilverShortswordEquip == 4
+			Player.EquipItem TE05WeaponIntricateSilverShortsword
+			set TEiWeaponIntricateSilverShortswordEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponIntricateSilverShortswordEquip == 5
+			Player.EquipItem TE06WeaponIntricateSilverShortsword
+			set TEiWeaponIntricateSilverShortswordEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

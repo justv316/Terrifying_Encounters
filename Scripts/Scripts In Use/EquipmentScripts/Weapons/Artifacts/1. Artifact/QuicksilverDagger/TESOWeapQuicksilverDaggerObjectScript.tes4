@@ -1,0 +1,69 @@
+scn TESOWeapQuicksilverDaggerObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponQuicksilverDaggerEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponQuicksilverDaggerEquip > 0
+		set TEiWeaponQuicksilverDaggerEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	if Player.GetEquipped TE01WeaponQuicksilverDagger
+		set TEiWeaponQuicksilverDaggerEquip to 1
+	elseif Player.GetEquipped TE02WeaponQuicksilverDagger
+		set TEiWeaponQuicksilverDaggerEquip to 2
+	elseif Player.GetEquipped TE03WeaponQuicksilverDagger
+		set TEiWeaponQuicksilverDaggerEquip to 3
+	elseif Player.GetEquipped TE04WeaponQuicksilverDagger 
+		set TEiWeaponQuicksilverDaggerEquip to 4
+	elseif Player.GetEquipped TE05WeaponQuicksilverDagger 
+		set TEiWeaponQuicksilverDaggerEquip to 5
+	elseif Player.GetEquipped TE06WeaponQuicksilverDagger
+		set TEiWeaponQuicksilverDaggerEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	if TEiWeaponQuicksilverDaggerEquip > 0
+		set TEiWeaponQuicksilverDaggerEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponQuicksilverDaggerEquip == 1
+			Player.EquipItem TE02WeaponQuicksilverDagger
+			set TEiWeaponQuicksilverDaggerEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponQuicksilverDaggerEquip == 2
+			Player.EquipItem TE03WeaponQuicksilverDagger
+			set TEiWeaponQuicksilverDaggerEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponQuicksilverDaggerEquip == 3
+			Player.EquipItem TE04WeaponQuicksilverDagger
+			set TEiWeaponQuicksilverDaggerEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponQuicksilverDaggerEquip == 4
+			Player.EquipItem TE05WeaponQuicksilverDagger
+			set TEiWeaponQuicksilverDaggerEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponQuicksilverDaggerEquip == 5
+			Player.EquipItem TE06WeaponQuicksilverDagger
+			set TEiWeaponQuicksilverDaggerEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

@@ -1,0 +1,71 @@
+scn TESOWeapMalachiteMaceObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponMalachiteMaceEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponMalachiteMaceEquip > 0
+		set TEiWeaponMalachiteMaceEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetMalachiteEquip to TEiSetMalachiteEquip + 1
+	if Player.GetEquipped TE01WeaponMalachiteMace
+		set TEiWeaponMalachiteMaceEquip to 1
+	elseif Player.GetEquipped TE02WeaponMalachiteMace
+		set TEiWeaponMalachiteMaceEquip to 2
+	elseif Player.GetEquipped TE03WeaponMalachiteMace
+		set TEiWeaponMalachiteMaceEquip to 3
+	elseif Player.GetEquipped TE04WeaponMalachiteMace 
+		set TEiWeaponMalachiteMaceEquip to 4
+	elseif Player.GetEquipped TE05WeaponMalachiteMace 
+		set TEiWeaponMalachiteMaceEquip to 5
+	elseif Player.GetEquipped TE06WeaponMalachiteMace
+		set TEiWeaponMalachiteMaceEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetMalachiteEquip to TEiSetMalachiteEquip - 1
+	if TEiWeaponMalachiteMaceEquip > 0
+		set TEiWeaponMalachiteMaceEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponMalachiteMaceEquip == 1
+			Player.EquipItem TE02WeaponMalachiteMace
+			set TEiWeaponMalachiteMaceEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponMalachiteMaceEquip == 2
+			Player.EquipItem TE03WeaponMalachiteMace
+			set TEiWeaponMalachiteMaceEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponMalachiteMaceEquip == 3
+			Player.EquipItem TE04WeaponMalachiteMace
+			set TEiWeaponMalachiteMaceEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponMalachiteMaceEquip == 4
+			Player.EquipItem TE05WeaponMalachiteMace
+			set TEiWeaponMalachiteMaceEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponMalachiteMaceEquip == 5
+			Player.EquipItem TE06WeaponMalachiteMace
+			set TEiWeaponMalachiteMaceEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

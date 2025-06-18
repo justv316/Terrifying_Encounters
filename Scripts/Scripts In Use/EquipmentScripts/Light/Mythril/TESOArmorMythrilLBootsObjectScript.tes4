@@ -1,0 +1,71 @@
+scn TESOArmorMythrilLBootsObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiArmorMythrilLBootsEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiArmorMythrilLBootsEquip > 0
+		set TEiArmorMythrilLBootsEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetMythrilSilvriteEquip to TEiSetMythrilSilvriteEquip + 1
+	if Player.GetEquipped TE01ArmorMythrilLBoots
+		set TEiArmorMythrilLBootsEquip to 1
+	elseif Player.GetEquipped TE02ArmorMythrilLBoots
+		set TEiArmorMythrilLBootsEquip to 2
+	elseif Player.GetEquipped TE03ArmorMythrilLBoots
+		set TEiArmorMythrilLBootsEquip to 3
+	elseif Player.GetEquipped TE04ArmorMythrilLBoots 
+		set TEiArmorMythrilLBootsEquip to 4
+	elseif Player.GetEquipped TE05ArmorMythrilLBoots 
+		set TEiArmorMythrilLBootsEquip to 5
+	elseif Player.GetEquipped TE06ArmorMythrilLBoots
+		set TEiArmorMythrilLBootsEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetMythrilSilvriteEquip to TEiSetMythrilSilvriteEquip - 1
+	if TEiArmorMythrilLBootsEquip > 0
+		set TEiArmorMythrilLBootsEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiArmorMythrilLBootsEquip == 1
+			Player.EquipItem TE02ArmorMythrilLBoots
+			set TEiArmorMythrilLBootsEquip to 2
+			set bShouldEquip to 0
+		elseif TEiArmorMythrilLBootsEquip == 2
+			Player.EquipItem TE03ArmorMythrilLBoots
+			set TEiArmorMythrilLBootsEquip to 3
+			set bShouldEquip to 0
+		elseif TEiArmorMythrilLBootsEquip == 3
+			Player.EquipItem TE04ArmorMythrilLBoots
+			set TEiArmorMythrilLBootsEquip to 4
+			set bShouldEquip to 0
+		elseif TEiArmorMythrilLBootsEquip == 4
+			Player.EquipItem TE05ArmorMythrilLBoots
+			set TEiArmorMythrilLBootsEquip to 5
+			set bShouldEquip to 0
+		elseif TEiArmorMythrilLBootsEquip == 5
+			Player.EquipItem TE06ArmorMythrilLBoots
+			set TEiArmorMythrilLBootsEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

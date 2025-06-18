@@ -1,0 +1,71 @@
+scn TESOWeapObsidianClaymoreObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponObsidianClaymoreEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponObsidianClaymoreEquip > 0
+		set TEiWeaponObsidianClaymoreEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetObsidianEquip to TEiSetObsidianEquip + 1
+	if Player.GetEquipped TE01WeaponObsidianClaymore
+		set TEiWeaponObsidianClaymoreEquip to 1
+	elseif Player.GetEquipped TE02WeaponObsidianClaymore
+		set TEiWeaponObsidianClaymoreEquip to 2
+	elseif Player.GetEquipped TE03WeaponObsidianClaymore
+		set TEiWeaponObsidianClaymoreEquip to 3
+	elseif Player.GetEquipped TE04WeaponObsidianClaymore 
+		set TEiWeaponObsidianClaymoreEquip to 4
+	elseif Player.GetEquipped TE05WeaponObsidianClaymore 
+		set TEiWeaponObsidianClaymoreEquip to 5
+	elseif Player.GetEquipped TE06WeaponObsidianClaymore
+		set TEiWeaponObsidianClaymoreEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetObsidianEquip to TEiSetObsidianEquip - 1
+	if TEiWeaponObsidianClaymoreEquip > 0
+		set TEiWeaponObsidianClaymoreEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponObsidianClaymoreEquip == 1
+			Player.EquipItem TE02WeaponObsidianClaymore
+			set TEiWeaponObsidianClaymoreEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponObsidianClaymoreEquip == 2
+			Player.EquipItem TE03WeaponObsidianClaymore
+			set TEiWeaponObsidianClaymoreEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponObsidianClaymoreEquip == 3
+			Player.EquipItem TE04WeaponObsidianClaymore
+			set TEiWeaponObsidianClaymoreEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponObsidianClaymoreEquip == 4
+			Player.EquipItem TE05WeaponObsidianClaymore
+			set TEiWeaponObsidianClaymoreEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponObsidianClaymoreEquip == 5
+			Player.EquipItem TE06WeaponObsidianClaymore
+			set TEiWeaponObsidianClaymoreEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

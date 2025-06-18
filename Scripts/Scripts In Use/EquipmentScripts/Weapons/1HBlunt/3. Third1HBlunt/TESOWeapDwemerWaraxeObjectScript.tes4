@@ -1,0 +1,71 @@
+scn TESOWeapDwemerWaraxeObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponDwemerWaraxeEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponDwemerWaraxeEquip > 0
+		set TEiWeaponDwemerWaraxeEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetDwemerEquip to TEiSetDwemerEquip + 1
+	if Player.GetEquipped TE01WeaponDwemerWaraxe
+		set TEiWeaponDwemerWaraxeEquip to 1
+	elseif Player.GetEquipped TE02WeaponDwemerWaraxe
+		set TEiWeaponDwemerWaraxeEquip to 2
+	elseif Player.GetEquipped TE03WeaponDwemerWaraxe
+		set TEiWeaponDwemerWaraxeEquip to 3
+	elseif Player.GetEquipped TE04WeaponDwemerWaraxe 
+		set TEiWeaponDwemerWaraxeEquip to 4
+	elseif Player.GetEquipped TE05WeaponDwemerWaraxe 
+		set TEiWeaponDwemerWaraxeEquip to 5
+	elseif Player.GetEquipped TE06WeaponDwemerWaraxe
+		set TEiWeaponDwemerWaraxeEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetDwemerEquip to TEiSetDwemerEquip - 1
+	if TEiWeaponDwemerWaraxeEquip > 0
+		set TEiWeaponDwemerWaraxeEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponDwemerWaraxeEquip == 1
+			Player.EquipItem TE02WeaponDwemerWaraxe
+			set TEiWeaponDwemerWaraxeEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponDwemerWaraxeEquip == 2
+			Player.EquipItem TE03WeaponDwemerWaraxe
+			set TEiWeaponDwemerWaraxeEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponDwemerWaraxeEquip == 3
+			Player.EquipItem TE04WeaponDwemerWaraxe
+			set TEiWeaponDwemerWaraxeEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponDwemerWaraxeEquip == 4
+			Player.EquipItem TE05WeaponDwemerWaraxe
+			set TEiWeaponDwemerWaraxeEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponDwemerWaraxeEquip == 5
+			Player.EquipItem TE06WeaponDwemerWaraxe
+			set TEiWeaponDwemerWaraxeEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

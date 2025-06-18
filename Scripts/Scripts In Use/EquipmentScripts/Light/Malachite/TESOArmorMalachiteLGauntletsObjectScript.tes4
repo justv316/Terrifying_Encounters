@@ -1,0 +1,71 @@
+scn TESOArmorMalachiteLGauntletsObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiArmorMalachiteLGauntletsEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiArmorMalachiteLGauntletsEquip > 0
+		set TEiArmorMalachiteLGauntletsEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetMalachiteEquip to TEiSetMalachiteEquip + 1
+	if Player.GetEquipped TE01ArmorMalachiteLGauntlets
+		set TEiArmorMalachiteLGauntletsEquip to 1
+	elseif Player.GetEquipped TE02ArmorMalachiteLGauntlets
+		set TEiArmorMalachiteLGauntletsEquip to 2
+	elseif Player.GetEquipped TE03ArmorMalachiteLGauntlets
+		set TEiArmorMalachiteLGauntletsEquip to 3
+	elseif Player.GetEquipped TE04ArmorMalachiteLGauntlets 
+		set TEiArmorMalachiteLGauntletsEquip to 4
+	elseif Player.GetEquipped TE05ArmorMalachiteLGauntlets 
+		set TEiArmorMalachiteLGauntletsEquip to 5
+	elseif Player.GetEquipped TE06ArmorMalachiteLGauntlets
+		set TEiArmorMalachiteLGauntletsEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetMalachiteEquip to TEiSetMalachiteEquip - 1
+	if TEiArmorMalachiteLGauntletsEquip > 0
+		set TEiArmorMalachiteLGauntletsEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiArmorMalachiteLGauntletsEquip == 1
+			Player.EquipItem TE02ArmorMalachiteLGauntlets
+			set TEiArmorMalachiteLGauntletsEquip to 2
+			set bShouldEquip to 0
+		elseif TEiArmorMalachiteLGauntletsEquip == 2
+			Player.EquipItem TE03ArmorMalachiteLGauntlets
+			set TEiArmorMalachiteLGauntletsEquip to 3
+			set bShouldEquip to 0
+		elseif TEiArmorMalachiteLGauntletsEquip == 3
+			Player.EquipItem TE04ArmorMalachiteLGauntlets
+			set TEiArmorMalachiteLGauntletsEquip to 4
+			set bShouldEquip to 0
+		elseif TEiArmorMalachiteLGauntletsEquip == 4
+			Player.EquipItem TE05ArmorMalachiteLGauntlets
+			set TEiArmorMalachiteLGauntletsEquip to 5
+			set bShouldEquip to 0
+		elseif TEiArmorMalachiteLGauntletsEquip == 5
+			Player.EquipItem TE06ArmorMalachiteLGauntlets
+			set TEiArmorMalachiteLGauntletsEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

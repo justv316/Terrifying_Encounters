@@ -1,0 +1,71 @@
+scn TESOArmorMaddeningLBootsObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiArmorMaddeningLBootsEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiArmorMaddeningLBootsEquip > 0
+		set TEiArmorMaddeningLBootsEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetMaddeningEquip to TEiSetMaddeningEquip + 1
+	if Player.GetEquipped TE01ArmorMaddeningLBoots
+		set TEiArmorMaddeningLBootsEquip to 1
+	elseif Player.GetEquipped TE02ArmorMaddeningLBoots
+		set TEiArmorMaddeningLBootsEquip to 2
+	elseif Player.GetEquipped TE03ArmorMaddeningLBoots
+		set TEiArmorMaddeningLBootsEquip to 3
+	elseif Player.GetEquipped TE04ArmorMaddeningLBoots 
+		set TEiArmorMaddeningLBootsEquip to 4
+	elseif Player.GetEquipped TE05ArmorMaddeningLBoots 
+		set TEiArmorMaddeningLBootsEquip to 5
+	elseif Player.GetEquipped TE06ArmorMaddeningLBoots
+		set TEiArmorMaddeningLBootsEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetMaddeningEquip to TEiSetMaddeningEquip - 1
+	if TEiArmorMaddeningLBootsEquip > 0
+		set TEiArmorMaddeningLBootsEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiArmorMaddeningLBootsEquip == 1
+			Player.EquipItem TE02ArmorMaddeningLBoots
+			set TEiArmorMaddeningLBootsEquip to 2
+			set bShouldEquip to 0
+		elseif TEiArmorMaddeningLBootsEquip == 2
+			Player.EquipItem TE03ArmorMaddeningLBoots
+			set TEiArmorMaddeningLBootsEquip to 3
+			set bShouldEquip to 0
+		elseif TEiArmorMaddeningLBootsEquip == 3
+			Player.EquipItem TE04ArmorMaddeningLBoots
+			set TEiArmorMaddeningLBootsEquip to 4
+			set bShouldEquip to 0
+		elseif TEiArmorMaddeningLBootsEquip == 4
+			Player.EquipItem TE05ArmorMaddeningLBoots
+			set TEiArmorMaddeningLBootsEquip to 5
+			set bShouldEquip to 0
+		elseif TEiArmorMaddeningLBootsEquip == 5
+			Player.EquipItem TE06ArmorMaddeningLBoots
+			set TEiArmorMaddeningLBootsEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

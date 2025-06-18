@@ -1,0 +1,1043 @@
+scn TESQShrineInventoryCheckQuestScript
+
+float fQuestDelayTime
+short iSearchItem
+short iDisplayedMenu
+
+short iChoice
+
+short bFoundItem
+short bFoundArmorSet
+short bFoundWeaponSet
+
+begin gamemode
+	if iDisplayedMenu == 0
+		if iSearchItem == 0
+			if Player.GetItemCount TE01ArmorObsidianHBoots > 0 || Player.GetItemCount TE02ArmorObsidianHBoots > 0 || Player.GetItemCount TE03ArmorObsidianHBoots > 0 || Player.GetItemCount TE04ArmorObsidianHBoots > 0 || Player.GetItemCount TE05ArmorObsidianHBoots > 0
+				set TEQQShrineUpgradeObsidianArmorQuest.bObsidianHBoots to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFirstHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorObsidianHCuirass > 0 || Player.GetItemCount TE02ArmorObsidianHCuirass > 0 || Player.GetItemCount TE03ArmorObsidianHCuirass > 0 || Player.GetItemCount TE04ArmorObsidianHCuirass > 0 || Player.GetItemCount TE05ArmorObsidianHCuirass > 0
+				set TEQQShrineUpgradeObsidianArmorQuest.bObsidianHCuirass to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFirstHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorObsidianHGauntlets > 0 || Player.GetItemCount TE02ArmorObsidianHGauntlets > 0 || Player.GetItemCount TE03ArmorObsidianHGauntlets > 0 || Player.GetItemCount TE04ArmorObsidianHGauntlets > 0 || Player.GetItemCount TE05ArmorObsidianHGauntlets > 0
+				set TEQQShrineUpgradeObsidianArmorQuest.bObsidianHGauntlets to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFirstHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorObsidianHGreaves > 0 || Player.GetItemCount TE02ArmorObsidianHGreaves > 0 || Player.GetItemCount TE03ArmorObsidianHGreaves > 0 || Player.GetItemCount TE04ArmorObsidianHGreaves > 0 || Player.GetItemCount TE05ArmorObsidianHGreaves > 0
+				set TEQQShrineUpgradeObsidianArmorQuest.bObsidianHGreaves to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFirstHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorObsidianHHelmet > 0 || Player.GetItemCount TE02ArmorObsidianHHelmet > 0 || Player.GetItemCount TE03ArmorObsidianHHelmet > 0 || Player.GetItemCount TE04ArmorObsidianHHelmet > 0 || Player.GetItemCount TE05ArmorObsidianHHelmet > 0
+				set TEQQShrineUpgradeObsidianArmorQuest.bObsidianHHelmet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFirstHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorObsidianHShield > 0 || Player.GetItemCount TE02ArmorObsidianHShield > 0 || Player.GetItemCount TE03ArmorObsidianHShield > 0 || Player.GetItemCount TE04ArmorObsidianHShield > 0 || Player.GetItemCount TE05ArmorObsidianHShield > 0
+				set TEQQShrineUpgradeObsidianArmorQuest.bObsidianHShield to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFirstHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorCursedHBoots > 0 || Player.GetItemCount TE02ArmorCursedHBoots > 0 || Player.GetItemCount TE03ArmorCursedHBoots > 0 || Player.GetItemCount TE04ArmorCursedHBoots > 0 || Player.GetItemCount TE05ArmorCursedHBoots > 0
+				set TEQQShrineUpgradeCursedArmorQuest.bCursedHBoots to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundSecondHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorCursedHCuirass > 0 || Player.GetItemCount TE02ArmorCursedHCuirass > 0 || Player.GetItemCount TE03ArmorCursedHCuirass > 0 || Player.GetItemCount TE04ArmorCursedHCuirass > 0 || Player.GetItemCount TE05ArmorCursedHCuirass > 0
+				set TEQQShrineUpgradeCursedArmorQuest.bCursedHCuirass to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundSecondHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorCursedHGauntlets > 0 || Player.GetItemCount TE02ArmorCursedHGauntlets > 0 || Player.GetItemCount TE03ArmorCursedHGauntlets > 0 || Player.GetItemCount TE04ArmorCursedHGauntlets > 0 || Player.GetItemCount TE05ArmorCursedHGauntlets > 0
+				set TEQQShrineUpgradeCursedArmorQuest.bCursedHGauntlets to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundSecondHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorCursedHGreaves > 0 || Player.GetItemCount TE02ArmorCursedHGreaves > 0 || Player.GetItemCount TE03ArmorCursedHGreaves > 0 || Player.GetItemCount TE04ArmorCursedHGreaves > 0 || Player.GetItemCount TE05ArmorCursedHGreaves > 0
+				set TEQQShrineUpgradeCursedArmorQuest.bCursedHGreaves to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundSecondHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorCursedHHelmet > 0 || Player.GetItemCount TE02ArmorCursedHHelmet > 0 || Player.GetItemCount TE03ArmorCursedHHelmet > 0 || Player.GetItemCount TE04ArmorCursedHHelmet > 0 || Player.GetItemCount TE05ArmorCursedHHelmet > 0
+				set TEQQShrineUpgradeCursedArmorQuest.bCursedHHelmet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundSecondHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorCursedHShield > 0 || Player.GetItemCount TE02ArmorCursedHShield > 0 || Player.GetItemCount TE03ArmorCursedHShield > 0 || Player.GetItemCount TE04ArmorCursedHShield > 0 || Player.GetItemCount TE05ArmorCursedHShield > 0
+				set TEQQShrineUpgradeCursedArmorQuest.bCursedHShield to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundSecondHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorDwemerHBoots > 0 || Player.GetItemCount TE02ArmorDwemerHBoots > 0 || Player.GetItemCount TE03ArmorDwemerHBoots > 0 || Player.GetItemCount TE04ArmorDwemerHBoots > 0 || Player.GetItemCount TE05ArmorDwemerHBoots > 0
+				set TEQQShrineUpgradeDwemerArmorQuest.bDwemerHBoots to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundThirdHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorDwemerHCuirass > 0 || Player.GetItemCount TE02ArmorDwemerHCuirass > 0 || Player.GetItemCount TE03ArmorDwemerHCuirass > 0 || Player.GetItemCount TE04ArmorDwemerHCuirass > 0 || Player.GetItemCount TE05ArmorDwemerHCuirass > 0
+				set TEQQShrineUpgradeDwemerArmorQuest.bDwemerHCuirass to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundThirdHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorDwemerHGauntlets > 0 || Player.GetItemCount TE02ArmorDwemerHGauntlets > 0 || Player.GetItemCount TE03ArmorDwemerHGauntlets > 0 || Player.GetItemCount TE04ArmorDwemerHGauntlets > 0 || Player.GetItemCount TE05ArmorDwemerHGauntlets > 0
+				set TEQQShrineUpgradeDwemerArmorQuest.bDwemerHGauntlets to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundThirdHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorDwemerHGreaves > 0 || Player.GetItemCount TE02ArmorDwemerHGreaves > 0 || Player.GetItemCount TE03ArmorDwemerHGreaves > 0 || Player.GetItemCount TE04ArmorDwemerHGreaves > 0 || Player.GetItemCount TE05ArmorDwemerHGreaves > 0
+				set TEQQShrineUpgradeDwemerArmorQuest.bDwemerHGreaves to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundThirdHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorDwemerHHelmet > 0 || Player.GetItemCount TE02ArmorDwemerHHelmet > 0 || Player.GetItemCount TE03ArmorDwemerHHelmet > 0 || Player.GetItemCount TE04ArmorDwemerHHelmet > 0 || Player.GetItemCount TE05ArmorDwemerHHelmet > 0
+				set TEQQShrineUpgradeDwemerArmorQuest.bDwemerHHelmet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundThirdHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorDwemerHShield > 0 || Player.GetItemCount TE02ArmorDwemerHShield > 0 || Player.GetItemCount TE03ArmorDwemerHShield > 0 || Player.GetItemCount TE04ArmorDwemerHShield > 0 || Player.GetItemCount TE05ArmorDwemerHShield > 0
+				set TEQQShrineUpgradeDwemerArmorQuest.bDwemerHShield to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundThirdHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMaddeningHBoots > 0 || Player.GetItemCount TE02ArmorMaddeningHBoots > 0 || Player.GetItemCount TE03ArmorMaddeningHBoots > 0 || Player.GetItemCount TE04ArmorMaddeningHBoots > 0 || Player.GetItemCount TE05ArmorMaddeningHBoots > 0
+				set TEQQShrineUpgradeMaddeningHArmorQuest.bMaddeningHBoots to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFourthHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMaddeningHCuirass > 0 || Player.GetItemCount TE02ArmorMaddeningHCuirass > 0 || Player.GetItemCount TE03ArmorMaddeningHCuirass > 0 || Player.GetItemCount TE04ArmorMaddeningHCuirass > 0 || Player.GetItemCount TE05ArmorMaddeningHCuirass > 0
+				set TEQQShrineUpgradeMaddeningHArmorQuest.bMaddeningHCuirass to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFourthHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMaddeningHGauntlets > 0 || Player.GetItemCount TE02ArmorMaddeningHGauntlets > 0 || Player.GetItemCount TE03ArmorMaddeningHGauntlets > 0 || Player.GetItemCount TE04ArmorMaddeningHGauntlets > 0 || Player.GetItemCount TE05ArmorMaddeningHGauntlets > 0
+				set TEQQShrineUpgradeMaddeningHArmorQuest.bMaddeningHGauntlets to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFourthHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMaddeningHGreaves > 0 || Player.GetItemCount TE02ArmorMaddeningHGreaves > 0 || Player.GetItemCount TE03ArmorMaddeningHGreaves > 0 || Player.GetItemCount TE04ArmorMaddeningHGreaves > 0 || Player.GetItemCount TE05ArmorMaddeningHGreaves > 0
+				set TEQQShrineUpgradeMaddeningHArmorQuest.bMaddeningHGreaves to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFourthHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMaddeningHHelmet > 0 || Player.GetItemCount TE02ArmorMaddeningHHelmet > 0 || Player.GetItemCount TE03ArmorMaddeningHHelmet > 0 || Player.GetItemCount TE04ArmorMaddeningHHelmet > 0 || Player.GetItemCount TE05ArmorMaddeningHHelmet > 0
+				set TEQQShrineUpgradeMaddeningHArmorQuest.bMaddeningHHelmet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFourthHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMaddeningHShield > 0 || Player.GetItemCount TE02ArmorMaddeningHShield > 0 || Player.GetItemCount TE03ArmorMaddeningHShield > 0 || Player.GetItemCount TE04ArmorMaddeningHShield > 0 || Player.GetItemCount TE05ArmorMaddeningHShield > 0
+				set TEQQShrineUpgradeMaddeningHArmorQuest.bMaddeningHShield to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFourthHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorResiniteHBoots > 0 || Player.GetItemCount TE02ArmorResiniteHBoots > 0 || Player.GetItemCount TE03ArmorResiniteHBoots > 0 || Player.GetItemCount TE04ArmorResiniteHBoots > 0 || Player.GetItemCount TE05ArmorResiniteHBoots > 0
+				set TEQQShrineUpgradeResiniteHArmorQuest.bResiniteHBoots to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFifthHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorResiniteHCuirass > 0 || Player.GetItemCount TE02ArmorResiniteHCuirass > 0 || Player.GetItemCount TE03ArmorResiniteHCuirass > 0 || Player.GetItemCount TE04ArmorResiniteHCuirass > 0 || Player.GetItemCount TE05ArmorResiniteHCuirass > 0
+				set TEQQShrineUpgradeResiniteHArmorQuest.bResiniteHCuirass to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFifthHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorResiniteHGauntlets > 0 || Player.GetItemCount TE02ArmorResiniteHGauntlets > 0 || Player.GetItemCount TE03ArmorResiniteHGauntlets > 0 || Player.GetItemCount TE04ArmorResiniteHGauntlets > 0 || Player.GetItemCount TE05ArmorResiniteHGauntlets > 0
+				set TEQQShrineUpgradeResiniteHArmorQuest.bResiniteHGauntlets to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFifthHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorResiniteHGreaves > 0 || Player.GetItemCount TE02ArmorResiniteHGreaves > 0 || Player.GetItemCount TE03ArmorResiniteHGreaves > 0 || Player.GetItemCount TE04ArmorResiniteHGreaves > 0 || Player.GetItemCount TE05ArmorResiniteHGreaves > 0
+				set TEQQShrineUpgradeResiniteHArmorQuest.bResiniteHGreaves to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFifthHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorResiniteHHelmet > 0 || Player.GetItemCount TE02ArmorResiniteHHelmet > 0 || Player.GetItemCount TE03ArmorResiniteHHelmet > 0 || Player.GetItemCount TE04ArmorResiniteHHelmet > 0 || Player.GetItemCount TE05ArmorResiniteHHelmet > 0
+				set TEQQShrineUpgradeResiniteHArmorQuest.bResiniteHHelmet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFifthHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorResiniteHShield > 0 || Player.GetItemCount TE02ArmorResiniteHShield > 0 || Player.GetItemCount TE03ArmorResiniteHShield > 0 || Player.GetItemCount TE04ArmorResiniteHShield > 0 || Player.GetItemCount TE05ArmorResiniteHShield > 0
+				set TEQQShrineUpgradeResiniteHArmorQuest.bResiniteHShield to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFifthHArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorAyleidicLBoots > 0 || Player.GetItemCount TE02ArmorAyleidicLBoots > 0 || Player.GetItemCount TE03ArmorAyleidicLBoots > 0 || Player.GetItemCount TE04ArmorAyleidicLBoots > 0 || Player.GetItemCount TE05ArmorAyleidicLBoots > 0
+				set TEQQShrineUpgradeAyleidicArmorQuest.bAyleidicLBoots to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFirstLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorAyleidicLCuirass > 0 || Player.GetItemCount TE02ArmorAyleidicLCuirass > 0 || Player.GetItemCount TE03ArmorAyleidicLCuirass > 0 || Player.GetItemCount TE04ArmorAyleidicLCuirass > 0 || Player.GetItemCount TE05ArmorAyleidicLCuirass > 0
+				set TEQQShrineUpgradeAyleidicArmorQuest.bAyleidicLCuirass to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFirstLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorAyleidicLGauntlets > 0 || Player.GetItemCount TE02ArmorAyleidicLGauntlets > 0 || Player.GetItemCount TE03ArmorAyleidicLGauntlets > 0 || Player.GetItemCount TE04ArmorAyleidicLGauntlets > 0 || Player.GetItemCount TE05ArmorAyleidicLGauntlets > 0
+				set TEQQShrineUpgradeAyleidicArmorQuest.bAyleidicLGauntlets to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFirstLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorAyleidicLGreaves > 0 || Player.GetItemCount TE02ArmorAyleidicLGreaves > 0 || Player.GetItemCount TE03ArmorAyleidicLGreaves > 0 || Player.GetItemCount TE04ArmorAyleidicLGreaves > 0 || Player.GetItemCount TE05ArmorAyleidicLGreaves > 0
+				set TEQQShrineUpgradeAyleidicArmorQuest.bAyleidicLGreaves to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFirstLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorAyleidicLHelmet > 0 || Player.GetItemCount TE02ArmorAyleidicLHelmet > 0 || Player.GetItemCount TE03ArmorAyleidicLHelmet > 0 || Player.GetItemCount TE04ArmorAyleidicLHelmet > 0 || Player.GetItemCount TE05ArmorAyleidicLHelmet > 0
+				set TEQQShrineUpgradeAyleidicArmorQuest.bAyleidicLHelmet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFirstLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorAyleidicLShield > 0 || Player.GetItemCount TE02ArmorAyleidicLShield > 0 || Player.GetItemCount TE03ArmorAyleidicLShield > 0 || Player.GetItemCount TE04ArmorAyleidicLShield > 0 || Player.GetItemCount TE05ArmorAyleidicLShield > 0
+				set TEQQShrineUpgradeAyleidicArmorQuest.bAyleidicLShield to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFirstLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMythrilLBoots > 0 || Player.GetItemCount TE02ArmorMythrilLBoots > 0 || Player.GetItemCount TE03ArmorMythrilLBoots > 0 || Player.GetItemCount TE04ArmorMythrilLBoots > 0 || Player.GetItemCount TE05ArmorMythrilLBoots > 0
+				set TEQQShrineUpgradeMythrilArmorQuest.bMythrilLBoots to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundSecondLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMythrilLCuirass > 0 || Player.GetItemCount TE02ArmorMythrilLCuirass > 0 || Player.GetItemCount TE03ArmorMythrilLCuirass > 0 || Player.GetItemCount TE04ArmorMythrilLCuirass > 0 || Player.GetItemCount TE05ArmorMythrilLCuirass > 0
+				set TEQQShrineUpgradeMythrilArmorQuest.bMythrilLCuirass to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundSecondLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMythrilLGauntlets > 0 || Player.GetItemCount TE02ArmorMythrilLGauntlets > 0 || Player.GetItemCount TE03ArmorMythrilLGauntlets > 0 || Player.GetItemCount TE04ArmorMythrilLGauntlets > 0 || Player.GetItemCount TE05ArmorMythrilLGauntlets > 0
+				set TEQQShrineUpgradeMythrilArmorQuest.bMythrilLGauntlets to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundSecondLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMythrilLGreaves > 0 || Player.GetItemCount TE02ArmorMythrilLGreaves > 0 || Player.GetItemCount TE03ArmorMythrilLGreaves > 0 || Player.GetItemCount TE04ArmorMythrilLGreaves > 0 || Player.GetItemCount TE05ArmorMythrilLGreaves > 0
+				set TEQQShrineUpgradeMythrilArmorQuest.bMythrilLGreaves to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundSecondLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMythrilLHelmet > 0 || Player.GetItemCount TE02ArmorMythrilLHelmet > 0 || Player.GetItemCount TE03ArmorMythrilLHelmet > 0 || Player.GetItemCount TE04ArmorMythrilLHelmet > 0 || Player.GetItemCount TE05ArmorMythrilLHelmet > 0
+				set TEQQShrineUpgradeMythrilArmorQuest.bMythrilLHelmet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundSecondLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMythrilLShield > 0 || Player.GetItemCount TE02ArmorMythrilLShield > 0 || Player.GetItemCount TE03ArmorMythrilLShield > 0 || Player.GetItemCount TE04ArmorMythrilLShield > 0 || Player.GetItemCount TE05ArmorMythrilLShield > 0
+				set TEQQShrineUpgradeMythrilArmorQuest.bMythrilLShield to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundSecondLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMalachiteLBoots > 0 || Player.GetItemCount TE02ArmorMalachiteLBoots > 0 || Player.GetItemCount TE03ArmorMalachiteLBoots > 0 || Player.GetItemCount TE04ArmorMalachiteLBoots > 0 || Player.GetItemCount TE05ArmorMalachiteLBoots > 0
+				set TEQQShrineUpgradeMalachiteArmorQuest.bMalachiteLBoots to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundThirdLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMalachiteLCuirass > 0 || Player.GetItemCount TE02ArmorMalachiteLCuirass > 0 || Player.GetItemCount TE03ArmorMalachiteLCuirass > 0 || Player.GetItemCount TE04ArmorMalachiteLCuirass > 0 || Player.GetItemCount TE05ArmorMalachiteLCuirass > 0
+				set TEQQShrineUpgradeMalachiteArmorQuest.bMalachiteLCuirass to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundThirdLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMalachiteLGauntlets > 0 || Player.GetItemCount TE02ArmorMalachiteLGauntlets > 0 || Player.GetItemCount TE03ArmorMalachiteLGauntlets > 0 || Player.GetItemCount TE04ArmorMalachiteLGauntlets > 0 || Player.GetItemCount TE05ArmorMalachiteLGauntlets > 0
+				set TEQQShrineUpgradeMalachiteArmorQuest.bMalachiteLGauntlets to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundThirdLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMalachiteLGreaves > 0 || Player.GetItemCount TE02ArmorMalachiteLGreaves > 0 || Player.GetItemCount TE03ArmorMalachiteLGreaves > 0 || Player.GetItemCount TE04ArmorMalachiteLGreaves > 0 || Player.GetItemCount TE05ArmorMalachiteLGreaves > 0
+				set TEQQShrineUpgradeMalachiteArmorQuest.bMalachiteLGreaves to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundThirdLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMalachiteLHelmet > 0 || Player.GetItemCount TE02ArmorMalachiteLHelmet > 0 || Player.GetItemCount TE03ArmorMalachiteLHelmet > 0 || Player.GetItemCount TE04ArmorMalachiteLHelmet > 0 || Player.GetItemCount TE05ArmorMalachiteLHelmet > 0
+				set TEQQShrineUpgradeMalachiteArmorQuest.bMalachiteLHelmet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundThirdLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMalachiteLShield > 0 || Player.GetItemCount TE02ArmorMalachiteLShield > 0 || Player.GetItemCount TE03ArmorMalachiteLShield > 0 || Player.GetItemCount TE04ArmorMalachiteLShield > 0 || Player.GetItemCount TE05ArmorMalachiteLShield > 0
+				set TEQQShrineUpgradeMalachiteArmorQuest.bMalachiteLShield to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundThirdLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMaddeningLBoots > 0 || Player.GetItemCount TE02ArmorMaddeningLBoots > 0 || Player.GetItemCount TE03ArmorMaddeningLBoots > 0 || Player.GetItemCount TE04ArmorMaddeningLBoots > 0 || Player.GetItemCount TE05ArmorMaddeningLBoots > 0
+				set TEQQShrineUpgradeMaddeningLArmorQuest.bMaddeningLBoots to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFourthLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMaddeningLCuirass > 0 || Player.GetItemCount TE02ArmorMaddeningLCuirass > 0 || Player.GetItemCount TE03ArmorMaddeningLCuirass > 0 || Player.GetItemCount TE04ArmorMaddeningLCuirass > 0 || Player.GetItemCount TE05ArmorMaddeningLCuirass > 0
+				set TEQQShrineUpgradeMaddeningLArmorQuest.bMaddeningLCuirass to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFourthLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMaddeningLGauntlets > 0 || Player.GetItemCount TE02ArmorMaddeningLGauntlets > 0 || Player.GetItemCount TE03ArmorMaddeningLGauntlets > 0 || Player.GetItemCount TE04ArmorMaddeningLGauntlets > 0 || Player.GetItemCount TE05ArmorMaddeningLGauntlets > 0
+				set TEQQShrineUpgradeMaddeningLArmorQuest.bMaddeningLGauntlets to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFourthLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMaddeningLGreaves > 0 || Player.GetItemCount TE02ArmorMaddeningLGreaves > 0 || Player.GetItemCount TE03ArmorMaddeningLGreaves > 0 || Player.GetItemCount TE04ArmorMaddeningLGreaves > 0 || Player.GetItemCount TE05ArmorMaddeningLGreaves > 0
+				set TEQQShrineUpgradeMaddeningLArmorQuest.bMaddeningLGreaves to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFourthLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMaddeningLHelmet > 0 || Player.GetItemCount TE02ArmorMaddeningLHelmet > 0 || Player.GetItemCount TE03ArmorMaddeningLHelmet > 0 || Player.GetItemCount TE04ArmorMaddeningLHelmet > 0 || Player.GetItemCount TE05ArmorMaddeningLHelmet > 0
+				set TEQQShrineUpgradeMaddeningLArmorQuest.bMaddeningLHelmet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFourthLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorMaddeningLShield > 0 || Player.GetItemCount TE02ArmorMaddeningLShield > 0 || Player.GetItemCount TE03ArmorMaddeningLShield > 0 || Player.GetItemCount TE04ArmorMaddeningLShield > 0 || Player.GetItemCount TE05ArmorMaddeningLShield > 0
+				set TEQQShrineUpgradeMaddeningLArmorQuest.bMaddeningLShield to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFourthLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorResiniteLBoots > 0 || Player.GetItemCount TE02ArmorResiniteLBoots > 0 || Player.GetItemCount TE03ArmorResiniteLBoots > 0 || Player.GetItemCount TE04ArmorResiniteLBoots > 0 || Player.GetItemCount TE05ArmorResiniteLBoots > 0
+				set TEQQShrineUpgradeResiniteLArmorQuest.bResiniteLBoots to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFifthLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorResiniteLCuirass > 0 || Player.GetItemCount TE02ArmorResiniteLCuirass > 0 || Player.GetItemCount TE03ArmorResiniteLCuirass > 0 || Player.GetItemCount TE04ArmorResiniteLCuirass > 0 || Player.GetItemCount TE05ArmorResiniteLCuirass > 0
+				set TEQQShrineUpgradeResiniteLArmorQuest.bResiniteLCuirass to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFifthLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorResiniteLGauntlets > 0 || Player.GetItemCount TE02ArmorResiniteLGauntlets > 0 || Player.GetItemCount TE03ArmorResiniteLGauntlets > 0 || Player.GetItemCount TE04ArmorResiniteLGauntlets > 0 || Player.GetItemCount TE05ArmorResiniteLGauntlets > 0
+				set TEQQShrineUpgradeResiniteLArmorQuest.bResiniteLGauntlets to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFifthLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorResiniteLGreaves > 0 || Player.GetItemCount TE02ArmorResiniteLGreaves > 0 || Player.GetItemCount TE03ArmorResiniteLGreaves > 0 || Player.GetItemCount TE04ArmorResiniteLGreaves > 0 || Player.GetItemCount TE05ArmorResiniteLGreaves > 0
+				set TEQQShrineUpgradeResiniteLArmorQuest.bResiniteLGreaves to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFifthLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorResiniteLHelmet > 0 || Player.GetItemCount TE02ArmorResiniteLHelmet > 0 || Player.GetItemCount TE03ArmorResiniteLHelmet > 0 || Player.GetItemCount TE04ArmorResiniteLHelmet > 0 || Player.GetItemCount TE05ArmorResiniteLHelmet > 0
+				set TEQQShrineUpgradeResiniteLArmorQuest.bResiniteLHelmet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFifthLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01ArmorResiniteLShield > 0 || Player.GetItemCount TE02ArmorResiniteLShield > 0 || Player.GetItemCount TE03ArmorResiniteLShield > 0 || Player.GetItemCount TE04ArmorResiniteLShield > 0 || Player.GetItemCount TE05ArmorResiniteLShield > 0
+				set TEQQShrineUpgradeResiniteLArmorQuest.bResiniteLShield to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundFifthLArmorSet to 1
+				set TEQQShrineInventoryCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponCrystalLongsword > 0 || Player.GetItemCount TE02WeaponCrystalLongsword > 0 || Player.GetItemCount TE03WeaponCrystalLongsword > 0 || Player.GetItemCount TE04WeaponCrystalLongsword > 0 || Player.GetItemCount TE05WeaponCrystalLongsword > 0
+				set TEQQShrineUpgradeArtifactQuest.bCrystalLongsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponEbonyUchigatana > 0 || Player.GetItemCount TE02WeaponEbonyUchigatana > 0 || Player.GetItemCount TE03WeaponEbonyUchigatana > 0 || Player.GetItemCount TE04WeaponEbonyUchigatana > 0 || Player.GetItemCount TE05WeaponEbonyUchigatana > 0
+				set TEQQShrineUpgradeArtifactQuest.bEbonyUchigatana to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponGoldUchigatana > 0 || Player.GetItemCount TE02WeaponGoldUchigatana > 0 || Player.GetItemCount TE03WeaponGoldUchigatana > 0 || Player.GetItemCount TE04WeaponGoldUchigatana > 0 || Player.GetItemCount TE05WeaponGoldUchigatana > 0
+				set TEQQShrineUpgradeArtifactQuest.bGoldUchigatana to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponStalrihmShortsword > 0 || Player.GetItemCount TE02WeaponStalrihmShortsword > 0 || Player.GetItemCount TE03WeaponStalrihmShortsword > 0 || Player.GetItemCount TE04WeaponStalrihmShortsword > 0 || Player.GetItemCount TE05WeaponStalrihmShortsword > 0
+				set TEQQShrineUpgradeArtifactQuest.bStalrihmShortsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponQuicksilverDagger > 0 || Player.GetItemCount TE02WeaponQuicksilverDagger > 0 || Player.GetItemCount TE03WeaponQuicksilverDagger > 0 || Player.GetItemCount TE04WeaponQuicksilverDagger > 0 || Player.GetItemCount TE05WeaponQuicksilverDagger > 0
+				set TEQQShrineUpgradeArtifactQuest.bQuicksilverDagger to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponEbonyRazor > 0 || Player.GetItemCount TE02WeaponEbonyRazor > 0 || Player.GetItemCount TE03WeaponEbonyRazor > 0 || Player.GetItemCount TE04WeaponEbonyRazor > 0 || Player.GetItemCount TE05WeaponEbonyRazor > 0
+				set TEQQShrineUpgradeArtifactQuest.bEbonyRazor to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponEbonyRazorA > 0 || Player.GetItemCount TE02WeaponEbonyRazorA > 0 || Player.GetItemCount TE03WeaponEbonyRazorA > 0 || Player.GetItemCount TE04WeaponEbonyRazorA > 0 || Player.GetItemCount TE05WeaponEbonyRazorA > 0
+				set TEQQShrineUpgradeArtifactQuest.bEbonyRazor to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponIntricateEbonyMace > 0 || Player.GetItemCount TE02WeaponIntricateEbonyMace > 0 || Player.GetItemCount TE03WeaponIntricateEbonyMace > 0 || Player.GetItemCount TE04WeaponIntricateEbonyMace > 0 || Player.GetItemCount TE05WeaponIntricateEbonyMace > 0
+				set TEQQShrineUpgradeArtifactTwoQuest.bIntricateEbonyMace to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponIntricateSilverClaymore > 0 || Player.GetItemCount TE02WeaponIntricateSilverClaymore > 0 || Player.GetItemCount TE03WeaponIntricateSilverClaymore > 0 || Player.GetItemCount TE04WeaponIntricateSilverClaymore > 0 || Player.GetItemCount TE05WeaponIntricateSilverClaymore > 0
+				set TEQQShrineUpgradeArtifactTwoQuest.bIntricateSilverClaymore to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponIntricateSilverLongsword > 0 || Player.GetItemCount TE02WeaponIntricateSilverLongsword > 0 || Player.GetItemCount TE03WeaponIntricateSilverLongsword > 0 || Player.GetItemCount TE04WeaponIntricateSilverLongsword > 0 || Player.GetItemCount TE05WeaponIntricateSilverLongsword > 0
+				set TEQQShrineUpgradeArtifactTwoQuest.bIntricateSilverLongsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponResiniteMaddeningWarhammer > 0 || Player.GetItemCount TE02WeaponResiniteMaddeningWarhammer > 0 || Player.GetItemCount TE03WeaponResiniteMaddeningWarhammer > 0 || Player.GetItemCount TE04WeaponResiniteMaddeningWarhammer > 0 || Player.GetItemCount TE05WeaponResiniteMaddeningWarhammer > 0
+				set TEQQShrineUpgradeArtifactTwoQuest.bResiniteMaddeningWarhammer to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponRisingBloodDrinker > 0 || Player.GetItemCount TE02WeaponRisingBloodDrinker > 0 || Player.GetItemCount TE03WeaponRisingBloodDrinker > 0 || Player.GetItemCount TE04WeaponRisingBloodDrinker > 0 || Player.GetItemCount TE05WeaponRisingBloodDrinker > 0
+				set TEQQShrineUpgradeArtifactTwoQuest.bRisingBloodDrinker to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponWaningBloodDrinker > 0 || Player.GetItemCount TE02WeaponWaningBloodDrinker > 0 || Player.GetItemCount TE03WeaponWaningBloodDrinker > 0 || Player.GetItemCount TE04WeaponWaningBloodDrinker > 0 || Player.GetItemCount TE05WeaponWaningBloodDrinker > 0
+				set TEQQShrineUpgradeArtifactTwoQuest.bWaningBloodDrinker to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponRisingBloodDrinkerA > 0 || Player.GetItemCount TE02WeaponRisingBloodDrinkerA > 0 || Player.GetItemCount TE03WeaponRisingBloodDrinkerA > 0 || Player.GetItemCount TE04WeaponRisingBloodDrinkerA > 0 || Player.GetItemCount TE05WeaponRisingBloodDrinkerA > 0
+				set TEQQShrineUpgradeArtifactTwoQuest.bRisingBloodDrinker to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponWaningBloodDrinkerA > 0 || Player.GetItemCount TE02WeaponWaningBloodDrinkerA > 0 || Player.GetItemCount TE03WeaponWaningBloodDrinkerA > 0 || Player.GetItemCount TE04WeaponWaningBloodDrinkerA > 0 || Player.GetItemCount TE05WeaponWaningBloodDrinkerA > 0
+				set TEQQShrineUpgradeArtifactTwoQuest.bWaningBloodDrinker to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponAkaviriOdachi > 0 || Player.GetItemCount TE02WeaponAkaviriOdachi > 0 || Player.GetItemCount TE03WeaponAkaviriOdachi > 0 || Player.GetItemCount TE04WeaponAkaviriOdachi > 0 || Player.GetItemCount TE05WeaponAkaviriOdachi > 0
+				set TEQQShrineUpgradeArtifactThreeQuest.bAkaviriOdachi to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponAkaviriUchigatana > 0 || Player.GetItemCount TE02WeaponAkaviriUchigatana > 0 || Player.GetItemCount TE03WeaponAkaviriUchigatana > 0 || Player.GetItemCount TE04WeaponAkaviriUchigatana > 0 || Player.GetItemCount TE05WeaponAkaviriUchigatana > 0
+				set TEQQShrineUpgradeArtifactThreeQuest.bAkaviriUchigatana to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponIntricateSilverShortsword > 0 || Player.GetItemCount TE02WeaponIntricateSilverShortsword > 0 || Player.GetItemCount TE03WeaponIntricateSilverShortsword > 0 || Player.GetItemCount TE04WeaponIntricateSilverShortsword > 0 || Player.GetItemCount TE05WeaponIntricateSilverShortsword > 0
+				set TEQQShrineUpgradeArtifactThreeQuest.bIntricateSilverShortsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird0HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponAyleidicLongsword > 0 || Player.GetItemCount TE02WeaponAyleidicLongsword > 0 || Player.GetItemCount TE03WeaponAyleidicLongsword > 0 || Player.GetItemCount TE04WeaponAyleidicLongsword > 0 || Player.GetItemCount TE05WeaponAyleidicLongsword > 0
+				set TEQQShrineUpgradeFirst1HBladeWeaponQuest.bAyleidicLongsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponCursedLongsword > 0 || Player.GetItemCount TE02WeaponCursedLongsword > 0 || Player.GetItemCount TE03WeaponCursedLongsword > 0 || Player.GetItemCount TE04WeaponCursedLongsword > 0 || Player.GetItemCount TE05WeaponCursedLongsword > 0
+				set TEQQShrineUpgradeFirst1HBladeWeaponQuest.bCursedLongsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponDarkLongsword > 0 || Player.GetItemCount TE02WeaponDarkLongsword > 0 || Player.GetItemCount TE03WeaponDarkLongsword > 0 || Player.GetItemCount TE04WeaponDarkLongsword > 0 || Player.GetItemCount TE05WeaponDarkLongsword > 0
+				set TEQQShrineUpgradeFirst1HBladeWeaponQuest.bDarkLongsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponDwemerLongsword > 0 || Player.GetItemCount TE02WeaponDwemerLongsword > 0 || Player.GetItemCount TE03WeaponDwemerLongsword > 0 || Player.GetItemCount TE04WeaponDwemerLongsword > 0 || Player.GetItemCount TE05WeaponDwemerLongsword > 0
+				set TEQQShrineUpgradeFirst1HBladeWeaponQuest.bDwemerLongsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponGoldenLongsword > 0 || Player.GetItemCount TE02WeaponGoldenLongsword > 0 || Player.GetItemCount TE03WeaponGoldenLongsword > 0 || Player.GetItemCount TE04WeaponGoldenLongsword > 0 || Player.GetItemCount TE05WeaponGoldenLongsword > 0
+				set TEQQShrineUpgradeFirst1HBladeWeaponQuest.bGoldenLongsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponMaddeningLongsword > 0 || Player.GetItemCount TE02WeaponMaddeningLongsword > 0 || Player.GetItemCount TE03WeaponMaddeningLongsword > 0 || Player.GetItemCount TE04WeaponMaddeningLongsword > 0 || Player.GetItemCount TE05WeaponMaddeningLongsword > 0
+				set TEQQShrineUpgradeFirst1HBladeWeaponQuest.bMaddeningLongsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponMalachiteLongsword > 0 || Player.GetItemCount TE02WeaponMalachiteLongsword > 0 || Player.GetItemCount TE03WeaponMalachiteLongsword > 0 || Player.GetItemCount TE04WeaponMalachiteLongsword > 0 || Player.GetItemCount TE05WeaponMalachiteLongsword > 0
+				set TEQQShrineUpgradeSecond1HBladeWeaponQuest.bMalachiteLongsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponObsidianLongsword > 0 || Player.GetItemCount TE02WeaponObsidianLongsword > 0 || Player.GetItemCount TE03WeaponObsidianLongsword > 0 || Player.GetItemCount TE04WeaponObsidianLongsword > 0 || Player.GetItemCount TE05WeaponObsidianLongsword > 0
+				set TEQQShrineUpgradeSecond1HBladeWeaponQuest.bObsidianLongsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponResiniteLongsword > 0 || Player.GetItemCount TE02WeaponResiniteLongsword > 0 || Player.GetItemCount TE03WeaponResiniteLongsword > 0 || Player.GetItemCount TE04WeaponResiniteLongsword > 0 || Player.GetItemCount TE05WeaponResiniteLongsword > 0
+				set TEQQShrineUpgradeSecond1HBladeWeaponQuest.bResiniteLongsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponSilvriteLongsword > 0 || Player.GetItemCount TE02WeaponSilvriteLongsword > 0 || Player.GetItemCount TE03WeaponSilvriteLongsword > 0 || Player.GetItemCount TE04WeaponSilvriteLongsword > 0 || Player.GetItemCount TE05WeaponSilvriteLongsword > 0
+				set TEQQShrineUpgradeSecond1HBladeWeaponQuest.bSilvriteLongsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponObsidianShortsword > 0 || Player.GetItemCount TE02WeaponObsidianShortsword > 0 || Player.GetItemCount TE03WeaponObsidianShortsword > 0 || Player.GetItemCount TE04WeaponObsidianShortsword > 0 || Player.GetItemCount TE05WeaponObsidianShortsword > 0
+				set TEQQShrineUpgradeSecond1HBladeWeaponQuest.bObsidianShortsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponSilvriteShortsword > 0 || Player.GetItemCount TE02WeaponSilvriteShortsword > 0 || Player.GetItemCount TE03WeaponSilvriteShortsword > 0 || Player.GetItemCount TE04WeaponSilvriteShortsword > 0 || Player.GetItemCount TE05WeaponSilvriteShortsword > 0
+				set TEQQShrineUpgradeSecond1HBladeWeaponQuest.bSilvriteShortsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponAyleidicShortsword > 0 || Player.GetItemCount TE02WeaponAyleidicShortsword > 0 || Player.GetItemCount TE03WeaponAyleidicShortsword > 0 || Player.GetItemCount TE04WeaponAyleidicShortsword > 0 || Player.GetItemCount TE05WeaponAyleidicShortsword > 0
+				set TEQQShrineUpgradeThird1HBladeWeaponQuest.bAyleidicShortsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponCursedShortsword > 0 || Player.GetItemCount TE02WeaponCursedShortsword > 0 || Player.GetItemCount TE03WeaponCursedShortsword > 0 || Player.GetItemCount TE04WeaponCursedShortsword > 0 || Player.GetItemCount TE05WeaponCursedShortsword > 0
+				set TEQQShrineUpgradeThird1HBladeWeaponQuest.bCursedShortsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponDarkShortsword > 0 || Player.GetItemCount TE02WeaponDarkShortsword > 0 || Player.GetItemCount TE03WeaponDarkShortsword > 0 || Player.GetItemCount TE04WeaponDarkShortsword > 0 || Player.GetItemCount TE05WeaponDarkShortsword > 0
+				set TEQQShrineUpgradeThird1HBladeWeaponQuest.bDarkShortsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponDwemerShortsword > 0 || Player.GetItemCount TE02WeaponDwemerShortsword > 0 || Player.GetItemCount TE03WeaponDwemerShortsword > 0 || Player.GetItemCount TE04WeaponDwemerShortsword > 0 || Player.GetItemCount TE05WeaponDwemerShortsword > 0
+				set TEQQShrineUpgradeThird1HBladeWeaponQuest.bDwemerShortsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponGoldenShortsword > 0 || Player.GetItemCount TE02WeaponGoldenShortsword > 0 || Player.GetItemCount TE03WeaponGoldenShortsword > 0 || Player.GetItemCount TE04WeaponGoldenShortsword > 0 || Player.GetItemCount TE05WeaponGoldenShortsword > 0
+				set TEQQShrineUpgradeThird1HBladeWeaponQuest.bGoldenShortsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponMalachiteShortsword > 0 || Player.GetItemCount TE02WeaponMalachiteShortsword > 0 || Player.GetItemCount TE03WeaponMalachiteShortsword > 0 || Player.GetItemCount TE04WeaponMalachiteShortsword > 0 || Player.GetItemCount TE05WeaponMalachiteShortsword > 0
+				set TEQQShrineUpgradeThird1HBladeWeaponQuest.bMalachiteShortsword to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponAyleidicDagger > 0 || Player.GetItemCount TE02WeaponAyleidicDagger > 0 || Player.GetItemCount TE03WeaponAyleidicDagger > 0 || Player.GetItemCount TE04WeaponAyleidicDagger > 0 || Player.GetItemCount TE05WeaponAyleidicDagger > 0
+				set TEQQShrineUpgradeFourth1HBladeWeaponQuest.bAyleidicDagger to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFourth1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponCursedDagger > 0 || Player.GetItemCount TE02WeaponCursedDagger > 0 || Player.GetItemCount TE03WeaponCursedDagger > 0 || Player.GetItemCount TE04WeaponCursedDagger > 0 || Player.GetItemCount TE05WeaponCursedDagger > 0
+				set TEQQShrineUpgradeFourth1HBladeWeaponQuest.bCursedDagger to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFourth1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponDwemerDagger > 0 || Player.GetItemCount TE02WeaponDwemerDagger > 0 || Player.GetItemCount TE03WeaponDwemerDagger > 0 || Player.GetItemCount TE04WeaponDwemerDagger > 0 || Player.GetItemCount TE05WeaponDwemerDagger > 0
+				set TEQQShrineUpgradeFourth1HBladeWeaponQuest.bDwemerDagger to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFourth1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponMalachiteDagger > 0 || Player.GetItemCount TE02WeaponMalachiteDagger > 0 || Player.GetItemCount TE03WeaponMalachiteDagger > 0 || Player.GetItemCount TE04WeaponMalachiteDagger > 0 || Player.GetItemCount TE05WeaponMalachiteDagger > 0
+				set TEQQShrineUpgradeFourth1HBladeWeaponQuest.bMalachiteDagger to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFourth1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponObsidianDagger > 0 || Player.GetItemCount TE02WeaponObsidianDagger > 0 || Player.GetItemCount TE03WeaponObsidianDagger > 0 || Player.GetItemCount TE04WeaponObsidianDagger > 0 || Player.GetItemCount TE05WeaponObsidianDagger > 0
+				set TEQQShrineUpgradeFourth1HBladeWeaponQuest.bObsidianDagger to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFourth1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponSilvriteDagger > 0 || Player.GetItemCount TE02WeaponSilvriteDagger > 0 || Player.GetItemCount TE03WeaponSilvriteDagger > 0 || Player.GetItemCount TE04WeaponSilvriteDagger > 0 || Player.GetItemCount TE05WeaponSilvriteDagger > 0
+				set TEQQShrineUpgradeFourth1HBladeWeaponQuest.bSilvriteDagger to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFourth1HBladeWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponAyleidicMace > 0 || Player.GetItemCount TE02WeaponAyleidicMace > 0 || Player.GetItemCount TE03WeaponAyleidicMace > 0 || Player.GetItemCount TE04WeaponAyleidicMace > 0 || Player.GetItemCount TE05WeaponAyleidicMace > 0
+				set TEQQShrineUpgradeFirst1HBluntWeaponQuest.bAyleidicMace to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponCursedMace > 0 || Player.GetItemCount TE02WeaponCursedMace > 0 || Player.GetItemCount TE03WeaponCursedMace > 0 || Player.GetItemCount TE04WeaponCursedMace > 0 || Player.GetItemCount TE05WeaponCursedMace > 0
+				set TEQQShrineUpgradeFirst1HBluntWeaponQuest.bCursedMace to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponDarkMace > 0 || Player.GetItemCount TE02WeaponDarkMace > 0 || Player.GetItemCount TE03WeaponDarkMace > 0 || Player.GetItemCount TE04WeaponDarkMace > 0 || Player.GetItemCount TE05WeaponDarkMace > 0
+				set TEQQShrineUpgradeFirst1HBluntWeaponQuest.bDarkMace to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponDwemerMace > 0 || Player.GetItemCount TE02WeaponDwemerMace > 0 || Player.GetItemCount TE03WeaponDwemerMace > 0 || Player.GetItemCount TE04WeaponDwemerMace > 0 || Player.GetItemCount TE05WeaponDwemerMace > 0
+				set TEQQShrineUpgradeFirst1HBluntWeaponQuest.bDwemerMace to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponGoldenMace > 0 || Player.GetItemCount TE02WeaponGoldenMace > 0 || Player.GetItemCount TE03WeaponGoldenMace > 0 || Player.GetItemCount TE04WeaponGoldenMace > 0 || Player.GetItemCount TE05WeaponGoldenMace > 0
+				set TEQQShrineUpgradeFirst1HBluntWeaponQuest.bGoldenMace to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponMalachiteMace > 0 || Player.GetItemCount TE02WeaponMalachiteMace > 0 || Player.GetItemCount TE03WeaponMalachiteMace > 0 || Player.GetItemCount TE04WeaponMalachiteMace > 0 || Player.GetItemCount TE05WeaponMalachiteMace > 0
+				set TEQQShrineUpgradeFirst1HBluntWeaponQuest.bMalachiteMace to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponObsidianMace > 0 || Player.GetItemCount TE02WeaponObsidianMace > 0 || Player.GetItemCount TE03WeaponObsidianMace > 0 || Player.GetItemCount TE04WeaponObsidianMace > 0 || Player.GetItemCount TE05WeaponObsidianMace > 0
+				set TEQQShrineUpgradeSecond1HBluntWeaponQuest.bObsidianMace to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponResiniteMace > 0 || Player.GetItemCount TE02WeaponResiniteMace > 0 || Player.GetItemCount TE03WeaponResiniteMace > 0 || Player.GetItemCount TE04WeaponResiniteMace > 0 || Player.GetItemCount TE05WeaponResiniteMace > 0
+				set TEQQShrineUpgradeSecond1HBluntWeaponQuest.bResiniteMace to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponSilvriteMace > 0 || Player.GetItemCount TE02WeaponSilvriteMace > 0 || Player.GetItemCount TE03WeaponSilvriteMace > 0 || Player.GetItemCount TE04WeaponSilvriteMace > 0 || Player.GetItemCount TE05WeaponSilvriteMace > 0
+				set TEQQShrineUpgradeSecond1HBluntWeaponQuest.bSilvriteMace to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponMalachiteWaraxe > 0 || Player.GetItemCount TE02WeaponMalachiteWaraxe > 0 || Player.GetItemCount TE03WeaponMalachiteWaraxe > 0 || Player.GetItemCount TE04WeaponMalachiteWaraxe > 0 || Player.GetItemCount TE05WeaponMalachiteWaraxe > 0
+				set TEQQShrineUpgradeSecond1HBluntWeaponQuest.bMalachiteWaraxe to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponObsidianWaraxe > 0 || Player.GetItemCount TE02WeaponObsidianWaraxe > 0 || Player.GetItemCount TE03WeaponObsidianWaraxe > 0 || Player.GetItemCount TE04WeaponObsidianWaraxe > 0 || Player.GetItemCount TE05WeaponObsidianWaraxe > 0
+				set TEQQShrineUpgradeSecond1HBluntWeaponQuest.bObsidianWaraxe to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponSilvriteWaraxe > 0 || Player.GetItemCount TE02WeaponSilvriteWaraxe > 0 || Player.GetItemCount TE03WeaponSilvriteWaraxe > 0 || Player.GetItemCount TE04WeaponSilvriteWaraxe > 0 || Player.GetItemCount TE05WeaponSilvriteWaraxe > 0
+				set TEQQShrineUpgradeSecond1HBluntWeaponQuest.bSilvriteWaraxe to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponAyleidicWaraxe > 0 || Player.GetItemCount TE02WeaponAyleidicWaraxe > 0 || Player.GetItemCount TE03WeaponAyleidicWaraxe > 0 || Player.GetItemCount TE04WeaponAyleidicWaraxe > 0 || Player.GetItemCount TE05WeaponAyleidicWaraxe > 0
+				set TEQQShrineUpgradeThird1HBluntWeaponQuest.bAyleidicWaraxe to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponCursedWaraxe > 0 || Player.GetItemCount TE02WeaponCursedWaraxe > 0 || Player.GetItemCount TE03WeaponCursedWaraxe > 0 || Player.GetItemCount TE04WeaponCursedWaraxe > 0 || Player.GetItemCount TE05WeaponCursedWaraxe > 0
+				set TEQQShrineUpgradeThird1HBluntWeaponQuest.bCursedWaraxe to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponDarkWaraxe > 0 || Player.GetItemCount TE02WeaponDarkWaraxe > 0 || Player.GetItemCount TE03WeaponDarkWaraxe > 0 || Player.GetItemCount TE04WeaponDarkWaraxe > 0 || Player.GetItemCount TE05WeaponDarkWaraxe > 0
+				set TEQQShrineUpgradeThird1HBluntWeaponQuest.bDarkWaraxe to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponDwemerWaraxe > 0 || Player.GetItemCount TE02WeaponDwemerWaraxe > 0 || Player.GetItemCount TE03WeaponDwemerWaraxe > 0 || Player.GetItemCount TE04WeaponDwemerWaraxe > 0 || Player.GetItemCount TE05WeaponDwemerWaraxe > 0
+				set TEQQShrineUpgradeThird1HBluntWeaponQuest.bDwemerWaraxe to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponGoldenWaraxe > 0 || Player.GetItemCount TE02WeaponGoldenWaraxe > 0 || Player.GetItemCount TE03WeaponGoldenWaraxe > 0 || Player.GetItemCount TE04WeaponGoldenWaraxe > 0 || Player.GetItemCount TE05WeaponGoldenWaraxe > 0
+				set TEQQShrineUpgradeThird1HBluntWeaponQuest.bGoldenWaraxe to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponMaddeningWaraxe > 0 || Player.GetItemCount TE02WeaponMaddeningWaraxe > 0 || Player.GetItemCount TE03WeaponMaddeningWaraxe > 0 || Player.GetItemCount TE04WeaponMaddeningWaraxe > 0 || Player.GetItemCount TE05WeaponMaddeningWaraxe > 0
+				set TEQQShrineUpgradeThird1HBluntWeaponQuest.bMaddeningWaraxe to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird1HBluntWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponAyleidicBattleaxe > 0 || Player.GetItemCount TE02WeaponAyleidicBattleaxe > 0 || Player.GetItemCount TE03WeaponAyleidicBattleaxe > 0 || Player.GetItemCount TE04WeaponAyleidicBattleaxe > 0 || Player.GetItemCount TE05WeaponAyleidicBattleaxe > 0
+				set TEQQShrineUpgradeFirst2HWeaponQuest.bAyleidicBattleaxe to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponCursedBattleaxe > 0 || Player.GetItemCount TE02WeaponCursedBattleaxe > 0 || Player.GetItemCount TE03WeaponCursedBattleaxe > 0 || Player.GetItemCount TE04WeaponCursedBattleaxe > 0 || Player.GetItemCount TE05WeaponCursedBattleaxe > 0
+				set TEQQShrineUpgradeFirst2HWeaponQuest.bCursedBattleaxe to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponDwemerBattleaxe > 0 || Player.GetItemCount TE02WeaponDwemerBattleaxe > 0 || Player.GetItemCount TE03WeaponDwemerBattleaxe > 0 || Player.GetItemCount TE04WeaponDwemerBattleaxe > 0 || Player.GetItemCount TE05WeaponDwemerBattleaxe > 0
+				set TEQQShrineUpgradeFirst2HWeaponQuest.bDwemerBattleaxe to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponMalachiteBattleaxe > 0 || Player.GetItemCount TE02WeaponMalachiteBattleaxe > 0 || Player.GetItemCount TE03WeaponMalachiteBattleaxe > 0 || Player.GetItemCount TE04WeaponMalachiteBattleaxe > 0 || Player.GetItemCount TE05WeaponMalachiteBattleaxe > 0
+				set TEQQShrineUpgradeFirst2HWeaponQuest.bMalachiteBattleaxe to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponObsidianBattleaxe > 0 || Player.GetItemCount TE02WeaponObsidianBattleaxe > 0 || Player.GetItemCount TE03WeaponObsidianBattleaxe > 0 || Player.GetItemCount TE04WeaponObsidianBattleaxe > 0 || Player.GetItemCount TE05WeaponObsidianBattleaxe > 0
+				set TEQQShrineUpgradeFirst2HWeaponQuest.bObsidianBattleaxe to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponSilvriteBattleaxe > 0 || Player.GetItemCount TE02WeaponSilvriteBattleaxe > 0 || Player.GetItemCount TE03WeaponSilvriteBattleaxe > 0 || Player.GetItemCount TE04WeaponSilvriteBattleaxe > 0 || Player.GetItemCount TE05WeaponSilvriteBattleaxe > 0
+				set TEQQShrineUpgradeFirst2HWeaponQuest.bSilvriteBattleaxe to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirst2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponAyleidicClaymore > 0 || Player.GetItemCount TE02WeaponAyleidicClaymore > 0 || Player.GetItemCount TE03WeaponAyleidicClaymore > 0 || Player.GetItemCount TE04WeaponAyleidicClaymore > 0 || Player.GetItemCount TE05WeaponAyleidicClaymore > 0
+				set TEQQShrineUpgradeSecond2HWeaponQuest.bAyleidicClaymore to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponCursedClaymore > 0 || Player.GetItemCount TE02WeaponCursedClaymore > 0 || Player.GetItemCount TE03WeaponCursedClaymore > 0 || Player.GetItemCount TE04WeaponCursedClaymore > 0 || Player.GetItemCount TE05WeaponCursedClaymore > 0
+				set TEQQShrineUpgradeSecond2HWeaponQuest.bCursedClaymore to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponDwemerClaymore > 0 || Player.GetItemCount TE02WeaponDwemerClaymore > 0 || Player.GetItemCount TE03WeaponDwemerClaymore > 0 || Player.GetItemCount TE04WeaponDwemerClaymore > 0 || Player.GetItemCount TE05WeaponDwemerClaymore > 0
+				set TEQQShrineUpgradeSecond2HWeaponQuest.bDwemerClaymore to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponMaddeningClaymore > 0 || Player.GetItemCount TE02WeaponMaddeningClaymore > 0 || Player.GetItemCount TE03WeaponMaddeningClaymore > 0 || Player.GetItemCount TE04WeaponMaddeningClaymore > 0 || Player.GetItemCount TE05WeaponMaddeningClaymore > 0
+				set TEQQShrineUpgradeSecond2HWeaponQuest.bMaddeningClaymore to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponMalachiteClaymore > 0 || Player.GetItemCount TE02WeaponMalachiteClaymore > 0 || Player.GetItemCount TE03WeaponMalachiteClaymore > 0 || Player.GetItemCount TE04WeaponMalachiteClaymore > 0 || Player.GetItemCount TE05WeaponMalachiteClaymore > 0
+				set TEQQShrineUpgradeSecond2HWeaponQuest.bMalachiteClaymore to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponObsidianClaymore > 0 || Player.GetItemCount TE02WeaponObsidianClaymore > 0 || Player.GetItemCount TE03WeaponObsidianClaymore > 0 || Player.GetItemCount TE04WeaponObsidianClaymore > 0 || Player.GetItemCount TE05WeaponObsidianClaymore > 0
+				set TEQQShrineUpgradeSecond2HWeaponQuest.bObsidianClaymore to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecond2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponSilvriteClaymore > 0 || Player.GetItemCount TE02WeaponSilvriteClaymore > 0 || Player.GetItemCount TE03WeaponSilvriteClaymore > 0 || Player.GetItemCount TE04WeaponSilvriteClaymore > 0 || Player.GetItemCount TE05WeaponSilvriteClaymore > 0
+				set TEQQShrineUpgradeThird2HWeaponQuest.bSilvriteClaymore to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponAyleidicWarhammer > 0 || Player.GetItemCount TE02WeaponAyleidicWarhammer > 0 || Player.GetItemCount TE03WeaponAyleidicWarhammer > 0 || Player.GetItemCount TE04WeaponAyleidicWarhammer > 0 || Player.GetItemCount TE05WeaponAyleidicWarhammer > 0
+				set TEQQShrineUpgradeThird2HWeaponQuest.bAyleidicWarhammer to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponCursedWarhammer > 0 || Player.GetItemCount TE02WeaponCursedWarhammer > 0 || Player.GetItemCount TE03WeaponCursedWarhammer > 0 || Player.GetItemCount TE04WeaponCursedWarhammer > 0 || Player.GetItemCount TE05WeaponCursedWarhammer > 0
+				set TEQQShrineUpgradeThird2HWeaponQuest.bCursedWarhammer to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponDwemerWarhammer > 0 || Player.GetItemCount TE02WeaponDwemerWarhammer > 0 || Player.GetItemCount TE03WeaponDwemerWarhammer > 0 || Player.GetItemCount TE04WeaponDwemerWarhammer > 0 || Player.GetItemCount TE05WeaponDwemerWarhammer > 0
+				set TEQQShrineUpgradeThird2HWeaponQuest.bDwemerWarhammer to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponMalachiteWarhammer > 0 || Player.GetItemCount TE02WeaponMalachiteWarhammer > 0 || Player.GetItemCount TE03WeaponMalachiteWarhammer > 0 || Player.GetItemCount TE04WeaponMalachiteWarhammer > 0 || Player.GetItemCount TE05WeaponMalachiteWarhammer > 0
+				set TEQQShrineUpgradeThird2HWeaponQuest.bMalachiteWarhammer to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponObsidianWarhammer > 0 || Player.GetItemCount TE02WeaponObsidianWarhammer > 0 || Player.GetItemCount TE03WeaponObsidianWarhammer > 0 || Player.GetItemCount TE04WeaponObsidianWarhammer > 0 || Player.GetItemCount TE05WeaponObsidianWarhammer > 0
+				set TEQQShrineUpgradeThird2HWeaponQuest.bObsidianWarhammer to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundThird2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponResiniteWarhammer > 0 || Player.GetItemCount TE02WeaponResiniteWarhammer > 0 || Player.GetItemCount TE03WeaponResiniteWarhammer > 0 || Player.GetItemCount TE04WeaponResiniteWarhammer > 0 || Player.GetItemCount TE05WeaponResiniteWarhammer > 0
+				set TEQQShrineUpgradeFourth2HWeaponQuest.bResiniteWarhammer to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFourth2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponSilvriteWarhammer > 0 || Player.GetItemCount TE02WeaponSilvriteWarhammer > 0 || Player.GetItemCount TE03WeaponSilvriteWarhammer > 0 || Player.GetItemCount TE04WeaponSilvriteWarhammer > 0 || Player.GetItemCount TE05WeaponSilvriteWarhammer > 0
+				set TEQQShrineUpgradeFourth2HWeaponQuest.bSilvriteWarhammer to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFourth2HWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			;Placeholder for 3rd-6th item in 4th 2HGroup
+			if Player.GetItemCount TE01WeaponAyleidicBow > 0 || Player.GetItemCount TE02WeaponAyleidicBow > 0 || Player.GetItemCount TE03WeaponAyleidicBow > 0 || Player.GetItemCount TE04WeaponAyleidicBow > 0 || Player.GetItemCount TE05WeaponAyleidicBow > 0
+				set TEQQShrineUpgradeFirstBowWeaponQuest.bAyleidicBow to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirstBowWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponCursedBow > 0 || Player.GetItemCount TE02WeaponCursedBow > 0 || Player.GetItemCount TE03WeaponCursedBow > 0 || Player.GetItemCount TE04WeaponCursedBow > 0 || Player.GetItemCount TE05WeaponCursedBow > 0
+				set TEQQShrineUpgradeFirstBowWeaponQuest.bCursedBow to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirstBowWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponDarkBow > 0 || Player.GetItemCount TE02WeaponDarkBow > 0 || Player.GetItemCount TE03WeaponDarkBow > 0 || Player.GetItemCount TE04WeaponDarkBow > 0 || Player.GetItemCount TE05WeaponDarkBow > 0
+				set TEQQShrineUpgradeFirstBowWeaponQuest.bDarkBow to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirstBowWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponDwemerBow > 0 || Player.GetItemCount TE02WeaponDwemerBow > 0 || Player.GetItemCount TE03WeaponDwemerBow > 0 || Player.GetItemCount TE04WeaponDwemerBow > 0 || Player.GetItemCount TE05WeaponDwemerBow > 0
+				set TEQQShrineUpgradeFirstBowWeaponQuest.bDwemerBow to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirstBowWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponGoldenBow > 0 || Player.GetItemCount TE02WeaponGoldenBow > 0 || Player.GetItemCount TE03WeaponGoldenBow > 0 || Player.GetItemCount TE04WeaponGoldenBow > 0 || Player.GetItemCount TE05WeaponGoldenBow > 0
+				set TEQQShrineUpgradeFirstBowWeaponQuest.bGoldenBow to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirstBowWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponMaddeningBow > 0 || Player.GetItemCount TE02WeaponMaddeningBow > 0 || Player.GetItemCount TE03WeaponMaddeningBow > 0 || Player.GetItemCount TE04WeaponMaddeningBow > 0 || Player.GetItemCount TE05WeaponMaddeningBow > 0
+				set TEQQShrineUpgradeFirstBowWeaponQuest.bMaddeningBow to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundFirstBowWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponMalachiteBow > 0 || Player.GetItemCount TE02WeaponMalachiteBow > 0 || Player.GetItemCount TE03WeaponMalachiteBow > 0 || Player.GetItemCount TE04WeaponMalachiteBow > 0 || Player.GetItemCount TE05WeaponMalachiteBow > 0
+				set TEQQShrineUpgradeSecondBowWeaponQuest.bMalachiteBow to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecondBowWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponObsidianBow > 0 || Player.GetItemCount TE02WeaponObsidianBow > 0 || Player.GetItemCount TE03WeaponObsidianBow > 0 || Player.GetItemCount TE04WeaponObsidianBow > 0 || Player.GetItemCount TE05WeaponObsidianBow > 0
+				set TEQQShrineUpgradeSecondBowWeaponQuest.bObsidianBow to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecondBowWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponResiniteBow > 0 || Player.GetItemCount TE02WeaponResiniteBow > 0 || Player.GetItemCount TE03WeaponResiniteBow > 0 || Player.GetItemCount TE04WeaponResiniteBow > 0 || Player.GetItemCount TE05WeaponResiniteBow > 0
+				set TEQQShrineUpgradeSecondBowWeaponQuest.bResiniteBow to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecondBowWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			if Player.GetItemCount TE01WeaponSilvriteBow > 0 || Player.GetItemCount TE02WeaponSilvriteBow > 0 || Player.GetItemCount TE03WeaponSilvriteBow > 0 || Player.GetItemCount TE04WeaponSilvriteBow > 0 || Player.GetItemCount TE05WeaponSilvriteBow > 0
+				set TEQQShrineUpgradeSecondBowWeaponQuest.bSilvriteBow to 1
+				set TEQQShrineInventoryCheckWeaponQuest.bFoundSecondBowWeaponSet to 1
+				set bFoundItem to 1
+				set bFoundWeaponSet to 1
+			endif
+			set iSearchItem to 1
+		elseif iSearchItem == 1
+			if bFoundItem == 0
+				set iDisplayedMenu to -1
+			elseif bFoundItem == 1
+				if bFoundWeaponSet == 1 && bFoundArmorSet == 1
+					MessageBox "Found Both Weapons and Armor to Upgrade", "Cancel", "Weapons", "Armor"
+					set iSearchItem to 2
+				elseif bFoundWeaponSet == 1 && bFoundArmorSet == 0
+					set iSearchItem to 3
+				elseif bFoundWeaponSet == 0 && bFoundArmorSet == 1
+					set iSearchItem to 4
+				endif
+			endif
+		elseif iSearchItem == 2
+		set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iSearchItem to 3
+			elseif iChoice == 2
+				set iSearchItem to 4
+			endif
+		elseif iSearchItem == 3
+			set iDisplayedMenu to 1
+		elseif iSearchItem == 4
+			set iDisplayedMenu to 2
+		endif
+	elseif iDisplayedMenu == -1
+		MessageBox "Nothing found to upgrade!"
+		StopQuest TEQQShrineInventoryCheckQuest
+	elseif iDisplayedMenu == -2
+		Message "Return when you are ready!"
+		StopQuest TEQQShrineInventoryCheckQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.fQuestDelayTime to 0.01
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to 0
+		StopQuest TEQQShrineInventoryCheckQuest
+		StartQuest TEQQShrineInitilizationQuest
+	elseif iDisplayedMenu == 1
+		set TEQQShrineInventoryCheckWeaponQuest.fQuestDelayTime to 0.01
+		set TEQQShrineInventoryCheckWeaponQuest.iDisplayedMenu to 0
+		set TEQQShrineInventoryCheckWeaponQuest.iSelectedSubWeaponSet to 0
+		set TEQQShrineInventoryCheckWeaponQuest.iSelectedWeaponSet to 0
+		set TEQQShrineInventoryCheckWeaponQuest.iChoosingSubWeaponSet to 0
+		set TEQQShrineInventoryCheckWeaponQuest.iChoosingWeaponSet to 0
+		set TEQQShrineInventoryCheckWeaponQuest.iSearchItem to 0
+		set TEQQShrineInventoryCheckWeaponQuest.iFoundWeaponSet to 0
+		set TEQQShrineInventoryCheckWeaponQuest.iFoundBowWeaponSet to 0
+		set TEQQShrineInventoryCheckWeaponQuest.iFound2HWeaponSet to 0
+		set TEQQShrineInventoryCheckWeaponQuest.iFound1HBluntWeaponSet to 0
+		set TEQQShrineInventoryCheckWeaponQuest.iFound1HBladeWeaponSet to 0
+		set TEQQShrineInventoryCheckWeaponQuest.iFound0HWeaponSet to 0
+		StopQuest TEQQShrineInventoryCheckQuest
+		StartQuest TEQQShrineInventoryCheckWeaponQuest
+	elseif iDisplayedMenu == 2
+		set TEQQShrineInventoryCheckArmorQuest.fQuestDelayTime to 0.01
+		set TEQQShrineInventoryCheckArmorQuest.iDisplayedMenu to 0
+		set TEQQShrineInventoryCheckArmorQuest.iSelectedArmorSet to 0
+		set TEQQShrineInventoryCheckArmorQuest.iChoosingArmorSet to 0
+		set TEQQShrineInventoryCheckArmorQuest.iSearchItem to 0
+		set TEQQShrineInventoryCheckArmorQuest.iFoundHArmorSet to 0
+		set TEQQShrineInventoryCheckArmorQuest.iFoundLArmorSet to 0
+		StopQuest TEQQShrineInventoryCheckQuest
+		StartQuest TEQQShrineInventoryCheckArmorQuest
+	endif
+end

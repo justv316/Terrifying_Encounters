@@ -1,0 +1,71 @@
+scn TESOWeapMalachiteWaraxeObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponMalachiteWaraxeEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponMalachiteWaraxeEquip > 0
+		set TEiWeaponMalachiteWaraxeEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetMalachiteEquip to TEiSetMalachiteEquip + 1
+	if Player.GetEquipped TE01WeaponMalachiteWaraxe
+		set TEiWeaponMalachiteWaraxeEquip to 1
+	elseif Player.GetEquipped TE02WeaponMalachiteWaraxe
+		set TEiWeaponMalachiteWaraxeEquip to 2
+	elseif Player.GetEquipped TE03WeaponMalachiteWaraxe
+		set TEiWeaponMalachiteWaraxeEquip to 3
+	elseif Player.GetEquipped TE04WeaponMalachiteWaraxe 
+		set TEiWeaponMalachiteWaraxeEquip to 4
+	elseif Player.GetEquipped TE05WeaponMalachiteWaraxe 
+		set TEiWeaponMalachiteWaraxeEquip to 5
+	elseif Player.GetEquipped TE06WeaponMalachiteWaraxe
+		set TEiWeaponMalachiteWaraxeEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetMalachiteEquip to TEiSetMalachiteEquip - 1
+	if TEiWeaponMalachiteWaraxeEquip > 0
+		set TEiWeaponMalachiteWaraxeEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponMalachiteWaraxeEquip == 1
+			Player.EquipItem TE02WeaponMalachiteWaraxe
+			set TEiWeaponMalachiteWaraxeEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponMalachiteWaraxeEquip == 2
+			Player.EquipItem TE03WeaponMalachiteWaraxe
+			set TEiWeaponMalachiteWaraxeEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponMalachiteWaraxeEquip == 3
+			Player.EquipItem TE04WeaponMalachiteWaraxe
+			set TEiWeaponMalachiteWaraxeEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponMalachiteWaraxeEquip == 4
+			Player.EquipItem TE05WeaponMalachiteWaraxe
+			set TEiWeaponMalachiteWaraxeEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponMalachiteWaraxeEquip == 5
+			Player.EquipItem TE06WeaponMalachiteWaraxe
+			set TEiWeaponMalachiteWaraxeEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end
