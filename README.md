@@ -1,17 +1,15 @@
 # Fox's Terrifying Encounters(Pt.1): Endgame Loot Overhaul
 ## Description
 * __Version:__ PreRelease
-*
 * __Brief Overview:__ A complete overhaul to the endgame loot distribution, complete with new upscaled equipment items, treasure items, and so much more.
 ------------------
 ## Features
-
-	* [To be done] A comprehensive overhaul to every LeveledList to include new equipment, accessories, and treasure. 
-	* [Done] Upscaled versions of Vanilla Equipment
-	* [Done] A comprehensive equipment upgrade system
-	* [Done] Matching Set Bonuses for the 8 upscaled sets of armor/weapons
-		* Takes full advantage of my Target Detection system (https://github.com/justv316/Target_Detection)
-	* [2 Done] Upscaled, fully scripted Artifacts. (eg. Duskfang and Mehrunes Razor)
+* [To be done] A comprehensive overhaul to every LeveledList to include new equipment, accessories, and treasure. 
+* [Done] Upscaled versions of Vanilla Equipment
+* [Done] A comprehensive equipment upgrade system (Also endgame gold sink)
+* [Done] Matching Set Bonuses for the 8 upscaled sets of armor/weapons
+	* Takes full advantage of my Target Detection system (https://github.com/justv316/Target_Detection)
+* [2 Done] Upscaled, fully scripted Artifacts. (eg. Duskfang and Mehrunes Razor)
 ------------------
 ## Hard Requirements
 	UE4SS (https://www.nexusmods.com/oblivionremastered/mods/32)
@@ -24,31 +22,32 @@
 			
 ------------------
 ## Installation
+* Copy the OblivionRemastered folder to your Game's Root directory
 
-	* Copy the OblivionRemastered folder to your Game's Root directory
-	
-	* or if you're like me and don't trust that
+* Or if you're like me and don't trust that
 	* Create these folders if you don't have them
-	
-	1. Copy Terrifying_Encounters.esp to \SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Content\Dev\ObvData\Data
-	
-	2. Copy Terrifying_Encounters.json to \SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Content\Dev\ObvData\Data\SyncMap 
-	
-	3. Copy TE_Settings.ini to \SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Binaries\Win64\OBSE\plugins\GameSettings
+
+1. Copy Terrifying_Encounters.esp to \SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Content\Dev\ObvData\Data
+
+2. Copy Terrifying_Encounters.json to \SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Content\Dev\ObvData\Data\SyncMap 
+
+3. Copy TE_Settings.ini to \SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Binaries\Win64\OBSE\plugins\GameSettings
 ------------------
 
 <details>
 <Summary>Full Feature Overview</Summary>
 
-### What this mod does
+### Features
 
 #### The Upgrade System
 * Using placed (Small) Shrines to Malacath, the player can pay a fee of gold to upgrade their items to improved versions of themselves. 
-	* These Shrines are located wherever blacksmiths are located. 
+	* These Shrines are located wherever blacksmiths are located.
+	* To-do: Place more Shrines.
 
-#### Upscaled versions of Vanilla Equipment~
+#### Upscaled versions of Vanilla Equipment
 * 145 new equipment items have been added using vanilla assets. 
 * There is a separate text file containing the full list of base weapon stats by tier. Note; there are slight variences throughout the items, so use this as a baseline.  [TE_Equipment_Stats.txt]
+* Scripted Matching Set Bonuses for the 8 upscaled sets of armor/weapons
 		
 #### Artifacts
 * Dawn/Duskfang have been recast into the twinfaced sword spirit Waning and Rising. This sword behaves identically to the original, in that during the night, it takes on the form of Waning, and during the day, it takes on the form of Rising. Furthermore, as the sword consumes the blood of its victims it will change form again growing stronger. 
