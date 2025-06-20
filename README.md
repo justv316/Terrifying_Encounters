@@ -2,6 +2,7 @@
 ## Description
 * __Version:__ PreRelease
 * __Brief Overview:__ A complete overhaul to the endgame loot distribution, complete with new upscaled equipment items, treasure items, and so much more.
+
 ------------------
 ## Features
 * [To be done] A comprehensive overhaul to every LeveledList to include new equipment, accessories, and treasure. 
@@ -10,15 +11,16 @@
 * [Done] Matching Set Bonuses for the 8 upscaled sets of armor/weapons
 	* Takes full advantage of my Target Detection system (https://github.com/justv316/Target_Detection)
 * [2 Done] Upscaled, fully scripted Artifacts. (eg. Duskfang and Mehrunes Razor)
+
 ------------------
 ## Hard Requirements
-	UE4SS (https://www.nexusmods.com/oblivionremastered/mods/32)
-		TesSyncMapInjector (https://www.nexusmods.com/oblivionremastered/mods/1272)
-		Custom Enchanted Modded Apparel SourceFormIDs Updater (https://www.nexusmods.com/oblivionremastered/mods/4029)
-	OBSE (https://www.nexusmods.com/oblivionremastered/mods/282)
-		NL-Tag Remover https://www.nexusmods.com/oblivionremastered/mods/473
-		Game Settings Loader (https://www.nexusmods.com/oblivionremastered/mods/746)
-			Visual C++ Redists 2022 (https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+* UE4SS (https://www.nexusmods.com/oblivionremastered/mods/32)
+	* TesSyncMapInjector (https://www.nexusmods.com/oblivionremastered/mods/1272)
+	* Custom Enchanted Modded Apparel SourceFormIDs Updater (https://www.nexusmods.com/oblivionremastered/mods/4029)
+* OBSE (https://www.nexusmods.com/oblivionremastered/mods/282)
+	* NL-Tag Remover https://www.nexusmods.com/oblivionremastered/mods/473
+	* Game Settings Loader (https://www.nexusmods.com/oblivionremastered/mods/746)
+	* Visual C++ Redists 2022 (https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
 			
 ------------------
 ## Installation
@@ -32,6 +34,7 @@
 2. Copy Terrifying_Encounters.json to \SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Content\Dev\ObvData\Data\SyncMap 
 
 3. Copy TE_Settings.ini to \SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Binaries\Win64\OBSE\plugins\GameSettings
+
 ------------------
 
 <details>
@@ -92,7 +95,7 @@
 * I learned how to make custom summons through: Summon War Expanded by TrueElderBlade (https://www.nexusmods.com/oblivionremastered/mods/1521)
 
 -------------------------------------------------
-__Thank you very much for checking out my mod__
-         __Ɛ: I hope you enjoy :3__         
-                   __**Fox**__                   
+* __Thank you very much for checking out my mod__
+* __Ɛ: I hope you enjoy :3__         
+* __*Fox*__
 -------------------------------------------------
