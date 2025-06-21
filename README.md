@@ -52,15 +52,40 @@
 
 ### Features
 
+-------------------------------
+
 #### The Upgrade System
 * Using placed (Small) Shrines to Malacath, the player can pay a fee of gold to upgrade their items to improved versions of themselves. 
 	* These Shrines are located wherever blacksmiths are located.
-	* To-do: Place more Shrines.
+	* (To do): Place more Shrines.
+
+-------------------------------
+
+<details>
+<Summary>Upgrade Pricing</Summary>
+
+-------------------------------
+
+#### Upgrade Pricing
+
+| Tier | Cost | Cumulative | 
+| ---- | ---- | ---- |
+| 1 to 2 | 100,000 | 100,000 |
+| 2 to 3 | 250,000 | 350,000 |
+| 3 to 4 | 500,000 | 850,000 | 
+| 4 to 5 | 750,000 | 1,600,000 |
+| 5 to 6 | 1,000,000 | 2,600,000 |
+
+-------------------------------
+
+</details>
 
 #### Upscaled versions of Vanilla Equipment
 * 145 new equipment items have been added using vanilla assets.
 	* Each of these items has 6 tier's that you can upgrade into or find as loot.
 	* There are 8 sets of gear, as well as a number of unenchanted artifacts such as Umbra (Crystal Longsword) and Chillrend (Stalrihm Shortsword)
+	
+-------------------------------
 	
 <details>
 <Summary>Equipment Details</Summary>
