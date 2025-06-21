@@ -40,6 +40,8 @@
 <details>
 <Summary>Full Feature Overview</Summary>
 
+-------------------------------
+
 ### Features
 
 #### The Upgrade System
@@ -51,6 +53,51 @@
 * 145 new equipment items have been added using vanilla assets. 
 * There is a separate text file containing the full list of base weapon stats by tier. Note; there are slight variences throughout the items, so use this as a baseline.  [TE_Equipment_Stats.txt]
 * Scripted Matching Set Bonuses for the 8 upscaled sets of armor/weapons
+
+<details>
+<Summary>Set Bonuses</Summary>
+
+-------------------------------
+
+#### Set Bonuses
+
+1. Cursed
+	1. 4/6 Matching Set Bonus
+
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 50 | Constant |
+| + | Resist | Normal Weapons | 10 | Constant |
+| + | Skill | Heavy Armor | 25 | Constant |
+| + | Skill | Blade | 25 | Constant |
+| + | Skill | Blunt | 25 | Constant |
+| + | Skill | Block | 25 | Constant |
+| + | Skill | Hand to Hand | 25 | Constant |
+| + | Other | Attack Bonus | 10 | Constant |
+| + | Other | Defend Bonus | 5 | Constant |
+| - | Resist | Frost | 25 | Constant |
+| + | Skill | Destruction | 25 | Constant |
+| + | Skill | Conjuration | 25 | Constant |
+| + | Skill | Illusion | 25 | Constant |
+| + | Skill | Restoration | 25 | Constant |
+| + | Skill | Alteration | 25 | Constant |
+| + | Skill | Mysticism | 25 | Constant |
+| + | Other | Magicka Multiplier | 3 | Constant |
+| + | Attribute | Speed | 40 | In Combat |
+
+1. Cursed
+	1. (4/6) +50 Resist Fire
+2. Obsidian
+3. Dwemer
+4. Ayleidic
+5. Malachite
+6. Mythril/Silvrite
+7. Resinite
+8. Maddening
+
+</details>
+
+-------------------------------
 		
 #### Artifacts
 * Dawn/Duskfang have been recast into the twinfaced sword spirit Waning and Rising. This sword behaves identically to the original, in that during the night, it takes on the form of Waning, and during the day, it takes on the form of Rising. Furthermore, as the sword consumes the blood of its victims it will change form again growing stronger. 
@@ -59,6 +106,7 @@
 * The Mehrunes Razor has been recast into the Ebony Razor. This dagger carries a low chance to instantly kill any target it strikes, claiming its soul for Mehrunes Dagon. Similarly to appeasing the sword spirits Waning and Rising, appeasing Mehrunes Dagon's appetite for souls comes with its own reward, Awakening the Daggers true form.
 		
 -------------------------------
+
 ### What this mod does not do
 * Add new meshes or non-vanilla items to the game.
 * Add creatures, NPCs, etc. I intend to release mods in this series that overhaul those.
@@ -75,7 +123,7 @@
 * Created with xEdit, Creation Kit Extender, and Notepad++
 	* Creation Kit Extender (https://www.nexusmods.com/oblivion/mods/36370)
 	* All Scripts written in Notepad++ first (https://notepad-plus-plus.org/downloads/)
-		* Source available to be downloaded on GitHub (https://github.com/justv316/Terrifying_Encounters)
+	* Source available to be downloaded on GitHub (https://github.com/justv316/Terrifying_Encounters)
 	* xEdit (https://tes5edit.github.io/)
 * Uses Vanilla assets and scripting.
 	* Relies on UE4SS for TesSyncMapInjector.
@@ -90,9 +138,13 @@
 	* Menu Handy Options by RamlethalSnake (https://www.nexusmods.com/oblivionremastered/mods/1019)
 	* Reopen Oblivion Gates by Velken (https://www.nexusmods.com/oblivionremastered/mods/587)
 
-* I learned that I can use CSE to expand the limits of scripting and also read through its scripts to learn how some things work through: Auto Upgrade Leveled Items by TheOneTrueRy (https://www.nexusmods.com/oblivionremastered/mods/567)
+* I learned that I can use CSE to expand the limits of scripting and also read through its scripts to learn how some things work: Auto Upgrade Leveled Items by TheOneTrueRy (https://www.nexusmods.com/oblivionremastered/mods/567)
 
 * I learned how to make custom summons through: Summon War Expanded by TrueElderBlade (https://www.nexusmods.com/oblivionremastered/mods/1521)
+
+### Other Acknowledgements
+
+* ColdTyrant for believing in me https://next.nexusmods.com/profile/ColdTyrant?gameId=7587
 
 -------------------------------------------------
 * __Thank you very much for checking out my mod__
