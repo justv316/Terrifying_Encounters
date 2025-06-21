@@ -85,8 +85,6 @@
 	* Each of these items has 6 tier's that you can upgrade into or find as loot.
 	* There are 8 sets of gear, as well as a number of unenchanted artifacts such as Umbra (Crystal Longsword) and Chillrend (Stalrihm Shortsword)
 	
--------------------------------
-	
 <details>
 <Summary>Equipment Details</Summary>
 
@@ -191,7 +189,7 @@
 
 -------------------------------
 
-| __Heavy Armor__ | T1 AR (100) | T2 AR (140) | T3 AR (180) | T4 AR (220) | T5 AR (260) | T6 AR (300) |	Weight (100) |
+| __Heavy Armor__ | T1(100) | T2(140) | T3(180) | T4(220) | T5(260) | T6(300) |	Weight (100) |
 |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
 | Boots | 10 | 14 | 18 | 22	| 26 | 30 | Weight: 10 |
 | Cuirass | 25 | 35	| 45 | 55 | 65 | 75 | Weight: 37.5 |
@@ -202,14 +200,14 @@
 
 -------------------------------
 
-| __Light Armor__ | T1 AR (80) | T2 AR (120) | T3 AR (160) | T4 AR (200) | T5 AR (240) | T6 AR (280) |	Weight (100) |
+| __Light Armor__ | T1(80) | T2(120) | T3(160) | T4(200) | T5(240) | T6(280) |	Weight (100) |
 |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
-| Boots | 8 | 12 | 16 | 20 | 24 | Weight:4 |
-| Cuirass | 20 | 30 | 40 | 50 | 60 | Weight:15 |
-| Gauntlets | 8 | 12 | 16 | 20	24 | Weight:3 |
-| Greaves | 12 | 18 | 24 | 30 | 36 | Weight:9 |
-| Helmet | 8 | 12 | 16 | 20 | 24 | Weight:3 |
-| Shield | 24 | 36 | 48 | 60 | 72 | Weight:6 |
+| Boots | 8 | 12 | 16 | 20 | 24 | 28 | Weight: 4 |
+| Cuirass | 20 | 30 | 40 | 50 | 60 | 70 | Weight: 15 |
+| Gauntlets | 8 | 12 | 16 | 20 | 24 | 28 | Weight: 3 |
+| Greaves | 12 | 18 | 24 | 30 | 36 | 42 | Weight: 9 |
+| Helmet | 8 | 12 | 16 | 20 | 24 | 28 | Weight: 3 |
+| Shield | 24 | 36 | 48 | 60 | 72 | 84 | Weight: 6 |
 
 -------------------------------
 
@@ -223,16 +221,12 @@
 
 * Scripted Matching Set Bonuses for all 8 upscaled sets of armor/weapons
 
--------------------------------
-
 <details>
-<Summary>Set Bonuses</Summary>
-
--------------------------------
-
+<Summary>Set Bonus Details</Summary>
 
 <details>
 <Summary>Cursed</Summary>
+
 1. Cursed
 	1. 4/6
 
@@ -308,14 +302,548 @@
 
 -------------------------------
 
-2. Obsidian
-3. Dwemer
-4. Ayleidic
-5. Malachite
-6. Mythril/Silvrite
-7. Resinite
-8. Maddening
+<details>
+<Summary>Dwemer</Summary>
 
+2. Dwemer
+	1. 4/6
+
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 50 | Constant |
+| + | Resist | Normal Weapons | 10 | Constant |
+| + | Skill | Heavy Armor | 25 | Constant |
+| + | Skill | Blade | 25 | Constant |
+| + | Skill | Blunt | 25 | Constant |
+| + | Skill | Block | 25 | Constant |
+| + | Skill | Hand to Hand | 25 | Constant |
+| + | Other | Attack Bonus | 10 | Constant |
+| + | Other | Defend Bonus | 5 | Constant |
+| - | Resist | Frost | 50 | Constant |
+| + | Skill | Destruction | 50 | Constant |
+| + | Skill | Conjuration | 50 | Constant |
+| + | Skill | Illusion | 50 | Constant |
+| + | Skill | Restoration | 50 | Constant |
+| + | Skill | Alteration | 50 | Constant |
+| + | Skill | Mysticism | 50 | Constant |
+| + | Other | Magicka Multiplier | 3 | Constant |
+| + | Attribute | Speed | 40 | In Combat |
+
+	2. 5/6
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 75 | Constant |
+| + | Resist | Normal Weapons | 25 | Constant |
+| + | Skill | Heavy Armor | 40 | Constant |
+| + | Skill | Blade | 40 | Constant |
+| + | Skill | Blunt | 40 | Constant |
+| + | Skill | Block | 40 | Constant |
+| + | Skill | Hand to Hand | 40 | Constant |
+| + | Other | Attack Bonus | 15 | Constant |
+| + | Other | Defend Bonus | 10 | Constant |
+| - | Resist | Frost | 40 | Constant |
+| + | Skill | Destruction | 40 | Constant |
+| + | Skill | Conjuration | 40 | Constant |
+| + | Skill | Illusion | 40 | Constant |
+| + | Skill | Restoration | 40 | Constant |
+| + | Skill | Alteration | 40 | Constant |
+| + | Skill | Mysticism | 40 | Constant |
+| + | Other | Magicka Multiplier | 2 | Constant |
+| + | Attribute | Speed | 30 | In Combat |
+
+	3. 6/6
+	* Applies an aura to the player, dealing (15 Fire Damage)[This is a placeholder] per second to nearby enemies. 
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 100 | Constant |
+| + | Resist | Normal Weapons | 35 | Constant |
+| + | Skill | Heavy Armor | 50 | Constant |
+| + | Skill | Blade | 50 | Constant |
+| + | Skill | Blunt | 50 | Constant |
+| + | Skill | Block | 50 | Constant |
+| + | Skill | Hand to Hand | 50 | Constant |
+| + | Other | Attack Bonus | 25 | Constant |
+| + | Other | Defend Bonus | 15 | Constant |
+| - | Resist | Frost | 25 | Constant |
+| + | Skill | Destruction | 25 | Constant |
+| + | Skill | Conjuration | 25 | Constant |
+| + | Skill | Illusion | 25 | Constant |
+| + | Skill | Restoration | 25 | Constant |
+| + | Skill | Alteration | 25 | Constant |
+| + | Skill | Mysticism | 25 | Constant |
+| + | Other | Magicka Multiplier | 1 | Constant |
+| + | Attribute | Speed | 20 | In Combat |
+
+</details>
+
+-------------------------------
+
+<details>
+<Summary>Obsidian</Summary>
+
+3. Obsidian
+	1. 4/6
+
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 50 | Constant |
+| + | Resist | Normal Weapons | 10 | Constant |
+| + | Skill | Heavy Armor | 25 | Constant |
+| + | Skill | Blade | 25 | Constant |
+| + | Skill | Blunt | 25 | Constant |
+| + | Skill | Block | 25 | Constant |
+| + | Skill | Hand to Hand | 25 | Constant |
+| + | Other | Attack Bonus | 10 | Constant |
+| + | Other | Defend Bonus | 5 | Constant |
+| - | Resist | Frost | 50 | Constant |
+| + | Skill | Destruction | 50 | Constant |
+| + | Skill | Conjuration | 50 | Constant |
+| + | Skill | Illusion | 50 | Constant |
+| + | Skill | Restoration | 50 | Constant |
+| + | Skill | Alteration | 50 | Constant |
+| + | Skill | Mysticism | 50 | Constant |
+| + | Other | Magicka Multiplier | 3 | Constant |
+| + | Attribute | Speed | 40 | In Combat |
+
+	2. 5/6
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 75 | Constant |
+| + | Resist | Normal Weapons | 25 | Constant |
+| + | Skill | Heavy Armor | 40 | Constant |
+| + | Skill | Blade | 40 | Constant |
+| + | Skill | Blunt | 40 | Constant |
+| + | Skill | Block | 40 | Constant |
+| + | Skill | Hand to Hand | 40 | Constant |
+| + | Other | Attack Bonus | 15 | Constant |
+| + | Other | Defend Bonus | 10 | Constant |
+| - | Resist | Frost | 40 | Constant |
+| + | Skill | Destruction | 40 | Constant |
+| + | Skill | Conjuration | 40 | Constant |
+| + | Skill | Illusion | 40 | Constant |
+| + | Skill | Restoration | 40 | Constant |
+| + | Skill | Alteration | 40 | Constant |
+| + | Skill | Mysticism | 40 | Constant |
+| + | Other | Magicka Multiplier | 2 | Constant |
+| + | Attribute | Speed | 30 | In Combat |
+
+	3. 6/6
+	* Applies an aura to the player, dealing (15 Fire Damage)[This is a placeholder] per second to nearby enemies. 
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 100 | Constant |
+| + | Resist | Normal Weapons | 35 | Constant |
+| + | Skill | Heavy Armor | 50 | Constant |
+| + | Skill | Blade | 50 | Constant |
+| + | Skill | Blunt | 50 | Constant |
+| + | Skill | Block | 50 | Constant |
+| + | Skill | Hand to Hand | 50 | Constant |
+| + | Other | Attack Bonus | 25 | Constant |
+| + | Other | Defend Bonus | 15 | Constant |
+| - | Resist | Frost | 25 | Constant |
+| + | Skill | Destruction | 25 | Constant |
+| + | Skill | Conjuration | 25 | Constant |
+| + | Skill | Illusion | 25 | Constant |
+| + | Skill | Restoration | 25 | Constant |
+| + | Skill | Alteration | 25 | Constant |
+| + | Skill | Mysticism | 25 | Constant |
+| + | Other | Magicka Multiplier | 1 | Constant |
+| + | Attribute | Speed | 20 | In Combat |
+
+</details>
+
+-------------------------------
+
+<details>
+<Summary>Ayleidic</Summary>
+
+4. Ayleidic
+	1. 4/6
+
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 50 | Constant |
+| + | Resist | Normal Weapons | 10 | Constant |
+| + | Skill | Heavy Armor | 25 | Constant |
+| + | Skill | Blade | 25 | Constant |
+| + | Skill | Blunt | 25 | Constant |
+| + | Skill | Block | 25 | Constant |
+| + | Skill | Hand to Hand | 25 | Constant |
+| + | Other | Attack Bonus | 10 | Constant |
+| + | Other | Defend Bonus | 5 | Constant |
+| - | Resist | Frost | 50 | Constant |
+| + | Skill | Destruction | 50 | Constant |
+| + | Skill | Conjuration | 50 | Constant |
+| + | Skill | Illusion | 50 | Constant |
+| + | Skill | Restoration | 50 | Constant |
+| + | Skill | Alteration | 50 | Constant |
+| + | Skill | Mysticism | 50 | Constant |
+| + | Other | Magicka Multiplier | 3 | Constant |
+| + | Attribute | Speed | 40 | In Combat |
+
+	2. 5/6
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 75 | Constant |
+| + | Resist | Normal Weapons | 25 | Constant |
+| + | Skill | Heavy Armor | 40 | Constant |
+| + | Skill | Blade | 40 | Constant |
+| + | Skill | Blunt | 40 | Constant |
+| + | Skill | Block | 40 | Constant |
+| + | Skill | Hand to Hand | 40 | Constant |
+| + | Other | Attack Bonus | 15 | Constant |
+| + | Other | Defend Bonus | 10 | Constant |
+| - | Resist | Frost | 40 | Constant |
+| + | Skill | Destruction | 40 | Constant |
+| + | Skill | Conjuration | 40 | Constant |
+| + | Skill | Illusion | 40 | Constant |
+| + | Skill | Restoration | 40 | Constant |
+| + | Skill | Alteration | 40 | Constant |
+| + | Skill | Mysticism | 40 | Constant |
+| + | Other | Magicka Multiplier | 2 | Constant |
+| + | Attribute | Speed | 30 | In Combat |
+
+	3. 6/6
+	* Applies an aura to the player, dealing (15 Fire Damage)[This is a placeholder] per second to nearby enemies. 
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 100 | Constant |
+| + | Resist | Normal Weapons | 35 | Constant |
+| + | Skill | Heavy Armor | 50 | Constant |
+| + | Skill | Blade | 50 | Constant |
+| + | Skill | Blunt | 50 | Constant |
+| + | Skill | Block | 50 | Constant |
+| + | Skill | Hand to Hand | 50 | Constant |
+| + | Other | Attack Bonus | 25 | Constant |
+| + | Other | Defend Bonus | 15 | Constant |
+| - | Resist | Frost | 25 | Constant |
+| + | Skill | Destruction | 25 | Constant |
+| + | Skill | Conjuration | 25 | Constant |
+| + | Skill | Illusion | 25 | Constant |
+| + | Skill | Restoration | 25 | Constant |
+| + | Skill | Alteration | 25 | Constant |
+| + | Skill | Mysticism | 25 | Constant |
+| + | Other | Magicka Multiplier | 1 | Constant |
+| + | Attribute | Speed | 20 | In Combat |
+
+</details>
+
+-------------------------------
+
+<details>
+<Summary>Malachite</Summary>
+
+5. Malachite
+	1. 4/6
+
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 50 | Constant |
+| + | Resist | Normal Weapons | 10 | Constant |
+| + | Skill | Heavy Armor | 25 | Constant |
+| + | Skill | Blade | 25 | Constant |
+| + | Skill | Blunt | 25 | Constant |
+| + | Skill | Block | 25 | Constant |
+| + | Skill | Hand to Hand | 25 | Constant |
+| + | Other | Attack Bonus | 10 | Constant |
+| + | Other | Defend Bonus | 5 | Constant |
+| - | Resist | Frost | 50 | Constant |
+| + | Skill | Destruction | 50 | Constant |
+| + | Skill | Conjuration | 50 | Constant |
+| + | Skill | Illusion | 50 | Constant |
+| + | Skill | Restoration | 50 | Constant |
+| + | Skill | Alteration | 50 | Constant |
+| + | Skill | Mysticism | 50 | Constant |
+| + | Other | Magicka Multiplier | 3 | Constant |
+| + | Attribute | Speed | 40 | In Combat |
+
+	2. 5/6
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 75 | Constant |
+| + | Resist | Normal Weapons | 25 | Constant |
+| + | Skill | Heavy Armor | 40 | Constant |
+| + | Skill | Blade | 40 | Constant |
+| + | Skill | Blunt | 40 | Constant |
+| + | Skill | Block | 40 | Constant |
+| + | Skill | Hand to Hand | 40 | Constant |
+| + | Other | Attack Bonus | 15 | Constant |
+| + | Other | Defend Bonus | 10 | Constant |
+| - | Resist | Frost | 40 | Constant |
+| + | Skill | Destruction | 40 | Constant |
+| + | Skill | Conjuration | 40 | Constant |
+| + | Skill | Illusion | 40 | Constant |
+| + | Skill | Restoration | 40 | Constant |
+| + | Skill | Alteration | 40 | Constant |
+| + | Skill | Mysticism | 40 | Constant |
+| + | Other | Magicka Multiplier | 2 | Constant |
+| + | Attribute | Speed | 30 | In Combat |
+
+	3. 6/6
+	* Applies an aura to the player, dealing (15 Fire Damage)[This is a placeholder] per second to nearby enemies. 
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 100 | Constant |
+| + | Resist | Normal Weapons | 35 | Constant |
+| + | Skill | Heavy Armor | 50 | Constant |
+| + | Skill | Blade | 50 | Constant |
+| + | Skill | Blunt | 50 | Constant |
+| + | Skill | Block | 50 | Constant |
+| + | Skill | Hand to Hand | 50 | Constant |
+| + | Other | Attack Bonus | 25 | Constant |
+| + | Other | Defend Bonus | 15 | Constant |
+| - | Resist | Frost | 25 | Constant |
+| + | Skill | Destruction | 25 | Constant |
+| + | Skill | Conjuration | 25 | Constant |
+| + | Skill | Illusion | 25 | Constant |
+| + | Skill | Restoration | 25 | Constant |
+| + | Skill | Alteration | 25 | Constant |
+| + | Skill | Mysticism | 25 | Constant |
+| + | Other | Magicka Multiplier | 1 | Constant |
+| + | Attribute | Speed | 20 | In Combat |
+
+</details>
+
+-------------------------------
+<details>
+<Summary>Mythril/Silvrite</Summary>
+
+6. Mythril/Silvrite
+	1. 4/6
+
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 50 | Constant |
+| + | Resist | Normal Weapons | 10 | Constant |
+| + | Skill | Heavy Armor | 25 | Constant |
+| + | Skill | Blade | 25 | Constant |
+| + | Skill | Blunt | 25 | Constant |
+| + | Skill | Block | 25 | Constant |
+| + | Skill | Hand to Hand | 25 | Constant |
+| + | Other | Attack Bonus | 10 | Constant |
+| + | Other | Defend Bonus | 5 | Constant |
+| - | Resist | Frost | 50 | Constant |
+| + | Skill | Destruction | 50 | Constant |
+| + | Skill | Conjuration | 50 | Constant |
+| + | Skill | Illusion | 50 | Constant |
+| + | Skill | Restoration | 50 | Constant |
+| + | Skill | Alteration | 50 | Constant |
+| + | Skill | Mysticism | 50 | Constant |
+| + | Other | Magicka Multiplier | 3 | Constant |
+| + | Attribute | Speed | 40 | In Combat |
+
+	2. 5/6
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 75 | Constant |
+| + | Resist | Normal Weapons | 25 | Constant |
+| + | Skill | Heavy Armor | 40 | Constant |
+| + | Skill | Blade | 40 | Constant |
+| + | Skill | Blunt | 40 | Constant |
+| + | Skill | Block | 40 | Constant |
+| + | Skill | Hand to Hand | 40 | Constant |
+| + | Other | Attack Bonus | 15 | Constant |
+| + | Other | Defend Bonus | 10 | Constant |
+| - | Resist | Frost | 40 | Constant |
+| + | Skill | Destruction | 40 | Constant |
+| + | Skill | Conjuration | 40 | Constant |
+| + | Skill | Illusion | 40 | Constant |
+| + | Skill | Restoration | 40 | Constant |
+| + | Skill | Alteration | 40 | Constant |
+| + | Skill | Mysticism | 40 | Constant |
+| + | Other | Magicka Multiplier | 2 | Constant |
+| + | Attribute | Speed | 30 | In Combat |
+
+	3. 6/6
+	* Applies an aura to the player, dealing (15 Fire Damage)[This is a placeholder] per second to nearby enemies. 
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 100 | Constant |
+| + | Resist | Normal Weapons | 35 | Constant |
+| + | Skill | Heavy Armor | 50 | Constant |
+| + | Skill | Blade | 50 | Constant |
+| + | Skill | Blunt | 50 | Constant |
+| + | Skill | Block | 50 | Constant |
+| + | Skill | Hand to Hand | 50 | Constant |
+| + | Other | Attack Bonus | 25 | Constant |
+| + | Other | Defend Bonus | 15 | Constant |
+| - | Resist | Frost | 25 | Constant |
+| + | Skill | Destruction | 25 | Constant |
+| + | Skill | Conjuration | 25 | Constant |
+| + | Skill | Illusion | 25 | Constant |
+| + | Skill | Restoration | 25 | Constant |
+| + | Skill | Alteration | 25 | Constant |
+| + | Skill | Mysticism | 25 | Constant |
+| + | Other | Magicka Multiplier | 1 | Constant |
+| + | Attribute | Speed | 20 | In Combat |
+
+</details>
+
+-------------------------------
+
+<details>
+<Summary>Resinite</Summary>
+
+7. Resinite
+	1. 4/6
+
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 50 | Constant |
+| + | Resist | Normal Weapons | 10 | Constant |
+| + | Skill | Heavy Armor | 25 | Constant |
+| + | Skill | Blade | 25 | Constant |
+| + | Skill | Blunt | 25 | Constant |
+| + | Skill | Block | 25 | Constant |
+| + | Skill | Hand to Hand | 25 | Constant |
+| + | Other | Attack Bonus | 10 | Constant |
+| + | Other | Defend Bonus | 5 | Constant |
+| - | Resist | Frost | 50 | Constant |
+| + | Skill | Destruction | 50 | Constant |
+| + | Skill | Conjuration | 50 | Constant |
+| + | Skill | Illusion | 50 | Constant |
+| + | Skill | Restoration | 50 | Constant |
+| + | Skill | Alteration | 50 | Constant |
+| + | Skill | Mysticism | 50 | Constant |
+| + | Other | Magicka Multiplier | 3 | Constant |
+| + | Attribute | Speed | 40 | In Combat |
+
+	2. 5/6
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 75 | Constant |
+| + | Resist | Normal Weapons | 25 | Constant |
+| + | Skill | Heavy Armor | 40 | Constant |
+| + | Skill | Blade | 40 | Constant |
+| + | Skill | Blunt | 40 | Constant |
+| + | Skill | Block | 40 | Constant |
+| + | Skill | Hand to Hand | 40 | Constant |
+| + | Other | Attack Bonus | 15 | Constant |
+| + | Other | Defend Bonus | 10 | Constant |
+| - | Resist | Frost | 40 | Constant |
+| + | Skill | Destruction | 40 | Constant |
+| + | Skill | Conjuration | 40 | Constant |
+| + | Skill | Illusion | 40 | Constant |
+| + | Skill | Restoration | 40 | Constant |
+| + | Skill | Alteration | 40 | Constant |
+| + | Skill | Mysticism | 40 | Constant |
+| + | Other | Magicka Multiplier | 2 | Constant |
+| + | Attribute | Speed | 30 | In Combat |
+
+	3. 6/6
+	* Applies an aura to the player, dealing (15 Fire Damage)[This is a placeholder] per second to nearby enemies. 
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 100 | Constant |
+| + | Resist | Normal Weapons | 35 | Constant |
+| + | Skill | Heavy Armor | 50 | Constant |
+| + | Skill | Blade | 50 | Constant |
+| + | Skill | Blunt | 50 | Constant |
+| + | Skill | Block | 50 | Constant |
+| + | Skill | Hand to Hand | 50 | Constant |
+| + | Other | Attack Bonus | 25 | Constant |
+| + | Other | Defend Bonus | 15 | Constant |
+| - | Resist | Frost | 25 | Constant |
+| + | Skill | Destruction | 25 | Constant |
+| + | Skill | Conjuration | 25 | Constant |
+| + | Skill | Illusion | 25 | Constant |
+| + | Skill | Restoration | 25 | Constant |
+| + | Skill | Alteration | 25 | Constant |
+| + | Skill | Mysticism | 25 | Constant |
+| + | Other | Magicka Multiplier | 1 | Constant |
+| + | Attribute | Speed | 20 | In Combat |
+
+</details>
+
+-------------------------------
+
+<details>
+<Summary>Maddening</Summary>
+
+8. Maddening
+	1. 4/6
+
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 50 | Constant |
+| + | Resist | Normal Weapons | 10 | Constant |
+| + | Skill | Heavy Armor | 25 | Constant |
+| + | Skill | Blade | 25 | Constant |
+| + | Skill | Blunt | 25 | Constant |
+| + | Skill | Block | 25 | Constant |
+| + | Skill | Hand to Hand | 25 | Constant |
+| + | Other | Attack Bonus | 10 | Constant |
+| + | Other | Defend Bonus | 5 | Constant |
+| - | Resist | Frost | 50 | Constant |
+| + | Skill | Destruction | 50 | Constant |
+| + | Skill | Conjuration | 50 | Constant |
+| + | Skill | Illusion | 50 | Constant |
+| + | Skill | Restoration | 50 | Constant |
+| + | Skill | Alteration | 50 | Constant |
+| + | Skill | Mysticism | 50 | Constant |
+| + | Other | Magicka Multiplier | 3 | Constant |
+| + | Attribute | Speed | 40 | In Combat |
+
+	2. 5/6
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 75 | Constant |
+| + | Resist | Normal Weapons | 25 | Constant |
+| + | Skill | Heavy Armor | 40 | Constant |
+| + | Skill | Blade | 40 | Constant |
+| + | Skill | Blunt | 40 | Constant |
+| + | Skill | Block | 40 | Constant |
+| + | Skill | Hand to Hand | 40 | Constant |
+| + | Other | Attack Bonus | 15 | Constant |
+| + | Other | Defend Bonus | 10 | Constant |
+| - | Resist | Frost | 40 | Constant |
+| + | Skill | Destruction | 40 | Constant |
+| + | Skill | Conjuration | 40 | Constant |
+| + | Skill | Illusion | 40 | Constant |
+| + | Skill | Restoration | 40 | Constant |
+| + | Skill | Alteration | 40 | Constant |
+| + | Skill | Mysticism | 40 | Constant |
+| + | Other | Magicka Multiplier | 2 | Constant |
+| + | Attribute | Speed | 30 | In Combat |
+
+	3. 6/6
+	* Applies an aura to the player, dealing (15 Fire Damage)[This is a placeholder] per second to nearby enemies. 
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ------------- | ------------- | ------------- | ------------- |-------------|
+| + | Resist | Fire | 100 | Constant |
+| + | Resist | Normal Weapons | 35 | Constant |
+| + | Skill | Heavy Armor | 50 | Constant |
+| + | Skill | Blade | 50 | Constant |
+| + | Skill | Blunt | 50 | Constant |
+| + | Skill | Block | 50 | Constant |
+| + | Skill | Hand to Hand | 50 | Constant |
+| + | Other | Attack Bonus | 25 | Constant |
+| + | Other | Defend Bonus | 15 | Constant |
+| - | Resist | Frost | 25 | Constant |
+| + | Skill | Destruction | 25 | Constant |
+| + | Skill | Conjuration | 25 | Constant |
+| + | Skill | Illusion | 25 | Constant |
+| + | Skill | Restoration | 25 | Constant |
+| + | Skill | Alteration | 25 | Constant |
+| + | Skill | Mysticism | 25 | Constant |
+| + | Other | Magicka Multiplier | 1 | Constant |
+| + | Attribute | Speed | 20 | In Combat |
+
+</details>
 </details>
 
 -------------------------------
@@ -331,9 +859,13 @@
 		
 -------------------------------
 
+</details>
+
+<details>
+<Summary> What this mod currently does not do </Summary>
 ### What this mod does not do
 * Add new meshes or non-vanilla items to the game.
-* Add creatures, NPCs, etc. I intend to release mods in this series that overhaul those.
+* Add creatures, NPCs, etc.
 * Currently does not allow you to upgrade vanilla items into modded variants, though I am working on it. 
 
 -------------------------------
