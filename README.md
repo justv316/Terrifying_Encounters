@@ -65,7 +65,7 @@
 	1. 4/6 Matching Set Bonus
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
-| ------------- | ------------- | ------------- |-------------|
+| ------------- | ------------- | ------------- | ------------- |-------------|
 | + | Resist | Fire | 50 | Constant |
 | + | Resist | Normal Weapons | 10 | Constant |
 | + | Skill | Heavy Armor | 25 | Constant |
