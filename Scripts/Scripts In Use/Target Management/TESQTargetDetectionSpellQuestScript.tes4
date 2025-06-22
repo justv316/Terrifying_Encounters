@@ -3,17 +3,13 @@ scn TESQTargetDetectionSpellQuestScript
 float fQuestDelayTime
 
 begin GameMode
-	set fQuestDelayTime to 1
-	if TEbAuraCursed == 1
-		set TEbTargetDetection to 1
-	elseif TEbAuraCursed == 0
-		set TEbTargetDetection to 0
-	endif
+	set fQuestDelayTime to 3
+	set TEbTargetDetection to TEbAuraCursed || TEbAuraDwemer || TEbAuraObsidian || TEbAuraAyleidic || TEbAuraMalachite || TEbAuraMythrilSilvrite || TEbAuraResinite || TEbAuraMaddening
 	
-	if TEbTargetDetection == 1
-		set fQuestDelayTime to 2
+	if TEbTargetDetection
 		TECasterRef.MoveTo Player
 		TECasterRef.Cast TESpTargetDetection Player
 		Player.Dispel TESpTargetDetection
+		Message "Debug - Target Detection Is running as it should"
 	endif
 end

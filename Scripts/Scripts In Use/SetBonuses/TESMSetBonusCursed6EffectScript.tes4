@@ -6,26 +6,31 @@ short bMagickaMultiplierMod
 
 begin ScriptEffectStart
 	if bBonusAdded == 0
-		Player.ModActorValue Destruction -25
-		Player.ModActorValue Conjuration -25
-		Player.ModActorValue Illusion -25
-		Player.ModActorValue Mysticism -25
-		Player.ModActorValue Restoration -25
-		Player.ModActorValue Alteration -25
+		Player.ModActorValue Destruction -50
+		Player.ModActorValue Conjuration -50
+		Player.ModActorValue Illusion -50
+		Player.ModActorValue Mysticism -50
+		Player.ModActorValue Restoration -50
+		Player.ModActorValue Alteration -50
+		Player.ModActorValue ResistFrost -25
 		if bMagickaMultiplierMod == 0
 			if Player.GetActorValue MagickaMultiplier == 0
 				Player.SetActorValue MagickaMultiplier 10
 			endif
-			Player.ModActorValue MagickaMultiplier -1
+			Player.ModActorValue MagickaMultiplier -3
 			set bMagickaMultiplierMod to 1
 		endif
-		Player.ModActorValue ResistFire 100
+		Player.ModActorValue ResistFire 125
+		Player.ModActorValue ResistShock 50
 		Player.ModActorValue ResistNormalWeapons 35
 		Player.ModActorValue HeavyArmor 50
 		Player.ModActorValue Blade 50
 		Player.ModActorValue Blunt 50
 		Player.ModActorValue Block 50
+		Player.ModActorValue HandToHand 50
+		Player.ModActorValue Marksman -25
 		Player.ModActorValue AttackBonus 25
+		Player.ModActorValue DefendBonus 15
 		set bBonusAdded to 1
 		set TEbAuraCursed to 1
 	endif
@@ -44,14 +49,15 @@ end
 
 begin ScriptEffectFinish
 	if bBonusAdded == 1
-		Player.ModActorValue Destruction 25
-		Player.ModActorValue Conjuration 25
-		Player.ModActorValue Illusion 25
-		Player.ModActorValue Mysticism 25
-		Player.ModActorValue Restoration 25
-		Player.ModActorValue Alteration 25
+		Player.ModActorValue Destruction 50
+		Player.ModActorValue Conjuration 50
+		Player.ModActorValue Illusion 50
+		Player.ModActorValue Mysticism 50
+		Player.ModActorValue Restoration 50
+		Player.ModActorValue Alteration 50
+		Player.ModActorValue ResistFrost 25
 		if bMagickaMultiplierMod == 1
-			Player.ModActorValue MagickaMultiplier 1
+			Player.ModActorValue MagickaMultiplier 3
 			Set bMagickaMultiplierMod to 0
 		endif
 		Player.ModActorValue ResistFire -100
@@ -60,7 +66,10 @@ begin ScriptEffectFinish
 		Player.ModActorValue Blade -50
 		Player.ModActorValue Blunt -50
 		Player.ModActorValue Block -50
+		Player.ModActorValue HandToHand -50
+		Player.ModActorValue Marksman 25
 		Player.ModActorValue AttackBonus -25
+		Player.ModActorValue DefendBonus -15
 		set bBonusAdded to 0
 		set TEbAuraCursed to 0
 	endif

@@ -86,14 +86,43 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraCursedDebuff rRef1
 					set bRef1Debuff to 1
 				endif
-			elseif bRef1Debuff == 1
-				if Player.GetDistance rRef1 > 150
-					set bRef1Debuff to 0
-					set rRef1 to 0
-					TEDispelRef.MoveTo rRef1
-					TEDispelRef.Cast TESpAuraDispelDebuff rRef1
+				if TEbAuraDwemer == 1
+					TEAuraRef.MoveTo rRef1
+					TEAuraRef.Cast TESpAuraDwemerDebuff rRef1
+					set bRef1Debuff to 1
 				endif
-				if rRef1.GetCombatTarget != Player
+				if TEbAuraObsidian == 1
+					TEAuraRef.MoveTo rRef1
+					TEAuraRef.Cast TESpAuraObsidianDebuff rRef1
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraAyleidic == 1
+					TEAuraRef.MoveTo rRef1
+					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef1
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef1
+					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef1
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMythrilSilvrite == 1
+					TEAuraRef.MoveTo rRef1
+					TEAuraRef.Cast TESpAuraMythrilSilvriteDebuff rRef1
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraResinite == 1
+					TEAuraRef.MoveTo rRef1
+					TEAuraRef.Cast TESpAuraResiniteDebuff rRef1
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMaddening == 1
+					TEAuraRef.MoveTo rRef1
+					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef1
+					set bRef1Debuff to 1
+				endif
+			elseif bRef1Debuff
+				if Player.GetDistance rRef1 > 750 || rRef1.GetCombatTarget != Player
 					set bRef1Debuff to 0
 					set rRef1 to 0
 					TEDispelRef.MoveTo rRef1
@@ -115,16 +144,45 @@ set fQuestDelayTime to 0.05
 				if TEbAuraCursed == 1
 					TEAuraRef.MoveTo rRef2
 					TEAuraRef.Cast TESpAuraCursedDebuff rRef2
-					set bRef2Debuff to 1
+					set bRef1Debuff to 1
 				endif
-			elseif bRef2Debuff == 1
-				if Player.GetDistance rRef2 > 150
-					set bRef2Debuff to 0
-					set rRef2 to 0
-					TEDispelRef.MoveTo rRef2
-					TEDispelRef.Cast TESpAuraDispelDebuff rRef2
+				if TEbAuraDwemer == 1
+					TEAuraRef.MoveTo rRef2
+					TEAuraRef.Cast TESpAuraDwemerDebuff rRef2
+					set bRef1Debuff to 1
 				endif
-				if rRef2.GetCombatTarget != Player
+				if TEbAuraObsidian == 1
+					TEAuraRef.MoveTo rRef2
+					TEAuraRef.Cast TESpAuraObsidianDebuff rRef2
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraAyleidic == 1
+					TEAuraRef.MoveTo rRef2
+					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef2
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef2
+					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef2
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMythrilSilvrite == 1
+					TEAuraRef.MoveTo rRef2
+					TEAuraRef.Cast TESpAuraMythrilSilvriteDebuff rRef2
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraResinite == 1
+					TEAuraRef.MoveTo rRef2
+					TEAuraRef.Cast TESpAuraResiniteDebuff rRef2
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMaddening == 1
+					TEAuraRef.MoveTo rRef2
+					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef2
+					set bRef1Debuff to 1
+				endif
+			elseif bRef2Debuff
+				if Player.GetDistance rRef2 > 750 rRef2.GetCombatTarget != Player
 					set bRef2Debuff to 0
 					set rRef2 to 0
 					TEDispelRef.MoveTo rRef2
@@ -146,16 +204,45 @@ set fQuestDelayTime to 0.05
 				if TEbAuraCursed == 1
 					TEAuraRef.MoveTo rRef3
 					TEAuraRef.Cast TESpAuraCursedDebuff rRef3
-					set bRef3Debuff to 1
+					set bRef1Debuff to 1
 				endif
-			elseif bRef3Debuff == 1
-				if Player.GetDistance rRef3 > 150
-					set bRef3Debuff to 0
-					set rRef3 to 0
-					TEDispelRef.MoveTo rRef3
-					TEDispelRef.Cast TESpAuraDispelDebuff rRef3
+				if TEbAuraDwemer == 1
+					TEAuraRef.MoveTo rRef3
+					TEAuraRef.Cast TESpAuraDwemerDebuff rRef3
+					set bRef1Debuff to 1
 				endif
-				if rRef3.GetCombatTarget != Player
+				if TEbAuraObsidian == 1
+					TEAuraRef.MoveTo rRef3
+					TEAuraRef.Cast TESpAuraObsidianDebuff rRef3
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraAyleidic == 1
+					TEAuraRef.MoveTo rRef3
+					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef3
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef3
+					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef3
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMythrilSilvrite == 1
+					TEAuraRef.MoveTo rRef3
+					TEAuraRef.Cast TESpAuraMythrilSilvriteDebuff rRef3
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraResinite == 1
+					TEAuraRef.MoveTo rRef3
+					TEAuraRef.Cast TESpAuraResiniteDebuff rRef3
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMaddening == 1
+					TEAuraRef.MoveTo rRef3
+					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef3
+					set bRef1Debuff to 1
+				endif
+			elseif bRef3Debuff
+				if Player.GetDistance rRef3 > 750 || rRef3.GetCombatTarget != Player
 					set bRef3Debuff to 0
 					set rRef3 to 0
 					TEDispelRef.MoveTo rRef3
@@ -177,16 +264,45 @@ set fQuestDelayTime to 0.05
 				if TEbAuraCursed == 1
 					TEAuraRef.MoveTo rRef4
 					TEAuraRef.Cast TESpAuraCursedDebuff rRef4
-					set bRef4Debuff to 1
+					set bRef1Debuff to 1
 				endif
-			elseif bRef4Debuff == 1
-				if Player.GetDistance rRef4 > 150
-					set bRef4Debuff to 0
-					set rRef4 to 0
-					TEDispelRef.MoveTo rRef4
-					TEDispelRef.Cast TESpAuraDispelDebuff rRef4
+				if TEbAuraDwemer == 1
+					TEAuraRef.MoveTo rRef4
+					TEAuraRef.Cast TESpAuraDwemerDebuff rRef4
+					set bRef1Debuff to 1
 				endif
-				if rRef4.GetCombatTarget != Player
+				if TEbAuraObsidian == 1
+					TEAuraRef.MoveTo rRef4
+					TEAuraRef.Cast TESpAuraObsidianDebuff rRef4
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraAyleidic == 1
+					TEAuraRef.MoveTo rRef4
+					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef4
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef4
+					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef4
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMythrilSilvrite == 1
+					TEAuraRef.MoveTo rRef4
+					TEAuraRef.Cast TESpAuraMythrilSilvriteDebuff rRef4
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraResinite == 1
+					TEAuraRef.MoveTo rRef4
+					TEAuraRef.Cast TESpAuraResiniteDebuff rRef4
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMaddening == 1
+					TEAuraRef.MoveTo rRef4
+					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef4
+					set bRef1Debuff to 1
+				endif
+			elseif bRef4Debuff
+				if Player.GetDistance rRef4 > 750 || rRef4.GetCombatTarget != Player
 					set bRef4Debuff to 0
 					set rRef4 to 0
 					TEDispelRef.MoveTo rRef4
@@ -208,16 +324,45 @@ set fQuestDelayTime to 0.05
 				if TEbAuraCursed == 1
 					TEAuraRef.MoveTo rRef5
 					TEAuraRef.Cast TESpAuraCursedDebuff rRef5
-					set bRef5Debuff to 1
+					set bRef1Debuff to 1
 				endif
-			elseif bRef5Debuff == 1
-				if Player.GetDistance rRef5 > 150
-					set bRef5Debuff to 0
-					set rRef5 to 0
-					TEDispelRef.MoveTo rRef5
-					TEDispelRef.Cast TESpAuraDispelDebuff rRef5
+				if TEbAuraDwemer == 1
+					TEAuraRef.MoveTo rRef5
+					TEAuraRef.Cast TESpAuraDwemerDebuff rRef5
+					set bRef1Debuff to 1
 				endif
-				if rRef5.GetCombatTarget != Player
+				if TEbAuraObsidian == 1
+					TEAuraRef.MoveTo rRef5
+					TEAuraRef.Cast TESpAuraObsidianDebuff rRef5
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraAyleidic == 1
+					TEAuraRef.MoveTo rRef5
+					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef5
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef5
+					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef5
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMythrilSilvrite == 1
+					TEAuraRef.MoveTo rRef5
+					TEAuraRef.Cast TESpAuraMythrilSilvriteDebuff rRef5
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraResinite == 1
+					TEAuraRef.MoveTo rRef5
+					TEAuraRef.Cast TESpAuraResiniteDebuff rRef5
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMaddening == 1
+					TEAuraRef.MoveTo rRef5
+					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef5
+					set bRef1Debuff to 1
+				endif
+			elseif bRef5Debuff
+				if Player.GetDistance rRef5 > 750 || rRef5.GetCombatTarget != Player
 					set bRef5Debuff to 0
 					set rRef5 to 0
 					TEDispelRef.MoveTo rRef5
@@ -239,16 +384,45 @@ set fQuestDelayTime to 0.05
 				if TEbAuraCursed == 1
 					TEAuraRef.MoveTo rRef6
 					TEAuraRef.Cast TESpAuraCursedDebuff rRef6
-					set bRef6Debuff to 1
+					set bRef1Debuff to 1
 				endif
-			elseif bRef6Debuff == 1
-				if Player.GetDistance rRef6 > 150
-					set bRef6Debuff to 0
-					set rRef6 to 0
-					TEDispelRef.MoveTo rRef6
-					TEDispelRef.Cast TESpAuraDispelDebuff rRef6
+				if TEbAuraDwemer == 1
+					TEAuraRef.MoveTo rRef6
+					TEAuraRef.Cast TESpAuraDwemerDebuff rRef6
+					set bRef1Debuff to 1
 				endif
-				if rRef6.GetCombatTarget != Player
+				if TEbAuraObsidian == 1
+					TEAuraRef.MoveTo rRef6
+					TEAuraRef.Cast TESpAuraObsidianDebuff rRef6
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraAyleidic == 1
+					TEAuraRef.MoveTo rRef6
+					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef6
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef6
+					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef6
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMythrilSilvrite == 1
+					TEAuraRef.MoveTo rRef6
+					TEAuraRef.Cast TESpAuraMythrilSilvriteDebuff rRef6
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraResinite == 1
+					TEAuraRef.MoveTo rRef6
+					TEAuraRef.Cast TESpAuraResiniteDebuff rRef6
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMaddening == 1
+					TEAuraRef.MoveTo rRef6
+					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef6
+					set bRef1Debuff to 1
+				endif
+			elseif bRef6Debuff
+				if Player.GetDistance rRef6 > 750 || rRef6.GetCombatTarget != Player
 					set bRef6Debuff to 0
 					set rRef6 to 0
 					TEDispelRef.MoveTo rRef6
@@ -270,16 +444,45 @@ set fQuestDelayTime to 0.05
 				if TEbAuraCursed == 1
 					TEAuraRef.MoveTo rRef7
 					TEAuraRef.Cast TESpAuraCursedDebuff rRef7
-					set bRef7Debuff to 1
+					set bRef1Debuff to 1
 				endif
-			elseif bRef7Debuff == 1
-				if Player.GetDistance rRef7 > 150
-					set bRef7Debuff to 0
-					set rRef7 to 0
-					TEDispelRef.MoveTo rRef7
-					TEDispelRef.Cast TESpAuraDispelDebuff rRef7
+				if TEbAuraDwemer == 1
+					TEAuraRef.MoveTo rRef7
+					TEAuraRef.Cast TESpAuraDwemerDebuff rRef7
+					set bRef1Debuff to 1
 				endif
-				if rRef7.GetCombatTarget != Player
+				if TEbAuraObsidian == 1
+					TEAuraRef.MoveTo rRef7
+					TEAuraRef.Cast TESpAuraObsidianDebuff rRef7
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraAyleidic == 1
+					TEAuraRef.MoveTo rRef7
+					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef7
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef7
+					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef7
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMythrilSilvrite == 1
+					TEAuraRef.MoveTo rRef7
+					TEAuraRef.Cast TESpAuraMythrilSilvriteDebuff rRef7
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraResinite == 1
+					TEAuraRef.MoveTo rRef7
+					TEAuraRef.Cast TESpAuraResiniteDebuff rRef7
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMaddening == 1
+					TEAuraRef.MoveTo rRef7
+					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef7
+					set bRef1Debuff to 1
+				endif
+			elseif bRef7Debuff
+				if Player.GetDistance rRef7 > 750 || rRef7.GetCombatTarget != Player
 					set bRef7Debuff to 0
 					set rRef7 to 0
 					TEDispelRef.MoveTo rRef7
@@ -301,16 +504,45 @@ set fQuestDelayTime to 0.05
 				if TEbAuraCursed == 1
 					TEAuraRef.MoveTo rRef8
 					TEAuraRef.Cast TESpAuraCursedDebuff rRef8
-					set bRef8Debuff to 1
+					set bRef1Debuff to 1
 				endif
-			elseif bRef8Debuff == 1
-				if Player.GetDistance rRef8 > 150
-					set bRef8Debuff to 0
-					set rRef8 to 0
-					TEDispelRef.MoveTo rRef8
-					TEDispelRef.Cast TESpAuraDispelDebuff rRef8
+				if TEbAuraDwemer == 1
+					TEAuraRef.MoveTo rRef8
+					TEAuraRef.Cast TESpAuraDwemerDebuff rRef8
+					set bRef1Debuff to 1
 				endif
-				if rRef8.GetCombatTarget != Player
+				if TEbAuraObsidian == 1
+					TEAuraRef.MoveTo rRef8
+					TEAuraRef.Cast TESpAuraObsidianDebuff rRef8
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraAyleidic == 1
+					TEAuraRef.MoveTo rRef8
+					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef8
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef8
+					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef8
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMythrilSilvrite == 1
+					TEAuraRef.MoveTo rRef8
+					TEAuraRef.Cast TESpAuraMythrilSilvriteDebuff rRef8
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraResinite == 1
+					TEAuraRef.MoveTo rRef8
+					TEAuraRef.Cast TESpAuraResiniteDebuff rRef8
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMaddening == 1
+					TEAuraRef.MoveTo rRef8
+					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef8
+					set bRef1Debuff to 1
+				endif
+			elseif bRef8Debuff
+				if Player.GetDistance rRef8 > 750 || rRef8.GetCombatTarget != Player
 					set bRef8Debuff to 0
 					set rRef8 to 0
 					TEDispelRef.MoveTo rRef8
@@ -333,16 +565,45 @@ set fQuestDelayTime to 0.05
 				if TEbAuraCursed == 1
 					TEAuraRef.MoveTo rRef9
 					TEAuraRef.Cast TESpAuraCursedDebuff rRef9
-					set bRef9Debuff to 1
+					set bRef1Debuff to 1
 				endif
-			elseif bRef9Debuff == 1
-				if Player.GetDistance rRef9 > 150
-					set bRef9Debuff to 0
-					set rRef9 to 0
-					TEDispelRef.MoveTo rRef9
-					TEDispelRef.Cast TESpAuraDispelDebuff rRef9
+				if TEbAuraDwemer == 1
+					TEAuraRef.MoveTo rRef9
+					TEAuraRef.Cast TESpAuraDwemerDebuff rRef9
+					set bRef1Debuff to 1
 				endif
-				if rRef9.GetCombatTarget != Player
+				if TEbAuraObsidian == 1
+					TEAuraRef.MoveTo rRef9
+					TEAuraRef.Cast TESpAuraObsidianDebuff rRef9
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraAyleidic == 1
+					TEAuraRef.MoveTo rRef9
+					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef9
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef9
+					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef9
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMythrilSilvrite == 1
+					TEAuraRef.MoveTo rRef9
+					TEAuraRef.Cast TESpAuraMythrilSilvriteDebuff rRef9
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraResinite == 1
+					TEAuraRef.MoveTo rRef9
+					TEAuraRef.Cast TESpAuraResiniteDebuff rRef9
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMaddening == 1
+					TEAuraRef.MoveTo rRef9
+					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef9
+					set bRef1Debuff to 1
+				endif
+			elseif bRef9Debuff
+				if Player.GetDistance rRef9 > 750 || rRef9.GetCombatTarget != Player
 					set bRef9Debuff to 0
 					set rRef9 to 0
 					TEDispelRef.MoveTo rRef9
@@ -365,16 +626,45 @@ set fQuestDelayTime to 0.05
 				if TEbAuraCursed == 1
 					TEAuraRef.MoveTo rRef10
 					TEAuraRef.Cast TESpAuraCursedDebuff rRef10
-					set bRef10Debuff to 1
+					set bRef1Debuff to 1
 				endif
-			elseif bRef10Debuff == 1
-				if Player.GetDistance rRef10 > 150
-					set bRef10Debuff to 0
-					set rRef10 to 0
-					TEDispelRef.MoveTo rRef10
-					TEDispelRef.Cast TESpAuraDispelDebuff rRef10
+				if TEbAuraDwemer == 1
+					TEAuraRef.MoveTo rRef10
+					TEAuraRef.Cast TESpAuraDwemerDebuff rRef10
+					set bRef1Debuff to 1
 				endif
-				if rRef10.GetCombatTarget != Player
+				if TEbAuraObsidian == 1
+					TEAuraRef.MoveTo rRef10
+					TEAuraRef.Cast TESpAuraObsidianDebuff rRef10
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraAyleidic == 1
+					TEAuraRef.MoveTo rRef10
+					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef10
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef10
+					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef10
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMythrilSilvrite == 1
+					TEAuraRef.MoveTo rRef10
+					TEAuraRef.Cast TESpAuraMythrilSilvriteDebuff rRef10
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraResinite == 1
+					TEAuraRef.MoveTo rRef10
+					TEAuraRef.Cast TESpAuraResiniteDebuff rRef10
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMaddening == 1
+					TEAuraRef.MoveTo rRef10
+					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef10
+					set bRef1Debuff to 1
+				endif
+			elseif bRef10Debuff
+				if Player.GetDistance rRef10 > 750 || rRef10.GetCombatTarget != Player
 					set bRef10Debuff to 0
 					set rRef10 to 0
 					TEDispelRef.MoveTo rRef10
@@ -398,14 +688,43 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraCursedDebuff rRef11
 					set bRef1Debuff to 1
 				endif
-			elseif bRef11Debuff == 1
-				if Player.GetDistance rRef11 > 150
-					set bRef11Debuff to 0
-					set rRef11 to 0
-					TEDispelRef.MoveTo rRef11
-					TEDispelRef.Cast TESpAuraDispelDebuff rRef11
+				if TEbAuraDwemer == 1
+					TEAuraRef.MoveTo rRef11
+					TEAuraRef.Cast TESpAuraDwemerDebuff rRef11
+					set bRef1Debuff to 1
 				endif
-				if rRef11.GetCombatTarget != Player
+				if TEbAuraObsidian == 1
+					TEAuraRef.MoveTo rRef11
+					TEAuraRef.Cast TESpAuraObsidianDebuff rRef11
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraAyleidic == 1
+					TEAuraRef.MoveTo rRef11
+					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef11
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef11
+					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef11
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMythrilSilvrite == 1
+					TEAuraRef.MoveTo rRef11
+					TEAuraRef.Cast TESpAuraMythrilSilvriteDebuff rRef11
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraResinite == 1
+					TEAuraRef.MoveTo rRef11
+					TEAuraRef.Cast TESpAuraResiniteDebuff rRef11
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMaddening == 1
+					TEAuraRef.MoveTo rRef11
+					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef11
+					set bRef1Debuff to 1
+				endif
+			elseif bRef11Debuff
+				if Player.GetDistance rRef11 > 750 || rRef11.GetCombatTarget != Player
 					set bRef11Debuff to 0
 					set rRef11 to 0
 					TEDispelRef.MoveTo rRef11
@@ -427,16 +746,45 @@ set fQuestDelayTime to 0.05
 				if TEbAuraCursed == 1
 					TEAuraRef.MoveTo rRef12
 					TEAuraRef.Cast TESpAuraCursedDebuff rRef12
-					set bRef2Debuff to 1
+					set bRef1Debuff to 1
 				endif
-			elseif bRef12Debuff == 1
-				if Player.GetDistance rRef12 > 150
-					set bRef12Debuff to 0
-					set rRef12 to 0
-					TEDispelRef.MoveTo rRef12
-					TEDispelRef.Cast TESpAuraDispelDebuff rRef12
+				if TEbAuraDwemer == 1
+					TEAuraRef.MoveTo rRef12
+					TEAuraRef.Cast TESpAuraDwemerDebuff rRef12
+					set bRef1Debuff to 1
 				endif
-				if rRef12.GetCombatTarget != Player
+				if TEbAuraObsidian == 1
+					TEAuraRef.MoveTo rRef12
+					TEAuraRef.Cast TESpAuraObsidianDebuff rRef12
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraAyleidic == 1
+					TEAuraRef.MoveTo rRef12
+					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef12
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef12
+					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef12
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMythrilSilvrite == 1
+					TEAuraRef.MoveTo rRef12
+					TEAuraRef.Cast TESpAuraMythrilSilvriteDebuff rRef12
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraResinite == 1
+					TEAuraRef.MoveTo rRef12
+					TEAuraRef.Cast TESpAuraResiniteDebuff rRef12
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMaddening == 1
+					TEAuraRef.MoveTo rRef12
+					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef12
+					set bRef1Debuff to 1
+				endif
+			elseif bRef12Debuff
+				if Player.GetDistance rRef12 > 750 || rRef12.GetCombatTarget != Player
 					set bRef12Debuff to 0
 					set rRef12 to 0
 					TEDispelRef.MoveTo rRef12
@@ -458,16 +806,45 @@ set fQuestDelayTime to 0.05
 				if TEbAuraCursed == 1
 					TEAuraRef.MoveTo rRef13
 					TEAuraRef.Cast TESpAuraCursedDebuff rRef13
-					set bRef3Debuff to 1
+					set bRef1Debuff to 1
 				endif
-			elseif bRef13Debuff == 1
-				if Player.GetDistance rRef13 > 150
-					set bRef13Debuff to 0
-					set rRef13 to 0
-					TEDispelRef.MoveTo rRef13
-					TEDispelRef.Cast TESpAuraDispelDebuff rRef13
+				if TEbAuraDwemer == 1
+					TEAuraRef.MoveTo rRef13
+					TEAuraRef.Cast TESpAuraDwemerDebuff rRef13
+					set bRef1Debuff to 1
 				endif
-				if rRef13.GetCombatTarget != Player
+				if TEbAuraObsidian == 1
+					TEAuraRef.MoveTo rRef13
+					TEAuraRef.Cast TESpAuraObsidianDebuff rRef13
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraAyleidic == 1
+					TEAuraRef.MoveTo rRef13
+					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef13
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef13
+					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef13
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMythrilSilvrite == 1
+					TEAuraRef.MoveTo rRef13
+					TEAuraRef.Cast TESpAuraMythrilSilvriteDebuff rRef13
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraResinite == 1
+					TEAuraRef.MoveTo rRef13
+					TEAuraRef.Cast TESpAuraResiniteDebuff rRef13
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraMaddening == 1
+					TEAuraRef.MoveTo rRef13
+					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef13
+					set bRef1Debuff to 1
+				endif
+			elseif bRef13Debuff
+				if Player.GetDistance rRef13 > 750 || rRef13.GetCombatTarget != Player
 					set bRef13Debuff to 0
 					set rRef13 to 0
 					TEDispelRef.MoveTo rRef13

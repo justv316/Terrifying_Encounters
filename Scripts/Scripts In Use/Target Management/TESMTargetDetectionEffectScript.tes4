@@ -13,7 +13,7 @@ end
 begin ScriptEffectUpdate
 	set fTimer to fTimer + GetSecondsPassed
 	if fTimer > 0.3
-		if bMustWait == 1
+		if bMustWait
 			if fTimer > 0.5
 				set bMustWait to 0
 			endif
