@@ -5,7 +5,7 @@ short iCursedBonusAdded
 
 
 begin GameMode
-	set fQuestDelayTime to 0.01 
+	set fQuestDelayTime to 1
 	if TEiSetCursedEquip < 4
 		Player.RemoveSpell TEAbEquipCursedSetBonus4
 		Player.RemoveSpell TEAbEquipCursedSetBonus5

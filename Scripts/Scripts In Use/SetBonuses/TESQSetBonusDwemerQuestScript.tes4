@@ -1,9 +1,11 @@
 scn TESQSetBonusDwemerQuestScript
 
+float fQuestDelayTime
 short iDwemerBonusAdded
 
 
 begin GameMode
+	set fQuestDelayTime to 1
 	if TEiSetDwemerEquip < 4
 		Player.RemoveSpell TEAbEquipDwemerSetBonus4
 		Player.RemoveSpell TEAbEquipDwemerSetBonus5

@@ -1,9 +1,11 @@
 scn TESQSetBonusMythrilSilvriteQuestScript
 
+float fQuestDelayTime
 short iMythrilSilvriteBonusAdded
 
 
 begin GameMode
+	set fQuestDelayTime to 1
 	if TEiSetMythrilSilvriteEquip < 4
 		Player.RemoveSpell TEAbEquipMythrilSilvriteSetBonus4
 		Player.RemoveSpell TEAbEquipMythrilSilvriteSetBonus5

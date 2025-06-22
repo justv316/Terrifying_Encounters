@@ -1,9 +1,11 @@
 scn TESQSetBonusMalachiteQuestScript
 
+float fQuestDelayTime
 short iMalachiteBonusAdded
 
 
 begin GameMode
+	set fQuestDelayTime to 1
 	if TEiSetMalachiteEquip < 4
 		Player.RemoveSpell TEAbEquipMalachiteSetBonus4
 		Player.RemoveSpell TEAbEquipMalachiteSetBonus5

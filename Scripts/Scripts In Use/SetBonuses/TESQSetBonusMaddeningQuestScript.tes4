@@ -1,9 +1,11 @@
 scn TESQSetBonusMaddeningQuestScript
 
+float fQuestDelayTime
 short iMaddeningBonusAdded
 
 
 begin GameMode
+	set fQuestDelayTime to 1
 	if TEiSetMaddeningEquip < 4
 		Player.RemoveSpell TEAbEquipMaddeningSetBonus4
 		Player.RemoveSpell TEAbEquipMaddeningSetBonus5

@@ -1,9 +1,11 @@
 scn TESQSetBonusResiniteQuestScript
 
+float fQuestDelayTime
 short iResiniteBonusAdded
 
 
 begin GameMode
+	set fQuestDelayTime to 1
 	if TEiSetResiniteEquip < 4
 		Player.RemoveSpell TEAbEquipResiniteSetBonus4
 		Player.RemoveSpell TEAbEquipResiniteSetBonus5

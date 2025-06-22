@@ -1,9 +1,11 @@
 scn TESQSetBonusAyleidicQuestScript
 
+float fQuestDelayTime
 short iAyleidicBonusAdded
 
 
 begin GameMode
+	set fQuestDelayTime to 1
 	if TEiSetAyleidicEquip < 4
 		Player.RemoveSpell TEAbEquipAyleidicSetBonus4
 		Player.RemoveSpell TEAbEquipAyleidicSetBonus5

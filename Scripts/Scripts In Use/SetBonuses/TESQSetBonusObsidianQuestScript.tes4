@@ -1,9 +1,11 @@
 scn TESQSetBonusObsidianQuestScript
 
+float fQuestDelayTime
 short iObsidianBonusAdded
 
 
 begin GameMode
+	set fQuestDelayTime to 1
 	if TEiSetObsidianEquip < 4
 		Player.RemoveSpell TEAbEquipObsidianSetBonus4
 		Player.RemoveSpell TEAbEquipObsidianSetBonus5
