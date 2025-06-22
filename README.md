@@ -1,4 +1,4 @@
-# Fox's Terrifying Encounters(Pt.1): Endgame Loot Overhaul
+# Fox's Terrifying Encounters: Endgame Loot Overhaul
 ## Description
 * __Version:__ PreRelease
 * __Brief Overview:__ A complete overhaul to the endgame loot distribution, complete with new upscaled equipment items, treasure items, and so much more.
@@ -31,7 +31,7 @@
 	
 ## In-Game Prerequisites
 * Your character must be level 25 before content from this mod will begin appearing. This is because everything is scaled up, and this is an endgame overhaul. I have not given any consideration as to how the player actually arrives to being level 25, only that they are at least that level. This ensures that they are at least mostly prepared for what they will face.	
-* This mod pays no mind to whether or not they've completed any Main Quests or Guilds. I don't care about that at this moment in time, but that is subject to change according to my whims.
+* This mod pays no mind to whether or not they've completed any Main Quests or Guilds. 
 	
 ----
 
@@ -44,45 +44,13 @@
 
 ## Installation
 
-<details>
-<Summary> Installation </Summary>
-
-### Automatic Installation
-* You can use a mod manager, but I don't, so I don't know how to guide you <3
-
-### Manual Installation [Preferred Method]
-* Copy the OblivionRemastered folder to your Game's Root directory
-
-* (Or) If you're like me and don't trust doing it that way:
-	* Create these folders if you don't have them.
-	
-__Steam Installation__
-
-1. Copy Terrifying_Encounters.esp to `\SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Content\Dev\ObvData\Data`
-	1. Add Terrifying_Encounters.esp to your Plugins.txt, as early as possible. 
-
-2. Copy Terrifying_Encounters.json to `\SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Content\Dev\ObvData\Data\SyncMap `
-
-3. Copy TE_Settings.ini to `\SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Binaries\Win64\OBSE\plugins\GameSettings`
-
-__Gamepass Installation__
-
-* Since The Gamepass/MS Store/EGS version does not support OBSE, you won't use GameSettings.ini and instead will use a different plugin I will create that does not require GSL. 
-	
-1.  Copy Terrifying_Encounters.esp to `\XboxGames\The Elder Scrolls IV- Oblivion Remastered\Content\OblivionRemastered\Content\Dev\ObvData\Data`
-
-2. Copy Terrifying_Encounters.json to `\XboxGames\The Elder Scrolls IV- Oblivion Remastered\Content\OblivionRemastered\Content\Dev\ObvData\Data`
-
-<details>
-<Summary>Load Order</Summary>
-
-#### Compatibility
+### Compatibility
 
 * This mod intends on __substantially__ modifying LeveledLists both in creating new ones and modifying Vanilla ones. I intend on doing as little modification to vanilla lists as possible, and once OBSE64 supports the ability to add items to LL's via scripting, I will instead use an Initilization script that adds everything to vanilla LL's for compatibility. 
 * For now, if you wish to use a mod that modifies the below LL's, you will need to create a compatibility patch merging the record changes together. I will not be providing a guide on doing this and I will only entertain patch requests from Mod Authors,  not users.
 * Other than specified LLs, everything else is unique and shouldn't rub against other things, but since this mod contains a considerable amount of scripting, who knows what could happen with other mods. My load order while building this mod is considerably messy and I've not experienced issues while playtesting. This is subject to change, and this section will be updated as needed.
 
-##### Modified Leveled Lists
+#### Modified Leveled Lists
 1. LL1
 2. LL2
 3. LL3
@@ -91,9 +59,14 @@ __Gamepass Installation__
 
 ##### Load Order Considerations
 
-* Load this mod as early as possible in your load order. I built this mod in Deluxe, though this mod has absolutely no requirements or interactions with Deluxe content. I also built and tested this mod in an existing save (Alongside fresh saves when necessary) primarily to ensure this can be added to an existing character without issue, especially since all of this content is locked behind being at least level 25. The Target Detection system I've built is completely compatibile with other mods that use Target Detection since I built that with the idea that everything used in a specific instance of target detection will be unique.
+* Load this mod as early as possible in your load order.
+* I built this mod in Deluxe, though this mod has absolutely no requirements or interactions with Deluxe content. 
+* I built and tested this mod in an existing save (Alongside fresh saves when necessary) primarily to ensure this can be added to an existing character without issue, especially since all of this content is locked behind being at least level 25. 
+* The Target Detection system I've built is completely compatibile with other mods that use Target Detection since I built that with the idea that everything used in a specific instance of target detection will be unique.
 
-* __Example Load Order__
+<details>
+<Summary>Example Load Order</Summary>
+
 1. [00] Oblivion.esm
 2. [01] DLCBattlehornCastle.esp
 3. [02] DLCFrostcrag.esp
@@ -114,9 +87,37 @@ __Gamepass Installation__
 19. [11] Terrifying_Encounters.esp
 
 </details>
-</details>
 
-----
+<details>
+<Summary>Installation</Summary>
+
+### Automatic Installation
+* You can use a mod manager, but I don't, so I don't know how to guide you <3
+
+### Manual Installation [Preferred Method]
+* Copy the OblivionRemastered folder to your Game's Root directory
+
+* (Or) If you're like me and don't trust doing it that way:
+	* Create these folders if you don't have them.
+	
+#### Steam Installation
+
+1. Copy Terrifying_Encounters.esp to `\SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Content\Dev\ObvData\Data`
+	1. Add Terrifying_Encounters.esp to your Plugins.txt, as early as possible. 
+
+2. Copy Terrifying_Encounters.json to `\SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Content\Dev\ObvData\Data\SyncMap `
+
+3. Copy TE_Settings.ini to `\SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Binaries\Win64\OBSE\plugins\GameSettings`
+
+#### Gamepass Installation
+
+* Since The Gamepass/MS Store/EGS version does not support OBSE, you won't use GameSettings.ini and instead will use a different plugin I will create that does not require GSL. 
+	
+1.  Copy Terrifying_Encounters.esp to `\XboxGames\The Elder Scrolls IV- Oblivion Remastered\Content\OblivionRemastered\Content\Dev\ObvData\Data`
+
+2. Copy Terrifying_Encounters.json to `\XboxGames\The Elder Scrolls IV- Oblivion Remastered\Content\OblivionRemastered\Content\Dev\ObvData\Data`
+
+</details>
 
 <details>
 <Summary>Full Feature Overview</Summary>
@@ -152,7 +153,7 @@ __Gamepass Installation__
 
 #### Upscaled versions of Vanilla Equipment
 * 145 new equipment items have been added using vanilla assets.
-	* Each of these items has 6 tier's that you can upgrade into or find as loot.
+	* Each of these items has 6 tiers that you can upgrade into or find as loot.
 	* There are 8 sets of gear, as well as a number of unenchanted artifacts such as Umbra (Crystal Longsword) and Chillrend (Stalrihm Shortsword)
 	
 <details>
@@ -220,8 +221,6 @@ __Gamepass Installation__
 <details>
 <Summary>Equipment Statistics</Summary>
 
-----
-
 * There may be some variance throughout the items and remember that your current skills will effect the numbers you see in the game, so use this as a baseline.
 
 | __Weapon__ | Type | T1 Dam | T2 Dam | T3 Dam | T4 Dam | T5 Dam | T6 Dam | Weight | Speed | Reach | 
@@ -286,8 +285,6 @@ __Gamepass Installation__
 </details>
 
 #### Set Bonuses
-
-----
 
 * Scripted Matching Set Bonuses for all 8 upscaled sets of armor/weapons
 
@@ -377,8 +374,6 @@ __Gamepass Installation__
 
 </details>
 
-----
-
 ##### Dwemer
 
 * Recommended Classes: Battlemage, Crusader 
@@ -464,18 +459,14 @@ __Gamepass Installation__
 
 </details>
 
-----
-
-<details>
-<Summary>Obsidian</Summary>
-
 ##### Obsidian
 
 * Recommended Classes: Spellsword, Crusader, Knight 
 	* Emphasizes Combat, Defensive, and Magical abilities, but to a lesser degree than the former specialized sets. 
 	* Offers minimal resistance coverage.
 	
-----
+<details>
+<Summary>Obsidian</Summary>
 
 * 4/6
 
@@ -549,17 +540,13 @@ __Gamepass Installation__
 
 </details>
 
-----
-
-<details>
-<Summary>Ayleidic</Summary>
-
 ##### Ayleidic
 
 * Recommended Classes: 
 	* Emphasizes 
-	
-----
+
+<details>
+<Summary>Ayleidic</Summary>
 
 * 4/6
 
@@ -634,14 +621,14 @@ __Gamepass Installation__
 </details>
 
 ----
-
-<details>
-<Summary>Malachite</Summary>
 
 ##### Malachite
 
 * Recommended Classes: 
 	* Emphasizes 
+
+<details>
+<Summary>Malachite</Summary>
 	
 ----
 
@@ -716,17 +703,15 @@ __Gamepass Installation__
 | + | Attribute | Speed | 20 | In Combat |
 
 </details>
-
-----
-<details>
-<Summary>Mythril/Silvrite</Summary>
 
 ##### Mythril/Silvrite
 
 * Recommended Classes: 
 	* Emphasizes 
-	
-----
+
+<details>
+<Summary>Mythril/Silvrite</Summary>
+
 
 * 4/6
 
@@ -799,17 +784,13 @@ __Gamepass Installation__
 | + | Attribute | Speed | 20 | In Combat |
 
 </details>
-
-----
-
-<details>
-<Summary>Resinite</Summary>
 
 ##### Resinite
 * Recommended Classes: 
 	* Emphasizes 
-	
-----
+
+<details>
+<Summary>Resinite</Summary>
 
 * 4/6
 
@@ -883,16 +864,13 @@ __Gamepass Installation__
 
 </details>
 
-----
+##### Maddening - Wabbajack stats?
+* Recommended Classes: Madlords, Demented and Maniacs alike.
+	* __Who knows what lies in store for you.__
 
 <details>
 <Summary>Maddening</Summary>
 
-##### Maddening - Wabbajack stats?
-* Recommended Classes: Madlords, Demented and Maniacs alike.
-	* __Who knows what lies in store for you.__
-	
-----
 
 * 4/6
 
@@ -971,8 +949,6 @@ __Gamepass Installation__
 		
 #### Artifacts
 
-----
-
 * Dawn/Duskfang have been recast into the twinfaced sword spirit Waning and Rising. This sword behaves identically to the original, in that during the night, it takes on the form of Waning, and during the day, it takes on the form of Rising. Furthermore, as the sword consumes the blood of its victims it will change form again growing stronger. 
 	* Once the sword has consumed enough, this transformation becomes permanent, and the sword spirit remains Blood Drunk.
 		
@@ -983,7 +959,7 @@ __Gamepass Installation__
 </details>
 
 <details>
-<Summary> What this mod currently does not do </Summary>
+<Summary>What this mod currently does not do</Summary>
 
 ### What this mod does not do
 
@@ -998,8 +974,6 @@ __Gamepass Installation__
 ## Credits and Acknowledgements
 
 ### Resources Used
-
-----
 
 * Created with xEdit, Creation Kit Extender, and Notepad++
 	* Creation Kit Extender (https://www.nexusmods.com/oblivion/mods/36370)
