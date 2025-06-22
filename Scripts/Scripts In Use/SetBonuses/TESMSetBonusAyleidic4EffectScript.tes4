@@ -1,4 +1,4 @@
-scn TESMSetBonusObsidian4EffectScript
+scn TESMSetBonusAyleidic4EffectScript
 
 short bBonusAdded
 short bCombatMod

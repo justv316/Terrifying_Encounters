@@ -291,6 +291,10 @@
 <details>
 <Summary>Set Bonus Details</Summary>
 
+##### Heavy Armor
+* Heavy Armor slows the player down while in combat and reduces stealth* and marksmen skills.
+* Provides the best Defense and Resistance Bonuses
+
 ##### Cursed
 * Recommended Classes: Warrior, Knight
 	* Emphasizes combat and defensive abilities while diminishing magical abilities.
@@ -376,7 +380,7 @@
 
 ##### Dwemer
 
-* Recommended Classes: Battlemage, Crusader 
+* Recommended Classes: Battlemage, Crusader, Sorcerer
 	* Emphasizes Defensive and Magical abilities while diminishing Combat abilities.
 	* Boasts a strong magical resistance profile
 
@@ -461,7 +465,7 @@
 
 ##### Obsidian
 
-* Recommended Classes: Spellsword, Crusader, Knight 
+* Recommended Classes: Any Heavy Armor wearer
 	* Emphasizes Combat, Defensive, and Magical abilities, but to a lesser degree than the former specialized sets. 
 	* Offers minimal resistance coverage.
 	
@@ -540,10 +544,14 @@
 
 </details>
 
+##### Light Armor
+* Light Armor emphasizes stealth ability and speed.
+* Does not provide any defense bonus and minimal resistance bonuses.
+
 ##### Ayleidic
 
-* Recommended Classes: 
-	* Emphasizes 
+* Recommended Classes: Archer, Assassin, Rogue, Thief, Barbarian, Bard
+	* Emphasizes Combat and Magical abilities while diminishing Defensive abilities
 
 <details>
 <Summary>Ayleidic</Summary>
@@ -552,24 +560,28 @@
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 50 | Constant |
-| + | Resist | Normal Weapons | 10 | Constant |
-| + | Skill | Heavy Armor | 25 | Constant |
-| + | Skill | Blade | 25 | Constant |
-| + | Skill | Blunt | 25 | Constant |
-| + | Skill | Block | 25 | Constant |
+| + | Resist | Fire | 5 | Constant |
+| + | Resist | Frost | 5 | Constant |
+| + | Resist | Shock | 5 | Constant |
+| - | Skill | Light Armor | 13 | Constant |
+| + | Skill | Blade | 13 | Constant |
+| + | Skill | Blunt | 13 | Constant |
+| - | Skill | Block | 13 | Constant |
 | + | Skill | Hand to Hand | 25 | Constant |
+| + | Skill | Destruction | 13 | Constant |
+| + | Skill | Conjuration | 13 | Constant |
+| + | Skill | Illusion | 13 | Constant |
+| + | Skill | Restoration | 13 | Constant |
+| + | Skill | Alteration | 13 | Constant |
+| + | Skill | Mysticism | 13 | Constant |
+| + | Other | Magicka Multiplier | 1 | Constant |
 | + | Other | Attack Bonus | 10 | Constant |
-| + | Other | Defend Bonus | 5 | Constant |
-| - | Resist | Frost | 50 | Constant |
-| + | Skill | Destruction | 50 | Constant |
-| + | Skill | Conjuration | 50 | Constant |
-| + | Skill | Illusion | 50 | Constant |
-| + | Skill | Restoration | 50 | Constant |
-| + | Skill | Alteration | 50 | Constant |
-| + | Skill | Mysticism | 50 | Constant |
-| + | Other | Magicka Multiplier | 3 | Constant |
-| + | Attribute | Speed | 40 | In Combat |
+| - | Other | Defend Bonus | 5 | Constant |
+| | | Light Armor Inherent | | |
+| + | Attribute | Speed | 20 | In Combat |
+| + | Skill | Sneak | 25 | Constant |
+| + | Skill | Security | 25 | Constant |
+| + | Skill | Speechcraft | 25 | Constant |
 
 * 5/6
 	
@@ -624,8 +636,8 @@
 
 ##### Malachite
 
-* Recommended Classes: 
-	* Emphasizes 
+* Recommended Classes: Battlemage, Nightblade, Mage, Healer
+	* Emphasizes Magical and Defensive abilities, while diminishing Combat abilities.
 
 <details>
 <Summary>Malachite</Summary>
@@ -706,8 +718,8 @@
 
 ##### Mythril/Silvrite
 
-* Recommended Classes: 
-	* Emphasizes 
+* Recommended Classes: Any Light Armor wearer
+	* Emphasizes Combat, Defensive, and Magical abilities, but to a lesser degree than the former specialized sets.  
 
 <details>
 <Summary>Mythril/Silvrite</Summary>
@@ -784,6 +796,9 @@
 | + | Attribute | Speed | 20 | In Combat |
 
 </details>
+
+##### Special Sets
+* These sets are available in both Light and Heavy armor, and their set bonuses vary greatly from the former 6 sets. 
 
 ##### Resinite
 * Recommended Classes: 
