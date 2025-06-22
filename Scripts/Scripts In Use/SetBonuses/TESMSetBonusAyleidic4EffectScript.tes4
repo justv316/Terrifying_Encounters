@@ -1,18 +1,73 @@
-scn TESMSetBonusAyleidic4EffectScript
+scn TESMSetBonusObsidian4EffectScript
 
 short bBonusAdded
+short bCombatMod
+short bMagickaMultiplierMod
 
 begin ScriptEffectStart
-	if bBonusAdded == 0 
-		player.ModActorValue Agility 10
-		player.ModActorValue Strength -10
+	if bBonusAdded == 0
+		Player.ModActorValue Destruction 13
+		Player.ModActorValue Conjuration 13
+		Player.ModActorValue Illusion 13
+		Player.ModActorValue Mysticism 13
+		Player.ModActorValue Restoration 13
+		Player.ModActorValue Alteration 13
+		if bMagickaMultiplierMod == 0
+			if Player.GetActorValue MagickaMultiplier == 0
+				Player.SetActorValue MagickaMultiplier 10
+			endif
+			Player.ModActorValue MagickaMultiplier 1
+			set bMagickaMultiplierMod to 1
+		endif
+		Player.ModActorValue ResistFire 25
+		Player.ModActorValue ResistFrost 25
+		Player.ModActorValue ResistShock 25
+		Player.ModActorValue HeavyArmor 13
+		Player.ModActorValue Blade 13
+		Player.ModActorValue Blunt 13
+		Player.ModActorValue Block 13
+		Player.ModActorValue HandToHand 13
+		Player.ModActorValue Marksman -25
+		Player.ModActorValue AttackBonus 5
+		Player.ModActorValue DefendBonus 5
 		set bBonusAdded to 1
+	endif
+end
+
+begin ScriptEffectUpdate
+	if Player.IsInCombat == 1 && bCombatMod == 0 
+		Player.ModActorValue Speed -40
+		set bCombatMod to 1
+	endif
+	if Player.IsInCombat == 0 && bCombatMod == 1
+		Player.ModActorValue Speed 40
+		set bCombatMod to 0
 	endif
 end
 
 begin ScriptEffectFinish
 	if bBonusAdded == 1
-		player.ModActorValue Agility -10
-		player.ModActorValue Strength 10
+		Player.ModActorValue Destruction -13
+		Player.ModActorValue Conjuration -13
+		Player.ModActorValue Illusion -13
+		Player.ModActorValue Mysticism -13
+		Player.ModActorValue Restoration -13
+		Player.ModActorValue Alteration -13
+		if bMagickaMultiplierMod == 1
+			Player.ModActorValue MagickaMultiplier -1
+			Set bMagickaMultiplierMod to 0
+		endif
+		Player.ModActorValue ResistFire -25
+		Player.ModActorValue ResistFrost -25
+		Player.ModActorValue ResistShock -25
+		Player.ModActorValue HeavyArmor -13
+		Player.ModActorValue Blade -13
+		Player.ModActorValue Blunt -13
+		Player.ModActorValue Block -13
+		Player.ModActorValue HandToHand -13
+		Player.ModActorValue Marksman 25
+		Player.ModActorValue AttackBonus -5
+		Player.ModActorValue DefendBonus -5
+		set bBonusAdded to 0
 	endif
 end

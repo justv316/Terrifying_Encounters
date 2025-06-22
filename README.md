@@ -56,7 +56,7 @@
 * (Or) If you're like me and don't trust doing it that way:
 	* Create these folders if you don't have them.
 	
-*__Steam Installation__
+__Steam Installation__
 
 1. Copy Terrifying_Encounters.esp to `\SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Content\Dev\ObvData\Data`
 	1. Add Terrifying_Encounters.esp to your Plugins.txt, as early as possible. 
@@ -65,9 +65,9 @@
 
 3. Copy TE_Settings.ini to `\SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Binaries\Win64\OBSE\plugins\GameSettings`
 
-*__Gamepass Installation__
+__Gamepass Installation__
 
-	* Since The Gamepass/MS Store/EGS version does not support OBSE, you won't use GameSettings.ini and instead will use a different plugin I will create that does not require GSL. 
+* Since The Gamepass/MS Store/EGS version does not support OBSE, you won't use GameSettings.ini and instead will use a different plugin I will create that does not require GSL. 
 	
 1.  Copy Terrifying_Encounters.esp to `\XboxGames\The Elder Scrolls IV- Oblivion Remastered\Content\OblivionRemastered\Content\Dev\ObvData\Data`
 
@@ -114,6 +114,7 @@
 19. [11] Terrifying_Encounters.esp
 
 </details>
+
 ----
 
 <details>
@@ -251,7 +252,7 @@
 | Ebony Razor | (1H-Blade) | 29 | 37 | 45 | 53 | 61 | 69 | Weight: 9.0 | Speed: 1.4 | Reach: 0.6 |
 | Awakened Ebony Razor | (1H-Blade) | 32 | 40 | 48 | 56 | 64 | 72 | Weight: 9.0 | Speed: 1.5 | Reach: 0.6 |
 | Quicksilver Dagger | (1H-Blade) | 29 | 37 | 45 | 53 | 61 | 69 | Weight: 9.0 | Speed: 1.4 | Reach: 0.6 |
-| Intricate Silver Claymore (2H-Blade) | 36 | 46 | 56 | 66 | 76 | 86 | Weight: 35.0 | Speed: 0.8 | Reach: 1.3 |
+| Intricate Silver Claymore | (2H-Blade) | 36 | 46 | 56 | 66 | 76 | 86 | Weight: 35.0 | Speed: 0.8 | Reach: 1.3 |
 | Intricate Ebony Mace | (1H-Blunt) | 34 | 42 | 50 | 58 | 66 | 74 | Weight: 15.0 | Speed: 0.9 | Reach: 1.0 |
 | Resinite Maddening Warhammer | (2H-Blunt) | 37 | 47 | 57 | 67 | 77 | 87 | Weight: 50.0 | Speed: 0.7 | Reach: 1.3 |
 
@@ -292,17 +293,15 @@
 <details>
 <Summary>Set Bonus Details</Summary>
 
-<details>
-<Summary>Cursed</Summary>
-
 ##### Cursed
 * Recommended Classes: Warrior, Knight
 	* Emphasizes combat and defensive abilities while diminishing magical abilities.
 	* Provides the best fire resistance and decent shock resistance at the cost of weakness to frost. 
+	
+<details>
+<Summary>Cursed</Summary>
 
-----
-
-1. 4/6
+* 4/6
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -326,7 +325,7 @@
 | - | Other | Magicka Multiplier | 3 | Constant |
 | - | Attribute | Speed | 40 | In Combat |
 
-2. 5/6
+* 5/6
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -350,7 +349,7 @@
 | - | Other | Magicka Multiplier | 2 | Constant |
 | - | Attribute | Speed | 30 | In Combat |
 
-3. 6/6
+* 6/6
 * Applies an aura to the player, [This is a placeholder]
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
@@ -379,18 +378,16 @@
 
 ----
 
-<details>
-<Summary>Dwemer</Summary>
-
 ##### Dwemer
 
 * Recommended Classes: Battlemage, Crusader 
 	* Emphasizes Defensive and Magical abilities while diminishing Combat abilities.
 	* Boasts a strong magical resistance profile
-	
-----
 
-1. 4/6
+<details>
+<Summary>Dwemer</Summary>
+
+* 4/6
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -414,7 +411,7 @@
 | + | Other | Magicka Multiplier | 3 | Constant |
 | + | Other | Defend Bonus | 10 | Constant |
 
-2. 5/6
+* 5/6
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -438,7 +435,7 @@
 | + | Other | Magicka Multiplier | 3 | Constant |
 | + | Other | Defend Bonus | 15 | Constant |
 
-3. 6/6
+* 6/6
 * Applies an aura to the player, [This is a placeholder] 
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
@@ -479,7 +476,7 @@
 	
 ----
 
-1. 4/6
+* 4/6
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -502,7 +499,7 @@
 | + | Other | Magicka Multiplier | 1 | Constant |
 | - | Attribute | Speed | 40 | In Combat |
 
-2. 5/6
+* 5/6
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -525,7 +522,7 @@
 | + | Other | Magicka Multiplier | 1 | Constant |
 | - | Attribute | Speed | 30 | In Combat |
 
-3. 6/6
+* 6/6
 * Applies an aura to the player, [This is a placeholder]
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
@@ -563,7 +560,7 @@
 	
 ----
 
-1. 4/6
+* 4/6
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -586,7 +583,7 @@
 | + | Other | Magicka Multiplier | 3 | Constant |
 | + | Attribute | Speed | 40 | In Combat |
 
-2. 5/6
+* 5/6
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -609,7 +606,7 @@
 | + | Other | Magicka Multiplier | 2 | Constant |
 | + | Attribute | Speed | 30 | In Combat |
 
-3. 6/6
+* 6/6
 * Applies an aura to the player, [This is a placeholder]
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
@@ -647,7 +644,7 @@
 	
 ----
 
-1. 4/6
+* 4/6
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -670,7 +667,7 @@
 | + | Other | Magicka Multiplier | 3 | Constant |
 | + | Attribute | Speed | 40 | In Combat |
 
-2. 5/6
+* 5/6
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -693,7 +690,7 @@
 | + | Other | Magicka Multiplier | 2 | Constant |
 | + | Attribute | Speed | 30 | In Combat |
 
-3. 6/6
+* 6/6
 * Applies an aura to the player, [This is a placeholder]
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
@@ -730,7 +727,7 @@
 	
 ----
 
-1. 4/6
+* 4/6
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -753,7 +750,7 @@
 | + | Other | Magicka Multiplier | 3 | Constant |
 | + | Attribute | Speed | 40 | In Combat |
 
-2. 5/6
+* 5/6
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -776,7 +773,7 @@
 | + | Other | Magicka Multiplier | 2 | Constant |
 | + | Attribute | Speed | 30 | In Combat |
 
-3. 6/6
+* 6/6
 * Applies an aura to the player, [This is a placeholder]
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
@@ -813,7 +810,7 @@
 	
 ----
 
-1. 4/6
+* 4/6
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -836,7 +833,7 @@
 | + | Other | Magicka Multiplier | 3 | Constant |
 | + | Attribute | Speed | 40 | In Combat |
 
-2. 5/6
+* 5/6
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -859,7 +856,7 @@
 | + | Other | Magicka Multiplier | 2 | Constant |
 | + | Attribute | Speed | 30 | In Combat |
 
-3. 6/6
+* 6/6
 * Applies an aura to the player, [This is a placeholder]
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
@@ -896,7 +893,7 @@
 	
 ----
 
-1. 4/6
+* 4/6
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -919,7 +916,7 @@
 | + | Other | Magicka Multiplier | 3 | Constant |
 | + | Attribute | Speed | 40 | In Combat |
 
-2. 5/6
+* 5/6
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
@@ -942,7 +939,7 @@
 | + | Other | Magicka Multiplier | 2 | Constant |
 | + | Attribute | Speed | 30 | In Combat |
 
-3. 6/6
+* 6/6
 * Applies an aura to the player, Wabbajack Aura?? [This is a placeholder]
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
