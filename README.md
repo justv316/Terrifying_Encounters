@@ -44,13 +44,13 @@
 
 ## Installation
 
+<details>
+<Summary> Installation </Summary>
+
 ### Automatic Installation
 * You can use a mod manager, but I don't, so I don't know how to guide you <3
 
-<details>
-<Summary> Manual Installation [Preferred Method] </Summary>
-
-### Manual Installation
+### Manual Installation [Preferred Method]
 * Copy the OblivionRemastered folder to your Game's Root directory
 
 * (Or) If you're like me and don't trust doing it that way:
@@ -113,6 +113,7 @@ __Gamepass Installation__
 18. [10] Unofficial Oblivion Remastered Patch - Deluxe.esp
 19. [11] Terrifying_Encounters.esp
 
+</details>
 </details>
 
 ----
