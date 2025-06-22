@@ -307,6 +307,14 @@
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
+| | | Specialization | | |
+| - | Skill | Destruction | 25 | Constant |
+| - | Skill | Conjuration | 25 | Constant |
+| - | Skill | Illusion | 25 | Constant |
+| - | Skill | Restoration | 25 | Constant |
+| - | Skill | Alteration | 25 | Constant |
+| - | Skill | Mysticism | 25 | Constant |
+| - | Other | Magicka Multiplier | 3 | Constant |
 | + | Resist | Fire | 75 | Constant |
 | - | Resist | Frost | 25 | Constant |
 | + | Resist | Shock | 50 | Constant |
@@ -317,64 +325,74 @@
 | + | Skill | Block | 25 | Constant |
 | + | Skill | Hand to Hand | 25 | Constant |
 | + | Other | Attack Bonus | 10 | Constant |
+| | | Heavy Armor Inherent | | |
+| - | Attribute | Speed | 40 | In Combat |
+| - | Skill | Marksman | 25 | Constant |
+| - | Skill | Sneak | 25 | Constant |
+| - | Skill | Security | 25 | Constant |
+| - | Skill | Speechcraft | 25 | Constant |
 | + | Other | Defend Bonus | 5 | Constant |
+
+* 5/6
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ---- | ---- | ---- | ---- |----|
+| | | Specialization | | |
 | - | Skill | Destruction | 50 | Constant |
 | - | Skill | Conjuration | 50 | Constant |
 | - | Skill | Illusion | 50 | Constant |
 | - | Skill | Restoration | 50 | Constant |
 | - | Skill | Alteration | 50 | Constant |
 | - | Skill | Mysticism | 50 | Constant |
-| - | Other | Magicka Multiplier | 3 | Constant |
-| - | Attribute | Speed | 40 | In Combat |
-
-* 5/6
-	
-| +/- | Value Type | Actor Value | Magnitude | Conditional |
-| ---- | ---- | ---- | ---- |----|
+| - | Other | Magicka Multiplier | 2 | Constant |
 | + | Resist | Fire | 100 | Constant |
 | - | Resist | Frost | 25 | Constant |
 | + | Resist | Shock | 50 | Constant |
 | + | Resist | Normal Weapons | 25 | Constant |
-| + | Skill | Heavy Armor | 40 | Constant |
-| + | Skill | Blade | 40 | Constant |
-| + | Skill | Blunt | 40 | Constant |
-| + | Skill | Block | 40 | Constant |
-| + | Skill | Hand to Hand | 40 | Constant |
+| + | Skill | Heavy Armor | 50 | Constant |
+| + | Skill | Blade | 50 | Constant |
+| + | Skill | Blunt | 50 | Constant |
+| + | Skill | Block | 50 | Constant |
+| + | Skill | Hand to Hand | 50 | Constant |
 | + | Other | Attack Bonus | 15 | Constant |
-| + | Other | Defend Bonus | 10 | Constant |
-| - | Skill | Destruction | 40 | Constant |
-| - | Skill | Conjuration | 40 | Constant |
-| - | Skill | Illusion | 40 | Constant |
-| - | Skill | Restoration | 40 | Constant |
-| - | Skill | Alteration | 40 | Constant |
-| - | Skill | Mysticism | 40 | Constant |
-| - | Other | Magicka Multiplier | 2 | Constant |
+| | | Heavy Armor Inherent | | |
 | - | Attribute | Speed | 30 | In Combat |
+| - | Skill | Marksman | 25 | Constant |
+| - | Skill | Sneak | 25 | Constant |
+| - | Skill | Security | 25 | Constant |
+| - | Skill | Speechcraft | 25 | Constant |
+| + | Other | Defend Bonus | 10 | Constant |
 
 * 6/6
 * Applies an aura to the player, [This is a placeholder]
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
+| | | Specialization | | |
+| - | Skill | Destruction | 50 | Constant |
+| - | Skill | Conjuration | 50 | Constant |
+| - | Skill | Illusion | 50 | Constant |
+| - | Skill | Restoration | 50 | Constant |
+| - | Skill | Alteration | 50 | Constant |
+| - | Skill | Mysticism | 50 | Constant |
+| - | Other | Magicka Multiplier | 1 | Constant |
 | + | Resist | Fire | 125 | Constant |
 | - | Resist | Frost | 25 | Constant |
 | + | Resist | Shock | 50 | Constant |
 | + | Resist | Normal Weapons | 35 | Constant |
-| + | Skill | Heavy Armor | 50 | Constant |
-| + | Skill | Blade | 50 | Constant |
-| + | Skill | Blunt | 50 | Constant |
-| + | Skill | Block | 50 | Constant |
-| + | Skill | Hand to Hand | 50 | Constant |
+| + | Skill | Heavy Armor | 75 | Constant |
+| + | Skill | Blade | 75 | Constant |
+| + | Skill | Blunt | 75 | Constant |
+| + | Skill | Block | 75 | Constant |
+| + | Skill | Hand to Hand | 75 | Constant |
 | + | Other | Attack Bonus | 25 | Constant |
-| + | Other | Defend Bonus | 15 | Constant |
-| - | Skill | Destruction | 25 | Constant |
-| - | Skill | Conjuration | 25 | Constant |
-| - | Skill | Illusion | 25 | Constant |
-| - | Skill | Restoration | 25 | Constant |
-| - | Skill | Alteration | 25 | Constant |
-| - | Skill | Mysticism | 25 | Constant |
-| - | Other | Magicka Multiplier | 1 | Constant |
+| | | Heavy Armor Inherent | | |
 | - | Attribute | Speed | 20 | In Combat |
+| - | Skill | Marksman | 25 | Constant |
+| - | Skill | Sneak | 25 | Constant |
+| - | Skill | Security | 25 | Constant |
+| - | Skill | Speechcraft | 25 | Constant |
+| + | Other | Defend Bonus | 15 | Constant |
 
 </details>
 
@@ -391,48 +409,58 @@
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 35 | Constant |
-| + | Resist | Frost | 35 | Constant |
-| + | Resist | Shock | 35 | Constant |
-| + | Resist | Magic | 10 | Constant |
-| + | Skill | Heavy Armor | 25 | Constant |
-| + | Skill | Block | 25 | Constant |
+| | | Specialization | | |
 | + | Skill | Destruction | 25 | Constant |
 | + | Skill | Conjuration | 25 | Constant |
 | + | Skill | Illusion | 25 | Constant |
 | + | Skill | Restoration | 25 | Constant |
 | + | Skill | Alteration | 25 | Constant |
 | + | Skill | Mysticism | 25 | Constant |
+| + | Other | Magicka Multiplier | 3 | Constant |
+| + | Resist | Fire | 35 | Constant |
+| + | Resist | Frost | 35 | Constant |
+| + | Resist | Shock | 35 | Constant |
+| + | Resist | Magic | 10 | Constant |
 | - | Skill | Blade | 25 | Constant |
 | - | Skill | Blunt | 25 | Constant |
 | - | Skill | Hand to Hand | 25 | Constant |
-| - | Skill | Marksmen | 25 | Constant |
+| + | Skill | Heavy Armor | 25 | Constant |
+| + | Skill | Block | 25 | Constant |
+| | | Heavy Armor Inherent | | |
 | - | Attribute | Speed | 40 | In Combat |
-| + | Other | Magicka Multiplier | 3 | Constant |
+| - | Skill | Marksman | 25 | Constant |
+| - | Skill | Sneak | 25 | Constant |
+| - | Skill | Security | 25 | Constant |
+| - | Skill | Speechcraft | 25 | Constant |
 | + | Other | Defend Bonus | 10 | Constant |
 
 * 5/6
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 50 | Constant |
-| + | Resist | Frost | 50 | Constant |
-| + | Resist | Shock | 50 | Constant |
-| + | Resist | Magic | 25 | Constant |
-| + | Skill | Heavy Armor | 40 | Constant |
-| + | Skill | Block | 40 | Constant |
+| | | Specialization | | |
 | + | Skill | Destruction | 50 | Constant |
 | + | Skill | Conjuration | 50 | Constant |
 | + | Skill | Illusion | 50 | Constant |
 | + | Skill | Restoration | 50 | Constant |
 | + | Skill | Alteration | 50 | Constant |
 | + | Skill | Mysticism | 50 | Constant |
+| + | Other | Magicka Multiplier | 3 | Constant |
+| + | Resist | Fire | 50 | Constant |
+| + | Resist | Frost | 50 | Constant |
+| + | Resist | Shock | 50 | Constant |
+| + | Resist | Magic | 25 | Constant |
 | - | Skill | Blade | 25 | Constant |
 | - | Skill | Blunt | 25 | Constant |
 | - | Skill | Hand to Hand | 25 | Constant |
-| - | Skill | Marksmen | 25 | Constant |
+| + | Skill | Heavy Armor | 40 | Constant |
+| + | Skill | Block | 40 | Constant |
+| | | Heavy Armor Inherent | | |
 | - | Attribute | Speed | 30 | In Combat |
-| + | Other | Magicka Multiplier | 3 | Constant |
+| - | Skill | Marksman | 25 | Constant |
+| - | Skill | Sneak | 25 | Constant |
+| - | Skill | Security | 25 | Constant |
+| - | Skill | Speechcraft | 25 | Constant |
 | + | Other | Defend Bonus | 15 | Constant |
 
 * 6/6
@@ -440,24 +468,29 @@
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 75 | Constant |
-| + | Resist | Frost | 75 | Constant |
-| + | Resist | Shock | 75 | Constant |
-| + | Resist | Magic | 25 | Constant |
-| + | Skill | Heavy Armor | 50 | Constant |
-| + | Skill | Block | 50 | Constant |
+| | | Specialization | | |
 | + | Skill | Destruction | 75 | Constant |
 | + | Skill | Conjuration | 75 | Constant |
 | + | Skill | Illusion | 75 | Constant |
 | + | Skill | Restoration | 75 | Constant |
 | + | Skill | Alteration | 75 | Constant |
 | + | Skill | Mysticism | 75 | Constant |
+| + | Other | Magicka Multiplier | 3 | Constant |
+| + | Resist | Fire | 75 | Constant |
+| + | Resist | Frost | 75 | Constant |
+| + | Resist | Shock | 75 | Constant |
+| + | Resist | Magic | 25 | Constant |
 | - | Skill | Blade | 25 | Constant |
 | - | Skill | Blunt | 25 | Constant |
 | - | Skill | Hand to Hand | 25 | Constant |
-| - | Skill | Marksmen | 25 | Constant |
+| + | Skill | Heavy Armor | 50 | Constant |
+| + | Skill | Block | 50 | Constant |
+| | | Heavy Armor Inherent | | |
 | - | Attribute | Speed | 20 | In Combat |
-| + | Other | Magicka Multiplier | 3 | Constant |
+| - | Skill | Marksman | 25 | Constant |
+| - | Skill | Sneak | 25 | Constant |
+| - | Skill | Security | 25 | Constant |
+| - | Skill | Speechcraft | 25 | Constant |
 | + | Other | Defend Bonus | 15 | Constant |
 
 
@@ -476,6 +509,14 @@
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
+| | | Specialization | | |
+| + | Skill | Destruction | 13 | Constant |
+| + | Skill | Conjuration | 13 | Constant |
+| + | Skill | Illusion | 13 | Constant |
+| + | Skill | Restoration | 13 | Constant |
+| + | Skill | Alteration | 13 | Constant |
+| + | Skill | Mysticism | 13 | Constant |
+| + | Other | Magicka Multiplier | 1 | Constant |
 | + | Resist | Fire | 25 | Constant |
 | + | Resist | Frost | 25 | Constant |
 | + | Resist | Shock | 25 | Constant |
@@ -485,20 +526,26 @@
 | + | Skill | Block | 13 | Constant |
 | + | Skill | Hand to Hand | 13 | Constant |
 | + | Other | Attack Bonus | 5 | Constant |
-| + | Other | Defend Bonus | 5 | Constant |
-| + | Skill | Destruction | 13 | Constant |
-| + | Skill | Conjuration | 13 | Constant |
-| + | Skill | Illusion | 13 | Constant |
-| + | Skill | Restoration | 13 | Constant |
-| + | Skill | Alteration | 13 | Constant |
-| + | Skill | Mysticism | 13 | Constant |
-| + | Other | Magicka Multiplier | 1 | Constant |
+| | | Heavy Armor Inherent | | |
 | - | Attribute | Speed | 40 | In Combat |
+| - | Skill | Marksman | 25 | Constant |
+| - | Skill | Sneak | 25 | Constant |
+| - | Skill | Security | 25 | Constant |
+| - | Skill | Speechcraft | 25 | Constant |
+| + | Other | Defend Bonus | 5 | Constant |
 
 * 5/6
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
+| | | Specialization | | |
+| + | Skill | Destruction | 25 | Constant |
+| + | Skill | Conjuration | 25 | Constant |
+| + | Skill | Illusion | 25 | Constant |
+| + | Skill | Restoration | 25 | Constant |
+| + | Skill | Alteration | 25 | Constant |
+| + | Skill | Mysticism | 25 | Constant |
+| + | Other | Magicka Multiplier | 1 | Constant |
 | + | Resist | Fire | 25 | Constant |
 | + | Resist | Frost | 25 | Constant |
 | + | Resist | Shock | 25 | Constant |
@@ -507,40 +554,44 @@
 | + | Skill | Blunt | 25 | Constant |
 | + | Skill | Block | 25 | Constant |
 | + | Skill | Hand to Hand | 25 | Constant |
-| + | Other | Attack Bonus | 5 | Constant |
-| + | Other | Defend Bonus | 5 | Constant |
-| + | Skill | Destruction | 25 | Constant |
-| + | Skill | Conjuration | 25 | Constant |
-| + | Skill | Illusion | 25 | Constant |
-| + | Skill | Restoration | 25 | Constant |
-| + | Skill | Alteration | 25 | Constant |
-| + | Skill | Mysticism | 25 | Constant |
-| + | Other | Magicka Multiplier | 1 | Constant |
+| + | Other | Attack Bonus | 10 | Constant |
+| | | Heavy Armor Inherent | | |
 | - | Attribute | Speed | 30 | In Combat |
+| - | Skill | Marksman | 25 | Constant |
+| - | Skill | Sneak | 25 | Constant |
+| - | Skill | Security | 25 | Constant |
+| - | Skill | Speechcraft | 25 | Constant |
+| + | Other | Defend Bonus | 10 | Constant |
 
 * 6/6
 * Applies an aura to the player, [This is a placeholder]
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
+| | | Specialization | | |
+| + | Skill | Destruction | 50 | Constant |
+| + | Skill | Conjuration | 50 | Constant |
+| + | Skill | Illusion | 50 | Constant |
+| + | Skill | Restoration | 50 | Constant |
+| + | Skill | Alteration | 50 | Constant |
+| + | Skill | Mysticism | 50 | Constant |
+| + | Other | Magicka Multiplier | 1 | Constant |
 | + | Resist | Fire | 25 | Constant |
 | + | Resist | Frost | 25 | Constant |
 | + | Resist | Shock | 25 | Constant |
-| + | Skill | Heavy Armor | 40 | Constant |
-| + | Skill | Blade | 40 | Constant |
-| + | Skill | Blunt | 40 | Constant |
-| + | Skill | Block | 40 | Constant |
-| + | Skill | Hand to Hand | 40 | Constant |
-| + | Other | Attack Bonus | 5 | Constant |
-| + | Other | Defend Bonus | 5 | Constant |
-| + | Skill | Destruction | 40 | Constant |
-| + | Skill | Conjuration | 40 | Constant |
-| + | Skill | Illusion | 40 | Constant |
-| + | Skill | Restoration | 40 | Constant |
-| + | Skill | Alteration | 40 | Constant |
-| + | Skill | Mysticism | 40 | Constant |
-| + | Other | Magicka Multiplier | 1 | Constant |
+| + | Skill | Heavy Armor | 50 | Constant |
+| + | Skill | Blade | 50 | Constant |
+| + | Skill | Blunt | 50 | Constant |
+| + | Skill | Block | 50 | Constant |
+| + | Skill | Hand to Hand | 50 | Constant |
+| + | Other | Attack Bonus | 10 | Constant |
+| | | Heavy Armor Inherent | | |
 | - | Attribute | Speed | 20 | In Combat |
+| - | Skill | Marksman | 25 | Constant |
+| - | Skill | Sneak | 25 | Constant |
+| - | Skill | Security | 25 | Constant |
+| - | Skill | Speechcraft | 25 | Constant |
+| + | Other | Defend Bonus | 10 | Constant |
 
 </details>
 
@@ -560,67 +611,7 @@
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 5 | Constant |
-| + | Resist | Frost | 5 | Constant |
-| + | Resist | Shock | 5 | Constant |
-| - | Skill | Light Armor | 13 | Constant |
-| + | Skill | Blade | 13 | Constant |
-| + | Skill | Blunt | 13 | Constant |
-| - | Skill | Block | 13 | Constant |
-| + | Skill | Hand to Hand | 25 | Constant |
-| + | Skill | Destruction | 13 | Constant |
-| + | Skill | Conjuration | 13 | Constant |
-| + | Skill | Illusion | 13 | Constant |
-| + | Skill | Restoration | 13 | Constant |
-| + | Skill | Alteration | 13 | Constant |
-| + | Skill | Mysticism | 13 | Constant |
-| + | Other | Magicka Multiplier | 1 | Constant |
-| + | Other | Attack Bonus | 10 | Constant |
-| - | Other | Defend Bonus | 5 | Constant |
-| | | Light Armor Inherent | | |
-| + | Attribute | Speed | 20 | In Combat |
-| + | Skill | Sneak | 25 | Constant |
-| + | Skill | Security | 25 | Constant |
-| + | Skill | Speechcraft | 25 | Constant |
-
-* 5/6
-	
-| +/- | Value Type | Actor Value | Magnitude | Conditional |
-| ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 75 | Constant |
-| + | Resist | Normal Weapons | 25 | Constant |
-| + | Skill | Heavy Armor | 40 | Constant |
-| + | Skill | Blade | 40 | Constant |
-| + | Skill | Blunt | 40 | Constant |
-| + | Skill | Block | 40 | Constant |
-| + | Skill | Hand to Hand | 40 | Constant |
-| + | Other | Attack Bonus | 15 | Constant |
-| + | Other | Defend Bonus | 10 | Constant |
-| - | Resist | Frost | 40 | Constant |
-| + | Skill | Destruction | 40 | Constant |
-| + | Skill | Conjuration | 40 | Constant |
-| + | Skill | Illusion | 40 | Constant |
-| + | Skill | Restoration | 40 | Constant |
-| + | Skill | Alteration | 40 | Constant |
-| + | Skill | Mysticism | 40 | Constant |
-| + | Other | Magicka Multiplier | 2 | Constant |
-| + | Attribute | Speed | 30 | In Combat |
-
-* 6/6
-* Applies an aura to the player, [This is a placeholder]
-	
-| +/- | Value Type | Actor Value | Magnitude | Conditional |
-| ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 100 | Constant |
-| + | Resist | Normal Weapons | 35 | Constant |
-| + | Skill | Heavy Armor | 50 | Constant |
-| + | Skill | Blade | 50 | Constant |
-| + | Skill | Blunt | 50 | Constant |
-| + | Skill | Block | 50 | Constant |
-| + | Skill | Hand to Hand | 50 | Constant |
-| + | Other | Attack Bonus | 25 | Constant |
-| + | Other | Defend Bonus | 15 | Constant |
-| - | Resist | Frost | 25 | Constant |
+| | | Specialization | | |
 | + | Skill | Destruction | 25 | Constant |
 | + | Skill | Conjuration | 25 | Constant |
 | + | Skill | Illusion | 25 | Constant |
@@ -628,7 +619,80 @@
 | + | Skill | Alteration | 25 | Constant |
 | + | Skill | Mysticism | 25 | Constant |
 | + | Other | Magicka Multiplier | 1 | Constant |
+| + | Skill | Blade | 25 | Constant |
+| + | Skill | Blunt | 25 | Constant |
+| + | Skill | Hand to Hand | 25 | Constant |
+| + | Skill | Marksman | 25 | Constant |
+| + | Other | Attack Bonus | 5 | Constant |
+| - | Other | Defend Bonus | 5 | Constant |
+| - | Skill | Block | 25 | Constant |
+| - | Skill | Light Armor | 25 | Constant |
+| | | Light Armor Inherent | | |
+| + | Resist | Fire | 5 | Constant |
+| + | Resist | Frost | 5 | Constant |
+| + | Resist | Shock | 5 | Constant |
+| + | Skill | Sneak | 25 | Constant |
+| + | Skill | Security | 25 | Constant |
+| + | Skill | Speechcraft | 25 | Constant |
 | + | Attribute | Speed | 20 | In Combat |
+
+* 5/6
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ---- | ---- | ---- | ---- |----|
+| + | Skill | Destruction | 50 | Constant |
+| + | Skill | Conjuration | 50 | Constant |
+| + | Skill | Illusion | 50 | Constant |
+| + | Skill | Restoration | 50 | Constant |
+| + | Skill | Alteration | 50 | Constant |
+| + | Skill | Mysticism | 50 | Constant |
+| + | Other | Magicka Multiplier | 2 | Constant |
+| + | Skill | Blade | 50 | Constant |
+| + | Skill | Blunt | 50 | Constant |
+| + | Skill | Hand to Hand | 50 | Constant |
+| + | Skill | Marksman | 50 | Constant |
+| + | Other | Attack Bonus | 10 | Constant |
+| - | Other | Defend Bonus | 10 | Constant |
+| - | Skill | Block | 50 | Constant |
+| - | Skill | Light Armor | 50 | Constant |
+| | | Light Armor Inherent | | |
+| + | Resist | Fire | 10 | Constant |
+| + | Resist | Frost | 10 | Constant |
+| + | Resist | Shock | 10 | Constant |
+| + | Skill | Sneak | 25 | Constant |
+| + | Skill | Security | 25 | Constant |
+| + | Skill | Speechcraft | 25 | Constant |
+| + | Attribute | Speed | 30 | In Combat |
+
+* 6/6
+* Applies an aura to the player, [This is a placeholder]
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ---- | ---- | ---- | ---- |----|
+| | | Specialization | | |
+| + | Skill | Destruction | 75 | Constant |
+| + | Skill | Conjuration | 75 | Constant |
+| + | Skill | Illusion | 75 | Constant |
+| + | Skill | Restoration | 75 | Constant |
+| + | Skill | Alteration | 75 | Constant |
+| + | Skill | Mysticism | 75 | Constant |
+| + | Other | Magicka Multiplier | 3 | Constant |
+| + | Skill | Blade | 75 | Constant |
+| + | Skill | Blunt | 75 | Constant |
+| + | Skill | Hand to Hand | 75 | Constant |
+| + | Skill | Marksman | 75 | Constant |
+| + | Other | Attack Bonus | 15 | Constant |
+| - | Other | Defend Bonus | 15 | Constant |
+| - | Skill | Block | 50 | Constant |
+| - | Skill | Light Armor | 50 | Constant |
+| | | Light Armor Inherent | | |
+| + | Resist | Fire | 15 | Constant |
+| + | Resist | Frost | 15 | Constant |
+| + | Resist | Shock | 15 | Constant |
+| + | Skill | Sneak | 25 | Constant |
+| + | Skill | Security | 25 | Constant |
+| + | Skill | Speechcraft | 25 | Constant |
+| + | Attribute | Speed | 40 | In Combat |
 
 </details>
 
@@ -648,63 +712,7 @@
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 50 | Constant |
-| + | Resist | Normal Weapons | 10 | Constant |
-| + | Skill | Heavy Armor | 25 | Constant |
-| + | Skill | Blade | 25 | Constant |
-| + | Skill | Blunt | 25 | Constant |
-| + | Skill | Block | 25 | Constant |
-| + | Skill | Hand to Hand | 25 | Constant |
-| + | Other | Attack Bonus | 10 | Constant |
-| + | Other | Defend Bonus | 5 | Constant |
-| - | Resist | Frost | 50 | Constant |
-| + | Skill | Destruction | 50 | Constant |
-| + | Skill | Conjuration | 50 | Constant |
-| + | Skill | Illusion | 50 | Constant |
-| + | Skill | Restoration | 50 | Constant |
-| + | Skill | Alteration | 50 | Constant |
-| + | Skill | Mysticism | 50 | Constant |
-| + | Other | Magicka Multiplier | 3 | Constant |
-| + | Attribute | Speed | 40 | In Combat |
-
-* 5/6
-	
-| +/- | Value Type | Actor Value | Magnitude | Conditional |
-| ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 75 | Constant |
-| + | Resist | Normal Weapons | 25 | Constant |
-| + | Skill | Heavy Armor | 40 | Constant |
-| + | Skill | Blade | 40 | Constant |
-| + | Skill | Blunt | 40 | Constant |
-| + | Skill | Block | 40 | Constant |
-| + | Skill | Hand to Hand | 40 | Constant |
-| + | Other | Attack Bonus | 15 | Constant |
-| + | Other | Defend Bonus | 10 | Constant |
-| - | Resist | Frost | 40 | Constant |
-| + | Skill | Destruction | 40 | Constant |
-| + | Skill | Conjuration | 40 | Constant |
-| + | Skill | Illusion | 40 | Constant |
-| + | Skill | Restoration | 40 | Constant |
-| + | Skill | Alteration | 40 | Constant |
-| + | Skill | Mysticism | 40 | Constant |
-| + | Other | Magicka Multiplier | 2 | Constant |
-| + | Attribute | Speed | 30 | In Combat |
-
-* 6/6
-* Applies an aura to the player, [This is a placeholder]
-	
-| +/- | Value Type | Actor Value | Magnitude | Conditional |
-| ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 100 | Constant |
-| + | Resist | Normal Weapons | 35 | Constant |
-| + | Skill | Heavy Armor | 50 | Constant |
-| + | Skill | Blade | 50 | Constant |
-| + | Skill | Blunt | 50 | Constant |
-| + | Skill | Block | 50 | Constant |
-| + | Skill | Hand to Hand | 50 | Constant |
-| + | Other | Attack Bonus | 25 | Constant |
-| + | Other | Defend Bonus | 15 | Constant |
-| - | Resist | Frost | 25 | Constant |
+| | | Specialization | | |
 | + | Skill | Destruction | 25 | Constant |
 | + | Skill | Conjuration | 25 | Constant |
 | + | Skill | Illusion | 25 | Constant |
@@ -712,7 +720,80 @@
 | + | Skill | Alteration | 25 | Constant |
 | + | Skill | Mysticism | 25 | Constant |
 | + | Other | Magicka Multiplier | 1 | Constant |
+| - | Skill | Blade | 25 | Constant |
+| - | Skill | Blunt | 25 | Constant |
+| - | Skill | Hand to Hand | 25 | Constant |
+| - | Skill | Marksman | 25 | Constant |
+| - | Other | Attack Bonus | 5 | Constant |
+| + | Other | Defend Bonus | 5 | Constant |
+| + | Skill | Block | 25 | Constant |
+| + | Skill | Light Armor | 25 | Constant |
+| | | Light Armor Inherent | | |
+| + | Resist | Fire | 5 | Constant |
+| + | Resist | Frost | 5 | Constant |
+| + | Resist | Shock | 5 | Constant |
+| + | Skill | Sneak | 25 | Constant |
+| + | Skill | Security | 25 | Constant |
+| + | Skill | Speechcraft | 25 | Constant |
 | + | Attribute | Speed | 20 | In Combat |
+
+* 5/6
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ---- | ---- | ---- | ---- |----|
+| + | Skill | Destruction | 50 | Constant |
+| + | Skill | Conjuration | 50 | Constant |
+| + | Skill | Illusion | 50 | Constant |
+| + | Skill | Restoration | 50 | Constant |
+| + | Skill | Alteration | 50 | Constant |
+| + | Skill | Mysticism | 50 | Constant |
+| + | Other | Magicka Multiplier | 2 | Constant |
+| - | Skill | Blade | 50 | Constant |
+| - | Skill | Blunt | 50 | Constant |
+| - | Skill | Hand to Hand | 50 | Constant |
+| - | Skill | Marksman | 50 | Constant |
+| - | Other | Attack Bonus | 10 | Constant |
+| + | Other | Defend Bonus | 10 | Constant |
+| + | Skill | Block | 50 | Constant |
+| + | Skill | Light Armor | 25 | Constant |
+| | | Light Armor Inherent | | |
+| + | Resist | Fire | 10 | Constant |
+| + | Resist | Frost | 10 | Constant |
+| + | Resist | Shock | 10 | Constant |
+| + | Skill | Sneak | 25 | Constant |
+| + | Skill | Security | 25 | Constant |
+| + | Skill | Speechcraft | 25 | Constant |
+| + | Attribute | Speed | 30 | In Combat |
+
+* 6/6
+* Applies an aura to the player, [This is a placeholder]
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ---- | ---- | ---- | ---- |----|
+| | | Specialization | | |
+| + | Skill | Destruction | 75 | Constant |
+| + | Skill | Conjuration | 75 | Constant |
+| + | Skill | Illusion | 75 | Constant |
+| + | Skill | Restoration | 75 | Constant |
+| + | Skill | Alteration | 75 | Constant |
+| + | Skill | Mysticism | 75 | Constant |
+| + | Other | Magicka Multiplier | 3 | Constant |
+| - | Skill | Blade | 50 | Constant |
+| - | Skill | Blunt | 50 | Constant |
+| - | Skill | Hand to Hand | 50 | Constant |
+| - | Skill | Marksman | 50 | Constant |
+| - | Other | Attack Bonus | 15 | Constant |
+| + | Other | Defend Bonus | 15 | Constant |
+| + | Skill | Block | 75 | Constant |
+| + | Skill | Light Armor | 75 | Constant |
+| | | Light Armor Inherent | | |
+| + | Resist | Fire | 15 | Constant |
+| + | Resist | Frost | 15 | Constant |
+| + | Resist | Shock | 15 | Constant |
+| + | Skill | Sneak | 25 | Constant |
+| + | Skill | Security | 25 | Constant |
+| + | Skill | Speechcraft | 25 | Constant |
+| + | Attribute | Speed | 40 | In Combat |
 
 </details>
 
@@ -729,63 +810,35 @@
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 50 | Constant |
-| + | Resist | Normal Weapons | 10 | Constant |
-| + | Skill | Heavy Armor | 25 | Constant |
-| + | Skill | Blade | 25 | Constant |
-| + | Skill | Blunt | 25 | Constant |
-| + | Skill | Block | 25 | Constant |
-| + | Skill | Hand to Hand | 25 | Constant |
-| + | Other | Attack Bonus | 10 | Constant |
+| | | Specialization | | |
+| + | Skill | Destruction | 13 | Constant |
+| + | Skill | Conjuration | 13 | Constant |
+| + | Skill | Illusion | 13 | Constant |
+| + | Skill | Restoration | 13 | Constant |
+| + | Skill | Alteration | 13 | Constant |
+| + | Skill | Mysticism | 13 | Constant |
+| + | Other | Magicka Multiplier | 1 | Constant |
+| + | Skill | Blade | 13 | Constant |
+| + | Skill | Blunt | 13 | Constant |
+| + | Skill | Hand to Hand | 13 | Constant |
+| + | Skill | Marksman | 13 | Constant |
+| + | Other | Attack Bonus | 5 | Constant |
 | + | Other | Defend Bonus | 5 | Constant |
-| - | Resist | Frost | 50 | Constant |
-| + | Skill | Destruction | 50 | Constant |
-| + | Skill | Conjuration | 50 | Constant |
-| + | Skill | Illusion | 50 | Constant |
-| + | Skill | Restoration | 50 | Constant |
-| + | Skill | Alteration | 50 | Constant |
-| + | Skill | Mysticism | 50 | Constant |
-| + | Other | Magicka Multiplier | 3 | Constant |
-| + | Attribute | Speed | 40 | In Combat |
+| + | Skill | Block | 13 | Constant |
+| + | Skill | Light Armor | 13 | Constant |
+| | | Light Armor Inherent | | |
+| + | Resist | Fire | 5 | Constant |
+| + | Resist | Frost | 5 | Constant |
+| + | Resist | Shock | 5 | Constant |
+| + | Skill | Sneak | 25 | Constant |
+| + | Skill | Security | 25 | Constant |
+| + | Skill | Speechcraft | 25 | Constant |
+| + | Attribute | Speed | 20 | In Combat |
 
 * 5/6
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 75 | Constant |
-| + | Resist | Normal Weapons | 25 | Constant |
-| + | Skill | Heavy Armor | 40 | Constant |
-| + | Skill | Blade | 40 | Constant |
-| + | Skill | Blunt | 40 | Constant |
-| + | Skill | Block | 40 | Constant |
-| + | Skill | Hand to Hand | 40 | Constant |
-| + | Other | Attack Bonus | 15 | Constant |
-| + | Other | Defend Bonus | 10 | Constant |
-| - | Resist | Frost | 40 | Constant |
-| + | Skill | Destruction | 40 | Constant |
-| + | Skill | Conjuration | 40 | Constant |
-| + | Skill | Illusion | 40 | Constant |
-| + | Skill | Restoration | 40 | Constant |
-| + | Skill | Alteration | 40 | Constant |
-| + | Skill | Mysticism | 40 | Constant |
-| + | Other | Magicka Multiplier | 2 | Constant |
-| + | Attribute | Speed | 30 | In Combat |
-
-* 6/6
-* Applies an aura to the player, [This is a placeholder]
-	
-| +/- | Value Type | Actor Value | Magnitude | Conditional |
-| ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 100 | Constant |
-| + | Resist | Normal Weapons | 35 | Constant |
-| + | Skill | Heavy Armor | 50 | Constant |
-| + | Skill | Blade | 50 | Constant |
-| + | Skill | Blunt | 50 | Constant |
-| + | Skill | Block | 50 | Constant |
-| + | Skill | Hand to Hand | 50 | Constant |
-| + | Other | Attack Bonus | 25 | Constant |
-| + | Other | Defend Bonus | 15 | Constant |
-| - | Resist | Frost | 25 | Constant |
 | + | Skill | Destruction | 25 | Constant |
 | + | Skill | Conjuration | 25 | Constant |
 | + | Skill | Illusion | 25 | Constant |
@@ -793,7 +846,53 @@
 | + | Skill | Alteration | 25 | Constant |
 | + | Skill | Mysticism | 25 | Constant |
 | + | Other | Magicka Multiplier | 1 | Constant |
-| + | Attribute | Speed | 20 | In Combat |
+| + | Skill | Blade | 25 | Constant |
+| + | Skill | Blunt | 25 | Constant |
+| + | Skill | Hand to Hand | 25 | Constant |
+| + | Skill | Marksman | 25 | Constant |
+| + | Other | Attack Bonus | 10 | Constant |
+| + | Other | Defend Bonus | 10 | Constant |
+| + | Skill | Block | 25 | Constant |
+| + | Skill | Light Armor | 25 | Constant |
+| | | Light Armor Inherent | | |
+| + | Resist | Fire | 10 | Constant |
+| + | Resist | Frost | 10 | Constant |
+| + | Resist | Shock | 10 | Constant |
+| + | Skill | Sneak | 25 | Constant |
+| + | Skill | Security | 25 | Constant |
+| + | Skill | Speechcraft | 25 | Constant |
+| + | Attribute | Speed | 30 | In Combat |
+
+* 6/6
+* Applies an aura to the player, [This is a placeholder]
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ---- | ---- | ---- | ---- |----|
+| | | Specialization | | |
+| + | Skill | Destruction | 50 | Constant |
+| + | Skill | Conjuration | 50 | Constant |
+| + | Skill | Illusion | 50 | Constant |
+| + | Skill | Restoration | 50 | Constant |
+| + | Skill | Alteration | 50 | Constant |
+| + | Skill | Mysticism | 50 | Constant |
+| + | Other | Magicka Multiplier | 1 | Constant |
+| + | Skill | Blade | 50 | Constant |
+| + | Skill | Blunt | 50 | Constant |
+| + | Skill | Hand to Hand | 50 | Constant |
+| + | Skill | Marksman | 50 | Constant |
+| + | Other | Attack Bonus | 10 | Constant |
+| + | Other | Defend Bonus | 10 | Constant |
+| + | Skill | Block | 50 | Constant |
+| + | Skill | Light Armor | 50 | Constant |
+| | | Light Armor Inherent | | |
+| + | Resist | Fire | 15 | Constant |
+| + | Resist | Frost | 15 | Constant |
+| + | Resist | Shock | 15 | Constant |
+| + | Skill | Sneak | 25 | Constant |
+| + | Skill | Security | 25 | Constant |
+| + | Skill | Speechcraft | 25 | Constant |
+| + | Attribute | Speed | 40 | In Combat |
+
 
 </details>
 

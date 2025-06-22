@@ -1,4 +1,4 @@
-scn TESMSetBonusObsidian6EffectScript
+scn TESMSetBonusAyleidic5EffectScript
 
 short bBonusAdded
 short bCombatMod
@@ -17,36 +17,35 @@ begin ScriptEffectStart
 			if Player.GetActorValue MagickaMultiplier == 0
 				Player.SetActorValue MagickaMultiplier 10
 			endif
-			Player.ModActorValue MagickaMultiplier 1
+			Player.ModActorValue MagickaMultiplier 2
 			set bMagickaMultiplierMod to 1
 		endif
-		Player.ModActorValue ResistFire 25
-		Player.ModActorValue ResistFrost 25
-		Player.ModActorValue ResistShock 25
-		Player.ModActorValue HeavyArmor 50
 		Player.ModActorValue Blade 50
 		Player.ModActorValue Blunt 50
-		Player.ModActorValue Block 50
 		Player.ModActorValue HandToHand 50
+		Player.ModActorValue Marksman 50
 		Player.ModActorValue AttackBonus 10
-		;HeavyArmor Inherent
-		Player.ModActorValue Sneak -25
-		Player.ModActorValue Security -25
-		Player.ModActorValue Speechcraft -25
-		Player.ModActorValue Marksman -25
-		Player.ModActorValue DefendBonus 10
+		Player.ModActorValue DefendBonus -10
+		Player.ModActorValue Block -50
+		Player.ModActorValue LightArmor -50
+		;LightArmor Inherent
+		Player.ModActorValue ResistFire 10
+		Player.ModActorValue ResistFrost 10
+		Player.ModActorValue ResistShock 10
+		Player.ModActorValue Sneak 25
+		Player.ModActorValue Security 25
+		Player.ModActorValue Speechcraft 25
 		set bBonusAdded to 1
-		set TEbAuraObsidian to 1
 	endif
 end
 
 begin ScriptEffectUpdate
 	if Player.IsInCombat == 1 && bCombatMod == 0 
-		Player.ModActorValue Speed -20
+		Player.ModActorValue Speed 30
 		set bCombatMod to 1
 	endif
 	if Player.IsInCombat == 0 && bCombatMod == 1
-		Player.ModActorValue Speed 20
+		Player.ModActorValue Speed -30
 		set bCombatMod to 0
 	endif
 end
@@ -61,25 +60,24 @@ begin ScriptEffectFinish
 		Player.ModActorValue Restoration -50
 		Player.ModActorValue Alteration -50
 		if bMagickaMultiplierMod == 1
-			Player.ModActorValue MagickaMultiplier -1
+			Player.ModActorValue MagickaMultiplier -2
 			Set bMagickaMultiplierMod to 0
 		endif
-		Player.ModActorValue ResistFire -25
-		Player.ModActorValue ResistFrost -25
-		Player.ModActorValue ResistShock -25
-		Player.ModActorValue HeavyArmor -50
-		Player.ModActorValue Blade -50
-		Player.ModActorValue Blunt -50
-		Player.ModActorValue Block -50
-		Player.ModActorValue HandToHand -50
-		Player.ModActorValue AttackBonus -10
-		;HeavyArmor Inherent
-		Player.ModActorValue Sneak 25
-		Player.ModActorValue Security 25
-		Player.ModActorValue Speechcraft 25
-		Player.ModActorValue Marksman 25
+		Player.ModActorValue Blade 50
+		Player.ModActorValue Blunt 50
+		Player.ModActorValue HandToHand 50
+		Player.ModActorValue Marksman 50
+		Player.ModActorValue AttackBonus 10
 		Player.ModActorValue DefendBonus -10
+		Player.ModActorValue Block -50
+		Player.ModActorValue LightArmor -50
+		;LightArmor Inherent
+		Player.ModActorValue ResistFire -10
+		Player.ModActorValue ResistFrost -10
+		Player.ModActorValue ResistShock -10
+		Player.ModActorValue Sneak -25
+		Player.ModActorValue Security -25
+		Player.ModActorValue Speechcraft -25
 		set bBonusAdded to 0
-		set TEbAuraObsidian to 0
 	endif
 end

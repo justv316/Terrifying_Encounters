@@ -1,4 +1,4 @@
-scn TESMSetBonusDwemer6EffectScript
+scn TESMSetBonusMalachite6EffectScript
 
 short bBonusAdded
 short bCombatMod
@@ -20,33 +20,33 @@ begin ScriptEffectStart
 			Player.ModActorValue MagickaMultiplier 3
 			set bMagickaMultiplierMod to 1
 		endif
-		Player.ModActorValue ResistFire 75
-		Player.ModActorValue ResistFrost 75
-		Player.ModActorValue ResistShock 75
-		Player.ModActorValue ResistMagic 25
-		Player.ModActorValue HeavyArmor 50
-		Player.ModActorValue Block 50
-		Player.ModActorValue Blade -25
-		Player.ModActorValue Blunt -25
-		Player.ModActorValue HandToHand -25
-		;HeavyArmor Inherent
-		Player.ModActorValue Sneak -25
-		Player.ModActorValue Security -25
-		Player.ModActorValue Speechcraft -25
-		Player.ModActorValue Marksman -25
-		Player.ModActorValue DefendBonus 25
+		Player.ModActorValue Blade -50
+		Player.ModActorValue Blunt -50
+		Player.ModActorValue HandToHand -50
+		Player.ModActorValue Marksman -50
+		Player.ModActorValue AttackBonus -15
+		Player.ModActorValue DefendBonus 15
+		Player.ModActorValue Block 75
+		Player.ModActorValue LightArmor 75
+		;LightArmor Inherent
+		Player.ModActorValue ResistFire 15
+		Player.ModActorValue ResistFrost 15
+		Player.ModActorValue ResistShock 15
+		Player.ModActorValue Sneak 25
+		Player.ModActorValue Security 25
+		Player.ModActorValue Speechcraft 25
 		set bBonusAdded to 1
-		set TEbAuraDwemer to 1
+		set TEbAuraMalachite to 1
 	endif
 end
 
 begin ScriptEffectUpdate
 	if Player.IsInCombat == 1 && bCombatMod == 0 
-		Player.ModActorValue Speed -20
+		Player.ModActorValue Speed 40
 		set bCombatMod to 1
 	endif
 	if Player.IsInCombat == 0 && bCombatMod == 1
-		Player.ModActorValue Speed 20
+		Player.ModActorValue Speed -40
 		set bCombatMod to 0
 	endif
 end
@@ -64,22 +64,22 @@ begin ScriptEffectFinish
 			Player.ModActorValue MagickaMultiplier -3
 			Set bMagickaMultiplierMod to 0
 		endif
-		Player.ModActorValue ResistFire -75
-		Player.ModActorValue ResistFrost -75
-		Player.ModActorValue ResistShock -75
-		Player.ModActorValue ResistMagic -25
-		Player.ModActorValue HeavyArmor -50
-		Player.ModActorValue Block -50
-		Player.ModActorValue Blade 25
-		Player.ModActorValue Blunt 25
-		Player.ModActorValue HandToHand 25
-		;HeavyArmor Inherent
-		Player.ModActorValue Sneak 25
-		Player.ModActorValue Security 25
-		Player.ModActorValue Speechcraft 25
-		Player.ModActorValue Marksman 25
-		Player.ModActorValue DefendBonus -25
+		Player.ModActorValue Blade 50
+		Player.ModActorValue Blunt 50
+		Player.ModActorValue HandToHand 50
+		Player.ModActorValue Marksman 50
+		Player.ModActorValue AttackBonus 15
+		Player.ModActorValue DefendBonus -15
+		Player.ModActorValue Block -75
+		Player.ModActorValue LightArmor -75
+		;LightArmor Inherent
+		Player.ModActorValue ResistFire -15
+		Player.ModActorValue ResistFrost -15
+		Player.ModActorValue ResistShock -15
+		Player.ModActorValue Sneak -25
+		Player.ModActorValue Security -25
+		Player.ModActorValue Speechcraft -25
 		set bBonusAdded to 0
-		set TEbAuraDwemer to 0
+		set TEbAuraMalachite to 0
 	endif
 end

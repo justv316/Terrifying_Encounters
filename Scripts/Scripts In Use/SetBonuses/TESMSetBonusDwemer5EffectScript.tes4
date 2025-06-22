@@ -6,6 +6,7 @@ short bMagickaMultiplierMod
 
 begin ScriptEffectStart
 	if bBonusAdded == 0
+		;Specialization
 		Player.ModActorValue Destruction 50
 		Player.ModActorValue Conjuration 50
 		Player.ModActorValue Illusion 50
@@ -28,6 +29,10 @@ begin ScriptEffectStart
 		Player.ModActorValue Blade -25
 		Player.ModActorValue Blunt -25
 		Player.ModActorValue HandToHand -25
+		;HeavyArmor Inherent
+		Player.ModActorValue Sneak -25
+		Player.ModActorValue Security -25
+		Player.ModActorValue Speechcraft -25
 		Player.ModActorValue Marksman -25
 		Player.ModActorValue DefendBonus 15
 		set bBonusAdded to 1
@@ -47,6 +52,7 @@ end
 
 begin ScriptEffectFinish
 	if bBonusAdded == 1
+		;Specialization
 		Player.ModActorValue Destruction -50
 		Player.ModActorValue Conjuration -50
 		Player.ModActorValue Illusion -50
@@ -66,6 +72,10 @@ begin ScriptEffectFinish
 		Player.ModActorValue Blade 25
 		Player.ModActorValue Blunt 25
 		Player.ModActorValue HandToHand 25
+		;HeavyArmor Inherent
+		Player.ModActorValue Sneak 25
+		Player.ModActorValue Security 25
+		Player.ModActorValue Speechcraft 25
 		Player.ModActorValue Marksman 25
 		Player.ModActorValue DefendBonus -15
 		set bBonusAdded to 0
