@@ -36,7 +36,7 @@ begin ScriptEffectStart
 		Player.ModActorValue Security 25
 		Player.ModActorValue Speechcraft 25
 		set bBonusAdded to 1
-		set TEbAuraMalachite to 1
+		set TEbAuraMythrilSilvrite to 1
 	endif
 end
 
@@ -80,6 +80,6 @@ begin ScriptEffectFinish
 		Player.ModActorValue Security -25
 		Player.ModActorValue Speechcraft -25
 		set bBonusAdded to 0
-		set TEbAuraMalachite to 0
+		set TEbAuraMythrilSilvrite to 0
 	endif
 end

@@ -949,7 +949,8 @@
 		"02E954": "/Game/Forms/items/weapons/SE03Duskfang30.SE03Duskfang30",
 		"02E955": "/Game/Forms/items/weapons/SE03Duskfang30.SE03Duskfang30",
 
-		"01B75B": "/Game/Forms/items/armor/GlassShield.GlassShield"
-
+		"01B75B": "/Game/Forms/items/armor/GlassShield.GlassShield",
+		"03AD34": "/Game/Forms/worldobjects/door/ARDoor01b.ARDoor01b",
+		"03AA99": "/Game/Forms/worldobjects/door/ARDoor01b.ARDoor01b"
 	}
 }

@@ -1,0 +1,47 @@
+Scriptname Dark08Whodunit_DoorLockScript
+
+
+
+Begin OnActivate
+
+
+
+if IsActionRef player == 1
+
+	If GetStage Dark08Whodunit == 20 
+
+		Lock 100 
+
+		MessageBox "You may not leave Summitmist Manor until all the guests have been killed. "
+
+		
+
+		ElseIf GetStage Dark08Whodunit == 35
+
+			Lock 100  
+
+			MessageBox "You may not leave Summitmist Manor until all the guests have been killed. "
+
+
+
+			elseif IsActionRef player == 1
+
+				Unlock
+
+				player.SCAOnactor
+
+				Activate
+
+			endif
+
+		endif
+
+	 
+
+ 
+
+End
+
+ 
+
+	

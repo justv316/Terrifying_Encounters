@@ -1,15 +1,541 @@
 scn TESMSetBonusMaddening4EffectScript
 
 short bBonusAdded
+short bCombatMod
+short bMagickaMultiplierMod
+short bGetStats
+short bPunishment
+
+float fTimer
+short iDice
+float fLuckMod
+
+;Attributes
+short iModStrength
+short iModIntelligence
+short iModWillpower
+short iModAgility
+short iModSpeed
+short iModEndurance
+short iModLuck
+
+;Vitals
+
+short iModHealth
+short iModMagicka
+short iModFatigue
+short iModEncumbrance
+
+;Skills
+
+short iModArmorer
+short iModAthletics
+short iModBlock
+short iModBlade
+short iModBlunt
+short iModHandToHand
+short iModHeavyArmor
+short iModAlchemy
+short iModAlteration
+short iModConjuration
+short iModDestruction
+short iModIllusion
+short iModMysticism
+short iModRestoration
+short iModAcrobatics
+short iModLightArmor
+short iModMarksman
+short iModMercantile
+short iModSecurity
+short iModSneak
+short iModSpeechcraft
+
+;Resists
+short iModResistFire
+short iModResistFrost
+short iModResistDisease
+short iModResistMagic
+short iModResistNormalWeapons
+short iModResistParalysis
+short iModResistPoison
+short iModResistShock
+
+;Others
+short iModMagickaMultiplier
+short iModAttackBonus
+short iModDefendBonus
+short iModSpellAbsorbChance
+short iModReflectDamage
+short iModSpellReflectChance
+float fModWaterWalking
+float fModWaterBreathing
+float fModStuntedMagicka
 
 begin ScriptEffectStart
-	if bBonusAdded == 0 
-		set bBonusAdded to 1
+	if TEbPunishment == 1
+		if TEiSetMaddeningEquip >= 4
+			set TEbPunishment to 0
+			set fTimer to 0
+			set bGetStats to 2
+			set bBonusAdded to 0
+			set bMagickaMultiplierMod to 0
+			MessageBox "Punishment Cleared, SetBonus Re-applied."
+		endif
+	else
+		set fTimer to 0
+		set bGetStats to 0
+		set bBonusAdded to 0
+		set bCombatMod to 0
+		set bMagickaMultiplierMod to 0
+		MessageBox "Properly Started Bonus"
+	endif
+end
+
+begin ScriptEffectUpdate
+	set fTimer to GetSecondsPassed
+	if fTimer >= 1
+		if bBonusAdded == 0
+			if bGetStats == 0
+				set iDice to 1 + 0.12 * GetRandomPercent
+				set fLuckMod to Player.GetAV Luck * 0.1
+				set iModStrength to (Player.GetAV Strength * .1) + GetRandomPercent * ((Player.GetAV Strength * 1)-(Player.GetAV Strength * .1)+1) / 100
+				set iModIntelligence to (Player.GetAV Intelligence * .1) + GetRandomPercent * ((Player.GetAV Intelligence * 1)-(Player.GetAV Intelligence * .1)+1) / 100
+				set iModAgility to (Player.GetAV Agility * .1) + GetRandomPercent * ((Player.GetAV Agility * 1)-(Player.GetAV Agility * .1)+1) / 100
+				set iModWillpower to (Player.GetAV Willpower * .1) + GetRandomPercent * ((Player.GetAV Willpower * 1)-(Player.GetAV Willpower * .1)+1) / 100
+				set iModSpeed to (Player.GetAV Speed * .1) + GetRandomPercent * ((Player.GetAV Speed * 1)-(Player.GetAV Speed * .1)+1) / 100
+				set iModEndurance to (Player.GetAV Endurance * .1) + GetRandomPercent * ((Player.GetAV Endurance * 1)-(Player.GetAV Endurance * .1)+1) / 100
+				set iModLuck to (Player.GetAV Luck * .1) + GetRandomPercent * ((Player.GetAV Luck * 1)-(Player.GetAV Luck * .1)+1) / 100
+				set iModHealth to (Player.GetAV Health * .1) + GetRandomPercent * ((Player.GetAV Health * 1)-(Player.GetAV Health * .1)+1) / 100
+				set iModMagicka to (Player.GetAV Magicka * .1) + GetRandomPercent * ((Player.GetAV Magicka * 1)-(Player.GetAV Magicka * .1)+1) / 100
+				set iModFatigue to (Player.GetAV Fatigue * .1) + GetRandomPercent * ((Player.GetAV Fatigue * 1)-(Player.GetAV Fatigue * .1)+1) / 100
+				set iModEncumbrance to (Player.GetAV Encumbrance * .1) + GetRandomPercent * ((Player.GetAV Encumbrance * 1)-(Player.GetAV Encumbrance * .1)+1) / 100
+				set iModArmorer to (Player.GetAV Armorer * .1) + GetRandomPercent * ((Player.GetAV Armorer * 1)-(Player.GetAV Armorer * .1)+1) / 100
+				set iModAthletics to (Player.GetAV Athletics * .1) + GetRandomPercent * ((Player.GetAV Athletics * 1)-(Player.GetAV Athletics * .1)+1) / 100
+				set iModBlock to (Player.GetAV Block * .1) + GetRandomPercent * ((Player.GetAV Block * 1)-(Player.GetAV Block * .1)+1) / 100
+				set iModBlade to (Player.GetAV Blade * .1) + GetRandomPercent * ((Player.GetAV Blade * 1)-(Player.GetAV Blade * .1)+1) / 100
+				set iModBlunt to (Player.GetAV Blunt * .1) + GetRandomPercent * ((Player.GetAV Blunt * 1)-(Player.GetAV Blunt * .1)+1) / 100
+				set iModHandToHand to (Player.GetAV HandToHand * .1) + GetRandomPercent * ((Player.GetAV HandToHand * 1)-(Player.GetAV HandToHand * .1)+1) / 100
+				set iModHeavyArmor to (Player.GetAV HeavyArmor * .1) + GetRandomPercent * ((Player.GetAV HeavyArmor * 1)-(Player.GetAV HeavyArmor * .1)+1) / 100
+				set iModAlchemy to (Player.GetAV Alchemy * .1) + GetRandomPercent * ((Player.GetAV Alchemy * 1)-(Player.GetAV Alchemy * .1)+1) / 100
+				set iModAlteration to (Player.GetAV Alteration * .1) + GetRandomPercent * ((Player.GetAV Alteration * 1)-(Player.GetAV Alteration * .1)+1) / 100
+				set iModConjuration to (Player.GetAV Conjuration * .1) + GetRandomPercent * ((Player.GetAV Conjuration * 1)-(Player.GetAV Conjuration * .1)+1) / 100
+				set iModDestruction to (Player.GetAV Destruction * .1) + GetRandomPercent * ((Player.GetAV Destruction * 1)-(Player.GetAV Destruction * .1)+1) / 100
+				set iModIllusion to (Player.GetAV Illusion * .1) + GetRandomPercent * ((Player.GetAV Illusion * 1)-(Player.GetAV Illusion * .1)+1) / 100
+				set iModRestoration to (Player.GetAV Restoration * .1) + GetRandomPercent * ((Player.GetAV Restoration * 1)-(Player.GetAV Restoration * .1)+1) / 100
+				set iModMysticism to (Player.GetAV Mysticism * .1) + GetRandomPercent * ((Player.GetAV Mysticism * 1)-(Player.GetAV Mysticism * .1)+1) / 100
+				set iModAcrobatics to (Player.GetAV Acrobatics * .1) + GetRandomPercent * ((Player.GetAV Acrobatics * 1)-(Player.GetAV Acrobatics * .1)+1) / 100
+				set iModLightArmor to (Player.GetAV LightArmor * .1) + GetRandomPercent * ((Player.GetAV LightArmor * 1)-(Player.GetAV LightArmor * .1)+1) / 100
+				set iModMarksman to (Player.GetAV Marksman * .1) + GetRandomPercent * ((Player.GetAV Marksman * 1)-(Player.GetAV Marksman * .1)+1) / 100
+				set iModMercantile to (Player.GetAV Mercantile * .1) + GetRandomPercent * ((Player.GetAV Mercantile * 1)-(Player.GetAV Mercantile * .1)+1) / 100
+				set iModSecurity to (Player.GetAV Security * .1) + GetRandomPercent * ((Player.GetAV Security * 1)-(Player.GetAV Security * .1)+1) / 100
+				set iModSneak to (Player.GetAV Sneak * .1) + GetRandomPercent * ((Player.GetAV Sneak * 1)-(Player.GetAV Sneak * .1)+1) / 100
+				set iModSpeechcraft to (Player.GetAV Speechcraft * .1) + GetRandomPercent * ((Player.GetAV Speechcraft * 1)-(Player.GetAV Speechcraft * .1)+1) / 100
+				set iModResistFire to (Player.GetAV ResistFire * .1) + GetRandomPercent * ((Player.GetAV ResistFire * 1)-(Player.GetAV ResistFire * .1)+1) / 100
+				set iModResistFrost to (Player.GetAV ResistFrost * .1) + GetRandomPercent * ((Player.GetAV ResistFrost * 1)-(Player.GetAV ResistFrost * .1)+1) / 100
+				set iModResistDisease to (Player.GetAV ResistDisease * .1) + GetRandomPercent * ((Player.GetAV ResistDisease * 1)-(Player.GetAV ResistDisease * .1)+1) / 100
+				set iModResistMagic to (Player.GetAV ResistMagic * .1) + GetRandomPercent * ((Player.GetAV ResistMagic * 1)-(Player.GetAV ResistMagic * .1)+1) / 100
+				set iModResistNormalWeapons to (Player.GetAV ResistNormalWeapons * .1) + GetRandomPercent * ((Player.GetAV ResistNormalWeapons * 1)-(Player.GetAV ResistNormalWeapons * .1)+1) / 100
+				set iModResistParalysis to (Player.GetAV ResistParalysis * .1) + GetRandomPercent * ((Player.GetAV ResistParalysis * 1)-(Player.GetAV ResistParalysis * .1)+1) / 100
+				set iModResistPoison to (Player.GetAV ResistPoison * .1) + GetRandomPercent * ((Player.GetAV ResistPoison * 1)-(Player.GetAV ResistPoison * .1)+1) / 100
+				set iModResistShock to (Player.GetAV ResistShock * .1) + GetRandomPercent * ((Player.GetAV ResistShock * 1)-(Player.GetAV ResistShock * .1)+1) / 100
+				set iModMagickaMultiplier to 10.0/99 * GetRandomPercent
+				set iModAttackBonus to 25.0/99 * GetRandomPercent
+				set iModDefendBonus to 25.0/99 * GetRandomPercent
+				set iModSpellAbsorbChance to 25.0/99 * GetRandomPercent
+				set iModReflectDamage to 25.0/99 * GetRandomPercent
+				set iModSpellReflectChance to 25.0/99 * GetRandomPercent
+				set fModWaterWalking to 1.0/99 * GetRandomPercent
+					if fModWaterWalking <= 0.5
+						set fModWaterWalking to 0
+					elseif fModWaterWalking > 0.5
+						set fModWaterWalking to 1
+					endif
+				set fModWaterBreathing to 1.0/99 * GetRandomPercent
+					if fModWaterBreathing <= 0.5
+						set fModWaterBreathing to 0
+					elseif fModWaterBreathing > 0.5
+						set fModWaterBreathing to 1
+					endif
+				set fModStuntedMagicka to 1.0/99 * GetRandomPercent
+					if fModStuntedMagicka <= 0.5
+						set fModStuntedMagicka to 0
+					elseif fModStuntedMagicka > 0.5
+						set fModStuntedMagicka to 1
+					endif
+				set bGetStats to 1
+				MessageBox "Debug: Random Values acquired, time to roll a D12"
+			elseif bGetStats == 1
+				if iDice <= 1
+					MessageBox "You are most unfortunate."
+					MessageBox "You really shouldn't try to avoid this."
+					set bPunishment to 1
+					set iModStrength to -1 * iModStrength
+					set iModIntelligence to -1 * iModIntelligence
+					set iModAgility to -1 * iModAgility
+					set iModWillpower to -1 * iModWillpower
+					set iModSpeed to -1 * iModSpeed
+					set iModEndurance to -1 * iModEndurance
+					set iModLuck to -1 * iModLuck
+					set iModHealth to -1 * iModHealth
+					set iModMagicka to -1 * iModMagicka
+					set iModFatigue to -1 * iModFatigue
+					set iModEncumbrance to -1 * iModEncumbrance
+					set iModArmorer to -1 * iModArmorer
+					set iModAthletics to -1 * iModAthletics
+					set iModBlock to -1 * iModBlock
+					set iModBlade to -1 * iModBlade
+					set iModBlunt to -1 * iModBlunt
+					set iModHandToHand to -1 * iModHandToHand
+					set iModHeavyArmor to -1 * iModHeavyArmor
+					set iModAlchemy to -1 * iModAlchemy
+					set iModAlteration to -1 * iModAlteration
+					set iModConjuration to -1 * iModConjuration
+					set iModDestruction to -1 * iModDestruction
+					set iModIllusion to -1 * iModIllusion
+					set iModMysticism to -1 * iModMysticism
+					set iModRestoration to -1 * iModRestoration
+					set iModAcrobatics to -1 * iModAcrobatics
+					set iModLightArmor to -1 * iModLightArmor
+					set iModMarksman to -1 * iModMarksman
+					set iModMercantile to -1 * iModMercantile
+					set iModSecurity to -1 * iModSecurity
+					set iModSneak to -1 * iModSneak
+					set iModSpeechcraft to -1 * iModSpeechcraft
+					set iModResistFire to -1 * iModResistFire
+					set iModResistFrost to -1 * iModResistFrost
+					set iModResistDisease to -1 * iModResistDisease
+					set iModResistMagic to -1 * iModResistMagic
+					set iModResistNormalWeapons to -1 * iModResistNormalWeapons
+					set iModResistParalysis to -1 * iModResistParalysis
+					set iModResistPoison to -1 * iModResistPoison
+					set iModResistShock to -1 * iModResistShock
+					set iModMagickaMultiplier to -1 * iModMagickaMultiplier
+					set iModAttackBonus to -1 * iModAttackBonus
+					set iModDefendBonus to -1 * iModDefendBonus
+					set iModSpellAbsorbChance to -1 * iModSpellAbsorbChance
+					set iModReflectDamage to -1 * iModReflectDamage
+					set iModSpellReflectChance to -1 * iModSpellReflectChance
+					set bGetStats to 2
+				elseif iDice <= 6 && > 1
+					MessageBox "Your fortune is average, like your appearance."
+					set iModStrength to 0.5 * iModStrength
+					set iModIntelligence to 0.5 * iModIntelligence
+					set iModAgility to 0.5 * iModAgility
+					set iModWillpower to 0.5 * iModWillpower
+					set iModSpeed to 0.5 * iModSpeed
+					set iModEndurance to 0.5 * iModEndurance
+					set iModLuck to 0.5 * iModLuck
+					set iModHealth to 0.5 * iModHealth
+					set iModMagicka to 0.5 * iModMagicka
+					set iModFatigue to 0.5 * iModFatigue
+					set iModEncumbrance to 0.5 * iModEncumbrance
+					set iModArmorer to 0.5 * iModArmorer
+					set iModAthletics to 0.5 * iModAthletics
+					set iModBlock to 0.5 * iModBlock
+					set iModBlade to 0.5 * iModBlade
+					set iModBlunt to 0.5 * iModBlunt
+					set iModHandToHand to 0.5 * iModHandToHand
+					set iModHeavyArmor to 0.5 * iModHeavyArmor
+					set iModAlchemy to 0.5 * iModAlchemy
+					set iModAlteration to 0.5 * iModAlteration
+					set iModConjuration to 0.5 * iModConjuration
+					set iModDestruction to 0.5 * iModDestruction
+					set iModIllusion to 0.5 * iModIllusion
+					set iModMysticism to 0.5 * iModMysticism
+					set iModRestoration to 0.5 * iModRestoration
+					set iModAcrobatics to 0.5 * iModAcrobatics
+					set iModLightArmor to 0.5 * iModLightArmor
+					set iModMarksman to 0.5 * iModMarksman
+					set iModMercantile to 0.5 * iModMercantile
+					set iModSecurity to 0.5 * iModSecurity
+					set iModSneak to 0.5 * iModSneak
+					set iModSpeechcraft to 0.5 * iModSpeechcraft
+					set iModResistFire to 0.5 * iModResistFire
+					set iModResistFrost to 0.5 * iModResistFrost
+					set iModResistDisease to 0.5 * iModResistDisease
+					set iModResistMagic to 0.5 * iModResistMagic
+					set iModResistNormalWeapons to 0.5 * iModResistNormalWeapons
+					set iModResistParalysis to 0.5 * iModResistParalysis
+					set iModResistPoison to 0.5 * iModResistPoison
+					set iModResistShock to 0.5 * iModResistShock
+					set iModMagickaMultiplier to 0.5 * iModMagickaMultiplier
+					set iModAttackBonus to 0.5 * iModAttackBonus
+					set iModDefendBonus to 0.5 * iModDefendBonus
+					set iModSpellAbsorbChance to 0.5 * iModSpellAbsorbChance
+					set iModReflectDamage to 0.5 * iModReflectDamage
+					set iModSpellReflectChance to 0.5 * iModSpellReflectChance
+					set bGetStats to 2
+				elseif iDice <= 11 && > 6
+					MessageBox "Your fortune is good! You should really get *THAT* checked out."
+					set iModStrength to 1 * iModStrength
+					set iModIntelligence to 1 * iModIntelligence
+					set iModAgility to 1 * iModAgility
+					set iModWillpower to 1 * iModWillpower
+					set iModSpeed to 1 * iModSpeed
+					set iModEndurance to 1 * iModEndurance
+					set iModLuck to 1 * iModLuck
+					set iModHealth to 1 * iModHealth
+					set iModMagicka to 1 * iModMagicka
+					set iModFatigue to 1 * iModFatigue
+					set iModEncumbrance to 1 * iModEncumbrance
+					set iModArmorer to 1 * iModArmorer
+					set iModAthletics to 1 * iModAthletics
+					set iModBlock to 1 * iModBlock
+					set iModBlade to 1 * iModBlade
+					set iModBlunt to 1 * iModBlunt
+					set iModHandToHand to 1 * iModHandToHand
+					set iModHeavyArmor to 1 * iModHeavyArmor
+					set iModAlchemy to 1 * iModAlchemy
+					set iModAlteration to 1 * iModAlteration
+					set iModConjuration to 1 * iModConjuration
+					set iModDestruction to 1 * iModDestruction
+					set iModIllusion to 1 * iModIllusion
+					set iModMysticism to 1 * iModMysticism
+					set iModRestoration to 1 * iModRestoration
+					set iModAcrobatics to 1 * iModAcrobatics
+					set iModLightArmor to 1 * iModLightArmor
+					set iModMarksman to 1 * iModMarksman
+					set iModMercantile to 1 * iModMercantile
+					set iModSecurity to 1 * iModSecurity
+					set iModSneak to 1 * iModSneak
+					set iModSpeechcraft to 1 * iModSpeechcraft
+					set iModResistFire to 1 * iModResistFire
+					set iModResistFrost to 1 * iModResistFrost
+					set iModResistDisease to 1 * iModResistDisease
+					set iModResistMagic to 1 * iModResistMagic
+					set iModResistNormalWeapons to 1 * iModResistNormalWeapons
+					set iModResistParalysis to 1 * iModResistParalysis
+					set iModResistPoison to 1 * iModResistPoison
+					set iModResistShock to 1 * iModResistShock
+					set iModMagickaMultiplier to 1 * iModMagickaMultiplier
+					set iModAttackBonus to 1 * iModAttackBonus
+					set iModDefendBonus to 1 * iModDefendBonus
+					set iModSpellAbsorbChance to 1 * iModSpellAbsorbChance
+					set iModReflectDamage to 1 * iModReflectDamage
+					set iModSpellReflectChance to 1 * iModSpellReflectChance
+					set bGetStats to 2
+				elseif iDice == 12
+					MessageBox "You have the best fortune! No insults for you. Not today."
+					set iModStrength to 1.25 * iModStrength
+					set iModIntelligence to 1.25 * iModIntelligence
+					set iModAgility to 1.25 * iModAgility
+					set iModWillpower to 1.25 * iModWillpower
+					set iModSpeed to 1.25 * iModSpeed
+					set iModEndurance to 1.25 * iModEndurance
+					set iModLuck to 1.25 * iModLuck
+					set iModHealth to 1.25 * iModHealth
+					set iModMagicka to 1.25 * iModMagicka
+					set iModFatigue to 1.25 * iModFatigue
+					set iModEncumbrance to 1.25 * iModEncumbrance
+					set iModArmorer to 1.25 * iModArmorer
+					set iModAthletics to 1.25 * iModAthletics
+					set iModBlock to 1.25 * iModBlock
+					set iModBlade to 1.25 * iModBlade
+					set iModBlunt to 1.25 * iModBlunt
+					set iModHandToHand to 1.25 * iModHandToHand
+					set iModHeavyArmor to 1.25 * iModHeavyArmor
+					set iModAlchemy to 1.25 * iModAlchemy
+					set iModAlteration to 1.25 * iModAlteration
+					set iModConjuration to 1.25 * iModConjuration
+					set iModDestruction to 1.25 * iModDestruction
+					set iModIllusion to 1.25 * iModIllusion
+					set iModMysticism to 1.25 * iModMysticism
+					set iModRestoration to 1.25 * iModRestoration
+					set iModAcrobatics to 1.25 * iModAcrobatics
+					set iModLightArmor to 1.25 * iModLightArmor
+					set iModMarksman to 1.25 * iModMarksman
+					set iModMercantile to 1.25 * iModMercantile
+					set iModSecurity to 1.25 * iModSecurity
+					set iModSneak to 1.25 * iModSneak
+					set iModSpeechcraft to 1.25 * iModSpeechcraft
+					set iModResistFire to 1.25 * iModResistFire
+					set iModResistFrost to 1.25 * iModResistFrost
+					set iModResistDisease to 1.25 * iModResistDisease
+					set iModResistMagic to 1.25 * iModResistMagic
+					set iModResistNormalWeapons to 1.25 * iModResistNormalWeapons
+					set iModResistParalysis to 1.25 * iModResistParalysis
+					set iModResistPoison to 1.25 * iModResistPoison
+					set iModResistShock to 1.25 * iModResistShock
+					set iModMagickaMultiplier to 1.25 * iModMagickaMultiplier
+					set iModAttackBonus to 1.25 * iModAttackBonus
+					set iModDefendBonus to 1.25 * iModDefendBonus
+					set iModSpellAbsorbChance to 1.25 * iModSpellAbsorbChance
+					set iModReflectDamage to 1.25 * iModReflectDamage
+					set iModSpellReflectChance to 1.25 * iModSpellReflectChance
+					set bGetStats to 2
+				endif
+				MessageBox "Debug: Diceroll has Occured and Modifiers have been set"
+			elseif bGetStats == 2
+				Player.ModAV Strength iModStrength
+				Player.ModAV Intelligence iModIntelligence
+				Player.ModAV Agility iModAgility
+				Player.ModAV Willpower iModWillpower
+				Player.ModAV Speed iModSpeed
+				Player.ModAV Endurance iModEndurance
+				Player.ModAV Luck iModLuck
+				Player.ModAV Health iModHealth
+				Player.ModAV Magicka iModMagicka
+				Player.ModAV Fatigue iModFatigue
+				Player.ModAV Encumbrance iModEncumbrance
+				Player.ModAV Armorer iModArmorer
+				Player.ModAV Athletics iModAthletics
+				Player.ModAV Block iModBlock
+				Player.ModAV Blade iModBlade
+				Player.ModAV Blunt iModBlunt
+				Player.ModAV HandToHand iModHandToHand
+				Player.ModAV HeavyArmor iModHeavyArmor
+				Player.ModAV Alchemy iModAlchemy
+				Player.ModAV Alteration iModAlteration
+				Player.ModAV Conjuration iModConjuration
+				Player.ModAV Destruction iModDestruction
+				Player.ModAV Illusion iModIllusion
+				Player.ModAV Mysticism iModMysticism
+				Player.ModAV Restoration iModRestoration
+				Player.ModAV Acrobatics iModAcrobatics
+				Player.ModAV LightArmor iModLightArmor
+				Player.ModAV Marksman iModMarksman
+				Player.ModAV Mercantile iModMercantile
+				Player.ModAV Security iModSecurity
+				Player.ModAV Sneak iModSneak
+				Player.ModAV Speechcraft iModSpeechcraft
+				Player.ModAV ResistFire iModResistFire
+				Player.ModAV ResistFrost iModResistFrost
+				Player.ModAV ResistDisease iModResistDisease
+				Player.ModAV ResistMagic iModResistMagic
+				Player.ModAV ResistNormalWeapons iModResistNormalWeapons
+				Player.ModAV ResistParalysis iModResistParalysis
+				Player.ModAV ResistPoison iModResistPoison
+				Player.ModAV ResistShock iModResistShock
+				if bMagickaMultiplierMod == 0
+					if Player.GetActorValue MagickaMultiplier == 0
+						Player.SetActorValue MagickaMultiplier 10
+					endif
+					Player.ModActorValue MagickaMultiplier iModMagickaMultiplier
+					set bMagickaMultiplierMod to 1
+				endif
+				Player.ModAV AttackBonus iModAttackBonus
+				Player.ModAV DefendBonus iModDefendBonus
+				Player.ModAV SpellAbsorbChance iModSpellAbsorbChance
+				Player.ModAV ReflectDamage iModReflectDamage
+				Player.ModAV SpellReflectChance iModSpellReflectChance
+				Player.ModAV WaterWalking fModWaterWalking
+				Player.ModAV WaterBreathing fModWaterBreathing
+				Player.ModAV StuntedMagicka fModStuntedMagicka
+				set bBonusAdded to 1
+				MessageBox "Debug: Set Bonus Applied!"
+			endif
+		endif
+	elseif fTimer >= 900 
+		set iModStrength to -1 * iModStrength
+		set iModIntelligence to -1 * iModIntelligence
+		set iModAgility to -1 * iModAgility
+		set iModWillpower to -1 * iModWillpower
+		set iModSpeed to -1 * iModSpeed
+		set iModEndurance to -1 * iModEndurance
+		set iModLuck to -1 * iModLuck
+		set iModHealth to -1 * iModHealth
+		set iModMagicka to -1 * iModMagicka
+		set iModFatigue to -1 * iModFatigue
+		set iModEncumbrance to -1 * iModEncumbrance
+		set iModArmorer to -1 * iModArmorer
+		set iModAthletics to -1 * iModAthletics
+		set iModBlock to -1 * iModBlock
+		set iModBlade to -1 * iModBlade
+		set iModBlunt to -1 * iModBlunt
+		set iModHandToHand to -1 * iModHandToHand
+		set iModHeavyArmor to -1 * iModHeavyArmor
+		set iModAlchemy to -1 * iModAlchemy
+		set iModAlteration to -1 * iModAlteration
+		set iModConjuration to -1 * iModConjuration
+		set iModDestruction to -1 * iModDestruction
+		set iModIllusion to -1 * iModIllusion
+		set iModMysticism to -1 * iModMysticism
+		set iModRestoration to -1 * iModRestoration
+		set iModAcrobatics to -1 * iModAcrobatics
+		set iModLightArmor to -1 * iModLightArmor
+		set iModMarksman to -1 * iModMarksman
+		set iModMercantile to -1 * iModMercantile
+		set iModSecurity to -1 * iModSecurity
+		set iModSneak to -1 * iModSneak
+		set iModSpeechcraft to -1 * iModSpeechcraft
+		set iModResistFire to -1 * iModResistFire
+		set iModResistFrost to -1 * iModResistFrost
+		set iModResistDisease to -1 * iModResistDisease
+		set iModResistMagic to -1 * iModResistMagic
+		set iModResistNormalWeapons to -1 * iModResistNormalWeapons
+		set iModResistParalysis to -1 * iModResistParalysis
+		set iModResistPoison to -1 * iModResistPoison
+		set iModResistShock to -1 * iModResistShock
+		set iModMagickaMultiplier to -1 * iModMagickaMultiplier
+		set iModAttackBonus to -1 * iModAttackBonus
+		set iModDefendBonus to -1 * iModDefendBonus
+		set iModSpellAbsorbChance to -1 * iModSpellAbsorbChance
+		set iModReflectDamage to -1 * iModReflectDamage
+		set iModSpellReflectChance to -1 * iModSpellReflectChance
+		Player.ModAV Strength iModStrength
+		Player.ModAV Intelligence iModIntelligence
+		Player.ModAV Agility iModAgility
+		Player.ModAV Willpower iModWillpower
+		Player.ModAV Speed iModSpeed
+		Player.ModAV Endurance iModEndurance
+		Player.ModAV Luck iModLuck
+		Player.ModAV Health iModHealth
+		Player.ModAV Magicka iModMagicka
+		Player.ModAV Fatigue iModFatigue
+		Player.ModAV Encumbrance iModEncumbrance
+		Player.ModAV Armorer iModArmorer
+		Player.ModAV Athletics iModAthletics
+		Player.ModAV Block iModBlock
+		Player.ModAV Blade iModBlade
+		Player.ModAV Blunt iModBlunt
+		Player.ModAV HandToHand iModHandToHand
+		Player.ModAV HeavyArmor iModHeavyArmor
+		Player.ModAV Alchemy iModAlchemy
+		Player.ModAV Alteration iModAlteration
+		Player.ModAV Conjuration iModConjuration
+		Player.ModAV Destruction iModDestruction
+		Player.ModAV Illusion iModIllusion
+		Player.ModAV Mysticism iModMysticism
+		Player.ModAV Restoration iModRestoration
+		Player.ModAV Acrobatics iModAcrobatics
+		Player.ModAV LightArmor iModLightArmor
+		Player.ModAV Marksman iModMarksman
+		Player.ModAV Mercantile iModMercantile
+		Player.ModAV Security iModSecurity
+		Player.ModAV Sneak iModSneak
+		Player.ModAV Speechcraft iModSpeechcraft
+		Player.ModAV ResistFire iModResistFire
+		Player.ModAV ResistFrost iModResistFrost
+		Player.ModAV ResistDisease iModResistDisease
+		Player.ModAV ResistMagic iModResistMagic
+		Player.ModAV ResistNormalWeapons iModResistNormalWeapons
+		Player.ModAV ResistParalysis iModResistParalysis
+		Player.ModAV ResistPoison iModResistPoison
+		Player.ModAV ResistShock iModResistShock
+		Player.ModAV MagickaMultiplier iModMagickaMultiplier
+		Player.ModAV AttackBonus iModAttackBonus
+		Player.ModAV DefendBonus iModDefendBonus
+		Player.ModAV SpellAbsorbChance iModSpellAbsorbChance
+		Player.ModAV ReflectDamage iModReflectDamage
+		Player.ModAV SpellReflectChance iModSpellReflectChance
+		Player.ModAV WaterWalking fModWaterWalking
+		Player.ModAV WaterBreathing fModWaterBreathing
+		Player.ModAV StuntedMagicka fModStuntedMagicka
+		set fTimer to 0
+		set bGetStats to 0
+		set bBonusAdded to 0
+		set bPunishment to 0
+		set bMagickaMultiplierMod to 0
 	endif
 end
 
 begin ScriptEffectFinish
-	if bBonusAdded == 1
-		set bBonusAdded to 0
+	if TEiSetMaddeningEquip < 4
+		if bPunishment == 1
+			MessageBox "You Were Warned."
+			set TEbPunishment to 1
+			Set TEQQPunishmentManagementQuest.fQuestDelaytime to 0.1
+			StartQuest TEQQPunishmentManagementQuest
+		endif
 	endif
 end

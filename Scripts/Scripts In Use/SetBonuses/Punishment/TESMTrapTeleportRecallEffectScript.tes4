@@ -1,0 +1,16 @@
+scn TESMTrapTeleportRecallEffectScript
+
+ref rSelf
+
+Begin ScriptEffectStart
+	set rSelf to GetSelf
+	if rSelf == Player
+		EnableFastTravel 1
+	endif
+end
+
+begin ScriptEffectFinish	
+	if rSelf == Player
+		Player.MoveTo TEMarkRef
+	endif
+end

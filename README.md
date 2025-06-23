@@ -900,8 +900,8 @@
 * These sets are available in both Light and Heavy armor, and their set bonuses vary greatly from the former 6 sets. 
 
 ##### Resinite
-* Recommended Classes: 
-	* Emphasizes 
+* Recommended Classes: Any
+	* Emphasizes Combat, Defensive, and Magical abilities, but to a lesser degree than the former specialized sets.   
 
 <details>
 <Summary>Resinite</Summary>
@@ -910,63 +910,38 @@
 
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 50 | Constant |
-| + | Resist | Normal Weapons | 10 | Constant |
-| + | Skill | Heavy Armor | 25 | Constant |
-| + | Skill | Blade | 25 | Constant |
-| + | Skill | Blunt | 25 | Constant |
-| + | Skill | Block | 25 | Constant |
-| + | Skill | Hand to Hand | 25 | Constant |
-| + | Other | Attack Bonus | 10 | Constant |
+| | | Specialization | | |
+| + | Skill | Destruction | 13 | Constant |
+| + | Skill | Conjuration | 13 | Constant |
+| + | Skill | Illusion | 13 | Constant |
+| + | Skill | Restoration | 13 | Constant |
+| + | Skill | Alteration | 13 | Constant |
+| + | Skill | Mysticism | 13 | Constant |
+| + | Other | Magicka Multiplier | 1 | Constant |
+| + | Skill | Heavy Armor | 13 | Constant |
+| + | Skill | Light Armor | 13 | Constant |
+| + | Skill | Blade | 13 | Constant |
+| + | Skill | Blunt | 13 | Constant |
+| + | Skill | Block | 13 | Constant |
+| + | Skill | Hand to Hand | 13 | Constant |
+| - | Skill | Marksman | 13 | Constant |
+| + | Other | Attack Bonus | 5 | Constant |
+| | | Heavy Armor Inherent | | |
 | + | Other | Defend Bonus | 5 | Constant |
-| - | Resist | Frost | 50 | Constant |
-| + | Skill | Destruction | 50 | Constant |
-| + | Skill | Conjuration | 50 | Constant |
-| + | Skill | Illusion | 50 | Constant |
-| + | Skill | Restoration | 50 | Constant |
-| + | Skill | Alteration | 50 | Constant |
-| + | Skill | Mysticism | 50 | Constant |
-| + | Other | Magicka Multiplier | 3 | Constant |
-| + | Attribute | Speed | 40 | In Combat |
+| + | Resist | Fire | 25 | Constant |
+| + | Resist | Frost | 25 | Constant |
+| + | Resist | Shock | 25 | Constant |
+| | | Light Armor Inherent | | |
+| + | Skill | Sneak | 25 | Constant |
+| + | Skill | Security | 25 | Constant |
+| + | Skill | Speechcraft | 25 | Constant |
+| + | Attribute | Speed | 10 | In Combat |
 
 * 5/6
 	
 | +/- | Value Type | Actor Value | Magnitude | Conditional |
 | ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 75 | Constant |
-| + | Resist | Normal Weapons | 25 | Constant |
-| + | Skill | Heavy Armor | 40 | Constant |
-| + | Skill | Blade | 40 | Constant |
-| + | Skill | Blunt | 40 | Constant |
-| + | Skill | Block | 40 | Constant |
-| + | Skill | Hand to Hand | 40 | Constant |
-| + | Other | Attack Bonus | 15 | Constant |
-| + | Other | Defend Bonus | 10 | Constant |
-| - | Resist | Frost | 40 | Constant |
-| + | Skill | Destruction | 40 | Constant |
-| + | Skill | Conjuration | 40 | Constant |
-| + | Skill | Illusion | 40 | Constant |
-| + | Skill | Restoration | 40 | Constant |
-| + | Skill | Alteration | 40 | Constant |
-| + | Skill | Mysticism | 40 | Constant |
-| + | Other | Magicka Multiplier | 2 | Constant |
-| + | Attribute | Speed | 30 | In Combat |
-
-* 6/6
-* Applies an aura to the player, [This is a placeholder]
-	
-| +/- | Value Type | Actor Value | Magnitude | Conditional |
-| ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 100 | Constant |
-| + | Resist | Normal Weapons | 35 | Constant |
-| + | Skill | Heavy Armor | 50 | Constant |
-| + | Skill | Blade | 50 | Constant |
-| + | Skill | Blunt | 50 | Constant |
-| + | Skill | Block | 50 | Constant |
-| + | Skill | Hand to Hand | 50 | Constant |
-| + | Other | Attack Bonus | 25 | Constant |
-| + | Other | Defend Bonus | 15 | Constant |
-| - | Resist | Frost | 25 | Constant |
+| | | Specialization | | |
 | + | Skill | Destruction | 25 | Constant |
 | + | Skill | Conjuration | 25 | Constant |
 | + | Skill | Illusion | 25 | Constant |
@@ -974,7 +949,57 @@
 | + | Skill | Alteration | 25 | Constant |
 | + | Skill | Mysticism | 25 | Constant |
 | + | Other | Magicka Multiplier | 1 | Constant |
+| + | Skill | Heavy Armor | 25 | Constant |
+| + | Skill | Light Armor | 25 | Constant |
+| + | Skill | Blade | 25 | Constant |
+| + | Skill | Blunt | 25 | Constant |
+| + | Skill | Block | 25 | Constant |
+| + | Skill | Hand to Hand | 25 | Constant |
+| - | Skill | Marksman | 25 | Constant |
+| + | Other | Attack Bonus | 10 | Constant |
+| | | Heavy Armor Inherent | | |
+| + | Other | Defend Bonus | 10 | Constant |
+| + | Resist | Fire | 35 | Constant |
+| + | Resist | Frost | 35 | Constant |
+| + | Resist | Shock | 35 | Constant |
+| | | Light Armor Inherent | | |
+| + | Skill | Sneak | 25 | Constant |
+| + | Skill | Security | 25 | Constant |
+| + | Skill | Speechcraft | 25 | Constant |
+| + | Attribute | Speed | 15 | In Combat |
+
+* 6/6
+* Applies an aura to the player, [This is a placeholder]
+	
+| +/- | Value Type | Actor Value | Magnitude | Conditional |
+| ---- | ---- | ---- | ---- |----|
+| | | Specialization | | |
+| + | Skill | Destruction | 50 | Constant |
+| + | Skill | Conjuration | 50 | Constant |
+| + | Skill | Illusion | 50 | Constant |
+| + | Skill | Restoration | 50 | Constant |
+| + | Skill | Alteration | 50 | Constant |
+| + | Skill | Mysticism | 50 | Constant |
+| + | Other | Magicka Multiplier | 1 | Constant |
+| + | Skill | Heavy Armor | 50 | Constant |
+| + | Skill | Light Armor | 50 | Constant |
+| + | Skill | Blade | 50 | Constant |
+| + | Skill | Blunt | 50 | Constant |
+| + | Skill | Block | 50 | Constant |
+| + | Skill | Hand to Hand | 50 | Constant |
+| - | Skill | Marksman | 50 | Constant |
+| + | Other | Attack Bonus | 10 | Constant |
+| | | Heavy Armor Inherent | | |
+| + | Other | Defend Bonus | 10 | Constant |
+| + | Resist | Fire | 45 | Constant |
+| + | Resist | Frost | 45 | Constant |
+| + | Resist | Shock | 45 | Constant |
+| | | Light Armor Inherent | | |
+| + | Skill | Sneak | 25 | Constant |
+| + | Skill | Security | 25 | Constant |
+| + | Skill | Speechcraft | 25 | Constant |
 | + | Attribute | Speed | 20 | In Combat |
+
 
 </details>
 

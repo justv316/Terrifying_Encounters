@@ -1,0 +1,12 @@
+scn TESOTrapDoorObjectScript
+
+begin OnActivate
+	if IsActionRef Player == 1
+		if TEbPunishment == 1
+			Lock 100
+			MessageBox "You Must Atone."
+		endif
+	endif
+end
+		
+	
