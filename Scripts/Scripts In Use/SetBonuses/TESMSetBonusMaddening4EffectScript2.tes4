@@ -1,0 +1,396 @@
+scn TESMSetBonusMaddening4EffectScript2
+
+short bMagickaMultiplierMod
+float fTimer
+short bRerollTime
+
+
+;Attributes
+short iModStrength
+short iModIntelligence
+short iModWillpower
+short iModAgility
+short iModSpeed
+short iModEndurance
+short iModLuck
+
+;Vitals
+
+short iModHealth
+short iModMagicka
+short iModFatigue
+short iModEncumbrance
+
+;Skills
+short iModArmorer
+short iModAthletics
+short iModBlock
+short iModBlade
+short iModBlunt
+short iModHandToHand
+short iModHeavyArmor
+short iModAlchemy
+short iModAlteration
+short iModConjuration
+short iModDestruction
+short iModIllusion
+short iModMysticism
+short iModRestoration
+short iModAcrobatics
+short iModLightArmor
+short iModMarksman
+short iModMercantile
+short iModSecurity
+short iModSneak
+short iModSpeechcraft
+
+;Resists
+short iModResistFire
+short iModResistFrost
+short iModResistDisease
+short iModResistMagic
+short iModResistNormalWeapons
+short iModResistParalysis
+short iModResistPoison
+short iModResistShock
+
+;Others
+short iModMagickaMultiplier
+short iModAttackBonus
+short iModDefendBonus
+short iModSpellAbsorbChance
+short iModReflectDamage
+short iModSpellReflectChance
+short iModWaterWalking
+short iModWaterBreathing
+short iModStuntedMagicka
+
+begin ScriptEffectStart
+	set bMagickaMultiplierMod to 0
+	set bRerollTime to -1
+end
+
+begin ScriptEffectUpdate
+	if bRerollTime == -1
+		set iModStrength to (Player.GetAV Strength * .01) + GetRandomPercent * ((Player.GetAV Strength * 0.25)-(Player.GetAV Strength * .01) + 1 ) / 100
+		set iModIntelligence to (Player.GetAV Intelligence * .01) + GetRandomPercent * ((Player.GetAV Intelligence * 0.25)-(Player.GetAV Intelligence * .01) + 1 ) / 100
+		set iModAgility to (Player.GetAV Agility * .01) + GetRandomPercent * ((Player.GetAV Agility * 0.25)-(Player.GetAV Agility * .01) + 1 ) / 100
+		set iModWillpower to (Player.GetAV Willpower * .01) + GetRandomPercent * ((Player.GetAV Willpower * 0.25)-(Player.GetAV Willpower * .01) + 1 ) / 100
+		set iModSpeed to (Player.GetAV Speed * .01) + GetRandomPercent * ((Player.GetAV Speed * 0.25)-(Player.GetAV Speed * .01) + 1 ) / 100
+		set iModEndurance to (Player.GetAV Endurance * .01) + GetRandomPercent * ((Player.GetAV Endurance * 0.25)-(Player.GetAV Endurance * .01) + 1 ) / 100
+		set iModLuck to (Player.GetAV Luck * .01) + GetRandomPercent * ((Player.GetAV Luck * 0.25)-(Player.GetAV Luck * .01) + 1 ) / 100
+		;Vitals
+		set iModHealth to (Player.GetAV Health * .01) + GetRandomPercent * ((Player.GetAV Health * 0.25)-(Player.GetAV Health * .01) + 1 ) / 100
+		set iModMagicka to (Player.GetAV Magicka * .01) + GetRandomPercent * ((Player.GetAV Magicka * 0.25)-(Player.GetAV Magicka * .01) + 1 ) / 100
+		set iModFatigue to (Player.GetAV Fatigue * .01) + GetRandomPercent * ((Player.GetAV Fatigue * 0.25)-(Player.GetAV Fatigue * .01) + 1 ) / 100
+		set iModEncumbrance to (Player.GetAV Encumbrance * .01) + GetRandomPercent * ((Player.GetAV Encumbrance * 0.25)-(Player.GetAV Encumbrance * .01) + 1 ) / 100
+		;Skills
+		set iModArmorer to (Player.GetAV Armorer * .01) + GetRandomPercent * ((Player.GetAV Armorer * 0.50)-(Player.GetAV Armorer * .01) + 1 ) / 100
+		set iModAthletics to (Player.GetAV Athletics * .01) + GetRandomPercent * ((Player.GetAV Athletics * 0.50)-(Player.GetAV Athletics * .01) + 1 ) / 100
+		set iModBlock to (Player.GetAV Block * .01) + GetRandomPercent * ((Player.GetAV Block * 0.50)-(Player.GetAV Block * .01) + 1 ) / 100
+		set iModBlade to (Player.GetAV Blade * .01) + GetRandomPercent * ((Player.GetAV Blade * 0.50)-(Player.GetAV Blade * .01) + 1 ) / 100
+		set iModBlunt to (Player.GetAV Blunt * .01) + GetRandomPercent * ((Player.GetAV Blunt * 0.50)-(Player.GetAV Blunt * .01) + 1 ) / 100
+		set iModHandToHand to (Player.GetAV HandToHand * .01) + GetRandomPercent * ((Player.GetAV HandToHand * 0.50)-(Player.GetAV HandToHand * .01) + 1 ) / 100
+		set iModHeavyArmor to (Player.GetAV HeavyArmor * .01) + GetRandomPercent * ((Player.GetAV HeavyArmor * 0.50)-(Player.GetAV HeavyArmor * .01) + 1 ) / 100
+		set iModAlchemy to (Player.GetAV Alchemy * .01) + GetRandomPercent * ((Player.GetAV Alchemy * 0.50)-(Player.GetAV Alchemy * .01) + 1 ) / 100
+		set iModAlteration to (Player.GetAV Alteration * .01) + GetRandomPercent * ((Player.GetAV Alteration * 0.50)-(Player.GetAV Alteration * .01) + 1 ) / 100
+		set iModConjuration to (Player.GetAV Conjuration * .01) + GetRandomPercent * ((Player.GetAV Conjuration * 0.50)-(Player.GetAV Conjuration * .01) + 1 ) / 100
+		set iModDestruction to (Player.GetAV Destruction * .01) + GetRandomPercent * ((Player.GetAV Destruction * 0.50)-(Player.GetAV Destruction * .01) + 1 ) / 100
+		set iModIllusion to (Player.GetAV Illusion * .01) + GetRandomPercent * ((Player.GetAV Illusion * 0.50)-(Player.GetAV Illusion * .01) + 1 ) / 100
+		set iModRestoration to (Player.GetAV Restoration * .01) + GetRandomPercent * ((Player.GetAV Restoration * 0.50)-(Player.GetAV Restoration * .01) + 1 ) / 100
+		set iModMysticism to (Player.GetAV Mysticism * .01) + GetRandomPercent * ((Player.GetAV Mysticism * 0.50)-(Player.GetAV Mysticism * .01) + 1 ) / 100
+		set iModAcrobatics to (Player.GetAV Acrobatics * .01) + GetRandomPercent * ((Player.GetAV Acrobatics * 0.50)-(Player.GetAV Acrobatics * .01) + 1 ) / 100
+		set iModLightArmor to (Player.GetAV LightArmor * .01) + GetRandomPercent * ((Player.GetAV LightArmor * 0.50)-(Player.GetAV LightArmor * .01) + 1 ) / 100
+		set iModMarksman to (Player.GetAV Marksman * .01) + GetRandomPercent * ((Player.GetAV Marksman * 0.50)-(Player.GetAV Marksman * .01) + 1 ) / 100
+		set iModMercantile to (Player.GetAV Mercantile * .01) + GetRandomPercent * ((Player.GetAV Mercantile * 0.50)-(Player.GetAV Mercantile * .01) + 1 ) / 100
+		set iModSecurity to (Player.GetAV Security * .01) + GetRandomPercent * ((Player.GetAV Security * 0.50)-(Player.GetAV Security * .01) + 1 ) / 100
+		set iModSneak to (Player.GetAV Sneak * .01) + GetRandomPercent * ((Player.GetAV Sneak * 0.50)-(Player.GetAV Sneak * .01) + 1 ) / 100
+		set iModSpeechcraft to (Player.GetAV Speechcraft * .01) + GetRandomPercent * ((Player.GetAV Speechcraft * 0.50)-(Player.GetAV Speechcraft * .01) + 1 ) / 100
+		;Resists
+		set iModResistFire to (Player.GetAV ResistFire * .01) + GetRandomPercent * ((Player.GetAV ResistFire * 0.15)-(Player.GetAV ResistFire * .01) + 1 ) / 100
+		set iModResistFrost to (Player.GetAV ResistFrost * .01) + GetRandomPercent * ((Player.GetAV ResistFrost * 0.15)-(Player.GetAV ResistFrost * .01) + 1 ) / 100
+		set iModResistDisease to (Player.GetAV ResistDisease * .01) + GetRandomPercent * ((Player.GetAV ResistDisease * 0.15)-(Player.GetAV ResistDisease * .01) + 1 ) / 100
+		set iModResistMagic to (Player.GetAV ResistMagic * .01) + GetRandomPercent * ((Player.GetAV ResistMagic * 0.15)-(Player.GetAV ResistMagic * .01) + 1 ) / 100
+		set iModResistNormalWeapons to (Player.GetAV ResistNormalWeapons * .01) + GetRandomPercent * ((Player.GetAV ResistNormalWeapons * 0.15)-(Player.GetAV ResistNormalWeapons * .01) + 1 ) / 100
+		set iModResistParalysis to (Player.GetAV ResistParalysis * .01) + GetRandomPercent * ((Player.GetAV ResistParalysis * 0.15)-(Player.GetAV ResistParalysis * .01) + 1 ) / 100
+		set iModResistPoison to (Player.GetAV ResistPoison * .01) + GetRandomPercent * ((Player.GetAV ResistPoison * 0.15)-(Player.GetAV ResistPoison * .01) + 1 ) / 100
+		set iModResistShock to (Player.GetAV ResistShock * .01) + GetRandomPercent * ((Player.GetAV ResistShock * 0.15)-(Player.GetAV ResistShock * .01) + 1 ) / 100
+		;Others
+		set iModMagickaMultiplier to 1 + 0.03 * GetRandomPercent
+		set iModAttackBonus to 1 + 0.15 * GetRandomPercent
+		set iModDefendBonus to 1 + 0.15 * GetRandomPercent
+		set iModSpellAbsorbChance to 1 + 0.05 * GetRandomPercent
+		set iModReflectDamage to  1 + 0.05 * GetRandomPercent
+		set iModSpellReflectChance to  1 + 0.05 * GetRandomPercent
+		set iModWaterWalking to  1 + 0.01 * GetRandomPercent
+		set iModWaterBreathing to  1 + 0.01 * GetRandomPercent
+		set iModStuntedMagicka to  1 + 0.01 * GetRandomPercent
+		Player.ModActorValue Strength iModStrength
+		Player.ModActorValue Intelligence iModIntelligence
+		Player.ModActorValue Agility iModAgility
+		Player.ModActorValue Willpower iModWillpower
+		Player.ModActorValue Speed iModSpeed
+		Player.ModActorValue Endurance iModEndurance
+		Player.ModActorValue Luck iModLuck
+		Player.ModActorValue Health iModHealth
+		Player.ModActorValue Magicka iModMagicka
+		Player.ModActorValue Fatigue iModFatigue
+		Player.ModActorValue Encumbrance iModEncumbrance
+		Player.ModActorValue Armorer iModArmorer
+		Player.ModActorValue Athletics iModAthletics
+		Player.ModActorValue Block iModBlock
+		Player.ModActorValue Blade iModBlade
+		Player.ModActorValue Blunt iModBlunt
+		Player.ModActorValue HandToHand iModHandToHand
+		Player.ModActorValue HeavyArmor iModHeavyArmor
+		Player.ModActorValue Alchemy iModAlchemy
+		Player.ModActorValue Alteration iModAlteration
+		Player.ModActorValue Conjuration iModConjuration
+		Player.ModActorValue Destruction iModDestruction
+		Player.ModActorValue Illusion iModIllusion
+		Player.ModActorValue Mysticism iModMysticism
+		Player.ModActorValue Restoration iModRestoration
+		Player.ModActorValue Acrobatics iModAcrobatics
+		Player.ModActorValue LightArmor iModLightArmor
+		Player.ModActorValue Marksman iModMarksman
+		Player.ModActorValue Mercantile iModMercantile
+		Player.ModActorValue Security iModSecurity
+		Player.ModActorValue Sneak iModSneak
+		Player.ModActorValue Speechcraft iModSpeechcraft
+		Player.ModActorValue ResistFire iModResistFire
+		Player.ModActorValue ResistFrost iModResistFrost
+		Player.ModActorValue ResistDisease iModResistDisease
+		Player.ModActorValue ResistMagic iModResistMagic
+		Player.ModActorValue ResistNormalWeapons iModResistNormalWeapons
+		Player.ModActorValue ResistParalysis iModResistParalysis
+		Player.ModActorValue ResistPoison iModResistPoison
+		Player.ModActorValue ResistShock iModResistShock
+		if bMagickaMultiplierMod == 0
+			if Player.GetActorValue MagickaMultiplier == 0
+				Player.SetActorValue MagickaMultiplier 10
+			endif
+			Player.ModActorValue MagickaMultiplier iModMagickaMultiplier
+			set bMagickaMultiplierMod to 1
+		endif
+		Player.ModActorValue AttackBonus iModAttackBonus
+		Player.ModActorValue DefendBonus iModDefendBonus
+		Player.ModActorValue SpellAbsorbChance iModSpellAbsorbChance
+		Player.ModActorValue ReflectDamage iModReflectDamage
+		Player.ModActorValue SpellReflectChance iModSpellReflectChance
+		Player.SetActorValue WaterWalking iModWaterWalking
+		Player.SetActorValue WaterBreathing iModWaterBreathing
+		Player.SetActorValue StuntedMagicka iModStuntedMagicka
+		set bRerollTime to -2
+		set fTimer to 5
+	elseif bRerollTime == -2
+		if fTimer > 0
+			set fTimer to fTimer - ScriptEffectElapsedSeconds
+		else 
+			set bRerollTime to -1
+			Message "Time to Re-roll"
+			set iModStrength to -1 * iModStrength
+			set iModIntelligence to -1 * iModIntelligence
+			set iModAgility to -1 * iModAgility
+			set iModWillpower to -1 * iModWillpower
+			set iModSpeed to -1 * iModSpeed
+			set iModEndurance to -1 * iModEndurance
+			set iModLuck to -1 * iModLuck
+			set iModHealth to -1 * iModHealth
+			set iModMagicka to -1 * iModMagicka
+			set iModFatigue to -1 * iModFatigue
+			set iModEncumbrance to -1 * iModEncumbrance
+			set iModArmorer to -1 * iModArmorer
+			set iModAthletics to -1 * iModAthletics
+			set iModBlock to -1 * iModBlock
+			set iModBlade to -1 * iModBlade
+			set iModBlunt to -1 * iModBlunt
+			set iModHandToHand to -1 * iModHandToHand
+			set iModHeavyArmor to -1 * iModHeavyArmor
+			set iModAlchemy to -1 * iModAlchemy
+			set iModAlteration to -1 * iModAlteration
+			set iModConjuration to -1 * iModConjuration
+			set iModDestruction to -1 * iModDestruction
+			set iModIllusion to -1 * iModIllusion
+			set iModMysticism to -1 * iModMysticism
+			set iModRestoration to -1 * iModRestoration
+			set iModAcrobatics to -1 * iModAcrobatics
+			set iModLightArmor to -1 * iModLightArmor
+			set iModMarksman to -1 * iModMarksman
+			set iModMercantile to -1 * iModMercantile
+			set iModSecurity to -1 * iModSecurity
+			set iModSneak to -1 * iModSneak
+			set iModSpeechcraft to -1 * iModSpeechcraft
+			set iModResistFire to -1 * iModResistFire
+			set iModResistFrost to -1 * iModResistFrost
+			set iModResistDisease to -1 * iModResistDisease
+			set iModResistMagic to -1 * iModResistMagic
+			set iModResistNormalWeapons to -1 * iModResistNormalWeapons
+			set iModResistParalysis to -1 * iModResistParalysis
+			set iModResistPoison to -1 * iModResistPoison
+			set iModResistShock to -1 * iModResistShock
+			set iModMagickaMultiplier to -1 * iModMagickaMultiplier
+			set iModAttackBonus to -1 * iModAttackBonus
+			set iModDefendBonus to -1 * iModDefendBonus
+			set iModSpellAbsorbChance to -1 * iModSpellAbsorbChance
+			set iModReflectDamage to -1 * iModReflectDamage
+			set iModSpellReflectChance to -1 * iModSpellReflectChance
+				if iModWaterWalking == 1
+					set iModWaterWalking to 0
+				elseif iModWaterWalking == 0
+					set iModWaterWalking to 1
+				endif
+				if iModWaterBreathing == 1
+					set iModWaterBreathing to 0
+				elseif iModWaterBreathing == 0
+					set iModWaterBreathing to 1
+				endif
+				if iModStuntedMagicka == 1
+					set iModStuntedMagicka to 0
+				elseif iModStuntedMagicka == 0
+					set iModStuntedMagicka to 1
+				endif
+			Player.ModActorValue Armorer iModArmorer
+			Player.ModActorValue Athletics iModAthletics
+			Player.ModActorValue Block iModBlock
+			Player.ModActorValue Blade iModBlade
+			Player.ModActorValue Blunt iModBlunt
+			Player.ModActorValue HandToHand iModHandToHand
+			Player.ModActorValue HeavyArmor iModHeavyArmor
+			Player.ModActorValue Alchemy iModAlchemy
+			Player.ModActorValue Alteration iModAlteration
+			Player.ModActorValue Conjuration iModConjuration
+			Player.ModActorValue Destruction iModDestruction
+			Player.ModActorValue Illusion iModIllusion
+			Player.ModActorValue Mysticism iModMysticism
+			Player.ModActorValue Restoration iModRestoration
+			Player.ModActorValue Acrobatics iModAcrobatics
+			Player.ModActorValue LightArmor iModLightArmor
+			Player.ModActorValue Marksman iModMarksman
+			Player.ModActorValue Mercantile iModMercantile
+			Player.ModActorValue Security iModSecurity
+			Player.ModActorValue Sneak iModSneak
+			Player.ModActorValue Speechcraft iModSpeechcraft
+			Player.ModActorValue ResistFire iModResistFire
+			Player.ModActorValue ResistFrost iModResistFrost
+			Player.ModActorValue ResistDisease iModResistDisease
+			Player.ModActorValue ResistMagic iModResistMagic
+			Player.ModActorValue ResistNormalWeapons iModResistNormalWeapons
+			Player.ModActorValue ResistParalysis iModResistParalysis
+			Player.ModActorValue ResistPoison iModResistPoison
+			Player.ModActorValue ResistShock iModResistShock
+			Player.ModActorValue MagickaMultiplier iModMagickaMultiplier
+			Player.ModActorValue AttackBonus iModAttackBonus
+			Player.ModActorValue DefendBonus iModDefendBonus
+			Player.ModActorValue SpellAbsorbChance iModSpellAbsorbChance
+			Player.ModActorValue ReflectDamage iModReflectDamage
+			Player.ModActorValue SpellReflectChance iModSpellReflectChance
+			Player.SetActorValue WaterWalking iModWaterWalking
+			Player.SetActorValue WaterBreathing iModWaterBreathing
+			Player.SetActorValue StuntedMagicka iModStuntedMagicka
+		endif
+	endif
+
+
+end
+
+begin ScriptEffectFinish
+	set iModStrength to -1 * iModStrength
+	set iModIntelligence to -1 * iModIntelligence
+	set iModAgility to -1 * iModAgility
+	set iModWillpower to -1 * iModWillpower
+	set iModSpeed to -1 * iModSpeed
+	set iModEndurance to -1 * iModEndurance
+	set iModLuck to -1 * iModLuck
+	set iModHealth to -1 * iModHealth
+	set iModMagicka to -1 * iModMagicka
+	set iModFatigue to -1 * iModFatigue
+	set iModEncumbrance to -1 * iModEncumbrance
+	set iModArmorer to -1 * iModArmorer
+	set iModAthletics to -1 * iModAthletics
+	set iModBlock to -1 * iModBlock
+	set iModBlade to -1 * iModBlade
+	set iModBlunt to -1 * iModBlunt
+	set iModHandToHand to -1 * iModHandToHand
+	set iModHeavyArmor to -1 * iModHeavyArmor
+	set iModAlchemy to -1 * iModAlchemy
+	set iModAlteration to -1 * iModAlteration
+	set iModConjuration to -1 * iModConjuration
+	set iModDestruction to -1 * iModDestruction
+	set iModIllusion to -1 * iModIllusion
+	set iModMysticism to -1 * iModMysticism
+	set iModRestoration to -1 * iModRestoration
+	set iModAcrobatics to -1 * iModAcrobatics
+	set iModLightArmor to -1 * iModLightArmor
+	set iModMarksman to -1 * iModMarksman
+	set iModMercantile to -1 * iModMercantile
+	set iModSecurity to -1 * iModSecurity
+	set iModSneak to -1 * iModSneak
+	set iModSpeechcraft to -1 * iModSpeechcraft
+	set iModResistFire to -1 * iModResistFire
+	set iModResistFrost to -1 * iModResistFrost
+	set iModResistDisease to -1 * iModResistDisease
+	set iModResistMagic to -1 * iModResistMagic
+	set iModResistNormalWeapons to -1 * iModResistNormalWeapons
+	set iModResistParalysis to -1 * iModResistParalysis
+	set iModResistPoison to -1 * iModResistPoison
+	set iModResistShock to -1 * iModResistShock
+	set iModMagickaMultiplier to -1 * iModMagickaMultiplier
+	set iModAttackBonus to -1 * iModAttackBonus
+	set iModDefendBonus to -1 * iModDefendBonus
+	set iModSpellAbsorbChance to -1 * iModSpellAbsorbChance
+	set iModReflectDamage to -1 * iModReflectDamage
+	set iModSpellReflectChance to -1 * iModSpellReflectChance
+		if iModWaterWalking == 1
+			set iModWaterWalking to 0
+		elseif iModWaterWalking == 0
+			set iModWaterWalking to 1
+		endif
+		if iModWaterBreathing == 1
+			set iModWaterBreathing to 0
+		elseif iModWaterBreathing == 0
+			set iModWaterBreathing to 1
+		endif
+		if iModStuntedMagicka == 1
+			set iModStuntedMagicka to 0
+		elseif iModStuntedMagicka == 0
+			set iModStuntedMagicka to 1
+		endif
+	Player.ModActorValue Armorer iModArmorer
+	Player.ModActorValue Athletics iModAthletics
+	Player.ModActorValue Block iModBlock
+	Player.ModActorValue Blade iModBlade
+	Player.ModActorValue Blunt iModBlunt
+	Player.ModActorValue HandToHand iModHandToHand
+	Player.ModActorValue HeavyArmor iModHeavyArmor
+	Player.ModActorValue Alchemy iModAlchemy
+	Player.ModActorValue Alteration iModAlteration
+	Player.ModActorValue Conjuration iModConjuration
+	Player.ModActorValue Destruction iModDestruction
+	Player.ModActorValue Illusion iModIllusion
+	Player.ModActorValue Mysticism iModMysticism
+	Player.ModActorValue Restoration iModRestoration
+	Player.ModActorValue Acrobatics iModAcrobatics
+	Player.ModActorValue LightArmor iModLightArmor
+	Player.ModActorValue Marksman iModMarksman
+	Player.ModActorValue Mercantile iModMercantile
+	Player.ModActorValue Security iModSecurity
+	Player.ModActorValue Sneak iModSneak
+	Player.ModActorValue Speechcraft iModSpeechcraft
+	Player.ModActorValue ResistFire iModResistFire
+	Player.ModActorValue ResistFrost iModResistFrost
+	Player.ModActorValue ResistDisease iModResistDisease
+	Player.ModActorValue ResistMagic iModResistMagic
+	Player.ModActorValue ResistNormalWeapons iModResistNormalWeapons
+	Player.ModActorValue ResistParalysis iModResistParalysis
+	Player.ModActorValue ResistPoison iModResistPoison
+	Player.ModActorValue ResistShock iModResistShock
+	Player.ModActorValue MagickaMultiplier iModMagickaMultiplier
+	Player.ModActorValue AttackBonus iModAttackBonus
+	Player.ModActorValue DefendBonus iModDefendBonus
+	Player.ModActorValue SpellAbsorbChance iModSpellAbsorbChance
+	Player.ModActorValue ReflectDamage iModReflectDamage
+	Player.ModActorValue SpellReflectChance iModSpellReflectChance
+	Player.SetActorValue WaterWalking iModWaterWalking
+	Player.SetActorValue WaterBreathing iModWaterBreathing
+	Player.SetActorValue StuntedMagicka iModStuntedMagicka
+end

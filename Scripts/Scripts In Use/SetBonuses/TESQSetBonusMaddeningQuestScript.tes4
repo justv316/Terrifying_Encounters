@@ -6,6 +6,7 @@ short iMaddeningBonusAdded
 
 begin GameMode
 	set fQuestDelayTime to 1
+	;set TEbMaddeningSetBonus to Player.IsSpellTarget TEAbEquipMaddeningSetBonus4 || Player.IsSpellTarget TEAbEquipMaddeningSetBonus5 || Player.IsSpellTarget TEAbEquipMaddeningSetBonus6
 	if TEiSetMaddeningEquip < 4
 		Player.RemoveSpell TEAbEquipMaddeningSetBonus4
 		Player.RemoveSpell TEAbEquipMaddeningSetBonus5
@@ -51,4 +52,5 @@ begin GameMode
 			set iMaddeningBonusAdded to 6
 		endif
 	endif
+
 end

@@ -1,0 +1,87 @@
+scn TESMSetBonusMaddening5EffectScript
+
+short bBonusAdded
+short bCombatMod
+short bMagickaMultiplierMod
+
+begin ScriptEffectStart
+	if bBonusAdded == 0
+		;Specialization
+		Player.ModActorValue Destruction 25
+		Player.ModActorValue Conjuration 25
+		Player.ModActorValue Illusion 25
+		Player.ModActorValue Mysticism 25
+		Player.ModActorValue Restoration 25
+		Player.ModActorValue Alteration 25
+		if bMagickaMultiplierMod == 0
+			if Player.GetActorValue MagickaMultiplier == 0
+				Player.SetActorValue MagickaMultiplier 10
+			endif
+			Player.ModActorValue MagickaMultiplier 1
+			set bMagickaMultiplierMod to 1
+		endif
+		Player.ModActorValue HeavyArmor 25
+		Player.ModActorValue LightArmor 25
+		Player.ModActorValue Blade 25
+		Player.ModActorValue Blunt 25
+		Player.ModActorValue Block 25
+		Player.ModActorValue HandToHand 25
+		Player.ModActorValue Marksman 25
+		Player.ModActorValue AttackBonus 10
+		;HeavyArmor Inherent
+		Player.ModActorValue DefendBonus 10
+		Player.ModActorValue ResistFire 35
+		Player.ModActorValue ResistFrost 35
+		Player.ModActorValue ResistShock 35
+		;LightArmor Inherent
+		Player.ModActorValue Sneak 25
+		Player.ModActorValue Security 25
+		Player.ModActorValue Speechcraft 25
+		set bBonusAdded to 1
+	endif
+end
+
+begin ScriptEffectUpdate
+	if Player.IsInCombat == 1 && bCombatMod == 0 
+		Player.ModActorValue Speed 15
+		set bCombatMod to 1
+	endif
+	if Player.IsInCombat == 0 && bCombatMod == 1
+		Player.ModActorValue Speed -15
+		set bCombatMod to 0
+	endif
+end
+
+begin ScriptEffectFinish
+	if bBonusAdded == 1
+		;Specialization
+		Player.ModActorValue Destruction -25
+		Player.ModActorValue Conjuration -25
+		Player.ModActorValue Illusion -25
+		Player.ModActorValue Mysticism -25
+		Player.ModActorValue Restoration -25
+		Player.ModActorValue Alteration -25
+		if bMagickaMultiplierMod == 1
+			Player.ModActorValue MagickaMultiplier -1
+			Set bMagickaMultiplierMod to 0
+		endif
+		Player.ModActorValue HeavyArmor -25
+		Player.ModActorValue LightArmor -25
+		Player.ModActorValue Blade -25
+		Player.ModActorValue Blunt -25
+		Player.ModActorValue Block -25
+		Player.ModActorValue HandToHand -25
+		Player.ModActorValue Marksman -25
+		Player.ModActorValue AttackBonus -10
+		;HeavyArmor Inherent
+		Player.ModActorValue DefendBonus -10
+		Player.ModActorValue ResistFire -25
+		Player.ModActorValue ResistFrost -25
+		Player.ModActorValue ResistShock -25
+		;LightArmor Inherent
+		Player.ModActorValue Sneak -25
+		Player.ModActorValue Security -25
+		Player.ModActorValue Speechcraft -25
+		set bBonusAdded to 0
+	endif
+end
