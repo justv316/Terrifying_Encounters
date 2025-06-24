@@ -20,7 +20,7 @@
 | effectRally | 000C793D | Actor | Same as Charm |
 | effectSilence | 000C793E | Actor | Same as Charm |
 | effectFrenzy | 000C793F | Actor | ![Frenzy Effect](/image/Frenzy.png "Frenzy Effect") | 
-| effectTurnUndead | 000C7940 |  ![Turn Undead Effect](/image/Turnundead.png "Turn Undead Effect") | 
+| effectTurnUndead | 000C7940 | Actor | ![Turn Undead Effect](/image/Turnundead.png "Turn Undead Effect") | 
 | effectBurden | 000C7942 | Actor | ![Burden Effect](/image/Burden.png "Burden Effect") | 
 | effectSoulTrap | 0014A0A2 | Actor | ![Soul Trap Effect](/image/SoulTrap.png "Soul Trap Effect") | 
 | effectSunDamage | 0017C9D6 | Actor | ![SunDamage Effect](/image/Sundamage.png "SunDamage Effect") |  
