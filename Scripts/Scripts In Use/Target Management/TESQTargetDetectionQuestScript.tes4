@@ -122,7 +122,7 @@ set fQuestDelayTime to 0.05
 					set bRef1Debuff to 1
 				endif
 			elseif bRef1Debuff
-				if Player.GetDistance rRef1 > 750 || rRef1.GetCombatTarget != Player
+				if Player.GetDistance rRef1 > 750 || rRef1.GetCombatTarget != Player || rRef1.IsInCombat == 0
 					set bRef1Debuff to 0
 					set rRef1 to 0
 					TEDispelRef.MoveTo rRef1
@@ -182,7 +182,7 @@ set fQuestDelayTime to 0.05
 					set bRef1Debuff to 1
 				endif
 			elseif bRef2Debuff
-				if Player.GetDistance rRef2 > 750 rRef2.GetCombatTarget != Player
+				if Player.GetDistance rRef2 > 750 rRef2.GetCombatTarget != Player || rRef2.IsInCombat == 0
 					set bRef2Debuff to 0
 					set rRef2 to 0
 					TEDispelRef.MoveTo rRef2
@@ -242,7 +242,7 @@ set fQuestDelayTime to 0.05
 					set bRef1Debuff to 1
 				endif
 			elseif bRef3Debuff
-				if Player.GetDistance rRef3 > 750 || rRef3.GetCombatTarget != Player
+				if Player.GetDistance rRef3 > 750 || rRef3.GetCombatTarget != Player || rRef3.IsInCombat == 0
 					set bRef3Debuff to 0
 					set rRef3 to 0
 					TEDispelRef.MoveTo rRef3

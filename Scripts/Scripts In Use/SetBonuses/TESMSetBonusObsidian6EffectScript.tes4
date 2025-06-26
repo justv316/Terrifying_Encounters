@@ -37,16 +37,19 @@ begin ScriptEffectStart
 		Player.ModActorValue DefendBonus 10
 		set bBonusAdded to 1
 		set TEbAuraObsidian to 1
+		PlayMagicShaderVisuals 0008B99F
 	endif
 end
 
 begin ScriptEffectUpdate
 	if Player.IsInCombat == 1 && bCombatMod == 0 
 		Player.ModActorValue Speed -20
+		Player.AddSpell TEAbAuraObsidianCombatRegen
 		set bCombatMod to 1
 	endif
 	if Player.IsInCombat == 0 && bCombatMod == 1
 		Player.ModActorValue Speed 20
+		Player.RemoveSpell TEAbAuraObsidianCombatRegen
 		set bCombatMod to 0
 	endif
 end
@@ -81,5 +84,6 @@ begin ScriptEffectFinish
 		Player.ModActorValue DefendBonus -10
 		set bBonusAdded to 0
 		set TEbAuraObsidian to 0
+		StopMagicShaderVisuals 0008B99F
 	endif
 end

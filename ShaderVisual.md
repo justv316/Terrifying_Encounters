@@ -1,7 +1,8 @@
 # Player.PlayMagicShaderVisuals
 
-## Persistant Working
-### Removeable via StopMagicShaderVisuals
+* Persistent
+	* Removeable via StopMagicShaderVisuals
+	* Note about Flame of Agnon : Removable but transparency does not remove until Reload/ReEquip
 | EditorID | FormID | Affected | Visual |
 |---|---|---|---|
 | SE10DeadWarriorShader | 0001AD77 | Actor | ![Solid Gold](/image/GoldWarrior.png "Gold Effect") | 
@@ -35,9 +36,7 @@
 | effectEnchantFrostDamage | 00061514 | Weapon | ![Frost Enchant](/image/FrostWeapon.png "Frost Enchant") |
 | effectEnchantShockDamage | 0018B57A | Weapon | ![Shock Enchant](/image/ShockWeapon.png "Shock Enchant") |
 
-* Note about Flame of Agnon : Removable but transparency does not remove until Reload/ReEquip
-
-## Non-Persistent Working
+* Non-Persistent
 | EditorID | FormID | Affected Body | Duration | Removable |
 |---|---|---|---|---|
 | effectShield | 00177E4F | Actor | Shield | >1s Duration | 
@@ -55,7 +54,10 @@
 | effectReflectDamage | 0000CEBD | Actor | Reflect Damage | >1s Duration | 
 | effectResistNormalWeapons | 00062D0C |  Both | ResistNormalWeapons | >1s Duration on Actor, Persistant on Weapon | Removeable 
 
-## Not Working
+<details>
+<Summary>Not Working/Glitched</Summary>
+
+* Not Working
 | EditorID | FormID |
 |---|---|
 | effectAbsorb | 00000144 |
@@ -102,7 +104,7 @@
 | creatureEffectWraithGreater | 000CBF14 |
 | effectAtronachStorm | 000E6ECE |
 
-## Glitched
+* Glitched
 | EditorID | FormID | Result | Removeable |
 |---|---|---|---|
 | GhostEffect | 000B9923 | Invisible | Unable (Invisble weapon on reload until full quit) |
@@ -120,3 +122,5 @@
 | effectTG11Stone | 00014F3B | Invisible | Unable (Invisble weapon on reload until full quit) | 
 | SE11bCloneShader | 000171A5 | Invisible | Unable (Invisble weapon on reload until full quit) |
 | TestJoelShady | 00019D2C | Invisible | Unable (Invisble weapon on reload until full quit) |
+
+</details>

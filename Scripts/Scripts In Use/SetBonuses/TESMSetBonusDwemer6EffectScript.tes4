@@ -37,6 +37,7 @@ begin ScriptEffectStart
 		Player.ModActorValue DefendBonus 25
 		set bBonusAdded to 1
 		set TEbAuraDwemer to 1
+		PlayMagicShaderVisuals 000C7940
 	endif
 end
 
@@ -81,5 +82,6 @@ begin ScriptEffectFinish
 		Player.ModActorValue DefendBonus -25
 		set bBonusAdded to 0
 		set TEbAuraDwemer to 0
+		StopMagicShaderVisuals 000C7940
 	endif
 end

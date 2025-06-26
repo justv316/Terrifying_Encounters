@@ -10,6 +10,5 @@ begin GameMode
 		TECasterRef.MoveTo Player
 		TECasterRef.Cast TESpTargetDetection Player
 		Player.Dispel TESpTargetDetection
-		Message "Debug - Target Detection Is running as it should"
 	endif
 end
