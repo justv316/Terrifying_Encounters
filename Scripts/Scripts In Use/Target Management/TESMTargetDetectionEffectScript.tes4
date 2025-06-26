@@ -26,6 +26,20 @@ begin ScriptEffectUpdate
 						set bMustWait to 1
 					endif
 				endif
+			elseif Player.GetDistance rSelf <= 750 && rSelf.IsActorEvil == 0
+				if rSelf.IsSpellTarget TESpTargetDetected == 0
+					if rSelf.IsSpellTarget TESpAllyDetected == 0
+						if TEQQAllyDetectionQuest.rIncomingRef == 0
+							set TEQQAllyDetectionQuest.rIncomingRef to rSelf
+						else
+							set bMustWait to 1
+						endif
+					endif
+				else
+					TEDispelRef.MoveTo rSelf
+					TEDispelRef.Cast TESpAuraDispelDebuff rSelf
+					set bMustWait to 1
+				endif
 			endif
 		endif
 	endif
