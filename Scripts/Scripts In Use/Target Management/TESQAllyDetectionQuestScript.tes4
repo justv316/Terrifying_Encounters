@@ -96,6 +96,11 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraMaddeningBuff rRef1
 					set bRef1Buff to 1
 				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef1
+					TEAuraRef.Cast TESpAuraMalachiteBuff rRef1
+					set bRef1Buff to 1
+				endif
 			elseif bRef1Buff
 				if Player.GetDistance rRef1 > 750
 					set bRef1Buff to 0
@@ -129,6 +134,11 @@ set fQuestDelayTime to 0.05
 				if TEbAuraMaddening == 1
 					TEAuraRef.MoveTo rRef2
 					TEAuraRef.Cast TESpAuraMaddeningBuff rRef2
+					set bRef2Buff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef2
+					TEAuraRef.Cast TESpAuraMalachiteBuff rRef2
 					set bRef2Buff to 1
 				endif
 			elseif bRef2Buff
@@ -166,6 +176,11 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraMaddeningBuff rRef3
 					set bRef3Buff to 1
 				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef3
+					TEAuraRef.Cast TESpAuraMalachiteBuff rRef3
+					set bRef3Buff to 1
+				endif
 			elseif bRef3Buff
 				if Player.GetDistance rRef3 > 750
 					set bRef3Buff to 0
@@ -199,6 +214,11 @@ set fQuestDelayTime to 0.05
 				if TEbAuraMaddening == 1
 					TEAuraRef.MoveTo rRef4
 					TEAuraRef.Cast TESpAuraMaddeningBuff rRef4
+					set bRef4Buff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef4
+					TEAuraRef.Cast TESpAuraMalachiteBuff rRef4
 					set bRef4Buff to 1
 				endif
 			elseif bRef4Buff
@@ -236,6 +256,11 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraMaddeningBuff rRef5
 					set bRef5Buff to 1
 				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef5
+					TEAuraRef.Cast TESpAuraMalachiteBuff rRef5
+					set bRef5Buff to 1
+				endif
 			elseif bRef5Buff
 				if Player.GetDistance rRef5 > 750
 					set bRef5Buff to 0
@@ -269,6 +294,11 @@ set fQuestDelayTime to 0.05
 				if TEbAuraMaddening == 1
 					TEAuraRef.MoveTo rRef6
 					TEAuraRef.Cast TESpAuraMaddeningBuff rRef6
+					set bRef6Buff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef6
+					TEAuraRef.Cast TESpAuraMalachiteBuff rRef6
 					set bRef6Buff to 1
 				endif
 			elseif bRef6Buff
@@ -306,6 +336,11 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraMaddeningBuff rRef7
 					set bRef7Buff to 1
 				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef7
+					TEAuraRef.Cast TESpAuraMalachiteBuff rRef7
+					set bRef7Buff to 1
+				endif
 			elseif bRef7Buff
 				if Player.GetDistance rRef7 > 750
 					set bRef7Buff to 0
@@ -339,6 +374,11 @@ set fQuestDelayTime to 0.05
 				if TEbAuraMaddening == 1
 					TEAuraRef.MoveTo rRef8
 					TEAuraRef.Cast TESpAuraMaddeningBuff rRef8
+					set bRef8Buff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef8
+					TEAuraRef.Cast TESpAuraMalachiteBuff rRef8
 					set bRef8Buff to 1
 				endif
 			elseif bRef8Buff
@@ -377,6 +417,11 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraMaddeningBuff rRef9
 					set bRef9Buff to 1
 				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef9
+					TEAuraRef.Cast TESpAuraMalachiteBuff rRef9
+					set bRef9Buff to 1
+				endif
 			elseif bRef9Buff
 				if Player.GetDistance rRef9 > 750
 					set bRef9Buff to 0
@@ -411,6 +456,11 @@ set fQuestDelayTime to 0.05
 				if TEbAuraMaddening == 1
 					TEAuraRef.MoveTo rRef10
 					TEAuraRef.Cast TESpAuraMaddeningBuff rRef10
+					set bRef10Buff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef10
+					TEAuraRef.Cast TESpAuraMalachiteBuff rRef10
 					set bRef10Buff to 1
 				endif
 			elseif bRef10Buff
@@ -448,6 +498,11 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraMaddeningBuff rRef11
 					set bRef11Buff to 1
 				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef11
+					TEAuraRef.Cast TESpAuraMalachiteBuff rRef11
+					set bRef11Buff to 1
+				endif
 			elseif bRef11Buff
 				if Player.GetDistance rRef11 > 750
 					set bRef11Buff to 0
@@ -483,6 +538,11 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraMaddeningBuff rRef12
 					set bRef12Buff to 1
 				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef12
+					TEAuraRef.Cast TESpAuraMalachiteBuff rRef12
+					set bRef12Buff to 1
+				endif
 			elseif bRef12Buff
 				if Player.GetDistance rRef12 > 750
 					set bRef12Buff to 0
@@ -516,6 +576,11 @@ set fQuestDelayTime to 0.05
 				if TEbAuraMaddening == 1
 					TEAuraRef.MoveTo rRef13
 					TEAuraRef.Cast TESpAuraMaddeningBuff rRef13
+					set bRef13Buff to 1
+				endif
+				if TEbAuraMalachite == 1
+					TEAuraRef.MoveTo rRef13
+					TEAuraRef.Cast TESpAuraMalachiteBuff rRef13
 					set bRef13Buff to 1
 				endif
 			elseif bRef13Buff

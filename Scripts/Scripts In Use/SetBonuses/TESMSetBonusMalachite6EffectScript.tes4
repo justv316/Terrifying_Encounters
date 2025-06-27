@@ -32,6 +32,8 @@ begin ScriptEffectStart
 		Player.ModActorValue ResistFire 15
 		Player.ModActorValue ResistFrost 15
 		Player.ModActorValue ResistShock 15
+		Player.ModActorValue ResistNormalWeapons 33
+		Player.ModActorValue ReflectDamage 33
 		Player.ModActorValue Sneak 25
 		Player.ModActorValue Security 25
 		Player.ModActorValue Speechcraft 25
@@ -76,6 +78,8 @@ begin ScriptEffectFinish
 		Player.ModActorValue ResistFire -15
 		Player.ModActorValue ResistFrost -15
 		Player.ModActorValue ResistShock -15
+		Player.ModActorValue ResistNormalWeapons -33
+		Player.ModActorValue ReflectDamage -33
 		Player.ModActorValue Sneak -25
 		Player.ModActorValue Security -25
 		Player.ModActorValue Speechcraft -25

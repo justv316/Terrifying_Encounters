@@ -1,0 +1,28 @@
+scn TESMAuraResiniteManiaEffectScript
+
+short bBonusAdded
+
+begin ScriptEffectStart
+	set bBonusAdded to 0
+	if bBonusAdded == 0
+		Player.ModActorValue Mercantile 25
+		Player.ModActorValue SpeechCraft 25
+		Player.ModActorValue Personality 25
+		Player.ModActorValue Luck 10
+		Player.ModActorValue Acrobatics 25
+		Player.ModActorValue Athletics 25
+		set bBonusAdded to 1
+	endif
+end
+
+begin ScriptEffectFinish
+	if bBonusAdded == 1
+		Player.ModActorValue Mercantile -25
+		Player.ModActorValue SpeechCraft -25
+		Player.ModActorValue Personality -25
+		Player.ModActorValue Luck -10
+		Player.ModActorValue Acrobatics -25
+		Player.ModActorValue Athletics -25
+		set bBonusadded to 0
+	endif
+end

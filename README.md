@@ -289,19 +289,20 @@
 
 * Scripted Matching Set Bonuses for all 8 upscaled sets of armor/weapons
 * 6/6 Matching Set Bonus applies an Aura to the player
-	1. Cursed Aura - Applies Cripple to nearby enemies, inhibiting their movement speed and applying Weakness to Normal Weapons and Fire. 
+	1. Cursed Aura - Inhibits nearby enemies movement speed and applying Weakness to Normal Weapons and Fire. 
 		1. Immolation - Burns nearby enemies for Fire Damage / Second
-	2. Dwemer Aura - Applies Blight to nearby enemies, illuminating them while applying Weakness to Magic.
+	2. Dwemer Aura - Illuminates nearby enemies ans applies Weakness to Magic.
 		1. Enlightenment - Applies light to the player; Increases magicka regen and armor of self and allies.
-	3. Obsidian Aura - Applies Debilitating Poison to nearby enemies, applying Weakness to Poison and draining attributes.
+	3. Obsidian Aura - Applies Weakness to Poison and draining attributes of nearby enemies.
 		1. Siphoning - Absorbs health/magicka/fatigue from nearby enemies. 
-	4. Ayleidic Aura - Applies Aedric Suffering to nearby enemies, draining attributes, skills, and vitals.
+	4. Ayleidic Aura - Drains the attributes of nearby enemies.
 		1. Prismatic Cloak - Applies a cloak to the player, dealing cycling elemental damage to nearby enemies. 
-	5. Malachite Aura - Applies Elvish Sickness to nearby enemies, applying Weakness to the Elements and Normal Weapons
-		1. Shards - Enemies who hit the player take damage and incur a bleeding debuff. 
-	6. Mythril Aura - Gives the player chameleon while sneaking and improves the effectiveness of sneak attacks. 
-		1. Aclarity - Increases movement and attack speed of self and nearby allies.  
-	7. Resinite Aura - Applies Sticky Icky to nearby enemies, inhibiting movement speed and combat ability of nearby enemies. 
+	5. Malachite Aura - Applies Weakness to the Elements and Normal Weapons to nearby enemies. 
+		1. Elvish Secrets - Improves Normal Weapon Resistance and applies Damage Reflection to self and allies.
+	6. Mythril Aura - Gives the player chameleon and improves attack damage while sneaking. 
+		1. Aclarity - Increases movement speed of self and nearby allies.  
+		2. [Need OBSE/UE4SS] Increase attack speed and improve effectiveness of sneak attacks. (Currently I am just increasing the players AttackBonus while sneaking)
+	7. Resinite Aura - Inhibits movement speed and combat ability of nearby enemies. 
 		1. Demented/Manic - Cycles buffs on the player based on day/night.
 	8. Maddening Aura - Randomly applies buffs to the player and nearby allies and debuffs to nearby enemies.
 

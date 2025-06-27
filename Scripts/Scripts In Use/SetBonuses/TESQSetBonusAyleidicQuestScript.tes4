@@ -42,6 +42,8 @@ begin GameMode
 		if iAyleidicBonusAdded == 0
 			Player.AddSpell TEAbEquipAyleidicSetBonus6
 			set iAyleidicBonusAdded to 6
+			set fTimer to 90
+			Player.PlayMagicShaderVisuals 00185DFE
 		elseif iAyleidicBonusAdded == 4
 			Player.RemoveSpell TEAbEquipAyleidicSetBonus4
 			Player.AddSpell TEAbEquipAyleidicSetBonus6
@@ -51,26 +53,25 @@ begin GameMode
 			Player.AddSpell TEAbEquipAyleidicSetBonus6
 			set iAyleidicBonusAdded to 6
 		endif
-	
-		Message "Fire Aura Applied"
-		set fTimer to 15
-		if fTimer > 0
-			set fTimer to fTimer - ScriptEffectElapsedSeconds
-		elseif fTimer == 0 && TEbAuraAyleidic == 1
-			set TEbAuraAyleidicShock to 1
+	endif
+	if fTimer > 0
+		set fTimer to fTimer - GetSecondsPassed
+	else
+		if TEbAuraAyleidic == 1
+		set TEbAuraAyleidicShock to 1
 			set TEbAuraAyleidic to 0
-			set fTimer to 15
-			Message "Shock Aura Applied"
-		elseif fTimer == 0 && TEbAuraAyleidicShock == 1
+			set fTimer to 90
+			Player.PlayMagicShaderVisuals 00185E00
+		elseif TEbAuraAyleidicShock == 1
 			set TEbAuraAyleidicFrost to 1
 			set TEbAuraAyleidicShock to 0
-			set fTimer to 15
-			Message "Frost Aura Applied"
-		elseif fTimer == 0 && TEbAuraAyleidicFrost == 1
+			set fTimer to 90
+			Player.PlayMagicShaderVisuals 00185DFF
+		elseif TEbAuraAyleidicFrost == 1
 			set TEbAuraAyleidic to 1
 			set TEbAuraAyleidicFrost to 0
-			set fTimer to 15
-			Message "Fire Aura Applied"
+			set fTimer to 90
+			Player.PlayMagicShaderVisuals 00185DFE
 		endif
 	endif
 end

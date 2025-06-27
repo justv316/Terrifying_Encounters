@@ -2,6 +2,7 @@ scn TESMSetBonusMythrilSilvrite6EffectScript
 
 short bBonusAdded
 short bCombatMod
+short bSneakMod
 short bMagickaMultiplierMod
 
 begin ScriptEffectStart
@@ -48,6 +49,17 @@ begin ScriptEffectUpdate
 	if Player.IsInCombat == 0 && bCombatMod == 1
 		Player.ModActorValue Speed -40
 		set bCombatMod to 0
+	endif
+	if Player.IsSneaking == 1 && bSneakMod == 0
+		TECasterRef4.MoveTo Player
+		TECasterRef4.Cast TESpAuraMythrilChameleon Player
+		Player.ModActorValue AttackBonus 30
+		set bSneakMod to 1
+	endif
+	if Player.IsSneaking == 0 && bSneakMod == 1
+		Player.Dispel TESpAuraMythrilChameleon
+		Player.ModActorValue AttackBonus -30
+		set bSneakMod to 0
 	endif
 end
 

@@ -2,6 +2,11 @@ scn TESQSetBonusResiniteQuestScript
 
 float fQuestDelayTime
 short iResiniteBonusAdded
+short bTimeMod
+short bDementia
+short bMania
+short bDemented
+short bManic
 
 
 begin GameMode
@@ -50,5 +55,29 @@ begin GameMode
 			Player.AddSpell TEAbEquipResiniteSetBonus6
 			set iResiniteBonusAdded to 6
 		endif
+	endif
+	
+	set bDementia to TEbNightTime == 1 && bTimeMod == 0 && TEiSetResiniteEquip >= 6
+	set bMania to TEbDayTime == 1 && bTimeMod == 0 && TEiSetResiniteEquip >= 6
+	set bManic to Player.IsSpellTarget TEAbAuraResiniteMania
+	set bDemented to Player.IsSpellTarget TEAbAuraResiniteDementia
+	
+	if TEbDayTime == 1 && bDemented == 1
+		Player.RemoveSpell TEAbAuraResiniteDementia
+		set bTimeMod to 0
+	endif
+	if TEbNightTime == 1 && bManic == 1
+		Player.RemoveSpell TEAbAuraResiniteMania
+		set bTimeMod to 0
+	endif
+	if bMania == 1
+		Player.AddSpell TEAbAuraResiniteMania
+		Message "You feel Manic"
+		set bTimeMod to 1
+	endif
+	if bDementia == 1
+		Player.AddSpell TEAbAuraResiniteDementia
+		Message "You feel Demented"
+		set bTimeMod to 1
 	endif
 end

@@ -1,4 +1,4 @@
-scn TESMAuraCursedDebuffEffectScript
+scn TESMAuraMalachiteDebuffEffectScript
 
 short bBonusAdded
 ref rSelf
@@ -7,18 +7,20 @@ begin ScriptEffectStart
 	set bBonusAdded to 0
 	set rSelf to GetSelf
 	if bBonusAdded == 0
-		rSelf.ModActorValue Speed -50
 		rSelf.ModActorValue ResistNormalWeapons -50
 		rSelf.ModActorValue ResistFire -50
+		rSelf.ModActorValue ResistFrost -50
+		rSelf.ModActorValue ResistShock -50
 		set bBonusAdded to 1
 	endif
 end
 
 begin ScriptEffectFinish
 	if bBonusAdded == 1
-		rSelf.ModActorValue Speed 50
 		rSelf.ModActorValue ResistNormalWeapons 50
 		rSelf.ModActorValue ResistFire 50
+		rSelf.ModActorValue ResistFrost 50
+		rSelf.ModActorValue ResistShock 50
 		set bBonusadded to 0
 	endif
 end
