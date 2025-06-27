@@ -38,22 +38,23 @@
 | effectEnchantShockDamage | 0018B57A | Weapon | ![Shock Enchant](/image/ShockWeapon.png "Shock Enchant") |
 
 * Non-Persistent
-| EditorID | FormID | Affected Body | Duration | Removable |
-|---|---|---|---|---|
-| effectShield | 00177E4F | Actor | Shield | >1s Duration | 
-| SE10BrellachChimeEffect | 000948BC | Actor | BrellachChime | >1s Duration | 
-| effectOpen | 0009DE81 | Actor | Open | >1s Duration | 
-| effectDisintegrateArmor | 000AA439 | Actor | DisintegrateArmor | >1s Duration | 
-| effectFireShield | 00185DFE | Actor | Fire Shield | >1s Duration | 
-| effectFrostShield | 00185DFF | Actor | Fire Shield | >1s Duration | 
-| effectShockShield | 00185E00 | Actor | Fire Shield | >1s Duration | 
-| effectReflectSpell | 0008B918 | Actor | Reflect Spell | >1s Duration | 
-| effectSpellAbsorption | 0008B91A | Actor | Spell Absorb | >1s Duration | 
-| effectRestoreHealth | 000562C3 | Actor | Restore Health | >1s Duration |  
-| effectParalyze | 000562C4 | Actor | Paralyze | >1s Duration |  
-| effectRestore | 000562C9 | Actor | Restore | >1s Duration |  
-| effectReflectDamage | 0000CEBD | Actor | Reflect Damage | >1s Duration | 
-| effectResistNormalWeapons | 00062D0C |  Both | ResistNormalWeapons | >1s Duration on Actor, Persistant on Weapon |
+
+| EditorID | FormID | Affected Body | 
+|---|---|---|
+| effectShield | 00177E4F | Actor |
+| SE10BrellachChimeEffect | 000948BC | Actor | 
+| effectOpen | 0009DE81 | Actor | 
+| effectDisintegrateArmor | 000AA439 | Actor | 
+| effectFireShield | 00185DFE | Actor | 
+| effectFrostShield | 00185DFF | Actor |
+| effectShockShield | 00185E00 | Actor | 
+| effectReflectSpell | 0008B918 | Actor | 
+| effectSpellAbsorption | 0008B91A | Actor | 
+| effectRestoreHealth | 000562C3 | Actor | 
+| effectParalyze | 000562C4 | Actor |  
+| effectRestore | 000562C9 | Actor |   
+| effectReflectDamage | 0000CEBD | Actor |  
+| effectResistNormalWeapons | 00062D0C |  Both |
 
 <details>
 <Summary>Not Working/Glitched</Summary>
