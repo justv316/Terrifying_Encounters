@@ -101,6 +101,16 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef1
 					set bRef1Debuff to 1
 				endif
+				if TEbAuraAyleidicShock == 1
+					TEAuraRef.MoveTo rRef1
+					TEAuraRef.Cast TESpAuraAyleidicDebuffShock rRef1
+					set bRef1Debuff to 1
+				endif
+				if TEbAuraAyleidicFrost == 1
+					TEAuraRef.MoveTo rRef1
+					TEAuraRef.Cast TESpAuraAyleidicDebuffFrost rRef1
+					set bRef1Debuff to 1
+				endif
 				if TEbAuraMalachite == 1
 					TEAuraRef.MoveTo rRef1
 					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef1
@@ -159,6 +169,16 @@ set fQuestDelayTime to 0.05
 				if TEbAuraAyleidic == 1
 					TEAuraRef.MoveTo rRef2
 					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef2
+					set bRef2Debuff to 1
+				endif
+				if TEbAuraAyleidicShock == 1
+					TEAuraRef.MoveTo rRef2
+					TEAuraRef.Cast TESpAuraAyleidicDebuffShock rRef2
+					set bRef2Debuff to 1
+				endif
+				if TEbAuraAyleidicFrost == 1
+					TEAuraRef.MoveTo rRef2
+					TEAuraRef.Cast TESpAuraAyleidicDebuffFrost rRef2
 					set bRef2Debuff to 1
 				endif
 				if TEbAuraMalachite == 1
@@ -221,6 +241,16 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef3
 					set bRef3Debuff to 1
 				endif
+				if TEbAuraAyleidicShock == 1
+					TEAuraRef.MoveTo rRef3
+					TEAuraRef.Cast TESpAuraAyleidicDebuffShock rRef3
+					set bRef3Debuff to 1
+				endif
+				if TEbAuraAyleidicFrost == 1
+					TEAuraRef.MoveTo rRef3
+					TEAuraRef.Cast TESpAuraAyleidicDebuffFrost rRef3
+					set bRef3Debuff to 1
+				endif
 				if TEbAuraMalachite == 1
 					TEAuraRef.MoveTo rRef3
 					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef3
@@ -279,6 +309,16 @@ set fQuestDelayTime to 0.05
 				if TEbAuraAyleidic == 1
 					TEAuraRef.MoveTo rRef4
 					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef4
+					set bRef4Debuff to 1
+				endif
+				if TEbAuraAyleidicShock == 1
+					TEAuraRef.MoveTo rRef4
+					TEAuraRef.Cast TESpAuraAyleidicDebuffShock rRef4
+					set bRef4Debuff to 1
+				endif
+				if TEbAuraAyleidicFrost == 1
+					TEAuraRef.MoveTo rRef4
+					TEAuraRef.Cast TESpAuraAyleidicDebuffFrost rRef4
 					set bRef4Debuff to 1
 				endif
 				if TEbAuraMalachite == 1
@@ -341,6 +381,16 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef5
 					set bRef5Debuff to 1
 				endif
+				if TEbAuraAyleidicShock == 1
+					TEAuraRef.MoveTo rRef5
+					TEAuraRef.Cast TESpAuraAyleidicDebuffShock rRef5
+					set bRef5Debuff to 1
+				endif
+				if TEbAuraAyleidicFrost == 1
+					TEAuraRef.MoveTo rRef5
+					TEAuraRef.Cast TESpAuraAyleidicDebuffFrost rRef5
+					set bRef5Debuff to 1
+				endif
 				if TEbAuraMalachite == 1
 					TEAuraRef.MoveTo rRef5
 					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef5
@@ -399,6 +449,16 @@ set fQuestDelayTime to 0.05
 				if TEbAuraAyleidic == 1
 					TEAuraRef.MoveTo rRef6
 					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef6
+					set bRef6Debuff to 1
+				endif
+				if TEbAuraAyleidicShock == 1
+					TEAuraRef.MoveTo rRef6
+					TEAuraRef.Cast TESpAuraAyleidicDebuffShock rRef6
+					set bRef6Debuff to 1
+				endif
+				if TEbAuraAyleidicFrost == 1
+					TEAuraRef.MoveTo rRef6
+					TEAuraRef.Cast TESpAuraAyleidicDebuffFrost rRef6
 					set bRef6Debuff to 1
 				endif
 				if TEbAuraMalachite == 1
@@ -461,6 +521,16 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef7
 					set bRef7Debuff to 1
 				endif
+				if TEbAuraAyleidicShock == 1
+					TEAuraRef.MoveTo rRef7
+					TEAuraRef.Cast TESpAuraAyleidicDebuffShock rRef7
+					set bRef7Debuff to 1
+				endif
+				if TEbAuraAyleidicFrost == 1
+					TEAuraRef.MoveTo rRef7
+					TEAuraRef.Cast TESpAuraAyleidicDebuffFrost rRef7
+					set bRef7Debuff to 1
+				endif
 				if TEbAuraMalachite == 1
 					TEAuraRef.MoveTo rRef7
 					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef7
@@ -519,6 +589,16 @@ set fQuestDelayTime to 0.05
 				if TEbAuraAyleidic == 1
 					TEAuraRef.MoveTo rRef8
 					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef8
+					set bRef8Debuff to 1
+				endif
+				if TEbAuraAyleidicShock == 1
+					TEAuraRef.MoveTo rRef8
+					TEAuraRef.Cast TESpAuraAyleidicDebuffShock rRef8
+					set bRef8Debuff to 1
+				endif
+				if TEbAuraAyleidicFrost == 1
+					TEAuraRef.MoveTo rRef8
+					TEAuraRef.Cast TESpAuraAyleidicDebuffFrost rRef8
 					set bRef8Debuff to 1
 				endif
 				if TEbAuraMalachite == 1
@@ -582,6 +662,16 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef9
 					set bRef9Debuff to 1
 				endif
+				if TEbAuraAyleidicShock == 1
+					TEAuraRef.MoveTo rRef9
+					TEAuraRef.Cast TESpAuraAyleidicDebuffShock rRef9
+					set bRef9Debuff to 1
+				endif
+				if TEbAuraAyleidicFrost == 1
+					TEAuraRef.MoveTo rRef9
+					TEAuraRef.Cast TESpAuraAyleidicDebuffFrost rRef9
+					set bRef9Debuff to 1
+				endif
 				if TEbAuraMalachite == 1
 					TEAuraRef.MoveTo rRef9
 					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef9
@@ -641,6 +731,16 @@ set fQuestDelayTime to 0.05
 				if TEbAuraAyleidic == 1
 					TEAuraRef.MoveTo rRef10
 					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef10
+					set bRef10Debuff to 1
+				endif
+				if TEbAuraAyleidicShock == 1
+					TEAuraRef.MoveTo rRef10
+					TEAuraRef.Cast TESpAuraAyleidicDebuffShock rRef10
+					set bRef10Debuff to 1
+				endif
+				if TEbAuraAyleidicFrost == 1
+					TEAuraRef.MoveTo rRef10
+					TEAuraRef.Cast TESpAuraAyleidicDebuffFrost rRef10
 					set bRef10Debuff to 1
 				endif
 				if TEbAuraMalachite == 1
@@ -703,6 +803,16 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef11
 					set bRef11Debuff to 1
 				endif
+				if TEbAuraAyleidicShock == 1
+					TEAuraRef.MoveTo rRef11
+					TEAuraRef.Cast TESpAuraAyleidicDebuffShock rRef11
+					set bRef11Debuff to 1
+				endif
+				if TEbAuraAyleidicFrost == 1
+					TEAuraRef.MoveTo rRef11
+					TEAuraRef.Cast TESpAuraAyleidicDebuffFrost rRef11
+					set bRef11Debuff to 1
+				endif
 				if TEbAuraMalachite == 1
 					TEAuraRef.MoveTo rRef11
 					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef11
@@ -763,6 +873,16 @@ set fQuestDelayTime to 0.05
 					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef12
 					set bRef12Debuff to 1
 				endif
+				if TEbAuraAyleidicShock == 1
+					TEAuraRef.MoveTo rRef12
+					TEAuraRef.Cast TESpAuraAyleidicDebuffShock rRef12
+					set bRef12Debuff to 1
+				endif
+				if TEbAuraAyleidicFrost == 1
+					TEAuraRef.MoveTo rRef12
+					TEAuraRef.Cast TESpAuraAyleidicDebuffFrost rRef12
+					set bRef12Debuff to 1
+				endif
 				if TEbAuraMalachite == 1
 					TEAuraRef.MoveTo rRef12
 					TEAuraRef.Cast TESpAuraMalachiteDebuff rRef12
@@ -821,6 +941,16 @@ set fQuestDelayTime to 0.05
 				if TEbAuraAyleidic == 1
 					TEAuraRef.MoveTo rRef13
 					TEAuraRef.Cast TESpAuraAyleidicDebuff rRef13
+					set bRef13Debuff to 1
+				endif
+				if TEbAuraAyleidicShock == 1
+					TEAuraRef.MoveTo rRef13
+					TEAuraRef.Cast TESpAuraAyleidicDebuffShock rRef13
+					set bRef13Debuff to 1
+				endif
+				if TEbAuraAyleidicFrost == 1
+					TEAuraRef.MoveTo rRef13
+					TEAuraRef.Cast TESpAuraAyleidicDebuffFrost rRef13
 					set bRef13Debuff to 1
 				endif
 				if TEbAuraMalachite == 1

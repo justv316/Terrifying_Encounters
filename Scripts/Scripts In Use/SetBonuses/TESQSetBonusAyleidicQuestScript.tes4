@@ -2,6 +2,7 @@ scn TESQSetBonusAyleidicQuestScript
 
 float fQuestDelayTime
 short iAyleidicBonusAdded
+float fTimer
 
 
 begin GameMode
@@ -49,6 +50,27 @@ begin GameMode
 			Player.RemoveSpell TEAbEquipAyleidicSetBonus5
 			Player.AddSpell TEAbEquipAyleidicSetBonus6
 			set iAyleidicBonusAdded to 6
+		endif
+	
+		Message "Fire Aura Applied"
+		set fTimer to 15
+		if fTimer > 0
+			set fTimer to fTimer - ScriptEffectElapsedSeconds
+		elseif fTimer == 0 && TEbAuraAyleidic == 1
+			set TEbAuraAyleidicShock to 1
+			set TEbAuraAyleidic to 0
+			set fTimer to 15
+			Message "Shock Aura Applied"
+		elseif fTimer == 0 && TEbAuraAyleidicShock == 1
+			set TEbAuraAyleidicFrost to 1
+			set TEbAuraAyleidicShock to 0
+			set fTimer to 15
+			Message "Frost Aura Applied"
+		elseif fTimer == 0 && TEbAuraAyleidicFrost == 1
+			set TEbAuraAyleidic to 1
+			set TEbAuraAyleidicFrost to 0
+			set fTimer to 15
+			Message "Fire Aura Applied"
 		endif
 	endif
 end

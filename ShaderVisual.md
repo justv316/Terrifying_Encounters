@@ -2,7 +2,8 @@
 
 * Persistent
 	* Removeable via StopMagicShaderVisuals
-	* Note about Flame of Agnon : Removable but transparency does not remove until Reload/ReEquip
+	* __Note__ about Flame of Agnon :Removable but transparency does not remove until Reload/ReEquip
+
 | EditorID | FormID | Affected | Visual |
 |---|---|---|---|
 | SE10DeadWarriorShader | 0001AD77 | Actor | ![Solid Gold](/image/GoldWarrior.png "Gold Effect") | 
@@ -52,7 +53,7 @@
 | effectParalyze | 000562C4 | Actor | Paralyze | >1s Duration |  
 | effectRestore | 000562C9 | Actor | Restore | >1s Duration |  
 | effectReflectDamage | 0000CEBD | Actor | Reflect Damage | >1s Duration | 
-| effectResistNormalWeapons | 00062D0C |  Both | ResistNormalWeapons | >1s Duration on Actor, Persistant on Weapon | Removeable 
+| effectResistNormalWeapons | 00062D0C |  Both | ResistNormalWeapons | >1s Duration on Actor, Persistant on Weapon |
 
 <details>
 <Summary>Not Working/Glitched</Summary>
