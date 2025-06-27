@@ -22,15 +22,16 @@
 
 ## Requirements
 * UE4SS (https://www.nexusmods.com/oblivionremastered/mods/32)
-	* TesSyncMapInjector (https://www.nexusmods.com/oblivionremastered/mods/1272)
-	* Custom Enchanted Modded Apparel SourceFormIDs Updater (https://www.nexusmods.com/oblivionremastered/mods/4029)
+	1. TesSyncMapInjector (https://www.nexusmods.com/oblivionremastered/mods/1272)
+		1. Custom Enchanted Modded Apparel SourceFormIDs Updater (https://www.nexusmods.com/oblivionremastered/mods/4029)
+	2. Silent Notification Framework (https://www.nexusmods.com/oblivionremastered/mods/4166)
 * OBSE (https://www.nexusmods.com/oblivionremastered/mods/282)
-	* NL-Tag Remover https://www.nexusmods.com/oblivionremastered/mods/473
-	* Game Settings Loader (https://www.nexusmods.com/oblivionremastered/mods/746)
-	* Visual C++ Redists 2022 (https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+	1. NL-Tag Remover https://www.nexusmods.com/oblivionremastered/mods/473
+	2. Game Settings Loader (https://www.nexusmods.com/oblivionremastered/mods/746)
+	3. Visual C++ Redists 2022 (https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
 	
 ## In-Game Prerequisites
-* Your character must be level 25 before content from this mod will begin appearing. This is because everything is scaled up, and this is an endgame overhaul. I have not given any consideration as to how the player actually arrives to being level 25, only that they are at least that level. This ensures that they are at least mostly prepared for what they will face.	
+* The player must be level 25 before content from this mod will begin appearing. This is because everything is scaled up, and this is an endgame overhaul. I have not given any consideration as to how the player actually arrives to being level 25, only that they are at least that level. This ensures that they are at least mostly prepared for what they will face.	
 * This mod pays no mind to whether or not they've completed any Main Quests or Guilds. 
 	
 ----
@@ -287,12 +288,28 @@
 #### Set Bonuses
 
 * Scripted Matching Set Bonuses for all 8 upscaled sets of armor/weapons
+* 6/6 Matching Set Bonus applies an Aura to the player
+	1. Cursed Aura - Applies Cripple to nearby enemies, inhibiting their movement speed and applying Weakness to Normal Weapons and Fire. 
+		1. Immolation - Burns nearby enemies for Fire Damage / Second
+	2. Dwemer Aura - Applies Blight to nearby enemies, illuminating them while applying Weakness to Magic.
+		1. Enlightenment - Applies light to the player; Increases magicka regen and armor of self and allies.
+	3. Obsidian Aura - Applies Debilitating Poison to nearby enemies, applying Weakness to Poison and draining attributes.
+		1. Siphoning - Absorbs health/magicka/fatigue from nearby enemies. 
+	4. Ayleidic Aura - Applies Aedric Suffering to nearby enemies, draining attributes, skills, and vitals.
+		1. Prismatic Cloak - Applies a cloak to the player, dealing cycling elemental damage to nearby enemies. 
+	5. Malachite Aura - Applies Elvish Sickness to nearby enemies, applying Weakness to the Elements and Normal Weapons
+		1. Shards - Enemies who hit the player take damage and incur a bleeding debuff. 
+	6. Mythril Aura - Gives the player chameleon while sneaking and improves the effectiveness of sneak attacks. 
+		1. Aclarity - Increases movement and attack speed of self and nearby allies.  
+	7. Resinite Aura - Applies Sticky Icky to nearby enemies, inhibiting movement speed and combat ability of nearby enemies. 
+		1. Demented/Manic - Cycles buffs on the player based on day/night.
+	8. Maddening Aura - Randomly applies buffs to the player and nearby allies and debuffs to nearby enemies.
 
 <details>
 <Summary>Set Bonus Details</Summary>
 
 ##### Heavy Armor
-* Heavy Armor slows the player down while in combat and reduces stealth* and marksmen skills.
+* Heavy Armor slows the player down while in combat and reduces stealth and marksmen skills.
 * Provides the best Defense and Resistance Bonuses
 
 ##### Cursed
