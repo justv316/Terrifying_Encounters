@@ -1,33 +1,52 @@
 scn TESQSetBonusResiniteMoodSwingQuestScript
 
+float fQuestDelayTime
+
 short bTimeMod
 short bDementia
 short bMania
-short bDemented
-short bManic
+short bActivated
+short bOnce
 
 begin Gamemode
+	set fQuestDelayTime to 1
 	if bActivated == 1
-		set bDementia to TEbNightTime == 1 && bTimeMod == 0 && TEiSetResiniteEquip >= 6
-		set bMania to TEbDayTime == 1 && bTimeMod == 0 && TEiSetResiniteEquip >= 6
-		set bManic to Player.IsSpellTarget TEAbAuraResiniteMania
-		set bDemented to Player.IsSpellTarget TEAbAuraResiniteDementia
-		
-		if TEbDayTime == 1 && bDemented == 1
-			Player.RemoveSpell TEAbAuraResiniteDementia
-			set bTimeMod to 0
+		if TEbDayTime == 1
+			if bOnce == 0
+				Player.RemoveSpell TEAbAuraResiniteDementia
+				set bDementia to 0
+				set bTimeMod to 0
+				set bOnce to 1
+			else
+				if bTimeMod == 0
+					Player.AddSpell TEAbAuraResiniteMania
+					set bTimeMod to 1
+					set bMania to 1
+					Message "You Feel Manic"
+				elseif bTimeMod == 1
+					if bDementia == 1
+						set bOnce to 0
+					endif
+				endif
+			endif
+		elseif TEbNightTime == 1
+			if bOnce == 0
+				Player.RemoveSpell TEAbAuraResiniteMania
+				set bMania to 0
+				set bTimeMod to 0
+				set bOnce to 1
+			else
+				if bTimeMod == 0
+					Player.AddSpell TEAbAuraResiniteDementia
+					set bTimeMod to 1
+					set bDementia to 1
+					Message "You Feel Demented"
+				elseif bTimeMod == 1
+					if bMania == 1
+						set bOnce to 0
+					endif
+				endif
+			endif
 		endif
-		if TEbNightTime == 1 && bManic == 1
-			Player.RemoveSpell TEAbAuraResiniteMania
-			set bTimeMod to 0
-		endif
-		if bMania == 1
-			Player.AddSpell TEAbAuraResiniteMania
-			Message "You feel Manic"
-			set bTimeMod to 1
-		endif
-		if bDementia == 1
-			Player.AddSpell TEAbAuraResiniteDementia
-			Message "You feel Demented"
-			set bTimeMod to 1
-		endif
+	endif
+end

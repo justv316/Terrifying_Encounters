@@ -21,6 +21,8 @@ begin GameMode
 			set iResiniteBonusAdded to 4
 		elseif iResiniteBonusAdded == 6
 			Player.RemoveSpell TEAbEquipResiniteSetBonus6
+			StopQuest TEQQSetBonusResiniteMoodSwingQuest
+			set TEQQSetBonusResiniteMoodSwingQuest.bActivated to 0
 			Player.AddSpell TEAbEquipResiniteSetBonus4
 			set iResiniteBonusAdded to 4
 		endif
@@ -34,6 +36,8 @@ begin GameMode
 			set iResiniteBonusAdded to 5
 		elseif iResiniteBonusAdded == 6
 			Player.RemoveSpell TEAbEquipResiniteSetBonus6
+			StopQuest TEQQSetBonusResiniteMoodSwingQuest
+			set TEQQSetBonusResiniteMoodSwingQuest.bActivated to 0
 			Player.AddSpell TEAbEquipResiniteSetBonus5
 			set iResiniteBonusAdded to 5
 		endif
@@ -41,14 +45,20 @@ begin GameMode
 		if iResiniteBonusAdded == 0
 			Player.AddSpell TEAbEquipResiniteSetBonus6
 			set iResiniteBonusAdded to 6
+			StartQuest TEQQSetBonusResiniteMoodSwingQuest
+			set TEQQSetBonusResiniteMoodSwingQuest.bActivated to 1
 		elseif iResiniteBonusAdded == 4
 			Player.RemoveSpell TEAbEquipResiniteSetBonus4
 			Player.AddSpell TEAbEquipResiniteSetBonus6
 			set iResiniteBonusAdded to 6
+			StartQuest TEQQSetBonusResiniteMoodSwingQuest
+			set TEQQSetBonusResiniteMoodSwingQuest.bActivated to 1
 		elseif iResiniteBonusAdded == 5
 			Player.RemoveSpell TEAbEquipResiniteSetBonus5
 			Player.AddSpell TEAbEquipResiniteSetBonus6
 			set iResiniteBonusAdded to 6
+			StartQuest TEQQSetBonusResiniteMoodSwingQuest
+			set TEQQSetBonusResiniteMoodSwingQuest.bActivated to 1
 		endif
 	endif
 end
