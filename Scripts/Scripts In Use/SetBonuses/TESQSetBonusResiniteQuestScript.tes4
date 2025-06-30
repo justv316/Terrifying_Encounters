@@ -11,6 +11,8 @@ begin GameMode
 		Player.RemoveSpell TEAbEquipResiniteSetBonus5
 		Player.RemoveSpell TEAbEquipResiniteSetBonus6
 		set iResiniteBonusAdded to 0
+		StopQuest TEQQSetBonusResiniteMoodSwingQuest
+		set TEQQSetBonusResiniteMoodSwingQuest.bActivated to 0
 	elseif TEiSetResiniteEquip == 4
 		if iResiniteBonusAdded == 0
 			Player.AddSpell TEAbEquipResiniteSetBonus4

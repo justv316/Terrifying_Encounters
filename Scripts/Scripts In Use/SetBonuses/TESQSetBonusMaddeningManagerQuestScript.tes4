@@ -1,0 +1,1339 @@
+scn TESQSetBonusMaddeningManagerQuestScript
+
+float fQuestDelayTime
+short bActivated
+short bInitalized
+short iD6
+short iD12
+short iDiceRolls
+
+short iModStrength
+short iModIntelligence
+short iModWillpower
+short iModAgility
+short iModSpeed
+short iModEndurance
+short iModLuck
+
+short bModStrength
+short bModIntelligence
+short bModWillpower
+short bModAgility
+short bModSpeed
+short bModEndurance
+short bModLuck
+
+short iPlayerStrength
+short iPlayerIntelligence
+short iPlayerWillpower
+short iPlayerAgility
+short iPlayerSpeed
+short iPlayerEndurance
+short iPlayerLuck
+
+short iModEncumbrance
+short bModEncumbrance
+short iPlayerEncumbrance
+
+short iModResistFire
+short iModResistFrost
+short iModResistDisease
+short iModResistMagic
+short iModResistNormalWeapons
+short iModResistParalysis
+short iModResistPoison
+short iModResistShock
+
+short bModResistFire
+short bModResistFrost
+short bModResistDisease
+short bModResistMagic
+short bModResistNormalWeapons
+short bModResistParalysis
+short bModResistPoison
+short bModResistShock
+
+short iPlayerResistFire
+short iPlayerResistFrost
+short iPlayerResistDisease
+short iPlayerResistMagic
+short iPlayerResistNormalWeapons
+short iPlayerResistParalysis
+short iPlayerResistPoison
+short iPlayerResistShock
+
+short iModAttackBonus
+short iModDefendBonus
+short iModSpellAbsorbChance
+short iModReflectDamage
+short iModSpellReflectChance
+short iModWaterWalking
+short iModWaterBreathing
+short iModStuntedMagicka
+
+short bModAttackBonus
+short bModDefendBonus
+short bModSpellAbsorbChance
+short bModReflectDamage
+short bModSpellReflectChance
+short bModWaterWalking
+short bModWaterBreathing
+short bModStuntedMagicka
+
+short iPlayerAttackBonus
+short iPlayerDefendBonus
+short iPlayerSpellAbsorbChance
+short iPlayerReflectDamage
+short iPlayerSpellReflectChance
+short iPlayerWaterWalking
+short iPlayerWaterBreathing
+short iPlayerStuntedMagicka
+
+
+Begin GameMode
+	if bActivated == 1
+		set fQuestDelayTime to 0.01
+		if bInitalized == 0
+			set iPlayerStrength to Player.GetActorValue Strength
+			set iPlayerIntelligence to Player.GetActorValue Intelligence
+			set iPlayerAgility to Player.GetActorValue Agility
+			set iPlayerWillpower to Player.GetActorValue Willpower
+			set iPlayerSpeed to Player.GetActorValue Speed
+			set iPlayerEndurance to Player.GetActorValue Endurance
+			set iPlayerLuck to Player.GetActorValue Luck
+			set iPlayerEncumbrance to Player.GetActorValue Encumbrance
+			set iPlayerResistFire to Player.GetActorValue ResistFire
+			set iPlayerResistFrost to Player.GetActorValue ResistFrost
+			set iPlayerResistDisease to Player.GetActorValue ResistDisease
+			set iPlayerResistMagic to Player.GetActorValue ResistMagic
+			set iPlayerResistNormalWeapons to Player.GetActorValue ResistNormalWeapons
+			set iPlayerResistParalysis to Player.GetActorValue ResistParalysis
+			set iPlayerResistPoison to Player.GetActorValue ResistPoison
+			set iPlayerResistShock to Player.GetActorValue ResistShock
+			set iPlayerAttackBonus to Player.GetActorValue AttackBonus
+			set iPlayerDefendBonus to Player.GetActorValue DefendBonus
+			set iPlayerSpellAbsorbChance to Player.GetActorValue SpellAbsorbChance
+			set iPlayerReflectDamage to Player.GetActorValue ReflectDamage
+			set iPlayerSpellReflectChance to Player.GetActorValue SpellReflectChance
+			set iPlayerWaterWalking to Player.GetActorValue WaterWalking
+			set iPlayerWaterBreathing to Player.GetActorValue WaterBreathing
+			set iPlayerStuntedMagicka to Player.GetActorValue StuntedMagicka
+			set bInitalized to 1
+		elseif bInitalized == 1
+			set iModStrength to (iPlayerStrength * 0.1) + GetRandomPercent * ((iPlayerStrength * 0.25) - (iPlayerStrength * 0.1) + 1) / 100
+			set iModIntelligence to (iPlayerIntelligence * 0.1) + GetRandomPercent * ((iPlayerIntelligence * 0.25) - (iPlayerIntelligence * 0.1) + 1) / 100
+			set iModAgility to (iPlayerAgility * 0.1) + GetRandomPercent * ((iPlayerAgility * 0.25) - (iPlayerAgility * 0.1) + 1) / 100
+			set iModWillpower to (iPlayerWillpower * 0.1) + GetRandomPercent * ((iPlayerWillpower * 0.25) - (iPlayerWillpower * 0.1) + 1) / 100
+			set iModSpeed to (iPlayerSpeed * 0.1) + GetRandomPercent * ((iPlayerSpeed * 0.25) - (iPlayerSpeed * 0.1) + 1) / 100
+			set iModEndurance to (iPlayerEndurance * 0.1) + GetRandomPercent * ((iPlayerEndurance * 0.25) - (iPlayerEndurance * 0.1) + 1) / 100
+			set iModLuck to (iPlayerLuck * 0.1) + GetRandomPercent * ((iPlayerLuck * 0.25) - (iPlayerLuck * 0.1) + 1) / 100
+			set iModEncumbrance to (iPlayerEncumbrance * 0.1) + GetRandomPercent * ((iPlayerEncumbrance * 0.25) - (iPlayerEncumbrance * 0.1) + 1) / 100
+			set iModResistFire to (iPlayerResistFire * 0.1) + GetRandomPercent * ((iPlayerResistFire * 0.25) - (iPlayerResistFire * 0.1) + 1) / 100
+			set iModResistFrost to (iPlayerResistFrost * 0.1) + GetRandomPercent * ((iPlayerResistFrost * 0.25) - (iPlayerResistFrost * 0.1) + 1) / 100
+			set iModResistDisease to (iPlayerResistDisease * 0.1) + GetRandomPercent * ((iPlayerResistDisease * 0.25) - (iPlayerResistDisease * 0.1) + 1) / 100
+			set iModResistMagic to (iPlayerResistMagic * 0.1) + GetRandomPercent * ((iPlayerResistMagic * 0.25) - (iPlayerResistMagic * 0.1) + 1) / 100
+			set iModResistNormalWeapons to (iPlayerResistNormalWeapons * 0.1) + GetRandomPercent * ((iPlayerResistNormalWeapons * 0.25) - (iPlayerResistNormalWeapons * 0.1) + 1) / 100
+			set iModResistParalysis to (iPlayerResistParalysis * 0.1) + GetRandomPercent * ((iPlayerResistParalysis * 0.25) - (iPlayerResistParalysis * 0.1) + 1) / 100
+			set iModResistPoison to (iPlayerResistPoison * 0.1) + GetRandomPercent * ((iPlayerResistPoison * 0.25) - (iPlayerResistPoison * 0.1) + 1) / 100
+			set iModResistShock to (iPlayerResistShock * 0.1) + GetRandomPercent * ((iPlayerResistShock * 0.25) - (iPlayerResistShock * 0.1) + 1) / 100
+			set iModAttackBonus to 1 + 0.25 * GetRandomPercent
+			set iModDefendBonus to 1 + 0.25 * GetRandomPercent
+			set iModSpellAbsorbChance to 1 + 0.1 * GetRandomPercent
+			set iModReflectDamage to 1 + 0.1 * GetRandomPercent
+			set iModSpellReflectChance to 1 + 0.1 * GetRandomPercent
+			set iDiceRolls to 0
+			set bModStrength to 0
+			set bModIntelligence to 0
+			set bModWillpower to 0
+			set bModAgility to 0
+			set bModSpeed to 0
+			set bModEndurance to 0
+			set bModLuck to 0
+			set bModResistFire to 0
+			set bModResistFrost to 0
+			set bModResistDisease to 0
+			set bModResistMagic to 0
+			set bModResistNormalWeapons to 0
+			set bModResistParalysis to 0
+			set bModResistPoison to 0
+			set bModResistShock to 0
+			set bModEncumbrance to 0
+			set bModAttackBonus to 0
+			set bModDefendBonus to 0
+			set bModSpellAbsorbChance to 0
+			set bModReflectDamage to 0
+			set bModSpellReflectChance to 0
+			set bModStuntedMagicka to 0
+			set bModWaterBreathing to 0
+			set bModWaterWalking to 0
+			set bInitalized to 2
+		elseif bInitalized == 2
+			if iDiceRolls == 0
+				if bModStrength == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModStrength to iModStrength * -1.5
+							set bModStrength to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModStrength to iModStrength * -1.25
+							set bModStrength to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModStrength to iModStrength * -1
+							set bModStrength to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModStrength to iModStrength * -0.75
+							set bModStrength to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModStrength to iModStrength * -0.5
+							set bModStrength to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModStrength to iModStrength * -0.25
+							set bModStrength to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModStrength to iModStrength * 0.5
+							set bModStrength to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModStrength to iModStrength * 0.75
+							set bModStrength to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModStrength to iModStrength * 1
+							set bModStrength to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModStrength to iModStrength * 1.25
+							set bModStrength to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModStrength to iModStrength * 1.5
+							set bModStrength to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModStrength to iModStrength * 1.75
+							set bModStrength to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 1
+				if bModIntelligence == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModIntelligence to iModIntelligence * -1.5
+							set bModIntelligence to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModIntelligence to iModIntelligence * -1.25
+							set bModIntelligence to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModIntelligence to iModIntelligence * -1
+							set bModIntelligence to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModIntelligence to iModIntelligence * -0.75
+							set bModIntelligence to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModIntelligence to iModIntelligence * -0.5
+							set bModIntelligence to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModIntelligence to iModIntelligence * -0.25
+							set bModIntelligence to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModIntelligence to iModIntelligence * 0.5
+							set bModIntelligence to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModIntelligence to iModIntelligence * 0.75
+							set bModIntelligence to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModIntelligence to iModIntelligence * 1
+							set bModIntelligence to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModIntelligence to iModIntelligence * 1.25
+							set bModIntelligence to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModIntelligence to iModIntelligence * 1.5
+							set bModIntelligence to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModIntelligence to iModIntelligence * 1.75
+							set bModIntelligence to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 2
+				if bModAgility == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModAgility to iModAgility * -1.5
+							set bModAgility to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModAgility to iModAgility * -1.25
+							set bModAgility to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModAgility to iModAgility * -1
+							set bModAgility to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModAgility to iModAgility * -0.75
+							set bModAgility to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModAgility to iModAgility * -0.5
+							set bModAgility to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModAgility to iModAgility * -0.25
+							set bModAgility to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModAgility to iModAgility * 0.5
+							set bModAgility to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModAgility to iModAgility * 0.75
+							set bModAgility to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModAgility to iModAgility * 1
+							set bModAgility to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModAgility to iModAgility * 1.25
+							set bModAgility to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModAgility to iModAgility * 1.5
+							set bModAgility to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModAgility to iModAgility * 1.75
+							set bModAgility to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 3
+				if bModWillpower == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModWillpower to iModWillpower * -1.5
+							set bModWillpower to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModWillpower to iModWillpower * -1.25
+							set bModWillpower to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModWillpower to iModWillpower * -1
+							set bModWillpower to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModWillpower to iModWillpower * -0.75
+							set bModWillpower to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModWillpower to iModWillpower * -0.5
+							set bModWillpower to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModWillpower to iModWillpower * -0.25
+							set bModWillpower to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModWillpower to iModWillpower * 0.5
+							set bModWillpower to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModWillpower to iModWillpower * 0.75
+							set bModWillpower to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModWillpower to iModWillpower * 1
+							set bModWillpower to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModWillpower to iModWillpower * 1.25
+							set bModWillpower to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModWillpower to iModWillpower * 1.5
+							set bModWillpower to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModWillpower to iModWillpower * 1.75
+							set bModWillpower to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 4
+				if bModSpeed == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModSpeed to iModSpeed * -1.5
+							set bModSpeed to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModSpeed to iModSpeed * -1.25
+							set bModSpeed to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModSpeed to iModSpeed * -1
+							set bModSpeed to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModSpeed to iModSpeed * -0.75
+							set bModSpeed to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModSpeed to iModSpeed * -0.5
+							set bModSpeed to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModSpeed to iModSpeed * -0.25
+							set bModSpeed to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModSpeed to iModSpeed * 0.5
+							set bModSpeed to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModSpeed to iModSpeed * 0.75
+							set bModSpeed to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModSpeed to iModSpeed * 1
+							set bModSpeed to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModSpeed to iModSpeed * 1.25
+							set bModSpeed to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModSpeed to iModSpeed * 1.5
+							set bModSpeed to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModSpeed to iModSpeed * 1.75
+							set bModSpeed to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 5
+				if bModEndurance == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModEndurance to iModEndurance * -1.5
+							set bModEndurance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModEndurance to iModEndurance * -1.25
+							set bModEndurance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModEndurance to iModEndurance * -1
+							set bModEndurance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModEndurance to iModEndurance * -0.75
+							set bModEndurance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModEndurance to iModEndurance * -0.5
+							set bModEndurance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModEndurance to iModEndurance * -0.25
+							set bModEndurance to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModEndurance to iModEndurance * 0.5
+							set bModEndurance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModEndurance to iModEndurance * 0.75
+							set bModEndurance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModEndurance to iModEndurance * 1
+							set bModEndurance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModEndurance to iModEndurance * 1.25
+							set bModEndurance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModEndurance to iModEndurance * 1.5
+							set bModEndurance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModEndurance to iModEndurance * 1.75
+							set bModEndurance to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 6
+				if bModLuck == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModLuck to iModLuck * -1.5
+							set bModLuck to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModLuck to iModLuck * -1.25
+							set bModLuck to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModLuck to iModLuck * -1
+							set bModLuck to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModLuck to iModLuck * -0.75
+							set bModLuck to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModLuck to iModLuck * -0.5
+							set bModLuck to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModLuck to iModLuck * -0.25
+							set bModLuck to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModLuck to iModLuck * 0.5
+							set bModLuck to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModLuck to iModLuck * 0.75
+							set bModLuck to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModLuck to iModLuck * 1
+							set bModLuck to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModLuck to iModLuck * 1.25
+							set bModLuck to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModLuck to iModLuck * 1.5
+							set bModLuck to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModLuck to iModLuck * 1.75
+							set bModLuck to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 7
+				if bModEncumbrance == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModEncumbrance to iModEncumbrance * -1.5
+							set bModEncumbrance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModEncumbrance to iModEncumbrance * -1.25
+							set bModEncumbrance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModEncumbrance to iModEncumbrance * -1
+							set bModEncumbrance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModEncumbrance to iModEncumbrance * -0.75
+							set bModEncumbrance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModEncumbrance to iModEncumbrance * -0.5
+							set bModEncumbrance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModEncumbrance to iModEncumbrance * -0.25
+							set bModEncumbrance to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModEncumbrance to iModEncumbrance * 0.5
+							set bModEncumbrance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModEncumbrance to iModEncumbrance * 0.75
+							set bModEncumbrance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModEncumbrance to iModEncumbrance * 1
+							set bModEncumbrance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModEncumbrance to iModEncumbrance * 1.25
+							set bModEncumbrance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModEncumbrance to iModEncumbrance * 1.5
+							set bModEncumbrance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModEncumbrance to iModEncumbrance * 1.75
+							set bModEncumbrance to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 8
+				if bModResistFire == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistFire to iModResistFire * -1.5
+							set bModResistFire to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistFire to iModResistFire * -1.25
+							set bModResistFire to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistFire to iModResistFire * -1
+							set bModResistFire to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistFire to iModResistFire * -0.75
+							set bModResistFire to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistFire to iModResistFire * -0.5
+							set bModResistFire to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistFire to iModResistFire * -0.25
+							set bModResistFire to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistFire to iModResistFire * 0.5
+							set bModResistFire to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistFire to iModResistFire * 0.75
+							set bModResistFire to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistFire to iModResistFire * 1
+							set bModResistFire to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistFire to iModResistFire * 1.25
+							set bModResistFire to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistFire to iModResistFire * 1.5
+							set bModResistFire to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistFire to iModResistFire * 1.75
+							set bModResistFire to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 9
+				if bModResistFrost == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistFrost to iModResistFrost * -1.5
+							set bModResistFrost to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistFrost to iModResistFrost * -1.25
+							set bModResistFrost to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistFrost to iModResistFrost * -1
+							set bModResistFrost to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistFrost to iModResistFrost * -0.75
+							set bModResistFrost to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistFrost to iModResistFrost * -0.5
+							set bModResistFrost to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistFrost to iModResistFrost * -0.25
+							set bModResistFrost to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistFrost to iModResistFrost * 0.5
+							set bModResistFrost to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistFrost to iModResistFrost * 0.75
+							set bModResistFrost to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistFrost to iModResistFrost * 1
+							set bModResistFrost to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistFrost to iModResistFrost * 1.25
+							set bModResistFrost to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistFrost to iModResistFrost * 1.5
+							set bModResistFrost to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistFrost to iModResistFrost * 1.75
+							set bModResistFrost to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 10
+				if bModResistShock == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistShock to iModResistShock * -1.5
+							set bModResistShock to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistShock to iModResistShock * -1.25
+							set bModResistShock to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistShock to iModResistShock * -1
+							set bModResistShock to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistShock to iModResistShock * -0.75
+							set bModResistShock to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistShock to iModResistShock * -0.5
+							set bModResistShock to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistShock to iModResistShock * -0.25
+							set bModResistShock to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistShock to iModResistShock * 0.5
+							set bModResistShock to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistShock to iModResistShock * 0.75
+							set bModResistShock to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistShock to iModResistShock * 1
+							set bModResistShock to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistShock to iModResistShock * 1.25
+							set bModResistShock to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistShock to iModResistShock * 1.5
+							set bModResistShock to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistShock to iModResistShock * 1.75
+							set bModResistShock to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 11
+				if bModResistMagic == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistMagic to iModResistMagic * -1.5
+							set bModResistMagic to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistMagic to iModResistMagic * -1.25
+							set bModResistMagic to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistMagic to iModResistMagic * -1
+							set bModResistMagic to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistMagic to iModResistMagic * -0.75
+							set bModResistMagic to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistMagic to iModResistMagic * -0.5
+							set bModResistMagic to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistMagic to iModResistMagic * -0.25
+							set bModResistMagic to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistMagic to iModResistMagic * 0.5
+							set bModResistMagic to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistMagic to iModResistMagic * 0.75
+							set bModResistMagic to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistMagic to iModResistMagic * 1
+							set bModResistMagic to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistMagic to iModResistMagic * 1.25
+							set bModResistMagic to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistMagic to iModResistMagic * 1.5
+							set bModResistMagic to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistMagic to iModResistMagic * 1.75
+							set bModResistMagic to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 12
+				if bModResistDisease == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistDisease to iModResistDisease * -1.5
+							set bModResistDisease to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistDisease to iModResistDisease * -1.25
+							set bModResistDisease to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistDisease to iModResistDisease * -1
+							set bModResistDisease to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistDisease to iModResistDisease * -0.75
+							set bModResistDisease to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistDisease to iModResistDisease * -0.5
+							set bModResistDisease to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistDisease to iModResistDisease * -0.25
+							set bModResistDisease to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistDisease to iModResistDisease * 0.5
+							set bModResistDisease to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistDisease to iModResistDisease * 0.75
+							set bModResistDisease to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistDisease to iModResistDisease * 1
+							set bModResistDisease to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistDisease to iModResistDisease * 1.25
+							set bModResistDisease to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistDisease to iModResistDisease * 1.5
+							set bModResistDisease to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistDisease to iModResistDisease * 1.75
+							set bModResistDisease to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 13
+				if bModResistNormalWeapons == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistNormalWeapons to iModResistNormalWeapons * -1.5
+							set bModResistNormalWeapons to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistNormalWeapons to iModResistNormalWeapons * -1.25
+							set bModResistNormalWeapons to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistNormalWeapons to iModResistNormalWeapons * -1
+							set bModResistNormalWeapons to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistNormalWeapons to iModResistNormalWeapons * -0.75
+							set bModResistNormalWeapons to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistNormalWeapons to iModResistNormalWeapons * -0.5
+							set bModResistNormalWeapons to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistNormalWeapons to iModResistNormalWeapons * -0.25
+							set bModResistNormalWeapons to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistNormalWeapons to iModResistNormalWeapons * 0.5
+							set bModResistNormalWeapons to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistNormalWeapons to iModResistNormalWeapons * 0.75
+							set bModResistNormalWeapons to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistNormalWeapons to iModResistNormalWeapons * 1
+							set bModResistNormalWeapons to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistNormalWeapons to iModResistNormalWeapons * 1.25
+							set bModResistNormalWeapons to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistNormalWeapons to iModResistNormalWeapons * 1.5
+							set bModResistNormalWeapons to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistNormalWeapons to iModResistNormalWeapons * 1.75
+							set bModResistNormalWeapons to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 14
+				if bModResistParalysis == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistParalysis to iModResistParalysis * -1.5
+							set bModResistParalysis to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistParalysis to iModResistParalysis * -1.25
+							set bModResistParalysis to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistParalysis to iModResistParalysis * -1
+							set bModResistParalysis to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistParalysis to iModResistParalysis * -0.75
+							set bModResistParalysis to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistParalysis to iModResistParalysis * -0.5
+							set bModResistParalysis to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistParalysis to iModResistParalysis * -0.25
+							set bModResistParalysis to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistParalysis to iModResistParalysis * 0.5
+							set bModResistParalysis to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistParalysis to iModResistParalysis * 0.75
+							set bModResistParalysis to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistParalysis to iModResistParalysis * 1
+							set bModResistParalysis to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistParalysis to iModResistParalysis * 1.25
+							set bModResistParalysis to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistParalysis to iModResistParalysis * 1.5
+							set bModResistParalysis to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistParalysis to iModResistParalysis * 1.75
+							set bModResistParalysis to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 15
+				if bModResistPoison == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistPoison to iModResistPoison * -1.5
+							set bModResistPoison to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistPoison to iModResistPoison * -1.25
+							set bModResistPoison to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistPoison to iModResistPoison * -1
+							set bModResistPoison to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistPoison to iModResistPoison * -0.75
+							set bModResistPoison to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistPoison to iModResistPoison * -0.5
+							set bModResistPoison to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistPoison to iModResistPoison * -0.25
+							set bModResistPoison to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModResistPoison to iModResistPoison * 0.5
+							set bModResistPoison to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModResistPoison to iModResistPoison * 0.75
+							set bModResistPoison to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModResistPoison to iModResistPoison * 1
+							set bModResistPoison to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModResistPoison to iModResistPoison * 1.25
+							set bModResistPoison to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModResistPoison to iModResistPoison * 1.5
+							set bModResistPoison to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModResistPoison to iModResistPoison * 1.75
+							set bModResistPoison to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 16
+				if bModStuntedMagicka == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 6
+						set iModStuntedMagicka to 1
+						set bModStuntedMagicka to 1
+						set iDiceRolls to iDiceRolls + 1
+					elseif iD12 >= 7
+						set iModStuntedMagicka to 0
+						set bModStuntedMagicka to 1
+						set iDiceRolls to iDiceRolls + 1
+					endif
+				endif
+			elseif iDiceRolls == 17
+				if bModWaterWalking == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 6
+						set iModWaterWalking to 1
+						set bModWaterWalking to 1
+						set iDiceRolls to iDiceRolls + 1
+					elseif iD12 >= 7
+						set iModWaterWalking to 0
+						set bModWaterWalking to 1
+						set iDiceRolls to iDiceRolls + 1
+					endif
+				endif
+			elseif iDiceRolls == 18
+				if bModWaterBreathing == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 6
+						set iModWaterBreathing to 1
+						set bModWaterBreathing to 1
+						set iDiceRolls to iDiceRolls + 1
+					elseif iD12 >= 7
+						set iModWaterBreathing to 0
+						set bModWaterBreathing to 1
+						set iDiceRolls to iDiceRolls + 1
+					endif
+				endif
+			elseif iDiceRolls == 19
+				if bModAttackBonus == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iModAttackBonus to iModAttackBonus * 0
+						set bModAttackBonus to 1
+						set iDiceRolls to iDiceRolls + 1
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModAttackBonus to iModAttackBonus * 0.5
+							set bModAttackBonus to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModAttackBonus to iModAttackBonus * 0.75
+							set bModAttackBonus to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModAttackBonus to iModAttackBonus * 1
+							set bModAttackBonus to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModAttackBonus to iModAttackBonus * 1.05
+							set bModAttackBonus to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModAttackBonus to iModAttackBonus * 1.15
+							set bModAttackBonus to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModAttackBonus to iModAttackBonus * 1.25
+							set bModAttackBonus to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 20
+				if bModDefendBonus == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iModDefendBonus to iModDefendBonus * 0
+						set bModDefendBonus to 1
+						set iDiceRolls to iDiceRolls + 1
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModDefendBonus to iModDefendBonus * 0.5
+							set bModDefendBonus to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModDefendBonus to iModDefendBonus * 0.75
+							set bModDefendBonus to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModDefendBonus to iModDefendBonus * 1
+							set bModDefendBonus to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModDefendBonus to iModDefendBonus * 1.05
+							set bModDefendBonus to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModDefendBonus to iModDefendBonus * 1.15
+							set bModDefendBonus to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModDefendBonus to iModDefendBonus * 1.25
+							set bModDefendBonus to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 21
+				if bModSpellAbsorbChance == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iModSpellAbsorbChance to iModSpellAbsorbChance * 0
+						set bModSpellAbsorbChance to 1
+						set iDiceRolls to iDiceRolls + 1
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModSpellAbsorbChance to iModSpellAbsorbChance * 0.5
+							set bModSpellAbsorbChance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModSpellAbsorbChance to iModSpellAbsorbChance * 0.75
+							set bModSpellAbsorbChance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModSpellAbsorbChance to iModSpellAbsorbChance * 1
+							set bModSpellAbsorbChance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModSpellAbsorbChance to iModSpellAbsorbChance * 1.05
+							set bModSpellAbsorbChance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModSpellAbsorbChance to iModSpellAbsorbChance * 1.15
+							set bModSpellAbsorbChance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModSpellAbsorbChance to iModSpellAbsorbChance * 1.25
+							set bModSpellAbsorbChance to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 22
+				if bModSpellReflectChance == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iModSpellReflectChance to iModSpellReflectChance * 0
+						set bModSpellReflectChance to 1
+						set iDiceRolls to iDiceRolls + 1
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModSpellReflectChance to iModSpellReflectChance * 0.5
+							set bModSpellReflectChance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModSpellReflectChance to iModSpellReflectChance * 0.75
+							set bModSpellReflectChance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModSpellReflectChance to iModSpellReflectChance * 1
+							set bModSpellReflectChance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModSpellReflectChance to iModSpellReflectChance * 1.05
+							set bModSpellReflectChance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModSpellReflectChance to iModSpellReflectChance * 1.15
+							set bModSpellReflectChance to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModSpellReflectChance to iModSpellReflectChance * 1.25
+							set bModSpellReflectChance to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 23
+				if bModReflectDamage == 0
+					set iD12 to 1 + 0.12 * GetRandomPercent
+					if iD12 <= 3
+						set iModReflectDamage to iModReflectDamage * 0
+						set bModReflectDamage to 1
+						set iDiceRolls to iDiceRolls + 1
+					elseif iD12 >= 4
+						set iD6 to 1 + 0.06 * GetRandomPercent
+						if iD6 == 1
+							set iModReflectDamage to iModReflectDamage * 0.5
+							set bModReflectDamage to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 2
+							set iModReflectDamage to iModReflectDamage * 0.75
+							set bModReflectDamage to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 3
+							set iModReflectDamage to iModReflectDamage * 1
+							set bModReflectDamage to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 4
+							set iModReflectDamage to iModReflectDamage * 1.05
+							set bModReflectDamage to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 5
+							set iModReflectDamage to iModReflectDamage * 1.15
+							set bModReflectDamage to 1
+							set iDiceRolls to iDiceRolls + 1
+						elseif iD6 == 6
+							set iModReflectDamage to iModReflectDamage * 1.25
+							set bModReflectDamage to 1
+							set iDiceRolls to iDiceRolls + 1
+						endif
+					endif
+				endif
+			elseif iDiceRolls == 24
+				set bInitalized to 3
+			endif
+		endif
+	endif
+end
