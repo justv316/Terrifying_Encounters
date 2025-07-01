@@ -2,6 +2,7 @@ scn TESQTargetDetectionQuestScript
 
 float fQuestDelayTime
 
+short iD6
 ref rIncomingRef
 ref rRef1
 ref rRef2
@@ -127,9 +128,32 @@ set fQuestDelayTime to 0.05
 					set bRef1Debuff to 1
 				endif
 				if TEbAuraMaddening == 1
-					TEAuraRef.MoveTo rRef1
-					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef1
-					set bRef1Debuff to 1
+					set iD6 to 1 + 0.06 * GetRandomPercent
+					if iD6 == 1
+						TEAuraRef.MoveTo rRef1
+						TEAuraRef.Cast TESpAuraMaddeningDebuffOne rRef1
+						set bRef1Debuff to 1
+					elseif iD6 == 2
+						TEAuraRef.MoveTo rRef1
+						TEAuraRef.Cast TESpAuraMaddeningDebuffTwo rRef1
+						set bRef1Debuff to 1
+					elseif iD6 == 3
+						TEAuraRef.MoveTo rRef1
+						TEAuraRef.Cast TESpAuraMaddeningDebuffThree rRef1
+						set bRef1Debuff to 1
+					elseif iD6 == 4
+						TEAuraRef.MoveTo rRef1
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFour rRef1
+						set bRef1Debuff to 1
+					elseif iD6 == 5
+						TEAuraRef.MoveTo rRef1
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFive rRef1
+						set bRef1Debuff to 1
+					elseif iD6 == 6
+						TEAuraRef.MoveTo rRef1
+						TEAuraRef.Cast TESpAuraMaddeningDebuffSix rRef1
+						set bRef1Debuff to 1
+					endif
 				endif
 			elseif bRef1Debuff
 				if Player.GetDistance rRef1 > 750 || rRef1.GetCombatTarget != Player
@@ -197,9 +221,32 @@ set fQuestDelayTime to 0.05
 					set bRef2Debuff to 1
 				endif
 				if TEbAuraMaddening == 1
-					TEAuraRef.MoveTo rRef2
-					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef2
-					set bRef2Debuff to 1
+					set iD6 to 1 + 0.06 * GetRandomPercent
+					if iD6 == 1
+						TEAuraRef.MoveTo rRef2
+						TEAuraRef.Cast TESpAuraMaddeningDebuffOne rRef2
+						set bRef2Debuff to 1
+					elseif iD6 == 2
+						TEAuraRef.MoveTo rRef2
+						TEAuraRef.Cast TESpAuraMaddeningDebuffTwo rRef2
+						set bRef2Debuff to 1
+					elseif iD6 == 3
+						TEAuraRef.MoveTo rRef2
+						TEAuraRef.Cast TESpAuraMaddeningDebuffThree rRef2
+						set bRef2Debuff to 1
+					elseif iD6 == 4
+						TEAuraRef.MoveTo rRef2
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFour rRef2
+						set bRef2Debuff to 1
+					elseif iD6 == 5
+						TEAuraRef.MoveTo rRef2
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFive rRef2
+						set bRef2Debuff to 1
+					elseif iD6 == 6
+						TEAuraRef.MoveTo rRef2
+						TEAuraRef.Cast TESpAuraMaddeningDebuffSix rRef2
+						set bRef2Debuff to 1
+					endif
 				endif
 			elseif bRef2Debuff
 				if Player.GetDistance rRef2 > 750 || rRef2.GetCombatTarget != Player
@@ -267,9 +314,32 @@ set fQuestDelayTime to 0.05
 					set bRef3Debuff to 1
 				endif
 				if TEbAuraMaddening == 1
-					TEAuraRef.MoveTo rRef3
-					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef3
-					set bRef3Debuff to 1
+					set iD6 to 1 + 0.06 * GetRandomPercent
+					if iD6 == 1
+						TEAuraRef.MoveTo rRef3
+						TEAuraRef.Cast TESpAuraMaddeningDebuffOne rRef3
+						set bRef3Debuff to 1
+					elseif iD6 == 2
+						TEAuraRef.MoveTo rRef3
+						TEAuraRef.Cast TESpAuraMaddeningDebuffTwo rRef3
+						set bRef3Debuff to 1
+					elseif iD6 == 3
+						TEAuraRef.MoveTo rRef3
+						TEAuraRef.Cast TESpAuraMaddeningDebuffThree rRef3
+						set bRef3Debuff to 1
+					elseif iD6 == 4
+						TEAuraRef.MoveTo rRef3
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFour rRef3
+						set bRef3Debuff to 1
+					elseif iD6 == 5
+						TEAuraRef.MoveTo rRef3
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFive rRef3
+						set bRef3Debuff to 1
+					elseif iD6 == 6
+						TEAuraRef.MoveTo rRef3
+						TEAuraRef.Cast TESpAuraMaddeningDebuffSix rRef3
+						set bRef3Debuff to 1
+					endif
 				endif
 			elseif bRef3Debuff
 				if Player.GetDistance rRef3 > 750 || rRef3.GetCombatTarget != Player
@@ -337,9 +407,32 @@ set fQuestDelayTime to 0.05
 					set bRef4Debuff to 1
 				endif
 				if TEbAuraMaddening == 1
-					TEAuraRef.MoveTo rRef4
-					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef4
-					set bRef4Debuff to 1
+					set iD6 to 1 + 0.06 * GetRandomPercent
+					if iD6 == 1
+						TEAuraRef.MoveTo rRef4
+						TEAuraRef.Cast TESpAuraMaddeningDebuffOne rRef4
+						set bRef4Debuff to 1
+					elseif iD6 == 2
+						TEAuraRef.MoveTo rRef4
+						TEAuraRef.Cast TESpAuraMaddeningDebuffTwo rRef4
+						set bRef4Debuff to 1
+					elseif iD6 == 3
+						TEAuraRef.MoveTo rRef4
+						TEAuraRef.Cast TESpAuraMaddeningDebuffThree rRef4
+						set bRef4Debuff to 1
+					elseif iD6 == 4
+						TEAuraRef.MoveTo rRef4
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFour rRef4
+						set bRef4Debuff to 1
+					elseif iD6 == 5
+						TEAuraRef.MoveTo rRef4
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFive rRef4
+						set bRef4Debuff to 1
+					elseif iD6 == 6
+						TEAuraRef.MoveTo rRef4
+						TEAuraRef.Cast TESpAuraMaddeningDebuffSix rRef4
+						set bRef4Debuff to 1
+					endif
 				endif
 			elseif bRef4Debuff
 				if Player.GetDistance rRef4 > 750 || rRef4.GetCombatTarget != Player
@@ -407,9 +500,32 @@ set fQuestDelayTime to 0.05
 					set bRef5Debuff to 1
 				endif
 				if TEbAuraMaddening == 1
-					TEAuraRef.MoveTo rRef5
-					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef5
-					set bRef5Debuff to 1
+					set iD6 to 1 + 0.06 * GetRandomPercent
+					if iD6 == 1
+						TEAuraRef.MoveTo rRef5
+						TEAuraRef.Cast TESpAuraMaddeningDebuffOne rRef5
+						set bRef5Debuff to 1
+					elseif iD6 == 2
+						TEAuraRef.MoveTo rRef5
+						TEAuraRef.Cast TESpAuraMaddeningDebuffTwo rRef5
+						set bRef5Debuff to 1
+					elseif iD6 == 3
+						TEAuraRef.MoveTo rRef5
+						TEAuraRef.Cast TESpAuraMaddeningDebuffThree rRef5
+						set bRef5Debuff to 1
+					elseif iD6 == 4
+						TEAuraRef.MoveTo rRef5
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFour rRef5
+						set bRef5Debuff to 1
+					elseif iD6 == 5
+						TEAuraRef.MoveTo rRef5
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFive rRef5
+						set bRef5Debuff to 1
+					elseif iD6 == 6
+						TEAuraRef.MoveTo rRef5
+						TEAuraRef.Cast TESpAuraMaddeningDebuffSix rRef5
+						set bRef5Debuff to 1
+					endif
 				endif
 			elseif bRef5Debuff
 				if Player.GetDistance rRef5 > 750 || rRef5.GetCombatTarget != Player
@@ -477,9 +593,32 @@ set fQuestDelayTime to 0.05
 					set bRef6Debuff to 1
 				endif
 				if TEbAuraMaddening == 1
-					TEAuraRef.MoveTo rRef6
-					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef6
-					set bRef6Debuff to 1
+					set iD6 to 1 + 0.06 * GetRandomPercent
+					if iD6 == 1
+						TEAuraRef.MoveTo rRef6
+						TEAuraRef.Cast TESpAuraMaddeningDebuffOne rRef6
+						set bRef6Debuff to 1
+					elseif iD6 == 2
+						TEAuraRef.MoveTo rRef6
+						TEAuraRef.Cast TESpAuraMaddeningDebuffTwo rRef6
+						set bRef6Debuff to 1
+					elseif iD6 == 3
+						TEAuraRef.MoveTo rRef6
+						TEAuraRef.Cast TESpAuraMaddeningDebuffThree rRef6
+						set bRef6Debuff to 1
+					elseif iD6 == 4
+						TEAuraRef.MoveTo rRef6
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFour rRef6
+						set bRef6Debuff to 1
+					elseif iD6 == 5
+						TEAuraRef.MoveTo rRef6
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFive rRef6
+						set bRef6Debuff to 1
+					elseif iD6 == 6
+						TEAuraRef.MoveTo rRef6
+						TEAuraRef.Cast TESpAuraMaddeningDebuffSix rRef6
+						set bRef6Debuff to 1
+					endif
 				endif
 			elseif bRef6Debuff
 				if Player.GetDistance rRef6 > 750 || rRef6.GetCombatTarget != Player
@@ -547,9 +686,32 @@ set fQuestDelayTime to 0.05
 					set bRef7Debuff to 1
 				endif
 				if TEbAuraMaddening == 1
-					TEAuraRef.MoveTo rRef7
-					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef7
-					set bRef7Debuff to 1
+					set iD6 to 1 + 0.06 * GetRandomPercent
+					if iD6 == 1
+						TEAuraRef.MoveTo rRef7
+						TEAuraRef.Cast TESpAuraMaddeningDebuffOne rRef7
+						set bRef7Debuff to 1
+					elseif iD6 == 2
+						TEAuraRef.MoveTo rRef7
+						TEAuraRef.Cast TESpAuraMaddeningDebuffTwo rRef7
+						set bRef7Debuff to 1
+					elseif iD6 == 3
+						TEAuraRef.MoveTo rRef7
+						TEAuraRef.Cast TESpAuraMaddeningDebuffThree rRef7
+						set bRef7Debuff to 1
+					elseif iD6 == 4
+						TEAuraRef.MoveTo rRef7
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFour rRef7
+						set bRef7Debuff to 1
+					elseif iD6 == 5
+						TEAuraRef.MoveTo rRef7
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFive rRef7
+						set bRef7Debuff to 1
+					elseif iD6 == 6
+						TEAuraRef.MoveTo rRef7
+						TEAuraRef.Cast TESpAuraMaddeningDebuffSix rRef7
+						set bRef7Debuff to 1
+					endif
 				endif
 			elseif bRef7Debuff
 				if Player.GetDistance rRef7 > 750 || rRef7.GetCombatTarget != Player
@@ -617,9 +779,32 @@ set fQuestDelayTime to 0.05
 					set bRef8Debuff to 1
 				endif
 				if TEbAuraMaddening == 1
-					TEAuraRef.MoveTo rRef8
-					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef8
-					set bRef8Debuff to 1
+					set iD6 to 1 + 0.06 * GetRandomPercent
+					if iD6 == 1
+						TEAuraRef.MoveTo rRef8
+						TEAuraRef.Cast TESpAuraMaddeningDebuffOne rRef8
+						set bRef8Debuff to 1
+					elseif iD6 == 2
+						TEAuraRef.MoveTo rRef8
+						TEAuraRef.Cast TESpAuraMaddeningDebuffTwo rRef8
+						set bRef8Debuff to 1
+					elseif iD6 == 3
+						TEAuraRef.MoveTo rRef8
+						TEAuraRef.Cast TESpAuraMaddeningDebuffThree rRef8
+						set bRef8Debuff to 1
+					elseif iD6 == 4
+						TEAuraRef.MoveTo rRef8
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFour rRef8
+						set bRef8Debuff to 1
+					elseif iD6 == 5
+						TEAuraRef.MoveTo rRef8
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFive rRef8
+						set bRef8Debuff to 1
+					elseif iD6 == 6
+						TEAuraRef.MoveTo rRef8
+						TEAuraRef.Cast TESpAuraMaddeningDebuffSix rRef8
+						set bRef8Debuff to 1
+					endif
 				endif
 			elseif bRef8Debuff
 				if Player.GetDistance rRef8 > 750 || rRef8.GetCombatTarget != Player
@@ -688,9 +873,32 @@ set fQuestDelayTime to 0.05
 					set bRef9Debuff to 1
 				endif
 				if TEbAuraMaddening == 1
-					TEAuraRef.MoveTo rRef9
-					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef9
-					set bRef9Debuff to 1
+					set iD6 to 1 + 0.06 * GetRandomPercent
+					if iD6 == 1
+						TEAuraRef.MoveTo rRef9
+						TEAuraRef.Cast TESpAuraMaddeningDebuffOne rRef9
+						set bRef9Debuff to 1
+					elseif iD6 == 2
+						TEAuraRef.MoveTo rRef9
+						TEAuraRef.Cast TESpAuraMaddeningDebuffTwo rRef9
+						set bRef9Debuff to 1
+					elseif iD6 == 3
+						TEAuraRef.MoveTo rRef9
+						TEAuraRef.Cast TESpAuraMaddeningDebuffThree rRef9
+						set bRef9Debuff to 1
+					elseif iD6 == 4
+						TEAuraRef.MoveTo rRef9
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFour rRef9
+						set bRef9Debuff to 1
+					elseif iD6 == 5
+						TEAuraRef.MoveTo rRef9
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFive rRef9
+						set bRef9Debuff to 1
+					elseif iD6 == 6
+						TEAuraRef.MoveTo rRef9
+						TEAuraRef.Cast TESpAuraMaddeningDebuffSix rRef9
+						set bRef9Debuff to 1
+					endif
 				endif
 			elseif bRef9Debuff
 				if Player.GetDistance rRef9 > 750 || rRef9.GetCombatTarget != Player
@@ -759,9 +967,32 @@ set fQuestDelayTime to 0.05
 					set bRef10Debuff to 1
 				endif
 				if TEbAuraMaddening == 1
-					TEAuraRef.MoveTo rRef10
-					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef10
-					set bRef10Debuff to 1
+					set iD6 to 1 + 0.06 * GetRandomPercent
+					if iD6 == 1
+						TEAuraRef.MoveTo rRef10
+						TEAuraRef.Cast TESpAuraMaddeningDebuffOne rRef10
+						set bRef10Debuff to 1
+					elseif iD6 == 2
+						TEAuraRef.MoveTo rRef10
+						TEAuraRef.Cast TESpAuraMaddeningDebuffTwo rRef10
+						set bRef10Debuff to 1
+					elseif iD6 == 3
+						TEAuraRef.MoveTo rRef10
+						TEAuraRef.Cast TESpAuraMaddeningDebuffThree rRef10
+						set bRef10Debuff to 1
+					elseif iD6 == 4
+						TEAuraRef.MoveTo rRef10
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFour rRef10
+						set bRef10Debuff to 1
+					elseif iD6 == 5
+						TEAuraRef.MoveTo rRef10
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFive rRef10
+						set bRef10Debuff to 1
+					elseif iD6 == 6
+						TEAuraRef.MoveTo rRef10
+						TEAuraRef.Cast TESpAuraMaddeningDebuffSix rRef10
+						set bRef10Debuff to 1
+					endif
 				endif
 			elseif bRef10Debuff
 				if Player.GetDistance rRef10 > 750 || rRef10.GetCombatTarget != Player
@@ -829,9 +1060,32 @@ set fQuestDelayTime to 0.05
 					set bRef11Debuff to 1
 				endif
 				if TEbAuraMaddening == 1
-					TEAuraRef.MoveTo rRef11
-					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef11
-					set bRef11Debuff to 1
+					set iD6 to 1 + 0.06 * GetRandomPercent
+					if iD6 == 1
+						TEAuraRef.MoveTo rRef11
+						TEAuraRef.Cast TESpAuraMaddeningDebuffOne rRef11
+						set bRef11Debuff to 1
+					elseif iD6 == 2
+						TEAuraRef.MoveTo rRef11
+						TEAuraRef.Cast TESpAuraMaddeningDebuffTwo rRef11
+						set bRef11Debuff to 1
+					elseif iD6 == 3
+						TEAuraRef.MoveTo rRef11
+						TEAuraRef.Cast TESpAuraMaddeningDebuffThree rRef11
+						set bRef11Debuff to 1
+					elseif iD6 == 4
+						TEAuraRef.MoveTo rRef11
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFour rRef11
+						set bRef11Debuff to 1
+					elseif iD6 == 5
+						TEAuraRef.MoveTo rRef11
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFive rRef11
+						set bRef11Debuff to 1
+					elseif iD6 == 6
+						TEAuraRef.MoveTo rRef11
+						TEAuraRef.Cast TESpAuraMaddeningDebuffSix rRef11
+						set bRef11Debuff to 1
+					endif
 				endif
 			elseif bRef11Debuff
 				if Player.GetDistance rRef11 > 750 || rRef11.GetCombatTarget != Player
@@ -899,9 +1153,32 @@ set fQuestDelayTime to 0.05
 					set bRef12Debuff to 1
 				endif
 				if TEbAuraMaddening == 1
-					TEAuraRef.MoveTo rRef12
-					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef12
-					set bRef12Debuff to 1
+					set iD6 to 1 + 0.06 * GetRandomPercent
+					if iD6 == 1
+						TEAuraRef.MoveTo rRef12
+						TEAuraRef.Cast TESpAuraMaddeningDebuffOne rRef12
+						set bRef12Debuff to 1
+					elseif iD6 == 2
+						TEAuraRef.MoveTo rRef12
+						TEAuraRef.Cast TESpAuraMaddeningDebuffTwo rRef12
+						set bRef12Debuff to 1
+					elseif iD6 == 3
+						TEAuraRef.MoveTo rRef12
+						TEAuraRef.Cast TESpAuraMaddeningDebuffThree rRef12
+						set bRef12Debuff to 1
+					elseif iD6 == 4
+						TEAuraRef.MoveTo rRef12
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFour rRef12
+						set bRef12Debuff to 1
+					elseif iD6 == 5
+						TEAuraRef.MoveTo rRef12
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFive rRef12
+						set bRef12Debuff to 1
+					elseif iD6 == 6
+						TEAuraRef.MoveTo rRef12
+						TEAuraRef.Cast TESpAuraMaddeningDebuffSix rRef12
+						set bRef12Debuff to 1
+					endif
 				endif
 			elseif bRef12Debuff
 				if Player.GetDistance rRef12 > 750 || rRef12.GetCombatTarget != Player
@@ -969,9 +1246,32 @@ set fQuestDelayTime to 0.05
 					set bRef13Debuff to 1
 				endif
 				if TEbAuraMaddening == 1
-					TEAuraRef.MoveTo rRef13
-					TEAuraRef.Cast TESpAuraMaddeningDebuff rRef13
-					set bRef13Debuff to 1
+					set iD6 to 1 + 0.06 * GetRandomPercent
+					if iD6 == 1
+						TEAuraRef.MoveTo rRef13
+						TEAuraRef.Cast TESpAuraMaddeningDebuffOne rRef13
+						set bRef13Debuff to 1
+					elseif iD6 == 2
+						TEAuraRef.MoveTo rRef13
+						TEAuraRef.Cast TESpAuraMaddeningDebuffTwo rRef13
+						set bRef13Debuff to 1
+					elseif iD6 == 3
+						TEAuraRef.MoveTo rRef13
+						TEAuraRef.Cast TESpAuraMaddeningDebuffThree rRef13
+						set bRef13Debuff to 1
+					elseif iD6 == 4
+						TEAuraRef.MoveTo rRef13
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFour rRef13
+						set bRef13Debuff to 1
+					elseif iD6 == 5
+						TEAuraRef.MoveTo rRef13
+						TEAuraRef.Cast TESpAuraMaddeningDebuffFive rRef13
+						set bRef13Debuff to 1
+					elseif iD6 == 6
+						TEAuraRef.MoveTo rRef13
+						TEAuraRef.Cast TESpAuraMaddeningDebuffSix rRef13
+						set bRef13Debuff to 1
+					endif
 				endif
 			elseif bRef13Debuff
 				if Player.GetDistance rRef13 > 750 || rRef13.GetCombatTarget != Player
@@ -986,5 +1286,4 @@ set fQuestDelayTime to 0.05
 			set rRef13 to 0
 		endif
 	endif
-		
 end

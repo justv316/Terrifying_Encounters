@@ -58,38 +58,41 @@ begin ScriptEffectStart
 	if bBonusAdded != 0
 		set bBonusAdded to 0
 	endif
+	if bBonusTwoAdded != 0
+		set bBonusTwoAdded to 0
+	endif
 end
 
 begin ScriptEffectUpdate
 	if TEQQSetBonusMaddeningManagerQuest.bInitalized == 3
 		if bBonusAdded == 0
-			set iModStrength to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModStrength
-			set iModIntelligence to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModIntelligence
-			set iModAgility to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModAgility
-			set iModWillpower to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModWillpower
-			set iModSpeed to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModSpeed
-			set iModEndurance to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModEndurance
-			set iModLuck to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModLuck
-			set iModEncumbrance to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModEncumbrance
-			set iModResistFire to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModResistFire
-			set iModResistFrost to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModResistFrost
-			set iModResistDisease to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModResistDisease
-			set iModResistMagic to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModResistMagic
-			set iModResistNormalWeapons to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModResistNormalWeapons
-			set iModResistParalysis to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModResistParalysis
-			set iModResistPoison to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModResistPoison
-			set iModResistShock to 1.1 * TEQQSetBonusMaddeningManagerQuest.iModResistShock
+			set iModStrength to TEQQSetBonusMaddeningManagerQuest.iModStrength
+			set iModIntelligence to TEQQSetBonusMaddeningManagerQuest.iModIntelligence
+			set iModAgility to TEQQSetBonusMaddeningManagerQuest.iModAgility
+			set iModWillpower to TEQQSetBonusMaddeningManagerQuest.iModWillpower
+			set iModSpeed to TEQQSetBonusMaddeningManagerQuest.iModSpeed
+			set iModEndurance to TEQQSetBonusMaddeningManagerQuest.iModEndurance
+			set iModLuck to TEQQSetBonusMaddeningManagerQuest.iModLuck
+			set iModEncumbrance to TEQQSetBonusMaddeningManagerQuest.iModEncumbrance
+			set iModResistFire to TEQQSetBonusMaddeningManagerQuest.iModResistFire
+			set iModResistFrost to TEQQSetBonusMaddeningManagerQuest.iModResistFrost
+			set iModResistDisease to TEQQSetBonusMaddeningManagerQuest.iModResistDisease
+			set iModResistMagic to TEQQSetBonusMaddeningManagerQuest.iModResistMagic
+			set iModResistNormalWeapons to TEQQSetBonusMaddeningManagerQuest.iModResistNormalWeapons
+			set iModResistParalysis to TEQQSetBonusMaddeningManagerQuest.iModResistParalysis
+			set iModResistPoison to TEQQSetBonusMaddeningManagerQuest.iModResistPoison
+			set iModResistShock to TEQQSetBonusMaddeningManagerQuest.iModResistShock
 			set iModStuntedMagicka to TEQQSetBonusMaddeningManagerQuest.iModStuntedMagicka
 			set iModWaterWalking to TEQQSetBonusMaddeningManagerQuest.iModWaterWalking
 			set iModWaterBreathing to TEQQSetBonusMaddeningManagerQuest.iModWaterBreathing
 			set iPlayerStuntedMagicka to TEQQSetBonusMaddeningManagerQuest.iPlayerStuntedMagicka
-			set iPlayerWaterWalking to 1TEQQSetBonusMaddeningManagerQuest.iPlayerWaterWalking
+			set iPlayerWaterWalking to TEQQSetBonusMaddeningManagerQuest.iPlayerWaterWalking
 			set iPlayerWaterBreathing to TEQQSetBonusMaddeningManagerQuest.iPlayerWaterBreathing
-			set iModAttackBonus to 1.03 * TEQQSetBonusMaddeningManagerQuest.iModAttackBonus
-			set iModDefendBonus to 1.03 * TEQQSetBonusMaddeningManagerQuest.iModDefendBonus
-			set iModSpellAbsorbChance to 1.03 * TEQQSetBonusMaddeningManagerQuest.iModSpellAbsorbChance
-			set iModReflectDamage to 1.03 * TEQQSetBonusMaddeningManagerQuest.iModReflectDamage
-			set iModSpellReflectChance to 1.03 * TEQQSetBonusMaddeningManagerQuest.iModSpellReflectChance
+			set iModAttackBonus to TEQQSetBonusMaddeningManagerQuest.iModAttackBonus
+			set iModDefendBonus to TEQQSetBonusMaddeningManagerQuest.iModDefendBonus
+			set iModSpellAbsorbChance to TEQQSetBonusMaddeningManagerQuest.iModSpellAbsorbChance
+			set iModReflectDamage to TEQQSetBonusMaddeningManagerQuest.iModReflectDamage
+			set iModSpellReflectChance to TEQQSetBonusMaddeningManagerQuest.iModSpellReflectChance
 			Player.ModActorValue Strength iModStrength
 			Player.ModActorValue Intelligence iModIntelligence
 			Player.ModActorValue Agility iModAgility

@@ -58,6 +58,9 @@ begin ScriptEffectStart
 	if bBonusAdded != 0
 		set bBonusAdded to 0
 	endif
+	if bBonusTwoAdded != 0
+		set bBonusTwoAdded to 0
+	endif
 end
 
 begin ScriptEffectUpdate
