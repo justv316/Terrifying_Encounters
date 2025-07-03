@@ -4,9 +4,9 @@ short bShouldEquip
 
 begin OnAdd Player
 	set TEiWeaponWaningKills to 0
-	if TEQQTsaesciBloodDrinkerQuest.bActivated == 0
-		set TEQQTsaesciBloodDrinkerQuest.bActivated to 1
-		StartQuest TEQQTsaesciBloodDrinkerQuest
+	if TEQQWeapTsaesciBloodDrinkerQuest.bActivated == 0
+		set TEQQWeapTsaesciBloodDrinkerQuest.bActivated to 1
+		StartQuest TEQQWeapTsaesciBloodDrinkerQuest
 	endif
 	if TEiWeaponRisingEquip >= 1
 		set bShouldEquip to 1
@@ -18,9 +18,9 @@ begin OnAdd Player
 end
 
 begin OnDrop Player
-	if TEQQTsaesciBloodDrinkerQuest.bActivated == 1
-		set TEQQTsaesciBloodDrinkerQuest.bActivated to 0
-		StopQuest TEQQTsaesciBloodDrinkerQuest
+	if TEQQWeapTsaesciBloodDrinkerQuest.bActivated == 1
+		set TEQQWeapTsaesciBloodDrinkerQuest.bActivated to 0
+		StopQuest TEQQWeapTsaesciBloodDrinkerQuest
 	endif
 	if bShouldEquip > 0
 		set bShouldEquip to 0
