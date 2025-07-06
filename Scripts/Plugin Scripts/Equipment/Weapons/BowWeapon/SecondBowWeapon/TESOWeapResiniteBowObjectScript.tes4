@@ -1,0 +1,71 @@
+scn TESOWeapResiniteBowObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponResiniteBowEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponResiniteBowEquip > 0
+		set TEiWeaponResiniteBowEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetResiniteEquip to TEiSetResiniteEquip + 1
+	if Player.GetEquipped TE01WeaponResiniteBow
+		set TEiWeaponResiniteBowEquip to 1
+	elseif Player.GetEquipped TE02WeaponResiniteBow
+		set TEiWeaponResiniteBowEquip to 2
+	elseif Player.GetEquipped TE03WeaponResiniteBow
+		set TEiWeaponResiniteBowEquip to 3
+	elseif Player.GetEquipped TE04WeaponResiniteBow 
+		set TEiWeaponResiniteBowEquip to 4
+	elseif Player.GetEquipped TE05WeaponResiniteBow 
+		set TEiWeaponResiniteBowEquip to 5
+	elseif Player.GetEquipped TE06WeaponResiniteBow
+		set TEiWeaponResiniteBowEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetResiniteEquip to TEiSetResiniteEquip - 1
+	if TEiWeaponResiniteBowEquip > 0
+		set TEiWeaponResiniteBowEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponResiniteBowEquip == 1
+			Player.EquipItem TE02WeaponResiniteBow
+			set TEiWeaponResiniteBowEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponResiniteBowEquip == 2
+			Player.EquipItem TE03WeaponResiniteBow
+			set TEiWeaponResiniteBowEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponResiniteBowEquip == 3
+			Player.EquipItem TE04WeaponResiniteBow
+			set TEiWeaponResiniteBowEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponResiniteBowEquip == 4
+			Player.EquipItem TE05WeaponResiniteBow
+			set TEiWeaponResiniteBowEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponResiniteBowEquip == 5
+			Player.EquipItem TE06WeaponResiniteBow
+			set TEiWeaponResiniteBowEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

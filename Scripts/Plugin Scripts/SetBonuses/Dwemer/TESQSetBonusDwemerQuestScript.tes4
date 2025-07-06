@@ -1,0 +1,54 @@
+scn TESQSetBonusDwemerQuestScript
+
+float fQuestDelayTime
+short iDwemerBonusAdded
+
+
+begin GameMode
+	set fQuestDelayTime to 1
+	if TEiSetDwemerEquip < 4
+		Player.RemoveSpell TEAbEquipDwemerSetBonus4
+		Player.RemoveSpell TEAbEquipDwemerSetBonus5
+		Player.RemoveSpell TEAbEquipDwemerSetBonus6
+		set iDwemerBonusAdded to 0
+	elseif TEiSetDwemerEquip == 4
+		if iDwemerBonusAdded == 0
+			Player.AddSpell TEAbEquipDwemerSetBonus4
+			set iDwemerBonusAdded to 4
+		elseif iDwemerBonusAdded == 5
+			Player.RemoveSpell TEAbEquipDwemerSetBonus5
+			Player.AddSpell TEAbEquipDwemerSetBonus4
+			set iDwemerBonusAdded to 4
+		elseif iDwemerBonusAdded == 6
+			Player.RemoveSpell TEAbEquipDwemerSetBonus6
+			Player.AddSpell TEAbEquipDwemerSetBonus4
+			set iDwemerBonusAdded to 4
+		endif
+	elseif TEiSetDwemerEquip == 5
+		if iDwemerBonusAdded == 0
+			Player.AddSpell TEAbEquipDwemerSetBonus5
+			set iDwemerBonusAdded to 5
+		elseif iDwemerBonusAdded == 4
+			Player.RemoveSpell TEAbEquipDwemerSetBonus4
+			Player.AddSpell TEAbEquipDwemerSetBonus5
+			set iDwemerBonusAdded to 5
+		elseif iDwemerBonusAdded == 6
+			Player.RemoveSpell TEAbEquipDwemerSetBonus6
+			Player.AddSpell TEAbEquipDwemerSetBonus5
+			set iDwemerBonusAdded to 5
+		endif
+	elseif TEiSetDwemerEquip == 6 || TEiSetDwemerEquip == 7
+		if iDwemerBonusAdded == 0
+			Player.AddSpell TEAbEquipDwemerSetBonus6
+			set iDwemerBonusAdded to 6
+		elseif iDwemerBonusAdded == 4
+			Player.RemoveSpell TEAbEquipDwemerSetBonus4
+			Player.AddSpell TEAbEquipDwemerSetBonus6
+			set iDwemerBonusAdded to 6
+		elseif iDwemerBonusAdded == 5
+			Player.RemoveSpell TEAbEquipDwemerSetBonus5
+			Player.AddSpell TEAbEquipDwemerSetBonus6
+			set iDwemerBonusAdded to 6
+		endif
+	endif
+end

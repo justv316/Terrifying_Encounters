@@ -1,0 +1,69 @@
+scn TESOWeapGoldenMaceObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponGoldenMaceEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponGoldenMaceEquip > 0
+		set TEiWeaponGoldenMaceEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	if Player.GetEquipped TE01WeaponGoldenMace
+		set TEiWeaponGoldenMaceEquip to 1
+	elseif Player.GetEquipped TE02WeaponGoldenMace
+		set TEiWeaponGoldenMaceEquip to 2
+	elseif Player.GetEquipped TE03WeaponGoldenMace
+		set TEiWeaponGoldenMaceEquip to 3
+	elseif Player.GetEquipped TE04WeaponGoldenMace 
+		set TEiWeaponGoldenMaceEquip to 4
+	elseif Player.GetEquipped TE05WeaponGoldenMace 
+		set TEiWeaponGoldenMaceEquip to 5
+	elseif Player.GetEquipped TE06WeaponGoldenMace
+		set TEiWeaponGoldenMaceEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	if TEiWeaponGoldenMaceEquip > 0
+		set TEiWeaponGoldenMaceEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponGoldenMaceEquip == 1
+			Player.EquipItem TE02WeaponGoldenMace
+			set TEiWeaponGoldenMaceEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponGoldenMaceEquip == 2
+			Player.EquipItem TE03WeaponGoldenMace
+			set TEiWeaponGoldenMaceEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponGoldenMaceEquip == 3
+			Player.EquipItem TE04WeaponGoldenMace
+			set TEiWeaponGoldenMaceEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponGoldenMaceEquip == 4
+			Player.EquipItem TE05WeaponGoldenMace
+			set TEiWeaponGoldenMaceEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponGoldenMaceEquip == 5
+			Player.EquipItem TE06WeaponGoldenMace
+			set TEiWeaponGoldenMaceEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

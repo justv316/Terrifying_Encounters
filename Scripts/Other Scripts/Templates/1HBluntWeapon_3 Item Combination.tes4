@@ -1,0 +1,70 @@
+		elseif iSelectedWeaponSet == 3 ;1H Blunt
+			if iFound1HBluntWeaponSet == 1
+				set iSelectedSubWeaponSet to 8
+			elseif iFound1HBluntWeaponSet == 2
+				set iSelectedSubWeaponSet to 9
+			elseif iFound1HBluntWeaponSet == 4 
+				set iSelectedSubWeaponSet to 10
+			elseif iFound1HBluntWeaponSet == 3
+				MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel", "Back", "Mace", "Mace/Waraxe"
+				set iChoosingSubWeaponSet to 15
+			elseif iFound1HBluntWeaponSet == 5
+				MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel" , "Back", "Mace", "Waraxe"
+				set iChoosingSubWeaponSet to 16
+			elseif iFound1HBluntWeaponSet == 6
+				MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel" , "Back", "Mace/Waraxe", "Waraxe"
+				set iChoosingSubWeaponSet to 17
+			elseif iFound1HBluntWeaponSet == 7
+				MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel" , "Back", "Mace", "Mace/Waraxe", "Waraxe"
+				set iChoosingSubWeaponSet to 18
+			
+				
+				
+		elseif iChoosingSubWeaponSet == 15
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iSelectedSubWeaponSet to 8
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 9
+			endif
+		elseif iChoosingSubWeaponSet == 16
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iSelectedSubWeaponSet to 8
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 10
+			endif
+		elseif iChoosingSubWeaponSet == 17
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iSelectedSubWeaponSet to 9
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 10
+			endif
+		elseif iChoosingSubWeaponSet == 18
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iSelectedSubWeaponSet to 8
+			elseif iChoice == 3
+				set iSelectedSubWeaponSet to 9
+			elseif iChoice == 4
+				set iSelectedSubWeaponSet to 10
+			endif
+		
+		

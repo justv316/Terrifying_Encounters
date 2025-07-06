@@ -1,0 +1,71 @@
+scn TESOArmorDwemerHHelmetObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiArmorDwemerHHelmetEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiArmorDwemerHHelmetEquip > 0
+		set TEiArmorDwemerHHelmetEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetDwemerEquip to TEiSetDwemerEquip + 1
+	if Player.GetEquipped TE01ArmorDwemerHHelmet
+		set TEiArmorDwemerHHelmetEquip to 1
+	elseif Player.GetEquipped TE02ArmorDwemerHHelmet
+		set TEiArmorDwemerHHelmetEquip to 2
+	elseif Player.GetEquipped TE03ArmorDwemerHHelmet
+		set TEiArmorDwemerHHelmetEquip to 3
+	elseif Player.GetEquipped TE04ArmorDwemerHHelmet 
+		set TEiArmorDwemerHHelmetEquip to 4
+	elseif Player.GetEquipped TE05ArmorDwemerHHelmet 
+		set TEiArmorDwemerHHelmetEquip to 5
+	elseif Player.GetEquipped TE06ArmorDwemerHHelmet
+		set TEiArmorDwemerHHelmetEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetDwemerEquip to TEiSetDwemerEquip - 1
+	if TEiArmorDwemerHHelmetEquip > 0
+		set TEiArmorDwemerHHelmetEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiArmorDwemerHHelmetEquip == 1
+			Player.EquipItem TE02ArmorDwemerHHelmet
+			set TEiArmorDwemerHHelmetEquip to 2
+			set bShouldEquip to 0
+		elseif TEiArmorDwemerHHelmetEquip == 2
+			Player.EquipItem TE03ArmorDwemerHHelmet
+			set TEiArmorDwemerHHelmetEquip to 3
+			set bShouldEquip to 0
+		elseif TEiArmorDwemerHHelmetEquip == 3
+			Player.EquipItem TE04ArmorDwemerHHelmet
+			set TEiArmorDwemerHHelmetEquip to 4
+			set bShouldEquip to 0
+		elseif TEiArmorDwemerHHelmetEquip == 4
+			Player.EquipItem TE05ArmorDwemerHHelmet
+			set TEiArmorDwemerHHelmetEquip to 5
+			set bShouldEquip to 0
+		elseif TEiArmorDwemerHHelmetEquip == 5
+			Player.EquipItem TE06ArmorDwemerHHelmet
+			set TEiArmorDwemerHHelmetEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

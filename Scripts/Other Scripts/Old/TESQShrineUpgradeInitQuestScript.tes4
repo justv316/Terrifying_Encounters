@@ -1,0 +1,919 @@
+scn TESQShrineUpgradeInitQuestScript
+
+float fQuestDelayTime
+short iDM
+short iCI
+short iC
+
+begin gamemode
+	if iCI == 1
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		endif
+	elseif iCI == 2
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		endif
+	elseif iCI == 3
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 3
+		endif
+	elseif iCI == 4
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 4
+		endif
+	elseif iCI == 5
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 5
+		endif
+	elseif iCI == 6
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 6
+		endif
+	elseif iCI == 7
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		endif
+	elseif iCI == 8
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 3
+		endif
+	elseif iCI == 9
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 4
+		endif
+	elseif iCI == 10
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 5
+		endif
+	elseif iCI == 11
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		elseif iC == 3
+			set iDM to 3
+		endif
+	elseif iCI == 12
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		elseif iC == 3
+			set iDM to 4
+		endif
+	elseif iCI == 13
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		elseif iC == 3
+			set iDM to 5
+		endif
+	elseif iCI == 14
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 3
+		elseif iC == 3
+			set iDM to 4
+		endif
+	elseif iCI == 15
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 3
+		elseif iC == 3
+			set iDM to 5
+		endif
+	elseif iCI == 16
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 4
+		elseif iC == 3
+			set iDM to 5
+		endif
+	elseif iCI == 16
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 4
+		elseif iC == 3
+			set iDM to 5
+		endif
+	elseif iCI == 17
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		elseif iC == 4
+			set iDM to 3
+		endif
+	elseif iCI == 18
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		elseif iC == 4
+			set iDM to 4
+		endif
+	elseif iCI == 19
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		elseif iC == 4
+			set iDM to 5
+		endif
+	elseif iCI == 20
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 3
+		elseif iC == 4
+			set iDM to 4
+		endif
+	elseif iCI == 21
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 3
+		elseif iC == 4
+			set iDM to 5
+		endif
+	elseif iCI == 22
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 4
+		elseif iC == 4
+			set iDM to 5
+		endif
+	elseif iCI == 23
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		elseif iC == 3
+			set iDM to 3
+		elseif iC == 4
+			set iDM to 4
+		endif
+	elseif iCI == 24
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		elseif iC == 3
+			set iDM to 3
+		elseif iC == 4
+			set iDM to 5
+		endif
+	elseif iCI == 25
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		elseif iC == 3
+			set iDM to 4
+		elseif iC == 4
+			set iDM to 5
+		endif
+	elseif iCI == 26
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 3
+		elseif iC == 3
+			set iDM to 4
+		elseif iC == 4
+			set iDM to 5
+		endif
+	elseif iCI == 27
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		elseif iC == 4
+			set iDM to 3
+		elseif iC == 5
+			set iDM to 4
+		endif
+	elseif iCI == 28
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		elseif iC == 4
+			set iDM to 3
+		elseif iC == 5
+			set iDM to 5
+		endif
+	elseif iCI == 29
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		elseif iC == 4
+			set iDM to 4
+		elseif iC == 5
+			set iDM to 5
+		endif
+	elseif iCI == 30
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 3
+		elseif iC == 4
+			set iDM to 4
+		elseif iC == 5
+			set iDM to 5
+		endif
+	elseif iCI == 31
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		elseif iC == 3
+			set iDM to 3
+		elseif iC == 4
+			set iDM to 4
+		elseif iC == 5
+			set iDM to 5
+		endif
+	elseif iCI == 32
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		elseif iC == 4
+			set iDM to 3
+		elseif iC == 5
+			set iDM to 4
+		elseif iC == 6
+			set iDM to 5
+		endif
+	elseif iCI == 33
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 6
+		endif
+	elseif iCI == 34
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		elseif iC == 3
+			set iDM to 6
+		endif
+	elseif iCI == 35
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		elseif iC == 4
+			set iDM to 6
+		endif
+	elseif iCI == 36
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 3
+		elseif iC == 3
+			set iDM to 6
+		endif
+	elseif iCI == 37
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 3
+		elseif iC == 4
+			set iDM to 6
+		endif
+	elseif iCI == 38
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		elseif iC == 3
+			set iDM to 3
+		elseif iC == 4
+			set iDM to 6
+		endif
+	elseif iCI == 39
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		elseif iC == 4
+			set iDM to 3
+		elseif iC == 5
+			set iDM to 6
+		endif
+	elseif iCI == 40
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 4
+		elseif iC == 3
+			set iDM to 6
+		endif
+	elseif iCI == 41
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 4
+		elseif iC == 4
+			set iDM to 6
+		endif
+	elseif iCI == 42
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		elseif iC == 3
+			set iDM to 4
+		elseif iC == 4
+			set iDM to 6
+		endif
+	elseif iCI == 43
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		elseif iC == 4
+			set iDM to 4
+		elseif iC == 5
+			set iDM to 6
+		endif
+	elseif iCI == 44
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 3
+		elseif iC == 3
+			set iDM to 4
+		elseif iC == 4
+			set iDM to 6
+		endif
+	elseif iCI == 45
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 3
+		elseif iC == 4
+			set iDM to 4
+		elseif iC == 5
+			set iDM to 6
+		endif
+	elseif iCI == 46
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		elseif iC == 3
+			set iDM to 3
+		elseif iC == 4
+			set iDM to 4
+		elseif iC == 5
+			set iDM to 6
+		endif
+	elseif iCI == 47
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		elseif iC == 4
+			set iDM to 3
+		elseif iC == 5
+			set iDM to 4
+		elseif iC == 6
+			set iDM to 6
+		endif
+	elseif iCI == 48
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 5
+		elseif iC == 3
+			set iDM to 6
+		endif
+	elseif iCI == 49
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 5
+		elseif iC == 4
+			set iDM to 6
+		endif
+	elseif iCI == 50
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		elseif iC == 3
+			set iDM to 5
+		elseif iC == 4
+			set iDM to 6
+		endif
+	elseif iCI == 51
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		elseif iC == 4
+			set iDM to 5
+		elseif iC == 5
+			set iDM to 6
+		endif
+	elseif iCI == 52
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 3
+		elseif iC == 3
+			set iDM to 5
+		elseif iC == 4
+			set iDM to 6
+		endif
+	elseif iCI == 53
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 3
+		elseif iC == 4
+			set iDM to 5
+		elseif iC == 5
+			set iDM to 6
+		endif
+	elseif iCI == 54
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		elseif iC == 3
+			set iDM to 3
+		elseif iC == 4
+			set iDM to 5
+		elseif iC == 5
+			set iDM to 6
+		endif
+	elseif iCI == 55
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		elseif iC == 4
+			set iDM to 3
+		elseif iC == 5
+			set iDM to 5
+		elseif iC == 6
+			set iDM to 6
+		endif
+	elseif iCI == 56
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 4
+		elseif iC == 3
+			set iDM to 5
+		elseif iC == 4
+			set iDM to 6
+		endif
+	elseif iCI == 57
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 4
+		elseif iC == 4
+			set iDM to 5
+		elseif iC == 5
+			set iDM to 6
+		endif
+	elseif iCI == 58
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		elseif iC == 3
+			set iDM to 4
+		elseif iC == 4
+			set iDM to 5
+		elseif iC == 5
+			set iDM to 6
+		endif
+	elseif iCI == 59
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		elseif iC == 4
+			set iDM to 4
+		elseif iC == 5
+			set iDM to 5
+		elseif iC == 6
+			set iDM to 6
+		endif
+	elseif iCI == 60
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 3
+		elseif iC == 3
+			set iDM to 4
+		elseif iC == 4
+			set iDM to 5
+		elseif iC == 5
+			set iDM to 6
+		endif
+	elseif iCI == 61
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 3
+		elseif iC == 4
+			set iDM to 4
+		elseif iC == 5
+			set iDM to 5
+		elseif iC == 6
+			set iDM to 6
+		endif
+	elseif iCI == 62
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 2
+		elseif iC == 3
+			set iDM to 3
+		elseif iC == 4
+			set iDM to 4
+		elseif iC == 5
+			set iDM to 5
+		elseif iC == 6
+			set iDM to 6
+		endif
+	elseif iCI == 63
+		set iC to GetButtonPressed
+		if iC == 0
+			set iDM to -2
+		elseif iC == 1
+			set iDM to -3
+		elseif iC == 2
+			set iDM to 1
+		elseif iC == 3
+			set iDM to 2
+		elseif iC == 4
+			set iDM to 3
+		elseif iC == 5
+			set iDM to 4
+		elseif iC == 6
+			set iDM to 5
+		elseif iC == 7
+			set iDM to 6
+		endif
+	endif
+	if iDM == 1
+		set TEQQUpgradeCrystalLongswordQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeCrystalLongswordQuest.iDisplayedMenu to 1
+		set TEQQUpgradeCrystalLongswordQuest.iUpgradePerformed to 0
+		set TEQQUpgradeCrystalLongswordQuest.iChoosing to 0
+		set TEQQUpgradeCrystalLongswordQuest.iChoosingTier to 0
+		set TEQQUpgradeCrystalLongswordQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeCrystalLongswordQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeInitQuest
+		StartQuest TEQQUpgradeCrystalLongswordQuest
+	elseif iDM == 2
+		set TEQQUpgradeEbonyUchigatanaQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeEbonyUchigatanaQuest.iDisplayedMenu to 1
+		set TEQQUpgradeEbonyUchigatanaQuest.iUpgradePerformed to 0
+		set TEQQUpgradeEbonyUchigatanaQuest.iChoosing to 0
+		set TEQQUpgradeEbonyUchigatanaQuest.iChoosingTier to 0
+		set TEQQUpgradeEbonyUchigatanaQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeEbonyUchigatanaQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeInitQuest
+		StartQuest TEQQUpgradeEbonyUchigatanaQuest
+	elseif iDM == 3
+		set TEQQUpgradeGoldUchigatanaQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeGoldUchigatanaQuest.iDisplayedMenu to 1
+		set TEQQUpgradeGoldUchigatanaQuest.iUpgradePerformed to 0
+		set TEQQUpgradeGoldUchigatanaQuest.iChoosing to 0
+		set TEQQUpgradeGoldUchigatanaQuest.iChoosingTier to 0
+		set TEQQUpgradeGoldUchigatanaQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeGoldUchigatanaQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeInitQuest
+		StartQuest TEQQUpgradeGoldUchigatanaQuest
+	elseif iDM == 4 
+		set TEQQUpgradeStalrihmShortswordQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeStalrihmShortswordQuest.iDisplayedMenu to 1
+		set TEQQUpgradeStalrihmShortswordQuest.iUpgradePerformed to 0
+		set TEQQUpgradeStalrihmShortswordQuest.iChoosing to 0
+		set TEQQUpgradeStalrihmShortswordQuest.iChoosingTier to 0
+		set TEQQUpgradeStalrihmShortswordQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeStalrihmShortswordQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeInitQuest
+		StartQuest TEQQUpgradeStalrihmShortswordQuest
+	elseif iDM == 5
+		set TEQQUpgradeQuicksilverDaggerQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeQuicksilverDaggerQuest.iDisplayedMenu to 1
+		set TEQQUpgradeQuicksilverDaggerQuest.iUpgradePerformed to 0
+		set TEQQUpgradeQuicksilverDaggerQuest.iChoosing to 0
+		set TEQQUpgradeQuicksilverDaggerQuest.iChoosingTier to 0
+		set TEQQUpgradeQuicksilverDaggerQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeQuicksilverDaggerQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeInitQuest
+		StartQuest TEQQUpgradeQuicksilverDaggerQuest
+	elseif iDM == 6 	
+		set TEQQUpgradeEbonyRazorQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeEbonyRazorQuest.iDisplayedMenu to 1
+		set TEQQUpgradeEbonyRazorQuest.iUpgradePerformed to 0
+		set TEQQUpgradeEbonyRazorQuest.iChoosing to 0
+		set TEQQUpgradeEbonyRazorQuest.iChoosingTier to 0
+		set TEQQUpgradeEbonyRazorQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeEbonyRazorQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeInitQuest
+		StartQuest TEQQUpgradeEbonyRazorQuest
+	elseif iDM == -1
+		Message "Nothing found to upgrade."
+		StopQuest TEQQShrineUpgradeArtifactQuest
+	elseif iDM == -2
+		Message "Return when you are ready!"
+		StopQuest TEQQShrineUpgradeArtifactQuest
+	elseif iDM == -3
+		set TEQQShrineInitilizationQuest.fQuestDelayTime to 0.01
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to 0
+		set TEQQShrineInitilizationQuest.iChoosing to 0
+		StopQuest TEQQShrineUpgradeInitQuest
+		StartQuest TEQQShrineInitilizationQuest
+	endif
+end

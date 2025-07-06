@@ -1,0 +1,71 @@
+scn TESOArmorResiniteLBootsObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiArmorResiniteLBootsEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiArmorResiniteLBootsEquip > 0
+		set TEiArmorResiniteLBootsEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetResiniteEquip to TEiSetResiniteEquip + 1
+	if Player.GetEquipped TE01ArmorResiniteLBoots
+		set TEiArmorResiniteLBootsEquip to 1
+	elseif Player.GetEquipped TE02ArmorResiniteLBoots
+		set TEiArmorResiniteLBootsEquip to 2
+	elseif Player.GetEquipped TE03ArmorResiniteLBoots
+		set TEiArmorResiniteLBootsEquip to 3
+	elseif Player.GetEquipped TE04ArmorResiniteLBoots 
+		set TEiArmorResiniteLBootsEquip to 4
+	elseif Player.GetEquipped TE05ArmorResiniteLBoots 
+		set TEiArmorResiniteLBootsEquip to 5
+	elseif Player.GetEquipped TE06ArmorResiniteLBoots
+		set TEiArmorResiniteLBootsEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetResiniteEquip to TEiSetResiniteEquip - 1
+	if TEiArmorResiniteLBootsEquip > 0
+		set TEiArmorResiniteLBootsEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiArmorResiniteLBootsEquip == 1
+			Player.EquipItem TE02ArmorResiniteLBoots
+			set TEiArmorResiniteLBootsEquip to 2
+			set bShouldEquip to 0
+		elseif TEiArmorResiniteLBootsEquip == 2
+			Player.EquipItem TE03ArmorResiniteLBoots
+			set TEiArmorResiniteLBootsEquip to 3
+			set bShouldEquip to 0
+		elseif TEiArmorResiniteLBootsEquip == 3
+			Player.EquipItem TE04ArmorResiniteLBoots
+			set TEiArmorResiniteLBootsEquip to 4
+			set bShouldEquip to 0
+		elseif TEiArmorResiniteLBootsEquip == 4
+			Player.EquipItem TE05ArmorResiniteLBoots
+			set TEiArmorResiniteLBootsEquip to 5
+			set bShouldEquip to 0
+		elseif TEiArmorResiniteLBootsEquip == 5
+			Player.EquipItem TE06ArmorResiniteLBoots
+			set TEiArmorResiniteLBootsEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

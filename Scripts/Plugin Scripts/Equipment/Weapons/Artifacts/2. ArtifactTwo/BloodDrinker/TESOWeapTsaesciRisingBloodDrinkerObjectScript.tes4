@@ -1,0 +1,181 @@
+scn TESOWeapTsaesciRisingBloodDrinkerObjectScript
+
+short bShouldEquip
+
+begin OnAdd Player
+	set TEiWeaponRisingKills to 0
+	if TEQQWeapTsaesciBloodDrinkerQuest.bActivated == 0
+		set TEQQWeapTsaesciBloodDrinkerQuest.bActivated to 1
+		StartQuest TEQQWeapTsaesciBloodDrinkerQuest
+	endif
+	if TEiWeaponWaningEquip >= 1
+		set bShouldEquip to 1
+	endif
+	if TEiWeaponRisingEquip >= 1
+		set bShouldEquip to 2
+	endif
+
+end
+
+begin OnDrop Player
+	if TEQQWeapTsaesciBloodDrinkerQuest.bActivated == 1
+		set TEQQWeapTsaesciBloodDrinkerQuest.bActivated to 0
+		StopQuest TEQQWeapTsaesciBloodDrinkerQuest
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+	if TEiWeaponRisingEquip > 0
+		set TEiWeaponRisingEquip to 0
+	endif
+	if TEiWeaponWaningEquip > 0
+		set TEiWeaponWaningEquip to 0
+	endif
+end
+
+begin OnEquip Player
+	if Player.GetEquipped TE01WeaponRisingBloodDrinker
+		set TEiWeaponRisingEquip to 1
+	elseif Player.GetEquipped TE02WeaponRisingBloodDrinker
+		set TEiWeaponRisingEquip to 2
+	elseif Player.GetEquipped TE03WeaponRisingBloodDrinker
+		set TEiWeaponRisingEquip to 3
+	elseif Player.GetEquipped TE04WeaponRisingBloodDrinker 
+		set TEiWeaponRisingEquip to 4
+	elseif Player.GetEquipped TE05WeaponRisingBloodDrinker 
+		set TEiWeaponRisingEquip to 5
+	elseif Player.GetEquipped TE06WeaponRisingBloodDrinker
+		set TEiWeaponRisingEquip to 6
+	elseif Player.GetEquipped TE01WeaponRisingBloodDrinkerA
+		set TEiWeaponRisingEquip to 7
+	elseif Player.GetEquipped TE02WeaponRisingBloodDrinkerA
+		set TEiWeaponRisingEquip to 8
+	elseif Player.GetEquipped TE03WeaponRisingBloodDrinkerA
+		set TEiWeaponRisingEquip to 9
+	elseif Player.GetEquipped TE04WeaponRisingBloodDrinkerA
+		set TEiWeaponRisingEquip to 10
+	elseif Player.GetEquipped TE05WeaponRisingBloodDrinkerA
+		set TEiWeaponRisingEquip to 11
+	elseif Player.GetEquipped TE06WeaponRisingBloodDrinkerA
+		set TEiWeaponRisingEquip to 12
+	endif
+end
+
+begin OnUnEquip Player
+	if TEiWeaponRisingEquip > 0
+		set TEiWeaponRisingEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end	
+
+begin gamemode
+	if bShouldEquip == 1
+		if TEiWeaponWaningEquip == 1
+			Player.EquipItem TE01WeaponRisingBloodDrinker
+			set TEiWeaponRisingEquip to 1
+			set TEiWeaponWaningEquip to 0
+			set bShouldEquip to 0
+		elseif TEiWeaponWaningEquip == 2
+			Player.EquipItem TE02WeaponRisingBloodDrinker
+			set TEiWeaponRisingEquip to 2
+			set TEiWeaponWaningEquip to 0
+			set bShouldEquip to 0
+		elseif TEiWeaponWaningEquip == 3
+			Player.EquipItem TE03WeaponRisingBloodDrinker
+			set TEiWeaponRisingEquip to 3
+			set TEiWeaponWaningEquip to 0
+			set bShouldEquip to 0
+		elseif TEiWeaponWaningEquip == 4
+			Player.EquipItem TE04WeaponRisingBloodDrinker
+			set TEiWeaponRisingEquip to 4
+			set TEiWeaponWaningEquip to 0
+			set bShouldEquip to 0
+		elseif TEiWeaponWaningEquip == 5
+			Player.EquipItem TE05WeaponRisingBloodDrinker
+			set TEiWeaponRisingEquip to 5
+			set TEiWeaponWaningEquip to 0
+			set bShouldEquip to 0
+		elseif TEiWeaponWaningEquip == 6
+			Player.EquipItem TE06WeaponRisingBloodDrinker
+			set TEiWeaponRisingEquip to 6
+			set TEiWeaponWaningEquip to 0
+			set bShouldEquip to 0
+		elseif TEiWeaponWaningEquip == 7
+			Player.EquipItem TE01WeaponRisingBloodDrinkerA
+			set TEiWeaponRisingEquip to 7
+			set TEiWeaponWaningEquip to 0
+			set bShouldEquip to 0
+		elseif TEiWeaponWaningEquip == 8
+			Player.EquipItem TE02WeaponRisingBloodDrinkerA
+			set TEiWeaponRisingEquip to 8
+			set TEiWeaponWaningEquip to 0
+			set bShouldEquip to 0
+		elseif TEiWeaponWaningEquip == 9
+			Player.EquipItem TE03WeaponRisingBloodDrinkerA
+			set TEiWeaponRisingEquip to 9
+			set TEiWeaponWaningEquip to 0
+			set bShouldEquip to 0
+		elseif TEiWeaponWaningEquip == 10
+			Player.EquipItem TE04WeaponRisingBloodDrinkerA
+			set TEiWeaponRisingEquip to 10
+			set TEiWeaponWaningEquip to 0
+			set bShouldEquip to 0
+		elseif TEiWeaponWaningEquip == 11
+			Player.EquipItem TE05WeaponRisingBloodDrinkerA
+			set TEiWeaponRisingEquip to 11
+			set TEiWeaponWaningEquip to 0
+			set bShouldEquip to 0
+		elseif TEiWeaponWaningEquip == 12
+			Player.EquipItem TE06WeaponRisingBloodDrinkerA
+			set TEiWeaponRisingEquip to 12
+			set TEiWeaponWaningEquip to 0
+			set bShouldEquip to 0
+		endif
+	elseif bShouldEquip == 2
+		if TEiWeaponRisingEquip == 1
+			Player.EquipItem TE02WeaponRisingBloodDrinker
+			set TEiWeaponRisingEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponRisingEquip == 2
+			Player.EquipItem TE03WeaponRisingBloodDrinker
+			set TEiWeaponRisingEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponRisingEquip == 3
+			Player.EquipItem TE04WeaponRisingBloodDrinker
+			set TEiWeaponRisingEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponRisingEquip == 4
+			Player.EquipItem TE05WeaponRisingBloodDrinker
+			set TEiWeaponRisingEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponRisingEquip == 5
+			Player.EquipItem TE06WeaponRisingBloodDrinker
+			set TEiWeaponRisingEquip to 6
+			set bShouldEquip to 0
+		elseif TEiWeaponRisingEquip == 7
+			Player.EquipItem TE02WeaponRisingBloodDrinkerA
+			set TEiWeaponRisingEquip to 8
+			set bShouldEquip to 0
+		elseif TEiWeaponRisingEquip == 8
+			Player.EquipItem TE03WeaponRisingBloodDrinkerA
+			set TEiWeaponRisingEquip to 9
+			set bShouldEquip to 0
+		elseif TEiWeaponRisingEquip == 9
+			Player.EquipItem TE04WeaponRisingBloodDrinkerA
+			set TEiWeaponRisingEquip to 10
+			set bShouldEquip to 0
+		elseif TEiWeaponRisingEquip == 10
+			Player.EquipItem TE05WeaponRisingBloodDrinkerA
+			set TEiWeaponRisingEquip to 11
+			set bShouldEquip to 0
+		elseif TEiWeaponRisingEquip == 11
+			Player.EquipItem TE06WeaponRisingBloodDrinkerA
+			set TEiWeaponRisingEquip to 12
+			set bShouldEquip to 0
+		endif
+	endif
+end
+		
+		

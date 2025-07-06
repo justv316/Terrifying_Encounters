@@ -1,0 +1,69 @@
+scn TESOWeapAkaviriUchigatanaObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponAkaviriUchigatanaEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponAkaviriUchigatanaEquip > 0
+		set TEiWeaponAkaviriUchigatanaEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	if Player.GetEquipped TE01WeaponAkaviriUchigatana
+		set TEiWeaponAkaviriUchigatanaEquip to 1
+	elseif Player.GetEquipped TE02WeaponAkaviriUchigatana
+		set TEiWeaponAkaviriUchigatanaEquip to 2
+	elseif Player.GetEquipped TE03WeaponAkaviriUchigatana
+		set TEiWeaponAkaviriUchigatanaEquip to 3
+	elseif Player.GetEquipped TE04WeaponAkaviriUchigatana 
+		set TEiWeaponAkaviriUchigatanaEquip to 4
+	elseif Player.GetEquipped TE05WeaponAkaviriUchigatana 
+		set TEiWeaponAkaviriUchigatanaEquip to 5
+	elseif Player.GetEquipped TE06WeaponAkaviriUchigatana
+		set TEiWeaponAkaviriUchigatanaEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	if TEiWeaponAkaviriUchigatanaEquip > 0
+		set TEiWeaponAkaviriUchigatanaEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponAkaviriUchigatanaEquip == 1
+			Player.EquipItem TE02WeaponAkaviriUchigatana
+			set TEiWeaponAkaviriUchigatanaEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponAkaviriUchigatanaEquip == 2
+			Player.EquipItem TE03WeaponAkaviriUchigatana
+			set TEiWeaponAkaviriUchigatanaEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponAkaviriUchigatanaEquip == 3
+			Player.EquipItem TE04WeaponAkaviriUchigatana
+			set TEiWeaponAkaviriUchigatanaEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponAkaviriUchigatanaEquip == 4
+			Player.EquipItem TE05WeaponAkaviriUchigatana
+			set TEiWeaponAkaviriUchigatanaEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponAkaviriUchigatanaEquip == 5
+			Player.EquipItem TE06WeaponAkaviriUchigatana
+			set TEiWeaponAkaviriUchigatanaEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

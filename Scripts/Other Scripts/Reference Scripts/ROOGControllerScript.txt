@@ -1,0 +1,63 @@
+scn ROOGControllerScript
+
+short button
+
+begin OnEquip player
+	MessageBox "What do you wish to control about Oblvion Gate Variables?",  "Allow Gates to Reopen", "Maximum number of Random Gates", "Random Gate Chance", "Set all to Zero", "Close"
+	playsound DRSOblivionGateOpen
+end
+
+
+begin menumode
+	set button to getbuttonpressed
+	if button > -1
+
+		if button == 0
+			; who doesn't love farming sigil stones
+			if MQ00.AllowGatesToReopen < 1
+				set MQ00.AllowGatesToReopen to 1
+				Message "Oblivion Gates can now reopen"
+			else
+				set MQ00.AllowGatesToReopen to 0
+				Message "Oblivion Gates can no longer reopen"
+			endif
+		elseif button == 1
+			; 50 = vanilla. There will still be 10 gates, but those aren't random world ones.
+			if MQ00.MaxOpenGates == 0
+				set MQ00.MaxOpenGates to 50
+				Message "Maximum random gates was set to 50"
+			elseif MQ00.MaxOpenGates < 90
+				set MQ00.MaxOpenGates to 90
+				Message "Maximum random gates was set to 90"
+			else
+				set MQ00.MaxOpenGates to 0
+				Message "Maximum random gates was set to 0"
+			endif
+		elseif button == 2
+			; rngesus
+			if MQ00.RandomGateChance == 0
+				set MQ00.RandomGateChance to 50
+				Message "Random Oblivion Gate chance was set to 50"
+			elseif MQ00.RandomGateChance < 90
+				set MQ00.RandomGateChance to 90
+				Message "Random Oblivion Gate chance was set to 90"
+			else
+				set MQ00.RandomGateChance to 0
+				Message "Random Oblivion Gate chance was set to 0"
+			endif
+		elseif button == 3
+			; zero zero zero
+			set MQ00.MaxOpenGates to 0
+			set MQ00.AllowGatesToReopen to 0
+			set MQ00.RandomGateChance to 0
+			Message "Random Oblivion Gate chance to 0, Maximum random gates set to 0 and gates can't be re-opened."
+		endif
+
+	endif
+
+end
+
+
+
+
+

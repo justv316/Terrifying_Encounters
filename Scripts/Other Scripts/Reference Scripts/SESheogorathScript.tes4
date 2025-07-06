@@ -1,0 +1,210 @@
+scriptname SESheogorathScript
+
+short	SE11EffectPlay						;Play effects 
+short 	SE11SheogorathVanish 			;0= present, 1=vanished. Set in SE11 topics
+short	SE11SheogorathFarewell
+short 	SE11SheogorathTransform
+short 	SE11SheogorathPower			;0=inactive, 1=active
+short 	SE11VanishLineSaid				;0= line not said, 1= line said
+short SE07SheoMove					;A flag that is set to initiate Sheogorath leaving Sacellum
+short NoTouch								;A flag for activation blocking during fade
+short	StartClapping						; flag to make sure pickidle is only called once
+float	SheogorathScale
+float	SheogorathAlpha
+float	EffectAlpha
+float 	Timer 								;Timer for vanishing effects and dialogue lines
+float	EffectTimer
+float	GrowthTime
+float 	Alpha									;Float value used for Sheogorath's fade
+short 	DoOnce								;Control variable
+short HitOnce								;control variable for player hitting Sheo
+float timer2									;timer for Sheo post-hit stuff
+short actOnce
+
+Begin OnLoad
+	If GetStage SE06 == 190
+		SESheogorathRef.saa 0
+	EndIf
+	PickIdle
+End
+;handles player hitting sheogorath
+
+Begin OnHit Player
+	if ( HitOnce == 0 )
+		;StopCombat Player
+		;Cast SESheogorathHitSpell Player
+		DisablePlayerControls
+		Player.SCAOnActor
+		SESheogorathREF.SCAOnActor
+		StartCombat Player
+		SetGhost 1
+		set HitOnce to -1
+	endif
+End
+
+Begin OnActivate
+	;if ( SE11SheogorathVanish == 0 )
+		if ( player.issneaking == 1 )
+			;Cast SESheogorathHitSpell Player
+	;		set HitOnce to 1
+	;		activate
+		else
+			activate
+		endif
+	;elseif ( SE11SheogorathVanish == 1 )
+	;endif
+	Set GrowthTime to .1
+	if ( NoTouch == 1 )
+		Return
+	endif
+End
+
+Begin GameMode
+	if ( HitOnce == -1 )
+		if ( GetSitting == 0 )
+			Set HitOnce to 1
+			Player.SCAOnActor
+			SESheogorathREF.SCAOnActor
+		endif
+	endif
+	;Play effects in GameMode Block
+	if ( HitOnce == 1 ) && ( GetSitting == 0 )
+		if ( actOnce == 0 )
+			DisablePlayerControls
+			StopCombat Player
+			Cast SESheogorathHitSpell Player
+			set actOnce to 1
+		endif
+		set timer2 to ( timer2 + GetSecondsPassed )
+		if ( timer2 >= 1.5 ) && ( timer2 <= 2 )
+			StopCombat Player
+		elseif ( timer2 >= 3 )
+			SayTo Player SESheogorathHitTalk
+		endif
+	endif
+	If GetStage SE02 == 190 && StartClapping == 0
+		If GetDistance Player < 1024
+			PickIdle
+			Set StartClapping to 1							; Sheogorath claps when player first sees him
+		EndIf
+	EndIf
+	If GetStage SE03 == 5
+		Set StartClapping to 0								; reset variable so that SE07 can use it.
+	EndIf
+	If GetStage SE07 == 5 && StartClapping == 0
+		If GetSitting == 3
+			PickIdle
+			Set StartClapping to 1
+		EndIf
+	EndIf
+;This section is dedicated to moving Sheo from Sacellum back to the Palace
+	if ( SE07SheoMove == 1 )
+		Set NoTouch to 1
+		pme STRP
+		SE07SaintEnd01Ref.pme strp
+		SE07SaintEnd02Ref.pme strp
+		SE07EndSeducer01Ref.pme strp
+		SE07EndSeducer02Ref.pme strp
+		Set SE07SheoMove to 2
+	endif
+	
+	if ( SE07SheoMove == 2 )
+		set alpha to alpha - .01
+		setactoralpha alpha
+		SE07SaintEnd01Ref.saa alpha
+		SE07SaintEnd02Ref.saa alpha
+		SE07EndSeducer01Ref.saa alpha
+		SE07EndSeducer02Ref.saa alpha
+		if alpha < 0
+			Disable
+			Set NoTouch to 0
+			Set SE07SheoMove to 3
+		endif
+	endif
+	if ( SE07SheoMove == 3 )
+		Moveto SE07AThadonMarker
+		SE07SaintEnd01Ref.Disable
+		SE07SaintEnd02Ref.Disable
+		SE07EndSeducer01Ref.disable
+		SE07EndSeducer02Ref.disable
+		Set SE07SheoMove to 4
+	endif
+		
+;plays effects in SE11
+	if ( SE11SheogorathVanish == 1 )
+		
+		if ( DoOnce == 0 )
+			setghost 1
+			Look SEHaskillREF
+			SESheogorathRef.PickIdle
+			set DoOnce to 1
+		endif
+	
+		if ( SE11SheogorathFarewell == 0 )
+			if ( Timer > 0 )
+				Set Timer to ( Timer - GetSecondsPassed )
+			endif
+			if ( Timer <= 0 ) && ( SE11VanishLineSaid == 0 ) 
+				set Timer to Sayto SESheogorathREF, SE11SheogorathFarewell1
+				Sayto SESheogorathREF, SE11SheogorathFarewell1			
+				set SE11VanishLineSaid to 1
+			elseif ( Timer <= 0 ) && ( SE11VanishLineSaid == 1 ) 
+				Sayto SESheogorathREF, SE11SheogorathFarewell2			
+				set Timer to Sayto SESheogorathREF, SE11SheogorathFarewell2
+				pms SEOrderShader
+				set SE11VanishLineSaid to 2
+			elseif ( Timer <= 0 ) && ( SE11VanishLineSaid == 2 ) 
+				Sayto SESheogorathREF, SE11SheogorathFarewell3			
+				set Timer to Sayto SESheogorathREF, SE11SheogorathFarewell3
+				set SE11VanishLineSaid to -1
+				set SE11SheogorathFarewell to -1
+			endif	
+		endif
+		if ( SE11SheogorathTransform == 1 ) 
+			if ( DoOnce == 1 )
+				set SE11SheogorathPower to 1
+				SESheogorathRef.PickIdle
+				SE11SheogorathVanishEffectRef.playgroup forward 1
+				set Timer to 11
+				set SheogorathScale to 1
+				set SheogorathAlpha to 1
+				set EffectAlpha to 1
+				set DoOnce to -1
+			endif
+			Set Timer to ( Timer - GetSecondsPassed )
+			if ( Timer <= 9.5 )
+				Set SheogorathScale to ( SheogorathScale + GetSecondsPassed * GrowthTime )
+				SetScale SheogorathScale 
+			endif
+			if ( Timer <= 5 )
+				sms SEOrderShader
+				Set SheogorathAlpha to ( SheogorathAlpha - GetSecondsPassed / 5  )
+				SetActorAlpha SheogorathAlpha 
+			endif
+			if ( Timer < 1 )
+				If ( EffectTimer == 0 )
+					set EffectTimer to 6
+				endIf
+				set SE11.SheogorathGone to 1
+			endif
+			if ( Timer < -0.5 )
+				set SE11SheogorathVanish to -1
+			endif
+		endif
+	endif
+	if ( EffectTimer > 0 )
+		Set EffectTimer to ( EffectTimer - GetSecondsPassed )
+		if ( EffectTimer <= 0  )
+			SetStage SE11 10
+			Set EffectTimer to 0
+		endIf
+	endif
+	If IsIdlePlaying == 0 && ( GetSitting == 0 )			; Make sure Sheogorath doesn't play the idle where his cane is stuck behind him
+		If GetIsCurrentPackage SE07RemainAtSacellum == 1 || GetIsCurrentPackage SE07AStayAtSacellum == 1 || GetIsCurrentPackage SE07BStayAtSacellum == 1
+			PickIdle
+		EndIf
+		If GetIsCurrentPackage SESheogorathWander1 == 1 || GetIsCurrentPackage SESheogorathWander2 == 1 || SESheogorathWander3 == 1
+			PickIdle
+		EndIf
+	EndIf
+end

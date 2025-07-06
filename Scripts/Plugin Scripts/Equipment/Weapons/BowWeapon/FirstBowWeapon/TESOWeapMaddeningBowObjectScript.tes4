@@ -1,0 +1,71 @@
+scn TESOWeapMaddeningBowObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponMaddeningBowEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponMaddeningBowEquip > 0
+		set TEiWeaponMaddeningBowEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetMaddeningEquip to TEiSetMaddeningEquip + 1
+	if Player.GetEquipped TE01WeaponMaddeningBow
+		set TEiWeaponMaddeningBowEquip to 1
+	elseif Player.GetEquipped TE02WeaponMaddeningBow
+		set TEiWeaponMaddeningBowEquip to 2
+	elseif Player.GetEquipped TE03WeaponMaddeningBow
+		set TEiWeaponMaddeningBowEquip to 3
+	elseif Player.GetEquipped TE04WeaponMaddeningBow 
+		set TEiWeaponMaddeningBowEquip to 4
+	elseif Player.GetEquipped TE05WeaponMaddeningBow 
+		set TEiWeaponMaddeningBowEquip to 5
+	elseif Player.GetEquipped TE06WeaponMaddeningBow
+		set TEiWeaponMaddeningBowEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetMaddeningEquip to TEiSetMaddeningEquip - 1
+	if TEiWeaponMaddeningBowEquip > 0
+		set TEiWeaponMaddeningBowEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponMaddeningBowEquip == 1
+			Player.EquipItem TE02WeaponMaddeningBow
+			set TEiWeaponMaddeningBowEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponMaddeningBowEquip == 2
+			Player.EquipItem TE03WeaponMaddeningBow
+			set TEiWeaponMaddeningBowEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponMaddeningBowEquip == 3
+			Player.EquipItem TE04WeaponMaddeningBow
+			set TEiWeaponMaddeningBowEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponMaddeningBowEquip == 4
+			Player.EquipItem TE05WeaponMaddeningBow
+			set TEiWeaponMaddeningBowEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponMaddeningBowEquip == 5
+			Player.EquipItem TE06WeaponMaddeningBow
+			set TEiWeaponMaddeningBowEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

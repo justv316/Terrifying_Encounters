@@ -1,0 +1,24 @@
+scn WabbajackSpellEffect
+
+ref self
+ref horsetest
+
+begin ScriptEffectStart
+	set horsetest to GetSelf
+	if DAWabbajack.spellRunning == 0 && ( GetSelf != CreatureMehrunesDagon ) && ( horsetest.IsRidingHorse == 0 ) && ( horsetest.GetDead == 0 )
+		if ( IsEssential == 0 ) && ( GetIsCreature == 1 ) && ( GetInFaction NoWabbaFaction == 0 )
+	;		message "Wabbajack start"
+			; only one target allowed at a time
+			set DAWabbajack.spellRunning to 1
+		
+			; set target ref so we can put it back if necessary
+			set DAWabbajack.target to GetSelf
+	;		messageBox "DAWabbajack.target: %.0f", DAWabbajack.target
+			set self to GetSelf
+	;		messageBox "GetSelf: %.0f", self
+		
+			; create replacement creature
+			placeAtMe WabbajackList 1
+		endif
+	endif
+end

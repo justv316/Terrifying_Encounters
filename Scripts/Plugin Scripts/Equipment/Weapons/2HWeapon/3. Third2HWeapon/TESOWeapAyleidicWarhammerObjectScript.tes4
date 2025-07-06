@@ -1,0 +1,71 @@
+scn TESOWeapAyleidicWarhammerObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponAyleidicWarhammerEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponAyleidicWarhammerEquip > 0
+		set TEiWeaponAyleidicWarhammerEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetAyleidicEquip to TEiSetAyleidicEquip + 1
+	if Player.GetEquipped TE01WeaponAyleidicWarhammer
+		set TEiWeaponAyleidicWarhammerEquip to 1
+	elseif Player.GetEquipped TE02WeaponAyleidicWarhammer
+		set TEiWeaponAyleidicWarhammerEquip to 2
+	elseif Player.GetEquipped TE03WeaponAyleidicWarhammer
+		set TEiWeaponAyleidicWarhammerEquip to 3
+	elseif Player.GetEquipped TE04WeaponAyleidicWarhammer 
+		set TEiWeaponAyleidicWarhammerEquip to 4
+	elseif Player.GetEquipped TE05WeaponAyleidicWarhammer 
+		set TEiWeaponAyleidicWarhammerEquip to 5
+	elseif Player.GetEquipped TE06WeaponAyleidicWarhammer
+		set TEiWeaponAyleidicWarhammerEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetAyleidicEquip to TEiSetAyleidicEquip - 1
+	if TEiWeaponAyleidicWarhammerEquip > 0
+		set TEiWeaponAyleidicWarhammerEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponAyleidicWarhammerEquip == 1
+			Player.EquipItem TE02WeaponAyleidicWarhammer
+			set TEiWeaponAyleidicWarhammerEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicWarhammerEquip == 2
+			Player.EquipItem TE03WeaponAyleidicWarhammer
+			set TEiWeaponAyleidicWarhammerEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicWarhammerEquip == 3
+			Player.EquipItem TE04WeaponAyleidicWarhammer
+			set TEiWeaponAyleidicWarhammerEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicWarhammerEquip == 4
+			Player.EquipItem TE05WeaponAyleidicWarhammer
+			set TEiWeaponAyleidicWarhammerEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicWarhammerEquip == 5
+			Player.EquipItem TE06WeaponAyleidicWarhammer
+			set TEiWeaponAyleidicWarhammerEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

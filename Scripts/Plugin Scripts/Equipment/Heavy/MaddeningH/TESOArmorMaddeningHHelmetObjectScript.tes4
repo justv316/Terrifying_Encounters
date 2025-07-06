@@ -1,0 +1,71 @@
+scn TESOArmorMaddeningHHelmetObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiArmorMaddeningHHelmetEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiArmorMaddeningHHelmetEquip > 0
+		set TEiArmorMaddeningHHelmetEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetMaddeningEquip to TEiSetMaddeningEquip + 1
+	if Player.GetEquipped TE01ArmorMaddeningHHelmet
+		set TEiArmorMaddeningHHelmetEquip to 1
+	elseif Player.GetEquipped TE02ArmorMaddeningHHelmet
+		set TEiArmorMaddeningHHelmetEquip to 2
+	elseif Player.GetEquipped TE03ArmorMaddeningHHelmet
+		set TEiArmorMaddeningHHelmetEquip to 3
+	elseif Player.GetEquipped TE04ArmorMaddeningHHelmet 
+		set TEiArmorMaddeningHHelmetEquip to 4
+	elseif Player.GetEquipped TE05ArmorMaddeningHHelmet 
+		set TEiArmorMaddeningHHelmetEquip to 5
+	elseif Player.GetEquipped TE06ArmorMaddeningHHelmet
+		set TEiArmorMaddeningHHelmetEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetMaddeningEquip to TEiSetMaddeningEquip - 1
+	if TEiArmorMaddeningHHelmetEquip > 0
+		set TEiArmorMaddeningHHelmetEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiArmorMaddeningHHelmetEquip == 1
+			Player.EquipItem TE02ArmorMaddeningHHelmet
+			set TEiArmorMaddeningHHelmetEquip to 2
+			set bShouldEquip to 0
+		elseif TEiArmorMaddeningHHelmetEquip == 2
+			Player.EquipItem TE03ArmorMaddeningHHelmet
+			set TEiArmorMaddeningHHelmetEquip to 3
+			set bShouldEquip to 0
+		elseif TEiArmorMaddeningHHelmetEquip == 3
+			Player.EquipItem TE04ArmorMaddeningHHelmet
+			set TEiArmorMaddeningHHelmetEquip to 4
+			set bShouldEquip to 0
+		elseif TEiArmorMaddeningHHelmetEquip == 4
+			Player.EquipItem TE05ArmorMaddeningHHelmet
+			set TEiArmorMaddeningHHelmetEquip to 5
+			set bShouldEquip to 0
+		elseif TEiArmorMaddeningHHelmetEquip == 5
+			Player.EquipItem TE06ArmorMaddeningHHelmet
+			set TEiArmorMaddeningHHelmetEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

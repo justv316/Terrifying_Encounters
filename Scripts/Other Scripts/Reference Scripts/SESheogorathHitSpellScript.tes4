@@ -1,0 +1,41 @@
+scn SESheogorathHitSpellScript
+
+
+
+short doOnce
+
+Ref WhoAmI
+
+
+
+
+
+Begin ScriptEffectStart
+
+	Set WhoAmI to GetSelf
+
+	If WhoAmI == Player				; prevents multiple actors from disabling player controls
+
+		;DisablePlayerControls
+
+		EnableFastTravel 0
+
+	EndIf
+
+End
+
+
+
+
+
+
+
+Begin ScriptEffectFinish
+
+	If WhoAmI == Player				; prevents multiple actors from moving the player
+
+		player.moveto SEOopsMarker
+
+	EndIf
+
+End

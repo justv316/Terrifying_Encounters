@@ -1,0 +1,71 @@
+scn TESOArmorCursedHCuirassObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiArmorCursedHCuirassEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiArmorCursedHCuirassEquip > 0
+		set TEiArmorCursedHCuirassEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetCursedEquip to TEiSetCursedEquip + 1
+	if Player.GetEquipped TE01ArmorCursedHCuirass
+		set TEiArmorCursedHCuirassEquip to 1
+	elseif Player.GetEquipped TE02ArmorCursedHCuirass
+		set TEiArmorCursedHCuirassEquip to 2
+	elseif Player.GetEquipped TE03ArmorCursedHCuirass
+		set TEiArmorCursedHCuirassEquip to 3
+	elseif Player.GetEquipped TE04ArmorCursedHCuirass 
+		set TEiArmorCursedHCuirassEquip to 4
+	elseif Player.GetEquipped TE05ArmorCursedHCuirass 
+		set TEiArmorCursedHCuirassEquip to 5
+	elseif Player.GetEquipped TE06ArmorCursedHCuirass
+		set TEiArmorCursedHCuirassEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetCursedEquip to TEiSetCursedEquip - 1
+	if TEiArmorCursedHCuirassEquip > 0
+		set TEiArmorCursedHCuirassEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiArmorCursedHCuirassEquip == 1
+			Player.EquipItem TE02ArmorCursedHCuirass
+			set TEiArmorCursedHCuirassEquip to 2
+			set bShouldEquip to 0
+		elseif TEiArmorCursedHCuirassEquip == 2
+			Player.EquipItem TE03ArmorCursedHCuirass
+			set TEiArmorCursedHCuirassEquip to 3
+			set bShouldEquip to 0
+		elseif TEiArmorCursedHCuirassEquip == 3
+			Player.EquipItem TE04ArmorCursedHCuirass
+			set TEiArmorCursedHCuirassEquip to 4
+			set bShouldEquip to 0
+		elseif TEiArmorCursedHCuirassEquip == 4
+			Player.EquipItem TE05ArmorCursedHCuirass
+			set TEiArmorCursedHCuirassEquip to 5
+			set bShouldEquip to 0
+		elseif TEiArmorCursedHCuirassEquip == 5
+			Player.EquipItem TE06ArmorCursedHCuirass
+			set TEiArmorCursedHCuirassEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

@@ -1,0 +1,69 @@
+scn TESOWeapTemplateObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponTemplateEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponTemplateEquip > 0
+		set TEiWeaponTemplateEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	if Player.GetEquipped TE01WeaponTemplate
+		set TEiWeaponTemplateEquip to 1
+	elseif Player.GetEquipped TE02WeaponTemplate
+		set TEiWeaponTemplateEquip to 2
+	elseif Player.GetEquipped TE03WeaponTemplate
+		set TEiWeaponTemplateEquip to 3
+	elseif Player.GetEquipped TE04WeaponTemplate 
+		set TEiWeaponTemplateEquip to 4
+	elseif Player.GetEquipped TE05WeaponTemplate 
+		set TEiWeaponTemplateEquip to 5
+	elseif Player.GetEquipped TE06WeaponTemplate
+		set TEiWeaponTemplateEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	if TEiWeaponTemplateEquip > 0
+		set TEiWeaponTemplateEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponTemplateEquip == 1
+			Player.EquipItem TE02WeaponTemplate
+			set TEiWeaponTemplateEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponTemplateEquip == 2
+			Player.EquipItem TE03WeaponTemplate
+			set TEiWeaponTemplateEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponTemplateEquip == 3
+			Player.EquipItem TE04WeaponTemplate
+			set TEiWeaponTemplateEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponTemplateEquip == 4
+			Player.EquipItem TE05WeaponTemplate
+			set TEiWeaponTemplateEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponTemplateEquip == 5
+			Player.EquipItem TE06WeaponTemplate
+			set TEiWeaponTemplateEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

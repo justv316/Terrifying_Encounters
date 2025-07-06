@@ -1,0 +1,69 @@
+scn TESOWeapCrystalLongswordObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponCrystalLongswordEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponCrystalLongswordEquip > 0
+		set TEiWeaponCrystalLongswordEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	if Player.GetEquipped TE01WeaponCrystalLongsword
+		set TEiWeaponCrystalLongswordEquip to 1
+	elseif Player.GetEquipped TE02WeaponCrystalLongsword
+		set TEiWeaponCrystalLongswordEquip to 2
+	elseif Player.GetEquipped TE03WeaponCrystalLongsword
+		set TEiWeaponCrystalLongswordEquip to 3
+	elseif Player.GetEquipped TE04WeaponCrystalLongsword 
+		set TEiWeaponCrystalLongswordEquip to 4
+	elseif Player.GetEquipped TE05WeaponCrystalLongsword 
+		set TEiWeaponCrystalLongswordEquip to 5
+	elseif Player.GetEquipped TE06WeaponCrystalLongsword
+		set TEiWeaponCrystalLongswordEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	if TEiWeaponCrystalLongswordEquip > 0
+		set TEiWeaponCrystalLongswordEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponCrystalLongswordEquip == 1
+			Player.EquipItem TE02WeaponCrystalLongsword
+			set TEiWeaponCrystalLongswordEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponCrystalLongswordEquip == 2
+			Player.EquipItem TE03WeaponCrystalLongsword
+			set TEiWeaponCrystalLongswordEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponCrystalLongswordEquip == 3
+			Player.EquipItem TE04WeaponCrystalLongsword
+			set TEiWeaponCrystalLongswordEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponCrystalLongswordEquip == 4
+			Player.EquipItem TE05WeaponCrystalLongsword
+			set TEiWeaponCrystalLongswordEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponCrystalLongswordEquip == 5
+			Player.EquipItem TE06WeaponCrystalLongsword
+			set TEiWeaponCrystalLongswordEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

@@ -1,0 +1,71 @@
+scn TESOWeapAyleidicDaggerObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponAyleidicDaggerEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponAyleidicDaggerEquip > 0
+		set TEiWeaponAyleidicDaggerEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetAyleidicEquip to TEiSetAyleidicEquip + 1
+	if Player.GetEquipped TE01WeaponAyleidicDagger
+		set TEiWeaponAyleidicDaggerEquip to 1
+	elseif Player.GetEquipped TE02WeaponAyleidicDagger
+		set TEiWeaponAyleidicDaggerEquip to 2
+	elseif Player.GetEquipped TE03WeaponAyleidicDagger
+		set TEiWeaponAyleidicDaggerEquip to 3
+	elseif Player.GetEquipped TE04WeaponAyleidicDagger 
+		set TEiWeaponAyleidicDaggerEquip to 4
+	elseif Player.GetEquipped TE05WeaponAyleidicDagger 
+		set TEiWeaponAyleidicDaggerEquip to 5
+	elseif Player.GetEquipped TE06WeaponAyleidicDagger
+		set TEiWeaponAyleidicDaggerEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetAyleidicEquip to TEiSetAyleidicEquip - 1
+	if TEiWeaponAyleidicDaggerEquip > 0
+		set TEiWeaponAyleidicDaggerEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponAyleidicDaggerEquip == 1
+			Player.EquipItem TE02WeaponAyleidicDagger
+			set TEiWeaponAyleidicDaggerEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicDaggerEquip == 2
+			Player.EquipItem TE03WeaponAyleidicDagger
+			set TEiWeaponAyleidicDaggerEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicDaggerEquip == 3
+			Player.EquipItem TE04WeaponAyleidicDagger
+			set TEiWeaponAyleidicDaggerEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicDaggerEquip == 4
+			Player.EquipItem TE05WeaponAyleidicDagger
+			set TEiWeaponAyleidicDaggerEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicDaggerEquip == 5
+			Player.EquipItem TE06WeaponAyleidicDagger
+			set TEiWeaponAyleidicDaggerEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

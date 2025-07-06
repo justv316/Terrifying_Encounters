@@ -1,0 +1,135 @@
+scn TESQSetBonusMaddeningQuestScript
+
+float fQuestDelayTime
+short iMaddeningBonusAdded
+
+
+begin GameMode
+	set fQuestDelayTime to 1
+	if TEiSetMaddeningEquip < 4
+		Player.RemoveSpell TEAbEquipMaddeningSetBonus4
+		Player.RemoveSpell TEAbEquipMaddeningSetBonus5
+		Player.RemoveSpell TEAbEquipMaddeningSetBonus6
+		if TEQQSetBonusMaddeningManagerQuest.bActivated == 1
+			set TEQQSetBonusMaddeningManagerQuest.bActivated to 0
+			StopQuest TEQQSetBonusMaddeningManagerQuest
+		endif
+		if TEQQSetBonusMaddeningManagerTwoQuest.bActivated == 1
+			set TEQQSetBonusMaddeningManagerTwoQuest.bActivated to 0
+			StopQuest TEQQSetBonusMaddeningManagerTwoQuest
+		endif
+		set iMaddeningBonusAdded to 0
+	elseif TEiSetMaddeningEquip == 4
+		if iMaddeningBonusAdded == 0
+			Player.AddSpell TEAbEquipMaddeningSetBonus4
+			set iMaddeningBonusAdded to 4
+			if TEQQSetBonusMaddeningManagerQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerQuest
+			endif
+			if TEQQSetBonusMaddeningManagerTwoQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerTwoQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerTwoQuest
+			endif
+		elseif iMaddeningBonusAdded == 5
+			Player.RemoveSpell TEAbEquipMaddeningSetBonus5
+			Player.AddSpell TEAbEquipMaddeningSetBonus4
+			if TEQQSetBonusMaddeningManagerQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerQuest
+			endif
+			if TEQQSetBonusMaddeningManagerTwoQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerTwoQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerTwoQuest
+			endif
+			set iMaddeningBonusAdded to 4
+		elseif iMaddeningBonusAdded == 6
+			Player.RemoveSpell TEAbEquipMaddeningSetBonus6
+			Player.AddSpell TEAbEquipMaddeningSetBonus4
+			if TEQQSetBonusMaddeningManagerQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerQuest
+			endif
+			if TEQQSetBonusMaddeningManagerTwoQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerTwoQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerTwoQuest
+			endif
+			set iMaddeningBonusAdded to 4
+		endif
+	elseif TEiSetMaddeningEquip == 5
+		if iMaddeningBonusAdded == 0
+			Player.AddSpell TEAbEquipMaddeningSetBonus5
+			if TEQQSetBonusMaddeningManagerQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerQuest
+			endif
+			if TEQQSetBonusMaddeningManagerTwoQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerTwoQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerTwoQuest
+			endif
+			set iMaddeningBonusAdded to 5
+		elseif iMaddeningBonusAdded == 4
+			Player.RemoveSpell TEAbEquipMaddeningSetBonus4
+			Player.AddSpell TEAbEquipMaddeningSetBonus5
+			if TEQQSetBonusMaddeningManagerQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerQuest
+			endif
+			if TEQQSetBonusMaddeningManagerTwoQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerTwoQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerTwoQuest
+			endif
+			set iMaddeningBonusAdded to 5
+		elseif iMaddeningBonusAdded == 6
+			Player.RemoveSpell TEAbEquipMaddeningSetBonus6
+			Player.AddSpell TEAbEquipMaddeningSetBonus5
+			if TEQQSetBonusMaddeningManagerQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerQuest
+			endif
+			if TEQQSetBonusMaddeningManagerTwoQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerTwoQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerTwoQuest
+			endif
+			set iMaddeningBonusAdded to 5
+		endif
+	elseif TEiSetMaddeningEquip == 6 || TEiSetMaddeningEquip == 7
+		if iMaddeningBonusAdded == 0
+			Player.AddSpell TEAbEquipMaddeningSetBonus6
+			if TEQQSetBonusMaddeningManagerQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerQuest
+			endif
+			if TEQQSetBonusMaddeningManagerTwoQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerTwoQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerTwoQuest
+			endif
+			set iMaddeningBonusAdded to 6
+		elseif iMaddeningBonusAdded == 4
+			Player.RemoveSpell TEAbEquipMaddeningSetBonus4
+			Player.AddSpell TEAbEquipMaddeningSetBonus6
+			if TEQQSetBonusMaddeningManagerQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerQuest
+			endif
+			if TEQQSetBonusMaddeningManagerTwoQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerTwoQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerTwoQuest
+			endif
+			set iMaddeningBonusAdded to 6
+		elseif iMaddeningBonusAdded == 5
+			Player.RemoveSpell TEAbEquipMaddeningSetBonus5
+			Player.AddSpell TEAbEquipMaddeningSetBonus6
+			if TEQQSetBonusMaddeningManagerQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerQuest
+			endif
+			if TEQQSetBonusMaddeningManagerTwoQuest.bActivated == 0
+				set TEQQSetBonusMaddeningManagerTwoQuest.bActivated to 1
+				StartQuest TEQQSetBonusMaddeningManagerTwoQuest
+			endif
+			set iMaddeningBonusAdded to 6
+		endif
+	endif
+
+end

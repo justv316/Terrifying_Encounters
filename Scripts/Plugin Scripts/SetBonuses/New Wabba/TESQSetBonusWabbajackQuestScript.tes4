@@ -1,0 +1,16 @@
+scn TESQSetBonusWabbajackQuestScript
+
+short bSpellRunning
+ref rTarget
+ref rReplacement
+
+Begin GameMode
+	if bSpellRunning == 2
+		set bSpellRunning to 0
+		if rReplacement.GetDead == 0
+			rTarget.Enable
+			rTarget.MoveTo rReplacement
+			rReplacement.Disable
+		endif
+	endif
+end

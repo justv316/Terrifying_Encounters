@@ -1,0 +1,71 @@
+scn TESOWeapDwemerLongswordObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponDwemerLongswordEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponDwemerLongswordEquip > 0
+		set TEiWeaponDwemerLongswordEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetDwemerEquip to TEiSetDwemerEquip + 1
+	if Player.GetEquipped TE01WeaponDwemerLongsword
+		set TEiWeaponDwemerLongswordEquip to 1
+	elseif Player.GetEquipped TE02WeaponDwemerLongsword
+		set TEiWeaponDwemerLongswordEquip to 2
+	elseif Player.GetEquipped TE03WeaponDwemerLongsword
+		set TEiWeaponDwemerLongswordEquip to 3
+	elseif Player.GetEquipped TE04WeaponDwemerLongsword 
+		set TEiWeaponDwemerLongswordEquip to 4
+	elseif Player.GetEquipped TE05WeaponDwemerLongsword 
+		set TEiWeaponDwemerLongswordEquip to 5
+	elseif Player.GetEquipped TE06WeaponDwemerLongsword
+		set TEiWeaponDwemerLongswordEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetDwemerEquip to TEiSetDwemerEquip - 1
+	if TEiWeaponDwemerLongswordEquip > 0
+		set TEiWeaponDwemerLongswordEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponDwemerLongswordEquip == 1
+			Player.EquipItem TE02WeaponDwemerLongsword
+			set TEiWeaponDwemerLongswordEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponDwemerLongswordEquip == 2
+			Player.EquipItem TE03WeaponDwemerLongsword
+			set TEiWeaponDwemerLongswordEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponDwemerLongswordEquip == 3
+			Player.EquipItem TE04WeaponDwemerLongsword
+			set TEiWeaponDwemerLongswordEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponDwemerLongswordEquip == 4
+			Player.EquipItem TE05WeaponDwemerLongsword
+			set TEiWeaponDwemerLongswordEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponDwemerLongswordEquip == 5
+			Player.EquipItem TE06WeaponDwemerLongsword
+			set TEiWeaponDwemerLongswordEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

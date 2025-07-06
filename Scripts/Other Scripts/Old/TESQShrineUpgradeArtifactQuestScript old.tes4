@@ -1,0 +1,194 @@
+scn TESQShrineUpgradeArtifactQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iChoosingItem
+short iChoice
+short iPlayerLevel
+short iPlayerGold
+short iSelectedItem
+short bCrystalLongsword
+short bEbonyUchigatana
+short bGoldUchigatana
+short bStalrihmShortsword
+short bQuicksilverDagger
+short bEbonyRazor
+
+begin gamemode
+	if iDisplayedMenu == 0 
+		if iChoosingItem == 0
+			if bCrystalLongsword == 1
+				MessageBox "| Crystal Longsword |", "Cancel", "Start Over", "Upgrade Crystal Longsword"
+				set iSelectedItem to 1
+			endif
+			if bEbonyUchigatana == 1
+				MessageBox "| Ebony Uchigatana |", "Cancel", "Start Over", "Upgrade Ebony Uchigatana", "Next"
+				set iSelectedItem to 2
+			endif
+			if bGoldUchigatana == 1
+				MessageBox "| Gold Uchigatana |", "Cancel", "Start Over", "Upgrade Gold Uchigatana", "Next"
+				set iSelectedItem to 3
+			endif
+			if bStalrihmShortsword == 1
+				MessageBox "| Stalrihm Shortsword |", "Cancel", "Start Over", "Upgrade Stalrihm Shortsword", "Next"
+				set iSelectedItem to 4
+			endif
+			if bQuicksilverDagger == 1
+				MessageBox "| Quicksilver Dagger |", "Cancel", "Start Over", "Upgrade Quicksilver Dagger", "Next"
+				set iSelectedItem to 5
+			endif
+			if bEbonyRazor == 1
+				MessageBox "| Ebony Razor |", "Cancel", "Start Over", "Upgrade Ebony Razor", "Next"
+				set iSelectedItem to 6
+			endif
+			set iChoosingItem to 1	
+		elseif iChoosingItem == 1
+			if iSelectedItem == 0
+				set iDisplayedMenu to -1
+			elseif iSelectedItem == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iDisplayedMenu to 1
+				endif
+			elseif iSelectedItem == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iDisplayedMenu to 2
+				elseif iChoice == 3
+					set bEbonyUchigatana to 0
+					set iChoosingItem to 0
+				endif
+			elseif iSelectedItem == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iDisplayedMenu to 3
+				elseif iChoice == 3
+					set bGoldUchigatana to 0
+					set iChoosingItem to 0
+				endif
+			elseif iSelectedItem == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iDisplayedMenu to 4
+				elseif iChoice == 3
+					set bStalrihmShortsword to 0
+					set iChoosingItem to 0
+				endif
+			elseif iSelectedItem == 5
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2 
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iDisplayedMenu to 5
+				elseif iChoice == 3
+					set bQuicksilverDagger to 0
+					set iChoosingItem to 0
+				endif
+			elseif iSelectedItem == 6
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2 
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iDisplayedMenu to 6
+				elseif iChoice == 3
+					set bEbonyRazor to 0
+					set iChoosingItem to 0
+				endif
+			endif
+		endif
+	elseif iDisplayedMenu == -1
+		Message "Nothing found to upgrade."
+		StopQuest TEQQShrineUpgradeArtifactQuest
+	elseif iDisplayedMenu == -2
+		Message "Return when you are ready!"
+		StopQuest TEQQShrineUpgradeArtifactQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.fQuestDelayTime to 0.01
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to 0
+		set TEQQShrineInitilizationQuest.iChoosing to 0
+		set TEQQShrineInitilizationQuest.iPlayerLevel to iPlayerLevel
+		set TEQQShrineInitilizationQuest.iPlayerGold to iPlayerGold
+		StopQuest TEQQShrineUpgradeArtifactQuest
+		StartQuest TEQQShrineInitilizationQuest
+	elseif iDisplayedMenu == 1
+		set TEQQUpgradeCrystalLongswordQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeCrystalLongswordQuest.iDisplayedMenu to 1
+		set TEQQUpgradeCrystalLongswordQuest.iUpgradePerformed to 0
+		set TEQQUpgradeCrystalLongswordQuest.iChoosing to 0
+		set TEQQUpgradeCrystalLongswordQuest.iChoosingTier to 0
+		set TEQQUpgradeCrystalLongswordQuest.iPlayerGold to iPlayerGold
+		set TEQQUpgradeCrystalLongswordQuest.iPlayerLevel to iPlayerLevel
+		StopQuest TEQQShrineUpgradeArtifactQuest
+		StartQuest TEQQUpgradeCrystalLongswordQuest
+	elseif iDisplayedMenu == 2
+		set TEQQUpgradeEbonyUchigatanaQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeEbonyUchigatanaQuest.iDisplayedMenu to 1
+		set TEQQUpgradeEbonyUchigatanaQuest.iUpgradePerformed to 0
+		set TEQQUpgradeEbonyUchigatanaQuest.iChoosing to 0
+		set TEQQUpgradeEbonyUchigatanaQuest.iChoosingTier to 0
+		set TEQQUpgradeEbonyUchigatanaQuest.iPlayerGold to iPlayerGold
+		set TEQQUpgradeEbonyUchigatanaQuest.iPlayerLevel to iPlayerLevel
+		StopQuest TEQQShrineUpgradeArtifactQuest
+		StartQuest TEQQUpgradeEbonyUchigatanaQuest
+	elseif iDisplayedMenu == 3
+		set TEQQUpgradeGoldUchigatanaQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeGoldUchigatanaQuest.iDisplayedMenu to 1
+		set TEQQUpgradeGoldUchigatanaQuest.iUpgradePerformed to 0
+		set TEQQUpgradeGoldUchigatanaQuest.iChoosing to 0
+		set TEQQUpgradeGoldUchigatanaQuest.iChoosingTier to 0
+		set TEQQUpgradeGoldUchigatanaQuest.iPlayerGold to iPlayerGold
+		set TEQQUpgradeGoldUchigatanaQuest.iPlayerLevel to iPlayerLevel
+		StopQuest TEQQShrineUpgradeArtifactQuest
+		StartQuest TEQQUpgradeGoldUchigatanaQuest
+	elseif iDisplayedMenu == 4 
+		set TEQQUpgradeStalrihmShortswordQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeStalrihmShortswordQuest.iDisplayedMenu to 1
+		set TEQQUpgradeStalrihmShortswordQuest.iUpgradePerformed to 0
+		set TEQQUpgradeStalrihmShortswordQuest.iChoosing to 0
+		set TEQQUpgradeStalrihmShortswordQuest.iChoosingTier to 0
+		set TEQQUpgradeStalrihmShortswordQuest.iPlayerGold to iPlayerGold
+		set TEQQUpgradeStalrihmShortswordQuest.iPlayerLevel to iPlayerLevel
+		StopQuest TEQQShrineUpgradeArtifactQuest
+		StartQuest TEQQUpgradeStalrihmShortswordQuest
+	elseif iDisplayedMenu == 5 	
+		set TEQQUpgradeQuicksilverDaggerQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeQuicksilverDaggerQuest.iDisplayedMenu to 1
+		set TEQQUpgradeQuicksilverDaggerQuest.iUpgradePerformed to 0
+		set TEQQUpgradeQuicksilverDaggerQuest.iChoosing to 0
+		set TEQQUpgradeQuicksilverDaggerQuest.iChoosingTier to 0
+		set TEQQUpgradeQuicksilverDaggerQuest.iPlayerGold to iPlayerGold
+		set TEQQUpgradeQuicksilverDaggerQuest.iPlayerLevel to iPlayerLevel
+		StopQuest TEQQShrineUpgradeArtifactQuest
+		StartQuest TEQQUpgradeQuicksilverDaggerQuest
+	elseif iDisplayedMenu == 6 	
+		set TEQQUpgradeEbonyRazorQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeEbonyRazorQuest.iDisplayedMenu to 1
+		set TEQQUpgradeEbonyRazorQuest.iUpgradePerformed to 0
+		set TEQQUpgradeEbonyRazorQuest.iChoosing to 0
+		set TEQQUpgradeEbonyRazorQuest.iChoosingTier to 0
+		set TEQQUpgradeEbonyRazorQuest.iPlayerGold to iPlayerGold
+		set TEQQUpgradeEbonyRazorQuest.iPlayerLevel to iPlayerLevel
+		StopQuest TEQQShrineUpgradeArtifactQuest
+		StartQuest TEQQUpgradeEbonyRazorQuest
+	endif
+end

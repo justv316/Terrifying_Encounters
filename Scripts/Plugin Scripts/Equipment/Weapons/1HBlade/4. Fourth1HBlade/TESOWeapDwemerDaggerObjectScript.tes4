@@ -1,0 +1,71 @@
+scn TESOWeapDwemerDaggerObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponDwemerDaggerEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponDwemerDaggerEquip > 0
+		set TEiWeaponDwemerDaggerEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetDwemerEquip to TEiSetDwemerEquip + 1
+	if Player.GetEquipped TE01WeaponDwemerDagger
+		set TEiWeaponDwemerDaggerEquip to 1
+	elseif Player.GetEquipped TE02WeaponDwemerDagger
+		set TEiWeaponDwemerDaggerEquip to 2
+	elseif Player.GetEquipped TE03WeaponDwemerDagger
+		set TEiWeaponDwemerDaggerEquip to 3
+	elseif Player.GetEquipped TE04WeaponDwemerDagger 
+		set TEiWeaponDwemerDaggerEquip to 4
+	elseif Player.GetEquipped TE05WeaponDwemerDagger 
+		set TEiWeaponDwemerDaggerEquip to 5
+	elseif Player.GetEquipped TE06WeaponDwemerDagger
+		set TEiWeaponDwemerDaggerEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetDwemerEquip to TEiSetDwemerEquip - 1
+	if TEiWeaponDwemerDaggerEquip > 0
+		set TEiWeaponDwemerDaggerEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponDwemerDaggerEquip == 1
+			Player.EquipItem TE02WeaponDwemerDagger
+			set TEiWeaponDwemerDaggerEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponDwemerDaggerEquip == 2
+			Player.EquipItem TE03WeaponDwemerDagger
+			set TEiWeaponDwemerDaggerEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponDwemerDaggerEquip == 3
+			Player.EquipItem TE04WeaponDwemerDagger
+			set TEiWeaponDwemerDaggerEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponDwemerDaggerEquip == 4
+			Player.EquipItem TE05WeaponDwemerDagger
+			set TEiWeaponDwemerDaggerEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponDwemerDaggerEquip == 5
+			Player.EquipItem TE06WeaponDwemerDagger
+			set TEiWeaponDwemerDaggerEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

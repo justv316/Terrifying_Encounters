@@ -1,0 +1,71 @@
+scn TESOWeapAyleidicWaraxeObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponAyleidicWaraxeEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponAyleidicWaraxeEquip > 0
+		set TEiWeaponAyleidicWaraxeEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetAyleidicEquip to TEiSetAyleidicEquip + 1
+	if Player.GetEquipped TE01WeaponAyleidicWaraxe
+		set TEiWeaponAyleidicWaraxeEquip to 1
+	elseif Player.GetEquipped TE02WeaponAyleidicWaraxe
+		set TEiWeaponAyleidicWaraxeEquip to 2
+	elseif Player.GetEquipped TE03WeaponAyleidicWaraxe
+		set TEiWeaponAyleidicWaraxeEquip to 3
+	elseif Player.GetEquipped TE04WeaponAyleidicWaraxe 
+		set TEiWeaponAyleidicWaraxeEquip to 4
+	elseif Player.GetEquipped TE05WeaponAyleidicWaraxe 
+		set TEiWeaponAyleidicWaraxeEquip to 5
+	elseif Player.GetEquipped TE06WeaponAyleidicWaraxe
+		set TEiWeaponAyleidicWaraxeEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetAyleidicEquip to TEiSetAyleidicEquip - 1
+	if TEiWeaponAyleidicWaraxeEquip > 0
+		set TEiWeaponAyleidicWaraxeEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponAyleidicWaraxeEquip == 1
+			Player.EquipItem TE02WeaponAyleidicWaraxe
+			set TEiWeaponAyleidicWaraxeEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicWaraxeEquip == 2
+			Player.EquipItem TE03WeaponAyleidicWaraxe
+			set TEiWeaponAyleidicWaraxeEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicWaraxeEquip == 3
+			Player.EquipItem TE04WeaponAyleidicWaraxe
+			set TEiWeaponAyleidicWaraxeEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicWaraxeEquip == 4
+			Player.EquipItem TE05WeaponAyleidicWaraxe
+			set TEiWeaponAyleidicWaraxeEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicWaraxeEquip == 5
+			Player.EquipItem TE06WeaponAyleidicWaraxe
+			set TEiWeaponAyleidicWaraxeEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

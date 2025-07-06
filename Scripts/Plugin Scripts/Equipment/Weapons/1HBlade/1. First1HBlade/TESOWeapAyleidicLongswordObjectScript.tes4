@@ -1,0 +1,71 @@
+scn TESOWeapAyleidicLongswordObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponAyleidicLongswordEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponAyleidicLongswordEquip > 0
+		set TEiWeaponAyleidicLongswordEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetAyleidicEquip to TEiSetAyleidicEquip + 1
+	if Player.GetEquipped TE01WeaponAyleidicLongsword
+		set TEiWeaponAyleidicLongswordEquip to 1
+	elseif Player.GetEquipped TE02WeaponAyleidicLongsword
+		set TEiWeaponAyleidicLongswordEquip to 2
+	elseif Player.GetEquipped TE03WeaponAyleidicLongsword
+		set TEiWeaponAyleidicLongswordEquip to 3
+	elseif Player.GetEquipped TE04WeaponAyleidicLongsword 
+		set TEiWeaponAyleidicLongswordEquip to 4
+	elseif Player.GetEquipped TE05WeaponAyleidicLongsword 
+		set TEiWeaponAyleidicLongswordEquip to 5
+	elseif Player.GetEquipped TE06WeaponAyleidicLongsword
+		set TEiWeaponAyleidicLongswordEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetAyleidicEquip to TEiSetAyleidicEquip - 1
+	if TEiWeaponAyleidicLongswordEquip > 0
+		set TEiWeaponAyleidicLongswordEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponAyleidicLongswordEquip == 1
+			Player.EquipItem TE02WeaponAyleidicLongsword
+			set TEiWeaponAyleidicLongswordEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicLongswordEquip == 2
+			Player.EquipItem TE03WeaponAyleidicLongsword
+			set TEiWeaponAyleidicLongswordEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicLongswordEquip == 3
+			Player.EquipItem TE04WeaponAyleidicLongsword
+			set TEiWeaponAyleidicLongswordEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicLongswordEquip == 4
+			Player.EquipItem TE05WeaponAyleidicLongsword
+			set TEiWeaponAyleidicLongswordEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponAyleidicLongswordEquip == 5
+			Player.EquipItem TE06WeaponAyleidicLongsword
+			set TEiWeaponAyleidicLongswordEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

@@ -1,0 +1,71 @@
+scn TESOWeapCursedClaymoreObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponCursedClaymoreEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponCursedClaymoreEquip > 0
+		set TEiWeaponCursedClaymoreEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetCursedEquip to TEiSetCursedEquip + 1
+	if Player.GetEquipped TE01WeaponCursedClaymore
+		set TEiWeaponCursedClaymoreEquip to 1
+	elseif Player.GetEquipped TE02WeaponCursedClaymore
+		set TEiWeaponCursedClaymoreEquip to 2
+	elseif Player.GetEquipped TE03WeaponCursedClaymore
+		set TEiWeaponCursedClaymoreEquip to 3
+	elseif Player.GetEquipped TE04WeaponCursedClaymore 
+		set TEiWeaponCursedClaymoreEquip to 4
+	elseif Player.GetEquipped TE05WeaponCursedClaymore 
+		set TEiWeaponCursedClaymoreEquip to 5
+	elseif Player.GetEquipped TE06WeaponCursedClaymore
+		set TEiWeaponCursedClaymoreEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetCursedEquip to TEiSetCursedEquip - 1
+	if TEiWeaponCursedClaymoreEquip > 0
+		set TEiWeaponCursedClaymoreEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponCursedClaymoreEquip == 1
+			Player.EquipItem TE02WeaponCursedClaymore
+			set TEiWeaponCursedClaymoreEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponCursedClaymoreEquip == 2
+			Player.EquipItem TE03WeaponCursedClaymore
+			set TEiWeaponCursedClaymoreEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponCursedClaymoreEquip == 3
+			Player.EquipItem TE04WeaponCursedClaymore
+			set TEiWeaponCursedClaymoreEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponCursedClaymoreEquip == 4
+			Player.EquipItem TE05WeaponCursedClaymore
+			set TEiWeaponCursedClaymoreEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponCursedClaymoreEquip == 5
+			Player.EquipItem TE06WeaponCursedClaymore
+			set TEiWeaponCursedClaymoreEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

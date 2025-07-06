@@ -1,0 +1,71 @@
+scn TESOArmorResiniteLGreavesObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiArmorResiniteLGreavesEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiArmorResiniteLGreavesEquip > 0
+		set TEiArmorResiniteLGreavesEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetResiniteEquip to TEiSetResiniteEquip + 1
+	if Player.GetEquipped TE01ArmorResiniteLGreaves
+		set TEiArmorResiniteLGreavesEquip to 1
+	elseif Player.GetEquipped TE02ArmorResiniteLGreaves
+		set TEiArmorResiniteLGreavesEquip to 2
+	elseif Player.GetEquipped TE03ArmorResiniteLGreaves
+		set TEiArmorResiniteLGreavesEquip to 3
+	elseif Player.GetEquipped TE04ArmorResiniteLGreaves 
+		set TEiArmorResiniteLGreavesEquip to 4
+	elseif Player.GetEquipped TE05ArmorResiniteLGreaves 
+		set TEiArmorResiniteLGreavesEquip to 5
+	elseif Player.GetEquipped TE06ArmorResiniteLGreaves
+		set TEiArmorResiniteLGreavesEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetResiniteEquip to TEiSetResiniteEquip - 1
+	if TEiArmorResiniteLGreavesEquip > 0
+		set TEiArmorResiniteLGreavesEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiArmorResiniteLGreavesEquip == 1
+			Player.EquipItem TE02ArmorResiniteLGreaves
+			set TEiArmorResiniteLGreavesEquip to 2
+			set bShouldEquip to 0
+		elseif TEiArmorResiniteLGreavesEquip == 2
+			Player.EquipItem TE03ArmorResiniteLGreaves
+			set TEiArmorResiniteLGreavesEquip to 3
+			set bShouldEquip to 0
+		elseif TEiArmorResiniteLGreavesEquip == 3
+			Player.EquipItem TE04ArmorResiniteLGreaves
+			set TEiArmorResiniteLGreavesEquip to 4
+			set bShouldEquip to 0
+		elseif TEiArmorResiniteLGreavesEquip == 4
+			Player.EquipItem TE05ArmorResiniteLGreaves
+			set TEiArmorResiniteLGreavesEquip to 5
+			set bShouldEquip to 0
+		elseif TEiArmorResiniteLGreavesEquip == 5
+			Player.EquipItem TE06ArmorResiniteLGreaves
+			set TEiArmorResiniteLGreavesEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

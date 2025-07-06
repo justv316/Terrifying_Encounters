@@ -1,0 +1,1089 @@
+scn TESQShrineUpgradeFirst1HBluntWeaponQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iChoosingItem
+short iInventoryTier
+short iChoice
+short bAyleidicMace
+short bCursedMace
+short bDarkMace
+short bDwemerMace
+short bGoldenMace
+short bMalachiteMace
+
+begin gamemode
+	if iDisplayedMenu == 0 
+		if iChoosingItem == 0
+			if bAyleidicMace > 0
+				set iInventoryTier to iInventoryTier + ( 1 * 1 )
+			endif
+			if bCursedMace > 0
+				set iInventoryTier to iInventoryTier + ( 2 * 1 )
+			endif
+			if bDarkMace > 0
+				set iInventoryTier to iInventoryTier + ( 2 * 2 )
+			endif
+			if bDwemerMace > 0
+				set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 )
+			endif
+			if bGoldenMace > 0
+				set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 * 2 )
+			endif
+			if bMalachiteMace > 0
+				set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 * 2 * 2 )
+			endif
+			set iChoosingItem to -1	
+		elseif iChoosingItem == -1
+			if iInventoryTier == 1
+				set iChoosingItem to 1
+			elseif iInventoryTier == 2
+				set iChoosingItem to 2
+			elseif iInventoryTier == 4
+				set iChoosingItem to 3
+			elseif iInventoryTier == 8
+				set iChoosingItem to 4
+			elseif iInventoryTier == 16
+				set iChoosingItem to 5
+			elseif iInventoryTier == 32
+				set iChoosingItem to 6
+			elseif iInventoryTier == 3
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace" 
+				set iChoosingItem to 7
+			elseif iInventoryTier == 5
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Dark Mace"
+				set iChoosingItem to 8
+			elseif iInventoryTier == 9
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Dwemer Mace"
+				set iChoosingItem to 9
+			elseif iInventoryTier == 17
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Golden Mace"
+				set iChoosingItem to 10
+			elseif iInventoryTier == 6
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Cursed Mace", "Dark Mace"
+				set iChoosingItem to 11
+			elseif iInventoryTier == 10
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Cursed Mace", "Dwemer Mace"
+				set iChoosingItem to 12
+			elseif iInventoryTier == 18
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Cursed Mace", "Golden Mace"
+				set iChoosingItem to 13
+			elseif iInventoryTier == 12
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Dark Mace", "Dwemer Mace"
+				set iChoosingItem to 14
+			elseif iInventoryTier == 20
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Dark Mace", "Golden Mace"
+				set iChoosingItem to 15
+			elseif iInventoryTier == 24
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Dwemer Mace", "Golden Mace"
+				set iChoosingItem to 16
+			elseif iInventoryTier == 7
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace", "Dark Mace"
+				set iChoosingItem to 17
+			elseif iInventoryTier == 11
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace", "Dwemer Mace"
+				set iChoosingItem to 18
+			elseif iInventoryTier == 19
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace", "Golden Mace"
+				set iChoosingItem to 19
+			elseif iInventoryTier == 13
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Dark Mace", "Dwemer Mace"
+				set iChoosingItem to 20
+			elseif iInventoryTier == 21
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Dark Mace", "Golden Mace"
+				set iChoosingItem to 21
+			elseif iInventoryTier == 25
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Dwemer Mace", "Golden Mace"
+				set iChoosingItem to 22
+			elseif iInventoryTier == 14
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Cursed Mace", "Dark Mace", "Dwemer Mace"
+				set iChoosingItem to 23
+			elseif iInventoryTier == 22
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Cursed Mace", "Dark Mace", "Golden Mace"
+				set iChoosingItem to 24
+			elseif iInventoryTier == 26
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Cursed Mace", "Dwemer Mace", "Golden Mace"
+				set iChoosingItem to 25
+			elseif iInventoryTier == 28
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Dark Mace", "Dwemer Mace", "Golden Mace"
+				set iChoosingItem to 26
+			elseif iInventoryTier == 15
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace", "Dark Mace", "Dwemer Mace"
+				set iChoosingItem to 27
+			elseif iInventoryTier == 23
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace", "Dark Mace", "Golden Mace"
+				set iChoosingItem to 28
+			elseif iInventoryTier == 27
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace", "Dwemer Mace", "Golden Mace"
+				set iChoosingItem to 29
+			elseif iInventoryTier == 29
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Dark Mace", "Dwemer Mace", "Golden Mace"
+				set iChoosingItem to 30
+			elseif iInventoryTier == 30
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Cursed Mace", "Dark Mace", "Dwemer Mace", "Golden Mace"
+				set iChoosingItem to 31
+			elseif iInventoryTier == 31
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace", "Dark Mace", "Dwemer Mace", "Golden Mace"
+				set iChoosingItem to 32
+			elseif iInventoryTier == 33
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Malachite Mace"
+				set iChoosingItem to 33
+			elseif iInventoryTier == 34
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Cursed Mace", "Malachite Mace"
+				set iChoosingItem to 34
+			elseif iInventoryTier == 35
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace", "Malachite Mace"
+				set iChoosingItem to 35
+			elseif iInventoryTier == 36
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Dark Mace", "Malachite Mace"
+				set iChoosingItem to 36
+			elseif iInventoryTier == 37
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Dark Mace", "Malachite Mace"
+				set iChoosingItem to 37
+			elseif iInventoryTier == 38
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Cursed Mace", "Dark Mace", "Malachite Mace"
+				set iChoosingItem to 38
+			elseif iInventoryTier == 39
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace", "Dark Mace", "Malachite Mace"
+				set iChoosingItem to 39
+			elseif iInventoryTier == 40
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Dwemer Mace", "Malachite Mace"
+				set iChoosingItem to 40
+			elseif iInventoryTier == 41
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Dwemer Mace", "Malachite Mace"
+				set iChoosingItem to 41
+			elseif iInventoryTier == 42
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Cursed Mace", "Dwemer Mace", "Malachite Mace"
+				set iChoosingItem to 42
+			elseif iInventoryTier == 43
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace", "Dwemer Mace", "Malachite Mace"
+				set iChoosingItem to 43
+			elseif iInventoryTier == 44
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Dark Mace", "Dwemer Mace", "Malachite Mace"
+				set iChoosingItem to 44
+			elseif iInventoryTier == 45
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Dark Mace", "Dwemer Mace", "Malachite Mace"
+				set iChoosingItem to 45
+			elseif iInventoryTier == 46
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Cursed Mace", "Dark Mace", "Dwemer Mace", "Malachite Mace"
+				set iChoosingItem to 46
+			elseif iInventoryTier == 47
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace", "Dark Mace", "Dwemer Mace", "Malachite Mace"
+				set iChoosingItem to 47
+			elseif iInventoryTier == 48
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 48
+			elseif iInventoryTier == 49
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 49
+			elseif iInventoryTier == 50
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Cursed Mace", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 50
+			elseif iInventoryTier == 51
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 51
+			elseif iInventoryTier == 52
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Dark Mace", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 52
+			elseif iInventoryTier == 53
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Dark Mace", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 53
+			elseif iInventoryTier == 54
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Cursed Mace", "Dark Mace", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 54
+			elseif iInventoryTier == 55
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace", "Item 3", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 55
+			elseif iInventoryTier == 56
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Dwemer Mace", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 56
+			elseif iInventoryTier == 57
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Dwemer Mace", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 57
+			elseif iInventoryTier == 58
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Cursed Mace", "Dwemer Mace", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 58
+			elseif iInventoryTier == 59
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace", "Dwemer Mace", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 59
+			elseif iInventoryTier == 60
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Dark Mace", "Dwemer Mace", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 60
+			elseif iInventoryTier == 61
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Dark Mace", "Dwemer Mace", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 61
+			elseif iInventoryTier == 62
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Cursed Mace", "Dark Mace", "Dwemer Mace", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 62
+			elseif iInventoryTier == 63
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Mace", "Cursed Mace", "Dark Mace", "Dwemer Mace", "Golden Mace", "Malachite Mace"
+				set iChoosingItem to 63
+			endif
+		elseif iChoosingItem == 1
+			set iDisplayedMenu to 1
+		elseif iChoosingItem == 2
+			set iDisplayedMenu to 2
+		elseif iChoosingItem == 3
+			set iDisplayedMenu to 3
+		elseif iChoosingItem == 4
+			set iDisplayedMenu to 4
+		elseif iChoosingItem == 5
+			set iDisplayedMenu to 5
+		elseif iChoosingItem == 6
+			set iDisplayedMenu to 6
+		elseif iChoosingItem == 7
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			endif
+		elseif iChoosingItem == 8
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			endif
+		elseif iChoosingItem == 9
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 4
+			endif
+		elseif iChoosingItem == 10
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 11
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			endif
+		elseif iChoosingItem == 12
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 4
+			endif
+		elseif iChoosingItem == 13
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 14
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 3
+			elseif iChoice == 3
+				set iDisplayedMenu to 4
+			endif
+		elseif iChoosingItem == 15
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 3
+			elseif iChoice == 3
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 16
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 4
+			elseif iChoice == 3
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 16
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 4
+			elseif iChoice == 3
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 17
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			elseif iChoice == 4
+				set iDisplayedMenu to 3
+			endif
+		elseif iChoosingItem == 18
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			elseif iChoice == 4
+				set iDisplayedMenu to 4
+			endif
+		elseif iChoosingItem == 19
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			elseif iChoice == 4
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 20
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			elseif iChoice == 4
+				set iDisplayedMenu to 4
+			endif
+		elseif iChoosingItem == 21
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			elseif iChoice == 4
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 22
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 4
+			elseif iChoice == 4
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 23
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			elseif iChoice == 4
+				set iDisplayedMenu to 4
+			endif
+		elseif iChoosingItem == 24
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			elseif iChoice == 4
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 25
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 4
+			elseif iChoice == 4
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 26
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 3
+			elseif iChoice == 3
+				set iDisplayedMenu to 4
+			elseif iChoice == 4
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 27
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			elseif iChoice == 4
+				set iDisplayedMenu to 3
+			elseif iChoice == 5
+				set iDisplayedMenu to 4
+			endif
+		elseif iChoosingItem == 28
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			elseif iChoice == 4
+				set iDisplayedMenu to 3
+			elseif iChoice == 5
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 29
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			elseif iChoice == 4
+				set iDisplayedMenu to 4
+			elseif iChoice == 5
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 30
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			elseif iChoice == 4
+				set iDisplayedMenu to 4
+			elseif iChoice == 5
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 31
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			elseif iChoice == 4
+				set iDisplayedMenu to 4
+			elseif iChoice == 5
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 32
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			elseif iChoice == 4
+				set iDisplayedMenu to 3
+			elseif iChoice == 5
+				set iDisplayedMenu to 4
+			elseif iChoice == 6
+				set iDisplayedMenu to 5
+			endif
+		elseif iChoosingItem == 33
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 34
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 35
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			elseif iChoice == 4
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 36
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 3
+			elseif iChoice == 3
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 37
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			elseif iChoice == 4
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 38
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			elseif iChoice == 4
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 39
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			elseif iChoice == 4
+				set iDisplayedMenu to 3
+			elseif iChoice == 5
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 40
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 4
+			elseif iChoice == 3
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 41
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 4
+			elseif iChoice == 4
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 42
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 4
+			elseif iChoice == 4
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 43
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			elseif iChoice == 4
+				set iDisplayedMenu to 4
+			elseif iChoice == 5
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 44
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 3
+			elseif iChoice == 3
+				set iDisplayedMenu to 4
+			elseif iChoice == 4
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 45
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			elseif iChoice == 4
+				set iDisplayedMenu to 4
+			elseif iChoice == 5
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 46
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			elseif iChoice == 4
+				set iDisplayedMenu to 4
+			elseif iChoice == 5
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 47
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			elseif iChoice == 4
+				set iDisplayedMenu to 3
+			elseif iChoice == 5
+				set iDisplayedMenu to 4
+			elseif iChoice == 6
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 48
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 5
+			elseif iChoice == 3
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 49
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 5
+			elseif iChoice == 4
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 50
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 5
+			elseif iChoice == 4
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 51
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			elseif iChoice == 4
+				set iDisplayedMenu to 5
+			elseif iChoice == 5
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 52
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 3
+			elseif iChoice == 3
+				set iDisplayedMenu to 5
+			elseif iChoice == 4
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 53
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			elseif iChoice == 4
+				set iDisplayedMenu to 5
+			elseif iChoice == 5
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 54
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			elseif iChoice == 4
+				set iDisplayedMenu to 5
+			elseif iChoice == 5
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 55
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			elseif iChoice == 4
+				set iDisplayedMenu to 3
+			elseif iChoice == 5
+				set iDisplayedMenu to 5
+			elseif iChoice == 6
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 56
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 4
+			elseif iChoice == 3
+				set iDisplayedMenu to 5
+			elseif iChoice == 4
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 57
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 4
+			elseif iChoice == 4
+				set iDisplayedMenu to 5
+			elseif iChoice == 5
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 58
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 4
+			elseif iChoice == 4
+				set iDisplayedMenu to 5
+			elseif iChoice == 5
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 59
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			elseif iChoice == 4
+				set iDisplayedMenu to 4
+			elseif iChoice == 5
+				set iDisplayedMenu to 5
+			elseif iChoice == 6
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 60
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 3
+			elseif iChoice == 3
+				set iDisplayedMenu to 4
+			elseif iChoice == 4
+				set iDisplayedMenu to 5
+			elseif iChoice == 5
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 61
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			elseif iChoice == 4
+				set iDisplayedMenu to 4
+			elseif iChoice == 5
+				set iDisplayedMenu to 5
+			elseif iChoice == 6
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 62
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
+			elseif iChoice == 4
+				set iDisplayedMenu to 4
+			elseif iChoice == 5
+				set iDisplayedMenu to 5
+			elseif iChoice == 6
+				set iDisplayedMenu to 6
+			endif
+		elseif iChoosingItem == 63
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				set iDisplayedMenu to 1
+			elseif iChoice == 3
+				set iDisplayedMenu to 2
+			elseif iChoice == 4
+				set iDisplayedMenu to 3
+			elseif iChoice == 5
+				set iDisplayedMenu to 4
+			elseif iChoice == 6
+				set iDisplayedMenu to 5
+			elseif iChoice == 7
+				set iDisplayedMenu to 6
+			endif
+		endif
+	elseif iDisplayedMenu == 1
+		set TEQQUpgradeAyleidicMaceQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeAyleidicMaceQuest.iDisplayedMenu to 1
+		set TEQQUpgradeAyleidicMaceQuest.iUpgradePerformed to 0
+		set TEQQUpgradeAyleidicMaceQuest.iChoosing to 0
+		set TEQQUpgradeAyleidicMaceQuest.iChoosingTier to 0
+		set TEQQUpgradeAyleidicMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeAyleidicMaceQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeFirst1HBluntWeaponQuest
+		StartQuest TEQQUpgradeAyleidicMaceQuest
+	elseif iDisplayedMenu == 2
+		set TEQQUpgradeCursedMaceQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeCursedMaceQuest.iDisplayedMenu to 1
+		set TEQQUpgradeCursedMaceQuest.iUpgradePerformed to 0
+		set TEQQUpgradeCursedMaceQuest.iChoosing to 0
+		set TEQQUpgradeCursedMaceQuest.iChoosingTier to 0
+		set TEQQUpgradeCursedMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeCursedMaceQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeFirst1HBluntWeaponQuest
+		StartQuest TEQQUpgradeCursedMaceQuest
+	elseif iDisplayedMenu == 3
+		set TEQQUpgradeDarkMaceQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeDarkMaceQuest.iDisplayedMenu to 1
+		set TEQQUpgradeDarkMaceQuest.iUpgradePerformed to 0
+		set TEQQUpgradeDarkMaceQuest.iChoosing to 0
+		set TEQQUpgradeDarkMaceQuest.iChoosingTier to 0
+		set TEQQUpgradeDarkMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeDarkMaceQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeFirst1HBluntWeaponQuest
+		StartQuest TEQQUpgradeDarkMaceQuest
+	elseif iDisplayedMenu == 4 
+		set TEQQUpgradeDwemerMaceQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeDwemerMaceQuest.iDisplayedMenu to 1
+		set TEQQUpgradeDwemerMaceQuest.iUpgradePerformed to 0
+		set TEQQUpgradeDwemerMaceQuest.iChoosing to 0
+		set TEQQUpgradeDwemerMaceQuest.iChoosingTier to 0
+		set TEQQUpgradeDwemerMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeDwemerMaceQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeFirst1HBluntWeaponQuest
+		StartQuest TEQQUpgradeDwemerMaceQuest
+	elseif iDisplayedMenu == 5
+		set TEQQUpgradeGoldenMaceQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeGoldenMaceQuest.iDisplayedMenu to 1
+		set TEQQUpgradeGoldenMaceQuest.iUpgradePerformed to 0
+		set TEQQUpgradeGoldenMaceQuest.iChoosing to 0
+		set TEQQUpgradeGoldenMaceQuest.iChoosingTier to 0
+		set TEQQUpgradeGoldenMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeGoldenMaceQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeFirst1HBluntWeaponQuest
+		StartQuest TEQQUpgradeGoldenMaceQuest
+	elseif iDisplayedMenu == 6 	
+		set TEQQUpgradeMalachiteMaceQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeMalachiteMaceQuest.iDisplayedMenu to 1
+		set TEQQUpgradeMalachiteMaceQuest.iUpgradePerformed to 0
+		set TEQQUpgradeMalachiteMaceQuest.iChoosing to 0
+		set TEQQUpgradeMalachiteMaceQuest.iChoosingTier to 0
+		set TEQQUpgradeMalachiteMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeMalachiteMaceQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeFirst1HBluntWeaponQuest
+		StartQuest TEQQUpgradeMalachiteMaceQuest
+	elseif iDisplayedMenu == -1
+		Message "Nothing found to upgrade."
+		StopQuest TEQQShrineUpgradeFirst1HBluntWeaponQuest
+	elseif iDisplayedMenu == -2
+		Message "Return when you are ready!"
+		StopQuest TEQQShrineUpgradeFirst1HBluntWeaponQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.fQuestDelayTime to 0.01
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to 0
+		StopQuest TEQQShrineUpgradeFirst1HBluntWeaponQuest
+		StartQuest TEQQShrineInitilizationQuest
+	endif
+end

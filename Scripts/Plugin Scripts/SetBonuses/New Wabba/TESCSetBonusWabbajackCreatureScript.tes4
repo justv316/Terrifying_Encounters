@@ -1,0 +1,42 @@
+scn TESCSetBonusWabbajackCreatureScript
+
+short bOnce
+short bDone
+short bDead
+float fTimer
+
+ref rOriginal
+ref rSelf
+
+Begin OnLoad
+	if bOnce == 0 && GetSelf != 0
+		set rSelf to GetSelf
+		set TEQQSetBonusWabbajackQuest.rReplacement to rSelf
+		set rOriginal to TEQQSetBonusWabbajackQuest.rTarget
+		rOriginal.Disable
+		set bOnce to 1
+	endif
+end
+
+begin GameMode
+	if bDone == 0
+		set fTimer to fTimer + GetSecondsPassed
+		if fTimer > 10
+			set TEQQSetBonusWabbajackQuest.bSpellRunning to 2
+			set bDone to 1
+		endif
+	endif
+	
+	if bDead == 0
+		if GetDead == 1
+			set bDead to 1
+			set rOriginal to TEQQSetBonusWabbajackQuest.rTarget
+			set rSelf to GetSelf
+			rOriginal.Kill Player
+			rOriginal.Enable
+			rOriginal.MoveTo rSelf
+			rSelf.Disable
+			Return
+		endif
+	endif
+end

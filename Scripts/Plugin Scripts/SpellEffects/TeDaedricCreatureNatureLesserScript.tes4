@@ -1,0 +1,21 @@
+scn TeDaedricCreatureNatureLesserScript
+
+ref refCaster
+short runonce
+
+begin ScriptEffectStart
+	set refCaster to GetSelf
+end
+
+begin ScriptEffectUpdate
+	if runonce == 0
+		refCaster.addspell TEAbDaedricCreatureNatureLesser2
+		set runonce to 1
+		return
+	else
+		return
+	endif
+end
+
+begin ScriptEffectFinish
+end

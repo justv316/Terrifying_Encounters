@@ -1,0 +1,16 @@
+scn TESMSetBonusWabbajackSpellEffect
+
+ref rSelf
+short bValid
+
+Begin ScriptEffectStart
+	set rSelf to Getself
+	set bValid to GetInFaction MQ16DaedraFaction == 0 && rSelf.IsRidingHorse == 0 && rSelf.GetDead == 0 && IsEssential == 0 && GetInFaction NoWabbaFaction == 0
+	if TEQQSetBonusWabbajackQuest.bSpellRunning == 0
+		if bValid == 1
+			set TEQQSetBonusWabbajackQuest.bSpellRunning to 1
+			set TEQQSetBonusWabbajackQuest.rTarget to rSelf
+			PlaceAtMe TECreatureWabbajackSheep 1
+		endif
+	endif
+end

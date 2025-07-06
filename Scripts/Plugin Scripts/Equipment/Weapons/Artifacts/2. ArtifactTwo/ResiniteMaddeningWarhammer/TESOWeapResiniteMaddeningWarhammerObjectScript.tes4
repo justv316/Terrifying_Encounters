@@ -1,0 +1,73 @@
+scn TESOWeapResiniteMaddeningWarhammerObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiWeaponResiniteMaddeningWarhammerEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiWeaponResiniteMaddeningWarhammerEquip > 0
+		set TEiWeaponResiniteMaddeningWarhammerEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetResiniteEquip to TEiSetResiniteEquip + 1
+	set TEiSetMaddeningEquip to TEiSetMaddeningEquip + 1
+	if Player.GetEquipped TE01WeaponResiniteMaddeningWarhammer
+		set TEiWeaponResiniteMaddeningWarhammerEquip to 1
+	elseif Player.GetEquipped TE02WeaponResiniteMaddeningWarhammer
+		set TEiWeaponResiniteMaddeningWarhammerEquip to 2
+	elseif Player.GetEquipped TE03WeaponResiniteMaddeningWarhammer
+		set TEiWeaponResiniteMaddeningWarhammerEquip to 3
+	elseif Player.GetEquipped TE04WeaponResiniteMaddeningWarhammer 
+		set TEiWeaponResiniteMaddeningWarhammerEquip to 4
+	elseif Player.GetEquipped TE05WeaponResiniteMaddeningWarhammer 
+		set TEiWeaponResiniteMaddeningWarhammerEquip to 5
+	elseif Player.GetEquipped TE06WeaponResiniteMaddeningWarhammer
+		set TEiWeaponResiniteMaddeningWarhammerEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetResiniteEquip to TEiSetResiniteEquip - 1
+	set TEiSetMaddeningEquip to TEiSetMaddeningEquip - 1
+	if TEiWeaponResiniteMaddeningWarhammerEquip > 0
+		set TEiWeaponResiniteMaddeningWarhammerEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiWeaponResiniteMaddeningWarhammerEquip == 1
+			Player.EquipItem TE02WeaponResiniteMaddeningWarhammer
+			set TEiWeaponResiniteMaddeningWarhammerEquip to 2
+			set bShouldEquip to 0
+		elseif TEiWeaponResiniteMaddeningWarhammerEquip == 2
+			Player.EquipItem TE03WeaponResiniteMaddeningWarhammer
+			set TEiWeaponResiniteMaddeningWarhammerEquip to 3
+			set bShouldEquip to 0
+		elseif TEiWeaponResiniteMaddeningWarhammerEquip == 3
+			Player.EquipItem TE04WeaponResiniteMaddeningWarhammer
+			set TEiWeaponResiniteMaddeningWarhammerEquip to 4
+			set bShouldEquip to 0
+		elseif TEiWeaponResiniteMaddeningWarhammerEquip == 4
+			Player.EquipItem TE05WeaponResiniteMaddeningWarhammer
+			set TEiWeaponResiniteMaddeningWarhammerEquip to 5
+			set bShouldEquip to 0
+		elseif TEiWeaponResiniteMaddeningWarhammerEquip == 5
+			Player.EquipItem TE06WeaponResiniteMaddeningWarhammer
+			set TEiWeaponResiniteMaddeningWarhammerEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end

@@ -1,0 +1,71 @@
+scn TESOArmorResiniteLShieldObjectScript
+
+short bShouldEquip
+
+begin OnAdd
+	if TEiArmorResiniteLShieldEquip >= 1
+		set bShouldEquip to 2
+	endif
+end
+
+begin OnDrop
+	if TEiArmorResiniteLShieldEquip > 0
+		set TEiArmorResiniteLShieldEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin OnEquip
+	set TEiSetResiniteEquip to TEiSetResiniteEquip + 1
+	if Player.GetEquipped TE01ArmorResiniteLShield
+		set TEiArmorResiniteLShieldEquip to 1
+	elseif Player.GetEquipped TE02ArmorResiniteLShield
+		set TEiArmorResiniteLShieldEquip to 2
+	elseif Player.GetEquipped TE03ArmorResiniteLShield
+		set TEiArmorResiniteLShieldEquip to 3
+	elseif Player.GetEquipped TE04ArmorResiniteLShield 
+		set TEiArmorResiniteLShieldEquip to 4
+	elseif Player.GetEquipped TE05ArmorResiniteLShield 
+		set TEiArmorResiniteLShieldEquip to 5
+	elseif Player.GetEquipped TE06ArmorResiniteLShield
+		set TEiArmorResiniteLShieldEquip to 6
+	endif
+end
+
+begin OnUnEquip
+	set TEiSetResiniteEquip to TEiSetResiniteEquip - 1
+	if TEiArmorResiniteLShieldEquip > 0
+		set TEiArmorResiniteLShieldEquip to 0
+	endif
+	if bShouldEquip > 0
+		set bShouldEquip to 0
+	endif
+end
+
+begin gamemode
+	if bShouldEquip == 2
+		if TEiArmorResiniteLShieldEquip == 1
+			Player.EquipItem TE02ArmorResiniteLShield
+			set TEiArmorResiniteLShieldEquip to 2
+			set bShouldEquip to 0
+		elseif TEiArmorResiniteLShieldEquip == 2
+			Player.EquipItem TE03ArmorResiniteLShield
+			set TEiArmorResiniteLShieldEquip to 3
+			set bShouldEquip to 0
+		elseif TEiArmorResiniteLShieldEquip == 3
+			Player.EquipItem TE04ArmorResiniteLShield
+			set TEiArmorResiniteLShieldEquip to 4
+			set bShouldEquip to 0
+		elseif TEiArmorResiniteLShieldEquip == 4
+			Player.EquipItem TE05ArmorResiniteLShield
+			set TEiArmorResiniteLShieldEquip to 5
+			set bShouldEquip to 0
+		elseif TEiArmorResiniteLShieldEquip == 5
+			Player.EquipItem TE06ArmorResiniteLShield
+			set TEiArmorResiniteLShieldEquip to 6
+			set bShouldEquip to 0
+		endif
+	endif
+end
