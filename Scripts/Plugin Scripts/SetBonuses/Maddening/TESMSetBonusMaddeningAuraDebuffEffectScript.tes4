@@ -1,1 +1,109 @@
 scn TESMSetBonusMaddeningAuraDebuffEffectScript
+
+short bBonusAdded
+short iDiceRolls
+short iD6
+short iD100
+ref rSelf
+
+Begin ScriptEffectStart
+	set bBonusAdded to 0
+	set iDiceRolls to 0
+	set iD6 to 0
+	set iD100 to 0
+	set rSelf to GetSelf
+end
+
+begin ScriptEffectUpdate
+	if bBonusAdded == 0 
+		if iDiceRolls == 0
+			set iD6 to 1 + 0.06 * GetRandomPercent
+			if iD6 == 1
+				rSelf.ModActorValue ResistNormalWeapons -50
+				rSelf.ModActorValue ResistFire -50
+				rSelf.ModActorValue ResistFrost -50
+				rSelf.ModActorValue ResistShock -50
+				set bBonusAdded to 1
+			elseif iD6 == 2
+				rSelf.ModActorValue Speed -10
+				rSelf.ModActorValue Agility -10
+				rSelf.ModActorValue Strength -10
+				rSelf.ModActorValue Endurance -10
+				rSelf.ModActorValue Willpower -10
+				rSelf.ModActorValue Intelligence -10
+				rSelf.ModActorValue ResistPoison -25
+				set bBonusAdded to 1
+			elseif iD6 == 3
+				rSelf.ModActorValue Speed -50
+				rSelf.ModActorValue ResistNormalWeapons -50
+				rSelf.ModActorValue ResistFire -50
+				set bBonusAdded to 1
+			elseif iD6 == 4
+				rSelf.ModActorValue Speed -30
+				rSelf.ModActorValue AttackBonus -10
+				rSelf.ModActorValue DefendBonus -10
+				rSelf.ModActorValue Strength -10
+				rSelf.ModActorValue Agility -10
+				rSelf.ModActorValue Intelligence -10
+				set bBonusAdded to 1
+			elseif iD6 == 5
+				rSelf.ModActorValue Speed -1
+				rSelf.ModActorValue Agility -1
+				rSelf.ModActorValue Strength -1
+				rSelf.ModActorValue Endurance -1
+				rSelf.ModActorValue Willpower -1
+				rSelf.ModActorValue Intelligence -1
+				set bBonusAdded to 1
+			elseif iD6 == 6
+				set iD100 to GetRandomPercent
+				set iDiceRolls to iDiceRolls + 1
+			endif
+		elseif iDiceRolls == 1
+			if iD100 == 1
+				rSelf.Kill Player
+				Return
+			endif
+		endif
+	endif
+end
+
+begin ScriptEffectFinish
+	if iD6 == 1
+		rSelf.ModActorValue ResistNormalWeapons 50
+		rSelf.ModActorValue ResistFire 50
+		rSelf.ModActorValue ResistFrost 50
+		rSelf.ModActorValue ResistShock 50
+		set bBonusAdded to 0
+	elseif iD6 == 2
+		rSelf.ModActorValue Speed 10
+		rSelf.ModActorValue Agility 10
+		rSelf.ModActorValue Strength 10
+		rSelf.ModActorValue Endurance 10
+		rSelf.ModActorValue Willpower 10
+		rSelf.ModActorValue Intelligence 10
+		rSelf.ModActorValue ResistPoison 25
+		set bBonusAdded to 0
+	elseif iD6 == 3
+		rSelf.ModActorValue Speed 50
+		rSelf.ModActorValue ResistNormalWeapons 50
+		rSelf.ModActorValue ResistFire 50
+		set bBonusAdded to 0
+	elseif iD6 == 4
+		rSelf.ModActorValue Speed 30
+		rSelf.ModActorValue AttackBonus 10
+		rSelf.ModActorValue DefendBonus 10
+		rSelf.ModActorValue Strength 10
+		rSelf.ModActorValue Agility 10
+		rSelf.ModActorValue Intelligence 10
+		set bBonusAdded to 0
+	elseif iD6 == 5
+		rSelf.ModActorValue Speed 1
+		rSelf.ModActorValue Agility 1
+		rSelf.ModActorValue Strength 1
+		rSelf.ModActorValue Endurance 1
+		rSelf.ModActorValue Willpower 1
+		rSelf.ModActorValue Intelligence 1
+		set bBonusAdded to 0
+	endif
+	Return
+end

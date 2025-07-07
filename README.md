@@ -8,9 +8,10 @@
 ## Features
 
 * [Done] Upscaled versions of Vanilla Equipment
-* [Done] A comprehensive equipment upgrade system (Also endgame gold sink)
+* [Done] Equipment upgrade system
 	* [To do] Add the ability to upgrade vanilla items to their Tier 1 variants
 * [Done] Matching Set Bonuses for the 8 upscaled sets of armor/weapons
+	* 6/6 Bonuses Apply *Debuffs* to Enemies or *Buffs* to allies
 	* Takes full advantage of my Target Detection system (https://github.com/justv316/Target_Detection)
 * [To do] Upscaled, fully scripted Artifacts.
 	* Duskfang and Mehrunes Razor complete.
@@ -285,26 +286,39 @@
 
 </details>
 
-#### Set Bonuses
+#### Set Bonuses [Documentation Under Construction]
 
 * Scripted Matching Set Bonuses for all 8 upscaled sets of armor/weapons
 * 6/6 Matching Set Bonus applies an Aura to the player
-	1. Cursed Aura - Inhibits nearby enemies movement speed and applying Weakness to Normal Weapons and Fire. 
-		1. Immolation - Burns nearby enemies for Fire Damage / Second
-	2. Dwemer Aura - Illuminates nearby enemies ans applies Weakness to Magic.
-		1. Enlightenment - Applies light to the player; Increases magicka regen and armor of self and allies.
+	1. Cursed Aura -  Burns nearby enemies 
+		1. 
+	2. Dwemer Aura - Illuminates nearby enemies and applies Weakness to Magic.
+		1. Applies light to the player; Increases magicka regen and armor of self and allies.
 	3. Obsidian Aura - Applies Weakness to Poison and draining attributes of nearby enemies.
-		1. Siphoning - Absorbs health/magicka/fatigue from nearby enemies. 
-	4. Ayleidic Aura - Drains the attributes of nearby enemies.
-		1. Prismatic Cloak - Applies a cloak to the player, dealing cycling elemental damage to nearby enemies. 
+		1. Absorbs health/magicka/fatigue from nearby enemies. 
+	4. Ayleidic Aura - Applies cycling elemental damage to and drains the attributes of nearby enemies. 
+		1. Reduces Speed, Agility, Strength, Willpower, Intelligence by 20. 
 	5. Malachite Aura - Applies Weakness to the Elements and Normal Weapons to nearby enemies. 
 		1. Elvish Secrets - Improves Normal Weapon Resistance and applies Damage Reflection to self and allies.
 	6. Mythril Aura - Gives the player chameleon and improves attack damage while sneaking. 
-		1. Aclarity - Increases movement speed of self and nearby allies.  
-		2. [Need OBSE/UE4SS] Increase attack speed and improve effectiveness of sneak attacks. (Currently I am just increasing the players AttackBonus while sneaking)
+		1. increases movement speed of self and nearby allies.  
+		2. Increases the players AttackBonus while sneaking.
 	7. Resinite Aura - Inhibits movement speed and combat ability of nearby enemies. 
 		1. Demented/Manic - Cycles buffs on the player based on day/night.
-	8. Maddening Aura - Randomly applies buffs to the player and nearby allies and debuffs to nearby enemies.
+	8. Maddening Aura - Randomly debuffs nearby enemies.
+		2. Debuffs are randomly selected from 1 of 6.
+			1. 5 Fire Damage / Second
+			2. 5 Frost Damage / Second
+			3. 5 Shock Damage / Second
+			4. 5 Health Damage / Second
+			5. Wabbajack
+			6. Randomize
+				1. Malachite Debuff
+				2. Obsidian Debuff
+				3. Cursed Debuff
+				4. Resinite Debuff
+				5. All Attributes -1
+				6. Instant Death
 
 <details>
 <Summary>Set Bonus Details</Summary>
@@ -1021,86 +1035,13 @@
 
 </details>
 
-##### Maddening - Wabbajack stats?
+##### Maddening
 * Recommended Classes: Madlords, Demented and Maniacs alike.
 	* __Who knows what lies in store for you.__
 
-<details>
-<Summary>Maddening</Summary>
+1. Buffs given to the player are randomly decided based on a scripted dice roll based on current stats. These can roll as positive or negative, and can range in scale from 0.25 to 1.75 of 10%-25% of the players current AV. This re-rolls modifiers for all attributes, skills, resistances, and other modifiers like Attack and Defend Bonus. This can also re-roll if the player has Stunted Magicka, Water Breathing/Walking. 
 
 
-* 4/6
-
-| +/- | Value Type | Actor Value | Magnitude | Conditional |
-| ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 50 | Constant |
-| + | Resist | Normal Weapons | 10 | Constant |
-| + | Skill | Heavy Armor | 25 | Constant |
-| + | Skill | Blade | 25 | Constant |
-| + | Skill | Blunt | 25 | Constant |
-| + | Skill | Block | 25 | Constant |
-| + | Skill | Hand to Hand | 25 | Constant |
-| + | Other | Attack Bonus | 10 | Constant |
-| + | Other | Defend Bonus | 5 | Constant |
-| - | Resist | Frost | 50 | Constant |
-| + | Skill | Destruction | 50 | Constant |
-| + | Skill | Conjuration | 50 | Constant |
-| + | Skill | Illusion | 50 | Constant |
-| + | Skill | Restoration | 50 | Constant |
-| + | Skill | Alteration | 50 | Constant |
-| + | Skill | Mysticism | 50 | Constant |
-| + | Other | Magicka Multiplier | 3 | Constant |
-| + | Attribute | Speed | 40 | In Combat |
-
-* 5/6
-	
-| +/- | Value Type | Actor Value | Magnitude | Conditional |
-| ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 75 | Constant |
-| + | Resist | Normal Weapons | 25 | Constant |
-| + | Skill | Heavy Armor | 40 | Constant |
-| + | Skill | Blade | 40 | Constant |
-| + | Skill | Blunt | 40 | Constant |
-| + | Skill | Block | 40 | Constant |
-| + | Skill | Hand to Hand | 40 | Constant |
-| + | Other | Attack Bonus | 15 | Constant |
-| + | Other | Defend Bonus | 10 | Constant |
-| - | Resist | Frost | 40 | Constant |
-| + | Skill | Destruction | 40 | Constant |
-| + | Skill | Conjuration | 40 | Constant |
-| + | Skill | Illusion | 40 | Constant |
-| + | Skill | Restoration | 40 | Constant |
-| + | Skill | Alteration | 40 | Constant |
-| + | Skill | Mysticism | 40 | Constant |
-| + | Other | Magicka Multiplier | 2 | Constant |
-| + | Attribute | Speed | 30 | In Combat |
-
-* 6/6
-* Applies an aura to the player, Wabbajack Aura?? [This is a placeholder]
-	
-| +/- | Value Type | Actor Value | Magnitude | Conditional |
-| ---- | ---- | ---- | ---- |----|
-| + | Resist | Fire | 100 | Constant |
-| + | Resist | Normal Weapons | 35 | Constant |
-| + | Skill | Heavy Armor | 50 | Constant |
-| + | Skill | Blade | 50 | Constant |
-| + | Skill | Blunt | 50 | Constant |
-| + | Skill | Block | 50 | Constant |
-| + | Skill | Hand to Hand | 50 | Constant |
-| + | Other | Attack Bonus | 25 | Constant |
-| + | Other | Defend Bonus | 15 | Constant |
-| - | Resist | Frost | 25 | Constant |
-| + | Skill | Destruction | 25 | Constant |
-| + | Skill | Conjuration | 25 | Constant |
-| + | Skill | Illusion | 25 | Constant |
-| + | Skill | Restoration | 25 | Constant |
-| + | Skill | Alteration | 25 | Constant |
-| + | Skill | Mysticism | 25 | Constant |
-| + | Other | Magicka Multiplier | 1 | Constant |
-| + | Attribute | Speed | 20 | In Combat |
-
-</details>
-</details>
 
 ----
 		
