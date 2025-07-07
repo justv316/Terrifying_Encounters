@@ -291,20 +291,28 @@
 * Scripted Matching Set Bonuses for all 8 upscaled sets of armor/weapons
 * 6/6 Matching Set Bonus applies an Aura to the player
 	1. Cursed Aura -  Burns nearby enemies 
-		1. 
-	2. Dwemer Aura - Illuminates nearby enemies and applies Weakness to Magic.
-		1. Applies light to the player; Increases magicka regen and armor of self and allies.
-	3. Obsidian Aura - Applies Weakness to Poison and draining attributes of nearby enemies.
-		1. Absorbs health/magicka/fatigue from nearby enemies. 
+		1. Debuff: Reduces Speed, Resist Normal Weapons and Resist Fire by 50
+		
+	2. Dwemer Aura - Applies light to the player
+		1. Buff: Increases magicka regen and armor by 10 of allies.
+		2. Debuff: Reduces Resist magic by 50
+		
+	3. Obsidian Aura - Absorbs health/magicka/fatigue from nearby enemies. 
+		1. Debuff: Reduces Speed, Agility, Strength, Endurance, Willpower, Intelligence by 10, and Resist Poison by 50
+		
 	4. Ayleidic Aura - Applies cycling elemental damage to and drains the attributes of nearby enemies. 
-		1. Reduces Speed, Agility, Strength, Willpower, Intelligence by 20. 
-	5. Malachite Aura - Applies Weakness to the Elements and Normal Weapons to nearby enemies. 
-		1. Elvish Secrets - Improves Normal Weapon Resistance and applies Damage Reflection to self and allies.
+		1. Debuff: Reduces Speed, Agility, Strength, Willpower, Intelligence by 20. 
+		
+	5. Malachite Aura - 
+		1. Buff: Increases Normal Weapon Resistance by 33 and applies Damage Reflection (33%) allies.
+		2. Debuff: Reduces Resistance to Normal Weapons, Fire, Frost, and Shock by 33.
+		
 	6. Mythril Aura - Gives the player chameleon and improves attack damage while sneaking. 
-		1. increases movement speed of self and nearby allies.  
-		2. Increases the players AttackBonus while sneaking.
-	7. Resinite Aura - Inhibits movement speed and combat ability of nearby enemies. 
-		1. Demented/Manic - Cycles buffs on the player based on day/night.
+		1. Buff: Increases Speed by 33 of nearby allies.  
+		
+	7. Resinite Aura - Cycles buffs on the player based on day/night.
+		1. Debuff: Reduces Speed by 30. Reduces AttackBonus, DefendBonus, Strength, Agility, and Intelligence by 10
+		
 	8. Maddening Aura - Randomly debuffs nearby enemies.
 		2. Debuffs are randomly selected from 1 of 6.
 			1. 5 Fire Damage / Second

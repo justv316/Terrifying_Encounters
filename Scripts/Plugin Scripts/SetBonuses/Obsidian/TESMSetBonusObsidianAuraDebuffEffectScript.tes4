@@ -13,7 +13,7 @@ begin ScriptEffectStart
 		rSelf.ModActorValue Endurance -10
 		rSelf.ModActorValue Willpower -10
 		rSelf.ModActorValue Intelligence -10
-		rSelf.ModActorValue ResistPoison -25
+		rSelf.ModActorValue ResistPoison -50
 		set bBonusAdded to 1
 	endif
 end
@@ -26,7 +26,7 @@ begin ScriptEffectFinish
 		rSelf.ModActorValue Endurance 10
 		rSelf.ModActorValue Willpower 10
 		rSelf.ModActorValue Intelligence 10
-		rSelf.ModActorValue ResistPoison 25
+		rSelf.ModActorValue ResistPoison 50
 		set bBonusadded to 0
 	endif
 end
