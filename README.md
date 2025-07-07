@@ -314,7 +314,7 @@
 		1. Debuff: Reduces Speed by 30. Reduces AttackBonus, DefendBonus, Strength, Agility, and Intelligence by 10
 		
 	8. Maddening Aura - Randomly debuffs nearby enemies.
-		2. Debuffs are randomly selected from 1 of 6.
+		1. Debuffs are randomly selected from 1 of 6.
 			1. 5 Fire Damage / Second
 			2. 5 Frost Damage / Second
 			3. 5 Shock Damage / Second
