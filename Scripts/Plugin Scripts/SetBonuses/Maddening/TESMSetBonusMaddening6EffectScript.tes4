@@ -121,7 +121,7 @@ begin ScriptEffectUpdate
 			Player.ModActorValue SpellAbsorbChance iModSpellAbsorbChance
 			Player.ModActorValue ReflectDamage iModReflectDamage
 			Player.ModActorValue SpellReflectChance iModSpellReflectChance
-			set fTimer to 10
+			set fTimer to 300
 			set bBonusAdded to 1
 		elseif bBonusAdded == 1
 			if fTimer > 0
