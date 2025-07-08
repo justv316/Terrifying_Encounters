@@ -41,7 +41,7 @@
 1. Terrifying_Encounters.esp
 2. Terrifying_Encounters.json (SyncMap)
 3. TE_Settings.ini (GameSettings)
-			
+
 ----
 
 ## Installation
@@ -286,7 +286,7 @@
 
 </details>
 
-#### Set Bonuses [Documentation Under Construction]
+#### Set Bonuses
 
 * Scripted Matching Set Bonuses for all 8 upscaled sets of armor/weapons
 * 6/6 Matching Set Bonus applies an Aura to the player

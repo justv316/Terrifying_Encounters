@@ -8,6 +8,7 @@ Begin OnActivate
 			set bActivated to 1
 			set TEQQShrineInitilizationQuest.fQuestDelayTime to 0.01
 			set TEQQShrineInitilizationQuest.iDisplayedMenu to 0
+			set TEQQShrineInitilizationQuest.iChoosingItem to 0
 			set TEQQShrineInitilizationQuest.iPlayerLevel to Player.GetLevel
 			StartQuest TEQQShrineInitilizationQuest
 		endif
