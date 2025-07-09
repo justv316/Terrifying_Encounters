@@ -31,6 +31,12 @@ begin gamemode
 			set TEQQShrineEquippedCheckQuest.bFoundItem to 0
 			set TEQQShrineEquippedCheckQuest.bFoundArmorSet to 0
 			set TEQQShrineEquippedCheckQuest.bFoundWeaponSet to 0
+			set TEQQShrineVanillaCheckQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaCheckQuest.iSearchItem to 0
+			set TEQQShrineVanillaCheckQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaCheckQuest.bFoundItem to 0
+			set TEQQShrineVanillaCheckQuest.bFoundArmorSet to 0
+			set TEQQShrineVanillaCheckQuest.bFoundWeaponSet to 0
 			set TEQQShrineInventoryCheckArmorQuest.bFoundFirstHArmorSet to 0
 			set TEQQShrineInventoryCheckArmorQuest.bFoundSecondHArmorSet to 0
 			set TEQQShrineInventoryCheckArmorQuest.bFoundThirdHArmorSet to 0
@@ -206,7 +212,7 @@ begin gamemode
 			set TEQQShrineUpgradeSecondBowWeaponQuest.bObsidianBow to 0
 			set TEQQShrineUpgradeSecondBowWeaponQuest.bResiniteBow to 0
 			set TEQQShrineUpgradeSecondBowWeaponQuest.bSilvriteBow to 0
-			MessageBox "Where to Look?", "Cancel" , "Inventory", "Equipped"
+			MessageBox "Where to Look?", "Cancel" , "Inventory", "Equipped", "Vanilla to Modded"
 			set iChoosingItem to 1
 		elseif iChoosingItem == 1
 			set iChoice to GetButtonPressed
@@ -216,6 +222,8 @@ begin gamemode
 				set iDisplayedMenu to 1
 			elseif iChoice == 2
 				set iDisplayedMenu to 2
+			elseif iChoice == 3
+				set iDisplayedMenu to 3
 			endif
 		endif
 	elseif iDisplayedMenu == 1
@@ -224,6 +232,9 @@ begin gamemode
 	elseif iDisplayedMenu == 2
 		StopQuest TEQQShrineInitilizationQuest
 		StartQuest TEQQShrineEquippedCheckQuest
+	elseif iDisplayedMenu == 3
+		StopQuest TEQQShrineInitilizationQuest
+		StartQuest TEQQShrineVanillaCheckQuest
 	elseif iDisplayedMenu == -1
 		Message "Return when you are ready!"
 		StopQuest TEQQShrineInitilizationQuest
