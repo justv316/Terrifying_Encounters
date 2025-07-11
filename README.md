@@ -1,35 +1,37 @@
 # Fox's Terrifying Encounters: Endgame Loot Overhaul
 ## Description
-* __Version:__ PreRelease
-* __Brief Overview:__ A complete overhaul to the endgame loot distribution, complete with new upscaled equipment items, treasure items, and so much more.
+* Version: PreRelease
+* Brief Overview: A complete overhaul to the endgame loot distribution, complete with new upscaled equipment items, treasure items, and so much more.
+
 
 ----
 
 ## Features
 
-* [Done] Upscaled versions of Vanilla Equipment
-* [Done] Equipment upgrade system
-	* [To do] Add the ability to upgrade vanilla items to their Tier 1 variants
-* [Done] Matching Set Bonuses for the 8 upscaled sets of armor/weapons
+* Completed: Upscaled versions of Vanilla Equipment
+* Completed: Equipment upgrade system
+	* In Progress: Add the ability to upgrade vanilla items to their Tier 1 variants
+* Completed: Matching Set Bonuses for the 8 upscaled sets of armor/weapons
 	* 6/6 Bonuses Apply *Debuffs* to Enemies or *Buffs* to allies
-	* Takes full advantage of my Target Detection system (https://github.com/justv316/Target_Detection)
-* [To do] Upscaled, fully scripted Artifacts.
+	* Takes full advantage of my [Target Detection System](https://github.com/justv316/Target_Detection)
+* In Progress: Upscaled, fully scripted Artifacts.
 	* Duskfang and Mehrunes Razor complete.
-* [To do] Upscaled Sigil stones complete with transmutation system inspired by Sigil Stone Transmuter - Varla Stone Cost by Maegfaer (and Omnishambles9).
-* [To do] New rings, amulets and robes with powerful enchantments/scripted effects; New treasure items; New alchemy ingredients; NPC's to buy these items via dialog options.
-* [To do] A comprehensive overhaul to every LeveledList to include new equipment, accessories, and treasure. 
+* In Progress: Upscaled Sigil stones complete with transmutation system inspired by Sigil Stone Transmuter - Varla Stone Cost by Maegfaer and Omnishambles9.
+* In Progress: New rings, amulets and robes with powerful enchantments/scripted effects; New treasure items; New alchemy ingredients; NPC's to buy these items via dialog options.
+* In Progress: A comprehensive overhaul to every LeveledList to include new equipment, accessories, and treasure. 
 
 ----
 
 ## Requirements
-* UE4SS (https://www.nexusmods.com/oblivionremastered/mods/32)
-	1. TesSyncMapInjector (https://www.nexusmods.com/oblivionremastered/mods/1272)
-		1. Custom Enchanted Modded Apparel SourceFormIDs Updater (https://www.nexusmods.com/oblivionremastered/mods/4029)
-	2. Silent Notification Framework (https://www.nexusmods.com/oblivionremastered/mods/4166)
-* OBSE (https://www.nexusmods.com/oblivionremastered/mods/282)
-	1. NL-Tag Remover https://www.nexusmods.com/oblivionremastered/mods/473
-	2. Game Settings Loader (https://www.nexusmods.com/oblivionremastered/mods/746)
-	3. Visual C++ Redists 2022 (https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+1. [UE4SS](https://www.nexusmods.com/oblivionremastered/mods/32)
+	1. [TesSyncMapInjector](https:://www.nexusmods.com/oblivionremastered/mods/1272)
+		1. [Custom Enchanted Modded Apparel SourceFormIDs Updater](https:://www.nexusmods.com/oblivionremastered/mods/4029)
+	2. [Silent Notification Framework](https:://www.nexusmods.com/oblivionremastered/mods/4166)
+	3. [Mad OBScript Extender](https://www.nexusmods.com/oblivionremastered/mods/4819)
+2. [OBSE](https:://www.nexusmods.com/oblivionremastered/mods/282)
+	1. [NL-Tag Remover](https:://www.nexusmods.com/oblivionremastered/mods/473)
+	2. [Game Settings Loader](https:://www.nexusmods.com/oblivionremastered/mods/746)
+	3. [Visual C++ Redists 2022](https:://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
 	
 ## In-Game Prerequisites
 * The player must be level 25 before content from this mod will begin appearing. This is because everything is scaled up, and this is an endgame overhaul. I have not given any consideration as to how the player actually arrives to being level 25, only that they are at least that level. This ensures that they are at least mostly prepared for what they will face.	
@@ -39,8 +41,8 @@
 
 ## Files
 1. Terrifying_Encounters.esp
-2. Terrifying_Encounters.json (SyncMap)
-3. TE_Settings.ini (GameSettings)
+2. Terrifying_Encounters.json SyncMap
+3. TE_Settings.ini GameSettings
 
 ----
 
@@ -48,7 +50,7 @@
 
 ### Compatibility
 
-* This mod intends on __substantially__ modifying LeveledLists both in creating new ones and modifying Vanilla ones. I intend on doing as little modification to vanilla lists as possible, and once OBSE64 supports the ability to add items to LL's via scripting, I will instead use an Initilization script that adds everything to vanilla LL's for compatibility. 
+* This mod intends on substantially modifying LeveledLists both in creating new ones and modifying Vanilla ones. I intend on doing as little modification to vanilla lists as possible, and once OBSE64 supports the ability to add items to LL's via scripting, I will instead use an Initilization script that adds everything to vanilla LL's for compatibility. 
 * For now, if you wish to use a mod that modifies the below LL's, you will need to create a compatibility patch merging the record changes together. I will not be providing a guide on doing this and I will only entertain patch requests from Mod Authors,  not users.
 * Other than specified LLs, everything else is unique and shouldn't rub against other things, but since this mod contains a considerable amount of scripting, who knows what could happen with other mods. My load order while building this mod is considerably messy and I've not experienced issues while playtesting. This is subject to change, and this section will be updated as needed.
 
@@ -63,7 +65,7 @@
 
 * Load this mod as early as possible in your load order.
 * I built this mod in Deluxe, though this mod has absolutely no requirements or interactions with Deluxe content. 
-* I built and tested this mod in an existing save (Alongside fresh saves when necessary) primarily to ensure this can be added to an existing character without issue, especially since all of this content is locked behind being at least level 25. 
+* I built and tested this mod in an existing save Alongside fresh saves when necessary primarily to ensure this can be added to an existing character without issue, especially since all of this content is locked behind being at least level 25. 
 * The Target Detection system I've built is completely compatibile with other mods that use Target Detection since I built that with the idea that everything used in a specific instance of target detection will be unique.
 
 <details>
@@ -99,7 +101,7 @@
 ### Manual Installation [Preferred Method]
 * Copy the OblivionRemastered folder to your Game's Root directory
 
-* (Or) If you're like me and don't trust doing it that way:
+* Or If you're like me and don't trust doing it that way:
 	* Create these folders if you don't have them.
 	
 #### Steam Installation
@@ -129,10 +131,10 @@
 ----
 
 #### The Upgrade System
-* Using placed (Small) Shrines to Malacath, the player can pay a fee of gold to upgrade their items to improved versions of themselves. 
+* Using placed Small Shrines to Malacath, the player can pay a fee of gold to upgrade their items to improved versions of themselves. 
 	* These Shrines are located wherever blacksmiths are located.
 	* The Player selects from Inventory or Equipped items. 
-	* (To do): Place more Shrines.
+	* To do: Place more Shrines.
 
 ----
 
@@ -156,7 +158,7 @@
 #### Upscaled versions of Vanilla Equipment
 * 145 new equipment items have been added using vanilla assets.
 	* Each of these items has 6 tiers that you can upgrade into or find as loot.
-	* There are 8 sets of gear, as well as a number of unenchanted artifacts such as Umbra (Crystal Longsword) and Chillrend (Stalrihm Shortsword)
+	* There are 8 sets of gear, as well as a number of unenchanted artifacts such as Umbra Crystal Longsword and Chillrend Stalrihm Shortsword
 	
 <details>
 <Summary>Equipment Details</Summary>
@@ -164,41 +166,41 @@
 
 ----
 
-* __Heavy Armor__
-1. Cursed (Daedric)
-2. Obsidian (Ebony)
-3. Dwemer (Dwarven)
+* Heavy Armor
+1. Cursed Daedric
+2. Obsidian Ebony
+3. Dwemer Dwarven
 
 ----
 
-* __Light Armor__
-1. Ayleidic (Elven)
-2. Malachite (Glass)
-3. Mythril/Silvrite (Mithril/Silver)
+* Light Armor
+1. Ayleidic Elven
+2. Malachite Glass
+3. Mythril/Silvrite Mithril/Silver
 
 ----
 
-* __Light/Heavy__
-1. Resinite (Amber)
-2. Maddening (Madness)
+* Light/Heavy
+1. Resinite Amber
+2. Maddening Madness
 
 ----
 
-* __Artifacts__
-1. Crystal Longsword (Umbra)
-2. Ebony Razor (Mehrunes Razor)
-3. Ebony Uchigatana (Ebony Blade)
-4. Gold Uchigatana (Goldbrand)
-5. Quicksilver Dagger  (Witsplinter)
-6. Stalrihm Shortsword (Chillrend)
-7. Waning/Rising the Blood Drinker (Dusk/Dawnfang)
-8. Intricate Ebony Mace (Mace of Molag Bal)
-9 Intricate Silver Claymore (Rugdumph's Sword)
-10. Intricate Silver Longsword (Thornblade)
-11. Intricate Silver Shortsword (Agarmir's Sword)
-11. Resinite Maddening Warhammer (Syl's Warhammer}
-12. Akaviri Odachi (Akaviri Dai-Katana)
-14. Akaviri Uchigatana (Akaviri Katana)
+* Artifacts
+1. Crystal Longsword Umbra
+2. Ebony Razor Mehrunes Razor
+3. Ebony Uchigatana Ebony Blade
+4. Gold Uchigatana Goldbrand
+5. Quicksilver Dagger  Witsplinter
+6. Stalrihm Shortsword Chillrend
+7. Waning/Rising the Blood Drinker Dusk/Dawnfang
+8. Intricate Ebony Mace Mace of Molag Bal
+9 Intricate Silver Claymore Rugdumph's Sword
+10. Intricate Silver Longsword Thornblade
+11. Intricate Silver Shortsword Agarmir's Sword
+11. Resinite Maddening Warhammer Syl's Warhammer}
+12. Akaviri Odachi Akaviri Dai-Katana
+14. Akaviri Uchigatana Akaviri Katana
 
 ----
 
@@ -240,7 +242,7 @@
 		1. Debuff: Reduces Speed, Agility, Strength, Willpower, Intelligence by 20. 
 		
 	5. Malachite Aura - 
-		1. Buff: Increases Normal Weapon Resistance by 33 and applies Damage Reflection (33%) allies.
+		1. Buff: Increases Normal Weapon Resistance by 33 and applies Damage Reflection 33% allies.
 		2. Debuff: Reduces Resistance to Normal Weapons, Fire, Frost, and Shock by 33.
 		
 	6. Mythril Aura - Gives the player chameleon and improves attack damage while sneaking. 
@@ -981,7 +983,7 @@
 
 ##### Maddening
 * Recommended Classes: Madlords, Demented and Maniacs alike.
-	* __Who knows what lies in store for you.__
+	* Who knows what lies in store for you.
 
 1. Buffs given to the player are randomly decided based on a scripted dice roll based on current stats. These can roll as positive or negative, and can range in scale from 0.25 to 1.75 of 10%-25% of the players current AV. This re-rolls modifiers for all attributes, skills, resistances, and other modifiers like Attack and Defend Bonus. This can also re-roll if the player has Stunted Magicka, Water Breathing/Walking. 
 
@@ -1000,14 +1002,30 @@
 
 </details>
 
+#### Soulgems
+
+<details>
+<Summary>Soul Gem Scaling</Summary>
+
+| Soul | < 25 | 25 | 30 | 35 | 40 | 45 | 50 |
+|----|----|----|----|----|----|----|----|
+| Petty   | 150 | 300 | 600 | 750 | 1050 | 1200 | 1500 |
+| Lesser  | 300 | 600 | 1200 | 1500 | 2100 | 2400 | 3000 |
+| Common  | 800 | 1600 | 3200 | 4000 | 5600 | 6400 | 8000 |
+| Greater | 1200 | 2400 | 4800 | 6000 | 8400 | 9600 | 12000 |
+| Grand   | 1600 | 3200 | 6400 | 8000 | 11200 | 12800 | 16000 |
+
+</details>
+
+----
+
 <details>
 <Summary>What this mod currently does not do</Summary>
 
 ### What this mod does not do
 
-* Add new meshes or non-vanilla items to the game.
-* Add creatures, NPCs, etc.
-* Currently does not allow you to upgrade vanilla items into modded variants, though I am working on it. 
+* Add new meshes / animations
+* Does not add new UE4SS LUA scripts but does rely on them. 
 
 ----
 
@@ -1018,33 +1036,31 @@
 ### Resources Used
 
 * Created with xEdit, Creation Kit Extender, and Notepad++
-	* Creation Kit Extender (https://www.nexusmods.com/oblivion/mods/36370)
-	* All Scripts written in Notepad++ first (https://notepad-plus-plus.org/downloads/)
-	* Source available to be downloaded on GitHub (https://github.com/justv316/Terrifying_Encounters)
-	* xEdit (https://tes5edit.github.io/)
+	* [Creation Kit Extender](https:://www.nexusmods.com/oblivion/mods/36370)
+	* [Notepad++](https:://notepad-plus-plus.org/downloads/)
+	* [Script Source](https://github.com/justv316/Terrifying_Encounters/tree/main/Scripts/Plugin%20Scripts)
+	* [xEdit](https:://tes5edit.github.io/)
 * Uses Vanilla assets and scripting.
-	* Relies on UE4SS for TesSyncMapInjector.
-	* Relies on OBSE to remove [NL] tags and loads GameSettings with priority. 
 
 ### People Inspired By
 
-* Heavily inspired by Enhanced Endgame Loot by ArmlessWunder (https://www.nexusmods.com/oblivionremastered/mods/1871)
+* Heavily inspired by [Enhanced Endgame Loot by ArmlessWunder](https:://www.nexusmods.com/oblivionremastered/mods/1871)
 * I learned how scripts work by reading a lot of peoples stuff. Scripts in the "Reference Script" directory are either from Oblivion itself, or from other creators. I will try to credit specific creators for their inspiration. 
 * I learned how MessageBox menus can work though: 
-	* Sigil Stone Transmuter - Varla Stone Cost by Maegfaer (and Omnishambles9) (https://www.nexusmods.com/oblivionremastered/mods/1270)
-	* Menu Handy Options by RamlethalSnake (https://www.nexusmods.com/oblivionremastered/mods/1019)
-	* Reopen Oblivion Gates by Velken (https://www.nexusmods.com/oblivionremastered/mods/587)
+	* [Sigil Stone Transmuter - Varla Stone Cost by Maegfaer and Omnishambles9](https:://www.nexusmods.com/oblivionremastered/mods/1270)
+	* [Menu Handy Options by RamlethalSnake](https:://www.nexusmods.com/oblivionremastered/mods/1019)
+	* [Reopen Oblivion Gates by Velken](https:://www.nexusmods.com/oblivionremastered/mods/587)
 
-* I learned that I can use CSE to expand the limits of scripting and also read through its scripts to learn how some things work: Auto Upgrade Leveled Items by TheOneTrueRy (https://www.nexusmods.com/oblivionremastered/mods/567)
+* I learned that I can use CSE to expand the limits of scripting and also read through its scripts to learn how some things work: [Auto Upgrade Leveled Items by TheOneTrueRy](https:://www.nexusmods.com/oblivionremastered/mods/567)
 
-* I learned how to make custom summons through: Summon War Expanded by TrueElderBlade (https://www.nexusmods.com/oblivionremastered/mods/1521)
+* I learned how to make custom summons through: [Summon War Expanded by TrueElderBlade](https:://www.nexusmods.com/oblivionremastered/mods/1521)
 
 ### Other Acknowledgements
-
-* ColdTyrant for believing in me https://next.nexusmods.com/profile/ColdTyrant?gameId=7587
+* A tremendous shoutout to [MadAborModding](https://next.nexusmods.com/profile/MadAborModding) for everything they are doing with UE4SS LUA Scripting.
+* [ColdTyrant for believing in me](https:://next.nexusmods.com/profile/ColdTyrant?gameId=7587)
 
 --------
-* __Thank you very much for checking out my mod__
-* __Ɛ: I hope you enjoy :3__         
-* __*Fox*__
+* Thank you very much for checking out my mod
+* Ɛ: I hope you enjoy :3         
+* *Fox*
 --------
