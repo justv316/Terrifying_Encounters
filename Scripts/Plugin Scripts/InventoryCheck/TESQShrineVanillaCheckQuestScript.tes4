@@ -1,0 +1,446 @@
+scn TESQShrineVanillaCheckQuestScript
+
+float fQuestDelayTime
+short iSearchItem
+short iDisplayedMenu
+
+short iChoice
+
+short bFoundItem
+short bFoundArmorSet
+short bFoundWeaponSet
+
+begin GameMode
+	if iDisplayedMenu == 0
+		if iSearchItem == 0
+			if Player.GetItemCount EbonyBoots >= 1 
+				set TEQQShrineVanillaEbonyArmorQuest.bEbonyBoots to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFirstHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount EbonyCuirass >= 1 
+				set TEQQShrineVanillaEbonyArmorQuest.bEbonyCuirass to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFirstHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount EbonyGreaves >= 1 
+				set TEQQShrineVanillaEbonyArmorQuest.bEbonyGreaves to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFirstHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount EbonyGauntlets >= 1 
+				set TEQQShrineVanillaEbonyArmorQuest.bEbonyGauntlets to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFirstHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount EbonyHelmet >= 1 
+				set TEQQShrineVanillaEbonyArmorQuest.bEbonyHelmet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFirstHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount EbonyShield >= 1
+				set TEQQShrineVanillaEbonyArmorQuest.bEbonyShield to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFirstHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount DaedricBoots >= 1 
+				set TEQQShrineVanillaDaedricArmorQuest.bDaedricBoots to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundSecondHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount DaedricCuirass >= 1 
+				set TEQQShrineVanillaDaedricArmorQuest.bDaedricCuirass to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundSecondHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount DaedricGreaves >= 1 
+				set TEQQShrineVanillaDaedricArmorQuest.bDaedricGreaves to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundSecondHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount DaedricGauntlets >= 1 
+				set TEQQShrineVanillaDaedricArmorQuest.bDaedricGauntlets to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundSecondHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount DaedricHelmet >= 1 
+				set TEQQShrineVanillaDaedricArmorQuest.bDaedricHelmet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundSecondHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount DaedricShield >= 1
+				set TEQQShrineVanillaDaedricArmorQuest.bDaedricShield to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundSecondHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount DwarvenBoots >= 1 
+				set TEQQShrineVanillaDwarvenArmorQuest.bDwarvenBoots to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundThirdHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount DwarvenCuirass >= 1 
+				set TEQQShrineVanillaDwarvenArmorQuest.bDwarvenCuirass to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundThirdHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount DwarvenGreaves >= 1 
+				set TEQQShrineVanillaDwarvenArmorQuest.bDwarvenGreaves to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundThirdHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount DwarvenGauntlets >= 1 
+				set TEQQShrineVanillaDwarvenArmorQuest.bDwarvenGauntlets to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundThirdHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount DwarvenHelmet >= 1 
+				set TEQQShrineVanillaDwarvenArmorQuest.bDwarvenHelmet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundThirdHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount DwarvenShield >= 1
+				set TEQQShrineVanillaDwarvenArmorQuest.bDwarvenShield to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundThirdHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount ElvenBoots >= 1 
+				set TEQQShrineVanillaElvenArmorQuest.bElvenBoots to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFirstLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount ElvenCuirass >= 1 
+				set TEQQShrineVanillaElvenArmorQuest.bElvenCuirass to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFirstLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount ElvenGreaves >= 1 
+				set TEQQShrineVanillaElvenArmorQuest.bElvenGreaves to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFirstLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount ElvenGauntlets >= 1 
+				set TEQQShrineVanillaElvenArmorQuest.bElvenGauntlets to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFirstLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount ElvenHelmet >= 1 
+				set TEQQShrineVanillaElvenArmorQuest.bElvenHelmet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFirstLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount ElvenShield >= 1
+				set TEQQShrineVanillaElvenArmorQuest.bElvenShield to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFirstLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount MithrilBoots >= 1 
+				set TEQQShrineVanillaMithrilArmorQuest.bMithrilBoots to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundSecondLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount MithrilCuirass >= 1 
+				set TEQQShrineVanillaMithrilArmorQuest.bMithrilCuirass to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundSecondLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount MithrilGreaves >= 1 
+				set TEQQShrineVanillaMithrilArmorQuest.bMithrilGreaves to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundSecondLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount MithrilGauntlets >= 1 
+				set TEQQShrineVanillaMithrilArmorQuest.bMithrilGauntlets to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundSecondLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount MithrilHelmet >= 1 
+				set TEQQShrineVanillaMithrilArmorQuest.bMithrilHelmet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundSecondLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount MithrilShield >= 1
+				set TEQQShrineVanillaMithrilArmorQuest.bMithrilShield to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundSecondLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount GlassBoots >= 1 
+				set TEQQShrineVanillaGlassArmorQuest.bGlassBoots to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundThirdLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount GlassCuirass >= 1 
+				set TEQQShrineVanillaGlassArmorQuest.bGlassCuirass to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundThirdLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount GlassGreaves >= 1 
+				set TEQQShrineVanillaGlassArmorQuest.bGlassGreaves to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundThirdLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount GlassGauntlets >= 1 
+				set TEQQShrineVanillaGlassArmorQuest.bGlassGauntlets to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundThirdLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount GlassHelmet >= 1 
+				set TEQQShrineVanillaGlassArmorQuest.bGlassHelmet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundThirdLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount GlassShield >= 1
+				set TEQQShrineVanillaGlassArmorQuest.bGlassShield to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundThirdLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount SEMadnessBoots1 >= 1 
+				set TEQQShrineVanillaMadnessHArmorQuest.bMadnessHBoots to 1
+				set TEQQShrineVanillaMadnessLArmorQuest.bMadnessLBoots to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFourthLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFourthHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount SEMadnessCuirass1 >= 1 
+				set TEQQShrineVanillaMadnessHArmorQuest.bMadnessHCuirass to 1
+				set TEQQShrineVanillaMadnessLArmorQuest.bMadnessLCuirass to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFourthLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFourthHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount SEMadnessGreaves1 >= 1 
+				set TEQQShrineVanillaMadnessHArmorQuest.bMadnessHGreaves to 1
+				set TEQQShrineVanillaMadnessLArmorQuest.bMadnessLGreaves to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFourthLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFourthHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount SEMadnessGauntlets1 >= 1 
+				set TEQQShrineVanillaMadnessHArmorQuest.bMadnessHGauntlets to 1
+				set TEQQShrineVanillaMadnessLArmorQuest.bMadnessLGauntlets to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFourthLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFourthHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount SEMadnessHelmet1 >= 1 
+				set TEQQShrineVanillaMadnessHArmorQuest.bMadnessHHelmet to 1
+				set TEQQShrineVanillaMadnessLArmorQuest.bMadnessLHelmet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFourthLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set bFoundItem to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFourthHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount SEMadnessShield1 >= 1
+				set TEQQShrineVanillaMadnessHArmorQuest.bMadnessHShield to 1
+				set TEQQShrineVanillaMadnessLArmorQuest.bMadnessLShield to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFourthLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFourthHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount SEAmberBoots1 >= 1 
+				set TEQQShrineVanillaAmberHArmorQuest.bAmberHBoots to 1
+				set TEQQShrineVanillaAmberLArmorQuest.bAmberLBoots to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFifthLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFifthHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount SEAmberCuirass1 >= 1 
+				set TEQQShrineVanillaAmberHArmorQuest.bAmberHCuirass to 1
+				set TEQQShrineVanillaAmberLArmorQuest.bAmberLCuirass to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFifthLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFifthHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount SEAmberGreaves1 >= 1 
+				set TEQQShrineVanillaAmberHArmorQuest.bAmberHGreaves to 1
+				set TEQQShrineVanillaAmberLArmorQuest.bAmberLGreaves to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFifthLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFifthHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount SEAmberGauntlets1 >= 1 
+				set TEQQShrineVanillaAmberHArmorQuest.bAmberHGauntlets to 1
+				set TEQQShrineVanillaAmberLArmorQuest.bAmberLGauntlets to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFifthLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFifthHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount SEAmberHelmet1 >= 1 
+				set TEQQShrineVanillaAmberHArmorQuest.bAmberHHelmet to 1
+				set TEQQShrineVanillaAmberLArmorQuest.bAmberLHelmet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFifthLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFifthHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			if Player.GetItemCount SEAmberShield1 >= 1
+				set TEQQShrineVanillaAmberHArmorQuest.bAmberHShield to 1
+				set TEQQShrineVanillaAmberLArmorQuest.bAmberLShield to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFifthLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundFifthHArmorSet to 1
+				set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 1
+				set bFoundItem to 1
+				set bFoundArmorSet to 1
+			endif
+			set iSearchItem to 1
+		elseif iSearchItem == 1
+			if bFoundItem == 0
+				set iDisplayedMenu to -1
+			elseif bFoundItem == 1
+				if bFoundWeaponSet == 1 && bFoundArmorSet == 1
+					MessageBox "Found Both Weapons and Armor to Upgrade", "Cancel", "Weapons", "Armor"
+					set iSearchItem to 2
+				elseif bFoundWeaponSet == 1 && bFoundArmorSet == 0
+					set iSearchItem to 3
+				elseif bFoundWeaponSet == 0 && bFoundArmorSet == 1
+					set iSearchItem to 4
+				endif
+			endif
+		elseif iSearchItem == 2
+		set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iSearchItem to 3
+			elseif iChoice == 2
+				set iSearchItem to 4
+			endif
+		elseif iSearchItem == 3
+			set iDisplayedMenu to 1
+		elseif iSearchItem == 4
+			set iDisplayedMenu to 2
+		endif
+	elseif iDisplayedMenu == -1
+		MessageBox "Nothing found to upgrade!"
+		StopQuest TEQQShrineVanillaCheckQuest
+	elseif iDisplayedMenu == -2
+		Message "Return when you are ready!"
+		StopQuest TEQQShrineVanillaCheckQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaCheckQuest
+		StartQuest TEQQShrineInitilizationQuest
+	elseif iDisplayedMenu == 1
+	;	set TEQQShrineVanillaCheckWeaponQuest.fQuestDelayTime to 0.01
+	;	set TEQQShrineVanillaCheckWeaponQuest.iDisplayedMenu to 0
+	;	set TEQQShrineVanillaCheckWeaponQuest.iSelectedSubWeaponSet to 0
+	;	set TEQQShrineVanillaCheckWeaponQuest.iSelectedWeaponSet to 0
+	;	set TEQQShrineVanillaCheckWeaponQuest.iChoosingSubWeaponSet to 0
+	;	set TEQQShrineVanillaCheckWeaponQuest.iChoosingWeaponSet to 0
+	;	set TEQQShrineVanillaCheckWeaponQuest.iSearchItem to 0
+	;	set TEQQShrineVanillaCheckWeaponQuest.iFoundWeaponSet to 0
+	;	set TEQQShrineVanillaCheckWeaponQuest.iFoundBowWeaponSet to 0
+	;	set TEQQShrineVanillaCheckWeaponQuest.iFound2HWeaponSet to 0
+	;	set TEQQShrineVanillaCheckWeaponQuest.iFound1HBluntWeaponSet to 0
+	;	set TEQQShrineVanillaCheckWeaponQuest.iFound1HBladeWeaponSet to 0
+	;	set TEQQShrineVanillaCheckWeaponQuest.iFound0HWeaponSet to 0
+	;	StopQuest TEQQShrineVanillaCheckQuest
+	;	StartQuest TEQQShrineVanillaCheckWeaponQuest
+	elseif iDisplayedMenu == 2
+		StopQuest TEQQShrineVanillaCheckQuest
+		StartQuest TEQQShrineVanillaCheckArmorQuest
+	endif                    
+end                          

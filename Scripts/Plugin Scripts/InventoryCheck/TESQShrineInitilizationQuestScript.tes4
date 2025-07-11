@@ -2,9 +2,10 @@ scn TESQShrineInitilizationQuestScript
 
 float fQuestDelayTime
 short iDisplayedMenu
-short iPlayerLevel
-short iChoice
 short iChoosingItem
+short iPlayerLevel
+short iPlayerGold
+short iChoice
 
 
 begin gamemode
@@ -25,18 +26,6 @@ begin gamemode
 			set TEQQShrineInventoryCheckQuest.bFoundItem to 0
 			set TEQQShrineInventoryCheckQuest.bFoundArmorSet to 0
 			set TEQQShrineInventoryCheckQuest.bFoundWeaponSet to 0
-			set TEQQShrineEquippedCheckQuest.fQuestDelayTime to 0.01
-			set TEQQShrineEquippedCheckQuest.iSearchItem to 0
-			set TEQQShrineEquippedCheckQuest.iDisplayedMenu to 0
-			set TEQQShrineEquippedCheckQuest.bFoundItem to 0
-			set TEQQShrineEquippedCheckQuest.bFoundArmorSet to 0
-			set TEQQShrineEquippedCheckQuest.bFoundWeaponSet to 0
-			set TEQQShrineVanillaCheckQuest.fQuestDelayTime to 0.01
-			set TEQQShrineVanillaCheckQuest.iSearchItem to 0
-			set TEQQShrineVanillaCheckQuest.iDisplayedMenu to 0
-			set TEQQShrineVanillaCheckQuest.bFoundItem to 0
-			set TEQQShrineVanillaCheckQuest.bFoundArmorSet to 0
-			set TEQQShrineVanillaCheckQuest.bFoundWeaponSet to 0
 			set TEQQShrineInventoryCheckArmorQuest.bFoundFirstHArmorSet to 0
 			set TEQQShrineInventoryCheckArmorQuest.bFoundSecondHArmorSet to 0
 			set TEQQShrineInventoryCheckArmorQuest.bFoundThirdHArmorSet to 0
@@ -212,6 +201,127 @@ begin gamemode
 			set TEQQShrineUpgradeSecondBowWeaponQuest.bObsidianBow to 0
 			set TEQQShrineUpgradeSecondBowWeaponQuest.bResiniteBow to 0
 			set TEQQShrineUpgradeSecondBowWeaponQuest.bSilvriteBow to 0
+			set TEQQShrineVanillaCheckQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaCheckQuest.iSearchItem to 0
+			set TEQQShrineVanillaCheckQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaCheckQuest.bFoundItem to 0
+			set TEQQShrineVanillaCheckQuest.bFoundArmorSet to 0
+			set TEQQShrineVanillaCheckQuest.bFoundWeaponSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaCheckArmorQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaCheckArmorQuest.iSelectedArmorSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.iChoosingArmorSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.iSearchItem to 0
+			set TEQQShrineVanillaCheckArmorQuest.bFoundFirstHArmorSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.bFoundSecondHArmorSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.bFoundThirdHArmorSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.bFoundFourthHArmorSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.bFoundFifthHArmorSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.bFoundFirstLArmorSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.bFoundSecondLArmorSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.bFoundThirdLArmorSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.bFoundFourthLArmorSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.bFoundFifthLArmorSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.bFoundHArmorSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.bFoundLArmorSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.iFoundHArmorSet to 0
+			set TEQQShrineVanillaCheckArmorQuest.iFoundLArmorSet to 0
+			set TEQQShrineVanillaElvenUpgradeQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaElvenUpgradeQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaElvenUpgradeQuest.iUpgradePerformed to 0
+			set TEQQShrineVanillaElvenUpgradeQuest.iChoosing to 0
+			set TEQQShrineVanillaElvenUpgradeQuest.bElvenBoots to 0
+			set TEQQShrineVanillaElvenUpgradeQuest.bElvenCuirass to 0
+			set TEQQShrineVanillaElvenUpgradeQuest.bElvenGauntlets to 0
+			set TEQQShrineVanillaElvenUpgradeQuest.bElvenGreaves to 0
+			set TEQQShrineVanillaElvenUpgradeQuest.bElvenHelmet to 0
+			set TEQQShrineVanillaElvenUpgradeQuest.bElvenShield to 0
+			set TEQQShrineVanillaMithrilUpgradeQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaMithrilUpgradeQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaMithrilUpgradeQuest.iUpgradePerformed to 0
+			set TEQQShrineVanillaMithrilUpgradeQuest.iChoosing to 0
+			set TEQQShrineVanillaMithrilUpgradeQuest.bMithrilBoots to 0
+			set TEQQShrineVanillaMithrilUpgradeQuest.bMithrilCuirass to 0
+			set TEQQShrineVanillaMithrilUpgradeQuest.bMithrilGauntlets to 0
+			set TEQQShrineVanillaMithrilUpgradeQuest.bMithrilGreaves to 0
+			set TEQQShrineVanillaMithrilUpgradeQuest.bMithrilHelmet to 0
+			set TEQQShrineVanillaMithrilUpgradeQuest.bMithrilShield to 0
+			set TEQQShrineVanillaGlassUpgradeQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaGlassUpgradeQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaGlassUpgradeQuest.iUpgradePerformed to 0
+			set TEQQShrineVanillaGlassUpgradeQuest.iChoosing to 0
+			set TEQQShrineVanillaGlassUpgradeQuest.bGlassBoots to 0
+			set TEQQShrineVanillaGlassUpgradeQuest.bGlassCuirass to 0
+			set TEQQShrineVanillaGlassUpgradeQuest.bGlassGauntlets to 0
+			set TEQQShrineVanillaGlassUpgradeQuest.bGlassGreaves to 0
+			set TEQQShrineVanillaGlassUpgradeQuest.bGlassHelmet to 0
+			set TEQQShrineVanillaGlassUpgradeQuest.bGlassShield to 0
+			set TEQQShrineVanillaEbonyUpgradeQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaEbonyUpgradeQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaEbonyUpgradeQuest.iUpgradePerformed to 0
+			set TEQQShrineVanillaEbonyUpgradeQuest.iChoosing to 0
+			set TEQQShrineVanillaEbonyUpgradeQuest.bEbonyBoots to 0
+			set TEQQShrineVanillaEbonyUpgradeQuest.bEbonyCuirass to 0
+			set TEQQShrineVanillaEbonyUpgradeQuest.bEbonyGauntlets to 0
+			set TEQQShrineVanillaEbonyUpgradeQuest.bEbonyGreaves to 0
+			set TEQQShrineVanillaEbonyUpgradeQuest.bEbonyHelmet to 0
+			set TEQQShrineVanillaEbonyUpgradeQuest.bEbonyShield to 0
+			set TEQQShrineVanillaDaedricUpgradeQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaDaedricUpgradeQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaDaedricUpgradeQuest.iUpgradePerformed to 0
+			set TEQQShrineVanillaDaedricUpgradeQuest.iChoosing to 0
+			set TEQQShrineVanillaDaedricUpgradeQuest.bDaedricBoots to 0
+			set TEQQShrineVanillaDaedricUpgradeQuest.bDaedricCuirass to 0
+			set TEQQShrineVanillaDaedricUpgradeQuest.bDaedricGauntlets to 0
+			set TEQQShrineVanillaDaedricUpgradeQuest.bDaedricGreaves to 0
+			set TEQQShrineVanillaDaedricUpgradeQuest.bDaedricHelmet to 0
+			set TEQQShrineVanillaDaedricUpgradeQuest.bDaedricShield to 0
+			set TEQQShrineVanillaDwarvenUpgradeQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaDwarvenUpgradeQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaDwarvenUpgradeQuest.iUpgradePerformed to 0
+			set TEQQShrineVanillaDwarvenUpgradeQuest.iChoosing to 0
+			set TEQQShrineVanillaDwarvenUpgradeQuest.bDwarvenBoots to 0
+			set TEQQShrineVanillaDwarvenUpgradeQuest.bDwarvenCuirass to 0
+			set TEQQShrineVanillaDwarvenUpgradeQuest.bDwarvenGauntlets to 0
+			set TEQQShrineVanillaDwarvenUpgradeQuest.bDwarvenGreaves to 0
+			set TEQQShrineVanillaDwarvenUpgradeQuest.bDwarvenHelmet to 0
+			set TEQQShrineVanillaDwarvenUpgradeQuest.bDwarvenShield to 0
+			set TEQQShrineVanillaMadnessLUpgradeQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaMadnessLUpgradeQuest.iUpgradePerformed to 0
+			set TEQQShrineVanillaMadnessLUpgradeQuest.iChoosing to 0
+			set TEQQShrineVanillaMadnessLUpgradeQuest.bMadnessBoots to 0
+			set TEQQShrineVanillaMadnessLUpgradeQuest.bMadnessCuirass to 0
+			set TEQQShrineVanillaMadnessLUpgradeQuest.bMadnessGauntlets to 0
+			set TEQQShrineVanillaMadnessLUpgradeQuest.bMadnessGreaves to 0
+			set TEQQShrineVanillaMadnessLUpgradeQuest.bMadnessHelmet to 0
+			set TEQQShrineVanillaMadnessLUpgradeQuest.bMadnessShield to 0
+			set TEQQShrineVanillaMadnessHUpgradeQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaMadnessHUpgradeQuest.iUpgradePerformed to 0
+			set TEQQShrineVanillaMadnessHUpgradeQuest.iChoosing to 0
+			set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessBoots to 0
+			set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessCuirass to 0
+			set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessGauntlets to 0
+			set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessGreaves to 0
+			set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessHelmet to 0
+			set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessShield to 0
+			set TEQQShrineVanillaAmberLUpgradeQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaAmberLUpgradeQuest.iUpgradePerformed to 0
+			set TEQQShrineVanillaAmberLUpgradeQuest.iChoosing to 0
+			set TEQQShrineVanillaAmberLUpgradeQuest.bAmberBoots to 0
+			set TEQQShrineVanillaAmberLUpgradeQuest.bAmberCuirass to 0
+			set TEQQShrineVanillaAmberLUpgradeQuest.bAmberGauntlets to 0
+			set TEQQShrineVanillaAmberLUpgradeQuest.bAmberGreaves to 0
+			set TEQQShrineVanillaAmberLUpgradeQuest.bAmberHelmet to 0
+			set TEQQShrineVanillaAmberLUpgradeQuest.bAmberShield to 0
+			set TEQQShrineVanillaAmberHUpgradeQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaAmberHUpgradeQuest.iUpgradePerformed to 0
+			set TEQQShrineVanillaAmberHUpgradeQuest.iChoosing to 0
+			set TEQQShrineVanillaAmberHUpgradeQuest.bAmberBoots to 0
+			set TEQQShrineVanillaAmberHUpgradeQuest.bAmberCuirass to 0
+			set TEQQShrineVanillaAmberHUpgradeQuest.bAmberGauntlets to 0
+			set TEQQShrineVanillaAmberHUpgradeQuest.bAmberGreaves to 0
+			set TEQQShrineVanillaAmberHUpgradeQuest.bAmberHelmet to 0
+			set TEQQShrineVanillaAmberHUpgradeQuest.bAmberShield to 0
 			MessageBox "Where to Look?", "Cancel" , "Inventory", "Equipped", "Vanilla to Modded"
 			set iChoosingItem to 1
 		elseif iChoosingItem == 1
@@ -227,17 +337,39 @@ begin gamemode
 			endif
 		endif
 	elseif iDisplayedMenu == 1
-		StopQuest TEQQShrineInitilizationQuest
-		StartQuest TEQQShrineInventoryCheckQuest
+		if iPlayerGold < 100000
+			MessageBox "You require at least 100,000 gold to upgrade items."
+		else
+			StopQuest TEQQShrineInitilizationQuest
+			StartQuest TEQQShrineInventoryCheckQuest
+		endif
 	elseif iDisplayedMenu == 2
-		StopQuest TEQQShrineInitilizationQuest
-		StartQuest TEQQShrineEquippedCheckQuest
+		if iPlayerGold < 100000
+			MessageBox "You require at least 100,000 gold to upgrade items."
+		else
+			StopQuest TEQQShrineInitilizationQuest
+			StartQuest TEQQShrineEquippedCheckQuest
+		endif
 	elseif iDisplayedMenu == 3
-		StopQuest TEQQShrineInitilizationQuest
-		StartQuest TEQQShrineVanillaCheckQuest
+		if iPlayerLevel < 30
+			MessageBox "You must be level 30 to upgrade Vanilla items"
+		else
+			if iPlayerGold < 50000
+				MessageBox "You require at least 50,000 gold to upgrade Vanilla Items"
+			else
+				StopQuest TEQQShrineInitilizationQuest
+				StartQuest TEQQShrineVanillaCheckQuest
+			endif
+		endif
 	elseif iDisplayedMenu == -1
 		Message "Return when you are ready!"
 		StopQuest TEQQShrineInitilizationQuest
+	elseif iDisplayedMenu == -9
+		set fQuestDelayTime to 0.01
+		set iDisplayedMenu to 0
+		set iChoosingItem to 0
+		set iPlayerLevel to Player.GetLevel
+		set iPlayerGold to Player.GetItemCount Gold001
 	endif
 end
 

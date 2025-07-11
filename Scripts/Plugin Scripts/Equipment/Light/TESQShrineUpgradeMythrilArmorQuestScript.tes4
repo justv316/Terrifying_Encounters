@@ -1,36 +1,36 @@
-scn TESQShrineUpgradeAyleidicArmorQuestScript
+scn TESQShrineUpgradeMythrilArmorQuestScript
 
 float fQuestDelayTime
 short iDisplayedMenu
 short iChoosingItem
 short iInventoryTier
 short iChoice
-short bAyleidicLBoots
-short bAyleidicLCuirass
-short bAyleidicLGauntlets
-short bAyleidicLGreaves
-short bAyleidicLHelmet
-short bAyleidicLShield
+short bMythrilLBoots
+short bMythrilLCuirass
+short bMythrilLGauntlets
+short bMythrilLGreaves
+short bMythrilLHelmet
+short bMythrilLShield
 
 begin gamemode
 	if iDisplayedMenu == 0 
 		if iChoosingItem == 0
-			if bAyleidicLBoots > 0
+			if bMythrilLBoots > 0
 				set iInventoryTier to iInventoryTier + ( 1 * 1 )
 			endif
-			if bAyleidicLCuirass > 0
+			if bMythrilLCuirass > 0
 				set iInventoryTier to iInventoryTier + ( 2 * 1 )
 			endif
-			if bAyleidicLGauntlets > 0
+			if bMythrilLGauntlets > 0
 				set iInventoryTier to iInventoryTier + ( 2 * 2 )
 			endif
-			if bAyleidicLGreaves > 0
+			if bMythrilLGreaves > 0
 				set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 )
 			endif
-			if bAyleidicLHelmet > 0
+			if bMythrilLHelmet > 0
 				set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 * 2 )
 			endif
-			if bAyleidicLShield > 0
+			if bMythrilLShield > 0
 				set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 * 2 * 2 )
 			endif
 			set iChoosingItem to -1	
@@ -48,175 +48,175 @@ begin gamemode
 			elseif iInventoryTier == 32
 				set iChoosingItem to 6
 			elseif iInventoryTier == 3
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass" 
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass" 
 				set iChoosingItem to 7
 			elseif iInventoryTier == 5
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Gauntlets"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Gauntlets"
 				set iChoosingItem to 8
 			elseif iInventoryTier == 9
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Greaves"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Greaves"
 				set iChoosingItem to 9
 			elseif iInventoryTier == 17
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Helmet"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Helmet"
 				set iChoosingItem to 10
 			elseif iInventoryTier == 6
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Cuirass", "Ayleidic Gauntlets"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Cuirass", "Mythril Gauntlets"
 				set iChoosingItem to 11
 			elseif iInventoryTier == 10
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Cuirass", "Ayleidic Greaves"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Cuirass", "Mythril Greaves"
 				set iChoosingItem to 12
 			elseif iInventoryTier == 18
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Cuirass", "Ayleidic Helmet"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Cuirass", "Mythril Helmet"
 				set iChoosingItem to 13
 			elseif iInventoryTier == 12
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Gauntlets", "Ayleidic Greaves"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Gauntlets", "Mythril Greaves"
 				set iChoosingItem to 14
 			elseif iInventoryTier == 20
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Gauntlets", "Ayleidic Helmet"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Gauntlets", "Mythril Helmet"
 				set iChoosingItem to 15
 			elseif iInventoryTier == 24
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Greaves", "Ayleidic Helmet"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Greaves", "Mythril Helmet"
 				set iChoosingItem to 16
 			elseif iInventoryTier == 7
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass", "Ayleidic Gauntlets"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass", "Mythril Gauntlets"
 				set iChoosingItem to 17
 			elseif iInventoryTier == 11
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass", "Ayleidic Greaves"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass", "Mythril Greaves"
 				set iChoosingItem to 18
 			elseif iInventoryTier == 19
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass", "Ayleidic Helmet"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass", "Mythril Helmet"
 				set iChoosingItem to 19
 			elseif iInventoryTier == 13
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Gauntlets", "Ayleidic Greaves"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Gauntlets", "Mythril Greaves"
 				set iChoosingItem to 20
 			elseif iInventoryTier == 21
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Gauntlets", "Ayleidic Helmet"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Gauntlets", "Mythril Helmet"
 				set iChoosingItem to 21
 			elseif iInventoryTier == 25
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Greaves", "Ayleidic Helmet"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Greaves", "Mythril Helmet"
 				set iChoosingItem to 22
 			elseif iInventoryTier == 14
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Cuirass", "Ayleidic Gauntlets", "Ayleidic Greaves"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Cuirass", "Mythril Gauntlets", "Mythril Greaves"
 				set iChoosingItem to 23
 			elseif iInventoryTier == 22
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Cuirass", "Ayleidic Gauntlets", "Ayleidic Helmet"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Cuirass", "Mythril Gauntlets", "Mythril Helmet"
 				set iChoosingItem to 24
 			elseif iInventoryTier == 26
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Cuirass", "Ayleidic Greaves", "Ayleidic Helmet"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Cuirass", "Mythril Greaves", "Mythril Helmet"
 				set iChoosingItem to 25
 			elseif iInventoryTier == 28
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Gauntlets", "Ayleidic Greaves", "Ayleidic Helmet"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Gauntlets", "Mythril Greaves", "Mythril Helmet"
 				set iChoosingItem to 26
 			elseif iInventoryTier == 15
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass", "Ayleidic Gauntlets", "Ayleidic Greaves"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass", "Mythril Gauntlets", "Mythril Greaves"
 				set iChoosingItem to 27
 			elseif iInventoryTier == 23
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass", "Ayleidic Gauntlets", "Ayleidic Helmet"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass", "Mythril Gauntlets", "Mythril Helmet"
 				set iChoosingItem to 28
 			elseif iInventoryTier == 27
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass", "Ayleidic Greaves", "Ayleidic Helmet"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass", "Mythril Greaves", "Mythril Helmet"
 				set iChoosingItem to 29
 			elseif iInventoryTier == 29
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Gauntlets", "Ayleidic Greaves", "Ayleidic Helmet"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Gauntlets", "Mythril Greaves", "Mythril Helmet"
 				set iChoosingItem to 30
 			elseif iInventoryTier == 30
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Cuirass", "Ayleidic Gauntlets", "Ayleidic Greaves", "Ayleidic Helmet"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Cuirass", "Mythril Gauntlets", "Mythril Greaves", "Mythril Helmet"
 				set iChoosingItem to 31
 			elseif iInventoryTier == 31
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass", "Ayleidic Gauntlets", "Ayleidic Greaves", "Ayleidic Helmet"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass", "Mythril Gauntlets", "Mythril Greaves", "Mythril Helmet"
 				set iChoosingItem to 32
 			elseif iInventoryTier == 33
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Shield"
 				set iChoosingItem to 33
 			elseif iInventoryTier == 34
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Cuirass", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Cuirass", "Mythril Shield"
 				set iChoosingItem to 34
 			elseif iInventoryTier == 35
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass", "Mythril Shield"
 				set iChoosingItem to 35
 			elseif iInventoryTier == 36
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Gauntlets", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Gauntlets", "Mythril Shield"
 				set iChoosingItem to 36
 			elseif iInventoryTier == 37
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Gauntlets", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Gauntlets", "Mythril Shield"
 				set iChoosingItem to 37
 			elseif iInventoryTier == 38
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Cuirass", "Ayleidic Gauntlets", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Cuirass", "Mythril Gauntlets", "Mythril Shield"
 				set iChoosingItem to 38
 			elseif iInventoryTier == 39
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass", "Ayleidic Gauntlets", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass", "Mythril Gauntlets", "Mythril Shield"
 				set iChoosingItem to 39
 			elseif iInventoryTier == 40
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Greaves", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Greaves", "Mythril Shield"
 				set iChoosingItem to 40
 			elseif iInventoryTier == 41
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Greaves", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Greaves", "Mythril Shield"
 				set iChoosingItem to 41
 			elseif iInventoryTier == 42
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Cuirass", "Ayleidic Greaves", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Cuirass", "Mythril Greaves", "Mythril Shield"
 				set iChoosingItem to 42
 			elseif iInventoryTier == 43
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass", "Ayleidic Greaves", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass", "Mythril Greaves", "Mythril Shield"
 				set iChoosingItem to 43
 			elseif iInventoryTier == 44
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Gauntlets", "Ayleidic Greaves", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Gauntlets", "Mythril Greaves", "Mythril Shield"
 				set iChoosingItem to 44
 			elseif iInventoryTier == 45
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Gauntlets", "Ayleidic Greaves", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Gauntlets", "Mythril Greaves", "Mythril Shield"
 				set iChoosingItem to 45
 			elseif iInventoryTier == 46
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Cuirass", "Ayleidic Gauntlets", "Ayleidic Greaves", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Cuirass", "Mythril Gauntlets", "Mythril Greaves", "Mythril Shield"
 				set iChoosingItem to 46
 			elseif iInventoryTier == 47
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass", "Ayleidic Gauntlets", "Ayleidic Greaves", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass", "Mythril Gauntlets", "Mythril Greaves", "Mythril Shield"
 				set iChoosingItem to 47
 			elseif iInventoryTier == 48
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 48
 			elseif iInventoryTier == 49
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 49
 			elseif iInventoryTier == 50
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Cuirass", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Cuirass", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 50
 			elseif iInventoryTier == 51
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 51
 			elseif iInventoryTier == 52
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Gauntlets", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Gauntlets", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 52
 			elseif iInventoryTier == 53
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Gauntlets", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Gauntlets", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 53
 			elseif iInventoryTier == 54
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Cuirass", "Ayleidic Gauntlets", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Cuirass", "Mythril Gauntlets", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 54
 			elseif iInventoryTier == 55
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass", "Ayleidic Gauntlets", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass", "Mythril Gauntlets", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 55
 			elseif iInventoryTier == 56
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Greaves", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Greaves", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 56
 			elseif iInventoryTier == 57
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Greaves", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Greaves", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 57
 			elseif iInventoryTier == 58
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Cuirass", "Ayleidic Greaves", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Cuirass", "Mythril Greaves", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 58
 			elseif iInventoryTier == 59
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass", "Ayleidic Greaves", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass", "Mythril Greaves", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 59
 			elseif iInventoryTier == 60
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Gauntlets", "Ayleidic Greaves", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Gauntlets", "Mythril Greaves", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 60
 			elseif iInventoryTier == 61
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Gauntlets", "Ayleidic Greaves", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Gauntlets", "Mythril Greaves", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 61
 			elseif iInventoryTier == 62
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Cuirass", "Ayleidic Gauntlets", "Ayleidic Greaves", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Cuirass", "Mythril Gauntlets", "Mythril Greaves", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 62
 			elseif iInventoryTier == 63
-				MessageBox "Found Multiple Items", "Cancel" , "Back", "Ayleidic Boots", "Ayleidic Cuirass", "Ayleidic Gauntlets", "Ayleidic Greaves", "Ayleidic Helmet", "Ayleidic Shield"
+				MessageBox "Found Multiple Items", "Cancel" , "Back", "Mythril Boots", "Mythril Cuirass", "Mythril Gauntlets", "Mythril Greaves", "Mythril Helmet", "Mythril Shield"
 				set iChoosingItem to 63
 			endif
 		elseif iChoosingItem == 1
@@ -1015,75 +1015,75 @@ begin gamemode
 			endif
 		endif
 	elseif iDisplayedMenu == 1
-		set TEQQUpgradeAyleidicLBootsQuest.fQuestDelayTime to 0.01
-		set TEQQUpgradeAyleidicLBootsQuest.iDisplayedMenu to 1
-		set TEQQUpgradeAyleidicLBootsQuest.iUpgradePerformed to 0
-		set TEQQUpgradeAyleidicLBootsQuest.iChoosing to 0
-		set TEQQUpgradeAyleidicLBootsQuest.iChoosingTier to 0
-		set TEQQUpgradeAyleidicLBootsQuest.iPlayerGold to Player.GetItemCount Gold001
-		set TEQQUpgradeAyleidicLBootsQuest.iPlayerLevel to Player.GetLevel
-		StopQuest TEQQShrineUpgradeAyleidicArmorQuest
-		StartQuest TEQQUpgradeAyleidicLBootsQuest
+		set TEQQUpgradeMythrilLBootsQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeMythrilLBootsQuest.iDisplayedMenu to 1
+		set TEQQUpgradeMythrilLBootsQuest.iUpgradePerformed to 0
+		set TEQQUpgradeMythrilLBootsQuest.iChoosing to 0
+		set TEQQUpgradeMythrilLBootsQuest.iChoosingTier to 0
+		set TEQQUpgradeMythrilLBootsQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeMythrilLBootsQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeMythrilArmorQuest
+		StartQuest TEQQUpgradeMythrilLBootsQuest
 	elseif iDisplayedMenu == 2
-		set TEQQUpgradeAyleidicLCuirassQuest.fQuestDelayTime to 0.01
-		set TEQQUpgradeAyleidicLCuirassQuest.iDisplayedMenu to 1
-		set TEQQUpgradeAyleidicLCuirassQuest.iUpgradePerformed to 0
-		set TEQQUpgradeAyleidicLCuirassQuest.iChoosing to 0
-		set TEQQUpgradeAyleidicLCuirassQuest.iChoosingTier to 0
-		set TEQQUpgradeAyleidicLCuirassQuest.iPlayerGold to Player.GetItemCount Gold001
-		set TEQQUpgradeAyleidicLCuirassQuest.iPlayerLevel to Player.GetLevel
-		StopQuest TEQQShrineUpgradeAyleidicArmorQuest
-		StartQuest TEQQUpgradeAyleidicLCuirassQuest
+		set TEQQUpgradeMythrilLCuirassQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeMythrilLCuirassQuest.iDisplayedMenu to 1
+		set TEQQUpgradeMythrilLCuirassQuest.iUpgradePerformed to 0
+		set TEQQUpgradeMythrilLCuirassQuest.iChoosing to 0
+		set TEQQUpgradeMythrilLCuirassQuest.iChoosingTier to 0
+		set TEQQUpgradeMythrilLCuirassQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeMythrilLCuirassQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeMythrilArmorQuest
+		StartQuest TEQQUpgradeMythrilLCuirassQuest
 	elseif iDisplayedMenu == 3
-		set TEQQUpgradeAyleidicLGauntletsQuest.fQuestDelayTime to 0.01
-		set TEQQUpgradeAyleidicLGauntletsQuest.iDisplayedMenu to 1
-		set TEQQUpgradeAyleidicLGauntletsQuest.iUpgradePerformed to 0
-		set TEQQUpgradeAyleidicLGauntletsQuest.iChoosing to 0
-		set TEQQUpgradeAyleidicLGauntletsQuest.iChoosingTier to 0
-		set TEQQUpgradeAyleidicLGauntletsQuest.iPlayerGold to Player.GetItemCount Gold001
-		set TEQQUpgradeAyleidicLGauntletsQuest.iPlayerLevel to Player.GetLevel
-		StopQuest TEQQShrineUpgradeAyleidicArmorQuest
-		StartQuest TEQQUpgradeAyleidicLGauntletsQuest
+		set TEQQUpgradeMythrilLGauntletsQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeMythrilLGauntletsQuest.iDisplayedMenu to 1
+		set TEQQUpgradeMythrilLGauntletsQuest.iUpgradePerformed to 0
+		set TEQQUpgradeMythrilLGauntletsQuest.iChoosing to 0
+		set TEQQUpgradeMythrilLGauntletsQuest.iChoosingTier to 0
+		set TEQQUpgradeMythrilLGauntletsQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeMythrilLGauntletsQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeMythrilArmorQuest
+		StartQuest TEQQUpgradeMythrilLGauntletsQuest
 	elseif iDisplayedMenu == 4 
-		set TEQQUpgradeAyleidicLGreavesQuest.fQuestDelayTime to 0.01
-		set TEQQUpgradeAyleidicLGreavesQuest.iDisplayedMenu to 1
-		set TEQQUpgradeAyleidicLGreavesQuest.iUpgradePerformed to 0
-		set TEQQUpgradeAyleidicLGreavesQuest.iChoosing to 0
-		set TEQQUpgradeAyleidicLGreavesQuest.iChoosingTier to 0
-		set TEQQUpgradeAyleidicLGreavesQuest.iPlayerGold to Player.GetItemCount Gold001
-		set TEQQUpgradeAyleidicLGreavesQuest.iPlayerLevel to Player.GetLevel
-		StopQuest TEQQShrineUpgradeAyleidicArmorQuest
-		StartQuest TEQQUpgradeAyleidicLGreavesQuest
+		set TEQQUpgradeMythrilLGreavesQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeMythrilLGreavesQuest.iDisplayedMenu to 1
+		set TEQQUpgradeMythrilLGreavesQuest.iUpgradePerformed to 0
+		set TEQQUpgradeMythrilLGreavesQuest.iChoosing to 0
+		set TEQQUpgradeMythrilLGreavesQuest.iChoosingTier to 0
+		set TEQQUpgradeMythrilLGreavesQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeMythrilLGreavesQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeMythrilArmorQuest
+		StartQuest TEQQUpgradeMythrilLGreavesQuest
 	elseif iDisplayedMenu == 5
-		set TEQQUpgradeAyleidicLHelmetQuest.fQuestDelayTime to 0.01
-		set TEQQUpgradeAyleidicLHelmetQuest.iDisplayedMenu to 1
-		set TEQQUpgradeAyleidicLHelmetQuest.iUpgradePerformed to 0
-		set TEQQUpgradeAyleidicLHelmetQuest.iChoosing to 0
-		set TEQQUpgradeAyleidicLHelmetQuest.iChoosingTier to 0
-		set TEQQUpgradeAyleidicLHelmetQuest.iPlayerGold to Player.GetItemCount Gold001
-		set TEQQUpgradeAyleidicLHelmetQuest.iPlayerLevel to Player.GetLevel
-		StopQuest TEQQShrineUpgradeAyleidicArmorQuest
-		StartQuest TEQQUpgradeAyleidicLHelmetQuest
+		set TEQQUpgradeMythrilLHelmetQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeMythrilLHelmetQuest.iDisplayedMenu to 1
+		set TEQQUpgradeMythrilLHelmetQuest.iUpgradePerformed to 0
+		set TEQQUpgradeMythrilLHelmetQuest.iChoosing to 0
+		set TEQQUpgradeMythrilLHelmetQuest.iChoosingTier to 0
+		set TEQQUpgradeMythrilLHelmetQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeMythrilLHelmetQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeMythrilArmorQuest
+		StartQuest TEQQUpgradeMythrilLHelmetQuest
 	elseif iDisplayedMenu == 6 	
-		set TEQQUpgradeAyleidicLShieldQuest.fQuestDelayTime to 0.01
-		set TEQQUpgradeAyleidicLShieldQuest.iDisplayedMenu to 1
-		set TEQQUpgradeAyleidicLShieldQuest.iUpgradePerformed to 0
-		set TEQQUpgradeAyleidicLShieldQuest.iChoosing to 0
-		set TEQQUpgradeAyleidicLShieldQuest.iChoosingTier to 0
-		set TEQQUpgradeAyleidicLShieldQuest.iPlayerGold to Player.GetItemCount Gold001
-		set TEQQUpgradeAyleidicLShieldQuest.iPlayerLevel to Player.GetLevel
-		StopQuest TEQQShrineUpgradeAyleidicArmorQuest
-		StartQuest TEQQUpgradeAyleidicLShieldQuest
+		set TEQQUpgradeMythrilLShieldQuest.fQuestDelayTime to 0.01
+		set TEQQUpgradeMythrilLShieldQuest.iDisplayedMenu to 1
+		set TEQQUpgradeMythrilLShieldQuest.iUpgradePerformed to 0
+		set TEQQUpgradeMythrilLShieldQuest.iChoosing to 0
+		set TEQQUpgradeMythrilLShieldQuest.iChoosingTier to 0
+		set TEQQUpgradeMythrilLShieldQuest.iPlayerGold to Player.GetItemCount Gold001
+		set TEQQUpgradeMythrilLShieldQuest.iPlayerLevel to Player.GetLevel
+		StopQuest TEQQShrineUpgradeMythrilArmorQuest
+		StartQuest TEQQUpgradeMythrilLShieldQuest
 	elseif iDisplayedMenu == -1
 		Message "Nothing found to upgrade."
-		StopQuest TEQQShrineUpgradeAyleidicArmorQuest
+		StopQuest TEQQShrineUpgradeMythrilArmorQuest
 	elseif iDisplayedMenu == -2
 		Message "Return when you are ready!"
-		StopQuest TEQQShrineUpgradeAyleidicArmorQuest
+		StopQuest TEQQShrineUpgradeMythrilArmorQuest
 	elseif iDisplayedMenu == -3
 		set TEQQShrineInitilizationQuest.fQuestDelayTime to 0.01
 		set TEQQShrineInitilizationQuest.iDisplayedMenu to 0
-		StopQuest TEQQShrineUpgradeAyleidicArmorQuest
+		StopQuest TEQQShrineUpgradeMythrilArmorQuest
 		StartQuest TEQQShrineInitilizationQuest
 	endif
 end

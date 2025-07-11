@@ -10,6 +10,7 @@ Begin OnActivate
 			set TEQQShrineInitilizationQuest.iDisplayedMenu to 0
 			set TEQQShrineInitilizationQuest.iChoosingItem to 0
 			set TEQQShrineInitilizationQuest.iPlayerLevel to Player.GetLevel
+			set TEQQShrineInitilizationQuest.iPlayerGold to Player.GetItemCount Gold001
 			StartQuest TEQQShrineInitilizationQuest
 		endif
 		Activate Player 0

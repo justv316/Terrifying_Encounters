@@ -1,0 +1,130 @@
+scn aaEscalatingOblivionCrisisHandlerScript
+
+short bMQ04
+short bMQ05
+short bMQ06
+short bMQ07
+short bMQ08
+short bMQ09
+short bMQ10
+short bMQ11
+short bMQ12
+short bMQ13
+short bMQ14
+
+Begin GameMode
+	if GetStage MQ04 != 100
+		set bMQ04 to 0
+	elseif GetStage MQ04 == 100
+		if bMQ04 != 1
+			set MQ00.maxOpenGates to 30
+			set MQ00.randomGateChance to 30
+			set bMQ04 to 1
+		endif
+	endif
+
+	if GetStage MQ05 != 100
+		set bMQ05 to 0
+	elseif GetStage MQ05 == 100
+		if bMQ05 != 1
+			set MQ00.maxOpenGates to 35
+			set MQ00.randomGateChance to 35
+			set bMQ05 to 1
+		endif
+	endif
+
+	if GetStage MQ06 != 100
+		set bMQ06 to 0
+	elseif GetStage MQ06 == 100
+		if bMQ06 != 1
+			set MQ00.maxOpenGates to 40
+			set MQ00.randomGateChance to 40
+			set bMQ06 to 1
+		endif
+	endif
+	
+	if GetStage MQ07 != 100
+		set bMQ07 to 0
+	elseif GetStage MQ07 == 100
+		if bMQ07 != 1
+			set MQ00.maxOpenGates to 45
+			set MQ00.randomGateChance to 45
+			set bMQ07 to 1
+		endif
+	endif
+
+	if GetStage MQ08 != 100
+		set bMQ08 to 0
+	elseif GetStage MQ08 == 100
+		if bMQ08 != 1
+			set MQ00.maxOpenGates to 50
+			set MQ00.randomGateChance to 50
+			set bMQ08 to 1
+		endif
+	endif
+
+	if GetStage MQ09 != 100
+		set bMQ09 to 0
+	elseif GetStage MQ09 == 100
+		if bMQ09 != 1
+			set MQ00.maxOpenGates to 55
+			set MQ00.randomGateChance to 55
+			set bMQ09 to 1
+		endif
+	endif
+	
+	if GetStage MQ10 != 100
+		set bMQ10 to 0
+	elseif GetStage MQ10 == 100
+		if bMQ10 != 1
+			set MQ00.maxOpenGates to 60
+			set MQ00.randomGateChance to 60
+			set bMQ10 to 1
+		endif
+	endif
+	
+
+	if GetStage MQ11 != 100
+		set bMQ11 to 0
+	elseif GetStage MQ11 == 100
+		if bMQ11 != 1
+			set MQ00.maxOpenGates to 65
+			set MQ00.randomGateChance to 65
+			set bMQ11 to 1
+		endif
+	endif
+	
+
+	if GetStage MQ12 != 100
+		set bMQ12 to 0
+	elseif GetStage MQ12 == 100
+		if bMQ12 != 1
+			set MQ00.maxOpenGates to 70
+			set MQ00.randomGateChance to 70
+			set bMQ12 to 1
+		endif
+	endif
+	
+
+	if GetStage MQ13 != 100
+		set bMQ13 to 0
+	elseif GetStage MQ13 == 100
+		if bMQ13 != 1
+			set MQ00.maxOpenGates to 75
+			set MQ00.randomGateChance to 75
+			set bMQ13 to 1
+		endif
+	endif
+	
+
+	if GetStage MQ14 != 100
+		set bMQ14 to 0
+	elseif GetStage MQ14 == 100
+		if bMQ14 != 1
+			set MQ00.maxOpenGates to 80
+			set MQ00.randomGateChance to 80
+			set bMQ14 to 1
+			MessageBox "Gates set to 80"
+		endif
+	endif
+end

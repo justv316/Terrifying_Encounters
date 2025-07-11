@@ -1,0 +1,144 @@
+scn TESQShrineVanillaDwarvenUpgradeQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iUpgradePerformed
+short iChoosing
+short iChoice
+short bDwarvenBoots
+short bDwarvenCuirass
+short bDwarvenGauntlets
+short bDwarvenGreaves
+short bDwarvenHelmet
+short bDwarvenShield
+
+Begin GameMode
+	if iDisplayedMenu == 0
+		if iUpgradePerformed == 0
+			if iChoosing == 0
+				if bDwarvenBoots == 1
+					MessageBox "Upgrade Dwarven Boots to Tier 1 Dwemer Boots?", "Cancel", "Back", "Tier 1: 50,000 Gold"
+					set iChoosing to 1
+				endif
+				if bDwarvenCuirass == 1
+					MessageBox "Upgrade Dwarven Cuirass to Tier 1 Dwemer Cuirass?", "Cancel", "Back", "Tier 1: 50,000 Gold"
+					set iChoosing to 2
+				endif
+				if bDwarvenGauntlets == 1
+					MessageBox "Upgrade Dwarven Gauntlets to Tier 1 Dwemer Gauntlets?", "Cancel", "Back", "Tier 1: 50,000 Gold"
+					set iChoosing to 3
+				endif
+				if bDwarvenGreaves == 1
+					MessageBox "Upgrade Dwarven Greaves to Tier 1 Dwemer Greaves?", "Cancel", "Back", "Tier 1: 50,000 Gold"
+					set iChoosing to 4
+				endif
+				if bDwarvenHelmet == 1
+					MessageBox "Upgrade Dwarven Helmet to Tier 1 Dwemer Helmet?", "Cancel", "Back", "Tier 1: 50,000 Gold"
+					set iChoosing to 5
+				endif
+				if bDwarvenShield == 1
+					MessageBox "Upgrade Dwarven Shield to Tier 1 Dwemer Shield?", "Cancel", "Back", "Tier 1: 50,000 Gold"
+					set iChoosing to 6
+				endif
+			elseif iChoosing == -1
+				set iDisplayedMenu to -1
+			elseif iChoosing == -2
+				set iDisplayedMenu to -2
+			elseif iChoosing == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				endif
+			elseif iChoosing == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				endif
+			elseif iChoosing == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 5
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 6
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 6
+				endif
+			endif
+		elseif iUpgradePerformed == 1
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem DwarvenBoots 1
+			Player.AddItem TE01ArmorDwemerHBoots 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 2
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem DwarvenCuirass 1
+			Player.AddItem TE01ArmorDwemerHCuirass 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 3
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem DwarvenGauntlets 1
+			Player.AddItem TE01ArmorDwemerHGauntlets 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 4
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem DwarvenGreaves 1
+			Player.AddItem TE01ArmorDwemerHGreaves 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 5
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem DwarvenHelmet 1
+			Player.AddItem TE01ArmorDwemerHHelmet 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 6
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem DwarvenShield 1
+			Player.AddItem TE01ArmorDwemerHShield 1
+			set iDisplayedMenu to -3
+		endif
+	elseif iDisplayedMenu == -1
+		Message "No Upgrade Performed!"
+		StopQuest TEQQShrineVanillaDwarvenUpgradeQuest
+	elseif iDisplayedMenu == -2
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaDwarvenUpgradeQuest
+		StartQuest TEQQShrineInitilizationQuest
+	elseif iDisplayedMenu == -3
+		Message "Item Upgraded!"
+		StopQuest TEQQShrineVanillaDwarvenUpgradeQuest
+	endif
+end

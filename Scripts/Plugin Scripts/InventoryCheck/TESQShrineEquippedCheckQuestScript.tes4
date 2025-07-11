@@ -1,0 +1,1549 @@
+scn TESQShrineEquippedCheckQuestScript
+
+float fQuestDelayTime
+short iSearchItem
+short iDisplayedMenu
+
+short iChoice
+
+short bFoundItem
+short bFoundArmorSet
+short bFoundWeaponSet
+
+begin GameMode
+	if iDisplayedMenu == 0
+		MessageBox "Which Slot?", "Cancel", "Back", "Helmet", "Cuirass", "Gauntlets", "Greaves", "Boots", "Shield", "Weapon"
+		set iDisplayedMenu to 1
+	elseif iDisplayedMenu == 1
+		set iChoice to GetButtonPressed
+		if iChoice == 0
+			set iDisplayedMenu to -2
+		elseif iChoice == 1
+			set iDisplayedMenu to -3
+		elseif iChoice == 2
+			set iDisplayedMenu to 2
+		elseif iChoice == 3
+			set iDisplayedMenu to 3
+		elseif iChoice == 4
+			set iDisplayedMenu to 4
+		elseif iChoice == 5
+			set iDisplayedMenu to 5
+		elseif iChoice == 6
+			set iDisplayedMenu to 6
+		elseif iChoice == 7
+			set iDisplayedMenu to 7
+		elseif iChoice == 8
+			set iDisplayedMenu to 8
+		endif
+	elseif iDisplayedMenu == -2
+		Message "Return when you are ready!"
+		StopQuest TEQQShrineEquippedCheckQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.fQuestDelayTime to 0.01
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to 0
+		StopQuest TEQQShrineEquippedCheckQuest
+		StartQuest TEQQShrineInitilizationQuest
+	elseif iDisplayedMenu == 2 ;Helmet
+		if TEiArmorResiniteLHelmetEquip == 1
+			set TEQQUpgradeResiniteLHelmetQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteLHelmetQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteLHelmetQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteLHelmetQuest.iChoosing to 0
+			set TEQQUpgradeResiniteLHelmetQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteLHelmetQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteLHelmetQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteLHelmetQuest
+		elseif TEiArmorResiniteHHelmetEquip == 1
+			set TEQQUpgradeResiniteHHelmetQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteHHelmetQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteHHelmetQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteHHelmetQuest.iChoosing to 0
+			set TEQQUpgradeResiniteHHelmetQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteHHelmetQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteHHelmetQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteHHelmetQuest
+		elseif TEiArmorMaddeningLHelmetEquip == 1
+			set TEQQUpgradeMaddeningLHelmetQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningLHelmetQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningLHelmetQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningLHelmetQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningLHelmetQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningLHelmetQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningLHelmetQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningLHelmetQuest
+		elseif TEiArmorMaddeningHHelmetEquip == 1
+			set TEQQUpgradeMaddeningHHelmetQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningHHelmetQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningHHelmetQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningHHelmetQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningHHelmetQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningHHelmetQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningHHelmetQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningHHelmetQuest
+		elseif TEiArmorCursedHHelmetEquip == 1
+			set TEQQUpgradeCursedHHelmetQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCursedHHelmetQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCursedHHelmetQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCursedHHelmetQuest.iChoosing to 0
+			set TEQQUpgradeCursedHHelmetQuest.iChoosingTier to 0
+			set TEQQUpgradeCursedHHelmetQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCursedHHelmetQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCursedHHelmetQuest
+		elseif TEiArmorObsidianHHelmetEquip == 1
+			set TEQQUpgradeObsidianHHelmetQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeObsidianHHelmetQuest.iDisplayedMenu to 1
+			set TEQQUpgradeObsidianHHelmetQuest.iUpgradePerformed to 0
+			set TEQQUpgradeObsidianHHelmetQuest.iChoosing to 0
+			set TEQQUpgradeObsidianHHelmetQuest.iChoosingTier to 0
+			set TEQQUpgradeObsidianHHelmetQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeObsidianHHelmetQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeObsidianHHelmetQuest
+		elseif TEiArmorDwemerHHelmetEquip == 1
+			set TEQQUpgradeDwemerHHelmetQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDwemerHHelmetQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDwemerHHelmetQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDwemerHHelmetQuest.iChoosing to 0
+			set TEQQUpgradeDwemerHHelmetQuest.iChoosingTier to 0
+			set TEQQUpgradeDwemerHHelmetQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDwemerHHelmetQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDwemerHHelmetQuest
+		elseif TEiArmorAyleidicLHelmetEquip == 1
+			set TEQQUpgradeAyleidicLHelmetQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAyleidicLHelmetQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAyleidicLHelmetQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAyleidicLHelmetQuest.iChoosing to 0
+			set TEQQUpgradeAyleidicLHelmetQuest.iChoosingTier to 0
+			set TEQQUpgradeAyleidicLHelmetQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAyleidicLHelmetQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAyleidicLHelmetQuest
+		elseif TEiArmorMalachiteLHelmetEquip == 1
+			set TEQQUpgradeMalachiteLHelmetQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMalachiteLHelmetQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMalachiteLHelmetQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMalachiteLHelmetQuest.iChoosing to 0
+			set TEQQUpgradeMalachiteLHelmetQuest.iChoosingTier to 0
+			set TEQQUpgradeMalachiteLHelmetQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMalachiteLHelmetQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMalachiteLHelmetQuest
+		elseif TEiArmorMythrilLHelmetEquip == 1
+			set TEQQUpgradeMythrilLHelmetQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMythrilLHelmetQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMythrilLHelmetQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMythrilLHelmetQuest.iChoosing to 0
+			set TEQQUpgradeMythrilLHelmetQuest.iChoosingTier to 0
+			set TEQQUpgradeMythrilLHelmetQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMythrilLHelmetQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMythrilLHelmetQuest
+		else
+			MessageBox "No Equipped Helmet Found!"
+			Set iDisplayedMenu to 0
+		endif
+	elseif iDisplayedMenu == 3 ;Cuirass
+		if TEiArmorResiniteLCuirassEquip == 1
+			set TEQQUpgradeResiniteLCuirassQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteLCuirassQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteLCuirassQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteLCuirassQuest.iChoosing to 0
+			set TEQQUpgradeResiniteLCuirassQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteLCuirassQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteLCuirassQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteLCuirassQuest
+		elseif TEiArmorResiniteHCuirassEquip == 1
+			set TEQQUpgradeResiniteHCuirassQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteHCuirassQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteHCuirassQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteHCuirassQuest.iChoosing to 0
+			set TEQQUpgradeResiniteHCuirassQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteHCuirassQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteHCuirassQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteHCuirassQuest
+		elseif TEiArmorMaddeningLCuirassEquip == 1
+			set TEQQUpgradeMaddeningLCuirassQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningLCuirassQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningLCuirassQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningLCuirassQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningLCuirassQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningLCuirassQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningLCuirassQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningLCuirassQuest
+		elseif TEiArmorMaddeningHCuirassEquip == 1
+			set TEQQUpgradeMaddeningHCuirassQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningHCuirassQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningHCuirassQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningHCuirassQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningHCuirassQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningHCuirassQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningHCuirassQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningHCuirassQuest
+		elseif TEiArmorCursedHCuirassEquip == 1
+			set TEQQUpgradeCursedHCuirassQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCursedHCuirassQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCursedHCuirassQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCursedHCuirassQuest.iChoosing to 0
+			set TEQQUpgradeCursedHCuirassQuest.iChoosingTier to 0
+			set TEQQUpgradeCursedHCuirassQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCursedHCuirassQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCursedHCuirassQuest
+		elseif TEiArmorObsidianHCuirassEquip == 1
+			set TEQQUpgradeObsidianHCuirassQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeObsidianHCuirassQuest.iDisplayedMenu to 1
+			set TEQQUpgradeObsidianHCuirassQuest.iUpgradePerformed to 0
+			set TEQQUpgradeObsidianHCuirassQuest.iChoosing to 0
+			set TEQQUpgradeObsidianHCuirassQuest.iChoosingTier to 0
+			set TEQQUpgradeObsidianHCuirassQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeObsidianHCuirassQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeobsidianHCuirassQuest
+		elseif TEiArmorDwemerHCuirassEquip == 1
+			set TEQQUpgradeDwemerHCuirassQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDwemerHCuirassQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDwemerHCuirassQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDwemerHCuirassQuest.iChoosing to 0
+			set TEQQUpgradeDwemerHCuirassQuest.iChoosingTier to 0
+			set TEQQUpgradeDwemerHCuirassQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDwemerHCuirassQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDwemerHCuirassQuest
+		elseif TEiArmorAyleidicLCuirassEquip == 1
+			set TEQQUpgradeAyleidicLCuirassQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAyleidicLCuirassQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAyleidicLCuirassQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAyleidicLCuirassQuest.iChoosing to 0
+			set TEQQUpgradeAyleidicLCuirassQuest.iChoosingTier to 0
+			set TEQQUpgradeAyleidicLCuirassQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAyleidicLCuirassQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAyleidicLCuirassQuest
+		elseif TEiArmorMalachiteLCuirassEquip == 1
+			set TEQQUpgradeMalachiteLCuirassQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMalachiteLCuirassQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMalachiteLCuirassQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMalachiteLCuirassQuest.iChoosing to 0
+			set TEQQUpgradeMalachiteLCuirassQuest.iChoosingTier to 0
+			set TEQQUpgradeMalachiteLCuirassQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMalachiteLCuirassQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMalachiteLCuirassQuest
+		elseif TEiArmorMythrilLCuirassEquip == 1
+			set TEQQUpgradeMythrilLCuirassQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMythrilLCuirassQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMythrilLCuirassQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMythrilLCuirassQuest.iChoosing to 0
+			set TEQQUpgradeMythrilLCuirassQuest.iChoosingTier to 0
+			set TEQQUpgradeMythrilLCuirassQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMythrilLCuirassQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMythrilLCuirassQuest
+		else
+			MessageBox "No Equipped Cuirass Found!"
+			Set iDisplayedMenu to 0
+		endif
+	elseif iDisplayedMenu == 4 ;Gauntlets
+		if TEiArmorResiniteLGauntletsEquip == 1
+			set TEQQUpgradeResiniteLGauntletsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteLGauntletsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteLGauntletsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteLGauntletsQuest.iChoosing to 0
+			set TEQQUpgradeResiniteLGauntletsQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteLGauntletsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteLGauntletsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteLGauntletsQuest
+		elseif TEiArmorResiniteHGauntletsEquip == 1
+			set TEQQUpgradeResiniteHGauntletsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteHGauntletsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteHGauntletsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteHGauntletsQuest.iChoosing to 0
+			set TEQQUpgradeResiniteHGauntletsQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteHGauntletsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteHGauntletsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteHGauntletsQuest
+		elseif TEiArmorMaddeningLGauntletsEquip == 1
+			set TEQQUpgradeMaddeningLGauntletsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningLGauntletsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningLGauntletsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningLGauntletsQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningLGauntletsQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningLGauntletsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningLGauntletsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningLGauntletsQuest
+		elseif TEiArmorMaddeningHGauntletsEquip == 1
+			set TEQQUpgradeMaddeningHGauntletsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningHGauntletsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningHGauntletsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningHGauntletsQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningHGauntletsQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningHGauntletsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningHGauntletsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningHGauntletsQuest
+		elseif TEiArmorCursedHGauntletsEquip == 1
+			set TEQQUpgradeCursedHGauntletsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCursedHGauntletsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCursedHGauntletsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCursedHGauntletsQuest.iChoosing to 0
+			set TEQQUpgradeCursedHGauntletsQuest.iChoosingTier to 0
+			set TEQQUpgradeCursedHGauntletsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCursedHGauntletsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCursedHGauntletsQuest
+		elseif TEiArmorObsidianHGauntletsEquip == 1
+			set TEQQUpgradeObsidianHGauntletsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeObsidianHGauntletsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeObsidianHGauntletsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeObsidianHGauntletsQuest.iChoosing to 0
+			set TEQQUpgradeObsidianHGauntletsQuest.iChoosingTier to 0
+			set TEQQUpgradeObsidianHGauntletsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeObsidianHGauntletsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeObsidianHGauntletsQuest
+		elseif TEiArmorDwemerHGauntletsEquip == 1
+			set TEQQUpgradeDwemerHGauntletsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDwemerHGauntletsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDwemerHGauntletsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDwemerHGauntletsQuest.iChoosing to 0
+			set TEQQUpgradeDwemerHGauntletsQuest.iChoosingTier to 0
+			set TEQQUpgradeDwemerHGauntletsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDwemerHGauntletsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDwemerHGauntletsQuest
+		elseif TEiArmorAyleidicLGauntletsEquip == 1
+			set TEQQUpgradeAyleidicLGauntletsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAyleidicLGauntletsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAyleidicLGauntletsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAyleidicLGauntletsQuest.iChoosing to 0
+			set TEQQUpgradeAyleidicLGauntletsQuest.iChoosingTier to 0
+			set TEQQUpgradeAyleidicLGauntletsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAyleidicLGauntletsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAyleidicLGauntletsQuest
+		elseif TEiArmorMalachiteLGauntletsEquip == 1
+			set TEQQUpgradeMalachiteLGauntletsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMalachiteLGauntletsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMalachiteLGauntletsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMalachiteLGauntletsQuest.iChoosing to 0
+			set TEQQUpgradeMalachiteLGauntletsQuest.iChoosingTier to 0
+			set TEQQUpgradeMalachiteLGauntletsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMalachiteLGauntletsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMalachiteLGauntletsQuest
+		elseif TEiArmorMythrilLGauntletsEquip == 1
+			set TEQQUpgradeMythrilLGauntletsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMythrilLGauntletsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMythrilLGauntletsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMythrilLGauntletsQuest.iChoosing to 0
+			set TEQQUpgradeMythrilLGauntletsQuest.iChoosingTier to 0
+			set TEQQUpgradeMythrilLGauntletsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMythrilLGauntletsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMythrilLGauntletsQuest
+		else
+			MessageBox "No Equipped Gauntlets Found!"
+			Set iDisplayedMenu to 0
+		endif
+	elseif iDisplayedMenu == 5 ;Greaves
+		if TEiArmorResiniteLGreavesEquip == 1
+			set TEQQUpgradeResiniteLGreavesQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteLGreavesQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteLGreavesQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteLGreavesQuest.iChoosing to 0
+			set TEQQUpgradeResiniteLGreavesQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteLGreavesQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteLGreavesQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteLGreavesQuest
+		elseif TEiArmorResiniteHGreavesEquip == 1
+			set TEQQUpgradeResiniteHGreavesQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteHGreavesQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteHGreavesQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteHGreavesQuest.iChoosing to 0
+			set TEQQUpgradeResiniteHGreavesQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteHGreavesQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteHGreavesQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteHGreavesQuest
+		elseif TEiArmorMaddeningLGreavesEquip == 1
+			set TEQQUpgradeMaddeningLGreavesQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningLGreavesQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningLGreavesQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningLGreavesQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningLGreavesQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningLGreavesQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningLGreavesQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningLGreavesQuest
+		elseif TEiArmorMaddeningHGreavesEquip == 1
+			set TEQQUpgradeMaddeningHGreavesQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningHGreavesQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningHGreavesQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningHGreavesQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningHGreavesQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningHGreavesQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningHGreavesQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningHGreavesQuest
+		elseif TEiArmorCursedHGreavesEquip == 1
+			set TEQQUpgradeCursedHGreavesQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCursedHGreavesQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCursedHGreavesQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCursedHGreavesQuest.iChoosing to 0
+			set TEQQUpgradeCursedHGreavesQuest.iChoosingTier to 0
+			set TEQQUpgradeCursedHGreavesQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCursedHGreavesQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCursedHGreavesQuest
+		elseif TEiArmorObsidianHGreavesEquip == 1
+			set TEQQUpgradeObsidianHGreavesQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeObsidianHGreavesQuest.iDisplayedMenu to 1
+			set TEQQUpgradeObsidianHGreavesQuest.iUpgradePerformed to 0
+			set TEQQUpgradeObsidianHGreavesQuest.iChoosing to 0
+			set TEQQUpgradeObsidianHGreavesQuest.iChoosingTier to 0
+			set TEQQUpgradeObsidianHGreavesQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeObsidianHGreavesQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeObsidianHGreavesQuest
+		elseif TEiArmorDwemerHGreavesEquip == 1
+			set TEQQUpgradeDwemerHGreavesQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDwemerHGreavesQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDwemerHGreavesQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDwemerHGreavesQuest.iChoosing to 0
+			set TEQQUpgradeDwemerHGreavesQuest.iChoosingTier to 0
+			set TEQQUpgradeDwemerHGreavesQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDwemerHGreavesQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDwemerHGreavesQuest
+		elseif TEiArmorAyleidicLGreavesEquip == 1
+			set TEQQUpgradeAyleidicLGreavesQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAyleidicLGreavesQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAyleidicLGreavesQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAyleidicLGreavesQuest.iChoosing to 0
+			set TEQQUpgradeAyleidicLGreavesQuest.iChoosingTier to 0
+			set TEQQUpgradeAyleidicLGreavesQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAyleidicLGreavesQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAyleidicLGreavesQuest
+		elseif TEiArmorMalachiteLGreavesEquip == 1
+			set TEQQUpgradeMalachiteLGreavesQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMalachiteLGreavesQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMalachiteLGreavesQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMalachiteLGreavesQuest.iChoosing to 0
+			set TEQQUpgradeMalachiteLGreavesQuest.iChoosingTier to 0
+			set TEQQUpgradeMalachiteLGreavesQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMalachiteLGreavesQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMalachiteLGreavesQuest
+		elseif TEiArmorMythrilLGreavesEquip == 1
+			set TEQQUpgradeMythrilLGreavesQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMythrilLGreavesQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMythrilLGreavesQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMythrilLGreavesQuest.iChoosing to 0
+			set TEQQUpgradeMythrilLGreavesQuest.iChoosingTier to 0
+			set TEQQUpgradeMythrilLGreavesQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMythrilLGreavesQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMythrilLGreavesQuest
+		endif
+	elseif iDisplayedMenu == 6 ;Boots
+		if TEiArmorResiniteLBootsEquip == 1
+			set TEQQUpgradeResiniteLBootsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteLBootsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteLBootsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteLBootsQuest.iChoosing to 0
+			set TEQQUpgradeResiniteLBootsQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteLBootsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteLBootsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteLBootsQuest
+		elseif TEiArmorResiniteHBootsEquip == 1
+			set TEQQUpgradeResiniteHBootsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteHBootsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteHBootsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteHBootsQuest.iChoosing to 0
+			set TEQQUpgradeResiniteHBootsQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteHBootsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteHBootsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteHBootsQuest
+		elseif TEiArmorMaddeningLBootsEquip == 1
+			set TEQQUpgradeMaddeningLBootsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningLBootsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningLBootsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningLBootsQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningLBootsQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningLBootsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningLBootsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningLBootsQuest
+		elseif TEiArmorMaddeningHBootsEquip == 1
+			set TEQQUpgradeMaddeningHBootsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningHBootsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningHBootsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningHBootsQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningHBootsQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningHBootsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningHBootsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningHBootsQuest
+		elseif TEiArmorCursedHBootsEquip == 1
+			set TEQQUpgradeCursedHBootsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCursedHBootsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCursedHBootsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCursedHBootsQuest.iChoosing to 0
+			set TEQQUpgradeCursedHBootsQuest.iChoosingTier to 0
+			set TEQQUpgradeCursedHBootsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCursedHBootsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCursedHBootsQuest
+		elseif TEiArmorObsidianHBootsEquip == 1
+			set TEQQUpgradeObsidianHBootsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeObsidianHBootsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeObsidianHBootsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeObsidianHBootsQuest.iChoosing to 0
+			set TEQQUpgradeObsidianHBootsQuest.iChoosingTier to 0
+			set TEQQUpgradeObsidianHBootsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeObsidianHBootsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeObsidianHBootsQuest
+		elseif TEiArmorDwemerHBootsEquip == 1
+			set TEQQUpgradeDwemerHBootsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDwemerHBootsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDwemerHBootsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDwemerHBootsQuest.iChoosing to 0
+			set TEQQUpgradeDwemerHBootsQuest.iChoosingTier to 0
+			set TEQQUpgradeDwemerHBootsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDwemerHBootsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDwemerHBootsQuest
+		elseif TEiArmorAyleidicLBootsEquip == 1
+			set TEQQUpgradeAyleidicLBootsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAyleidicLBootsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAyleidicLBootsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAyleidicLBootsQuest.iChoosing to 0
+			set TEQQUpgradeAyleidicLBootsQuest.iChoosingTier to 0
+			set TEQQUpgradeAyleidicLBootsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAyleidicLBootsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAyleidicLBootsQuest
+		elseif TEiArmorMalachiteLBootsEquip == 1
+			set TEQQUpgradeMalachiteLBootsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMalachiteLBootsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMalachiteLBootsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMalachiteLBootsQuest.iChoosing to 0
+			set TEQQUpgradeMalachiteLBootsQuest.iChoosingTier to 0
+			set TEQQUpgradeMalachiteLBootsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMalachiteLBootsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMalachiteLBootsQuest
+		elseif TEiArmorMythrilLBootsEquip == 1
+			set TEQQUpgradeMythrilLBootsQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMythrilLBootsQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMythrilLBootsQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMythrilLBootsQuest.iChoosing to 0
+			set TEQQUpgradeMythrilLBootsQuest.iChoosingTier to 0
+			set TEQQUpgradeMythrilLBootsQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMythrilLBootsQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMythrilLBootsQuest
+		else
+			MessageBox "No Equipped Boots Found!"
+			Set iDisplayedMenu to 0
+		endif
+	elseif iDisplayedMenu == 7 ;Shield
+		if TEiArmorResiniteLShieldEquip == 1
+			set TEQQUpgradeResiniteLShieldQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteLShieldQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteLShieldQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteLShieldQuest.iChoosing to 0
+			set TEQQUpgradeResiniteLShieldQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteLShieldQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteLShieldQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteLShieldQuest
+		elseif TEiArmorResiniteHShieldEquip == 1
+			set TEQQUpgradeResiniteHShieldQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteHShieldQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteHShieldQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteHShieldQuest.iChoosing to 0
+			set TEQQUpgradeResiniteHShieldQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteHShieldQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteHShieldQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteHShieldQuest
+		elseif TEiArmorMaddeningLShieldEquip == 1
+			set TEQQUpgradeMaddeningLShieldQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningLShieldQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningLShieldQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningLShieldQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningLShieldQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningLShieldQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningLShieldQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningLShieldQuest
+		elseif TEiArmorMaddeningHShieldEquip == 1
+			set TEQQUpgradeMaddeningHShieldQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningHShieldQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningHShieldQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningHShieldQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningHShieldQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningHShieldQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningHShieldQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningHShieldQuest
+		elseif TEiArmorCursedHShieldEquip == 1
+			set TEQQUpgradeCursedHShieldQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCursedHShieldQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCursedHShieldQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCursedHShieldQuest.iChoosing to 0
+			set TEQQUpgradeCursedHShieldQuest.iChoosingTier to 0
+			set TEQQUpgradeCursedHShieldQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCursedHShieldQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCursedHShieldQuest
+		elseif TEiArmorObsidianHShieldEquip == 1
+			set TEQQUpgradeObsidianHShieldQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeObsidianHShieldQuest.iDisplayedMenu to 1
+			set TEQQUpgradeObsidianHShieldQuest.iUpgradePerformed to 0
+			set TEQQUpgradeObsidianHShieldQuest.iChoosing to 0
+			set TEQQUpgradeObsidianHShieldQuest.iChoosingTier to 0
+			set TEQQUpgradeObsidianHShieldQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeObsidianHShieldQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeObsidianHShieldQuest
+		elseif TEiArmorDwemerHShieldEquip == 1
+			set TEQQUpgradeDwemerHShieldQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDwemerHShieldQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDwemerHShieldQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDwemerHShieldQuest.iChoosing to 0
+			set TEQQUpgradeDwemerHShieldQuest.iChoosingTier to 0
+			set TEQQUpgradeDwemerHShieldQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDwemerHShieldQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDwemerHShieldQuest
+		elseif TEiArmorAyleidicLShieldEquip == 1
+			set TEQQUpgradeAyleidicLShieldQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAyleidicLShieldQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAyleidicLShieldQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAyleidicLShieldQuest.iChoosing to 0
+			set TEQQUpgradeAyleidicLShieldQuest.iChoosingTier to 0
+			set TEQQUpgradeAyleidicLShieldQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAyleidicLShieldQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAyleidicLShieldQuest
+		elseif TEiArmorMalachiteLShieldEquip == 1
+			set TEQQUpgradeMalachiteLShieldQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMalachiteLShieldQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMalachiteLShieldQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMalachiteLShieldQuest.iChoosing to 0
+			set TEQQUpgradeMalachiteLShieldQuest.iChoosingTier to 0
+			set TEQQUpgradeMalachiteLShieldQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMalachiteLShieldQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMalachiteLShieldQuest
+		elseif TEiArmorMythrilLShieldEquip == 1
+			set TEQQUpgradeMythrilLShieldQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMythrilLShieldQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMythrilLShieldQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMythrilLShieldQuest.iChoosing to 0
+			set TEQQUpgradeMythrilLShieldQuest.iChoosingTier to 0
+			set TEQQUpgradeMythrilLShieldQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMythrilLShieldQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMythrilLShieldQuest
+		else
+			MessageBox "No Equipped Shield Found!"
+			Set iDisplayedMenu to 0
+		endif
+	elseif iDisplayedMenu == 8 ;Weapon
+		if TEiWeaponCrystalLongswordEquip == 1
+			set TEQQUpgradeCrystalLongswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCrystalLongswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCrystalLongswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCrystalLongswordQuest.iChoosing to 0
+			set TEQQUpgradeCrystalLongswordQuest.iChoosingTier to 0
+			set TEQQUpgradeCrystalLongswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCrystalLongswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCrystalLongswordQuest
+		elseif TEiWeaponIntricateSilverLongswordEquip == 1
+			set TEQQUpgradeIntricateSilverLongswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeIntricateSilverLongswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeIntricateSilverLongswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeIntricateSilverLongswordQuest.iChoosing to 0
+			set TEQQUpgradeIntricateSilverLongswordQuest.iChoosingTier to 0
+			set TEQQUpgradeIntricateSilverLongswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeIntricateSilverLongswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeIntricateSilverLongswordQuest
+		elseif TEiWeaponSilvriteLongswordEquip == 1
+			set TEQQUpgradeSilvriteLongswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeSilvriteLongswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeSilvriteLongswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeSilvriteLongswordQuest.iChoosing to 0
+			set TEQQUpgradeSilvriteLongswordQuest.iChoosingTier to 0
+			set TEQQUpgradeSilvriteLongswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeSilvriteLongswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeSilvriteLongswordQuest
+		elseif TEiWeaponObsidianLongswordEquip == 1
+			set TEQQUpgradeObsidianLongswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeObsidianLongswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeObsidianLongswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeObsidianLongswordQuest.iChoosing to 0
+			set TEQQUpgradeObsidianLongswordQuest.iChoosingTier to 0
+			set TEQQUpgradeObsidianLongswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeObsidianLongswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeObsidianLongswordQuest
+		elseif TEiWeaponResiniteLongswordEquip == 1
+			set TEQQUpgradeResiniteLongswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteLongswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteLongswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteLongswordQuest.iChoosing to 0
+			set TEQQUpgradeResiniteLongswordQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteLongswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteLongswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteLongswordQuest
+		elseif TEiWeaponMalachiteLongswordEquip == 1
+			set TEQQUpgradeMalachiteLongswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMalachiteLongswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMalachiteLongswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMalachiteLongswordQuest.iChoosing to 0
+			set TEQQUpgradeMalachiteLongswordQuest.iChoosingTier to 0
+			set TEQQUpgradeMalachiteLongswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMalachiteLongswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMalachiteLongswordQuest
+		elseif TEiWeaponMaddeningLongswordEquip == 1
+			set TEQQUpgradeMaddeningLongswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningLongswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningLongswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningLongswordQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningLongswordQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningLongswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningLongswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningLongswordQuest
+		elseif TEiWeaponGoldenLongswordEquip == 1
+			set TEQQUpgradeGoldenLongswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeGoldenLongswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeGoldenLongswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeGoldenLongswordQuest.iChoosing to 0
+			set TEQQUpgradeGoldenLongswordQuest.iChoosingTier to 0
+			set TEQQUpgradeGoldenLongswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeGoldenLongswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeGoldenLongswordQuest
+		elseif TEiWeaponDwemerLongswordEquip == 1
+			set TEQQUpgradeDwemerLongswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDwemerLongswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDwemerLongswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDwemerLongswordQuest.iChoosing to 0
+			set TEQQUpgradeDwemerLongswordQuest.iChoosingTier to 0
+			set TEQQUpgradeDwemerLongswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDwemerLongswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDwemerLongswordQuest
+		elseif TEiWeaponDarkLongswordEquip == 1
+			set TEQQUpgradeDarkLongswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDarkLongswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDarkLongswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDarkLongswordQuest.iChoosing to 0
+			set TEQQUpgradeDarkLongswordQuest.iChoosingTier to 0
+			set TEQQUpgradeDarkLongswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDarkLongswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDarkLongswordQuest
+		elseif TEiWeaponCursedLongswordEquip == 1
+			set TEQQUpgradeCursedLongswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCursedLongswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCursedLongswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCursedLongswordQuest.iChoosing to 0
+			set TEQQUpgradeCursedLongswordQuest.iChoosingTier to 0
+			set TEQQUpgradeCursedLongswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCursedLongswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCursedLongswordQuest
+		elseif TEiWeaponAyleidicLongswordEquip == 1
+			set TEQQUpgradeAyleidicLongswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAyleidicLongswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAyleidicLongswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAyleidicLongswordQuest.iChoosing to 0
+			set TEQQUpgradeAyleidicLongswordQuest.iChoosingTier to 0
+			set TEQQUpgradeAyleidicLongswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAyleidicLongswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAyleidicLongswordQuest
+		elseif TEiWeaponGoldenShortswordEquip == 1
+			set TEQQUpgradeGoldenShortswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeGoldenShortswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeGoldenShortswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeGoldenShortswordQuest.iChoosing to 0
+			set TEQQUpgradeGoldenShortswordQuest.iChoosingTier to 0
+			set TEQQUpgradeGoldenShortswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeGoldenShortswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeGoldenShortswordQuest
+		elseif TEiWeaponDwemerShortswordEquip == 1
+			set TEQQUpgradeDwemerShortswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDwemerShortswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDwemerShortswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDwemerShortswordQuest.iChoosing to 0
+			set TEQQUpgradeDwemerShortswordQuest.iChoosingTier to 0
+			set TEQQUpgradeDwemerShortswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDwemerShortswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDwemerShortswordQuest
+		elseif TEiWeaponDarkShortswordEquip == 1
+			set TEQQUpgradeDarkShortswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDarkShortswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDarkShortswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDarkShortswordQuest.iChoosing to 0
+			set TEQQUpgradeDarkShortswordQuest.iChoosingTier to 0
+			set TEQQUpgradeDarkShortswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDarkShortswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDarkShortswordQuest
+		elseif TEiWeaponCursedShortswordEquip == 1
+			set TEQQUpgradeCursedShortswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCursedShortswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCursedShortswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCursedShortswordQuest.iChoosing to 0
+			set TEQQUpgradeCursedShortswordQuest.iChoosingTier to 0
+			set TEQQUpgradeCursedShortswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCursedShortswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCursedShortswordQuest
+		elseif TEiWeaponAyleidicShortswordEquip == 1
+			set TEQQUpgradeAyleidicShortswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAyleidicShortswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAyleidicShortswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAyleidicShortswordQuest.iChoosing to 0
+			set TEQQUpgradeAyleidicShortswordQuest.iChoosingTier to 0
+			set TEQQUpgradeAyleidicShortswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAyleidicShortswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAyleidicShortswordQuest
+		elseif TEiWeaponObsidianShortswordEquip == 1
+			set TEQQUpgradeObsidianShortswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeObsidianShortswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeObsidianShortswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeObsidianShortswordQuest.iChoosing to 0
+			set TEQQUpgradeObsidianShortswordQuest.iChoosingTier to 0
+			set TEQQUpgradeObsidianShortswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeObsidianShortswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeObsidianShortswordQuest
+		elseif TEiWeaponSilvriteShortswordEquip == 1
+			set TEQQUpgradeSilvriteShortswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeSilvriteShortswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeSilvriteShortswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeSilvriteShortswordQuest.iChoosing to 0
+			set TEQQUpgradeSilvriteShortswordQuest.iChoosingTier to 0
+			set TEQQUpgradeSilvriteShortswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeSilvriteShortswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeSilvriteShortswordQuest
+		elseif TEiWeaponMalachiteShortswordEquip == 1
+			set TEQQUpgradeMalachiteShortswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMalachiteShortswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMalachiteShortswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMalachiteShortswordQuest.iChoosing to 0
+			set TEQQUpgradeMalachiteShortswordQuest.iChoosingTier to 0
+			set TEQQUpgradeMalachiteShortswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMalachiteShortswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMalachiteShortswordQuest
+		elseif TEiWeaponIntricateSilverShortswordEquip == 1
+			set TEQQUpgradeIntricateSilverShortswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeIntricateSilverShortswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeIntricateSilverShortswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeIntricateSilverShortswordQuest.iChoosing to 0
+			set TEQQUpgradeIntricateSilverShortswordQuest.iChoosingTier to 0
+			set TEQQUpgradeIntricateSilverShortswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeIntricateSilverShortswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeIntricateSilverShortswordQuest
+		elseif TEiWeaponStalrihmShortswordEquip == 1
+			set TEQQUpgradeStalrihmShortswordQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeStalrihmShortswordQuest.iDisplayedMenu to 1
+			set TEQQUpgradeStalrihmShortswordQuest.iUpgradePerformed to 0
+			set TEQQUpgradeStalrihmShortswordQuest.iChoosing to 0
+			set TEQQUpgradeStalrihmShortswordQuest.iChoosingTier to 0
+			set TEQQUpgradeStalrihmShortswordQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeStalrihmShortswordQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeStalrihmShortswordQuest
+		elseif TEiWeaponCursedDaggerEquip == 1
+			set TEQQUpgradeCursedDaggerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCursedDaggerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCursedDaggerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCursedDaggerQuest.iChoosing to 0
+			set TEQQUpgradeCursedDaggerQuest.iChoosingTier to 0
+			set TEQQUpgradeCursedDaggerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCursedDaggerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCursedDaggerQuest
+		elseif TEiWeaponAyleidicDaggerEquip == 1
+			set TEQQUpgradeAyleidicDaggerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAyleidicDaggerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAyleidicDaggerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAyleidicDaggerQuest.iChoosing to 0
+			set TEQQUpgradeAyleidicDaggerQuest.iChoosingTier to 0
+			set TEQQUpgradeAyleidicDaggerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAyleidicDaggerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAyleidicDaggerQuest
+		elseif TEiWeaponObsidianDaggerEquip == 1
+			set TEQQUpgradeObsidianDaggerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeObsidianDaggerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeObsidianDaggerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeObsidianDaggerQuest.iChoosing to 0
+			set TEQQUpgradeObsidianDaggerQuest.iChoosingTier to 0
+			set TEQQUpgradeObsidianDaggerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeObsidianDaggerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeObsidianDaggerQuest
+		elseif TEiWeaponSilvriteDaggerEquip == 1
+			set TEQQUpgradeSilvriteDaggerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeSilvriteDaggerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeSilvriteDaggerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeSilvriteDaggerQuest.iChoosing to 0
+			set TEQQUpgradeSilvriteDaggerQuest.iChoosingTier to 0
+			set TEQQUpgradeSilvriteDaggerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeSilvriteDaggerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeSilvriteDaggerQuest
+		elseif TEiWeaponMalachiteDaggerEquip == 1
+			set TEQQUpgradeMalachiteDaggerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMalachiteDaggerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMalachiteDaggerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMalachiteDaggerQuest.iChoosing to 0
+			set TEQQUpgradeMalachiteDaggerQuest.iChoosingTier to 0
+			set TEQQUpgradeMalachiteDaggerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMalachiteDaggerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMalachiteDaggerQuest
+		elseif TEiWeaponQuicksilverDaggerEquip == 1
+			set TEQQUpgradeQuicksilverDaggerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeQuicksilverDaggerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeQuicksilverDaggerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeQuicksilverDaggerQuest.iChoosing to 0
+			set TEQQUpgradeQuicksilverDaggerQuest.iChoosingTier to 0
+			set TEQQUpgradeQuicksilverDaggerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeQuicksilverDaggerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeQuicksilverDaggerQuest
+		elseif TEiWeaponDwemerDaggerEquip == 1
+			set TEQQUpgradeDwemerDaggerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDwemerDaggerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDwemerDaggerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDwemerDaggerQuest.iChoosing to 0
+			set TEQQUpgradeDwemerDaggerQuest.iChoosingTier to 0
+			set TEQQUpgradeDwemerDaggerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDwemerDaggerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDwemerDaggerQuest
+		elseif TEiWeaponIntricateSilverClaymoreEquip == 1
+			set TEQQUpgradeIntricateSilverClaymoreQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeIntricateSilverClaymoreQuest.iDisplayedMenu to 1
+			set TEQQUpgradeIntricateSilverClaymoreQuest.iUpgradePerformed to 0
+			set TEQQUpgradeIntricateSilverClaymoreQuest.iChoosing to 0
+			set TEQQUpgradeIntricateSilverClaymoreQuest.iChoosingTier to 0
+			set TEQQUpgradeIntricateSilverClaymoreQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeIntricateSilverClaymoreQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeIntricateSilverClaymoreQuest
+		elseif TEiWeaponDwemerClaymoreEquip == 1
+			set TEQQUpgradeDwemerClaymoreQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDwemerClaymoreQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDwemerClaymoreQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDwemerClaymoreQuest.iChoosing to 0
+			set TEQQUpgradeDwemerClaymoreQuest.iChoosingTier to 0
+			set TEQQUpgradeDwemerClaymoreQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDwemerClaymoreQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDwemerClaymoreQuest
+		elseif TEiWeaponCursedClaymoreEquip == 1
+			set TEQQUpgradeCursedClaymoreQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCursedClaymoreQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCursedClaymoreQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCursedClaymoreQuest.iChoosing to 0
+			set TEQQUpgradeCursedClaymoreQuest.iChoosingTier to 0
+			set TEQQUpgradeCursedClaymoreQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCursedClaymoreQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCursedClaymoreQuest
+		elseif TEiWeaponAyleidicClaymoreEquip == 1
+			set TEQQUpgradeAyleidicClaymoreQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAyleidicClaymoreQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAyleidicClaymoreQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAyleidicClaymoreQuest.iChoosing to 0
+			set TEQQUpgradeAyleidicClaymoreQuest.iChoosingTier to 0
+			set TEQQUpgradeAyleidicClaymoreQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAyleidicClaymoreQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAyleidicClaymoreQuest
+		elseif TEiWeaponObsidianClaymoreEquip == 1
+			set TEQQUpgradeObsidianClaymoreQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeObsidianClaymoreQuest.iDisplayedMenu to 1
+			set TEQQUpgradeObsidianClaymoreQuest.iUpgradePerformed to 0
+			set TEQQUpgradeObsidianClaymoreQuest.iChoosing to 0
+			set TEQQUpgradeObsidianClaymoreQuest.iChoosingTier to 0
+			set TEQQUpgradeObsidianClaymoreQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeObsidianClaymoreQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeObsidianClaymoreQuest
+		elseif TEiWeaponSilvriteClaymoreEquip == 1
+			set TEQQUpgradeSilvriteClaymoreQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeSilvriteClaymoreQuest.iDisplayedMenu to 1
+			set TEQQUpgradeSilvriteClaymoreQuest.iUpgradePerformed to 0
+			set TEQQUpgradeSilvriteClaymoreQuest.iChoosing to 0
+			set TEQQUpgradeSilvriteClaymoreQuest.iChoosingTier to 0
+			set TEQQUpgradeSilvriteClaymoreQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeSilvriteClaymoreQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeSilvriteClaymoreQuest
+		elseif TEiWeaponMalachiteClaymoreEquip == 1
+			set TEQQUpgradeMalachiteClaymoreQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMalachiteClaymoreQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMalachiteClaymoreQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMalachiteClaymoreQuest.iChoosing to 0
+			set TEQQUpgradeMalachiteClaymoreQuest.iChoosingTier to 0
+			set TEQQUpgradeMalachiteClaymoreQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMalachiteClaymoreQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMalachiteClaymoreQuest
+		elseif TEiWeaponMaddeningClaymoreEquip == 1
+			set TEQQUpgradeMaddeningClaymoreQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningClaymoreQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningClaymoreQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningClaymoreQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningClaymoreQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningClaymoreQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningClaymoreQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningClaymoreQuest
+		elseif TEiWeaponDwemerBattleaxeEquip == 1
+			set TEQQUpgradeDwemerBattleaxeQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDwemerBattleaxeQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDwemerBattleaxeQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDwemerBattleaxeQuest.iChoosing to 0
+			set TEQQUpgradeDwemerBattleaxeQuest.iChoosingTier to 0
+			set TEQQUpgradeDwemerBattleaxeQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDwemerBattleaxeQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDwemerBattleaxeQuest
+		elseif TEiWeaponCursedBattleaxeEquip == 1
+			set TEQQUpgradeCursedBattleaxeQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCursedBattleaxeQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCursedBattleaxeQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCursedBattleaxeQuest.iChoosing to 0
+			set TEQQUpgradeCursedBattleaxeQuest.iChoosingTier to 0
+			set TEQQUpgradeCursedBattleaxeQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCursedBattleaxeQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCursedBattleaxeQuest
+		elseif TEiWeaponAyleidicBattleaxeEquip == 1
+			set TEQQUpgradeAyleidicBattleaxeQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAyleidicBattleaxeQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAyleidicBattleaxeQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAyleidicBattleaxeQuest.iChoosing to 0
+			set TEQQUpgradeAyleidicBattleaxeQuest.iChoosingTier to 0
+			set TEQQUpgradeAyleidicBattleaxeQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAyleidicBattleaxeQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAyleidicBattleaxeQuest
+		elseif TEiWeaponObsidianBattleaxeEquip == 1
+			set TEQQUpgradeObsidianBattleaxeQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeObsidianBattleaxeQuest.iDisplayedMenu to 1
+			set TEQQUpgradeObsidianBattleaxeQuest.iUpgradePerformed to 0
+			set TEQQUpgradeObsidianBattleaxeQuest.iChoosing to 0
+			set TEQQUpgradeObsidianBattleaxeQuest.iChoosingTier to 0
+			set TEQQUpgradeObsidianBattleaxeQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeObsidianBattleaxeQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeObsidianBattleaxeQuest
+		elseif TEiWeaponSilvriteBattleaxeEquip == 1
+			set TEQQUpgradeSilvriteBattleaxeQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeSilvriteBattleaxeQuest.iDisplayedMenu to 1
+			set TEQQUpgradeSilvriteBattleaxeQuest.iUpgradePerformed to 0
+			set TEQQUpgradeSilvriteBattleaxeQuest.iChoosing to 0
+			set TEQQUpgradeSilvriteBattleaxeQuest.iChoosingTier to 0
+			set TEQQUpgradeSilvriteBattleaxeQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeSilvriteBattleaxeQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeSilvriteBattleaxeQuest
+		elseif TEiWeaponMalachiteBattleaxeEquip == 1
+			set TEQQUpgradeMalachiteBattleaxeQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMalachiteBattleaxeQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMalachiteBattleaxeQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMalachiteBattleaxeQuest.iChoosing to 0
+			set TEQQUpgradeMalachiteBattleaxeQuest.iChoosingTier to 0
+			set TEQQUpgradeMalachiteBattleaxeQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMalachiteBattleaxeQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMalachiteBattleaxeQuest
+		elseif TEiWeaponDwemerWarhammerEquip == 1
+			set TEQQUpgradeDwemerWarhammerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDwemerWarhammerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDwemerWarhammerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDwemerWarhammerQuest.iChoosing to 0
+			set TEQQUpgradeDwemerWarhammerQuest.iChoosingTier to 0
+			set TEQQUpgradeDwemerWarhammerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDwemerWarhammerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDwemerWarhammerQuest
+		elseif TEiWeaponCursedWarhammerEquip == 1
+			set TEQQUpgradeCursedWarhammerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCursedWarhammerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCursedWarhammerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCursedWarhammerQuest.iChoosing to 0
+			set TEQQUpgradeCursedWarhammerQuest.iChoosingTier to 0
+			set TEQQUpgradeCursedWarhammerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCursedWarhammerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCursedWarhammerQuest
+		elseif TEiWeaponAyleidicWarhammerEquip == 1
+			set TEQQUpgradeAyleidicWarhammerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAyleidicWarhammerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAyleidicWarhammerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAyleidicWarhammerQuest.iChoosing to 0
+			set TEQQUpgradeAyleidicWarhammerQuest.iChoosingTier to 0
+			set TEQQUpgradeAyleidicWarhammerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAyleidicWarhammerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAyleidicWarhammerQuest
+		elseif TEiWeaponObsidianWarhammerEquip == 1
+			set TEQQUpgradeObsidianWarhammerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeObsidianWarhammerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeObsidianWarhammerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeObsidianWarhammerQuest.iChoosing to 0
+			set TEQQUpgradeObsidianWarhammerQuest.iChoosingTier to 0
+			set TEQQUpgradeObsidianWarhammerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeObsidianWarhammerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeObsidianWarhammerQuest
+		elseif TEiWeaponSilvriteWarhammerEquip == 1
+			set TEQQUpgradeSilvriteWarhammerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeSilvriteWarhammerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeSilvriteWarhammerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeSilvriteWarhammerQuest.iChoosing to 0
+			set TEQQUpgradeSilvriteWarhammerQuest.iChoosingTier to 0
+			set TEQQUpgradeSilvriteWarhammerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeSilvriteWarhammerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeSilvriteWarhammerQuest
+		elseif TEiWeaponMalachiteWarhammerEquip == 1
+			set TEQQUpgradeMalachiteWarhammerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMalachiteWarhammerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMalachiteWarhammerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMalachiteWarhammerQuest.iChoosing to 0
+			set TEQQUpgradeMalachiteWarhammerQuest.iChoosingTier to 0
+			set TEQQUpgradeMalachiteWarhammerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMalachiteWarhammerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMalachiteWarhammerQuest
+		elseif TEiWeaponResiniteWarhammerEquip == 1
+			set TEQQUpgradeResiniteWarhammerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteWarhammerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteWarhammerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteWarhammerQuest.iChoosing to 0
+			set TEQQUpgradeResiniteWarhammerQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteWarhammerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteWarhammerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteWarhammerQuest
+		elseif TEiWeaponResiniteMaddeningWarhammerEquip == 1
+			set TEQQUpgradeResiniteMaddeningWarhammerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteMaddeningWarhammerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteMaddeningWarhammerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteMaddeningWarhammerQuest.iChoosing to 0
+			set TEQQUpgradeResiniteMaddeningWarhammerQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteMaddeningWarhammerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteMaddeningWarhammerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteMaddeningWarhammerQuest
+		elseif TEiWeaponDwemerWaraxeEquip == 1
+			set TEQQUpgradeDwemerWaraxeQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDwemerWaraxeQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDwemerWaraxeQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDwemerWaraxeQuest.iChoosing to 0
+			set TEQQUpgradeDwemerWaraxeQuest.iChoosingTier to 0
+			set TEQQUpgradeDwemerWaraxeQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDwemerWaraxeQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDwemerWaraxeQuest
+		elseif TEiWeaponCursedWaraxeEquip == 1
+			set TEQQUpgradeCursedWaraxeQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCursedWaraxeQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCursedWaraxeQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCursedWaraxeQuest.iChoosing to 0
+			set TEQQUpgradeCursedWaraxeQuest.iChoosingTier to 0
+			set TEQQUpgradeCursedWaraxeQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCursedWaraxeQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCursedWaraxeQuest
+		elseif TEiWeaponAyleidicWaraxeEquip == 1
+			set TEQQUpgradeAyleidicWaraxeQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAyleidicWaraxeQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAyleidicWaraxeQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAyleidicWaraxeQuest.iChoosing to 0
+			set TEQQUpgradeAyleidicWaraxeQuest.iChoosingTier to 0
+			set TEQQUpgradeAyleidicWaraxeQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAyleidicWaraxeQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAyleidicWaraxeQuest
+		elseif TEiWeaponObsidianWaraxeEquip == 1
+			set TEQQUpgradeObsidianWaraxeQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeObsidianWaraxeQuest.iDisplayedMenu to 1
+			set TEQQUpgradeObsidianWaraxeQuest.iUpgradePerformed to 0
+			set TEQQUpgradeObsidianWaraxeQuest.iChoosing to 0
+			set TEQQUpgradeObsidianWaraxeQuest.iChoosingTier to 0
+			set TEQQUpgradeObsidianWaraxeQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeObsidianWaraxeQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeObsidianWaraxeQuest
+		elseif TEiWeaponSilvriteWaraxeEquip == 1
+			set TEQQUpgradeSilvriteWaraxeQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeSilvriteWaraxeQuest.iDisplayedMenu to 1
+			set TEQQUpgradeSilvriteWaraxeQuest.iUpgradePerformed to 0
+			set TEQQUpgradeSilvriteWaraxeQuest.iChoosing to 0
+			set TEQQUpgradeSilvriteWaraxeQuest.iChoosingTier to 0
+			set TEQQUpgradeSilvriteWaraxeQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeSilvriteWaraxeQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeSilvriteWaraxeQuest
+		elseif TEiWeaponMalachiteWaraxeEquip == 1
+			set TEQQUpgradeMalachiteWaraxeQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMalachiteWaraxeQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMalachiteWaraxeQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMalachiteWaraxeQuest.iChoosing to 0
+			set TEQQUpgradeMalachiteWaraxeQuest.iChoosingTier to 0
+			set TEQQUpgradeMalachiteWaraxeQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMalachiteWaraxeQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMalachiteWaraxeQuest
+		elseif TEiWeaponMaddeningWaraxeEquip == 1
+			set TEQQUpgradeMaddeningWaraxeQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningWaraxeQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningWaraxeQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningWaraxeQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningWaraxeQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningWaraxeQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningWaraxeQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningWaraxeQuest
+		elseif TEiWeaponGoldenWaraxeEquip == 1
+			set TEQQUpgradeGoldenWaraxeQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeGoldenWaraxeQuest.iDisplayedMenu to 1
+			set TEQQUpgradeGoldenWaraxeQuest.iUpgradePerformed to 0
+			set TEQQUpgradeGoldenWaraxeQuest.iChoosing to 0
+			set TEQQUpgradeGoldenWaraxeQuest.iChoosingTier to 0
+			set TEQQUpgradeGoldenWaraxeQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeGoldenWaraxeQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeGoldenWaraxeQuest
+		elseif TEiWeaponDarkWaraxeEquip == 1
+			set TEQQUpgradeDarkWaraxeQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDarkWaraxeQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDarkWaraxeQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDarkWaraxeQuest.iChoosing to 0
+			set TEQQUpgradeDarkWaraxeQuest.iChoosingTier to 0
+			set TEQQUpgradeDarkWaraxeQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDarkWaraxeQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDarkWaraxeQuest
+		elseif TEiWeaponGoldenMaceEquip == 1
+			set TEQQUpgradeGoldenMaceQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeGoldenMaceQuest.iDisplayedMenu to 1
+			set TEQQUpgradeGoldenMaceQuest.iUpgradePerformed to 0
+			set TEQQUpgradeGoldenMaceQuest.iChoosing to 0
+			set TEQQUpgradeGoldenMaceQuest.iChoosingTier to 0
+			set TEQQUpgradeGoldenMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeGoldenMaceQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeGoldenMaceQuest
+		elseif TEiWeaponDarkMaceEquip == 1
+			set TEQQUpgradeDarkMaceQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDarkMaceQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDarkMaceQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDarkMaceQuest.iChoosing to 0
+			set TEQQUpgradeDarkMaceQuest.iChoosingTier to 0
+			set TEQQUpgradeDarkMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDarkMaceQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDarkMaceQuest
+		elseif TEiWeaponIntricateEbonyMaceEquip == 1
+			set TEQQUpgradeIntricateEbonyMaceQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeIntricateEbonyMaceQuest.iDisplayedMenu to 1
+			set TEQQUpgradeIntricateEbonyMaceQuest.iUpgradePerformed to 0
+			set TEQQUpgradeIntricateEbonyMaceQuest.iChoosing to 0
+			set TEQQUpgradeIntricateEbonyMaceQuest.iChoosingTier to 0
+			set TEQQUpgradeIntricateEbonyMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeIntricateEbonyMaceQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeIntricateEbonyMaceQuest
+		elseif TEiWeaponResiniteMaceEquip == 1
+			set TEQQUpgradeResiniteMaceQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteMaceQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteMaceQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteMaceQuest.iChoosing to 0
+			set TEQQUpgradeResiniteMaceQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteMaceQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteMaceQuest
+		elseif TEiWeaponDwemerMaceEquip == 1
+			set TEQQUpgradeDwemerMaceQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDwemerMaceQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDwemerMaceQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDwemerMaceQuest.iChoosing to 0
+			set TEQQUpgradeDwemerMaceQuest.iChoosingTier to 0
+			set TEQQUpgradeDwemerMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDwemerMaceQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDwemerMaceQuest
+		elseif TEiWeaponCursedMaceEquip == 1
+			set TEQQUpgradeCursedMaceQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCursedMaceQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCursedMaceQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCursedMaceQuest.iChoosing to 0
+			set TEQQUpgradeCursedMaceQuest.iChoosingTier to 0
+			set TEQQUpgradeCursedMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCursedMaceQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCursedMaceQuest
+		elseif TEiWeaponAyleidicMaceEquip == 1
+			set TEQQUpgradeAyleidicMaceQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAyleidicMaceQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAyleidicMaceQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAyleidicMaceQuest.iChoosing to 0
+			set TEQQUpgradeAyleidicMaceQuest.iChoosingTier to 0
+			set TEQQUpgradeAyleidicMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAyleidicMaceQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAyleidicMaceQuest
+		elseif TEiWeaponObsidianMaceEquip == 1
+			set TEQQUpgradeObsidianMaceQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeObsidianMaceQuest.iDisplayedMenu to 1
+			set TEQQUpgradeObsidianMaceQuest.iUpgradePerformed to 0
+			set TEQQUpgradeObsidianMaceQuest.iChoosing to 0
+			set TEQQUpgradeObsidianMaceQuest.iChoosingTier to 0
+			set TEQQUpgradeObsidianMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeObsidianMaceQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeObsidianMaceQuest
+		elseif TEiWeaponSilvriteMaceEquip == 1
+			set TEQQUpgradeSilvriteMaceQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeSilvriteMaceQuest.iDisplayedMenu to 1
+			set TEQQUpgradeSilvriteMaceQuest.iUpgradePerformed to 0
+			set TEQQUpgradeSilvriteMaceQuest.iChoosing to 0
+			set TEQQUpgradeSilvriteMaceQuest.iChoosingTier to 0
+			set TEQQUpgradeSilvriteMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeSilvriteMaceQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeSilvriteMaceQuest
+		elseif TEiWeaponMalachiteMaceEquip == 1
+			set TEQQUpgradeMalachiteMaceQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMalachiteMaceQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMalachiteMaceQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMalachiteMaceQuest.iChoosing to 0
+			set TEQQUpgradeMalachiteMaceQuest.iChoosingTier to 0
+			set TEQQUpgradeMalachiteMaceQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMalachiteMaceQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMalachiteMaceQuest
+		elseif TEiWeaponResiniteBowEquip == 1
+			set TEQQUpgradeResiniteBowQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeResiniteBowQuest.iDisplayedMenu to 1
+			set TEQQUpgradeResiniteBowQuest.iUpgradePerformed to 0
+			set TEQQUpgradeResiniteBowQuest.iChoosing to 0
+			set TEQQUpgradeResiniteBowQuest.iChoosingTier to 0
+			set TEQQUpgradeResiniteBowQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeResiniteBowQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeResiniteBowQuest
+		elseif TEiWeaponMaddeningBowEquip == 1
+			set TEQQUpgradeMaddeningBowQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMaddeningBowQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMaddeningBowQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMaddeningBowQuest.iChoosing to 0
+			set TEQQUpgradeMaddeningBowQuest.iChoosingTier to 0
+			set TEQQUpgradeMaddeningBowQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMaddeningBowQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMaddeningBowQuest
+		elseif TEiWeaponDwemerBowEquip == 1
+			set TEQQUpgradeDwemerBowQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDwemerBowQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDwemerBowQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDwemerBowQuest.iChoosing to 0
+			set TEQQUpgradeDwemerBowQuest.iChoosingTier to 0
+			set TEQQUpgradeDwemerBowQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDwemerBowQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDwemerBowQuest
+		elseif TEiWeaponCursedBowEquip == 1
+			set TEQQUpgradeCursedBowQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeCursedBowQuest.iDisplayedMenu to 1
+			set TEQQUpgradeCursedBowQuest.iUpgradePerformed to 0
+			set TEQQUpgradeCursedBowQuest.iChoosing to 0
+			set TEQQUpgradeCursedBowQuest.iChoosingTier to 0
+			set TEQQUpgradeCursedBowQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeCursedBowQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeCursedBowQuest
+		elseif TEiWeaponAyleidicBowEquip == 1
+			set TEQQUpgradeAyleidicBowQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAyleidicBowQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAyleidicBowQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAyleidicBowQuest.iChoosing to 0
+			set TEQQUpgradeAyleidicBowQuest.iChoosingTier to 0
+			set TEQQUpgradeAyleidicBowQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAyleidicBowQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAyleidicBowQuest
+		elseif TEiWeaponObsidianBowEquip == 1
+			set TEQQUpgradeObsidianBowQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeObsidianBowQuest.iDisplayedMenu to 1
+			set TEQQUpgradeObsidianBowQuest.iUpgradePerformed to 0
+			set TEQQUpgradeObsidianBowQuest.iChoosing to 0
+			set TEQQUpgradeObsidianBowQuest.iChoosingTier to 0
+			set TEQQUpgradeObsidianBowQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeObsidianBowQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeObsidianBowQuest
+		elseif TEiWeaponSilvriteBowEquip == 1
+			set TEQQUpgradeSilvriteBowQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeSilvriteBowQuest.iDisplayedMenu to 1
+			set TEQQUpgradeSilvriteBowQuest.iUpgradePerformed to 0
+			set TEQQUpgradeSilvriteBowQuest.iChoosing to 0
+			set TEQQUpgradeSilvriteBowQuest.iChoosingTier to 0
+			set TEQQUpgradeSilvriteBowQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeSilvriteBowQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeSilvriteBowQuest
+		elseif TEiWeaponMalachiteBowEquip == 1
+			set TEQQUpgradeMalachiteBowQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeMalachiteBowQuest.iDisplayedMenu to 1
+			set TEQQUpgradeMalachiteBowQuest.iUpgradePerformed to 0
+			set TEQQUpgradeMalachiteBowQuest.iChoosing to 0
+			set TEQQUpgradeMalachiteBowQuest.iChoosingTier to 0
+			set TEQQUpgradeMalachiteBowQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeMalachiteBowQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeMalachiteBowQuest
+		elseif TEiWeaponGoldenBowEquip == 1
+			set TEQQUpgradeGoldenBowQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeGoldenBowQuest.iDisplayedMenu to 1
+			set TEQQUpgradeGoldenBowQuest.iUpgradePerformed to 0
+			set TEQQUpgradeGoldenBowQuest.iChoosing to 0
+			set TEQQUpgradeGoldenBowQuest.iChoosingTier to 0
+			set TEQQUpgradeGoldenBowQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeGoldenBowQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeGoldenBowQuest
+		elseif TEiWeaponDarkBowEquip == 1
+			set TEQQUpgradeDarkBowQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeDarkBowQuest.iDisplayedMenu to 1
+			set TEQQUpgradeDarkBowQuest.iUpgradePerformed to 0
+			set TEQQUpgradeDarkBowQuest.iChoosing to 0
+			set TEQQUpgradeDarkBowQuest.iChoosingTier to 0
+			set TEQQUpgradeDarkBowQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeDarkBowQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeDarkBowQuest
+		elseif TEiWeaponWaningEquip == 1
+			set TEQQUpgradeWaningBloodDrinkerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeWaningBloodDrinkerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeWaningBloodDrinkerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeWaningBloodDrinkerQuest.iChoosing to 0
+			set TEQQUpgradeWaningBloodDrinkerQuest.iChoosingTier to 0
+			set TEQQUpgradeWaningBloodDrinkerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeWaningBloodDrinkerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeWaningBloodDrinkerQuest
+		elseif TEiWeaponRisingEquip == 1
+			set TEQQUpgradeRisingBloodDrinkerQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeRisingBloodDrinkerQuest.iDisplayedMenu to 1
+			set TEQQUpgradeRisingBloodDrinkerQuest.iUpgradePerformed to 0
+			set TEQQUpgradeRisingBloodDrinkerQuest.iChoosing to 0
+			set TEQQUpgradeRisingBloodDrinkerQuest.iChoosingTier to 0
+			set TEQQUpgradeRisingBloodDrinkerQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeRisingBloodDrinkerQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeRisingBloodDrinkerQuest
+		elseif TEiWeaponEbonyRazorEquip == 1
+			set TEQQUpgradeEbonyRazorQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeEbonyRazorQuest.iDisplayedMenu to 1
+			set TEQQUpgradeEbonyRazorQuest.iUpgradePerformed to 0
+			set TEQQUpgradeEbonyRazorQuest.iChoosing to 0
+			set TEQQUpgradeEbonyRazorQuest.iChoosingTier to 0
+			set TEQQUpgradeEbonyRazorQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeEbonyRazorQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeEbonyRazorQuest
+		elseif TEiWeaponEbonyUchigatanaEquip == 1
+			set TEQQUpgradeEbonyUchigatanaQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeEbonyUchigatanaQuest.iDisplayedMenu to 1
+			set TEQQUpgradeEbonyUchigatanaQuest.iUpgradePerformed to 0
+			set TEQQUpgradeEbonyUchigatanaQuest.iChoosing to 0
+			set TEQQUpgradeEbonyUchigatanaQuest.iChoosingTier to 0
+			set TEQQUpgradeEbonyUchigatanaQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeEbonyUchigatanaQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeEbonyUchigatanaQuest
+		elseif TEiWeaponGoldUchigatanaEquip == 1
+			set TEQQUpgradeGoldUchigatanaQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeGoldUchigatanaQuest.iDisplayedMenu to 1
+			set TEQQUpgradeGoldUchigatanaQuest.iUpgradePerformed to 0
+			set TEQQUpgradeGoldUchigatanaQuest.iChoosing to 0
+			set TEQQUpgradeGoldUchigatanaQuest.iChoosingTier to 0
+			set TEQQUpgradeGoldUchigatanaQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeGoldUchigatanaQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeGoldUchigatanaQuest
+		elseif TEiWeaponAkaviriUchigatanaEquip == 1
+			set TEQQUpgradeAkaviriUchigatanaQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAkaviriUchigatanaQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAkaviriUchigatanaQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAkaviriUchigatanaQuest.iChoosing to 0
+			set TEQQUpgradeAkaviriUchigatanaQuest.iChoosingTier to 0
+			set TEQQUpgradeAkaviriUchigatanaQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAkaviriUchigatanaQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAkaviriUchigatanaQuest
+		elseif TEiWeaponAkaviriOdachiEquip == 1
+			set TEQQUpgradeAkaviriOdachiQuest.fQuestDelayTime to 0.01
+			set TEQQUpgradeAkaviriOdachiQuest.iDisplayedMenu to 1
+			set TEQQUpgradeAkaviriOdachiQuest.iUpgradePerformed to 0
+			set TEQQUpgradeAkaviriOdachiQuest.iChoosing to 0
+			set TEQQUpgradeAkaviriOdachiQuest.iChoosingTier to 0
+			set TEQQUpgradeAkaviriOdachiQuest.iPlayerGold to Player.GetItemCount Gold001
+			set TEQQUpgradeAkaviriOdachiQuest.iPlayerLevel to Player.GetLevel
+			StopQuest TEQQShrineEquippedCheckQuest
+			StartQuest TEQQUpgradeAkaviriOdachiQuest
+		else
+			MessageBox "No Equipped Weapon Found!"
+			Set iDisplayedMenu to 0
+		endif
+	endif
+end
