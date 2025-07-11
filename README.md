@@ -22,7 +22,7 @@
 
 ----
 
-## Requirements
+## Prerequisites
 1. [UE4SS](https://www.nexusmods.com/oblivionremastered/mods/32)
 	1. [TesSyncMapInjector](https:://www.nexusmods.com/oblivionremastered/mods/1272)
 		1. [Custom Enchanted Modded Apparel SourceFormIDs Updater](https:://www.nexusmods.com/oblivionremastered/mods/4029)
@@ -40,9 +40,10 @@
 ----
 
 ## Files
-1. Terrifying_Encounters.esp
-2. Terrifying_Encounters.json SyncMap
-3. TE_Settings.ini GameSettings
+1. "Terrifying_Encounters.esp" [Main Plugin]
+2. "Terrifying_Encounters.json" [SyncMap]
+3. "TE_Settings.ini" [GameSettings]
+4. "Terrifying_Encounters_Ignore.ini" [SkipMessages]
 
 ----
 
@@ -51,7 +52,7 @@
 ### Compatibility
 
 * This mod intends on substantially modifying LeveledLists both in creating new ones and modifying Vanilla ones. I intend on doing as little modification to vanilla lists as possible, and once OBSE64 supports the ability to add items to LL's via scripting, I will instead use an Initilization script that adds everything to vanilla LL's for compatibility. 
-* For now, if you wish to use a mod that modifies the below LL's, you will need to create a compatibility patch merging the record changes together. I will not be providing a guide on doing this and I will only entertain patch requests from Mod Authors,  not users.
+* For now, if you wish to use a mod that modifies the below LL's, you will need to create a compatibility patch merging the record changes together. I will not be providing a guide on doing this and I will only entertain patch requests from **Mod Authors**,  not users.
 * Other than specified LLs, everything else is unique and shouldn't rub against other things, but since this mod contains a considerable amount of scripting, who knows what could happen with other mods. My load order while building this mod is considerably messy and I've not experienced issues while playtesting. This is subject to change, and this section will be updated as needed.
 
 #### Modified Leveled Lists
@@ -64,8 +65,8 @@
 ##### Load Order Considerations
 
 * Load this mod as early as possible in your load order.
-* I built this mod in Deluxe, though this mod has absolutely no requirements or interactions with Deluxe content. 
-* I built and tested this mod in an existing save Alongside fresh saves when necessary primarily to ensure this can be added to an existing character without issue, especially since all of this content is locked behind being at least level 25. 
+* I built this mod in deluxe, though this mod has absolutely no requirements or interactions with deluxe content. 
+* I built and tested this mod in an existing save alongside fresh saves when necessary primarily to ensure this can be added to an existing character without issue, especially since all of this content is locked behind being at least level 25. 
 * The Target Detection system I've built is completely compatibile with other mods that use Target Detection since I built that with the idea that everything used in a specific instance of target detection will be unique.
 
 <details>
@@ -95,6 +96,8 @@
 <details>
 <Summary>Installation</Summary>
 
+## YOU MUST INSTALL ALL PREREQUISITES FIRST
+
 ### Automatic Installation
 * You can use a mod manager, but I don't, so I don't know how to guide you <3
 
@@ -112,6 +115,8 @@
 2. Copy Terrifying_Encounters.json to `\SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Content\Dev\ObvData\Data\SyncMap `
 
 3. Copy TE_Settings.ini to `\SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Binaries\Win64\OBSE\plugins\GameSettings`
+
+4. Copy Terrifying_Encounters_Ignore.ini to `\SteamLibrary\steamapps\common\Oblivion Remastered\OblivionRemastered\Binaries\Win64\SkipMessages`
 
 #### Gamepass Installation
 

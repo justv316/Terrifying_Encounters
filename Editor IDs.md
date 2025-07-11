@@ -42,17 +42,71 @@
 | MithrilHelmet | Mithril Helmet | 0002C104 |
 | MithrilShield | Mithril Shield | 000352BF |
 | SEAmberBoots1 | Impure Amber Boots | 0009207B |
+| SEAmberBoots2 | Lesser Amber Boots | 00092136 |
+| SEAmberBoots3 | Amber Boots | 0001657C |
+| SEAmberBoots4 | Fine Amber Boots | 00016C17 |
+| SEAmberBoots5 | Grand Amber Boots | 00016C18 |
+| SEAmberBoots6 | Perfect Amber Boots | 00016C19 |
 | SEAmberCuirass1 | Impure Amber Cuirass | 0009207D |
+| SEAmberCuirass2 | Lesser Amber Cuirass | 00092137 |
+| SEAmberCuirass3 | Amber Cuirass | 0001657B |
+| SEAmberCuirass4 | Fine Amber Cuirass | 00016C1C |
+| SEAmberCuirass5 | Grand Amber Cuirass | 00016C1D |
+| SEAmberCuirass6 | Perfect Amber Cuirass | 00016C1E |
 | SEAmberGauntlets1 | Impure Amber Gauntlets | 00092093 |
+| SEAmberGauntlets2 | Lesser Amber Gauntlets | 00092138 |
+| SEAmberGauntlets3 | Amber Gauntlets | 0001657A |
+| SEAmberGauntlets4 | Fine Amber Gauntlets | 00016C21 |
+| SEAmberGauntlets5 | Grand Am~ber Gauntlets | 00016C22 |
+| SEAmberGauntlets6 | Perfect Amber Gauntlets | 00016C23 |
 | SEAmberGreaves1 | Impure Amber Greaves | 000920F9 |
+| SEAmberGreaves2 | Lesser Amber Greaves | 00092139 |
+| SEAmberGreaves3 | Amber Greaves | 00016579 |
+| SEAmberGreaves4 | Fine Amber Greaves | 00016C35 |
+| SEAmberGreaves5 | Grand Amber Greaves | 00016C42 |
+| SEAmberGreaves6 | Perfect Amber Greaves | 00016C49 |
 | SEAmberHelmet1 | Impure Amber Helmet | 000920FA |
+| SEAmberHelmet2 | Lesser Amber Helmet | 0009213A |
+| SEAmberHelmet3 | Amber Helmet | 00016578 |
+| SEAmberHelmet4 | Fine Amber Helmet | 00016C69 |
+| SEAmberHelmet5 | Grand Amber Helmet | 00016C6A |
+| SEAmberHelmet6 | Perfect Amber Helmet | 00016C6B |
 | SEAmberShield1 | Impure Amber Shield | 000920FC |
+| SEAmberShield2 | Lesser Amber Shield | 0009213B |
+| SEAmberShield3 | Amber Shield | 00016577 |
+| SEAmberShield4 | Fine Amber Shield | 00016C6F |
+| SEAmberShield5 | Grand Amber Shield | 00016C70 |
+| SEAmberShield6 | Perfect Amber Shield | 00016C71 |
 | SEMadnessBoots1 | Impure Madness Boots | 0009213C |
+| SEMadnessBoots2 | Lesser Madness Boots | 00092202 |
+| SEMadnessBoots3 | Madness Boots | 0001F43E |
+| SEMadnessBoots4 | Fine Madness Boots | 0001F43F |
+| SEMadnessBoots5 | Grand Madness Boots | 0001F440 |
+| SEMadnessBoots6 | Perfect Madness Boots | 0001F441 |
 | SEMadnessCuirass1 | Impure Madness Cuirass | 0009213F |
+| SEMadnessCuirass2 | Lesser Madness Cuirass | 00092206 |
+| SEMadnessCuirass3 | Madness Cuirass | 0001F43D |
+| SEMadnessCuirass4 | Fine Madness Cuirass | 0001F444 |
+| SEMadnessCuirass5 | Grand Madness Cuirass | 0001F445 |
+| SEMadnessCuirass6 | Perfect Madness Cuirass | 0001F446 |
 | SEMadnessGauntlets1 | Impure Madness Gauntlets | 00092140 |
+| SEMadnessGauntlets2 | Lesser Madness Gauntlets | 00092209 |
+| SEMadnessGauntlets3 | Madness Gauntlets | 0001F43C |
+| SEMadnessGauntlets4 | Fine Madness Gauntlets | 0001F449 |
+| SEMadnessGauntlets5 | Grand Mad~ness Gauntlets | 0001F44A |
+| SEMadnessGauntlets6 | Perfect Madness Gauntlets | 0001F44B |
 | SEMadnessGreaves1 | Impure Madness Greaves | 00092173 |
+| SEMadnessGreaves2 | Lesser Madness Greaves | 0009221A |
+| SEMadnessGreaves3 | Madness Greaves | 0001F43B |
+| SEMadnessGreaves4 | Fine Madness Greaves | 0001F44E |
+| SEMadnessGreaves5 | Grand Madness Greaves | 0001F44F |
+| SEMadnessGreaves6 | Perfect Madness Greaves | 0001F450 |
 | SEMadnessHelmet1 | Impure Madness Helmet | 0009219D |
-| SEMadnessShield1 | Impure Madness Shield | 000921D0 |
+| SEMadnessHelmet2 | Lesser Madness Helmet | 00092233 |
+| SEMadnessHelmet3 | Madness Helmet | 0001F43A |
+| SEMadnessHelmet4 | Fine Madness Helmet | 0001F453 |
+| SEMadnessHelmet5 | Grand Madness Helmet | 0001F454 |
+| SEMadnessHelmet6 | Perfect Madness Helmet | 0001F455 |
 
 ### Modded Items
 * Replace XX with Load Order Prefix
