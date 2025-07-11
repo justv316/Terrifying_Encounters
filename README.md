@@ -131,8 +131,8 @@
 #### The Upgrade System
 * Using placed (Small) Shrines to Malacath, the player can pay a fee of gold to upgrade their items to improved versions of themselves. 
 	* These Shrines are located wherever blacksmiths are located.
+	* The Player selects from Inventory or Equipped items. 
 	* (To do): Place more Shrines.
-	* (To do): Add level requirements to upgrades
 
 ----
 
@@ -219,70 +219,6 @@
 	* Shield : 12
 
 ----
-	
-<details>
-<Summary>Equipment Statistics</Summary>
-
-* There may be some variance throughout the items and remember that your current skills will effect the numbers you see in the game, so use this as a baseline.
-
-| __Weapon__ | Type | T1 Dam | T2 Dam | T3 Dam | T4 Dam | T5 Dam | T6 Dam | Weight | Speed | Reach | 
-|----|----|----|----|----|----|----|----|----|----|----|
-| Dagger    | (1H-Blade) | 26 | 34 | 42 | 50 | 58 | 66 | Weight: 9.0  | Speed: 1.4 | Reach: 0.6 | 
-| Longsword | (1H-Blade) | 30 | 38 | 46 | 54 | 62 | 70 | Weight: 25.0 | Speed: 1.0 | Reach: 1.0 | 
-| Shortsword| (1H-Blade) | 28 | 36 | 44 | 52 | 60 | 68 | Weight: 12.5 | Speed: 1.2 | Reach: 0.8 |  
-| Claymore  | (2H-Blade) | 33 | 43 | 53 | 63 | 73 | 83 | Weight: 35.0 | Speed: 0.8 | Reach: 1.3 | 
-| Waraxe    | (1H-Blunt) | 29 | 37 | 45 | 53 | 61 | 69 | Weight: 15.0 | Speed: 1.1 | Reach: 0.8 |  
-| Mace      | (1H-Blunt) | 31 | 39 | 47 | 55 | 63 | 71 | Weight: 15.0 | Speed: 0.9 | Reach: 1.0 | 
-| Warhammer | (2H-Blunt) | 34 | 44 | 54 | 64 | 74 | 84 | Weight: 50.0 | Speed: 0.7 | Reach: 1.3 |
-| Battleaxe | (2H-Blunt) | 33 | 43 | 53 | 63 | 73 | 83 | Weight: 35.0 | Speed: 0.8 | Reach: 1.3 | 
-| Bow       | (2H-Bow) | 30 | 38 | 46 | 54 | 62 | 70 | Weight: 10.0 | Speed: 1.0 | Reach: 0.0 | 
-
-----
-
-| __Artifacts__ | Type | T1 Dam | T2 Dam | T3 Dam | T4 Dam | T5 Dam | T6 Dam | Weight | Speed | Reach | 
-|----|----|----|----|----|----|----|----|----|----|----|
-| Crystal Longsword | (1H-Blade) | 33 | 41 | 49 | 57 | 65 | 73 | Weight: 25.0 | Speed: 1.0 | Reach: 1.0 |
-| Intricate Silver Longsword | (1H-Blade) | 33 | 41 | 49 | 57 | 65 | 73 | Weight: 25.0 | Speed: 1.0 | Reach: 1.0 |
-| Waning/Rising the Blood Drinker | (1H-Blade) | 33 | 41 | 49 | 57 | 65 | 73 | Weight: 25.0 | Speed: 1.0 | Reach: 1.0 |
-| Waning/Rising the Blood Drunk | (1H-Blade) | 36 | 44 | 52 | 60 | 68 | 76 | Weight: 25.0 | Speed: 1.1 | Reach: 1.0 |
-| Intricate Silver Shortsword | (1H-Blade) | 31 | 39 | 47 | 55 | 63 | 71 | Weight: 12.5 | Speed: 1.2 | Reach: 0.8 |
-| Stalrihm Shortsword | (1H-Blade) | 31 | 39 | 47 | 55 | 63 | 71 | Weight: 12.5 | Speed: 1.2 | Reach: 0.8 |
-| Ebony Uchigatana | (1H-Blade) | 32 | 40 | 48 | 56 | 64 | 72 | Weight: 20.0 | Speed: 1.1 | Reach: 1.1 |
-| Gold Uchigatana | (1H-Blade) | 32 | 40 | 48 | 56 | 64 | 72 | Weight: 20.0 | Speed: 1.1 | Reach: 1.1 |
-| Akaviri Odachi | (1H-Blade) | 29 | 37 | 45 | 53 | 61 | 72 | Weight: 20.0 | Speed: 1.1 | Reach: 1.1 |  
-| Akaviri Uchigatana | (2H-Blade) | 32 | 42 | 52 | 62 | 72 | 72 | Weight: 30.0 | Speed: 1.0 | Reach: 1.4 |  
-| Ebony Razor | (1H-Blade) | 29 | 37 | 45 | 53 | 61 | 69 | Weight: 9.0 | Speed: 1.4 | Reach: 0.6 |
-| Awakened Ebony Razor | (1H-Blade) | 32 | 40 | 48 | 56 | 64 | 72 | Weight: 9.0 | Speed: 1.5 | Reach: 0.6 |
-| Quicksilver Dagger | (1H-Blade) | 29 | 37 | 45 | 53 | 61 | 69 | Weight: 9.0 | Speed: 1.4 | Reach: 0.6 |
-| Intricate Silver Claymore | (2H-Blade) | 36 | 46 | 56 | 66 | 76 | 86 | Weight: 35.0 | Speed: 0.8 | Reach: 1.3 |
-| Intricate Ebony Mace | (1H-Blunt) | 34 | 42 | 50 | 58 | 66 | 74 | Weight: 15.0 | Speed: 0.9 | Reach: 1.0 |
-| Resinite Maddening Warhammer | (2H-Blunt) | 37 | 47 | 57 | 67 | 77 | 87 | Weight: 50.0 | Speed: 0.7 | Reach: 1.3 |
-
-----
-
-| __Heavy Armor__ | T1(100) | T2(140) | T3(180) | T4(220) | T5(260) | T6(300) |	Weight (100) |
-|----|----|----|----|----|----|----|----|
-| Boots | 10 | 14 | 18 | 22	| 26 | 30 | Weight: 10 |
-| Cuirass | 25 | 35	| 45 | 55 | 65 | 75 | Weight: 37.5 |
-| Gauntlets | 10 | 14 | 18 | 22	| 26 | 30 | Weight: 7.5 |
-| Greaves | 15 | 21	| 27 | 33 | 39 | 45 | Weight: 22.5 |
-| Helmet | 10 | 14 | 18	| 22 | 26 | 30 | Weight: 7.5 |
-| Shield | 30 | 42 | 54	| 66 | 78 | 90 | Weight: 15 |
-
-----
-
-| __Light Armor__ | T1(80) | T2(120) | T3(160) | T4(200) | T5(240) | T6(280) |	Weight (100) |
-|----|----|----|----|----|----|----|----|
-| Boots | 8 | 12 | 16 | 20 | 24 | 28 | Weight: 4 |
-| Cuirass | 20 | 30 | 40 | 50 | 60 | 70 | Weight: 15 |
-| Gauntlets | 8 | 12 | 16 | 20 | 24 | 28 | Weight: 3 |
-| Greaves | 12 | 18 | 24 | 30 | 36 | 42 | Weight: 9 |
-| Helmet | 8 | 12 | 16 | 20 | 24 | 28 | Weight: 3 |
-| Shield | 24 | 36 | 48 | 60 | 72 | 84 | Weight: 6 |
-
-----
-
-</details>
 
 </details>
 
