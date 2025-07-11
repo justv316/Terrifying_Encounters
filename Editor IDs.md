@@ -57,8 +57,8 @@
 ### Modded Items
 * Replace XX with Load Order Prefix
 
-| __Editor ID__ | Name |
-|----|----|
+| __Editor ID__ | Name | FormID | 
+|----|----|----|
 | TE03ArmorSpellbreakingHShield | Spellbreaking Shield [03] | XX01B72C |
 | TE04ArmorSpellbreakingHShield | Spellbreaking Shield [04] | XX01B74D |
 | TE05ArmorSpellbreakingHShield | Spellbreaking Shield [05] | XX01B74E |
