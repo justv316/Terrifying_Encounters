@@ -3,8 +3,8 @@
 
 ### Vanilla Items
 
-| __Editor ID__ | Name |
-|----|----|
+| __Editor ID__ | Name | FormID | 
+|----|----|----|
 | DaedricBoots | Daedric Boots | 00036359 |
 | DaedricCuirass | Daedric Cuirass | 0003635B |
 | DaedricGauntlets | Daedric Gauntlets | 00036358 |
