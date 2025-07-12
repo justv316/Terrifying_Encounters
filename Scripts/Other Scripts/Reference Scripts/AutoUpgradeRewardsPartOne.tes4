@@ -1,0 +1,1152 @@
+scn AutoUpgradeRewardsPartOne
+
+short playerLevel ; reusable player level variable
+short lastCheckedLevel ; last level we processed
+float checkTimer ; timer to throttle checks
+short count ; how many of the item there is
+
+Begin GameMode
+    set checkTimer to checkTimer + GetSecondsPassed
+
+    if (checkTimer >= 9.0)
+        set checkTimer to 0
+
+        set playerLevel to Player.GetLevel
+        if(playerLevel > lastCheckedLevel)
+            if (playerLevel >= 5)
+                ; Replace Level 1 Chillrend with Level 5
+                if (Player.GetItemCount 00068BFC > 0)
+                    Player.RemoveItem 00068BFC 1
+                    Player.AddItem 00068BFD 1
+                endif
+            endif
+            if (playerLevel >= 10)
+                ; Replace Level 5 Chillrend with Level 10
+                if (Player.GetItemCount 00068BFD > 0)
+                    Player.RemoveItem 00068BFD 1
+                    Player.AddItem 00068BFE 1
+                endif
+            endif
+            if (playerLevel >= 15)
+                ; Replace Level 10 Chillrend with Level 15
+                if (Player.GetItemCount 00068BFE > 0)
+                    Player.RemoveItem 00068BFE 1
+                    Player.AddItem 00068BFF 1
+                endif
+            endif
+            if (playerLevel >= 20)
+			; Replace Level 15 Chillrend with Level 20
+			if (Player.GetItemCount 00068BFF > 0)
+				Player.RemoveItem 00068BFF 1
+				Player.AddItem 00068C00 1
+			endif
+            endif
+		  if (playerLevel >= 25)
+			; Replace Level 20 Chillrend with Level 25
+			if (Player.GetItemCount 00068C00 > 0)
+				Player.RemoveItem 00068C00 1
+				Player.AddItem 00068C01 1
+			endif
+            endif
+
+            ; --- Blackwater Blade Upgrade Logic ---
+            if (playerLevel >= 5)
+                ; Replace Level 1 Blackwater Blade with Level 5
+                if (Player.GetItemCount 0000C201 > 0)
+                    Player.RemoveItem 0000C201 1
+                    Player.AddItem 0006B697 1
+                endif
+            endif
+            if (playerLevel >= 10)
+                ; Replace Level 5 Blackwater Blade with Level 10
+                if (Player.GetItemCount 0006B697 > 0)
+                    Player.RemoveItem 0006B697 1
+                    Player.AddItem 0006B698 1
+                endif
+            endif
+            if (playerLevel >= 15)
+                ; Replace Level 10 Blackwater Blade with Level 15
+                if (Player.GetItemCount 0006B698 > 0)
+                    Player.RemoveItem 0006B698 1
+                    Player.AddItem 0006B699 1
+                endif
+            endif
+            if (playerLevel >= 20)
+                ; Replace Level 15 Blackwater Blade with Level 20
+                if (Player.GetItemCount 0006B699 > 0)
+                    Player.RemoveItem 0006B699 1
+                    Player.AddItem 0006B69A 1
+                endif
+            endif
+            if (playerLevel >= 25)
+                ; Replace Level 20 Blackwater Blade with Level 25
+                if (Player.GetItemCount 0006B69A > 0)
+                    Player.RemoveItem 0006B69A 1
+                    Player.AddItem 0006B69B 1
+                endif
+            endif
+
+            ; --- Blade of Woe Upgrade Logic ---
+            if (playerLevel >= 5)
+                ; Replace Level 1 Blade of Woe with Level 5
+                if (Player.GetItemCount 000918FF > 0)
+                    Player.RemoveItem 000918FF 1
+                    Player.AddItem 00091900 1
+                endif
+            endif
+            if (playerLevel >= 10)
+                ; Replace Level 5 Blade of Woe with Level 10
+                if (Player.GetItemCount 00091900 > 0)
+                    Player.RemoveItem 00091900 1
+                    Player.AddItem 00091901 1
+                endif
+            endif
+            if (playerLevel >= 15)
+                ; Replace Level 10 Blade of Woe with Level 15
+                if (Player.GetItemCount 00091901 > 0)
+                    Player.RemoveItem 00091901 1
+                    Player.AddItem 00091902 1
+                endif
+            endif
+            if (playerLevel >= 20)
+                ; Replace Level 15 Blade of Woe with Level 20
+                if (Player.GetItemCount 00091902 > 0)
+                    Player.RemoveItem 00091902 1
+                    Player.AddItem 00091903 1
+                endif
+            endif
+            if (playerLevel >= 25)
+                ; Replace Level 20 Blade of Woe with Level 25
+                if (Player.GetItemCount 00091903 > 0)
+                    Player.RemoveItem 00091903 1
+                    Player.AddItem 00091904 1
+                endif
+            endif
+            if (playerLevel >= 30)
+                ; Replace Level 25 Blade of Woe with Level 30
+                if (Player.GetItemCount 00091904 > 0)
+                    Player.RemoveItem 00091904 1
+                    Player.AddItem 00091905 1
+                endif
+            endif
+
+            ; --- Debaser Upgrade Logic ---
+            if (playerLevel >= 5)
+                ; Replace Level 1 Debaser with Level 5
+                if (Player.GetItemCount 0001D0B4 > 0)
+                    Player.RemoveItem 0001D0B4 1
+                    Player.AddItem 0006BD81 1
+                endif
+            endif
+            if (playerLevel >= 10)
+                ; Replace Level 5 Debaser with Level 10
+                if (Player.GetItemCount 0006BD81 > 0)
+                    Player.RemoveItem 0006BD81 1
+                    Player.AddItem 0006BD82 1
+                endif
+            endif
+            if (playerLevel >= 15)
+                ; Replace Level 10 Debaser with Level 15
+                if (Player.GetItemCount 0006BD82 > 0)
+                    Player.RemoveItem 0006BD82 1
+                    Player.AddItem 0006BD83 1
+                endif
+            endif
+            if (playerLevel >= 20)
+                ; Replace Level 15 Debaser with Level 20
+                if (Player.GetItemCount 0006BD83 > 0)
+                    Player.RemoveItem 0006BD83 1
+                    Player.AddItem 0006BD84 1
+                endif
+            endif
+            if (playerLevel >= 25)
+                ; Replace Level 20 Debaser with Level 25
+                if (Player.GetItemCount 0006BD84 > 0)
+                    Player.RemoveItem 0006BD84 1
+                    Player.AddItem 0006BD85 1
+                endif
+            endif
+
+            ; --- Mishaxhi's Cleaver Upgrade Logic ---
+            if (playerLevel >= 10)
+                ; Replace Level 1 Mishaxhi's Cleaver with Level 10
+                if (Player.GetItemCount 00187BC5 > 0)
+                    Player.RemoveItem 00187BC5 1
+                    Player.AddItem 00187BC6 1
+                endif
+            endif
+            if (playerLevel >= 15)
+                ; Replace Level 10 Mishaxhi's Cleaver with Level 15
+                if (Player.GetItemCount 00187BC6 > 0)
+                    Player.RemoveItem 00187BC6 1
+                    Player.AddItem 00187BC7 1
+                endif
+            endif
+            if (playerLevel >= 20)
+                ; Replace Level 15 Mishaxhi's Cleaver with Level 20
+                if (Player.GetItemCount 00187BC7 > 0)
+                    Player.RemoveItem 00187BC7 1
+                    Player.AddItem 00187BC0 1
+                endif
+            endif
+
+            ; --- Northwind Upgrade Logic ---
+            if (playerLevel >= 10)
+                ; Replace Level 1 Northwind with Level 10
+                if (Player.GetItemCount 00187BC4 > 0)
+                    Player.RemoveItem 00187BC4 1
+                    Player.AddItem 00187BC1 1
+                endif
+            endif
+            if (playerLevel >= 15)
+                ; Replace Level 10 Northwind with Level 15
+                if (Player.GetItemCount 00187BC1 > 0)
+                    Player.RemoveItem 00187BC1 1
+                    Player.AddItem 00187BC2 1
+                endif
+            endif
+            if (playerLevel >= 20)
+                ; Replace Level 15 Northwind with Level 20
+                if (Player.GetItemCount 00187BC2 > 0)
+                    Player.RemoveItem 00187BC2 1
+                    Player.AddItem 00187BC3 1
+                endif
+            endif
+
+            ; --- Redwave Upgrade Logic ---
+            if (playerLevel >= 5)
+                ; Replace Level 1 Redwave with Level 5
+                if (Player.GetItemCount 00095A3A > 0)
+                    Player.RemoveItem 00095A3A 1
+                    Player.AddItem 00095A39 1
+                endif
+            endif
+            if (playerLevel >= 10)
+                ; Replace Level 5 Redwave with Level 10
+                if (Player.GetItemCount 00095A39 > 0)
+                    Player.RemoveItem 00095A39 1
+                    Player.AddItem 00095A3B 1
+                endif
+            endif
+            if (playerLevel >= 15)
+                ; Replace Level 10 Redwave with Level 15
+                if (Player.GetItemCount 00095A3B > 0)
+                    Player.RemoveItem 00095A3B 1
+                    Player.AddItem 00095A3C 1
+                endif
+            endif
+            if (playerLevel >= 20)
+                ; Replace Level 15 Redwave with Level 20
+                if (Player.GetItemCount 00095A3C > 0)
+                    Player.RemoveItem 00095A3C 1
+                    Player.AddItem 00095A3D 1
+                endif
+            endif
+            if (playerLevel >= 25)
+                ; Replace Level 20 Redwave with Level 25
+                if (Player.GetItemCount 00095A3D > 0)
+                    Player.RemoveItem 00095A3D 1
+                    Player.AddItem 00095A3E 1
+                endif
+            endif
+            if (playerLevel >= 30)
+                ; Replace Level 25 Redwave with Level 30
+                if (Player.GetItemCount 00095A3E > 0)
+                    Player.RemoveItem 00095A3E 1
+                    Player.AddItem 00095A3F 1
+                endif
+            endif
+		  
+; --- Sufferthorn Upgrade Logic ---
+if (playerLevel >= 5)
+    ; Replace Level 1 Sufferthorn with Level 5
+    if (Player.GetItemCount 000347EB > 0)
+        Player.RemoveItem 000347EB 1
+        Player.AddItem 000347EC 1
+    endif
+endif
+if (playerLevel >= 10)
+    ; Replace Level 5 Sufferthorn with Level 10
+    if (Player.GetItemCount 000347EC > 0)
+        Player.RemoveItem 000347EC 1
+        Player.AddItem 000347ED 1
+    endif
+endif
+if (playerLevel >= 15)
+    ; Replace Level 10 Sufferthorn with Level 15
+    if (Player.GetItemCount 000347ED > 0)
+        Player.RemoveItem 000347ED 1
+        Player.AddItem 000347EE 1
+    endif
+endif
+if (playerLevel >= 20)
+    ; Replace Level 15 Sufferthorn with Level 20
+    if (Player.GetItemCount 000347EE > 0)
+        Player.RemoveItem 000347EE 1
+        Player.AddItem 000347EF 1
+    endif
+endif
+if (playerLevel >= 25)
+    ; Replace Level 20 Sufferthorn with Level 25
+    if (Player.GetItemCount 000347EF > 0)
+        Player.RemoveItem 000347EF 1
+        Player.AddItem 000347F0 1
+    endif
+endif
+if (playerLevel >= 30)
+    ; Replace Level 25 Sufferthorn with Level 30
+    if (Player.GetItemCount 000347F0 > 0)
+        Player.RemoveItem 000347F0 1
+        Player.AddItem 000347F1 1
+    endif
+endif
+
+; --- Thornblade Upgrade Logic ---
+if (playerLevel >= 5)
+    if (Player.GetItemCount 000335AE > 0)
+        Player.RemoveItem 000335AE 1
+        Player.AddItem 0006B661 1
+    endif
+endif
+if (playerLevel >= 10)
+    if (Player.GetItemCount 0006B661 > 0)
+        Player.RemoveItem 0006B661 1
+        Player.AddItem 0006B662 1
+    endif
+endif
+if (playerLevel >= 15)
+    if (Player.GetItemCount 0006B662 > 0)
+        Player.RemoveItem 0006B662 1
+        Player.AddItem 0006B663 1
+    endif
+endif
+if (playerLevel >= 20)
+    if (Player.GetItemCount 0006B663 > 0)
+        Player.RemoveItem 0006B663 1
+        Player.AddItem 0006B664 1
+    endif
+endif
+if (playerLevel >= 25)
+    if (Player.GetItemCount 0006B664 > 0)
+        Player.RemoveItem 0006B664 1
+        Player.AddItem 0006B665 1
+    endif
+endif
+
+; --- Witsplinter Upgrade Logic ---
+if (playerLevel >= 5)
+    if (Player.GetItemCount 0006B1B9 > 0)
+        Player.RemoveItem 0006B1B9 1
+        Player.AddItem 0006B1C0 1
+    endif
+endif
+if (playerLevel >= 10)
+    if (Player.GetItemCount 0006B1C0 > 0)
+        Player.RemoveItem 0006B1C0 1
+        Player.AddItem 0006B1C1 1
+    endif
+endif
+if (playerLevel >= 15)
+    if (Player.GetItemCount 0006B1C1 > 0)
+        Player.RemoveItem 0006B1C1 1
+        Player.AddItem 0006B1C2 1
+    endif
+endif
+if (playerLevel >= 20)
+    if (Player.GetItemCount 0006B1C2 > 0)
+        Player.RemoveItem 0006B1C2 1
+        Player.AddItem 0006B1C3 1
+    endif
+endif
+if (playerLevel >= 25)
+    if (Player.GetItemCount 0006B1C3 > 0)
+        Player.RemoveItem 0006B1C3 1
+        Player.AddItem 0006B1C4 1
+    endif
+endif
+
+; --- Burz's Glass Mace Upgrade Logic ---
+if (playerLevel >= 10)
+    if (Player.GetItemCount 000C760E > 0)
+        Player.RemoveItem 000C760E 1
+        Player.AddItem 000C760F 1
+    endif
+endif
+if (playerLevel >= 15)
+    if (Player.GetItemCount 000C760F > 0)
+        Player.RemoveItem 000C760F 1
+        Player.AddItem 000C7610 1
+    endif
+endif
+
+; --- Hatreds Heart Upgrade Logic ---
+if (playerLevel >= 5)
+    if (Player.GetItemCount 00014836 > 0)
+        Player.RemoveItem 00014836 1
+        Player.AddItem 00014C6C 1
+    endif
+endif
+if (playerLevel >= 8)
+    if (Player.GetItemCount 00014C6C > 0)
+        Player.RemoveItem 00014C6C 1
+        Player.AddItem 00014C6D 1
+    endif
+endif
+if (playerLevel >= 11)
+    if (Player.GetItemCount 00014C6D > 0)
+        Player.RemoveItem 00014C6D 1
+        Player.AddItem 00014C6E 1
+    endif
+endif
+if (playerLevel >= 15)
+    if (Player.GetItemCount 00014C6E > 0)
+        Player.RemoveItem 00014C6E 1
+        Player.AddItem 00014C6F 1
+    endif
+endif
+if (playerLevel >= 19)
+    if (Player.GetItemCount 00014C6F > 0)
+        Player.RemoveItem 00014C6F 1
+        Player.AddItem 00014C70 1
+    endif
+endif
+
+; --- Rockshatter Upgrade Logic ---
+if (playerLevel >= 5)
+    if (Player.GetItemCount 0000CF1A > 0)
+        Player.RemoveItem 0000CF1A 1
+        Player.AddItem 0000CF1B 1
+    endif
+endif
+if (playerLevel >= 10)
+    if (Player.GetItemCount 0000CF1B > 0)
+        Player.RemoveItem 0000CF1B 1
+        Player.AddItem 0000CF1C 1
+    endif
+endif
+if (playerLevel >= 15)
+    if (Player.GetItemCount 0000CF1C > 0)
+        Player.RemoveItem 0000CF1C 1
+        Player.AddItem 0000CF1D 1
+    endif
+endif
+if (playerLevel >= 20)
+    if (Player.GetItemCount 0000CF1D > 0)
+        Player.RemoveItem 0000CF1D 1
+        Player.AddItem 0000CF1E 1
+    endif
+endif
+if (playerLevel >= 25)
+    if (Player.GetItemCount 0000CF1E > 0)
+        Player.RemoveItem 0000CF1E 1
+        Player.AddItem 0000CF1F 1
+    endif
+endif
+
+; --- Hatreds Soul Upgrade Logic ---
+if (playerLevel >= 5)
+    if (Player.GetItemCount 00014D65 > 0)
+        Player.RemoveItem 00014D65 1
+        Player.AddItem 00014D66 1
+    endif
+endif
+if (playerLevel >= 8)
+    if (Player.GetItemCount 00014D66 > 0)
+        Player.RemoveItem 00014D66 1
+        Player.AddItem 00014D67 1
+    endif
+endif
+if (playerLevel >= 11)
+    if (Player.GetItemCount 00014D67 > 0)
+        Player.RemoveItem 00014D67 1
+        Player.AddItem 00014D68 1
+    endif
+endif
+if (playerLevel >= 15)
+    if (Player.GetItemCount 00014D68 > 0)
+        Player.RemoveItem 00014D68 1
+        Player.AddItem 00014D69 1
+    endif
+endif
+if (playerLevel >= 19)
+    if (Player.GetItemCount 00014D69 > 0)
+        Player.RemoveItem 00014D69 1
+        Player.AddItem 00014D6A 1
+    endif
+endif
+
+; --- Shadowhunt Upgrade Logic ---
+if (playerLevel >= 5)
+    set count to Player.GetItemCount 00034897
+    if (count > 0)
+        Player.RemoveItem 00034897 count
+        Player.AddItem 00034898 count
+    endif
+endif
+if (playerLevel >= 10)
+    set count to Player.GetItemCount 00034898
+    if (count > 0)
+        Player.RemoveItem 00034898 count
+        Player.AddItem 00034899 count
+    endif
+endif
+if (playerLevel >= 15)
+    set count to Player.GetItemCount 00034899
+    if (count > 0)
+        Player.RemoveItem 00034899 count
+        Player.AddItem 0003489A count
+    endif
+endif
+if (playerLevel >= 20)
+    set count to Player.GetItemCount 0003489A
+    if (count > 0)
+        Player.RemoveItem 0003489A count
+        Player.AddItem 0003489B count
+    endif
+endif
+if (playerLevel >= 25)
+    set count to Player.GetItemCount 0003489B
+    if (count > 0)
+        Player.RemoveItem 0003489B count
+        Player.AddItem 0003489C count
+    endif
+endif
+if (playerLevel >= 30)
+    set count to Player.GetItemCount 0003489C
+    if (count > 0)
+        Player.RemoveItem 0003489C count
+        Player.AddItem 0003489D count
+    endif
+endif
+
+; --- Escutcheon of Chorrol Upgrade Logic ---
+if (playerLevel >= 5)
+    set count to Player.GetItemCount 0008B07D
+    if (count > 0)
+        Player.RemoveItem 0008B07D count
+        Player.AddItem 0006BDFA count
+    endif
+endif
+if (playerLevel >= 10)
+    set count to Player.GetItemCount 0006BDFA
+    if (count > 0)
+        Player.RemoveItem 0006BDFA count
+        Player.AddItem 0006BDFB count
+    endif
+endif
+if (playerLevel >= 15)
+    set count to Player.GetItemCount 0006BDFB
+    if (count > 0)
+        Player.RemoveItem 0006BDFB count
+        Player.AddItem 0006BDFC count
+    endif
+endif
+if (playerLevel >= 20)
+    set count to Player.GetItemCount 0006BDFC
+    if (count > 0)
+        Player.RemoveItem 0006BDFC count
+        Player.AddItem 0006BDFD count
+    endif
+endif
+if (playerLevel >= 25)
+    set count to Player.GetItemCount 0006BDFD
+    if (count > 0)
+        Player.RemoveItem 0006BDFD count
+        Player.AddItem 0006BDFE count
+    endif
+endif
+
+; --- Valdemar's Shield Upgrade Logic ---
+if (playerLevel >= 10)
+    set count to Player.GetItemCount 00187BB9
+    if (count > 0)
+        Player.RemoveItem 00187BB9 count
+        Player.AddItem 00187BBA count
+    endif
+endif
+if (playerLevel >= 15)
+    set count to Player.GetItemCount 00187BBA
+    if (count > 0)
+        Player.RemoveItem 00187BBA count
+        Player.AddItem 00187BBB count
+    endif
+endif
+if (playerLevel >= 20)
+    set count to Player.GetItemCount 00187BBB
+    if (count > 0)
+        Player.RemoveItem 00187BBB count
+        Player.AddItem 00187BBC count
+    endif
+endif
+
+; Mankar Camoran's Staff
+if (playerLevel >= 5)
+	if (Player.GetItemCount 000477FC > 0)
+		set count to Player.GetItemCount 000477FC
+		Player.RemoveItem 000477FC count
+		Player.AddItem 000BE320 count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 000BE320 > 0)
+		set count to Player.GetItemCount 000BE320
+		Player.RemoveItem 000BE320 count
+		Player.AddItem 000BE321 count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 000BE321 > 0)
+		set count to Player.GetItemCount 000BE321
+		Player.RemoveItem 000BE321 count
+		Player.AddItem 000BE322 count
+	endif
+endif
+
+; Staff of Indarys
+if (playerLevel >= 5)
+	if (Player.GetItemCount 000335AF > 0)
+		set count to Player.GetItemCount 000335AF
+		Player.RemoveItem 000335AF count
+		Player.AddItem 0006B66D count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 0006B66D > 0)
+		set count to Player.GetItemCount 0006B66D
+		Player.RemoveItem 0006B66D count
+		Player.AddItem 0006B66E count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 0006B66E > 0)
+		set count to Player.GetItemCount 0006B66E
+		Player.RemoveItem 0006B66E count
+		Player.AddItem 0006B66F count
+	endif
+endif
+if (playerLevel >= 20)
+	if (Player.GetItemCount 0006B66F > 0)
+		set count to Player.GetItemCount 0006B66F
+		Player.RemoveItem 0006B66F count
+		Player.AddItem 0006B670 count
+	endif
+endif
+if (playerLevel >= 25)
+	if (Player.GetItemCount 0006B670 > 0)
+		set count to Player.GetItemCount 0006B670
+		Player.RemoveItem 0006B670 count
+		Player.AddItem 0006B671 count
+	endif
+endif
+
+; Staff of Nenalata
+if (playerLevel >= 5)
+	if (Player.GetItemCount 00058EEC > 0)
+		set count to Player.GetItemCount 00058EEC
+		Player.RemoveItem 00058EEC count
+		Player.AddItem 000BE5DD count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 000BE5DD > 0)
+		set count to Player.GetItemCount 000BE5DD
+		Player.RemoveItem 000BE5DD count
+		Player.AddItem 000BE5DE count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 000BE5DE > 0)
+		set count to Player.GetItemCount 000BE5DE
+		Player.RemoveItem 000BE5DE count
+		Player.AddItem 000BE5DF count
+	endif
+endif
+if (playerLevel >= 20)
+	if (Player.GetItemCount 000BE5DF > 0)
+		set count to Player.GetItemCount 000BE5DF
+		Player.RemoveItem 000BE5DF count
+		Player.AddItem 000BE5E0 count
+	endif
+endif
+if (playerLevel >= 25)
+	if (Player.GetItemCount 000BE5E0 > 0)
+		set count to Player.GetItemCount 000BE5E0
+		Player.RemoveItem 000BE5E0 count
+		Player.AddItem 000BE5DC count
+	endif
+endif
+
+; Mage's Staff - Fire
+if (playerLevel >= 5)
+	if (Player.GetItemCount 000E9448 > 0)
+		set count to Player.GetItemCount 000E9448
+		Player.RemoveItem 000E9448 count
+		Player.AddItem 000E9449 count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 000E9449 > 0)
+		set count to Player.GetItemCount 000E9449
+		Player.RemoveItem 000E9449 count
+		Player.AddItem 000E944A count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 000E944A > 0)
+		set count to Player.GetItemCount 000E944A
+		Player.RemoveItem 000E944A count
+		Player.AddItem 000E944B count
+	endif
+endif
+
+; Mage's Staff - Frost
+if (playerLevel >= 5)
+	if (Player.GetItemCount 0001FE0F > 0)
+		set count to Player.GetItemCount 0001FE0F
+		Player.RemoveItem 0001FE0F count
+		Player.AddItem 000E944C count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 000E944C > 0)
+		set count to Player.GetItemCount 000E944C
+		Player.RemoveItem 000E944C count
+		Player.AddItem 000E944D count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 000E944D > 0)
+		set count to Player.GetItemCount 000E944D
+		Player.RemoveItem 000E944D count
+		Player.AddItem 000E944E count
+	endif
+endif
+
+; Mage's Staff - Shock
+if (playerLevel >= 5)
+	if (Player.GetItemCount 0001FE10 > 0)
+		set count to Player.GetItemCount 0001FE10
+		Player.RemoveItem 0001FE10 count
+		Player.AddItem 000E9452 count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 000E9452 > 0)
+		set count to Player.GetItemCount 000E9452
+		Player.RemoveItem 000E9452 count
+		Player.AddItem 000E9453 count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 000E9453 > 0)
+		set count to Player.GetItemCount 000E9453
+		Player.RemoveItem 000E9453 count
+		Player.AddItem 000E9454 count
+	endif
+endif
+
+; Mage's Staff - Charm
+if (playerLevel >= 5)
+	if (Player.GetItemCount 0001FE11 > 0)
+		set count to Player.GetItemCount 0001FE11
+		Player.RemoveItem 0001FE11 count
+		Player.AddItem 000E9442 count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 000E9442 > 0)
+		set count to Player.GetItemCount 000E9442
+		Player.RemoveItem 000E9442 count
+		Player.AddItem 000E9443 count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 000E9443 > 0)
+		set count to Player.GetItemCount 000E9443
+		Player.RemoveItem 000E9443 count
+		Player.AddItem 000E9444 count
+	endif
+endif
+
+; Mage's Staff - Paralysis
+if (playerLevel >= 5)
+	if (Player.GetItemCount 000E944F > 0)
+		set count to Player.GetItemCount 000E944F
+		Player.RemoveItem 000E944F count
+		Player.AddItem 0001FE12 count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 0001FE12 > 0)
+		set count to Player.GetItemCount 0001FE12
+		Player.RemoveItem 0001FE12 count
+		Player.AddItem 000E9450 count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 000E9450 > 0)
+		set count to Player.GetItemCount 000E9450
+		Player.RemoveItem 000E9450 count
+		Player.AddItem 000E9451 count
+	endif
+endif
+
+; Mage's Staff - Silence
+if (playerLevel >= 5)
+	if (Player.GetItemCount 0001FE13 > 0)
+		set count to Player.GetItemCount 0001FE13
+		Player.RemoveItem 0001FE13 count
+		Player.AddItem 000E9455 count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 000E9455 > 0)
+		set count to Player.GetItemCount 000E9455
+		Player.RemoveItem 000E9455 count
+		Player.AddItem 000E9456 count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 000E9456 > 0)
+		set count to Player.GetItemCount 000E9456
+		Player.RemoveItem 000E9456 count
+		Player.AddItem 000E9457 count
+	endif
+endif
+
+; Mage's Staff - Dispel
+if (playerLevel >= 5)
+	if (Player.GetItemCount 0001FE16 > 0)
+		set count to Player.GetItemCount 0001FE16
+		Player.RemoveItem 0001FE16 count
+		Player.AddItem 000E9445 count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 000E9445 > 0)
+		set count to Player.GetItemCount 000E9445
+		Player.RemoveItem 000E9445 count
+		Player.AddItem 000E9446 count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 000E9446 > 0)
+		set count to Player.GetItemCount 000E9446
+		Player.RemoveItem 000E9446 count
+		Player.AddItem 000E9447 count
+	endif
+endif
+
+; Mage's Staff - Soul Trap
+if (playerLevel >= 5)
+	if (Player.GetItemCount 0001FE14 > 0)
+		set count to Player.GetItemCount 0001FE14
+		Player.RemoveItem 0001FE14 count
+		Player.AddItem 000E9458 count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 000E9458 > 0)
+		set count to Player.GetItemCount 000E9458
+		Player.RemoveItem 000E9458 count
+		Player.AddItem 000E9459 count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 000E9459 > 0)
+		set count to Player.GetItemCount 000E9459
+		Player.RemoveItem 000E9459 count
+		Player.AddItem 000E945A count
+	endif
+endif
+
+; Mage's Staff - Telekinesis
+if (playerLevel >= 5)
+	if (Player.GetItemCount 0001FE15 > 0)
+		set count to Player.GetItemCount 0001FE15
+		Player.RemoveItem 0001FE15 count
+		Player.AddItem 000E945B count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 000E945B > 0)
+		set count to Player.GetItemCount 000E945B
+		Player.RemoveItem 000E945B count
+		Player.AddItem 000E945C count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 000E945C > 0)
+		set count to Player.GetItemCount 000E945C
+		Player.RemoveItem 000E945C count
+		Player.AddItem 000E945D count
+	endif
+endif
+
+; Dawnfang
+if (playerLevel >= 5)
+	if (Player.GetItemCount 00079058 > 0)
+		set count to Player.GetItemCount 00079058
+		Player.RemoveItem 00079058 count
+		Player.AddItem 00079061 count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 00079061 > 0)
+		set count to Player.GetItemCount 00079061
+		Player.RemoveItem 00079061 count
+		Player.AddItem 00079062 count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 00079062 > 0)
+		set count to Player.GetItemCount 00079062
+		Player.RemoveItem 00079062 count
+		Player.AddItem 00079063 count
+	endif
+endif
+if (playerLevel >= 20)
+	if (Player.GetItemCount 00079063 > 0)
+		set count to Player.GetItemCount 00079063
+		Player.RemoveItem 00079063 count
+		Player.AddItem 00079064 count
+	endif
+endif
+if (playerLevel >= 25)
+	if (Player.GetItemCount 00079064 > 0)
+		set count to Player.GetItemCount 00079064
+		Player.RemoveItem 00079064 count
+		Player.AddItem 00079065 count
+	endif
+endif
+if (playerLevel >= 30)
+	if (Player.GetItemCount 00079065 > 0)
+		set count to Player.GetItemCount 00079065
+		Player.RemoveItem 00079065 count
+		Player.AddItem 00079066 count
+	endif
+endif
+
+; Duskfang
+if (playerLevel >= 5)
+	if (Player.GetItemCount 0007905F > 0)
+		set count to Player.GetItemCount 0007905F
+		Player.RemoveItem 0007905F count
+		Player.AddItem 00079061 count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 00079061 > 0)
+		set count to Player.GetItemCount 00079061
+		Player.RemoveItem 00079061 count
+		Player.AddItem 00079062 count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 00079062 > 0)
+		set count to Player.GetItemCount 00079062
+		Player.RemoveItem 00079062 count
+		Player.AddItem 00079063 count
+	endif
+endif
+if (playerLevel >= 20)
+	if (Player.GetItemCount 00079063 > 0)
+		set count to Player.GetItemCount 00079063
+		Player.RemoveItem 00079063 count
+		Player.AddItem 00079064 count
+	endif
+endif
+if (playerLevel >= 25)
+	if (Player.GetItemCount 00079064 > 0)
+		set count to Player.GetItemCount 00079064
+		Player.RemoveItem 00079064 count
+		Player.AddItem 00079065 count
+	endif
+endif
+if (playerLevel >= 30)
+	if (Player.GetItemCount 00079065 > 0)
+		set count to Player.GetItemCount 00079065
+		Player.RemoveItem 00079065 count
+		Player.AddItem 00079066 count
+	endif
+endif
+
+; Dawnfang Superior
+if (playerLevel >= 5)
+	if (Player.GetItemCount 0007D436 > 0)
+		set count to Player.GetItemCount 0007D436
+		Player.RemoveItem 0007D436 count
+		Player.AddItem 0007D437 count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 0007D437 > 0)
+		set count to Player.GetItemCount 0007D437
+		Player.RemoveItem 0007D437 count
+		Player.AddItem 0007D438 count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 0007D438 > 0)
+		set count to Player.GetItemCount 0007D438
+		Player.RemoveItem 0007D438 count
+		Player.AddItem 0007D439 count
+	endif
+endif
+if (playerLevel >= 20)
+	if (Player.GetItemCount 0007D439 > 0)
+		set count to Player.GetItemCount 0007D439
+		Player.RemoveItem 0007D439 count
+		Player.AddItem 0007D43A count
+	endif
+endif
+if (playerLevel >= 25)
+	if (Player.GetItemCount 0007D43A > 0)
+		set count to Player.GetItemCount 0007D43A
+		Player.RemoveItem 0007D43A count
+		Player.AddItem 0007D43B count
+	endif
+endif
+if (playerLevel >= 30)
+	if (Player.GetItemCount 0007D43B > 0)
+		set count to Player.GetItemCount 0007D43B
+		Player.RemoveItem 0007D43B count
+		Player.AddItem 0007D43C count
+	endif
+endif
+
+; Duskfang Superior
+if (playerLevel >= 5)
+	if (Player.GetItemCount 0007D43D > 0)
+		set count to Player.GetItemCount 0007D43D
+		Player.RemoveItem 0007D43D count
+		Player.AddItem 0007D43E count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 0007D43E > 0)
+		set count to Player.GetItemCount 0007D43E
+		Player.RemoveItem 0007D43E count
+		Player.AddItem 0007D43F count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 0007D43F > 0)
+		set count to Player.GetItemCount 0007D43F
+		Player.RemoveItem 0007D43F count
+		Player.AddItem 0007D440 count
+	endif
+endif
+if (playerLevel >= 20)
+	if (Player.GetItemCount 0007D440 > 0)
+		set count to Player.GetItemCount 0007D440
+		Player.RemoveItem 0007D440 count
+		Player.AddItem 0007D441 count
+	endif
+endif
+if (playerLevel >= 25)
+	if (Player.GetItemCount 0007D441 > 0)
+		set count to Player.GetItemCount 0007D441
+		Player.RemoveItem 0007D441 count
+		Player.AddItem 0007D442 count
+	endif
+endif
+if (playerLevel >= 30)
+	if (Player.GetItemCount 0007D442 > 0)
+		set count to Player.GetItemCount 0007D442
+		Player.RemoveItem 0007D442 count
+		Player.AddItem 0007D443 count
+	endif
+endif
+
+; Nerveshatter
+if (playerLevel >= 5)
+	if (Player.GetItemCount 000171F7 > 0)
+		set count to Player.GetItemCount 000171F7
+		Player.RemoveItem 000171F7 count
+		Player.AddItem 0007E098 count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 0007E098 > 0)
+		set count to Player.GetItemCount 0007E098
+		Player.RemoveItem 0007E098 count
+		Player.AddItem 0007E099 count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 0007E099 > 0)
+		set count to Player.GetItemCount 0007E099
+		Player.RemoveItem 0007E099 count
+		Player.AddItem 0007E09A count
+	endif
+endif
+if (playerLevel >= 20)
+	if (Player.GetItemCount 0007E09A > 0)
+		set count to Player.GetItemCount 0007E09A
+		Player.RemoveItem 0007E09A count
+		Player.AddItem 0007E09B count
+	endif
+endif
+if (playerLevel >= 25)
+	if (Player.GetItemCount 0007E09B > 0)
+		set count to Player.GetItemCount 0007E09B
+		Player.RemoveItem 0007E09B count
+		Player.AddItem 0007E09C count
+	endif
+endif
+if (playerLevel >= 30)
+	if (Player.GetItemCount 0007E09C > 0)
+		set count to Player.GetItemCount 0007E09C
+		Player.RemoveItem 0007E09C count
+		Player.AddItem 0007E09D count
+	endif
+endif
+
+; Shadowrend Claymore
+if (playerLevel >= 5)
+	if (Player.GetItemCount 0008078A > 0)
+		set count to Player.GetItemCount 0008078A
+		Player.RemoveItem 0008078A count
+		Player.AddItem 0008078B count
+	endif
+endif
+if (playerLevel >= 10)
+	if (Player.GetItemCount 0008078B > 0)
+		set count to Player.GetItemCount 0008078B
+		Player.RemoveItem 0008078B count
+		Player.AddItem 0008078C count
+	endif
+endif
+if (playerLevel >= 15)
+	if (Player.GetItemCount 0008078C > 0)
+		set count to Player.GetItemCount 0008078C
+		Player.RemoveItem 0008078C count
+		Player.AddItem 0008078D count
+	endif
+endif
+if (playerLevel >= 20)
+	if (Player.GetItemCount 0008078D > 0)
+		set count to Player.GetItemCount 0008078D
+		Player.RemoveItem 0008078D count
+		Player.AddItem 0008078E count
+	endif
+endif
+if (playerLevel >= 25)
+	if (Player.GetItemCount 0008078E > 0)
+		set count to Player.GetItemCount 0008078E
+		Player.RemoveItem 0008078E count
+		Player.AddItem 0009535F count
+	endif
+endif
+if (playerLevel >= 30)
+	if (Player.GetItemCount 0009535F > 0)
+		set count to Player.GetItemCount 0009535F
+		Player.RemoveItem 0009535F count
+		Player.AddItem 00095360 count
+	endif
+endif
+            set lastCheckedLevel to playerLevel
+        endif
+    endif
+End
