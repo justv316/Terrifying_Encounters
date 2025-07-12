@@ -5,6 +5,7 @@
 
 | __Editor ID__ | Name | FormID | 
 |----|----|----|
+| | Armor | |
 | DaedricBoots | Daedric Boots | 00036359 |
 | DaedricCuirass | Daedric Cuirass | 0003635B |
 | DaedricGauntlets | Daedric Gauntlets | 00036358 |
@@ -107,6 +108,265 @@
 | SEMadnessHelmet4 | Fine Madness Helmet | 0001F453 |
 | SEMadnessHelmet5 | Grand Madness Helmet | 0001F454 |
 | SEMadnessHelmet6 | Perfect Madness Helmet | 0001F455 |
+| | Weapons | |
+| DAClavicusUmbraSword | Umbra | 00026B22 |
+| DAEbonyBlade | Ebony Blade | 00027109 |
+| DAGoldbrand | Goldbrand | 00027105 |
+| DAMolagBalMace | Mace of Molag Bal | 00027117 |
+| MS04Witsplinter01 | Witsplinter | 0006B1B9 |
+| MS04Witsplinter05 | Witsplinter | 0006B1C0 |
+| MS04Witsplinter10 | Witsplinter | 0006B1C1 |
+| MS04Witsplinter15 | Witsplinter | 0006B1C2 |
+| MS04Witsplinter20 | Witsplinter | 0006B1C3 |
+| MS04Witsplinter25 | Witsplinter | 0006B1C4 |
+| MS13Thornblade01 | Thornblade | 000335AE |
+| MS13Thornblade05 | Thornblade | 0006B661 |
+| MS13Thornblade10 | Thornblade | 0006B662 |
+| MS13Thornblade15 | Thornblade | 0006B663 |
+| MS13Thornblade20 | Thornblade | 0006B664 |
+| MS13Thornblade25 | Thornblade | 0006B665 |
+| MS18Chillrend01 | Chillrend | 00068BFC |
+| MS18Chillrend05 | Chillrend | 00068BFD |
+| MS18Chillrend10 | Chillrend | 00068BFE |
+| MS18Chillrend15 | Chillrend | 00068BFF |
+| MS18Chillrend20 | Chillrend | 00068C00 |
+| MS18Chillrend25 | Chillrend | 00068C01 |
+| MS29AgarmirsSword01 | Debaser | 0001D0B4 |
+| MS29AgarmirsSword05 | Debaser | 0006BD81 |
+| MS29AgarmirsSword10 | Debaser | 0006BD82 |
+| MS29AgarmirsSword15 | Debaser | 0006BD83 |
+| MS29AgarmirsSword20 | Debaser | 0006BD84 |
+| MS29AgarmirsSword25 | Debaser | 0006BD85 |
+| MS31BlackwaterBlade01 | Blackwater Blade | 0000C201 |
+| MS31BlackwaterBlade05 | Blackwater Blade | 0006B697 |
+| MS31BlackwaterBlade10 | Blackwater Blade | 0006B698 |
+| MS31BlackwaterBlade15 | Blackwater Blade | 0006B699 |
+| MS31BlackwaterBlade20 | Blackwater Blade | 0006B69A |
+| MS31BlackwaterBlade25 | Blackwater Blade | 0006B69B |
+| SE03Dawnfang01 | Dawnfang | 00079058 |
+| SE03Dawnfang01A | Dawnfang Superior | 0007D436 |
+| SE03Dawnfang05 | Dawnfang | 00079061 |
+| SE03Dawnfang05A | Dawnfang Superior | 0007D437 |
+| SE03Dawnfang10 | Dawnfang | 00079062 |
+| SE03Dawnfang10A | Dawnfang Superior | 0007D438 |
+| SE03Dawnfang15 | Dawnfang | 00079063 |
+| SE03Dawnfang15A | Dawnfang Superior | 0007D439 |
+| SE03Dawnfang20 | Dawnfang | 00079064 |
+| SE03Dawnfang20A | Dawnfang Superior | 0007D43A |
+| SE03Dawnfang25 | Dawnfang | 00079065 |
+| SE03Dawnfang25A | Dawnfang Superior | 0007D43B |
+| SE03Dawnfang30 | Dawnfang | 00079066 |
+| SE03Dawnfang30A | Dawnfang Superior | 0007D43C |
+| SE03Duskfang01 | Duskfang | 0007905F |
+| SE03Duskfang01A | Duskfang Superior | 0007D43D |
+| SE03Duskfang05 | Duskfang | 00079059 |
+| SE03Duskfang05A | Duskfang Superior | 0007D43E |
+| SE03Duskfang10 | Duskfang | 0007905A |
+| SE03Duskfang10A | Duskfang Superior | 0007D43F |
+| SE03Duskfang15 | Duskfang | 0007905B |
+| SE03Duskfang15A | Duskfang Superior | 0007D440 |
+| SE03Duskfang20 | Duskfang | 0007905C |
+| SE03Duskfang20A | Duskfang Superior | 0007D441 |
+| SE03Duskfang25 | Duskfang | 0007905D |
+| SE03Duskfang25A | Duskfang Superior | 0007D442 |
+| SE03Duskfang30 | Duskfang | 0007905E |
+| SE03Duskfang30A | Duskfang Superior | 0007D443 |
+| SE11ShadowAxe01 | Shadowrend | 0008078F |
+| SE11ShadowAxe05 | Shadowrend | 00080790 |
+| SE11ShadowAxe10 | Shadowrend | 00080791 |
+| SE11ShadowAxe15 | Shadowrend | 00080792 |
+| SE11ShadowAxe20 | Shadowrend | 00080793 |
+| SE11ShadowAxe25 | Shadowrend | 0009535D |
+| SE11ShadowAxe30 | Shadowrend | 0009535E |
+| SE11ShadowBlade01 | Shadowrend | 0008078A |
+| SE11ShadowBlade05 | Shadowrend | 0008078B |
+| SE11ShadowBlade10 | Shadowrend | 0008078C |
+| SE11ShadowBlade15 | Shadowrend | 0008078D |
+| SE11ShadowBlade20 | Shadowrend | 0008078E |
+| SE11ShadowBlade25 | Shadowrend | 0009535F |
+| SE11ShadowBlade30 | Shadowrend | 00095360 |
+| SEAmberBow1 | Amber Bow | 00016BF7 |
+| SEAmberBow2 | Fine Amber Bow | 00016BF8 |
+| SEAmberBow3 | Very Fine Amber Bow | 00016BF9 |
+| SEAmberBow4 | Grand Amber Bow | 00016BFA |
+| SEAmberBow5 | Perfect Amber Bow | 00016BFB |
+| SEAmberBowA | Impure Amber Bow | 00091D69 |
+| SEAmberBowB | Unpolished Amber Bow | 00091D9C |
+| SEAmberBowC | Lesser Amber Bow | 00091DA5 |
+| SEAmberHammer1 | Amber Hammer | 00016BFF |
+| SEAmberHammer2 | Fine Amber Hammer | 00016C00 |
+| SEAmberHammer3 | Very Fine Amber Hammer | 00016C01 |
+| SEAmberHammer4 | Grand Amber Hammer | 00016C02 |
+| SEAmberHammer5 | Perfect Amber Hammer | 00016C03 |
+| SEAmberHammerA | Impure Amber Hammer | 00091D6D |
+| SEAmberHammerB | Unpolished Amber Hammer | 00091DA2 |
+| SEAmberHammerC | Lesser Amber Hammer | 00091DBA |
+| SEAmberMace1 | Amber Mace | 00016C07 |
+| SEAmberMace2 | Fine Amber Mace | 00016C08 |
+| SEAmberMace3 | Very Fine Amber Mace | 00016C09 |
+| SEAmberMace4 | Grand Amber Mace | 00016C0A |
+| SEAmberMace5 | Perfect Amber Mace | 00016C0B |
+| SEAmberMaceA | Impure Amber Mace | 00091D6C |
+| SEAmberMaceB | Unpolished Amber Mace | 00091D9F |
+| SEAmberMaceC | Lesser Amber Mace | 00091DB2 |
+| SEAmberSword1 | Amber Sword | 00016C0F |
+| SEAmberSword2 | Fine Amber Sword | 00016C10 |
+| SEAmberSword3 | Very Fine Amber Sword | 00016C11 |
+| SEAmberSword4 | Grand Amber Sword | 00016C12 |
+| SEAmberSword5 | Perfect Amber Sword | 00016C13 |
+| SEAmberSwordA | Impure Amber Sword | 00091D6A |
+| SEAmberSwordB | Unpolished Dull Amber Sword | 00091D9E |
+| SEAmberSwordC | Lesser Amber Sword | 00091DB1 |
+| SEDarkSeducer1Shortsword | Dark Shortsword | 0001A136 |
+| SEDarkSeducer2Longsword | Dark Longsword | 0001A138 |
+| SEDarkSeducer3Waraxe | Dark Waraxe | 0001A13A |
+| SEDarkSeducer4Mace | Dark Mace | 0001A139 |
+| SEDarkSeducerBow | Dark Bow | 0001A137 |
+| SEDarkSeducerBowFrail | Frail Dark Bow | 00077C28 |
+| SEGoldenSaint1Waraxe | Golden Waraxe | 00017D32 |
+| SEGoldenSaint2Mace | Golden Mace | 00017D31 |
+| SEGoldenSaint3Shortsword | Golden Shortsword | 00017D30 |
+| SEGoldenSaint4Longsword | Golden Longsword | 00017D2F |
+| SEMadnessAxe1 | Madness Axe | 0001F406 |
+| SEMadnessAxe2 | Fine Madness Axe | 0001F407 |
+| SEMadnessAxe3 | Very Fine Madness Axe | 0001F408 |
+| SEMadnessAxe4 | Grand Madness Axe | 0001F409 |
+| SEMadnessAxe5 | Perfect Madness Axe | 0001F40A |
+| SEMadnessAxeA | Impure Madness Axe | 00091DCF |
+| SEMadnessAxeB | Unpolished Madness Axe | 00091FBE |
+| SEMadnessAxeC | Lesser Madness Axe | 00091FDD |
+| SEMadnessBow1 | Madness Bow | 0001B6F7 |
+| SEMadnessBow2 | Fine Madness Bow | 0001F40E |
+| SEMadnessBow3 | Very Fine Madness Bow | 0001F40F |
+| SEMadnessBow4 | Grand Madness Bow | 0001F410 |
+| SEMadnessBow5 | Perfect Madness Bow | 0001F411 |
+| SEMadnessBowA | Impure Madness Bow | 00091DCB |
+| SEMadnessBowB | Unpolished Madness Bow | 00091DD2 |
+| SEMadnessBowC | Lesser Madness Bow | 00091FC5 |
+| SEMadnessClaymore1 | Madness Claymore | 0001F3F6 |
+| SEMadnessClaymore2 | Fine Madness Claymore | 0001F3F7 |
+| SEMadnessClaymore3 | Very Fine Mad~ness Claymore | 0001F3F8 |
+| SEMadnessClaymore4 | Grand Mad~ness Claymore | 0001F3F9 |
+| SEMadnessClaymore5 | Perfect Madness Claymore | 0001F3FA |
+| SEMadnessClaymoreA | Impure Madness Claymore | 00091DD1 |
+| SEMadnessClaymoreB | Unpolished Mad~ness Claymore | 00091FBF |
+| SEMadnessClaymoreC | Lesser Madness Claymore | 00092019 |
+| SEMadnessSword1 | Madness Longsword | 0001F3FE |
+| SEMadnessSword2 | Fine Madness Longsword | 0001F3FF |
+| SEMadnessSword3 | Very Fine Mad~ness Longsword | 0001F400 |
+| SEMadnessSword4 | Grand Mad~ness Longsword | 0001F401 |
+| SEMadnessSword5 | Perfect Madness Longsword | 0001F402 |
+| SEMadnessSwordA | Impure Madness Longsword | 00091DCD |
+| SEMadnessSwordB | Unpolished Mad~ness Longsword | 00091FBD |
+| SEMadnessSwordC | Lesser Madness Longsword | 00091FC6 |
+| SEWeapDaedricBattleAxeDurable | Durable Daedric Battle Axe | 00045E19 |
+| SEWeapDaedricBowDurable | Durable Daedric Bow | 00045E1A |
+| SEWeapDaedricClaymoreDurable | Durable Daedric Claymore | 00045E1B |
+| SEWeapDaedricDaggerDurable | Durable Daedric Dagger | 00045E1C |
+| SEWeapDaedricLongswordDurable | Durable Daedric Longsword | 00045E1D |
+| SEWeapDaedricMaceDurable | Durable Daedric Mace | 00045E1E |
+| SEWeapDaedricShortswordDurable | Durable Daedric Shortsword | 00045E1F |
+| SEWeapDaedricWarAxeDurable | Durable Daedric War Axe | 00045E20 |
+| SEWeapDaedricWarHammerDurable | Durable Daedric Warhammer | 00045E21 |
+| SEWeapDwarvenBattleAxeDurable | Durable Dwarven Battle Axe | 00045E22 |
+| SEWeapDwarvenBowDurable | Durable Dwarven Bow | 00045E23 |
+| SEWeapDwarvenClaymoreDurable | Durable Dwarven Claymore | 00045E24 |
+| SEWeapDwarvenDaggerDurable | Durable Dwarven Dagger | 00045E25 |
+| SEWeapDwarvenLongSwordDurable | Durable Dwarven Longsword | 00045E26 |
+| SEWeapDwarvenMaceDurable | Durable Dwarven Mace | 00045E27 |
+| SEWeapDwarvenShortSwordDurable | Durable Dwarven Shortsword | 00045E28 |
+| SEWeapDwarvenWarAxeDurable | Durable Dwarven War Axe | 00045E29 |
+| SEWeapDwarvenWarHammerDurable | Durable Dwarven Warhammer | 00045E2A |
+| SEWeapEbonyBattleAxeDurable | Durable Ebony Battle Axe | 00045E2B |
+| SEWeapEbonyBowDurable | Durable Ebony Bow | 00045E2C |
+| SEWeapEbonyClaymoreDurable | Durable Ebony Claymore | 00045E2D |
+| SEWeapEbonyDaggerDurable | Durable Ebony Dagger | 00045E2E |
+| SEWeapEbonyLongswordDurable | Durable Ebony Longsword | 00045E2F |
+| SEWeapEbonyMaceDurable | Durable Ebony Mace | 00045E30 |
+| SEWeapEbonyShortswordDurable | Durable Ebony Shortsword | 00045E31 |
+| SEWeapEbonyWarAxeDurable | Durable Ebony War Axe | 00045E32 |
+| SEWeapEbonyWarHammerDurable | Durable Ebony Warhammer | 00045E33 |
+| SEWeapElvenBattleAxeDurable | Durable Elven Battle Axe | 00045E34 |
+| SEWeapElvenBowDurable | Durable Elven Bow | 00045E35 |
+| SEWeapElvenClaymoreDurable | Durable Elven Claymore | 00045E36 |
+| SEWeapElvenDaggerDurable | Durable Elven Dagger | 00045E37 |
+| SEWeapElvenLongSwordDurable | Durable Elven Long Sword | 00045E38 |
+| SEWeapElvenMaceDurable | Durable Elven Mace | 00045E39 |
+| SEWeapElvenShortswordDurable | Durable Elven Shortsword | 00045E3A |
+| SEWeapElvenWarAxeDurable | DurableElven War Axe | 00045E3B |
+| SEWeapElvenWarHammerDurable | Durable Elven Warhammer | 00045E3C |
+| SEWeapGlassBattleAxeDurable | Durable Glass Battle Axe | 00045E3D |
+| SEWeapGlassBowDurable | Durable Glass Bow | 00045E3E |
+| SEWeapGlassClaymoreDurable | Durable Glass Claymore | 00045E3F |
+| SEWeapGlassDaggerDurable | Durable Glass Dagger | 00045E40 |
+| SEWeapGlassLongswordDurable | Durable Glass Longsword | 00045E41 |
+| SEWeapGlassMaceDurable | Durable Glass Mace | 00045E42 |
+| SEWeapGlassShortswordDurable | Durable Glass Shortsword | 00045E43 |
+| SEWeapGlassWarAxeDurable | Durable Glass War Axe | 00045E44 |
+| SEWeapGlassWarHammerDurable | Durable Glass Warhammer | 00045E45 |
+| SEWeapSilverBattleAxeDurable | Durable Silver BattleAxe | 00045E4F |
+| SEWeapSilverBowDurable | Durable Silver Bow | 00045E50 |
+| SEWeapSilverClaymoreDurable | Durable Silver Claymore | 00045E51 |
+| SEWeapSilverDaggerDurable | Durable Silver Dagger | 00045E52 |
+| SEWeapSilverLongswordDurable | Durable Silver Longsword | 00045E53 |
+| SEWeapSilverMaceDurable | Durable Silver Mace | 00045E54 |
+| SEWeapSilverShortswordDurable | Durable Silver Shortsword | 00045E55 |
+| SEWeapSilverWarAxeDurable | Durable Silver War Axe | 00045E56 |
+| SEWeapSilverWarhammerDurable | Durable Silver Warhammer | 00045E57 |
+| WeapDaedricBattleAxe | Daedric Battle Axe | 00035E77 |
+| WeapDaedricBow | Daedric Bow | 00035E7C |
+| WeapDaedricClaymore | Daedric Claymore | 00035E78 |
+| WeapDaedricDagger | Daedric Dagger | 00035E72 |
+| WeapDaedricLongsword | Daedric Longsword | 00035E76 |
+| WeapDaedricMace | Daedric Mace | 00035E75 |
+| WeapDaedricShortsword | Daedric Shortsword | 00035E73 |
+| WeapDaedricWarAxe | Daedric War Axe | 00035E74 |
+| WeapDaedricWarHammer | Daedric Warhammer | 00035E79 |
+| WeapDwarvenBattleAxe | Dwarven Battle Axe | 00035DCD |
+| WeapDwarvenBow | Dwarven Bow | 00035DCE |
+| WeapDwarvenClaymore | Dwarven Claymore | 00035DCF |
+| WeapDwarvenDagger | Dwarven Dagger | 00035DD0 |
+| WeapDwarvenLongSword | Dwarven Longsword | 00035DD1 |
+| WeapDwarvenMace | Dwarven Mace | 00035DD2 |
+| WeapDwarvenShortSword | Dwarven Shortsword | 00035DD3 |
+| WeapDwarvenWarAxe | Dwarven War Axe | 00035DD4 |
+| WeapDwarvenWarHammer | Dwarven Warhammer | 00035DD5 |
+| WeapEbonyBattleAxe | Ebony Battle Axe | 00035E6F |
+| WeapEbonyBow | Ebony Bow | 00035E7B |
+| WeapEbonyClaymore | Ebony Claymore | 00035E70 |
+| WeapEbonyDagger | Ebony Dagger | 00035E6A |
+| WeapEbonyLongsword | Ebony Longsword | 00035E6E |
+| WeapEbonyMace | Ebony Mace | 00035E6D |
+| WeapEbonyShortsword | Ebony Shortsword | 00035E6B |
+| WeapEbonyWarAxe | Ebony War Axe | 00035E6C |
+| WeapEbonyWarHammer | Ebony Warhammer | 00035E71 |
+| WeapElvenBattleAxe | Elven Battle Axe | 00035E67 |
+| WeapElvenBow | Elven Bow | 000229BF |
+| WeapElvenClaymore | Elven Claymore | 00035E68 |
+| WeapElvenDagger | Elven Dagger | 00035E63 |
+| WeapElvenLongSword | Elven Long Sword | 000229B3 |
+| WeapElvenMace | Elven Mace | 00035E66 |
+| WeapElvenShortsword | Elven Shortsword | 00035E64 |
+| WeapElvenWarAxe | Elven War Axe | 00035E65 |
+| WeapElvenWarHammer | Elven Warhammer | 00035E69 |
+| WeapGlassBattleAxe | Glass Battle Axe | 00035E60 |
+| WeapGlassBow | Glass Bow | 00035E7A |
+| WeapGlassClaymore | Glass Claymore | 00035E61 |
+| WeapGlassDagger | Glass Dagger | 00035E5B |
+| WeapGlassLongsword | Glass Longsword | 00035E5F |
+| WeapGlassMace | Glass Mace | 00035E5E |
+| WeapGlassShortsword | Glass Shortsword | 00035E5C |
+| WeapGlassWarAxe | Glass War Axe | 00035E5D |
+| WeapGlassWarHammer | Glass Warhammer | 00035E62 |
+| WeapSilverBattleAxe | Silver BattleAxe | 00025221 |
+| WeapSilverBow | Silver Bow | 00025227 |
+| WeapSilverClaymore | Silver Claymore | 00025226 |
+| WeapSilverDagger | Silver Dagger | 00025224 |
+| WeapSilverLongsword | Silver Longsword | 0002521F |
+| WeapSilverMace | Silver Mace | 00025223 |
+| WeapSilverShortsword | Silver Shortsword | 00025220 |
+| WeapSilverWarAxe | Silver War Axe | 00025222 |
+| WeapSilverWarhammer | Silver Warhammer | 00025225 |
 
 ### Modded Items
 * Replace XX with Load Order Prefix
