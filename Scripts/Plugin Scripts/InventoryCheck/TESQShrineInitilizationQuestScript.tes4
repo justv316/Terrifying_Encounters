@@ -286,42 +286,34 @@ begin gamemode
 			set TEQQShrineVanillaDwarvenUpgradeQuest.bDwarvenGreaves to 0
 			set TEQQShrineVanillaDwarvenUpgradeQuest.bDwarvenHelmet to 0
 			set TEQQShrineVanillaDwarvenUpgradeQuest.bDwarvenShield to 0
-			set TEQQShrineVanillaMadnessLUpgradeQuest.fQuestDelayTime to 0.01
-			set TEQQShrineVanillaMadnessLUpgradeQuest.iUpgradePerformed to 0
-			set TEQQShrineVanillaMadnessLUpgradeQuest.iChoosing to 0
-			set TEQQShrineVanillaMadnessLUpgradeQuest.bMadnessBoots to 0
-			set TEQQShrineVanillaMadnessLUpgradeQuest.bMadnessCuirass to 0
-			set TEQQShrineVanillaMadnessLUpgradeQuest.bMadnessGauntlets to 0
-			set TEQQShrineVanillaMadnessLUpgradeQuest.bMadnessGreaves to 0
-			set TEQQShrineVanillaMadnessLUpgradeQuest.bMadnessHelmet to 0
-			set TEQQShrineVanillaMadnessLUpgradeQuest.bMadnessShield to 0
-			set TEQQShrineVanillaMadnessHUpgradeQuest.fQuestDelayTime to 0.01
-			set TEQQShrineVanillaMadnessHUpgradeQuest.iUpgradePerformed to 0
-			set TEQQShrineVanillaMadnessHUpgradeQuest.iChoosing to 0
-			set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessBoots to 0
-			set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessCuirass to 0
-			set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessGauntlets to 0
-			set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessGreaves to 0
-			set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessHelmet to 0
-			set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessShield to 0
-			set TEQQShrineVanillaAmberLUpgradeQuest.fQuestDelayTime to 0.01
-			set TEQQShrineVanillaAmberLUpgradeQuest.iUpgradePerformed to 0
-			set TEQQShrineVanillaAmberLUpgradeQuest.iChoosing to 0
-			set TEQQShrineVanillaAmberLUpgradeQuest.bAmberBoots to 0
-			set TEQQShrineVanillaAmberLUpgradeQuest.bAmberCuirass to 0
-			set TEQQShrineVanillaAmberLUpgradeQuest.bAmberGauntlets to 0
-			set TEQQShrineVanillaAmberLUpgradeQuest.bAmberGreaves to 0
-			set TEQQShrineVanillaAmberLUpgradeQuest.bAmberHelmet to 0
-			set TEQQShrineVanillaAmberLUpgradeQuest.bAmberShield to 0
-			set TEQQShrineVanillaAmberHUpgradeQuest.fQuestDelayTime to 0.01
-			set TEQQShrineVanillaAmberHUpgradeQuest.iUpgradePerformed to 0
-			set TEQQShrineVanillaAmberHUpgradeQuest.iChoosing to 0
-			set TEQQShrineVanillaAmberHUpgradeQuest.bAmberBoots to 0
-			set TEQQShrineVanillaAmberHUpgradeQuest.bAmberCuirass to 0
-			set TEQQShrineVanillaAmberHUpgradeQuest.bAmberGauntlets to 0
-			set TEQQShrineVanillaAmberHUpgradeQuest.bAmberGreaves to 0
-			set TEQQShrineVanillaAmberHUpgradeQuest.bAmberHelmet to 0
-			set TEQQShrineVanillaAmberHUpgradeQuest.bAmberShield to 0
+			set TEQQShrineVanillaMadnessLArmorQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaMadnessLArmorQuest.bMadnessLBoots to 0
+			set TEQQShrineVanillaMadnessLArmorQuest.bMadnessLCuirass to 0
+			set TEQQShrineVanillaMadnessLArmorQuest.bMadnessLGauntlets to 0
+			set TEQQShrineVanillaMadnessLArmorQuest.bMadnessLGreaves to 0
+			set TEQQShrineVanillaMadnessLArmorQuest.bMadnessLHelmet to 0
+			set TEQQShrineVanillaMadnessLArmorQuest.bMadnessLShield to 0
+			set TEQQShrineVanillaMadnessHArmorQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaMadnessHArmorQuest.bMadnessHBoots to 0
+			set TEQQShrineVanillaMadnessHArmorQuest.bMadnessHCuirass to 0
+			set TEQQShrineVanillaMadnessHArmorQuest.bMadnessHGauntlets to 0
+			set TEQQShrineVanillaMadnessHArmorQuest.bMadnessHGreaves to 0
+			set TEQQShrineVanillaMadnessHArmorQuest.bMadnessHHelmet to 0
+			set TEQQShrineVanillaMadnessHArmorQuest.bMadnessHShield to 0
+			set TEQQShrineVanillaAmberLArmorQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaAmberLArmorQuest.bAmberLBoots to 0
+			set TEQQShrineVanillaAmberLArmorQuest.bAmberLCuirass to 0
+			set TEQQShrineVanillaAmberLArmorQuest.bAmberLGauntlets to 0
+			set TEQQShrineVanillaAmberLArmorQuest.bAmberLGreaves to 0
+			set TEQQShrineVanillaAmberLArmorQuest.bAmberLHelmet to 0
+			set TEQQShrineVanillaAmberLArmorQuest.bAmberLShield to 0
+			set TEQQShrineVanillaAmberHArmorQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaAmberHArmorQuest.bAmberHBoots to 0
+			set TEQQShrineVanillaAmberHArmorQuest.bAmberHCuirass to 0
+			set TEQQShrineVanillaAmberHArmorQuest.bAmberHGauntlets to 0
+			set TEQQShrineVanillaAmberHArmorQuest.bAmberHGreaves to 0
+			set TEQQShrineVanillaAmberHArmorQuest.bAmberHHelmet to 0
+			set TEQQShrineVanillaAmberHArmorQuest.bAmberHShield to 0
 			MessageBox "Where to Look?", "Cancel" , "Inventory", "Equipped", "Vanilla to Modded"
 			set iChoosingItem to 1
 		elseif iChoosingItem == 1

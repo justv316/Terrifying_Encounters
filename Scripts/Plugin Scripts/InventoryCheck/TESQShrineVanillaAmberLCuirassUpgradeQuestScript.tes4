@@ -1,0 +1,1090 @@
+scn TESQShrineVanillaAmberLCuirassUpgradeQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iChoosing
+short iChoosingTier
+short iChoice
+short iInventoryTier
+short iUpgradePerformed
+short iPlayerGold
+
+begin gameMode
+	if iDisplayedMenu == 1
+		if iUpgradePerformed == 0
+			if iChoosing == 0
+				if iChoosingTier == 0
+					set iInventoryTier to 0
+					if Player.GetItemCount SEAmberCuirass1 > 0
+						set iInventoryTier to iInventoryTier + ( 1 * 1 )
+					endif
+					if Player.GetItemCount SEAmberCuirass2 > 0
+						set iInventoryTier to iInventoryTier + ( 2 * 1 )
+					endif
+					if Player.GetItemCount SEAmberCuirass3 > 0
+						set iInventoryTier to iInventoryTier + ( 2 * 2 )
+					endif
+					if Player.GetItemCount SEAmberCuirass4 > 0
+						set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 )
+					endif
+					if Player.GetItemCount SEAmberCuirass5 > 0
+						set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 * 2 )
+					endif
+					if Player.GetItemCount SEAmberCuirass6 > 0
+						set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 * 2 * 2 )
+					endif
+					set iChoosingTier to 1
+				elseif iChoosingTier == 1 
+					if iInventoryTier == 1
+						MessageBox "Amber Cuirass", "Cancel", "Back", "Impure: 50,000 Gold"
+						set iChoosing to 1
+					elseif iInventoryTier == 2
+						MessageBox "Amber Cuirass", "Cancel", "Back", "Lesser: 40,000 Gold"
+						set iChoosing to 2
+					elseif iInventoryTier == 4
+						MessageBox "Amber Cuirass", "Cancel", "Back", "Standard: 30,000 Gold"
+						set iChoosing to 3
+					elseif iInventoryTier == 8
+						MessageBox "Amber Cuirass", "Cancel", "Back", "Fine: 20,000 Gold"
+						set iChoosing to 4
+					elseif iInventoryTier == 16
+						MessageBox "Amber Cuirass", "Cancel", "Back", "Grand: 10,000 Gold"
+						set iChoosing to 5
+					elseif iInventoryTier == 32
+						MessageBox "Amber Cuirass", "Cancel", "Back", "Perfect: 0 Gold"
+						set iDisplayedMenu to -2
+					elseif iInventoryTier == 3
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold" 
+						set iChoosing to 7
+					elseif iInventoryTier == 5
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Standard: 30,000 Gold"
+						set iChoosing to 8
+					elseif iInventoryTier == 9
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Fine: 20,000 Gold"
+						set iChoosing to 9
+					elseif iInventoryTier == 17
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Grand: 10,000 Gold"
+						set iChoosing to 10
+					elseif iInventoryTier == 6
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Lesser: 40,000 Gold", "Standard: 30,000 Gold"
+						set iChoosing to 11
+					elseif iInventoryTier == 10
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Lesser: 40,000 Gold", "Fine: 20,000 Gold"
+						set iChoosing to 12
+					elseif iInventoryTier == 18
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Lesser: 40,000 Gold", "Grand: 10,000 Gold"
+						set iChoosing to 13
+					elseif iInventoryTier == 12
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Standard: 30,000 Gold", "Fine: 20,000 Gold"
+						set iChoosing to 14
+					elseif iInventoryTier == 20
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Standard: 30,000 Gold", "Grand: 10,000 Gold"
+						set iChoosing to 15
+					elseif iInventoryTier == 24
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Fine: 20,000 Gold", "Grand: 10,000 Gold"
+						set iChoosing to 16
+					elseif iInventoryTier == 7
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold", "Standard: 30,000 Gold"
+						set iChoosing to 17
+					elseif iInventoryTier == 11
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold", "Fine: 20,000 Gold"
+						set iChoosing to 18
+					elseif iInventoryTier == 19
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold", "Grand: 10,000 Gold"
+						set iChoosing to 19
+					elseif iInventoryTier == 13
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Standard: 30,000 Gold", "Fine: 20,000 Gold"
+						set iChoosing to 20
+					elseif iInventoryTier == 21
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Standard: 30,000 Gold", "Grand: 10,000 Gold"
+						set iChoosing to 21
+					elseif iInventoryTier == 25
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Fine: 20,000 Gold", "Grand: 10,000 Gold"
+						set iChoosing to 22
+					elseif iInventoryTier == 14
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Lesser: 40,000 Gold", "Standard: 30,000 Gold", "Fine: 20,000 Gold"
+						set iChoosing to 23
+					elseif iInventoryTier == 22
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Lesser: 40,000 Gold", "Standard: 30,000 Gold", "Grand: 10,000 Gold"
+						set iChoosing to 24
+					elseif iInventoryTier == 26
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Lesser: 40,000 Gold", "Fine: 20,000 Gold", "Grand: 10,000 Gold"
+						set iChoosing to 25
+					elseif iInventoryTier == 28
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Standard: 30,000 Gold", "Fine: 20,000 Gold", "Grand: 10,000 Gold"
+						set iChoosing to 26
+					elseif iInventoryTier == 15
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold", "Standard: 30,000 Gold", "Fine: 20,000 Gold"
+						set iChoosing to 27
+					elseif iInventoryTier == 23
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold", "Standard: 30,000 Gold", "Grand: 10,000 Gold"
+						set iChoosing to 28
+					elseif iInventoryTier == 27
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold", "Fine: 20,000 Gold", "Grand: 10,000 Gold"
+						set iChoosing to 29
+					elseif iInventoryTier == 29
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Standard: 30,000 Gold", "Fine: 20,000 Gold", "Grand: 10,000 Gold"
+						set iChoosing to 30
+					elseif iInventoryTier == 30
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Lesser: 40,000 Gold", "Standard: 30,000 Gold", "Fine: 20,000 Gold", "Grand: 10,000 Gold"
+						set iChoosing to 31
+					elseif iInventoryTier == 31
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold", "Standard: 30,000 Gold", "Fine: 20,000 Gold", "Grand: 10,000 Gold"
+						set iChoosing to 32
+					elseif iInventoryTier == 33
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 33
+					elseif iInventoryTier == 34
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Lesser: 40,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 34
+					elseif iInventoryTier == 35
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 35
+					elseif iInventoryTier == 36
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Standard: 30,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 36
+					elseif iInventoryTier == 37
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Standard: 30,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 37
+					elseif iInventoryTier == 38
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Lesser: 40,000 Gold", "Standard: 30,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 38
+					elseif iInventoryTier == 39
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold", "Standard: 30,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 39
+					elseif iInventoryTier == 40
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Fine: 20,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 40
+					elseif iInventoryTier == 41
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Fine: 20,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 41
+					elseif iInventoryTier == 42
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Lesser: 40,000 Gold", "Fine: 20,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 42
+					elseif iInventoryTier == 43
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold", "Fine: 20,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 43
+					elseif iInventoryTier == 44
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Standard: 30,000 Gold", "Fine: 20,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 44
+					elseif iInventoryTier == 45
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Standard: 30,000 Gold", "Fine: 20,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 45
+					elseif iInventoryTier == 46
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Lesser: 40,000 Gold", "Standard: 30,000 Gold", "Fine: 20,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 46
+					elseif iInventoryTier == 47
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold", "Standard: 30,000 Gold", "Fine: 20,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 47
+					elseif iInventoryTier == 48
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 48
+					elseif iInventoryTier == 49
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 49
+					elseif iInventoryTier == 50
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Lesser: 40,000 Gold", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 50
+					elseif iInventoryTier == 51
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 51
+					elseif iInventoryTier == 52
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Standard: 30,000 Gold", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 52
+					elseif iInventoryTier == 53
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Standard: 30,000 Gold", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 53
+					elseif iInventoryTier == 54
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Lesser: 40,000 Gold", "Standard: 30,000 Gold", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 54
+					elseif iInventoryTier == 55
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold", "Standard: 30,000 Gold", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 55
+					elseif iInventoryTier == 56
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Fine: 20,000 Gold", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 56
+					elseif iInventoryTier == 57
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Fine: 20,000 Gold", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 57
+					elseif iInventoryTier == 58
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Lesser: 40,000 Gold", "Fine: 20,000 Gold", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 58
+					elseif iInventoryTier == 59
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold", "Fine: 20,000 Gold", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 59
+					elseif iInventoryTier == 60
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Standard: 30,000 Gold", "Fine: 20,000 Gold", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 60
+					elseif iInventoryTier == 61
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Standard: 30,000 Gold", "Fine: 20,000 Gold", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 61
+					elseif iInventoryTier == 62
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Lesser: 40,000 Gold", "Standard: 30,000 Gold", "Fine: 20,000 Gold", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 62
+					elseif iInventoryTier == 63
+						MessageBox "Amber Cuirass", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold", "Standard: 30,000 Gold", "Fine: 20,000 Gold", "Grand: 10,000 Gold", "Perfect: 0 Gold"
+						set iChoosing to 63
+					endif
+				endif
+			elseif iChoosing == 1
+				set iUpgradePerformed to 1
+			elseif iChoosing == 2
+				set iUpgradePerformed to 2
+			elseif iChoosing == 3
+				set iUpgradePerformed to 3
+			elseif iChoosing == 4
+				set iUpgradePerformed to 4
+			elseif iChoosing == 5
+				set iUpgradePerformed to 5
+			elseif iChoosing == 6
+				set iUpgradePerformed to 6
+			elseif iChoosing == 7
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				endif
+			elseif iChoosing == 8
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 9
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 10
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 11
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 12
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 13
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 14
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				elseif iChoice == 3
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 15
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				elseif iChoice == 3
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 16
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				elseif iChoice == 3
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 16
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				elseif iChoice == 3
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 17
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 18
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 19
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 20
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				elseif iChoice == 4
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 21
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				elseif iChoice == 4
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 22
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 4
+				elseif iChoice == 4
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 23
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				elseif iChoice == 4
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 24
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				elseif iChoice == 4
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 25
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 4
+				elseif iChoice == 4
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 26
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				elseif iChoice == 3
+					set iUpgradePerformed to 4
+				elseif iChoice == 4
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 27
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 3
+				elseif iChoice == 5
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 28
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 3
+				elseif iChoice == 5
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 29
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 4
+				elseif iChoice == 5
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 30
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				elseif iChoice == 4
+					set iUpgradePerformed to 4
+				elseif iChoice == 5
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 31
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				elseif iChoice == 4
+					set iUpgradePerformed to 4
+				elseif iChoice == 5
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 32
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 3
+				elseif iChoice == 5
+					set iUpgradePerformed to 4
+				elseif iChoice == 6
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 33
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 34
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 35
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 36
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				elseif iChoice == 3
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 37
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				elseif iChoice == 4
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 38
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				elseif iChoice == 4
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 39
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 3
+				elseif iChoice == 5
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 40
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				elseif iChoice == 3
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 41
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 4
+				elseif iChoice == 4
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 42
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 4
+				elseif iChoice == 4
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 43
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 4
+				elseif iChoice == 5
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 44
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				elseif iChoice == 3
+					set iUpgradePerformed to 4
+				elseif iChoice == 4
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 45
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				elseif iChoice == 4
+					set iUpgradePerformed to 4
+				elseif iChoice == 5
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 46
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				elseif iChoice == 4
+					set iUpgradePerformed to 4
+				elseif iChoice == 5
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 47
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 3
+				elseif iChoice == 5
+					set iUpgradePerformed to 4
+				elseif iChoice == 6
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 48
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 5
+				elseif iChoice == 3
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 49
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 5
+				elseif iChoice == 4
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 50
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 5
+				elseif iChoice == 4
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 51
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 5
+				elseif iChoice == 5
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 52
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				elseif iChoice == 3
+					set iUpgradePerformed to 5
+				elseif iChoice == 4
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 53
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				elseif iChoice == 4
+					set iUpgradePerformed to 5
+				elseif iChoice == 5
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 54
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				elseif iChoice == 4
+					set iUpgradePerformed to 5
+				elseif iChoice == 5
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 55
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 3
+				elseif iChoice == 5
+					set iUpgradePerformed to 5
+				elseif iChoice == 6
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 56
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				elseif iChoice == 3
+					set iUpgradePerformed to 5
+				elseif iChoice == 4
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 57
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 4
+				elseif iChoice == 4
+					set iUpgradePerformed to 5
+				elseif iChoice == 5
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 58
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 4
+				elseif iChoice == 4
+					set iUpgradePerformed to 5
+				elseif iChoice == 5
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 59
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 4
+				elseif iChoice == 5
+					set iUpgradePerformed to 5
+				elseif iChoice == 6
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 60
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				elseif iChoice == 3
+					set iUpgradePerformed to 4
+				elseif iChoice == 4
+					set iUpgradePerformed to 5
+				elseif iChoice == 5
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 61
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				elseif iChoice == 4
+					set iUpgradePerformed to 4
+				elseif iChoice == 5
+					set iUpgradePerformed to 5
+				elseif iChoice == 6
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 62
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				elseif iChoice == 4
+					set iUpgradePerformed to 4
+				elseif iChoice == 5
+					set iUpgradePerformed to 5
+				elseif iChoice == 6
+					set iUpgradePerformed to 6
+				endif
+			elseif iChoosing == 63
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 3
+				elseif iChoice == 5
+					set iUpgradePerformed to 4
+				elseif iChoice == 6
+					set iUpgradePerformed to 5
+				elseif iChoice == 7
+					set iUpgradePerformed to 6
+				endif
+			endif
+		elseif iUpgradePerformed == 1
+			if iPlayerGold >= 50000
+				Player.RemoveItem Gold001 50000
+				Player.RemoveItem SEAmberCuirass1 1
+				Player.Additem TE01ArmorResiniteHCuirass 1
+				set iDisplayedMenu to -1
+			elseif iPlayerGold < 50000
+				Message "You require 50,000 gold to perform this upgrade"
+				set iDisplayedMenu to -2
+			endif
+		elseif iUpgradePerformed == 2
+			if iPlayerGold >= 40000
+				Player.RemoveItem Gold001 40000
+				Player.RemoveItem SEAmberCuirass2 1
+				Player.Additem TE01ArmorResiniteHCuirass 1
+				set iDisplayedMenu to -1
+			elseif iPlayerGold < 40000
+				Message "You require 40,000 gold to perform this upgrade"
+				set iDisplayedMenu to -2
+			endif
+		elseif iUpgradePerformed == 3
+			if iPlayerGold >= 30000
+				Player.RemoveItem Gold001 30000
+				Player.RemoveItem SEAmberCuirass3 1
+				Player.Additem TE01ArmorResiniteHCuirass 1
+				set iDisplayedMenu to -1
+			elseif iPlayerGold < 30000
+				Message "You require 30,000 gold to perform this upgrade"
+				set iDisplayedMenu to -2
+			endif
+		elseif iUpgradePerformed == 4
+			if iPlayerGold >= 20000
+				Player.RemoveItem Gold001 20000
+				Player.RemoveItem SEAmberCuirass4 1
+				Player.Additem TE01ArmorResiniteHCuirass 1
+				set iDisplayedMenu to -1
+			elseif iPlayerGold < 20000
+				Message "You require 20,000 gold to perform this upgrade"
+				set iDisplayedMenu to -2
+			endif
+		elseif iUpgradePerformed == 5
+			if iPlayerGold >= 10000
+				Player.RemoveItem Gold001 10000
+				Player.RemoveItem SEAmberCuirass5 1
+				Player.Additem TE01ArmorResiniteHCuirass 1
+				set iDisplayedMenu to -1
+			elseif iPlayerGold < 10000
+				Message "You require 10,000 gold to perform this upgrade"
+				set iDisplayedMenu to -2
+			endif
+		elseif iUpgradePerformed == 6
+			Player.RemoveItem SEAmberCuirass6 1
+			Player.Additem TE01ArmorResiniteHCuirass 1
+			set iDisplayedMenu to -1
+		endif
+	elseif iDisplayedMenu == -1		
+		Message "Item Upgraded!"
+		StopQuest TEQQShrineVanillaAmberLCuirassUpgradeQuest
+	elseif iDisplayedMenu == -2
+		Message "No Upgrade Performed!"
+		StopQuest TEQQShrineVanillaAmberLCuirassUpgradeQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaAmberLCuirassUpgradeQuest
+		StartQuest TEQQShrineInitilizationQuest
+	endif
+end

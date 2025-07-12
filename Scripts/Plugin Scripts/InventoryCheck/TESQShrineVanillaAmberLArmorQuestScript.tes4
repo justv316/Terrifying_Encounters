@@ -1015,29 +1015,59 @@ begin gamemode
 			endif
 		endif
 	elseif iDisplayedMenu == 1
-		set TEQQShrineVanillaAmberLUpgradeQuest.bAmberBoots to 1
+		set TEQQShrineVanillaAmberLBootsUpgradeQuest.fQuestDelayTime to 0.01
+		set TEQQShrineVanillaAmberLBootsUpgradeQuest.iDisplayedMenu to 1
+		set TEQQShrineVanillaAmberLBootsUpgradeQuest.iUpgradePerformed to 0
+		set TEQQShrineVanillaAmberLBootsUpgradeQuest.iChoosing to 0
+		set TEQQShrineVanillaAmberLBootsUpgradeQuest.iChoosingTier to 0
+		set TEQQShrineVanillaAmberLBootsUpgradeQuest.iPlayerGold to Player.GetItemCount Gold001
 		StopQuest TEQQShrineVanillaAmberLArmorQuest
-		StartQuest TEQQShrineVanillaAmberLUpgradeQuest
+		StartQuest TEQQShrineVanillaAmberLBootsUpgradeQuest
 	elseif iDisplayedMenu == 2
-		set TEQQShrineVanillaAmberLUpgradeQuest.bAmberCuirass to 1
+		set TEQQShrineVanillaAmberLCuirassUpgradeQuest.fQuestDelayTime to 0.01
+		set TEQQShrineVanillaAmberLCuirassUpgradeQuest.iDisplayedMenu to 1
+		set TEQQShrineVanillaAmberLCuirassUpgradeQuest.iUpgradePerformed to 0
+		set TEQQShrineVanillaAmberLCuirassUpgradeQuest.iChoosing to 0
+		set TEQQShrineVanillaAmberLCuirassUpgradeQuest.iChoosingTier to 0
+		set TEQQShrineVanillaAmberLCuirassUpgradeQuest.iPlayerGold to Player.GetItemCount Gold001
 		StopQuest TEQQShrineVanillaAmberLArmorQuest
-		StartQuest TEQQShrineVanillaAmberLUpgradeQuest
+		StartQuest TEQQShrineVanillaAmberLCuirassUpgradeQuest
 	elseif iDisplayedMenu == 3
-		set TEQQShrineVanillaAmberLUpgradeQuest.bAmberGauntlets to 1
+		set TEQQShrineVanillaAmberLGauntletsUpgradeQuest.fQuestDelayTime to 0.01
+		set TEQQShrineVanillaAmberLGauntletsUpgradeQuest.iDisplayedMenu to 1
+		set TEQQShrineVanillaAmberLGauntletsUpgradeQuest.iUpgradePerformed to 0
+		set TEQQShrineVanillaAmberLGauntletsUpgradeQuest.iChoosing to 0
+		set TEQQShrineVanillaAmberLGauntletsUpgradeQuest.iChoosingTier to 0
+		set TEQQShrineVanillaAmberLGauntletsUpgradeQuest.iPlayerGold to Player.GetItemCount Gold001
 		StopQuest TEQQShrineVanillaAmberLArmorQuest
-		StartQuest TEQQShrineVanillaAmberLUpgradeQuest
-	elseif iDisplayedMenu == 4
-		set TEQQShrineVanillaAmberLUpgradeQuest.bAmberGreaves to 1
+		StartQuest TEQQShrineVanillaAmberLGauntletsUpgradeQuest
+	elseif iDisplayedMenu == 4 
+		set TEQQShrineVanillaAmberLGreavesUpgradeQuest.fQuestDelayTime to 0.01
+		set TEQQShrineVanillaAmberLGreavesUpgradeQuest.iDisplayedMenu to 1
+		set TEQQShrineVanillaAmberLGreavesUpgradeQuest.iUpgradePerformed to 0
+		set TEQQShrineVanillaAmberLGreavesUpgradeQuest.iChoosing to 0
+		set TEQQShrineVanillaAmberLGreavesUpgradeQuest.iChoosingTier to 0
+		set TEQQShrineVanillaAmberLGreavesUpgradeQuest.iPlayerGold to Player.GetItemCount Gold001
 		StopQuest TEQQShrineVanillaAmberLArmorQuest
-		StartQuest TEQQShrineVanillaAmberLUpgradeQuest
+		StartQuest TEQQShrineVanillaAmberLGreavesUpgradeQuest
 	elseif iDisplayedMenu == 5
-		set TEQQShrineVanillaAmberLUpgradeQuest.bAmberHelmet to 1
+		set TEQQShrineVanillaAmberLHelmetUpgradeQuest.fQuestDelayTime to 0.01
+		set TEQQShrineVanillaAmberLHelmetUpgradeQuest.iDisplayedMenu to 1
+		set TEQQShrineVanillaAmberLHelmetUpgradeQuest.iUpgradePerformed to 0
+		set TEQQShrineVanillaAmberLHelmetUpgradeQuest.iChoosing to 0
+		set TEQQShrineVanillaAmberLHelmetUpgradeQuest.iChoosingTier to 0
+		set TEQQShrineVanillaAmberLHelmetUpgradeQuest.iPlayerGold to Player.GetItemCount Gold001
 		StopQuest TEQQShrineVanillaAmberLArmorQuest
-		StartQuest TEQQShrineVanillaAmberLUpgradeQuest
-	elseif iDisplayedMenu == 6
-		set TEQQShrineVanillaAmberLUpgradeQuest.bAmberShield to 1
+		StartQuest TEQQShrineVanillaAmberLHelmetUpgradeQuest
+	elseif iDisplayedMenu == 6 	
+		set TEQQShrineVanillaAmberLShieldUpgradeQuest.fQuestDelayTime to 0.01
+		set TEQQShrineVanillaAmberLShieldUpgradeQuest.iDisplayedMenu to 1
+		set TEQQShrineVanillaAmberLShieldUpgradeQuest.iUpgradePerformed to 0
+		set TEQQShrineVanillaAmberLShieldUpgradeQuest.iChoosing to 0
+		set TEQQShrineVanillaAmberLShieldUpgradeQuest.iChoosingTier to 0
+		set TEQQShrineVanillaAmberLShieldUpgradeQuest.iPlayerGold to Player.GetItemCount Gold001
 		StopQuest TEQQShrineVanillaAmberLArmorQuest
-		StartQuest TEQQShrineVanillaAmberLUpgradeQuest
+		StartQuest TEQQShrineVanillaAmberLShieldUpgradeQuest
 	elseif iDisplayedMenu == -1
 		Message "Nothing found to upgrade."
 		StopQuest TEQQShrineVanillaAmberLArmorQuest

@@ -1015,29 +1015,59 @@ begin gamemode
 			endif
 		endif
 	elseif iDisplayedMenu == 1
-		set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessBoots to 1
+		set TEQQShrineVanillaMadnessHBootsUpgradeQuest.fQuestDelayTime to 0.01
+		set TEQQShrineVanillaMadnessHBootsUpgradeQuest.iDisplayedMenu to 1
+		set TEQQShrineVanillaMadnessHBootsUpgradeQuest.iUpgradePerformed to 0
+		set TEQQShrineVanillaMadnessHBootsUpgradeQuest.iChoosing to 0
+		set TEQQShrineVanillaMadnessHBootsUpgradeQuest.iChoosingTier to 0
+		set TEQQShrineVanillaMadnessHBootsUpgradeQuest.iPlayerGold to Player.GetItemCount Gold001
 		StopQuest TEQQShrineVanillaMadnessHArmorQuest
-		StartQuest TEQQShrineVanillaMadnessHUpgradeQuest
+		StartQuest TEQQShrineVanillaMadnessHBootsUpgradeQuest
 	elseif iDisplayedMenu == 2
-		set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessCuirass to 1
+		set TEQQShrineVanillaMadnessHCuirassUpgradeQuest.fQuestDelayTime to 0.01
+		set TEQQShrineVanillaMadnessHCuirassUpgradeQuest.iDisplayedMenu to 1
+		set TEQQShrineVanillaMadnessHCuirassUpgradeQuest.iUpgradePerformed to 0
+		set TEQQShrineVanillaMadnessHCuirassUpgradeQuest.iChoosing to 0
+		set TEQQShrineVanillaMadnessHCuirassUpgradeQuest.iChoosingTier to 0
+		set TEQQShrineVanillaMadnessHCuirassUpgradeQuest.iPlayerGold to Player.GetItemCount Gold001
 		StopQuest TEQQShrineVanillaMadnessHArmorQuest
-		StartQuest TEQQShrineVanillaMadnessHUpgradeQuest
+		StartQuest TEQQShrineVanillaMadnessHCuirassUpgradeQuest
 	elseif iDisplayedMenu == 3
-		set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessGauntlets to 1
+		set TEQQShrineVanillaMadnessHGauntletsUpgradeQuest.fQuestDelayTime to 0.01
+		set TEQQShrineVanillaMadnessHGauntletsUpgradeQuest.iDisplayedMenu to 1
+		set TEQQShrineVanillaMadnessHGauntletsUpgradeQuest.iUpgradePerformed to 0
+		set TEQQShrineVanillaMadnessHGauntletsUpgradeQuest.iChoosing to 0
+		set TEQQShrineVanillaMadnessHGauntletsUpgradeQuest.iChoosingTier to 0
+		set TEQQShrineVanillaMadnessHGauntletsUpgradeQuest.iPlayerGold to Player.GetItemCount Gold001
 		StopQuest TEQQShrineVanillaMadnessHArmorQuest
-		StartQuest TEQQShrineVanillaMadnessHUpgradeQuest
-	elseif iDisplayedMenu == 4
-		set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessGreaves to 1
+		StartQuest TEQQShrineVanillaMadnessHGauntletsUpgradeQuest
+	elseif iDisplayedMenu == 4 
+		set TEQQShrineVanillaMadnessHGreavesUpgradeQuest.fQuestDelayTime to 0.01
+		set TEQQShrineVanillaMadnessHGreavesUpgradeQuest.iDisplayedMenu to 1
+		set TEQQShrineVanillaMadnessHGreavesUpgradeQuest.iUpgradePerformed to 0
+		set TEQQShrineVanillaMadnessHGreavesUpgradeQuest.iChoosing to 0
+		set TEQQShrineVanillaMadnessHGreavesUpgradeQuest.iChoosingTier to 0
+		set TEQQShrineVanillaMadnessHGreavesUpgradeQuest.iPlayerGold to Player.GetItemCount Gold001
 		StopQuest TEQQShrineVanillaMadnessHArmorQuest
-		StartQuest TEQQShrineVanillaMadnessHUpgradeQuest
+		StartQuest TEQQShrineVanillaMadnessHGreavesUpgradeQuest
 	elseif iDisplayedMenu == 5
-		set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessHelmet to 1
+		set TEQQShrineVanillaMadnessHHelmetUpgradeQuest.fQuestDelayTime to 0.01
+		set TEQQShrineVanillaMadnessHHelmetUpgradeQuest.iDisplayedMenu to 1
+		set TEQQShrineVanillaMadnessHHelmetUpgradeQuest.iUpgradePerformed to 0
+		set TEQQShrineVanillaMadnessHHelmetUpgradeQuest.iChoosing to 0
+		set TEQQShrineVanillaMadnessHHelmetUpgradeQuest.iChoosingTier to 0
+		set TEQQShrineVanillaMadnessHHelmetUpgradeQuest.iPlayerGold to Player.GetItemCount Gold001
 		StopQuest TEQQShrineVanillaMadnessHArmorQuest
-		StartQuest TEQQShrineVanillaMadnessHUpgradeQuest
-	elseif iDisplayedMenu == 6
-		set TEQQShrineVanillaMadnessHUpgradeQuest.bMadnessShield to 1
+		StartQuest TEQQShrineVanillaMadnessHHelmetUpgradeQuest
+	elseif iDisplayedMenu == 6 	
+		set TEQQShrineVanillaMadnessHShieldUpgradeQuest.fQuestDelayTime to 0.01
+		set TEQQShrineVanillaMadnessHShieldUpgradeQuest.iDisplayedMenu to 1
+		set TEQQShrineVanillaMadnessHShieldUpgradeQuest.iUpgradePerformed to 0
+		set TEQQShrineVanillaMadnessHShieldUpgradeQuest.iChoosing to 0
+		set TEQQShrineVanillaMadnessHShieldUpgradeQuest.iChoosingTier to 0
+		set TEQQShrineVanillaMadnessHShieldUpgradeQuest.iPlayerGold to Player.GetItemCount Gold001
 		StopQuest TEQQShrineVanillaMadnessHArmorQuest
-		StartQuest TEQQShrineVanillaMadnessHUpgradeQuest
+		StartQuest TEQQShrineVanillaMadnessHShieldUpgradeQuest
 	elseif iDisplayedMenu == -1
 		Message "Nothing found to upgrade."
 		StopQuest TEQQShrineVanillaMadnessHArmorQuest
