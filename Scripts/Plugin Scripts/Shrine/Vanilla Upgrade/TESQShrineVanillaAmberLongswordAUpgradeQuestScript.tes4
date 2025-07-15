@@ -1,0 +1,147 @@
+scn TESQShrineVanillaAmberLongswordAUpgradeQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iChoosing
+short iChoosingTier
+short iChoice
+short iInventoryTier
+short iUpgradePerformed
+short iPlayerGold
+
+begin gameMode
+	if iDisplayedMenu == 1
+		if iUpgradePerformed == 0
+			if iChoosing == 0
+				if iChoosingTier == 0
+					set iInventoryTier to 0
+					if Player.GetItemCount SEAmberSwordA > 0
+						set iInventoryTier to iInventoryTier + ( 1 * 1 )
+					endif
+					if Player.GetItemCount SEAmberSwordB > 0
+						set iInventoryTier to iInventoryTier + ( 2 * 1 )
+					endif
+					if Player.GetItemCount SEAmberSwordC > 0
+						set iInventoryTier to iInventoryTier + ( 2 * 2 )
+					endif
+					set iChoosingTier to 1
+				elseif iChoosingTier == 1
+					if iInventoryTier == 1
+						MessageBox "Amber Longsword", "Cancel", "Back", "Impure: 50,000 Gold"
+						set iChoosing to 1
+					elseif iInventoryTier == 2
+						MessageBox "Amber Sword", "Cancel", "Back", "Unpolished: 45,000 Gold"
+						set iChoosing to 2
+					elseif iInventoryTier == 4
+						MessageBox "Amber Sword", "Cancel", "Back", "Lesser: 40,000 Gold"
+						set iChoosing to 3
+					elseif iInventoryTier == 3
+						MessageBox "Amber Sword", "Cancel" , "Back", "Impure: 50,000 Gold", "Unpolished: 45,000 Gold" 
+						set iChoosing to 7
+					elseif iInventoryTier == 5
+						MessageBox "Amber Sword", "Cancel" , "Back", "Impure: 50,000 Gold", "Lesser: 40,000 Gold"
+						set iChoosing to 8
+					elseif iInventoryTier == 6
+						MessageBox "Amber Sword", "Cancel" , "Back", "Unpolished: 45,000 Gold", "Lesser: 40,000 Gold"
+						set iChoosing to 11
+					elseif iInventoryTier == 7
+						MessageBox "Amber Sword", "Cancel" , "Back", "Impure: 50,000 Gold", "Unpolished: 45,000 Gold", "Lesser: 40,000 Gold"
+						set iChoosing to 17
+					endif
+				endif
+			elseif iChoosing == 1
+				set iUpgradePerformed to 1
+			elseif iChoosing == 2
+				set iUpgradePerformed to 2
+			elseif iChoosing == 3
+				set iUpgradePerformed to 3
+			elseif iChoosing == 7
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				endif
+			elseif iChoosing == 8
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 11
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				elseif iChoice == 3
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 17
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				elseif iChoice == 3
+					set iUpgradePerformed to 2
+				elseif iChoice == 4
+					set iUpgradePerformed to 3
+				endif
+			endif
+		elseif iUpgradePerformed == 1
+			if iPlayerGold >= 50000
+				Player.RemoveItem Gold001 50000
+				Player.RemoveItem SEAmberSwordA 1
+				Player.Additem TE01WeaponResiniteLongsword 1
+				set iDisplayedMenu to -1
+			elseif iPlayerGold < 50000
+				Message "You require 50,000 gold to perform this upgrade"
+				set iDisplayedMenu to -2
+			endif
+		elseif iUpgradePerformed == 2
+			if iPlayerGold >= 45000
+				Player.RemoveItem Gold001 45000
+				Player.RemoveItem SEAmberSwordB 1
+				Player.Additem TE01WeaponResiniteLongsword 1
+				set iDisplayedMenu to -1
+			elseif iPlayerGold < 45000
+				Message "You require 45,000 gold to perform this upgrade"
+				set iDisplayedMenu to -2
+			endif
+		elseif iUpgradePerformed == 3
+			if iPlayerGold >= 40000
+				Player.RemoveItem Gold001 40000
+				Player.RemoveItem SEAmberSwordC 1
+				Player.Additem TE01WeaponResiniteLongsword 1
+				set iDisplayedMenu to -1
+			elseif iPlayerGold < 40000
+				Message "You require 40,000 gold to perform this upgrade"
+				set iDisplayedMenu to -2
+			endif
+		endif
+	elseif iDisplayedMenu == -1		
+		Message "Item Upgraded!"
+		StopQuest TEQQShrineVanillaAmberLongswordAUpgradeQuest
+	elseif iDisplayedMenu == -2
+		Message "No Upgrade Performed!"
+		StopQuest TEQQShrineVanillaAmberLongswordAUpgradeQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaAmberLongswordAUpgradeQuest
+		StartQuest TEQQShrineInitilizationQuest
+	endif
+end

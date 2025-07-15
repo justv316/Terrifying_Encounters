@@ -121,82 +121,82 @@ begin gamemode
 							elseif iFoundWeaponSet == 16 ;Only Bows
 								set iSelectedWeaponSet to 5
 							elseif iFoundWeaponSet == 3
-								MessageBox "Found Multiple Weapon Types", "Cancel", "Back", "Artifacts", "1H Blade"
+								MessageBox "Found Multiple Weapon Types", "Cancel", "Start Over", "Artifacts", "1H Blade"
 								set iChoosingWeaponSet to 1
 							elseif iFoundWeaponSet == 5
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blunt"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "Artifacts", "1H Blunt"
 								set iChoosingWeaponSet to 2
 							elseif iFoundWeaponSet == 9
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "2H Weapon"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "Artifacts", "2H Weapon"
 								set iChoosingWeaponSet to 3
 							elseif iFoundWeaponSet == 17
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "Bows"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "Artifacts", "Bows"
 								set iChoosingWeaponSet to 4
 							elseif iFoundWeaponSet == 6
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blade", "1H Blunt"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "1H Blade", "1H Blunt"
 								set iChoosingWeaponSet to 5
 							elseif iFoundWeaponSet == 10
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blade", "2H Weapon"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "1H Blade", "2H Weapon"
 								set iChoosingWeaponSet to 6
 							elseif iFoundWeaponSet == 18
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blade", "Bows"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "1H Blade", "Bows"
 								set iChoosingWeaponSet to 7
 							elseif iFoundWeaponSet == 12
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blunt", "2H Weapon"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "1H Blunt", "2H Weapon"
 								set iChoosingWeaponSet to 8
 							elseif iFoundWeaponSet == 20
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blunt", "Bows"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "1H Blunt", "Bows"
 								set iChoosingWeaponSet to 9
 							elseif iFoundWeaponSet == 24
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "2H Weapon", "Bows"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "2H Weapon", "Bows"
 								set iChoosingWeaponSet to 10
 							elseif iFoundWeaponSet == 7
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blade", "1H Blunt"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "Artifacts", "1H Blade", "1H Blunt"
 								set iChoosingWeaponSet to 11
 							elseif iFoundWeaponSet == 11
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blade", "2H Weapon"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "Artifacts", "1H Blade", "2H Weapon"
 								set iChoosingWeaponSet to 12
 							elseif iFoundWeaponSet == 19
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blade", "Bows"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "Artifacts", "1H Blade", "Bows"
 								set iChoosingWeaponSet to 13
 							elseif iFoundWeaponSet == 13
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blunt", "2H Weapon"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "Artifacts", "1H Blunt", "2H Weapon"
 								set iChoosingWeaponSet to 14
 							elseif iFoundWeaponSet == 21
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blunt", "Bows"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "Artifacts", "1H Blunt", "Bows"
 								set iChoosingWeaponSet to 15
 							elseif iFoundWeaponSet == 25
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "2H Weapon", "Bows"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "Artifacts", "2H Weapon", "Bows"
 								set iChoosingWeaponSet to 16
 							elseif iFoundWeaponSet == 14
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blade", "1H Blunt", "2H Weapon"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "1H Blade", "1H Blunt", "2H Weapon"
 								set iChoosingWeaponSet to 17
 							elseif iFoundWeaponSet == 22
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blade", "1H Blunt", "Bows"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "1H Blade", "1H Blunt", "Bows"
 								set iChoosingWeaponSet to 18
 							elseif iFoundWeaponSet == 26
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blade", "2H Weapon", "Bows"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "1H Blade", "2H Weapon", "Bows"
 								set iChoosingWeaponSet to 19
 							elseif iFoundWeaponSet == 28
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blunt", "2H Weapon", "Bows"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "1H Blunt", "2H Weapon", "Bows"
 								set iChoosingWeaponSet to 20
 							elseif iFoundWeaponSet == 15
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blade", "1H Blunt", "2H Weapon"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "Artifacts", "1H Blade", "1H Blunt", "2H Weapon"
 								set iChoosingWeaponSet to 21
 							elseif iFoundWeaponSet == 23
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blade", "1H Blunt", "Bows"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "Artifacts", "1H Blade", "1H Blunt", "Bows"
 								set iChoosingWeaponSet to 22
 							elseif iFoundWeaponSet == 27
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blade", "2H Weapon", "Bows"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "Artifacts", "1H Blade", "2H Weapon", "Bows"
 								set iChoosingWeaponSet to 23
 							elseif iFoundWeaponSet == 29
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blunt", "2H Weapon", "Bows"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "Artifacts", "1H Blunt", "2H Weapon", "Bows"
 								set iChoosingWeaponSet to 24
 							elseif iFoundWeaponSet == 30
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "1H Blade", "1H Blunt", "2H Weapon", "Bows"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "1H Blade", "1H Blunt", "2H Weapon", "Bows"
 								set iChoosingWeaponSet to 25
 							elseif iFoundWeaponSet == 31
-								MessageBox "Found Multiple Weapon Types", "Cancel" , "Back", "Artifacts", "1H Blade", "1H Blunt", "2H Weapon", "Bows"
+								MessageBox "Found Multiple Weapon Types", "Cancel" , "Start Over", "Artifacts", "1H Blade", "1H Blunt", "2H Weapon", "Bows"
 								set iChoosingWeaponSet to 26
 							endif
 						endif ;iSearchItem
@@ -539,18 +539,18 @@ begin gamemode
 					elseif iFound0HWeaponSet == 2
 						set iSelectedSubWeaponSet to 2
 					elseif iFound0HWeaponSet == 3
-						MessageBox "Found Multiple sets of Weapons", "Cancel", "Back", "Artifacts(1/3)", "Artifacts(2/3)"
+						MessageBox "Found Multiple sets of Weapons", "Cancel", "Start Over", "Artifacts(1/3)", "Artifacts(2/3)"
 						set iChoosingSubWeaponSet to 1
 					elseif iFound0HWeaponSet == 4
 						set iSelectedSubWeaponSet to 3
 					elseif iFound0HWeaponSet == 5
-						MessageBox "Found Multiple sets of Weapons", "Cancel", "Back", "Artifacts(1/3)", "Artifacts(3/3)"
+						MessageBox "Found Multiple sets of Weapons", "Cancel", "Start Over", "Artifacts(1/3)", "Artifacts(3/3)"
 						set iChoosingSubWeaponSet to 2
 					elseif iFound0HWeaponSet == 6
-						MessageBox "Found Multiple sets of Weapons", "Cancel", "Back", "Artifacts(2/3)", "Artifacts(3/3)"
+						MessageBox "Found Multiple sets of Weapons", "Cancel", "Start Over", "Artifacts(2/3)", "Artifacts(3/3)"
 						set iChoosingSubWeaponSet to 3
 					elseif iFound0HWeaponSet == 7
-						MessageBox "Found Multiple sets of Weapons", "Cancel", "Back", "Artifacts(1/3)","Artifacts(2/3)", "Artifacts(3/3)"
+						MessageBox "Found Multiple sets of Weapons", "Cancel", "Start Over", "Artifacts(1/3)","Artifacts(2/3)", "Artifacts(3/3)"
 						set iChoosingSubWeaponSet to 4 
 					endif
 				elseif iSelectedWeaponSet == 2 ;1H Blade
@@ -563,37 +563,37 @@ begin gamemode
 					elseif iFound1HBladeWeaponSet == 8 
 						set iSelectedSubWeaponSet to 7
 					elseif iFound1HBladeWeaponSet == 3
-						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel", "Back", "Longsword", "Longsword/Shortsword"
+						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel", "Start Over", "Longsword", "Longsword/Shortsword"
 						set iChoosingSubWeaponSet to 5
 					elseif iFound1HBladeWeaponSet == 5
-						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword", "Shortswords"
+						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Start Over", "Longsword", "Shortswords"
 						set iChoosingSubWeaponSet to 6
 					elseif iFound1HBladeWeaponSet == 9
-						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword", "Daggers"
+						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Start Over", "Longsword", "Daggers"
 						set iChoosingSubWeaponSet to 7
 					elseif iFound1HBladeWeaponSet == 6
-						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword/Shortsword", "Shortswords"
+						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Start Over", "Longsword/Shortsword", "Shortswords"
 						set iChoosingSubWeaponSet to 8
 					elseif iFound1HBladeWeaponSet == 10
-						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword/Shortsword", "Daggers"
+						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Start Over", "Longsword/Shortsword", "Daggers"
 						set iChoosingSubWeaponSet to 9
 					elseif iFound1HBladeWeaponSet == 12
-						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Shortswords", "Daggers"
+						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Start Over", "Shortswords", "Daggers"
 						set iChoosingSubWeaponSet to 10
 					elseif iFound1HBladeWeaponSet == 7
-						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword", "Longsword/Shortsword", "Shortswords"
+						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Start Over", "Longsword", "Longsword/Shortsword", "Shortswords"
 						set iChoosingSubWeaponSet to 11
 					elseif iFound1HBladeWeaponSet == 11
-						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword", "Longsword/Shortsword", "Daggers"
+						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Start Over", "Longsword", "Longsword/Shortsword", "Daggers"
 						set iChoosingSubWeaponSet to 12
 					elseif iFound1HBladeWeaponSet == 13
-						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword", "Shortswords", "Daggers"
+						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Start Over", "Longsword", "Shortswords", "Daggers"
 						set iChoosingSubWeaponSet to 13
 					elseif iFound1HBladeWeaponSet == 14
-						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword/Shortsword", "Shortswords", "Daggers"
+						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Start Over", "Longsword/Shortsword", "Shortswords", "Daggers"
 						set iChoosingSubWeaponSet to 14
 					elseif iFound1HBladeWeaponSet == 15
-						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Back", "Longsword", "Longsword/Shortsword", "Shortswords", "Daggers"
+						MessageBox "Found Multiple 1H Blade Weaponsets", "Cancel" , "Start Over", "Longsword", "Longsword/Shortsword", "Shortswords", "Daggers"
 						set iChoosingSubWeaponSet to 15
 					endif
 				elseif iSelectedWeaponSet == 3 ;1H Blunt
@@ -604,16 +604,16 @@ begin gamemode
 					elseif iFound1HBluntWeaponSet == 4 
 						set iSelectedSubWeaponSet to 10
 					elseif iFound1HBluntWeaponSet == 3
-						MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel", "Back", "Mace", "Mace/Waraxe"
+						MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel", "Start Over", "Mace", "Mace/Waraxe"
 						set iChoosingSubWeaponSet to 15
 					elseif iFound1HBluntWeaponSet == 5
-						MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel" , "Back", "Mace", "Waraxe"
+						MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel" , "Start Over", "Mace", "Waraxe"
 						set iChoosingSubWeaponSet to 16
 					elseif iFound1HBluntWeaponSet == 6
-						MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel" , "Back", "Mace/Waraxe", "Waraxe"
+						MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel" , "Start Over", "Mace/Waraxe", "Waraxe"
 						set iChoosingSubWeaponSet to 17
 					elseif iFound1HBluntWeaponSet == 7
-						MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel" , "Back", "Mace", "Mace/Waraxe", "Waraxe"
+						MessageBox "Found Multiple 1H Blunt Weaponsets", "Cancel" , "Start Over", "Mace", "Mace/Waraxe", "Waraxe"
 						set iChoosingSubWeaponSet to 18
 					endif
 				elseif iSelectedWeaponSet == 4 ;2H Weapon
@@ -626,37 +626,37 @@ begin gamemode
 					elseif iFound2HWeaponSet == 8 
 						set iSelectedSubWeaponSet to 14
 					elseif iFound2HWeaponSet == 3
-						MessageBox "Found Multiple 2H Weaponsets", "Cancel", "Back", "Battleaxe", "Claymore"
+						MessageBox "Found Multiple 2H Weaponsets", "Cancel", "Start Over", "Battleaxe", "Claymore"
 						set iChoosingSubWeaponSet to 19
 					elseif iFound2HWeaponSet == 5
-						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Warhammer/Claymore"
+						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Start Over", "Battleaxe", "Warhammer/Claymore"
 						set iChoosingSubWeaponSet to 20
 					elseif iFound2HWeaponSet == 9
-						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Warhammer"
+						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Start Over", "Battleaxe", "Warhammer"
 						set iChoosingSubWeaponSet to 21
 					elseif iFound2HWeaponSet == 6
-						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Claymore", "Warhammer/Claymore"
+						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Start Over", "Claymore", "Warhammer/Claymore"
 						set iChoosingSubWeaponSet to 22
 					elseif iFound2HWeaponSet == 10
-						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Claymore", "Warhammer"
+						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Start Over", "Claymore", "Warhammer"
 						set iChoosingSubWeaponSet to 23
 					elseif iFound2HWeaponSet == 12
-						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Warhammer/Claymore", "Warhammer"
+						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Start Over", "Warhammer/Claymore", "Warhammer"
 						set iChoosingSubWeaponSet to 24
 					elseif iFound2HWeaponSet == 7
-						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Claymore", "Warhammer/Claymore"
+						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Start Over", "Battleaxe", "Claymore", "Warhammer/Claymore"
 						set iChoosingSubWeaponSet to 25
 					elseif iFound2HWeaponSet == 11
-						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Claymore", "Warhammer"
+						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Start Over", "Battleaxe", "Claymore", "Warhammer"
 						set iChoosingSubWeaponSet to 26
 					elseif iFound2HWeaponSet == 13
-						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Warhammer/Claymore", "Warhammer"
+						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Start Over", "Battleaxe", "Warhammer/Claymore", "Warhammer"
 						set iChoosingSubWeaponSet to 27
 					elseif iFound2HWeaponSet == 14
-						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Claymore", "Warhammer/Claymore", "Warhammer"
+						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Start Over", "Claymore", "Warhammer/Claymore", "Warhammer"
 						set iChoosingSubWeaponSet to 28
 					elseif iFound2HWeaponSet == 15
-						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Back", "Battleaxe", "Claymore", "Warhammer/Claymore", "Warhammer"
+						MessageBox "Found Multiple 2H Weaponsets", "Cancel" , "Start Over", "Battleaxe", "Claymore", "Warhammer/Claymore", "Warhammer"
 						set iChoosingSubWeaponSet to 29
 					endif
 				elseif iSelectedWeaponSet == 5 ;Bows
@@ -665,7 +665,7 @@ begin gamemode
 					elseif iFoundBowWeaponSet == 2
 						set iSelectedSubWeaponSet to 16
 					elseif iFoundBowWeaponSet == 3
-						MessageBox "Found Multiple Bow Weaponsets", "Cancel" , "Back", "Bows 1/2", "Bows 2/2"
+						MessageBox "Found Multiple Bow Weaponsets", "Cancel" , "Start Over", "Bows 1/2", "Bows 2/2"
 						set iChoosingSubWeaponSet to 30
 					endif
 				endif
@@ -1041,116 +1041,52 @@ begin gamemode
 			endif
 		elseif iSelectedSubWeaponSet == 1
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaArtifactQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaArtifactQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaArtifactQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaArtifactQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaArtifactQuest
+			StartQuest TEQQShrineVanillaArtifactQuest
 		elseif iSelectedSubWeaponSet == 2
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaArtifactTwoQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaArtifactTwoQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaArtifactTwoQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaArtifactTwoQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaArtifactTwoQuest
+			StartQuest TEQQShrineVanillaArtifactTwoQuest
 		elseif iSelectedSubWeaponSet == 3
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaArtifactThreeQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaArtifactThreeQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaArtifactThreeQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaArtifactThreeQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaArtifactThreeQuest
+			StartQuest TEQQShrineVanillaArtifactThreeQuest
 		elseif iSelectedSubWeaponSet == 4
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaFirst1HBladeWeaponQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaFirst1HBladeWeaponQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaFirst1HBladeWeaponQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaFirst1HBladeWeaponQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaFirst1HBladeWeaponQuest
+			StartQuest TEQQShrineVanillaFirst1HBladeWeaponQuest
 		elseif iSelectedSubWeaponSet == 5
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaSecond1HBladeWeaponQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaSecond1HBladeWeaponQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaSecond1HBladeWeaponQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaSecond1HBladeWeaponQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaSecond1HBladeWeaponQuest
+			StartQuest TEQQShrineVanillaSecond1HBladeWeaponQuest
 		elseif iSelectedSubWeaponSet == 6
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaThird1HBladeWeaponQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaThird1HBladeWeaponQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaThird1HBladeWeaponQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaThird1HBladeWeaponQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaThird1HBladeWeaponQuest
+			StartQuest TEQQShrineVanillaThird1HBladeWeaponQuest
 		elseif iSelectedSubWeaponSet == 7
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaFourth1HBladeWeaponQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaFourth1HBladeWeaponQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaFourth1HBladeWeaponQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaFourth1HBladeWeaponQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaFourth1HBladeWeaponQuest
+			StartQuest TEQQShrineVanillaFourth1HBladeWeaponQuest
 		elseif iSelectedSubWeaponSet == 8
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaFirst1HBluntWeaponQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaFirst1HBluntWeaponQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaFirst1HBluntWeaponQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaFirst1HBluntWeaponQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaFirst1HBluntWeaponQuest
+			StartQuest TEQQShrineVanillaFirst1HBluntWeaponQuest
 		elseif iSelectedSubWeaponSet == 9
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaSecond1HBluntWeaponQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaSecond1HBluntWeaponQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaSecond1HBluntWeaponQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaSecond1HBluntWeaponQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaSecond1HBluntWeaponQuest
+			StartQuest TEQQShrineVanillaSecond1HBluntWeaponQuest
 		elseif iSelectedSubWeaponSet == 10
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaThird1HBluntWeaponQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaThird1HBluntWeaponQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaThird1HBluntWeaponQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaThird1HBluntWeaponQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaThird1HBluntWeaponQuest
+			StartQuest TEQQShrineVanillaThird1HBluntWeaponQuest
 		elseif iSelectedSubWeaponSet == 11
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaFirst2HWeaponQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaFirst2HWeaponQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaFirst2HWeaponQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaFirst2HWeaponQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaFirst2HWeaponQuest
+			StartQuest TEQQShrineVanillaFirst2HWeaponQuest
 		elseif iSelectedSubWeaponSet == 12
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaSecond2HWeaponQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaSecond2HWeaponQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaSecond2HWeaponQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaSecond2HWeaponQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaSecond2HWeaponQuest
+			StartQuest TEQQShrineVanillaSecond2HWeaponQuest
 		elseif iSelectedSubWeaponSet == 13
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaThird2HWeaponQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaThird2HWeaponQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaThird2HWeaponQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaThird2HWeaponQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaThird2HWeaponQuest
+			StartQuest TEQQShrineVanillaThird2HWeaponQuest
 		elseif iSelectedSubWeaponSet == 14
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaFourth2HWeaponQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaFourth2HWeaponQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaFourth2HWeaponQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaFourth2HWeaponQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaFourth2HWeaponQuest
+			StartQuest TEQQShrineVanillaFourth2HWeaponQuest
 		elseif iSelectedSubWeaponSet == 15
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaFirstBowWeaponQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaFirstBowWeaponQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaFirstBowWeaponQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaFirstBowWeaponQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaFirstBowWeaponQuest
+			StartQuest TEQQShrineVanillaFirstBowWeaponQuest
 		elseif iSelectedSubWeaponSet == 16
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			set TEQQShrineUpgradeVanillaSecondBowWeaponQuest.fQuestDelayTime to 0.01
-			set TEQQShrineUpgradeVanillaSecondBowWeaponQuest.iDisplayedMenu to 0
-			set TEQQShrineUpgradeVanillaSecondBowWeaponQuest.iChoosingItem to 0
-			set TEQQShrineUpgradeVanillaSecondBowWeaponQuest.iVanillaTier to 0
-			StartQuest TEQQShrineUpgradeVanillaSecondBowWeaponQuest
+			StartQuest TEQQShrineVanillaSecondBowWeaponQuest
 		endif
 	elseif iDisplayedMenu == -1
 		Message "Nothing found to upgrade!"
