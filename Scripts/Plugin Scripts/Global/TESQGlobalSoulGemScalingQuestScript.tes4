@@ -5,56 +5,70 @@ scn TESQGlobalSoulGemScalingQuestScript
 float fQuestDelayTime
 short iPlayerLevel
 short iLastCheckedLevel
+short iNewSoulValuePetty
+short iDefaultSoulLevelValuePetty
+short iNewSoulValueLesser
+short iDefaultSoulLevelValueLesser
+short iNewSoulValueCommon
+short iDefaultSoulLevelValueCommon
+short iNewSoulValueGreater
+short iDefaultSoulLevelValueGreater
+short iNewSoulValueGrand
+short iDefaultSoulLevelValueGrand
 float fTimer
 
 Begin GameMode
-	set fQuestDelayTime to 1
-	set fTimer to fTimer + GetSecondsPassed
-	if fTimer >= 3
-		set iPlayerLevel to Player.GetLevel
-		if iPlayerLevel > iLastCheckedLevel
-			if iPlayerLevel >= 25
-				Message "ConsoleCommand SetGameSetting iSoulLevelValuePetty 300"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueLesser 600"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueCommon 1600"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueGreater 2400"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueGrand 3200"
-			endif
-			if iPlayerLevel >= 30
-				Message "ConsoleCommand SetGameSetting iSoulLevelValuePetty 600"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueLesser 1200"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueCommon 3200"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueGreater 4800"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueGrand 6400"
-			endif
-			if iPlayerLevel >= 35
-				Message "ConsoleCommand SetGameSetting iSoulLevelValuePetty 750"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueLesser 1500"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueCommon 4000"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueGreater 6000"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueGrand 8000"
-			endif
-			if iPlayerLevel >= 40
-				Message "ConsoleCommand SetGameSetting iSoulLevelValuePetty 1050"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueLesser 2100"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueCommon 5600"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueGreater 8400"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueGrand 11200"
-			endif
-			if iPlayerLevel >= 45
-				Message "ConsoleCommand SetGameSetting iSoulLevelValuePetty 1200"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueLesser 2400"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueCommon 6400"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueGreater 9600"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueGrand 12800"
-			endif
-			if iPlayerLevel >= 50
-				Message "ConsoleCommand SetGameSetting iSoulLevelValuePetty 1500"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueLesser 3000"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueCommon 8000"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueGreater 12000"
-				Message "ConsoleCommand SetGameSetting iSoulLevelValueGrand 16000"
-			endif
+	set fQuestDelayTime to 0.5
+	if iDefaultSoulLevelValuePetty != 150
+		set iDefaultSoulLevelValuePetty to 150
+	endif
+	if iDefaultSoulLevelValueLesser != 300
+		set iDefaultSoulLevelValueLesser to 300
+	endif
+	if iDefaultSoulLevelValueCommon != 800
+		set iDefaultSoulLevelValueCommon to 800
+	endif
+	if iDefaultSoulLevelValueGreater != 1200
+		set iDefaultSoulLevelValueGreater to 1200
+	endif
+	if iDefaultSoulLevelValueGrand != 1600
+		set iDefaultSoulLevelValueGrand to 1600
+	endif
+	set iPlayerLevel to Player.GetLevel
+	if iPlayerLevel > iLastCheckedLevel
+		set iNewSoulValuePetty to iDefaultSoulLevelValuePetty + iPlayerLevel * 27
+		set iNewSoulValueLesser to iDefaultSoulLevelValueLesser + iPlayerLevel * 54
+		set iNewSoulValueCommon to iDefaultSoulLevelValueCommon + iPlayerLevel * 144
+		set iNewSoulValueGreater to iDefaultSoulLevelValueGreater + iPlayerLevel * 216
+		set iNewSoulValueGrand to iDefaultSoulLevelValueGrand + iPlayerLevel * 288
+		if TEiGlobalNewSoulValuePetty != iNewSoulValuePetty
+			set TEiGlobalNewSoulValuePetty to iNewSoulValuePetty
+			set fTimer to 1
+		endif
+		if TEiGlobalNewSoulValueLesser != iNewSoulValueLesser
+			set TEiGlobalNewSoulValueLesser to iNewSoulValueLesser
+			set fTimer to 1
+		endif
+		if TEiGlobalNewSoulValueCommon != iNewSoulValueCommon
+			set TEiGlobalNewSoulValueCommon to iNewSoulValueCommon
+			set fTimer to 1
+		endif
+		if TEiGlobalNewSoulValueGreater != iNewSoulValueGreater
+			set TEiGlobalNewSoulValueGreater to iNewSoulValueGreater
+			set fTimer to 1
+		endif
+		if TEiGlobalNewSoulValueGrand != iNewSoulValueGrand
+			set TEiGlobalNewSoulValueGrand to iNewSoulValueGrand
+			set fTimer to 1
+		endif
+		if fTimer > 0
+			set fTimer to fTimer - GetSecondsPassed
+		else
+			message "ConsoleCommand SetGameSetting iSoulLevelValuePetty ((GetGlobalValue TEiGlobalNewSoulValuePetty))"
+			message "ConsoleCommand SetGameSetting iSoulLevelValueLesser ((GetGlobalValue TEiGlobalNewSoulValueLesser))"
+			message "ConsoleCommand SetGameSetting iSoulLevelValueCommon ((GetGlobalValue TEiGlobalNewSoulValueCommon))"
+			message "ConsoleCommand SetGameSetting iSoulLevelValueGreater ((GetGlobalValue TEiGlobalNewSoulValueGreater))"
+			message "ConsoleCommand SetGameSetting iSoulLevelValueGrand ((GetGlobalValue TEiGlobalNewSoulValueGrand))"
 			set iLastCheckedLevel to iPlayerLevel
 		endif
 	endif

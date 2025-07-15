@@ -1,4 +1,4 @@
-scn TESQTimeOfDayQuestScript
+scn TESQGlobalTimeOfDayQuestScript
 
 ;Runs all the time. Sets a Global boolean determining day or night.
 
