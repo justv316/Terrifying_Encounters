@@ -1,4 +1,4 @@
-scn TESQShrineVanillaAmberLongswordUpgradeQuestScript
+scn TESQShrineVanillaWeaponMadnessBowUpgradeQuestScript
 
 float fQuestDelayTime
 short iDisplayedMenu
@@ -15,115 +15,115 @@ begin gameMode
 			if iChoosing == 0
 				if iChoosingTier == 0
 					set iInventoryTier to 0
-					if Player.GetItemCount SEAmberSword1 > 0
+					if Player.GetItemCount SEMadnessBow1 > 0
 						set iInventoryTier to iInventoryTier + ( 1 * 1 )
 					endif
-					if Player.GetItemCount SEAmberSword2 > 0
+					if Player.GetItemCount SEMadnessBow2 > 0
 						set iInventoryTier to iInventoryTier + ( 2 * 1 )
 					endif
-					if Player.GetItemCount SEAmberSword3 > 0
+					if Player.GetItemCount SEMadnessBow3 > 0
 						set iInventoryTier to iInventoryTier + ( 2 * 2 )
 					endif
-					if Player.GetItemCount SEAmberSword4 > 0
+					if Player.GetItemCount SEMadnessBow4 > 0
 						set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 )
 					endif
-					if Player.GetItemCount SEAmberSword5 > 0
+					if Player.GetItemCount SEMadnessBow5 > 0
 						set iInventoryTier to iInventoryTier + ( 2 * 2 * 2 * 2 )
 					endif
 					set iChoosingTier to 1
 				elseif iChoosingTier == 1
 					if iInventoryTier == 1
-						MessageBox "Amber Longsword", "Cancel", "Start Over", "Standard: 35,000 Gold"
+						MessageBox "Madness Bow", "Cancel", "Start Over", "Standard: 35,000 Gold"
 						set iChoosing to 1
 					elseif iInventoryTier == 2
-						MessageBox "Fine Amber Longsword", "Cancel", "Start Over", "Fine: 30,000 Gold"
+						MessageBox "Fine Madness Bow", "Cancel", "Start Over", "Fine: 30,000 Gold"
 						set iChoosing to 2
 					elseif iInventoryTier == 4
-						MessageBox "Very Fine Amber Longsword", "Cancel", "Start Over", "Very Fine: 25,000 Gold"
+						MessageBox "Very Fine Madness Bow", "Cancel", "Start Over", "Very Fine: 25,000 Gold"
 						set iChoosing to 3
 					elseif iInventoryTier == 8
-						MessageBox "Grand Amber Longsword", "Cancel", "Start Over", "Grand: 20,000 Gold"
+						MessageBox "Grand Madness Bow", "Cancel", "Start Over", "Grand: 20,000 Gold"
 						set iChoosing to 4
 					elseif iInventoryTier == 16
-						MessageBox "Perfect Amber Longsword", "Cancel", "Start Over", "Perfect: 15,000 Gold"
+						MessageBox "Perfect Madness Bow", "Cancel", "Start Over", "Perfect: 15,000 Gold"
 						set iChoosing to 5
 					elseif iInventoryTier == 3
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold" 
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold" 
 						set iChoosing to 7
 					elseif iInventoryTier == 5
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Very Fine: 25,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Very Fine: 25,000 Gold"
 						set iChoosing to 8
 					elseif iInventoryTier == 9
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Grand: 20,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Grand: 20,000 Gold"
 						set iChoosing to 9
 					elseif iInventoryTier == 17
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Perfect: 15,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Perfect: 15,000 Gold"
 						set iChoosing to 10
 					elseif iInventoryTier == 6
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold"
 						set iChoosing to 11
 					elseif iInventoryTier == 10
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Fine: 30,000 Gold", "Grand: 20,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Fine: 30,000 Gold", "Grand: 20,000 Gold"
 						set iChoosing to 12
 					elseif iInventoryTier == 18
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Fine: 30,000 Gold", "Perfect: 15,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Fine: 30,000 Gold", "Perfect: 15,000 Gold"
 						set iChoosing to 13
 					elseif iInventoryTier == 12
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold"
 						set iChoosing to 14
 					elseif iInventoryTier == 20
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Very Fine: 25,000 Gold", "Perfect: 15,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Very Fine: 25,000 Gold", "Perfect: 15,000 Gold"
 						set iChoosing to 15
 					elseif iInventoryTier == 24
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
 						set iChoosing to 16
 					elseif iInventoryTier == 7
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold"
 						set iChoosing to 17
 					elseif iInventoryTier == 11
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold", "Grand: 20,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold", "Grand: 20,000 Gold"
 						set iChoosing to 18
 					elseif iInventoryTier == 19
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold", "Perfect: 15,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold", "Perfect: 15,000 Gold"
 						set iChoosing to 19
 					elseif iInventoryTier == 13
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold"
 						set iChoosing to 20
 					elseif iInventoryTier == 21
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Very Fine: 25,000 Gold", "Perfect: 15,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Very Fine: 25,000 Gold", "Perfect: 15,000 Gold"
 						set iChoosing to 21
 					elseif iInventoryTier == 25
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
 						set iChoosing to 22
 					elseif iInventoryTier == 14
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold"
 						set iChoosing to 23
 					elseif iInventoryTier == 22
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold", "Perfect: 15,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold", "Perfect: 15,000 Gold"
 						set iChoosing to 24
 					elseif iInventoryTier == 26
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Fine: 30,000 Gold", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Fine: 30,000 Gold", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
 						set iChoosing to 25
 					elseif iInventoryTier == 28
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
 						set iChoosing to 26
 					elseif iInventoryTier == 15
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold"
 						set iChoosing to 27
 					elseif iInventoryTier == 23
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold", "Perfect: 15,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold", "Perfect: 15,000 Gold"
 						set iChoosing to 28
 					elseif iInventoryTier == 27
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
 						set iChoosing to 29
 					elseif iInventoryTier == 29
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
 						set iChoosing to 30
 					elseif iInventoryTier == 30
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
 						set iChoosing to 31
 					elseif iInventoryTier == 31
-						MessageBox "Amber Sword", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
+						MessageBox "Madness Bow", "Cancel" , "Start Over", "Standard: 35,000 Gold", "Fine: 30,000 Gold", "Very Fine: 25,000 Gold", "Grand: 20,000 Gold", "Perfect: 15,000 Gold"
 						set iChoosing to 32
 					endif
 				endif
@@ -484,8 +484,8 @@ begin gameMode
 		elseif iUpgradePerformed == 1
 			if iPlayerGold >= 35000
 				Player.RemoveItem Gold001 35000
-				Player.RemoveItem SEAmberSword1 1
-				Player.Additem TE01WeaponResiniteLongsword 1
+				Player.RemoveItem SEMadnessBow1 1
+				Player.Additem TE01WeaponMaddeningBow 1
 				set iDisplayedMenu to -1
 			elseif iPlayerGold < 35000
 				Message "You require 35,000 gold to perform this upgrade"
@@ -494,8 +494,8 @@ begin gameMode
 		elseif iUpgradePerformed == 2
 			if iPlayerGold >= 30000
 				Player.RemoveItem Gold001 30000
-				Player.RemoveItem SEAmberSword2 1
-				Player.Additem TE01WeaponResiniteLongsword 1
+				Player.RemoveItem SEMadnessBow2 1
+				Player.Additem TE01WeaponMaddeningBow 1
 				set iDisplayedMenu to -1
 			elseif iPlayerGold < 30000
 				Message "You require 30,000 gold to perform this upgrade"
@@ -504,8 +504,8 @@ begin gameMode
 		elseif iUpgradePerformed == 3
 			if iPlayerGold >= 25000
 				Player.RemoveItem Gold001 25000
-				Player.RemoveItem SEAmberSword3 1
-				Player.Additem TE01WeaponResiniteLongsword 1
+				Player.RemoveItem SEMadnessBow3 1
+				Player.Additem TE01WeaponMaddeningBow 1
 				set iDisplayedMenu to -1
 			elseif iPlayerGold < 25000
 				Message "You require 25,000 gold to perform this upgrade"
@@ -514,8 +514,8 @@ begin gameMode
 		elseif iUpgradePerformed == 4
 			if iPlayerGold >= 20000
 				Player.RemoveItem Gold001 20000
-				Player.RemoveItem SEAmberSword4 1
-				Player.Additem TE01WeaponResiniteLongsword 1
+				Player.RemoveItem SEMadnessBow4 1
+				Player.Additem TE01WeaponMaddeningBow 1
 				set iDisplayedMenu to -1
 			elseif iPlayerGold < 20000
 				Message "You require 20,000 gold to perform this upgrade"
@@ -524,8 +524,8 @@ begin gameMode
 		elseif iUpgradePerformed == 5
 			if iPlayerGold >= 15000
 				Player.RemoveItem Gold001 15000
-				Player.RemoveItem SEAmberSword5 1
-				Player.Additem TE01WeaponResiniteLongsword 1
+				Player.RemoveItem SEMadnessBow5 1
+				Player.Additem TE01WeaponMaddeningBow 1
 				set iDisplayedMenu to -1
 			elseif iPlayerGold < 15000
 				Message "You require 15,000 gold to perform this upgrade"
@@ -534,13 +534,13 @@ begin gameMode
 		endif
 	elseif iDisplayedMenu == -1		
 		Message "Item Upgraded!"
-		StopQuest TEQQShrineVanillaAmberLongswordUpgradeQuest
+		StopQuest TEQQShrineVanillaWeaponMadnessBowUpgradeQuest
 	elseif iDisplayedMenu == -2
 		Message "No Upgrade Performed!"
-		StopQuest TEQQShrineVanillaAmberLongswordUpgradeQuest
+		StopQuest TEQQShrineVanillaWeaponMadnessBowUpgradeQuest
 	elseif iDisplayedMenu == -3
 		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
-		StopQuest TEQQShrineVanillaAmberLongswordUpgradeQuest
+		StopQuest TEQQShrineVanillaWeaponMadnessBowUpgradeQuest
 		StartQuest TEQQShrineInitilizationQuest
 	endif
 end

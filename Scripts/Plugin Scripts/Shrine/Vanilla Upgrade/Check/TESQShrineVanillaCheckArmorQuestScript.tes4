@@ -926,76 +926,76 @@ begin GameMode
 			endif
 		elseif iSelectedArmorSet == 1
 			StopQuest TEQQShrineVanillaCheckArmorQuest
-			set TEQQShrineVanillaEbonyArmorQuest.fQuestDelayTime to 0.01
-			set TEQQShrineVanillaEbonyArmorQuest.iDisplayedMenu to 0
-			set TEQQShrineVanillaEbonyArmorQuest.iChoosingItem to 0
-			set TEQQShrineVanillaEbonyArmorQuest.iInventoryTier to 0
-			StartQuest TEQQShrineVanillaEbonyArmorQuest
+			set TEQQShrineVanillaArmorEbonyQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorEbonyQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorEbonyQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorEbonyQuest.iInventoryTier to 0
+			StartQuest TEQQShrineVanillaArmorEbonyQuest
 		elseif iSelectedArmorSet == 2
 			StopQuest TEQQShrineVanillaCheckArmorQuest
-			set TEQQShrineVanillaDaedricArmorQuest.fQuestDelayTime to 0.01
-			set TEQQShrineVanillaDaedricArmorQuest.iDisplayedMenu to 0
-			set TEQQShrineVanillaDaedricArmorQuest.iChoosingItem to 0
-			set TEQQShrineVanillaDaedricArmorQuest.iInventoryTier to 0
-			StartQuest TEQQShrineVanillaDaedricArmorQuest
+			set TEQQShrineVanillaArmorDaedricQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorDaedricQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorDaedricQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorDaedricQuest.iInventoryTier to 0
+			StartQuest TEQQShrineVanillaArmorDaedricQuest
 		elseif iSelectedArmorSet == 3
 			StopQuest TEQQShrineVanillaCheckArmorQuest
-			set TEQQShrineVanillaDwarvenArmorQuest.fQuestDelayTime to 0.01
-			set TEQQShrineVanillaDwarvenArmorQuest.iDisplayedMenu to 0
-			set TEQQShrineVanillaDwarvenArmorQuest.iChoosingItem to 0
-			set TEQQShrineVanillaDwarvenArmorQuest.iInventoryTier to 0
-			StartQuest TEQQShrineVanillaDwarvenArmorQuest
+			set TEQQShrineVanillaArmorDwarvenQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorDwarvenQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorDwarvenQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorDwarvenQuest.iInventoryTier to 0
+			StartQuest TEQQShrineVanillaArmorDwarvenQuest
 		elseif iSelectedArmorSet == 4
 			StopQuest TEQQShrineVanillaCheckArmorQuest
-			set TEQQShrineVanillaMadnessHArmorQuest.fQuestDelayTime to 0.01
-			set TEQQShrineVanillaMadnessHArmorQuest.iDisplayedMenu to 0
-			set TEQQShrineVanillaMadnessHArmorQuest.iChoosingItem to 0
-			set TEQQShrineVanillaMadnessHArmorQuest.iInventoryTier to 0
-			StartQuest TEQQShrineVanillaMadnessHArmorQuest
+			set TEQQShrineVanillaArmorMadnessHQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorMadnessHQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorMadnessHQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorMadnessHQuest.iInventoryTier to 0
+			StartQuest TEQQShrineVanillaArmorMadnessHQuest
 		elseif iSelectedArmorSet == 5
 			StopQuest TEQQShrineVanillaCheckArmorQuest
-			set TEQQShrineVanillaAmberHArmorQuest.fQuestDelayTime to 0.01
-			set TEQQShrineVanillaAmberHArmorQuest.iDisplayedMenu to 0
-			set TEQQShrineVanillaAmberHArmorQuest.iChoosingItem to 0
-			set TEQQShrineVanillaAmberHArmorQuest.iInventoryTier to 0
-			StartQuest TEQQShrineVanillaAmberHArmorQuest
+			set TEQQShrineVanillaArmorAmberHQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorAmberHQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorAmberHQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorAmberHQuest.iInventoryTier to 0
+			StartQuest TEQQShrineVanillaArmorAmberHQuest
 		elseif iSelectedArmorSet == 6
 			Message "There is no Heavy Armor Set 6 but theres a spot for it"
 		elseif iSelectedArmorSet == 7
 			StopQuest TEQQShrineVanillaCheckArmorQuest
-			set TEQQShrineVanillaElvenArmorQuest.fQuestDelayTime to 0.01
-			set TEQQShrineVanillaElvenArmorQuest.iDisplayedMenu to 0
-			set TEQQShrineVanillaElvenArmorQuest.iChoosingItem to 0
-			set TEQQShrineVanillaElvenArmorQuest.iInventoryTier to 0
-			StartQuest TEQQShrineVanillaElvenArmorQuest
+			set TEQQShrineVanillaArmorElvenQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorElvenQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorElvenQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorElvenQuest.iInventoryTier to 0
+			StartQuest TEQQShrineVanillaArmorElvenQuest
 		elseif iSelectedArmorSet == 8
 			StopQuest TEQQShrineVanillaCheckArmorQuest
-			set TEQQShrineVanillaMithrilArmorQuest.fQuestDelayTime to 0.01
-			set TEQQShrineVanillaMithrilArmorQuest.iDisplayedMenu to 0
-			set TEQQShrineVanillaMithrilArmorQuest.iChoosingItem to 0
-			set TEQQShrineVanillaMithrilArmorQuest.iInventoryTier to 0
-			StartQuest TEQQShrineVanillaMithrilArmorQuest
+			set TEQQShrineVanillaArmorMithrilQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorMithrilQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorMithrilQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorMithrilQuest.iInventoryTier to 0
+			StartQuest TEQQShrineVanillaArmorMithrilQuest
 		elseif iSelectedArmorSet == 9
 			StopQuest TEQQShrineVanillaCheckArmorQuest
-			set TEQQShrineVanillaGlassArmorQuest.fQuestDelayTime to 0.01
-			set TEQQShrineVanillaGlassArmorQuest.iDisplayedMenu to 0
-			set TEQQShrineVanillaGlassArmorQuest.iChoosingItem to 0
-			set TEQQShrineVanillaGlassArmorQuest.iInventoryTier to 0
-			StartQuest TEQQShrineVanillaGlassArmorQuest
+			set TEQQShrineVanillaArmorGlassQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorGlassQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorGlassQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorGlassQuest.iInventoryTier to 0
+			StartQuest TEQQShrineVanillaArmorGlassQuest
 		elseif iSelectedArmorSet == 10
 			StopQuest TEQQShrineVanillaCheckArmorQuest
-			set TEQQShrineVanillaMadnessLArmorQuest.fQuestDelayTime to 0.01
-			set TEQQShrineVanillaMadnessLArmorQuest.iDisplayedMenu to 0
-			set TEQQShrineVanillaMadnessLArmorQuest.iChoosingItem to 0
-			set TEQQShrineVanillaMadnessLArmorQuest.iInventoryTier to 0
-			StartQuest TEQQShrineVanillaMadnessLArmorQuest
+			set TEQQShrineVanillaArmorMadnessLQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorMadnessLQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorMadnessLQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorMadnessLQuest.iInventoryTier to 0
+			StartQuest TEQQShrineVanillaArmorMadnessLQuest
 		elseif iSelectedArmorSet == 11
 			StopQuest TEQQShrineVanillaCheckArmorQuest
-			set TEQQShrineVanillaAmberLArmorQuest.fQuestDelayTime to 0.01
-			set TEQQShrineVanillaAmberLArmorQuest.iDisplayedMenu to 0
-			set TEQQShrineVanillaAmberLArmorQuest.iChoosingItem to 0
-			set TEQQShrineVanillaAmberLArmorQuest.iInventoryTier to 0
-			StartQuest TEQQShrineVanillaAmberLArmorQuest
+			set TEQQShrineVanillaArmorAmberLQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorAmberLQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorAmberLQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorAmberLQuest.iInventoryTier to 0
+			StartQuest TEQQShrineVanillaArmorAmberLQuest
 		elseif iSelectedArmorSet == 12
 			Message "There is no Light Armor Set 6 but theres a spot for it"
 		endif

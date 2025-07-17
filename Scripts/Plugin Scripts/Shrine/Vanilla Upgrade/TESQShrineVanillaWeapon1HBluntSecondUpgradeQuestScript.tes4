@@ -1,0 +1,160 @@
+scn TESQShrineVanillaWeapon1HBluntSecondUpgradeQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iUpgradePerformed
+short iChoosing
+short iChoice
+short bGlassWaraxe
+short bEbonyMace
+short bEbonyWaraxe
+short bAmberMace
+short bAmberMaceA
+short bSilverMace
+short bSilverWaraxe
+
+Begin GameMode
+	if iDisplayedMenu == 0
+		if iUpgradePerformed == 0
+			if iChoosing == 0
+				if bGlassWaraxe == 1
+					MessageBox "Upgrade Glass Waraxe to Tier 1 Malachite Waraxe? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 1
+				endif
+				if bEbonyMace == 1
+					MessageBox "Upgrade Ebony Mace to Tier 1 Obsidian Mace? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 2
+				endif
+				if bEbonyWaraxe == 1
+					MessageBox "Upgrade Ebony Waraxe to Tier 1 Obsidian Waraxe? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 3
+				endif
+				if bAmberMace == 1
+					MessageBox "Upgrade Amber Mace to Tier 1 Resinite Mace? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 10-50,000 Gold"
+					set iChoosing to 4
+				endif
+				if bSilverMace == 1
+					MessageBox "Upgrade Silver Mace to Tier 1 Silvrite Mace? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 5
+				endif
+				if bSilverWaraxe == 1
+					MessageBox "Upgrade Silver Waraxe to Tier 1 Silvrite Waraxe? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", 
+					set iChoosing to 6
+				endif
+			elseif iChoosing == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				endif
+			elseif iChoosing == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				endif
+			elseif iChoosing == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 5
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 6
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 6
+				endif
+			endif
+		elseif iUpgradePerformed == 1
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapGlassWaraxe 1
+			Player.AddItem TE01WeaponMalachiteWaraxe 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 2
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapEbonyMace 1
+			Player.AddItem TE01WeaponObsidianMace 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 3
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapEbonyWaraxe 1
+			Player.AddItem TE01WeaponObsidianWaraxe 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 4
+			if bAmberMace == 1 && bAmberMaceA == 0
+				StartQuest TEQQShrineVanillaWeaponAmberMaceUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest
+			elseif bAmberMace == 0 && bAmberMaceA == 1
+				StartQuest TEQQShrineVanillaWeaponAmberMaceAUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest
+			elseif bAmberMace == 1 && bAmberMaceA == 1
+				MessageBox "Found Both Low and High Quality Amber Maces, which would you like to upgrade?", "Cancel", "Start Over", "High Quality", "Low Quality"
+				set iUpgradePerformed to 7
+			endif
+		elseif iUpgradePerformed == 5
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapSilverMace 1
+			Player.AddItem TE01WeaponSilvriteMace 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 6
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapSilverWaraxe 1
+			Player.AddItem TE01WeaponSilvriteWaraxe 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 7
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				StartQuest TEQQShrineVanillaWeaponAmberMaceUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest
+			elseif iChoice == 3
+				StartQuest TEQQShrineVanillaWeaponAmberMaceAUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest
+			endif
+		endif
+	elseif iDisplayedMenu == -1
+		Message "Item Upgraded!"
+		StopQuest TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest
+	elseif iDisplayedMenu == -2
+		Message "No Upgrade Performed!"
+		StopQuest TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest
+		StartQuest TEQQShrineInitilizationQuest
+	endif
+end

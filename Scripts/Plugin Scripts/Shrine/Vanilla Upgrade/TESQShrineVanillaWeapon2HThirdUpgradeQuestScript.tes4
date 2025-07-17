@@ -1,0 +1,139 @@
+scn TESQShrineVanillaWeapon2HThirdUpgradeQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iUpgradePerformed
+short iChoosing
+short iChoice
+short bElvenWarhammer
+short bDaedricWarhammer
+short bDwarvenWarhammer
+short bGlassWarhammer
+short bEbonyWarhammer
+short bSilverClaymore
+
+Begin GameMode
+	if iDisplayedMenu == 0
+		if iUpgradePerformed == 0
+			if iChoosing == 0
+				if bElvenWarhammer == 1
+					MessageBox "Upgrade Elven Warhammer to Tier 1 Ayleidic Warhammer? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 1
+				endif
+				if bDaedricWarhammer == 1
+					MessageBox "Upgrade Daedric Warhammer to Tier 1 Cursed Warhammer? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 2
+				endif
+				if bDwarvenWarhammer == 1
+					MessageBox "Upgrade Dwarven Warhammer to Tier 1 Dwemer Warhammer? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 3
+				endif
+				if bGlassWarhammer == 1
+					MessageBox "Upgrade Glass Warhammer to Tier 1 Malachite Warhammer? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 4
+				endif
+				if bEbonyWarhammer == 1
+					MessageBox "Upgrade Ebony Warhammer to Tier 1 Obsidian Warhammer? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 5
+				endif
+				if bSilverClaymore == 1
+					MessageBox "Upgrade Silver Claymore to Tier 1 Silvrite Claymore? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 10-50,000 Gold"
+					set iChoosing to 6
+				endif
+			elseif iChoosing == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				endif
+			elseif iChoosing == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				endif
+			elseif iChoosing == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 5
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 6
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 6
+				endif
+			endif
+		elseif iUpgradePerformed == 1
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapElvenWarhammer 1
+			Player.AddItem TE01WeaponAyleidicWarhammer 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 2
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapDaedricWarhammer 1
+			Player.AddItem TE01WeaponCursedWarhammer 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 3
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapDwarvenWarhammer 1
+			Player.AddItem TE01WeaponDwemerWarhammer 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 4
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapGlassWarhammer 1
+			Player.AddItem TE01WeaponMalachiteWarhammer 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 5
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapEbonyWarhammer 1
+			Player.AddItem TE01WeaponObsidianWarhammer 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 6
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapSilverClaymore 1
+			Player.AddItem TE01WeaponSilvriteClaymore 1
+		endif
+	elseif iDisplayedMenu == -1
+		Message "Item Upgraded!"
+		StopQuest TEQQShrineVanillaWeapon2HThirdUpgradeQuest
+	elseif iDisplayedMenu == -2
+		Message "No Upgrade Performed!"
+		StopQuest TEQQShrineVanillaWeapon2HThirdUpgradeQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaWeapon2HThirdUpgradeQuest
+		StartQuest TEQQShrineInitilizationQuest
+	endif
+end

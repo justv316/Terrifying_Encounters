@@ -1041,52 +1041,52 @@ begin gamemode
 			endif
 		elseif iSelectedSubWeaponSet == 1
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaArtifactQuest
+			StartQuest TEQQShrineVanillaWeaponArtifactFirstQuest
 		elseif iSelectedSubWeaponSet == 2
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaArtifactTwoQuest
+			StartQuest TEQQShrineVanillaWeaponArtifactSecondQuest
 		elseif iSelectedSubWeaponSet == 3
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaArtifactThreeQuest
+			StartQuest TEQQShrineVanillaWeaponArtifactThirdQuest
 		elseif iSelectedSubWeaponSet == 4
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaFirst1HBladeWeaponQuest
+			StartQuest TEQQShrineVanillaWeapon1HBladeFirstQuest
 		elseif iSelectedSubWeaponSet == 5
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaSecond1HBladeWeaponQuest
+			StartQuest TEQQShrineVanillaWeapon1HBladeSecondQuest
 		elseif iSelectedSubWeaponSet == 6
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaThird1HBladeWeaponQuest
+			StartQuest TEQQShrineVanillaWeapon1HBladeThirdQuest
 		elseif iSelectedSubWeaponSet == 7
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaFourth1HBladeWeaponQuest
+			StartQuest TEQQShrineVanillaWeapon1HBladeFourthQuest
 		elseif iSelectedSubWeaponSet == 8
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaFirst1HBluntWeaponQuest
+			StartQuest TEQQShrineVanillaWeapon1HBluntFirstQuest
 		elseif iSelectedSubWeaponSet == 9
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaSecond1HBluntWeaponQuest
+			StartQuest TEQQShrineVanillaWeapon1HBluntSecondQuest
 		elseif iSelectedSubWeaponSet == 10
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaThird1HBluntWeaponQuest
+			StartQuest TEQQShrineVanillaWeapon1HBluntThirdQuest
 		elseif iSelectedSubWeaponSet == 11
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaFirst2HWeaponQuest
+			StartQuest TEQQShrineVanillaWeapon2HFirstQuest
 		elseif iSelectedSubWeaponSet == 12
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaSecond2HWeaponQuest
+			StartQuest TEQQShrineVanillaWeapon2HSecondQuest
 		elseif iSelectedSubWeaponSet == 13
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaThird2HWeaponQuest
+			StartQuest TEQQShrineVanillaWeapon2HThirdQuest
 		elseif iSelectedSubWeaponSet == 14
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaFourth2HWeaponQuest
+			StartQuest TEQQShrineVanillaWeapon2HFourthQuest
 		elseif iSelectedSubWeaponSet == 15
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaFirstBowWeaponQuest
+			StartQuest TEQQShrineVanillaWeaponBowFirstQuest
 		elseif iSelectedSubWeaponSet == 16
 			StopQuest TEQQShrineVanillaCheckWeaponQuest
-			StartQuest TEQQShrineVanillaSecondBowWeaponQuest
+			StartQuest TEQQShrineVanillaWeaponBowSecondQuest
 		endif
 	elseif iDisplayedMenu == -1
 		Message "Nothing found to upgrade!"

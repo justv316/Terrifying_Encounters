@@ -217,16 +217,6 @@
 | SEAmberSwordA | Impure Amber Sword | 00091D6A |
 | SEAmberSwordB | Unpolished Dull Amber Sword | 00091D9E |
 | SEAmberSwordC | Lesser Amber Sword | 00091DB1 |
-| SEDarkSeducer1Shortsword | Dark Shortsword | 0001A136 |
-| SEDarkSeducer2Longsword | Dark Longsword | 0001A138 |
-| SEDarkSeducer3Waraxe | Dark Waraxe | 0001A13A |
-| SEDarkSeducer4Mace | Dark Mace | 0001A139 |
-| SEDarkSeducerBow | Dark Bow | 0001A137 |
-| SEDarkSeducerBowFrail | Frail Dark Bow | 00077C28 |
-| SEGoldenSaint1Waraxe | Golden Waraxe | 00017D32 |
-| SEGoldenSaint2Mace | Golden Mace | 00017D31 |
-| SEGoldenSaint3Shortsword | Golden Shortsword | 00017D30 |
-| SEGoldenSaint4Longsword | Golden Longsword | 00017D2F |
 | SEMadnessAxe1 | Madness Axe | 0001F406 |
 | SEMadnessAxe2 | Fine Madness Axe | 0001F407 |
 | SEMadnessAxe3 | Very Fine Madness Axe | 0001F408 |
@@ -259,6 +249,24 @@
 | SEMadnessSwordA | Impure Madness Longsword | 00091DCD |
 | SEMadnessSwordB | Unpolished Mad~ness Longsword | 00091FBD |
 | SEMadnessSwordC | Lesser Madness Longsword | 00091FC6 |
+| SEDarkSeducer1Shortsword | Dark Shortsword | 0001A136 |
+| SEDarkSeducer2Longsword | Dark Longsword | 0001A138 |
+| SEDarkSeducer3Waraxe | Dark Waraxe | 0001A13A |
+| SEDarkSeducer4Mace | Dark Mace | 0001A139 |
+| SEDarkSeducerBow | Dark Bow | 0001A137 |
+| SEGoldenSaint1Waraxe | Golden Waraxe | 00017D32 |
+| SEGoldenSaint2Mace | Golden Mace | 00017D31 |
+| SEGoldenSaint3Shortsword | Golden Shortsword | 00017D30 |
+| SEGoldenSaint4Longsword | Golden Longsword | 00017D2F |
+| SEGoldenSaintBow | Golden Bow | 00017D2E |
+| WeapDaedricBow | Daedric Bow | 00035E7C |
+| WeapDaedricClaymore | Daedric Claymore | 00035E78 |
+| WeapDaedricDagger | Daedric Dagger | 00035E72 |
+| WeapDaedricLongsword | Daedric Longsword | 00035E76 |
+| WeapDaedricMace | Daedric Mace | 00035E75 |
+| WeapDaedricShortsword | Daedric Shortsword | 00035E73 |
+| WeapDaedricWarAxe | Daedric War Axe | 00035E74 |
+| WeapDaedricWarHammer | Daedric Warhammer | 00035E79 |
 | SEWeapDaedricBattleAxeDurable | Durable Daedric Battle Axe | 00045E19 |
 | SEWeapDaedricBowDurable | Durable Daedric Bow | 00045E1A |
 | SEWeapDaedricClaymoreDurable | Durable Daedric Claymore | 00045E1B |
@@ -268,60 +276,6 @@
 | SEWeapDaedricShortswordDurable | Durable Daedric Shortsword | 00045E1F |
 | SEWeapDaedricWarAxeDurable | Durable Daedric War Axe | 00045E20 |
 | SEWeapDaedricWarHammerDurable | Durable Daedric Warhammer | 00045E21 |
-| SEWeapDwarvenBattleAxeDurable | Durable Dwarven Battle Axe | 00045E22 |
-| SEWeapDwarvenBowDurable | Durable Dwarven Bow | 00045E23 |
-| SEWeapDwarvenClaymoreDurable | Durable Dwarven Claymore | 00045E24 |
-| SEWeapDwarvenDaggerDurable | Durable Dwarven Dagger | 00045E25 |
-| SEWeapDwarvenLongSwordDurable | Durable Dwarven Longsword | 00045E26 |
-| SEWeapDwarvenMaceDurable | Durable Dwarven Mace | 00045E27 |
-| SEWeapDwarvenShortSwordDurable | Durable Dwarven Shortsword | 00045E28 |
-| SEWeapDwarvenWarAxeDurable | Durable Dwarven War Axe | 00045E29 |
-| SEWeapDwarvenWarHammerDurable | Durable Dwarven Warhammer | 00045E2A |
-| SEWeapEbonyBattleAxeDurable | Durable Ebony Battle Axe | 00045E2B |
-| SEWeapEbonyBowDurable | Durable Ebony Bow | 00045E2C |
-| SEWeapEbonyClaymoreDurable | Durable Ebony Claymore | 00045E2D |
-| SEWeapEbonyDaggerDurable | Durable Ebony Dagger | 00045E2E |
-| SEWeapEbonyLongswordDurable | Durable Ebony Longsword | 00045E2F |
-| SEWeapEbonyMaceDurable | Durable Ebony Mace | 00045E30 |
-| SEWeapEbonyShortswordDurable | Durable Ebony Shortsword | 00045E31 |
-| SEWeapEbonyWarAxeDurable | Durable Ebony War Axe | 00045E32 |
-| SEWeapEbonyWarHammerDurable | Durable Ebony Warhammer | 00045E33 |
-| SEWeapElvenBattleAxeDurable | Durable Elven Battle Axe | 00045E34 |
-| SEWeapElvenBowDurable | Durable Elven Bow | 00045E35 |
-| SEWeapElvenClaymoreDurable | Durable Elven Claymore | 00045E36 |
-| SEWeapElvenDaggerDurable | Durable Elven Dagger | 00045E37 |
-| SEWeapElvenLongSwordDurable | Durable Elven Long Sword | 00045E38 |
-| SEWeapElvenMaceDurable | Durable Elven Mace | 00045E39 |
-| SEWeapElvenShortswordDurable | Durable Elven Shortsword | 00045E3A |
-| SEWeapElvenWarAxeDurable | DurableElven War Axe | 00045E3B |
-| SEWeapElvenWarHammerDurable | Durable Elven Warhammer | 00045E3C |
-| SEWeapGlassBattleAxeDurable | Durable Glass Battle Axe | 00045E3D |
-| SEWeapGlassBowDurable | Durable Glass Bow | 00045E3E |
-| SEWeapGlassClaymoreDurable | Durable Glass Claymore | 00045E3F |
-| SEWeapGlassDaggerDurable | Durable Glass Dagger | 00045E40 |
-| SEWeapGlassLongswordDurable | Durable Glass Longsword | 00045E41 |
-| SEWeapGlassMaceDurable | Durable Glass Mace | 00045E42 |
-| SEWeapGlassShortswordDurable | Durable Glass Shortsword | 00045E43 |
-| SEWeapGlassWarAxeDurable | Durable Glass War Axe | 00045E44 |
-| SEWeapGlassWarHammerDurable | Durable Glass Warhammer | 00045E45 |
-| SEWeapSilverBattleAxeDurable | Durable Silver BattleAxe | 00045E4F |
-| SEWeapSilverBowDurable | Durable Silver Bow | 00045E50 |
-| SEWeapSilverClaymoreDurable | Durable Silver Claymore | 00045E51 |
-| SEWeapSilverDaggerDurable | Durable Silver Dagger | 00045E52 |
-| SEWeapSilverLongswordDurable | Durable Silver Longsword | 00045E53 |
-| SEWeapSilverMaceDurable | Durable Silver Mace | 00045E54 |
-| SEWeapSilverShortswordDurable | Durable Silver Shortsword | 00045E55 |
-| SEWeapSilverWarAxeDurable | Durable Silver War Axe | 00045E56 |
-| SEWeapSilverWarhammerDurable | Durable Silver Warhammer | 00045E57 |
-| WeapDaedricBattleAxe | Daedric Battle Axe | 00035E77 |
-| WeapDaedricBow | Daedric Bow | 00035E7C |
-| WeapDaedricClaymore | Daedric Claymore | 00035E78 |
-| WeapDaedricDagger | Daedric Dagger | 00035E72 |
-| WeapDaedricLongsword | Daedric Longsword | 00035E76 |
-| WeapDaedricMace | Daedric Mace | 00035E75 |
-| WeapDaedricShortsword | Daedric Shortsword | 00035E73 |
-| WeapDaedricWarAxe | Daedric War Axe | 00035E74 |
-| WeapDaedricWarHammer | Daedric Warhammer | 00035E79 |
 | WeapDwarvenBattleAxe | Dwarven Battle Axe | 00035DCD |
 | WeapDwarvenBow | Dwarven Bow | 00035DCE |
 | WeapDwarvenClaymore | Dwarven Claymore | 00035DCF |
@@ -331,6 +285,16 @@
 | WeapDwarvenShortSword | Dwarven Shortsword | 00035DD3 |
 | WeapDwarvenWarAxe | Dwarven War Axe | 00035DD4 |
 | WeapDwarvenWarHammer | Dwarven Warhammer | 00035DD5 |
+| SEWeapDwarvenBattleAxeDurable | Durable Dwarven Battle Axe | 00045E22 |
+| SEWeapDwarvenBowDurable | Durable Dwarven Bow | 00045E23 |
+| SEWeapDwarvenClaymoreDurable | Durable Dwarven Claymore | 00045E24 |
+| SEWeapDwarvenDaggerDurable | Durable Dwarven Dagger | 00045E25 |
+| SEWeapDwarvenLongSwordDurable | Durable Dwarven Longsword | 00045E26 |
+| SEWeapDwarvenMaceDurable | Durable Dwarven Mace | 00045E27 |
+| SEWeapDwarvenShortSwordDurable | Durable Dwarven Shortsword | 00045E28 |
+| SEWeapDwarvenWarAxeDurable | Durable Dwarven War Axe | 00045E29 |
+| SEWeapDwarvenWarHammerDurable | Durable Dwarven Warhammer | 00045E2A |
+| WeapDaedricBattleAxe | Daedric Battle Axe | 00035E77 |
 | WeapEbonyBattleAxe | Ebony Battle Axe | 00035E6F |
 | WeapEbonyBow | Ebony Bow | 00035E7B |
 | WeapEbonyClaymore | Ebony Claymore | 00035E70 |
@@ -340,6 +304,15 @@
 | WeapEbonyShortsword | Ebony Shortsword | 00035E6B |
 | WeapEbonyWarAxe | Ebony War Axe | 00035E6C |
 | WeapEbonyWarHammer | Ebony Warhammer | 00035E71 |
+| SEWeapEbonyBattleAxeDurable | Durable Ebony Battle Axe | 00045E2B |
+| SEWeapEbonyBowDurable | Durable Ebony Bow | 00045E2C |
+| SEWeapEbonyClaymoreDurable | Durable Ebony Claymore | 00045E2D |
+| SEWeapEbonyDaggerDurable | Durable Ebony Dagger | 00045E2E |
+| SEWeapEbonyLongswordDurable | Durable Ebony Longsword | 00045E2F |
+| SEWeapEbonyMaceDurable | Durable Ebony Mace | 00045E30 |
+| SEWeapEbonyShortswordDurable | Durable Ebony Shortsword | 00045E31 |
+| SEWeapEbonyWarAxeDurable | Durable Ebony War Axe | 00045E32 |
+| SEWeapEbonyWarHammerDurable | Durable Ebony Warhammer | 00045E33 |
 | WeapElvenBattleAxe | Elven Battle Axe | 00035E67 |
 | WeapElvenBow | Elven Bow | 000229BF |
 | WeapElvenClaymore | Elven Claymore | 00035E68 |
@@ -349,6 +322,15 @@
 | WeapElvenShortsword | Elven Shortsword | 00035E64 |
 | WeapElvenWarAxe | Elven War Axe | 00035E65 |
 | WeapElvenWarHammer | Elven Warhammer | 00035E69 |
+| SEWeapElvenBattleAxeDurable | Durable Elven Battle Axe | 00045E34 |
+| SEWeapElvenBowDurable | Durable Elven Bow | 00045E35 |
+| SEWeapElvenClaymoreDurable | Durable Elven Claymore | 00045E36 |
+| SEWeapElvenDaggerDurable | Durable Elven Dagger | 00045E37 |
+| SEWeapElvenLongSwordDurable | Durable Elven Long Sword | 00045E38 |
+| SEWeapElvenMaceDurable | Durable Elven Mace | 00045E39 |
+| SEWeapElvenShortswordDurable | Durable Elven Shortsword | 00045E3A |
+| SEWeapElvenWarAxeDurable | DurableElven War Axe | 00045E3B |
+| SEWeapElvenWarHammerDurable | Durable Elven Warhammer | 00045E3C |
 | WeapGlassBattleAxe | Glass Battle Axe | 00035E60 |
 | WeapGlassBow | Glass Bow | 00035E7A |
 | WeapGlassClaymore | Glass Claymore | 00035E61 |
@@ -358,6 +340,15 @@
 | WeapGlassShortsword | Glass Shortsword | 00035E5C |
 | WeapGlassWarAxe | Glass War Axe | 00035E5D |
 | WeapGlassWarHammer | Glass Warhammer | 00035E62 |
+| SEWeapGlassBattleAxeDurable | Durable Glass Battle Axe | 00045E3D |
+| SEWeapGlassBowDurable | Durable Glass Bow | 00045E3E |
+| SEWeapGlassClaymoreDurable | Durable Glass Claymore | 00045E3F |
+| SEWeapGlassDaggerDurable | Durable Glass Dagger | 00045E40 |
+| SEWeapGlassLongswordDurable | Durable Glass Longsword | 00045E41 |
+| SEWeapGlassMaceDurable | Durable Glass Mace | 00045E42 |
+| SEWeapGlassShortswordDurable | Durable Glass Shortsword | 00045E43 |
+| SEWeapGlassWarAxeDurable | Durable Glass War Axe | 00045E44 |
+| SEWeapGlassWarHammerDurable | Durable Glass Warhammer | 00045E45 |
 | WeapSilverBattleAxe | Silver BattleAxe | 00025221 |
 | WeapSilverBow | Silver Bow | 00025227 |
 | WeapSilverClaymore | Silver Claymore | 00025226 |
@@ -367,6 +358,15 @@
 | WeapSilverShortsword | Silver Shortsword | 00025220 |
 | WeapSilverWarAxe | Silver War Axe | 00025222 |
 | WeapSilverWarhammer | Silver Warhammer | 00025225 |
+| SEWeapSilverBattleAxeDurable | Durable Silver BattleAxe | 00045E4F |
+| SEWeapSilverBowDurable | Durable Silver Bow | 00045E50 |
+| SEWeapSilverClaymoreDurable | Durable Silver Claymore | 00045E51 |
+| SEWeapSilverDaggerDurable | Durable Silver Dagger | 00045E52 |
+| SEWeapSilverLongswordDurable | Durable Silver Longsword | 00045E53 |
+| SEWeapSilverMaceDurable | Durable Silver Mace | 00045E54 |
+| SEWeapSilverShortswordDurable | Durable Silver Shortsword | 00045E55 |
+| SEWeapSilverWarAxeDurable | Durable Silver War Axe | 00045E56 |
+| SEWeapSilverWarhammerDurable | Durable Silver Warhammer | 00045E57 |
 
 ### Modded Items
 * Replace XX with Load Order Prefix

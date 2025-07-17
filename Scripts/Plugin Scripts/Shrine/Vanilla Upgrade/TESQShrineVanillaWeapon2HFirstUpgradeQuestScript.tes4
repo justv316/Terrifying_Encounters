@@ -1,0 +1,139 @@
+scn TESQShrineVanillaWeapon2HFirstUpgradeQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iUpgradePerformed
+short iChoosing
+short iChoice
+short bElvenBattleaxe
+short bDaedricBattleaxe
+short bDwarvenBattleaxe
+short bGlassBattleaxe
+short bEbonyBattleaxe
+short bSilverBattleaxe
+
+Begin GameMode
+	if iDisplayedMenu == 0
+		if iUpgradePerformed == 0
+			if iChoosing == 0
+				if bElvenBattleaxe == 1
+					MessageBox "Upgrade Elven Battleaxe to Tier 1 Ayleidic Battleaxe? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 1
+				endif
+				if bDaedricBattleaxe == 1
+					MessageBox "Upgrade Daedric Battleaxe to Tier 1 Cursed Battleaxe? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 2
+				endif
+				if bDwarvenBattleaxe == 1
+					MessageBox "Upgrade Dwarven Battleaxe to Tier 1 Dwemer Battleaxe? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 3
+				endif
+				if bGlassBattleaxe == 1
+					MessageBox "Upgrade Glass Battleaxe to Tier 1 Malachite Battleaxe? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 4
+				endif
+				if bEbonyBattleaxe == 1
+					MessageBox "Upgrade Ebony Battleaxe to Tier 1 Obsidian Battleaxe? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 5
+				endif
+				if bSilverBattleaxe == 1
+					MessageBox "Upgrade Silver Battleaxe to Tier 1 Silvrite Battleaxe? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 6
+				endif
+			elseif iChoosing == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				endif
+			elseif iChoosing == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				endif
+			elseif iChoosing == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 5
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 6
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 6
+				endif
+			endif
+		elseif iUpgradePerformed == 1
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapElvenBattleaxe 1
+			Player.AddItem TE01WeaponAyleidicBattleaxe 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 2
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapDaedricBattleaxe 1
+			Player.AddItem TE01WeaponCursedBattleaxe 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 3
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapDwarvenBattleaxe 1
+			Player.AddItem TE01WeaponDwemerBattleaxe 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 4
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapGlassBattleaxe 1
+			Player.AddItem TE01WeaponMalachiteBattleaxe 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 5
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapEbonyBattleaxe 1
+			Player.AddItem TE01WeaponObsidianBattleaxe 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 6
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapSilverBattleaxe 1
+			Player.AddItem TE01WeaponSilvriteBattleaxe 1
+		endif
+	elseif iDisplayedMenu == -1
+		Message "Item Upgraded!"
+		StopQuest TEQQShrineVanillaWeapon2HFourthUpgradeQuest
+	elseif iDisplayedMenu == -2
+		Message "No Upgrade Performed!"
+		StopQuest TEQQShrineVanillaWeapon2HFourthUpgradeQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaWeapon2HFourthUpgradeQuest
+		StartQuest TEQQShrineInitilizationQuest
+	endif
+end

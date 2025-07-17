@@ -1,0 +1,159 @@
+scn TESQShrineVanillaWeaponBowSecondUpgradeQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iUpgradePerformed
+short iChoosing
+short iChoice
+short bGlassBow
+short bEbonyBow
+short bAmberBow
+short bAmberBowA
+short bSilverBow
+short bItemFive
+short bItemSix
+
+Begin GameMode
+	if iDisplayedMenu == 0
+		if iUpgradePerformed == 0
+			if iChoosing == 0
+				if bGlassBow == 1
+					MessageBox "Upgrade Glass Bow to Tier 1 Malachite Bow? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 1
+				endif
+				if bEbonyBow == 1
+					MessageBox "Upgrade Ebony Bow to Tier 1 Obsidian Bow? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 2
+				endif
+				if bAmberBow == 1
+					MessageBox "Upgrade Amber Bow to Tier 1 Resinite Bow? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 10-50,000 Gold"
+					set iChoosing to 3
+				endif
+				if bSilverBow == 1
+					MessageBox "Upgrade Silver Bow to Tier 1 Silvrite Bow? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 4
+				endif
+			;	if bItemFive == 1
+			;		MessageBox "Upgrade Item Five to Tier 1 Obsidian Battleaxe? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+			;		set iChoosing to 5
+			;	endif
+			;	if bItemSix == 1
+			;		MessageBox "Upgrade Item Six to Tier 1 Silvrite Battleaxe? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+			;		set iChoosing to 6
+			;	endif
+			elseif iChoosing == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				endif
+			elseif iChoosing == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				endif
+			elseif iChoosing == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				endif
+		;	elseif iChoosing == 5
+		;		set iChoice to GetButtonPressed
+		;		if iChoice == 0
+		;			set iDisplayedMenu to -2
+		;		elseif iChoice == 1
+		;			set iDisplayedMenu to -3
+		;		elseif iChoice == 2
+		;			set iUpgradePerformed to 5
+		;		endif
+		;	elseif iChoosing == 6
+		;		set iChoice to GetButtonPressed
+		;		if iChoice == 0
+		;			set iDisplayedMenu to -2
+		;		elseif iChoice == 1
+		;			set iDisplayedMenu to -3
+		;		elseif iChoice == 2
+		;			set iUpgradePerformed to 6
+		;		endif
+			endif
+		elseif iUpgradePerformed == 1
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapGlassBow 1
+			Player.AddItem TE01WeaponMalachiteBow 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 2
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapEbonyBow 1
+			Player.AddItem TE01WeaponObsidianBow 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 3
+			if bAmberBow == 1 && bAmberBowA == 0
+				StartQuest TEQQShrineVanillaWeaponAmberBowUpgradeQuest
+				StopQuest TEQQShrineVanillaWeaponBowFirstUpgradeQuest
+			elseif bAmberBow == 0 && bAmberBowA == 1
+				StartQuest TEQQShrineVanillaWeaponAmberBowAUpgradeQuest
+				StopQuest TEQQShrineVanillaWeaponBowFirstUpgradeQuest
+			elseif bAmberBow == 1 && bAmberBowA == 1
+				MessageBox "Found Both Low and High Quality Amber Bows, which would you like to upgrade?", "Cancel", "Start Over", "High Quality", "Low Quality"
+				set iUpgradePerformed to 7
+			endif
+		elseif iUpgradePerformed == 4
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapSilverBow 1
+			Player.AddItem TE01WeaponSilvriteBow 1
+			set iDisplayedMenu to -1
+		;elseif iUpgradePerformed == 5
+		;	Player.RemoveItem Gold001 50000
+		;	Player.RemoveItem WeapItemFive 1
+		;	Player.AddItem TE01WeaponObsidianBattleaxe 1
+		;	set iDisplayedMenu to -1
+		;elseif iUpgradePerformed == 6
+		;	Player.RemoveItem Gold001 50000
+		;	Player.RemoveItem WeapItemSix 1
+		;	Player.AddItem TE01WeaponSilvriteBattleaxe 1
+		elseif iUpgradePerformed == 7
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				StartQuest TEQQShrineVanillaWeaponAmberBowUpgradeQuest
+				StopQuest TEQQShrineVanillaWeaponBowSecondUpgradeQuest
+			elseif iChoice == 3
+				StartQuest TEQQShrineVanillaWeaponAmberBowAUpgradeQuest
+				StopQuest TEQQShrineVanillaWeaponBowSecondUpgradeQuest
+			endif
+		endif
+	elseif iDisplayedMenu == -1
+		Message "Item Upgraded!"
+		StopQuest TEQQShrineVanillaWeaponBowSecondUpgradeQuest
+	elseif iDisplayedMenu == -2
+		Message "No Upgrade Performed!"
+		StopQuest TEQQShrineVanillaWeaponBowSecondUpgradeQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaWeaponBowSecondUpgradeQuest
+		StartQuest TEQQShrineInitilizationQuest
+	endif
+end

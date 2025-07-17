@@ -1,0 +1,140 @@
+scn TESQShrineVanillaWeapon1HBladeThirdUpgradeQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iUpgradePerformed
+short iChoosing
+short iChoice
+short bElvenShortsword
+short bDaedricShortsword
+short bDarkShortsword
+short bDwarvenShortsword
+short bGoldenShortsword
+short bGlassShortsword
+
+Begin GameMode
+	if iDisplayedMenu == 0
+		if iUpgradePerformed == 0
+			if iChoosing == 0
+				if bElvenShortsword == 1
+					MessageBox "Upgrade Elven Shortsword to Tier 1 Ayleidic Shortsword? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 1
+				endif
+				if bDaedricShortsword == 1
+					MessageBox "Upgrade Daedric Shortsword to Tier 1 Cursed Shortsword? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 2
+				endif
+				if bDarkShortsword == 1
+					MessageBox "Upgrade Dark Shortsword to Tier 1 Dark Shortsword? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 3
+				endif
+				if bDwarvenShortsword == 1
+					MessageBox "Upgrade Dwarven Shortsword to Tier 1 Dwemer Shortsword? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 4
+				endif
+				if bGoldenShortsword == 1
+					MessageBox "Upgrade Golden Shortsword to Tier 1 Golden Shortsword? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 5
+				endif
+				if bGlassShortsword == 1
+					MessageBox "Upgrade Glass Shortsword to Tier 1 Malachite Shortsword? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 6
+				endif
+			elseif iChoosing == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				endif
+			elseif iChoosing == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				endif
+			elseif iChoosing == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 5
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 6
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 6
+				endif
+			endif
+		elseif iUpgradePerformed == 1
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapElvenShortsword 1
+			Player.AddItem TE01WeaponAyleidicShortsword 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 2
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapDaedricShortsword 1
+			Player.AddItem TE01WeaponCursedShortsword 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 3
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapDwarvenShortsword 1
+			Player.AddItem TE01WeaponDwemerShortsword 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 4
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem SEDarkSeducer1Shortsword 1
+			Player.AddItem TE01WeaponDarkLongsword 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 5
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem SEGoldenSaint3Shortsword 1
+			Player.AddItem TE01WeaponGoldenLongsword 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 6
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapGlassShortsword 1
+			Player.AddItem TE01WeaponMalachiteShortsword 1
+			set iDisplayedMenu to -1
+		endif
+	elseif iDisplayedMenu == -1
+		Message "Item Upgraded!"
+		StopQuest TEQQShrineVanillaWeapon1HBladeThirdUpgradeQuest
+	elseif iDisplayedMenu == -2
+		Message "No Upgrade Performed!"
+		StopQuest TEQQShrineVanillaWeapon1HBladeThirdUpgradeQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaWeapon1HBladeThirdUpgradeQuest
+		StartQuest TEQQShrineInitilizationQuest
+	endif
+end

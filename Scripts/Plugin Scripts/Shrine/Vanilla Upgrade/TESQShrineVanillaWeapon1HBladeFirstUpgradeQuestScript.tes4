@@ -1,0 +1,160 @@
+scn TESQShrineVanillaWeapon1HBladeFirstUpgradeQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iUpgradePerformed
+short iChoosing
+short iChoice
+short bElvenLongsword
+short bDaedricLongsword
+short bDwarvenLongsword
+short bDarkLongsword
+short bGoldenLongsword
+short bMadnessLongsword
+short bMadnessLongswordA
+
+Begin GameMode
+	if iDisplayedMenu == 0
+		if iUpgradePerformed == 0
+			if iChoosing == 0
+				if bElvenLongsword == 1
+					MessageBox "Upgrade Elven Longsword to Tier 1 Ayleidic Longsword? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 1
+				endif
+				if bDaedricLongsword == 1
+					MessageBox "Upgrade Daedric Longsword to Tier 1 Cursed Longsword? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 2
+				endif
+				if bDwarvenLongsword == 1
+					MessageBox "Upgrade Dwarven Longsword to Tier 1 Dwemer Longsword? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 3
+				endif
+				if bDarkLongsword == 1
+					MessageBox "Upgrade Dark Longsword to Tier 1 Dark Longsword? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 4
+				endif
+				if bGoldenLongsword == 1
+					MessageBox "Upgrade Golden Longsword to Tier 1 Golden Longsword? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 5
+				endif
+				if bMadnessLongsword == 1
+					MessageBox "Upgrade Madness Longsword to Tier 1 Maddening Longsword? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 10-50,000 Gold"
+					set iChoosing to 6
+				endif
+			elseif iChoosing == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				endif
+			elseif iChoosing == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				endif
+			elseif iChoosing == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 5
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 6
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 6
+				endif
+			endif
+		elseif iUpgradePerformed == 1
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapElvenLongsword 1
+			Player.AddItem TE01WeaponAyleidicLongsword 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 2
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapDaedricLongsword 1
+			Player.AddItem TE01WeaponCursedLongsword 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 3
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapDwarvenLongsword 1
+			Player.AddItem TE01WeaponDwemerLongsword 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 4
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem SEDarkSeducer2Longsword 1
+			Player.AddItem TE01WeaponDarkLongsword 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 5
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem SEGoldenSaint4Longsword 1
+			Player.AddItem TE01WeaponGoldenLongsword 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 6
+			if bMadnessLongsword == 1 && bMadnessLongswordA == 0
+				StartQuest TEQQShrineVanillaWeaponMadnessLongswordUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon1HBladeFirstUpgradeQuest
+			elseif bMadnessLongsword == 0 && bMadnessLongswordA == 1
+				StartQuest TEQQShrineVanillaWeaponMadnessLongswordAUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon1HBladeFirstUpgradeQuest
+			elseif bMadnessLongsword == 1 && bMadnessLongswordA == 1
+				MessageBox "Found Both Low and High Quality Madness Longswords, which would you like to upgrade?", "Cancel", "Start Over", "High Quality", "Low Quality"
+				set iUpgradePerformed to 7
+			endif
+		elseif iUpgradePerformed == 7
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				StartQuest TEQQShrineVanillaWeaponMadnessLongswordUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon1HBladeFirstUpgradeQuest
+			elseif iChoice == 3
+				StartQuest TEQQShrineVanillaWeaponMadnessLongswordAUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon1HBladeFirstUpgradeQuest
+			endif
+		endif
+	elseif iDisplayedMenu == -1
+		Message "Item Upgraded!"
+		StopQuest TEQQShrineVanillaWeapon1HBladeFirstUpgradeQuest
+	elseif iDisplayedMenu == -2
+		Message "No Upgrade Performed!"
+		StopQuest TEQQShrineVanillaWeapon1HBladeFirstUpgradeQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaWeapon1HBladeFirstUpgradeQuest
+		StartQuest TEQQShrineInitilizationQuest
+	endif
+end

@@ -1,0 +1,159 @@
+scn TESQShrineVanillaWeapon2HFourthUpgradeQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iUpgradePerformed
+short iChoosing
+short iChoice
+short bAmberWarhammer
+short bAmberWarhammerA
+short bSilverWarhammer
+;short bItemThree
+;short bItemFour
+;short bItemFive
+;short bItemSix
+
+Begin GameMode
+	if iDisplayedMenu == 0
+		if iUpgradePerformed == 0
+			if iChoosing == 0
+				if bAmberWarhammer == 1
+					MessageBox "Upgrade Amber Warhammer to Tier 1 Resinite Warhammer? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 1
+				endif
+				if bSilverWarhammer == 1
+					MessageBox "Upgrade Silver Warhammer to Tier 1 Silvrive Warhammer? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 2
+				endif
+		;		if bItemThree == 1
+		;			MessageBox "Upgrade Dwarven Battleaxe to Tier 1 Dwemer Battleaxe? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+		;			set iChoosing to 3
+		;		endif
+		;		if bItemFour == 1
+		;			MessageBox "Upgrade Glass Battleaxe to Tier 1 Malachite Battleaxe? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+		;			set iChoosing to 4
+		;		endif
+		;		if bItemFive == 1
+		;			MessageBox "Upgrade Ebony Battleaxe to Tier 1 Obsidian Battleaxe? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+		;			set iChoosing to 5
+		;		endif
+		;		if bItemSix == 1
+		;			MessageBox "Upgrade Silver Battleaxe to Tier 1 Silvrite Battleaxe? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+		;			set iChoosing to 6
+		;		endif
+			elseif iChoosing == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				endif
+			elseif iChoosing == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				endif
+			elseif iChoosing == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 5
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 6
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 6
+				endif
+			endif
+		elseif iUpgradePerformed == 1
+			if bAmberWarhammer == 1 && bAmberWarhammerA == 0
+				StartQuest TEQQShrineVanillaWeaponAmberWarhammerUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest
+			elseif bAmberWarhammer == 0 && bAmberWarhammerA == 1
+				StartQuest TEQQShrineVanillaWeaponAmberWarhammerAUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest
+			elseif bAmberWarhammer == 1 && bAmberWarhammerA == 1
+				MessageBox "Found Both Low and High Quality Amber Claymores, which would you like to upgrade?", "Cancel", "Start Over", "High Quality", "Low Quality"
+				set iUpgradePerformed to 7
+			endif
+		elseif iUpgradePerformed == 2
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapSilverWarhammer 1
+			Player.AddItem TE01WeaponSilvriteWarhammer 1
+			set iDisplayedMenu to -1
+	;	elseif iUpgradePerformed == 3
+	;		Player.RemoveItem Gold001 50000
+	;		Player.RemoveItem WeapItemThree 1
+	;		Player.AddItem TE01WeaponDwemerBattleaxe 1
+	;		set iDisplayedMenu to -1
+	;	elseif iUpgradePerformed == 4
+	;		Player.RemoveItem Gold001 50000
+	;		Player.RemoveItem WeapItemFour 1
+	;		Player.AddItem TE01WeaponMalachiteBattleaxe 1
+	;		set iDisplayedMenu to -1
+	;	elseif iUpgradePerformed == 5
+	;		Player.RemoveItem Gold001 50000
+	;		Player.RemoveItem WeapItemFive 1
+	;		Player.AddItem TE01WeaponObsidianBattleaxe 1
+	;		set iDisplayedMenu to -1
+	;	elseif iUpgradePerformed == 6
+	;		Player.RemoveItem Gold001 50000
+	;		Player.RemoveItem WeapItemSix 1
+	;		Player.AddItem TE01WeaponSilvriteBattleaxe 1
+		elseif iUpgradePerformed == 7
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				StartQuest TEQQShrineVanillaWeaponAmberWarhammerUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest
+			elseif iChoice == 3
+				StartQuest TEQQShrineVanillaWeaponAmberWarhammerAUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest
+			endif
+		endif
+	elseif iDisplayedMenu == -1
+		Message "Item Upgraded!"
+		StopQuest TEQQShrineVanillaWeapon2HFourthUpgradeQuest
+	elseif iDisplayedMenu == -2
+		Message "No Upgrade Performed!"
+		StopQuest TEQQShrineVanillaWeapon2HFourthUpgradeQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaWeapon2HFourthUpgradeQuest
+		StartQuest TEQQShrineInitilizationQuest
+	endif
+end

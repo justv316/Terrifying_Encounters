@@ -1,0 +1,159 @@
+scn TESQShrineVanillaWeapon2HSecondUpgradeQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iUpgradePerformed
+short iChoosing
+short iChoice
+short bElvenClaymore
+short bDaedricClaymore
+short bDwarvenClaymore
+short bMadnessClaymore
+short bMadnessClaymoreA
+short bGlassClaymore
+short bEbonyClaymore
+
+Begin GameMode
+	if iDisplayedMenu == 0
+		if iUpgradePerformed == 0
+			if iChoosing == 0
+				if bElvenClaymore == 1
+					MessageBox "Upgrade Elven Claymore to Tier 1 Ayleidic Claymore? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 1
+				endif
+				if bDaedricClaymore == 1
+					MessageBox "Upgrade Daedric Claymore to Tier 1 Cursed Claymore? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 2
+				endif
+				if bDwarvenClaymore == 1
+					MessageBox "Upgrade Dwarven Claymore to Tier 1 Dwemer Claymore? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 3
+				endif
+				if bMadnessClaymore == 1
+					MessageBox "Upgrade Madness Claymore to Tier 1 Maddening Claymore? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 10-50,000 Gold"
+					set iChoosing to 4
+				endif
+				if bGlassClaymore == 1
+					MessageBox "Upgrade Glass Claymore to Tier 1 Malachite Claymore? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 5
+				endif
+				if bEbonyClaymore == 1
+					MessageBox "Upgrade Ebony Claymore to Tier 1 Obsidian Claymore? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 6
+				endif
+			elseif iChoosing == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				endif
+			elseif iChoosing == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				endif
+			elseif iChoosing == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 5
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 6
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 6
+				endif
+			endif
+		elseif iUpgradePerformed == 1
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapElvenClaymore 1
+			Player.AddItem TE01WeaponAyleidicClaymore 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 2
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapDaedricClaymore 1
+			Player.AddItem TE01WeaponCursedClaymore 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 3
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapDwarvenClaymore 1
+			Player.AddItem TE01WeaponDwemerClaymore 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 4
+			if bMadnessClaymore == 1 && bMadnessClaymoreA == 0
+				StartQuest TEQQShrineVanillaWeaponMadnessClaymoreUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon2HSecondUpgradeQuest
+			elseif bMadnessClaymore == 0 && bMadnessClaymoreA == 1
+				StartQuest TEQQShrineVanillaWeaponMadnessClaymoreAUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon2HSecondUpgradeQuest
+			elseif bMadnessClaymore == 1 && bMadnessClaymoreA == 1
+				MessageBox "Found Both Low and High Quality Madness Claymores, which would you like to upgrade?", "Cancel", "Start Over", "High Quality", "Low Quality"
+				set iUpgradePerformed to 7
+			endif
+		elseif iUpgradePerformed == 5
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapGlassClaymore 1
+			Player.AddItem TE01WeaponMalachiteClaymore 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 6
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapEbonyClaymore 1
+			Player.AddItem TE01WeaponObsidianClaymore 1
+		elseif iUpgradePerformed == 7
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				StartQuest TEQQShrineVanillaWeaponMadnessClaymoreUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon2HSecondUpgradeQuest
+			elseif iChoice == 3
+				StartQuest TEQQShrineVanillaWeaponMadnessClaymoreAUpgradeQuest
+				StopQuest TEQQShrineVanillaWeapon2HSecondUpgradeQuest
+			endif
+		endif
+	elseif iDisplayedMenu == -1
+		Message "Item Upgraded!"
+		StopQuest TEQQShrineVanillaWeapon2HSecondUpgradeQuest
+	elseif iDisplayedMenu == -2
+		Message "No Upgrade Performed!"
+		StopQuest TEQQShrineVanillaWeapon2HSecondUpgradeQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaWeapon2HSecondUpgradeQuest
+		StartQuest TEQQShrineInitilizationQuest
+	endif
+end

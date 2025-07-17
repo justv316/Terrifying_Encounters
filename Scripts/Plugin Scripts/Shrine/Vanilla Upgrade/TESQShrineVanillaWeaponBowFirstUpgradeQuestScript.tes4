@@ -1,0 +1,160 @@
+scn TESQShrineVanillaWeaponBowFirstUpgradeQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iUpgradePerformed
+short iChoosing
+short iChoice
+short bElvenBow
+short bDaedricBow
+short bDarkBow
+short bDwarvenBow
+short bGoldenBow
+short bMadnessBow
+short bMadnessBowA
+
+Begin GameMode
+	if iDisplayedMenu == 0
+		if iUpgradePerformed == 0
+			if iChoosing == 0
+				if bElvenBow == 1
+					MessageBox "Upgrade Elven Bow to Tier 1 Ayleidic Bow? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 1
+				endif
+				if bDaedricBow == 1
+					MessageBox "Upgrade Daedric Bow to Tier 1 Cursed Bow? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 2
+				endif
+				if bDarkBow == 1
+					MessageBox "Upgrade Dark Bow to Tier 1 Dark Bow? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 3
+				endif
+				if bDwarvenBow == 1
+					MessageBox "Upgrade Dwarven Bow to Tier 1 Dwemer Bow? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 4
+				endif
+				if bGoldenBow == 1
+					MessageBox "Upgrade Golden Bow to Tier 1 Golden Bow? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 5
+				endif
+				if bMadnessBow == 1
+					MessageBox "Upgrade Madness Bow to Tier 1 Maddening Bow? (+8 Damage from Daedric, Upgradeable)", "Cancel", "Start Over", "Tier 1: 10-50,000 Gold"
+					set iChoosing to 6
+				endif
+			elseif iChoosing == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				endif
+			elseif iChoosing == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				endif
+			elseif iChoosing == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 5
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 6
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iUpgradePerformed to 6
+				endif
+			endif
+		elseif iUpgradePerformed == 1
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapElvenBow 1
+			Player.AddItem TE01WeaponAyleidicBow 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 2
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapDaedricBow 1
+			Player.AddItem TE01WeaponCursedBow 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 3
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem SEDarkSeducerBow 1
+			Player.AddItem TE01WeaponDarkBow 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 4
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem WeapDwarvenBow 1
+			Player.AddItem TE01WeaponDwemerBow 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 5
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem SEGoldenSaintBow 1
+			Player.AddItem TE01WeaponGoldenBow 1
+			set iDisplayedMenu to -1
+		elseif iUpgradePerformed == 6
+			if bMadnessBow == 1 && bMadnessBowA == 0
+				StartQuest TEQQShrineVanillaWeaponMadnessBowUpgradeQuest
+				StopQuest TEQQShrineVanillaWeaponBowFirstUpgradeQuest
+			elseif bMadnessBow == 0 && bMadnessBowA == 1
+				StartQuest TEQQShrineVanillaWeaponMadnessBowAUpgradeQuest
+				StopQuest TEQQShrineVanillaWeaponBowFirstUpgradeQuest
+			elseif bMadnessBow == 1 && bMadnessBowA == 1
+				MessageBox "Found Both Low and High Quality Madness Bows, which would you like to upgrade?", "Cancel", "Start Over", "High Quality", "Low Quality"
+				set iUpgradePerformed to 7
+			endif
+		elseif iUpgradePerformed == 7
+			set iChoice to GetButtonPressed
+			if iChoice == 0
+				set iDisplayedMenu to -2
+			elseif iChoice == 1
+				set iDisplayedMenu to -3
+			elseif iChoice == 2
+				StartQuest TEQQShrineVanillaWeaponMadnessBowUpgradeQuest
+				StopQuest TEQQShrineVanillaWeaponBowFirstUpgradeQuest
+			elseif iChoice == 3
+				StartQuest TEQQShrineVanillaWeaponMadnessBowAUpgradeQuest
+				StopQuest TEQQShrineVanillaWeaponBowFirstUpgradeQuest
+			endif
+		endif
+	elseif iDisplayedMenu == -1
+		Message "Item Upgraded!"
+		StopQuest TEQQShrineVanillaWeaponBowFirstUpgradeQuest
+	elseif iDisplayedMenu == -2
+		Message "No Upgrade Performed!"
+		StopQuest TEQQShrineVanillaWeaponBowFirstUpgradeQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaWeaponBowFirstUpgradeQuest
+		StartQuest TEQQShrineInitilizationQuest
+	endif
+end
