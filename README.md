@@ -14,6 +14,7 @@
 * Completed: Matching Set Bonuses for the 8 upscaled sets of armor/weapons
 	* 6/6 Bonuses Apply *Debuffs* to Enemies or *Buffs* to allies
 	* Takes full advantage of my [Target Detection System](https://github.com/justv316/Target_Detection)
+* Completed: Automatically scales soul gem power based on player level.
 * In Progress: Upscaled, fully scripted Artifacts.
 	* Duskfang and Mehrunes Razor complete.
 * In Progress: Upscaled Sigil stones complete with transmutation system inspired by Sigil Stone Transmuter - Varla Stone Cost by Maegfaer and Omnishambles9.
@@ -28,9 +29,9 @@
 		1. [Custom Enchanted Modded Apparel SourceFormIDs Updater](https:://www.nexusmods.com/oblivionremastered/mods/4029)
 	2. [Silent Notification Framework](https:://www.nexusmods.com/oblivionremastered/mods/4166)
 	3. [Mad OBScript Extender](https://www.nexusmods.com/oblivionremastered/mods/4819)
+	4. [Mad Config Menu MCM](https://www.nexusmods.com/oblivionremastered/mods/4810)
 2. [OBSE](https:://www.nexusmods.com/oblivionremastered/mods/282)
 	1. [NL-Tag Remover](https:://www.nexusmods.com/oblivionremastered/mods/473)
-	2. [Game Settings Loader](https:://www.nexusmods.com/oblivionremastered/mods/746)
 	3. [Visual C++ Redists 2022](https:://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
 	
 ## In-Game Prerequisites
@@ -42,8 +43,8 @@
 ## Files
 1. "Terrifying_Encounters.esp" [Main Plugin]
 2. "Terrifying_Encounters.json" [SyncMap]
-3. "TE_Settings.ini" [GameSettings]
-4. "Terrifying_Encounters_Ignore.ini" [SkipMessages]
+3. "Terrifying_Encounters_Ignore.ini" [SkipMessages]
+4. "Terrifying_Encounters_MCM.ini" [Mod Configuration Menu]
 
 ----
 
@@ -1040,12 +1041,12 @@
 
 ### Resources Used
 
-* Created with xEdit, Creation Kit Extender, and Notepad++
-	* [Creation Kit Extender](https:://www.nexusmods.com/oblivion/mods/36370)
-	* [Notepad++](https:://notepad-plus-plus.org/downloads/)
-	* [Script Source](https://github.com/justv316/Terrifying_Encounters/tree/main/Scripts/Plugin%20Scripts)
-	* [xEdit](https:://tes5edit.github.io/)
-* Uses Vanilla assets and scripting.
+1. Created with xEdit, Creation Kit Extender, and Notepad++
+	2. [Creation Kit Extender](https:://www.nexusmods.com/oblivion/mods/36370)
+	3. [Notepad++](https:://notepad-plus-plus.org/downloads/)
+	4. [Script Source](https://github.com/justv316/Terrifying_Encounters/tree/main/Scripts/Plugin%20Scripts)
+	5. [xEdit](https:://tes5edit.github.io/)	
+2. Utilizes SilentNotificationFrameWork and ObScript Extender created by [MadAborModding](https://next.nexusmods.com/profile/MadAborModding)
 
 ### People Inspired By
 
@@ -1061,8 +1062,7 @@
 * I learned how to make custom summons through: [Summon War Expanded by TrueElderBlade](https:://www.nexusmods.com/oblivionremastered/mods/1521)
 
 ### Other Acknowledgements
-* A tremendous shoutout to [MadAborModding](https://next.nexusmods.com/profile/MadAborModding) for everything they are doing with UE4SS LUA Scripting.
-* [ColdTyrant for believing in me](https:://next.nexusmods.com/profile/ColdTyrant?gameId=7587)
+* A tremendous shoutout to  for everything they are doing with UE4SS LUA Scripting.
 
 --------
 * Thank you very much for checking out my mod

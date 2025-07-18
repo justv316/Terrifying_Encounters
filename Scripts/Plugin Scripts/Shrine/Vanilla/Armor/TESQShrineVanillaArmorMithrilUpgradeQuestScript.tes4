@@ -1,0 +1,144 @@
+scn TESQShrineVanillaArmorMithrilUpgradeQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iUpgradePerformed
+short iChoosing
+short iChoice
+short bMithrilBoots
+short bMithrilCuirass
+short bMithrilGauntlets
+short bMithrilGreaves
+short bMithrilHelmet
+short bMithrilShield
+
+Begin GameMode
+	if iDisplayedMenu == 0
+		if iUpgradePerformed == 0
+			if iChoosing == 0
+				if bMithrilBoots == 1
+					MessageBox "Upgrade Mithril Boots to Tier 1 Mythril Boots?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 1
+				endif
+				if bMithrilCuirass == 1
+					MessageBox "Upgrade Mithril Cuirass to Tier 1 Mythril Cuirass?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 2
+				endif
+				if bMithrilGauntlets == 1
+					MessageBox "Upgrade Mithril Gauntlets to Tier 1 Mythril Gauntlets?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 3
+				endif
+				if bMithrilGreaves == 1
+					MessageBox "Upgrade Mithril Greaves to Tier 1 Mythril Greaves?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 4
+				endif
+				if bMithrilHelmet == 1
+					MessageBox "Upgrade Mithril Helmet to Tier 1 Mythril Helmet?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 5
+				endif
+				if bMithrilShield == 1
+					MessageBox "Upgrade Mithril Shield to Tier 1 Mythril Shield?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 6
+				endif
+			elseif iChoosing == -1
+				set iDisplayedMenu to -1
+			elseif iChoosing == -2
+				set iDisplayedMenu to -2
+			elseif iChoosing == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				endif
+			elseif iChoosing == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				endif
+			elseif iChoosing == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 5
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 6
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 6
+				endif
+			endif
+		elseif iUpgradePerformed == 1
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem MithrilBoots 1
+			Player.AddItem TE01ArmorMythrilLBoots 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 2
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem MithrilCuirass 1
+			Player.AddItem TE01ArmorMythrilLCuirass 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 3
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem MithrilGauntlets 1
+			Player.AddItem TE01ArmorMythrilLGauntlets 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 4
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem MithrilGreaves 1
+			Player.AddItem TE01ArmorMythrilLGreaves 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 5
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem MithrilHelmet 1
+			Player.AddItem TE01ArmorMythrilLHelmet 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 6
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem MithrilShield 1
+			Player.AddItem TE01ArmorMythrilLShield 1
+			set iDisplayedMenu to -3
+		endif
+	elseif iDisplayedMenu == -1
+		Message "No Upgrade Performed!"
+		StopQuest TEQQShrineVanillaArmorMithrilUpgradeQuest
+	elseif iDisplayedMenu == -2
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaArmorMithrilUpgradeQuest
+		StartQuest TEQQShrineInitilizationQuest
+	elseif iDisplayedMenu == -3
+		Message "Item Upgraded!"
+		StopQuest TEQQShrineVanillaArmorMithrilUpgradeQuest
+	endif
+end

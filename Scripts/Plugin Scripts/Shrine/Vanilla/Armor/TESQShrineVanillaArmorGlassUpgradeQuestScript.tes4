@@ -1,0 +1,144 @@
+scn TESQShrineVanillaArmorGlassUpgradeQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iUpgradePerformed
+short iChoosing
+short iChoice
+short bGlassBoots
+short bGlassCuirass
+short bGlassGauntlets
+short bGlassGreaves
+short bGlassHelmet
+short bGlassShield
+
+Begin GameMode
+	if iDisplayedMenu == 0
+		if iUpgradePerformed == 0
+			if iChoosing == 0
+				if bGlassBoots == 1
+					MessageBox "Upgrade Glass Boots to Tier 1 Malachite Boots?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 1
+				endif
+				if bGlassCuirass == 1
+					MessageBox "Upgrade Glass Cuirass to Tier 1 Malachite Cuirass?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 2
+				endif
+				if bGlassGauntlets == 1
+					MessageBox "Upgrade Glass Gauntlets to Tier 1 Malachite Gauntlets?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 3
+				endif
+				if bGlassGreaves == 1
+					MessageBox "Upgrade Glass Greaves to Tier 1 Malachite Greaves?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 4
+				endif
+				if bGlassHelmet == 1
+					MessageBox "Upgrade Glass Helmet to Tier 1 Malachite Helmet?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 5
+				endif
+				if bGlassShield == 1
+					MessageBox "Upgrade Glass Shield to Tier 1 Malachite Shield?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 6
+				endif
+			elseif iChoosing == -1
+				set iDisplayedMenu to -1
+			elseif iChoosing == -2
+				set iDisplayedMenu to -2
+			elseif iChoosing == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				endif
+			elseif iChoosing == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				endif
+			elseif iChoosing == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 5
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 6
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 6
+				endif
+			endif
+		elseif iUpgradePerformed == 1
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem GlassBoots 1
+			Player.AddItem TE01ArmorMalachiteLBoots 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 2
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem GlassCuirass 1
+			Player.AddItem TE01ArmorMalachiteLCuirass 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 3
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem GlassGauntlets 1
+			Player.AddItem TE01ArmorMalachiteLGauntlets 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 4
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem GlassGreaves 1
+			Player.AddItem TE01ArmorMalachiteLGreaves 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 5
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem GlassHelmet 1
+			Player.AddItem TE01ArmorMalachiteLHelmet 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 6
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem GlassShield 1
+			Player.AddItem TE01ArmorMalachiteLShield 1
+			set iDisplayedMenu to -3
+		endif
+	elseif iDisplayedMenu == -1
+		Message "No Upgrade Performed!"
+		StopQuest TEQQShrineVanillaArmorGlassUpgradeQuest
+	elseif iDisplayedMenu == -2
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaArmorGlassUpgradeQuest
+		StartQuest TEQQShrineInitilizationQuest
+	elseif iDisplayedMenu == -3
+		Message "Item Upgraded!"
+		StopQuest TEQQShrineVanillaArmorGlassUpgradeQuest
+	endif
+end

@@ -26,6 +26,12 @@ begin gamemode
 			set TEQQShrineInventoryCheckQuest.bFoundItem to 0
 			set TEQQShrineInventoryCheckQuest.bFoundArmorSet to 0
 			set TEQQShrineInventoryCheckQuest.bFoundWeaponSet to 0
+			set TEQQShrineEquippedCheckQuest.fQuestDelayTime to 0.01
+			set TEQQShrineEquippedCheckQuest.iSearchItem to 0
+			set TEQQShrineEquippedCheckQuest.iDisplayedMenu to 0
+			set TEQQShrineEquippedCheckQuest.bFoundItem to 0
+			set TEQQShrineEquippedCheckQuest.bFoundArmorSet to 0
+			set TEQQShrineEquippedCheckQuest.bFoundWeaponSet to 0
 			set TEQQShrineInventoryCheckArmorQuest.bFoundFirstHArmorSet to 0
 			set TEQQShrineInventoryCheckArmorQuest.bFoundSecondHArmorSet to 0
 			set TEQQShrineInventoryCheckArmorQuest.bFoundThirdHArmorSet to 0
@@ -255,6 +261,10 @@ begin gamemode
 			set TEQQShrineVanillaCheckWeaponQuest.bFoundSecondBowWeaponSet to 0
 			set TEQQShrineVanillaCheckWeaponQuest.iFoundBowWeaponSet to 0
 			set TEQQShrineVanillaCheckWeaponQuest.iFoundWeaponSet to 0
+			set TEQQShrineVanillaArmorElvenQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorElvenQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorElvenQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorElvenQuest.iInventoryTier to 0
 			set TEQQShrineVanillaArmorElvenUpgradeQuest.fQuestDelayTime to 0.01
 			set TEQQShrineVanillaArmorElvenUpgradeQuest.iDisplayedMenu to 0
 			set TEQQShrineVanillaArmorElvenUpgradeQuest.iUpgradePerformed to 0
@@ -265,6 +275,10 @@ begin gamemode
 			set TEQQShrineVanillaArmorElvenUpgradeQuest.bElvenGreaves to 0
 			set TEQQShrineVanillaArmorElvenUpgradeQuest.bElvenHelmet to 0
 			set TEQQShrineVanillaArmorElvenUpgradeQuest.bElvenShield to 0
+			set TEQQShrineVanillaArmorMithrilQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorMithrilQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorMithrilQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorMithrilQuest.iInventoryTier to 0
 			set TEQQShrineVanillaArmorMithrilUpgradeQuest.fQuestDelayTime to 0.01
 			set TEQQShrineVanillaArmorMithrilUpgradeQuest.iDisplayedMenu to 0
 			set TEQQShrineVanillaArmorMithrilUpgradeQuest.iUpgradePerformed to 0
@@ -275,6 +289,10 @@ begin gamemode
 			set TEQQShrineVanillaArmorMithrilUpgradeQuest.bMithrilGreaves to 0
 			set TEQQShrineVanillaArmorMithrilUpgradeQuest.bMithrilHelmet to 0
 			set TEQQShrineVanillaArmorMithrilUpgradeQuest.bMithrilShield to 0
+			set TEQQShrineVanillaArmorGlassQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorGlassQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorGlassQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorGlassQuest.iInventoryTier to 0
 			set TEQQShrineVanillaArmorGlassUpgradeQuest.fQuestDelayTime to 0.01
 			set TEQQShrineVanillaArmorGlassUpgradeQuest.iDisplayedMenu to 0
 			set TEQQShrineVanillaArmorGlassUpgradeQuest.iUpgradePerformed to 0
@@ -285,6 +303,10 @@ begin gamemode
 			set TEQQShrineVanillaArmorGlassUpgradeQuest.bGlassGreaves to 0
 			set TEQQShrineVanillaArmorGlassUpgradeQuest.bGlassHelmet to 0
 			set TEQQShrineVanillaArmorGlassUpgradeQuest.bGlassShield to 0
+			set TEQQShrineVanillaArmorEbonyQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorEbonyQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorEbonyQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorEbonyQuest.iInventoryTier to 0
 			set TEQQShrineVanillaArmorEbonyUpgradeQuest.fQuestDelayTime to 0.01
 			set TEQQShrineVanillaArmorEbonyUpgradeQuest.iDisplayedMenu to 0
 			set TEQQShrineVanillaArmorEbonyUpgradeQuest.iUpgradePerformed to 0
@@ -295,6 +317,10 @@ begin gamemode
 			set TEQQShrineVanillaArmorEbonyUpgradeQuest.bEbonyGreaves to 0
 			set TEQQShrineVanillaArmorEbonyUpgradeQuest.bEbonyHelmet to 0
 			set TEQQShrineVanillaArmorEbonyUpgradeQuest.bEbonyShield to 0
+			set TEQQShrineVanillaArmorDaedricQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorDaedricQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorDaedricQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorDaedricQuest.iInventoryTier to 0
 			set TEQQShrineVanillaArmorDaedricUpgradeQuest.fQuestDelayTime to 0.01
 			set TEQQShrineVanillaArmorDaedricUpgradeQuest.iDisplayedMenu to 0
 			set TEQQShrineVanillaArmorDaedricUpgradeQuest.iUpgradePerformed to 0
@@ -305,6 +331,10 @@ begin gamemode
 			set TEQQShrineVanillaArmorDaedricUpgradeQuest.bDaedricGreaves to 0
 			set TEQQShrineVanillaArmorDaedricUpgradeQuest.bDaedricHelmet to 0
 			set TEQQShrineVanillaArmorDaedricUpgradeQuest.bDaedricShield to 0
+			set TEQQShrineVanillaArmorDwarvenQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorDwarvenQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorDwarvenQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorDwarvenQuest.iInventoryTier to 0
 			set TEQQShrineVanillaArmorDwarvenUpgradeQuest.fQuestDelayTime to 0.01
 			set TEQQShrineVanillaArmorDwarvenUpgradeQuest.iDisplayedMenu to 0
 			set TEQQShrineVanillaArmorDwarvenUpgradeQuest.iUpgradePerformed to 0
@@ -316,6 +346,9 @@ begin gamemode
 			set TEQQShrineVanillaArmorDwarvenUpgradeQuest.bDwarvenHelmet to 0
 			set TEQQShrineVanillaArmorDwarvenUpgradeQuest.bDwarvenShield to 0
 			set TEQQShrineVanillaArmorMadnessLQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorMadnessLQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorMadnessLQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorMadnessLQuest.iInventoryTier to 0
 			set TEQQShrineVanillaArmorMadnessLQuest.bMadnessLBoots to 0
 			set TEQQShrineVanillaArmorMadnessLQuest.bMadnessLCuirass to 0
 			set TEQQShrineVanillaArmorMadnessLQuest.bMadnessLGauntlets to 0
@@ -323,6 +356,9 @@ begin gamemode
 			set TEQQShrineVanillaArmorMadnessLQuest.bMadnessLHelmet to 0
 			set TEQQShrineVanillaArmorMadnessLQuest.bMadnessLShield to 0
 			set TEQQShrineVanillaArmorMadnessHQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorMadnessHQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorMadnessHQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorMadnessHQuest.iInventoryTier to 0
 			set TEQQShrineVanillaArmorMadnessHQuest.bMadnessHBoots to 0
 			set TEQQShrineVanillaArmorMadnessHQuest.bMadnessHCuirass to 0
 			set TEQQShrineVanillaArmorMadnessHQuest.bMadnessHGauntlets to 0
@@ -330,6 +366,9 @@ begin gamemode
 			set TEQQShrineVanillaArmorMadnessHQuest.bMadnessHHelmet to 0
 			set TEQQShrineVanillaArmorMadnessHQuest.bMadnessHShield to 0
 			set TEQQShrineVanillaArmorAmberLQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorAmberLQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorAmberLQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorAmberLQuest.iInventoryTier to 0
 			set TEQQShrineVanillaArmorAmberLQuest.bAmberLBoots to 0
 			set TEQQShrineVanillaArmorAmberLQuest.bAmberLCuirass to 0
 			set TEQQShrineVanillaArmorAmberLQuest.bAmberLGauntlets to 0
@@ -337,6 +376,9 @@ begin gamemode
 			set TEQQShrineVanillaArmorAmberLQuest.bAmberLHelmet to 0
 			set TEQQShrineVanillaArmorAmberLQuest.bAmberLShield to 0
 			set TEQQShrineVanillaArmorAmberHQuest.fQuestDelayTime to 0.01
+			set TEQQShrineVanillaArmorAmberHQuest.iDisplayedMenu to 0
+			set TEQQShrineVanillaArmorAmberHQuest.iChoosingItem to 0
+			set TEQQShrineVanillaArmorAmberHQuest.iInventoryTier to 0
 			set TEQQShrineVanillaArmorAmberHQuest.bAmberHBoots to 0
 			set TEQQShrineVanillaArmorAmberHQuest.bAmberHCuirass to 0
 			set TEQQShrineVanillaArmorAmberHQuest.bAmberHGauntlets to 0
@@ -727,7 +769,7 @@ begin gamemode
 			set TEQQShrineVanillaWeaponMadnessClaymoreAUpgradeQuest.iInventoryTier to 0
 			set TEQQShrineVanillaWeaponMadnessClaymoreAUpgradeQuest.iUpgradePerformed to 0
 			set TEQQShrineVanillaWeaponMadnessClaymoreAUpgradeQuest.iPlayerGold to iPlayerGold
-			MessageBox "Where to Look?", "Cancel" , "Inventory", "Equipped", "Vanilla to Modded"
+			MessageBox "Where to Look?", "Cancel", "Inventory", "Equipped", "Vanilla to Modded"
 			set iChoosingItem to 1
 		elseif iChoosingItem == 1
 			set iChoice to GetButtonPressed

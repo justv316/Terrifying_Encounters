@@ -1,0 +1,973 @@
+scn TESQShrineVanillaCheckArmorQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iSelectedArmorSet
+short iChoosingArmorSet
+short iSearchItem
+
+short iChoice
+
+short bFoundFirstHArmorSet
+short bFoundSecondHArmorSet
+short bFoundThirdHArmorSet
+short bFoundFourthHArmorSet
+short bFoundFifthHArmorSet
+short bFoundFirstLArmorSet
+short bFoundSecondLArmorSet
+short bFoundThirdLArmorSet
+short bFoundFourthLArmorSet
+short bFoundFifthLArmorSet
+
+short bFoundHArmorSet
+short bFoundLArmorSet
+short iFoundHArmorSet
+short iFoundLArmorSet
+
+begin GameMode
+	if iDisplayedMenu == 0
+		if iSelectedArmorSet == 0
+			if iChoosingArmorSet == 0
+				if iSearchItem == 0
+					if bFoundFirstHArmorSet == 1
+						set iFoundHArmorSet to iFoundHArmorSet + ( 1 * 1 )
+					endif
+					if bFoundSecondHArmorSet == 1
+						set iFoundHArmorSet to iFoundHArmorSet + ( 2 * 1 )
+					endif
+					if bFoundThirdHArmorSet == 1
+						set iFoundHArmorSet to iFoundHArmorSet + ( 2 * 2 )
+					endif
+					if bFoundFourthHArmorSet == 1
+						set iFoundHArmorSet to iFoundHArmorSet + ( 2 * 2 * 2 )
+					endif
+					if bFoundFifthHArmorSet == 1
+						set iFoundHArmorSet to iFoundHArmorSet + ( 2 * 2 * 2 * 2 )
+					endif
+					if bFoundFirstLArmorSet == 1
+						set iFoundLArmorSet to iFoundLArmorSet + ( 1 * 1 )
+					endif
+					if bFoundSecondLArmorSet == 1
+						set iFoundLArmorSet to iFoundLArmorSet + ( 2 * 1 )
+					endif
+					if bFoundThirdLArmorSet == 1
+						set iFoundLArmorSet to iFoundLArmorSet + ( 2 * 2 )
+					endif
+					if bFoundFourthLArmorSet == 1
+						set iFoundLArmorSet to iFoundLArmorSet + ( 2 * 2 * 2 )
+					endif
+					if bFoundFifthLArmorSet == 1
+						set iFoundLArmorSet to iFoundLArmorSet + ( 2 * 2 * 2 * 2 )
+					endif
+					set iSearchItem to 1
+				elseif iSearchItem == 1
+					if bFoundHArmorSet == 1 && bFoundLArmorSet == 1
+						MessageBox "Found Heavy and Light Armor to Upgrade", "Cancel", "Start Over", "Heavy", "Light"
+						set iSearchItem to 2
+					elseif bFoundHArmorSet == 1 && bFoundLArmorSet == 0
+						if iFoundHArmorSet == 1
+							set iSelectedArmorSet to 1
+						elseif iFoundHArmorSet == 2
+							set iSelectedArmorSet to 2
+						elseif iFoundHArmorSet == 4 
+							set iSelectedArmorSet to 3
+						elseif iFoundHArmorSet == 8 
+							set iSelectedArmorSet to 4
+						elseif iFoundHArmorSet == 16 
+							set iSelectedArmorSet to 5
+						elseif iFoundHArmorSet == 3
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Ebony", "Daedric"
+							set iChoosingArmorSet to 1
+						elseif iFoundHArmorSet == 5
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Ebony", "Dwarven"
+							set iChoosingArmorSet to 2
+						elseif iFoundHArmorSet == 9
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Ebony", "Madness (Heavy)"
+							set iChoosingArmorSet to 3
+						elseif iFoundHArmorSet == 17
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Ebony", "Amber (Heavy)"
+							set iChoosingArmorSet to 4
+						elseif iFoundHArmorSet == 6
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Daedric", "Dwarven"
+							set iChoosingArmorSet to 5
+						elseif iFoundHArmorSet == 10
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Daedric", "Madness (Heavy)"
+							set iChoosingArmorSet to 6
+						elseif iFoundHArmorSet == 18
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Daedric", "Amber (Heavy)"
+							set iChoosingArmorSet to 7
+						elseif iFoundHArmorSet == 12
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Dwarven", "Madness (Heavy)"
+							set iChoosingArmorSet to 8
+						elseif iFoundHArmorSet == 20
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Dwarven", "Amber (Heavy)"
+							set iChoosingArmorSet to 9
+						elseif iFoundHArmorSet == 24
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Madness (Heavy)", "Amber (Heavy)"
+							set iChoosingArmorSet to 10
+						elseif iFoundHArmorSet == 7
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Ebony", "Daedric", "Dwarven"
+							set iChoosingArmorSet to 11
+						elseif iFoundHArmorSet == 11
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Ebony", "Daedric", "Madness (Heavy)"
+							set iChoosingArmorSet to 12
+						elseif iFoundHArmorSet == 19
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Ebony", "Daedric", "Amber (Heavy)"
+							set iChoosingArmorSet to 13
+						elseif iFoundHArmorSet == 13
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Ebony", "Dwarven", "Madness (Heavy)"
+							set iChoosingArmorSet to 14
+						elseif iFoundHArmorSet == 21
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Ebony", "Dwarven", "Amber (Heavy)"
+							set iChoosingArmorSet to 15
+						elseif iFoundHArmorSet == 25
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Ebony", "Madness (Heavy)", "Amber (Heavy)"
+							set iChoosingArmorSet to 16
+						elseif iFoundHArmorSet == 14
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Daedric", "Dwarven", "Madness (Heavy)"
+							set iChoosingArmorSet to 17
+						elseif iFoundHArmorSet == 22
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Daedric", "Dwarven", "Amber (Heavy)"
+							set iChoosingArmorSet to 18
+						elseif iFoundHArmorSet == 26
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Daedric", "Madness (Heavy)", "Amber (Heavy)"
+							set iChoosingArmorSet to 19
+						elseif iFoundHArmorSet == 28
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Dwarven", "Madness (Heavy)", "Amber (Heavy)"
+							set iChoosingArmorSet to 20
+						elseif iFoundHArmorSet == 15
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Ebony", "Daedric", "Dwarven", "Madness (Heavy)"
+							set iChoosingArmorSet to 21
+						elseif iFoundHArmorSet == 23
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Ebony", "Daedric", "Dwarven", "Amber (Heavy)"
+							set iChoosingArmorSet to 22
+						elseif iFoundHArmorSet == 27
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Ebony", "Daedric", "Madness (Heavy)", "Amber (Heavy)"
+							set iChoosingArmorSet to 23
+						elseif iFoundHArmorSet == 29
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Ebony", "Dwarven", "Madness (Heavy)", "Amber (Heavy)"
+							set iChoosingArmorSet to 24
+						elseif iFoundHArmorSet == 30
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Daedric", "Dwarven", "Madness (Heavy)", "Amber (Heavy)"
+							set iChoosingArmorSet to 25
+						elseif iFoundHArmorSet == 31
+							MessageBox "Found Multiple Sets of Heavy Armor", "Cancel", "Start Over", "Ebony", "Daedric", "Dwarven", "Madness (Heavy)", "Amber (Heavy)"
+							set iChoosingArmorSet to 26
+						endif
+					elseif bFoundHArmorSet == 0 && bFoundLArmorSet == 1
+						if iFoundLArmorSet == 1
+							set iSelectedArmorSet to 7
+						elseif iFoundLArmorSet == 2
+							set iSelectedArmorSet to 8
+						elseif iFoundLArmorSet == 4 
+							set iSelectedArmorSet to 9
+						elseif iFoundLArmorSet == 8 
+							set iSelectedArmorSet to 10
+						elseif iFoundLArmorSet == 16 
+							set iSelectedArmorSet to 11
+						elseif iFoundLArmorSet == 3
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Elven", "Mithril"
+							set iChoosingArmorSet to 27
+						elseif iFoundLArmorSet == 5
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Elven", "Glass"
+							set iChoosingArmorSet to 28
+						elseif iFoundLArmorSet == 9
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Elven", "Madness (Light)"
+							set iChoosingArmorSet to 29
+						elseif iFoundLArmorSet == 17
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Elven", "Amber (Light)"
+							set iChoosingArmorSet to 30
+						elseif iFoundLArmorSet == 6
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Mithril", "Glass"
+							set iChoosingArmorSet to 31
+						elseif iFoundLArmorSet == 10
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Mithril", "Madness (Light)"
+							set iChoosingArmorSet to 32
+						elseif iFoundLArmorSet == 18
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Mithril", "Amber (Light)"
+							set iChoosingArmorSet to 33
+						elseif iFoundLArmorSet == 12
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Glass", "Madness (Light)"
+							set iChoosingArmorSet to 34
+						elseif iFoundLArmorSet == 20
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Glass", "Amber (Light)"
+							set iChoosingArmorSet to 35
+						elseif iFoundLArmorSet == 24
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Madness (Light)", "Amber (Light)"
+							set iChoosingArmorSet to 36
+						elseif iFoundLArmorSet == 7
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Elven", "Mithril", "Glass"
+							set iChoosingArmorSet to 37
+						elseif iFoundLArmorSet == 11
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Elven", "Mithril", "Madness (Light)"
+							set iChoosingArmorSet to 38
+						elseif iFoundLArmorSet == 19
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Elven", "Mithril", "Amber (Light)"
+							set iChoosingArmorSet to 39
+						elseif iFoundLArmorSet == 13
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Elven", "Glass", "Madness (Light)"
+							set iChoosingArmorSet to 40
+						elseif iFoundLArmorSet == 21
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Elven", "Glass", "Amber (Light)"
+							set iChoosingArmorSet to 41
+						elseif iFoundLArmorSet == 25
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Elven", "Madness (Light)", "Amber (Light)"
+							set iChoosingArmorSet to 42
+						elseif iFoundLArmorSet == 14
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Mithril", "Glass", "Madness (Light)"
+							set iChoosingArmorSet to 43
+						elseif iFoundLArmorSet == 22
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Mithril", "Glass", "Amber (Light)"
+							set iChoosingArmorSet to 44
+						elseif iFoundLArmorSet == 26
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Mithril", "Madness (Light)", "Amber (Light)"
+							set iChoosingArmorSet to 45
+						elseif iFoundLArmorSet == 28
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Glass", "Madness (Light)", "Amber (Light)"
+							set iChoosingArmorSet to 46
+						elseif iFoundLArmorSet == 15
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Elven", "Mithril", "Glass", "Madness (Light)"
+							set iChoosingArmorSet to 47
+						elseif iFoundLArmorSet == 23
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Elven", "Mithril", "Glass", "Amber (Light)"
+							set iChoosingArmorSet to 48
+						elseif iFoundLArmorSet == 27
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Elven", "Mithril", "Madness (Light)", "Amber (Light)"
+							set iChoosingArmorSet to 49
+						elseif iFoundLArmorSet == 29
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Elven", "Glass", "Madness (Light)", "Amber (Light)"
+							set iChoosingArmorSet to 50
+						elseif iFoundLArmorSet == 30
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Mithril", "Glass", "Madness (Light)", "Amber (Light)"
+							set iChoosingArmorSet to 51
+						elseif iFoundLArmorSet == 31
+							MessageBox "Found Multiple Sets of Light Armor", "Cancel", "Start Over", "Elven", "Mithril", "Glass", "Madness (Light)", "Amber (Light)"
+							set iChoosingArmorSet to 52
+						endif
+					endif
+				elseif iSearchItem == 2 ;Heavy/Light Armor Check
+					set iChoice to GetButtonPressed
+					if iChoice == 0
+						set iDisplayedMenu to -2
+					elseif iChoice == 1
+						set iDisplayedMenu to -3
+					elseif iChoice == 2
+						set bFoundLArmorSet to 0
+						set iSearchItem to 1
+					elseif iChoice == 3
+						set bFoundHArmorSet to 0
+						set iSearchItem to 1
+					endif
+				endif
+			elseif iChoosingArmorSet == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				endif
+			elseif iChoosingArmorSet == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				endif
+			elseif iChoosingArmorSet == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 4
+				endif
+			elseif iChoosingArmorSet == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 5
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 2
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				endif
+			elseif iChoosingArmorSet == 6
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 2
+				elseif iChoice == 3
+					set iSelectedArmorSet to 4
+				endif
+			elseif iChoosingArmorSet == 7
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 2
+				elseif iChoice == 3
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 8
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 3
+				elseif iChoice == 3
+					set iSelectedArmorSet to 4
+				endif
+			elseif iChoosingArmorSet == 9
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 3
+				elseif iChoice == 3
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 10
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 4
+				elseif iChoice == 3
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 11
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				elseif iChoice == 4
+					set iSelectedArmorSet to 3
+				endif
+			elseif iChoosingArmorSet == 12
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				elseif iChoice == 4
+					set iSelectedArmorSet to 4
+				endif
+			elseif iChoosingArmorSet == 13
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				elseif iChoice == 4
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 14
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				elseif iChoice == 4
+					set iSelectedArmorSet to 4
+				endif
+			elseif iChoosingArmorSet == 15
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				elseif iChoice == 4
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 16
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 4
+				elseif iChoice == 4
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 17
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 2
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				elseif iChoice == 4
+					set iSelectedArmorSet to 4
+				endif
+			elseif iChoosingArmorSet == 18
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 2
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				elseif iChoice == 4
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 19
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 2
+				elseif iChoice == 3
+					set iSelectedArmorSet to 4
+				elseif iChoice == 4
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 20
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 3
+				elseif iChoice == 3
+					set iSelectedArmorSet to 4
+				elseif iChoice == 4
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 21
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				elseif iChoice == 4
+					set iSelectedArmorSet to 3
+				elseif iChoice == 5
+					set iSelectedArmorSet to 4
+				endif
+			elseif iChoosingArmorSet == 22
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				elseif iChoice == 4
+					set iSelectedArmorSet to 3
+				elseif iChoice == 5
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 23
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				elseif iChoice == 4
+					set iSelectedArmorSet to 4
+				elseif iChoice == 5
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 24
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				elseif iChoice == 4
+					set iSelectedArmorSet to 4
+				elseif iChoice == 5
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 25
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 2
+				elseif iChoice == 3
+					set iSelectedArmorSet to 3
+				elseif iChoice == 4
+					set iSelectedArmorSet to 4
+				elseif iChoice == 5
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 26
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 1
+				elseif iChoice == 3
+					set iSelectedArmorSet to 2
+				elseif iChoice == 4
+					set iSelectedArmorSet to 3
+				elseif iChoice == 5
+					set iSelectedArmorSet to 4
+				elseif iChoice == 6
+					set iSelectedArmorSet to 5
+				endif
+			elseif iChoosingArmorSet == 27
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				endif
+			elseif iChoosingArmorSet == 28
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				endif
+			elseif iChoosingArmorSet == 29
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 10
+				endif
+			elseif iChoosingArmorSet == 30
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 31
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 8
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				endif
+			elseif iChoosingArmorSet == 32
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 8
+				elseif iChoice == 3
+					set iSelectedArmorSet to 10
+				endif
+			elseif iChoosingArmorSet == 33
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 8
+				elseif iChoice == 3
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 34
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 9
+				elseif iChoice == 3
+					set iSelectedArmorSet to 10
+				endif
+			elseif iChoosingArmorSet == 35
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 9
+				elseif iChoice == 3
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 36
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 10
+				elseif iChoice == 3
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 37
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				elseif iChoice == 4
+					set iSelectedArmorSet to 9
+				endif
+			elseif iChoosingArmorSet == 38
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				elseif iChoice == 4
+					set iSelectedArmorSet to 10
+				endif
+			elseif iChoosingArmorSet == 39
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				elseif iChoice == 4
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 40
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				elseif iChoice == 4
+					set iSelectedArmorSet to 10
+				endif
+			elseif iChoosingArmorSet == 41
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				elseif iChoice == 4
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 42
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 10
+				elseif iChoice == 4
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 43
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 8
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				elseif iChoice == 4
+					set iSelectedArmorSet to 10
+				endif
+			elseif iChoosingArmorSet == 44
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 8
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				elseif iChoice == 4
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 45
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 8
+				elseif iChoice == 3
+					set iSelectedArmorSet to 10
+				elseif iChoice == 4
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 46
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 9
+				elseif iChoice == 3
+					set iSelectedArmorSet to 10
+				elseif iChoice == 4
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 47
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				elseif iChoice == 4
+					set iSelectedArmorSet to 9
+				elseif iChoice == 5
+					set iSelectedArmorSet to 10
+				endif
+			elseif iChoosingArmorSet == 48
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				elseif iChoice == 4
+					set iSelectedArmorSet to 9
+				elseif iChoice == 5
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 49
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				elseif iChoice == 4
+					set iSelectedArmorSet to 10
+				elseif iChoice == 5
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 50
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				elseif iChoice == 4
+					set iSelectedArmorSet to 10
+				elseif iChoice == 5
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 51
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 8
+				elseif iChoice == 3
+					set iSelectedArmorSet to 9
+				elseif iChoice == 4
+					set iSelectedArmorSet to 10
+				elseif iChoice == 5
+					set iSelectedArmorSet to 11
+				endif
+			elseif iChoosingArmorSet == 52
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -2
+				elseif iChoice == 1
+					set iDisplayedMenu to -3
+				elseif iChoice == 2
+					set iSelectedArmorSet to 7
+				elseif iChoice == 3
+					set iSelectedArmorSet to 8
+				elseif iChoice == 4
+					set iSelectedArmorSet to 9
+				elseif iChoice == 5
+					set iSelectedArmorSet to 10
+				elseif iChoice == 6
+					set iSelectedArmorSet to 11
+				endif
+			endif
+		elseif iSelectedArmorSet == 1
+			StopQuest TEQQShrineVanillaCheckArmorQuest
+			StartQuest TEQQShrineVanillaArmorEbonyQuest
+		elseif iSelectedArmorSet == 2
+			StopQuest TEQQShrineVanillaCheckArmorQuest
+			StartQuest TEQQShrineVanillaArmorDaedricQuest
+		elseif iSelectedArmorSet == 3
+			StopQuest TEQQShrineVanillaCheckArmorQuest
+			StartQuest TEQQShrineVanillaArmorDwarvenQuest
+		elseif iSelectedArmorSet == 4
+			StopQuest TEQQShrineVanillaCheckArmorQuest
+			StartQuest TEQQShrineVanillaArmorMadnessHQuest
+		elseif iSelectedArmorSet == 5
+			StopQuest TEQQShrineVanillaCheckArmorQuest
+			StartQuest TEQQShrineVanillaArmorAmberHQuest
+		elseif iSelectedArmorSet == 6
+			Message "There is no Heavy Armor Set 6 but theres a spot for it"
+		elseif iSelectedArmorSet == 7
+			StopQuest TEQQShrineVanillaCheckArmorQuest
+			StartQuest TEQQShrineVanillaArmorElvenQuest
+		elseif iSelectedArmorSet == 8
+			StopQuest TEQQShrineVanillaCheckArmorQuest
+			StartQuest TEQQShrineVanillaArmorMithrilQuest
+		elseif iSelectedArmorSet == 9
+			StopQuest TEQQShrineVanillaCheckArmorQuest
+			StartQuest TEQQShrineVanillaArmorGlassQuest
+		elseif iSelectedArmorSet == 10
+			StopQuest TEQQShrineVanillaCheckArmorQuest
+			StartQuest TEQQShrineVanillaArmorMadnessLQuest
+		elseif iSelectedArmorSet == 11
+			StopQuest TEQQShrineVanillaCheckArmorQuest
+			StartQuest TEQQShrineVanillaArmorAmberLQuest
+		elseif iSelectedArmorSet == 12
+			Message "There is no Light Armor Set 6 but theres a spot for it"
+		endif
+	elseif iDisplayedMenu == -1
+		Message "Nothing found to upgrade!"
+		StopQuest TEQQShrineVanillaCheckArmorQuest
+	elseif iDisplayedMenu == -2
+		Message "Return when you are ready!"
+		StopQuest TEQQShrineVanillaCheckArmorQuest
+	elseif iDisplayedMenu == -3
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaCheckArmorQuest
+		StartQuest TEQQShrineInitilizationQuest
+	endif
+end

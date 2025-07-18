@@ -1,0 +1,144 @@
+scn TESQShrineVanillaArmorEbonyUpgradeQuestScript
+
+float fQuestDelayTime
+short iDisplayedMenu
+short iUpgradePerformed
+short iChoosing
+short iChoice
+short bEbonyBoots
+short bEbonyCuirass
+short bEbonyGauntlets
+short bEbonyGreaves
+short bEbonyHelmet
+short bEbonyShield
+
+Begin GameMode
+	if iDisplayedMenu == 0
+		if iUpgradePerformed == 0
+			if iChoosing == 0
+				if bEbonyBoots == 1
+					MessageBox "Upgrade Ebony Boots to Tier 1 Obsidian Boots?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 1
+				endif
+				if bEbonyCuirass == 1
+					MessageBox "Upgrade Ebony Cuirass to Tier 1 Obsidian Cuirass?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 2
+				endif
+				if bEbonyGauntlets == 1
+					MessageBox "Upgrade Ebony Gauntlets to Tier 1 Obsidian Gauntlets?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 3
+				endif
+				if bEbonyGreaves == 1
+					MessageBox "Upgrade Ebony Greaves to Tier 1 Obsidian Greaves?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 4
+				endif
+				if bEbonyHelmet == 1
+					MessageBox "Upgrade Ebony Helmet to Tier 1 Obsidian Helmet?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 5
+				endif
+				if bEbonyShield == 1
+					MessageBox "Upgrade Ebony Shield to Tier 1 Obsidian Shield?", "Cancel", "Start Over", "Tier 1: 50,000 Gold"
+					set iChoosing to 6
+				endif
+			elseif iChoosing == -1
+				set iDisplayedMenu to -1
+			elseif iChoosing == -2
+				set iDisplayedMenu to -2
+			elseif iChoosing == 1
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 1
+				endif
+			elseif iChoosing == 2
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 2
+				endif
+			elseif iChoosing == 3
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 3
+				endif
+			elseif iChoosing == 4
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 4
+				endif
+			elseif iChoosing == 5
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 5
+				endif
+			elseif iChoosing == 6
+				set iChoice to GetButtonPressed
+				if iChoice == 0
+					set iDisplayedMenu to -1
+				elseif iChoice == 1
+					set iDisplayedMenu to -2
+				elseif iChoice == 2
+					set iUpgradePerformed to 6
+				endif
+			endif
+		elseif iUpgradePerformed == 1
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem EbonyBoots 1
+			Player.AddItem TE01ArmorObsidianHBoots 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 2
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem EbonyCuirass 1
+			Player.AddItem TE01ArmorObsidianHCuirass 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 3
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem EbonyGauntlets 1
+			Player.AddItem TE01ArmorObsidianHGauntlets 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 4
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem EbonyGreaves 1
+			Player.AddItem TE01ArmorObsidianHGreaves 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 5
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem EbonyHelmet 1
+			Player.AddItem TE01ArmorObsidianHHelmet 1
+			set iDisplayedMenu to -3
+		elseif iUpgradePerformed == 6
+			Player.RemoveItem Gold001 50000
+			Player.RemoveItem EbonyShield 1
+			Player.AddItem TE01ArmorObsidianHShield 1
+			set iDisplayedMenu to -3
+		endif
+	elseif iDisplayedMenu == -1
+		Message "No Upgrade Performed!"
+		StopQuest TEQQShrineVanillaArmorEbonyUpgradeQuest
+	elseif iDisplayedMenu == -2
+		set TEQQShrineInitilizationQuest.iDisplayedMenu to -9
+		StopQuest TEQQShrineVanillaArmorEbonyUpgradeQuest
+		StartQuest TEQQShrineInitilizationQuest
+	elseif iDisplayedMenu == -3
+		Message "Item Upgraded!"
+		StopQuest TEQQShrineVanillaArmorEbonyUpgradeQuest
+	endif
+end
