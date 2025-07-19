@@ -385,21 +385,21 @@ begin GameMode
 				set bFoundItem to 1
 				set bFoundArmorSet to 1
 			endif
-			if Player.GetItemCount WeapElvenLongsword > 0 || Player.GetItemCount SEWeapElvenLongswordDurable > 0
+			if Player.GetItemCount WeapElvenLongsword > 0
 				set TEQQShrineVanillaWeapon1HBladeFirstQuest.bElvenLongsword to 1
 				set TEQQShrineVanillaWeapon1HBladeFirstUpgradeQuest.bElvenLongsword to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirst1HBladeWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDaedricLongsword > 0 || Player.GetItemCount SEWeapDaedricLongswordDurable > 0
+			if Player.GetItemCount WeapDaedricLongsword > 0
 				set TEQQShrineVanillaWeapon1HBladeFirstQuest.bDaedricLongsword to 1
 				set TEQQShrineVanillaWeapon1HBladeFirstUpgradeQuest.bDaedricLongsword to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirst1HBladeWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDwarvenLongsword > 0 || Player.GetItemCount SEWeapDwarvenLongswordDurable > 0
+			if Player.GetItemCount WeapDwarvenLongsword > 0
 				set TEQQShrineVanillaWeapon1HBladeFirstQuest.bDwarvenLongsword to 1
 				set TEQQShrineVanillaWeapon1HBladeFirstUpgradeQuest.bDwarvenLongsword to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirst1HBladeWeaponSet to 1
@@ -434,14 +434,14 @@ begin GameMode
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapGlassLongsword > 0 || Player.GetItemCount SEWeapGlassLongswordDurable > 0
+			if Player.GetItemCount WeapGlassLongsword > 0
 				set TEQQShrineVanillaWeapon1HBladeSecondQuest.bGlassLongsword to 1
 				set TEQQShrineVanillaWeapon1HBladeSecondUpgradeQuest.bGlassLongsword to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecond1HBladeWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapEbonyLongsword > 0 || Player.GetItemCount SEWeapEbonyLongswordDurable > 0
+			if Player.GetItemCount WeapEbonyLongsword > 0
 				set TEQQShrineVanillaWeapon1HBladeSecondQuest.bEbonyLongsword to 1
 				set TEQQShrineVanillaWeapon1HBladeSecondUpgradeQuest.bEbonyLongsword to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecond1HBladeWeaponSet to 1
@@ -462,14 +462,14 @@ begin GameMode
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapSilverLongsword > 0 || Player.GetItemCount SEWeapSilverLongswordDurable > 0
+			if Player.GetItemCount WeapSilverLongsword > 0
 				set TEQQShrineVanillaWeapon1HBladeSecondQuest.bSilverLongsword to 1
 				set TEQQShrineVanillaWeapon1HBladeSecondUpgradeQuest.bSilverLongsword to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecond1HBladeWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapEbonyShortsword > 0 || Player.GetItemCount SEWeapEbonyShortswordDurable > 0
+			if Player.GetItemCount WeapEbonyShortsword > 0
 				set TEQQShrineVanillaWeapon1HBladeSecondQuest.bEbonyShortsword to 1
 				set TEQQShrineVanillaWeapon1HBladeSecondUpgradeQuest.bEbonyShortsword to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecond1HBladeWeaponSet to 1
@@ -477,91 +477,91 @@ begin GameMode
 				set bFoundWeaponSet to 1
 			endif
 
-			if Player.GetItemCount WeapSilverShortsword > 0 || Player.GetItemCount SEWeapSilverShortswordDurable > 0
+			if Player.GetItemCount WeapSilverShortsword > 0
 				set TEQQShrineVanillaWeapon1HBladeSecondQuest.bSilverShortsword to 1
 				set TEQQShrineVanillaWeapon1HBladeSecondUpgradeQuest.bSilverShortsword to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecond1HBladeWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapElvenShortsword > 0 || Player.GetItemCount SEWeapElvenShortswordDurable > 0
+			if Player.GetItemCount WeapElvenShortsword > 0
 				set TEQQShrineVanillaWeapon1HBladeThirdQuest.bElvenShortsword to 1
 				set TEQQShrineVanillaWeapon1HBladeThirdUpgradeQuest.bElvenShortsword to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundThird1HBladeWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDaedricShortsword > 0 || Player.GetItemCount SEWeapDaedricShortswordDurable > 0
+			if Player.GetItemCount WeapDaedricShortsword > 0
 				set TEQQShrineVanillaWeapon1HBladeThirdQuest.bDaedricShortsword to 1
 				set TEQQShrineVanillaWeapon1HBladeThirdUpgradeQuest.bDaedricShortsword to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundThird1HBladeWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDwarvenShortsword > 0 || Player.GetItemCount SEWeapDwarvenShortswordDurable > 0
+			if Player.GetItemCount WeapDwarvenShortsword > 0
 				set TEQQShrineVanillaWeapon1HBladeThirdQuest.bDwarvenShortsword to 1
 				set TEQQShrineVanillaWeapon1HBladeThirdUpgradeQuest.bDwarvenShortsword to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundThird1HBladeWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapGlassShortsword > 0 || Player.GetItemCount SEWeapGlassShortswordDurable > 0
+			if Player.GetItemCount WeapGlassShortsword > 0
 				set TEQQShrineVanillaWeapon1HBladeThirdQuest.bGlassShortsword to 1
 				set TEQQShrineVanillaWeapon1HBladeThirdUpgradeQuest.bGlassShortsword to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundThird1HBladeWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapElvenDagger > 0 || Player.GetItemCount SEWeapElvenDaggerDurable > 0
+			if Player.GetItemCount WeapElvenDagger > 0
 				set TEQQShrineVanillaWeapon1HBladeFourthQuest.bElvenDagger to 1
 				set TEQQShrineVanillaWeapon1HBladeFourthUpgradeQuest.bElvenDagger to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFourth1HBladeWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDaedricDagger > 0 || Player.GetItemCount SEWeapDaedricDaggerDurable > 0
+			if Player.GetItemCount WeapDaedricDagger > 0
 				set TEQQShrineVanillaWeapon1HBladeFourthQuest.bDaedricDagger to 1
 				set TEQQShrineVanillaWeapon1HBladeFourthUpgradeQuest.bDaedricDagger to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFourth1HBladeWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDwarvenDagger > 0 || Player.GetItemCount SEWeapDwarvenDaggerDurable > 0
+			if Player.GetItemCount WeapDwarvenDagger > 0
 				set TEQQShrineVanillaWeapon1HBladeFourthQuest.bDwarvenDagger to 1
 				set TEQQShrineVanillaWeapon1HBladeFourthUpgradeQuest.bDwarvenDagger to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFourth1HBladeWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapGlassDagger > 0 || Player.GetItemCount SEWeapGlassDaggerDurable > 0
+			if Player.GetItemCount WeapGlassDagger > 0
 				set TEQQShrineVanillaWeapon1HBladeFourthQuest.bGlassDagger to 1
 				set TEQQShrineVanillaWeapon1HBladeFourthUpgradeQuest.bGlassDagger to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFourth1HBladeWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapEbonyDagger > 0 || Player.GetItemCount SEWeapEbonyDaggerDurable > 0
+			if Player.GetItemCount WeapEbonyDagger > 0
 				set TEQQShrineVanillaWeapon1HBladeFourthQuest.bEbonyDagger to 1
 				set TEQQShrineVanillaWeapon1HBladeFourthUpgradeQuest.bEbonyDagger to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFourth1HBladeWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapSilverDagger > 0 || Player.GetItemCount SEWeapSilverDaggerDurable > 0
+			if Player.GetItemCount WeapSilverDagger > 0
 				set TEQQShrineVanillaWeapon1HBladeFourthQuest.bSilverDagger to 1
 				set TEQQShrineVanillaWeapon1HBladeFourthUpgradeQuest.bSilverDagger to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFourth1HBladeWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapElvenMace > 0 || Player.GetItemCount SEWeapElvenMaceDurable > 0
+			if Player.GetItemCount WeapElvenMace > 0
 				set TEQQShrineVanillaWeapon1HBluntFirstQuest.bElvenMace to 1
 				set TEQQShrineVanillaWeapon1HBluntFirstUpgradeQuest.bElvenMace to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirst1HBluntWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDaedricMace > 0 || Player.GetItemCount SEWeapDaedricMaceDurable > 0
+			if Player.GetItemCount WeapDaedricMace > 0
 				set TEQQShrineVanillaWeapon1HBluntFirstQuest.bDaedricMace to 1
 				set TEQQShrineVanillaWeapon1HBluntFirstUpgradeQuest.bDaedricMace to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirst1HBluntWeaponSet to 1
@@ -575,7 +575,7 @@ begin GameMode
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDwarvenMace > 0 || Player.GetItemCount SEWeapDwarvenMaceDurable > 0
+			if Player.GetItemCount WeapDwarvenMace > 0
 				set TEQQShrineVanillaWeapon1HBluntFirstQuest.bDwarvenMace to 1
 				set TEQQShrineVanillaWeapon1HBluntFirstUpgradeQuest.bDwarvenMace to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirst1HBluntWeaponSet to 1
@@ -589,14 +589,14 @@ begin GameMode
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapGlassMace > 0 || Player.GetItemCount SEWeapGlassMaceDurable > 0 
+			if Player.GetItemCount WeapGlassMace > 0
 				set TEQQShrineVanillaWeapon1HBluntFirstQuest.bGlassMace to 1
 				set TEQQShrineVanillaWeapon1HBluntFirstUpgradeQuest.bGlassMace to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirst1HBluntWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapEbonyMace > 0 || Player.GetItemCount SEWeapEbonyMaceDurable > 0
+			if Player.GetItemCount WeapEbonyMace > 0
 				set TEQQShrineVanillaWeapon1HBluntSecondQuest.bEbonyMace to 1
 				set TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest.bEbonyMace to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecond1HBluntWeaponSet to 1
@@ -617,42 +617,42 @@ begin GameMode
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapSilverMace > 0 || Player.GetItemCount SEWeapSilverMaceDurable > 0
+			if Player.GetItemCount WeapSilverMace > 0
 				set TEQQShrineVanillaWeapon1HBluntSecondQuest.bSilverMace to 1
 				set TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest.bSilverMace to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecond1HBluntWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapGlassWaraxe > 0 || Player.GetItemCount SEWeapGlassWaraxeDurable > 0
+			if Player.GetItemCount WeapGlassWaraxe > 0
 				set TEQQShrineVanillaWeapon1HBluntSecondQuest.bGlassWaraxe to 1
 				set TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest.bGlassWaraxe to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecond1HBluntWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapEbonyWaraxe > 0 || Player.GetItemCount SEWeapEbonyWaraxeDurable > 0
+			if Player.GetItemCount WeapEbonyWaraxe > 0
 				set TEQQShrineVanillaWeapon1HBluntSecondQuest.bEbonyWaraxe to 1
 				set TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest.bEbonyWaraxe to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecond1HBluntWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapSilverWaraxe > 0 || Player.GetItemCount SEWeapSilverWaraxeDurable > 0
+			if Player.GetItemCount WeapSilverWaraxe > 0
 				set TEQQShrineVanillaWeapon1HBluntSecondQuest.bSilverWaraxe to 1
 				set TEQQShrineVanillaWeapon1HBluntSecondUpgradeQuest.bSilverWaraxe to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecond1HBluntWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapElvenWaraxe > 0 || Player.GetItemCount SEWeapElvenWaraxeDurable > 0
+			if Player.GetItemCount WeapElvenWaraxe > 0
 				set TEQQShrineVanillaWeapon1HBluntThirdQuest.bElvenWaraxe to 1
 				set TEQQShrineVanillaWeapon1HBluntThirdUpgradeQuest.bElvenWaraxe to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundThird1HBluntWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDaedricWaraxe > 0 || Player.GetItemCount SEWeapDaedricWaraxeDurable > 0
+			if Player.GetItemCount WeapDaedricWaraxe > 0
 				set TEQQShrineVanillaWeapon1HBluntThirdQuest.bDaedricWaraxe to 1
 				set TEQQShrineVanillaWeapon1HBluntThirdUpgradeQuest.bDaedricWaraxe to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundThird1HBluntWeaponSet to 1
@@ -666,7 +666,7 @@ begin GameMode
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDwarvenWaraxe > 0 || Player.GetItemCount SEWeapDwarvenWaraxeDurable > 0
+			if Player.GetItemCount WeapDwarvenWaraxe > 0
 				set TEQQShrineVanillaWeapon1HBluntThirdQuest.bDwarvenWaraxe to 1
 				set TEQQShrineVanillaWeapon1HBluntThirdUpgradeQuest.bDwarvenWaraxe to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundThird1HBluntWeaponSet to 1
@@ -694,63 +694,63 @@ begin GameMode
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapElvenBattleaxe > 0 || Player.GetItemCount SEWeapElvenBattleaxeDurable > 0
+			if Player.GetItemCount WeapElvenBattleaxe > 0
 				set TEQQShrineVanillaWeapon2HFirstQuest.bElvenBattleaxe to 1
 				set TEQQShrineVanillaWeapon2HFirstUpgradeQuest.bElvenBattleaxe to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirst2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDaedricBattleaxe > 0 || Player.GetItemCount SEWeapDaedricBattleaxeDurable > 0
+			if Player.GetItemCount WeapDaedricBattleaxe > 0
 				set TEQQShrineVanillaWeapon2HFirstQuest.bDaedricBattleaxe to 1
 				set TEQQShrineVanillaWeapon2HFirstUpgradeQuest.bDaedricBattleaxe to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirst2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDwarvenBattleaxe > 0 || Player.GetItemCount SEWeapDwarvenBattleaxeDurable > 0
+			if Player.GetItemCount WeapDwarvenBattleaxe > 0
 				set TEQQShrineVanillaWeapon2HFirstQuest.bDwarvenBattleaxe to 1
 				set TEQQShrineVanillaWeapon2HFirstUpgradeQuest.bDwarvenBattleaxe to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirst2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapGlassBattleaxe > 0 || Player.GetItemCount SEWeapGlassBattleaxeDurable > 0
+			if Player.GetItemCount WeapGlassBattleaxe > 0
 				set TEQQShrineVanillaWeapon2HFirstQuest.bGlassBattleaxe to 1
 				set TEQQShrineVanillaWeapon2HFirstUpgradeQuest.bGlassBattleaxe to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirst2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapEbonyBattleaxe > 0 || Player.GetItemCount SEWeapEbonyBattleaxeDurable > 0
+			if Player.GetItemCount WeapEbonyBattleaxe > 0
 				set TEQQShrineVanillaWeapon2HFirstQuest.bEbonyBattleaxe to 1
 				set TEQQShrineVanillaWeapon2HFirstUpgradeQuest.bEbonyBattleaxe to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirst2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapSilverBattleaxe > 0 || Player.GetItemCount SEWeapSilverBattleaxeDurable > 0 
+			if Player.GetItemCount WeapSilverBattleaxe > 0
 				set TEQQShrineVanillaWeapon2HFirstQuest.bSilverBattleaxe to 1
 				set TEQQShrineVanillaWeapon2HFirstUpgradeQuest.bSilverBattleaxe to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirst2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapElvenClaymore > 0 || Player.GetItemCount SEWeapElvenClaymoreDurable > 0
+			if Player.GetItemCount WeapElvenClaymore > 0
 				set TEQQShrineVanillaWeapon2HSecondQuest.bElvenClaymore to 1
 				set TEQQShrineVanillaWeapon2HSecondUpgradeQuest.bElvenClaymore to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecond2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDaedricClaymore > 0 || Player.GetItemCount SEWeapDaedricClaymoreDurable > 0
+			if Player.GetItemCount WeapDaedricClaymore > 0
 				set TEQQShrineVanillaWeapon2HSecondQuest.bDaedricClaymore to 1
 				set TEQQShrineVanillaWeapon2HSecondUpgradeQuest.bDaedricClaymore to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecond2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDwarvenClaymore > 0 || Player.GetItemCount SEWeapDwarvenClaymoreDurable > 0
+			if Player.GetItemCount WeapDwarvenClaymore > 0
 				set TEQQShrineVanillaWeapon2HSecondQuest.bDwarvenClaymore to 1
 				set TEQQShrineVanillaWeapon2HSecondUpgradeQuest.bDwarvenClaymore to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecond2HWeaponSet to 1
@@ -771,56 +771,56 @@ begin GameMode
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapGlassClaymore > 0 || Player.GetItemCount SEWeapGlassClaymoreDurable > 0
+			if Player.GetItemCount WeapGlassClaymore > 0
 				set TEQQShrineVanillaWeapon2HSecondQuest.bGlassClaymore to 1
 				set TEQQShrineVanillaWeapon2HSecondUpgradeQuest.bGlassClaymore to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecond2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapEbonyClaymore > 0 || Player.GetItemCount SEWeapEbonyClaymoreDurable > 0
+			if Player.GetItemCount WeapEbonyClaymore > 0
 				set TEQQShrineVanillaWeapon2HSecondQuest.bEbonyClaymore to 1
 				set TEQQShrineVanillaWeapon2HSecondUpgradeQuest.bEbonyClaymore to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecond2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapSilverClaymore > 0 || Player.GetItemCount SEWeapSilverClaymoreDurable > 0
+			if Player.GetItemCount WeapSilverClaymore > 0
 				set TEQQShrineVanillaWeapon2HThirdQuest.bSilverClaymore to 1
 				set TEQQShrineVanillaWeapon2HThirdUpgradeQuest.bSilverClaymore to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundThird2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapElvenWarhammer > 0 || Player.GetItemCount SEWeapElvenWarhammerDurable > 0
+			if Player.GetItemCount WeapElvenWarhammer > 0
 				set TEQQShrineVanillaWeapon2HThirdQuest.bElvenWarhammer to 1
 				set TEQQShrineVanillaWeapon2HThirdUpgradeQuest.bElvenWarhammer to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundThird2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDaedricWarhammer > 0 || Player.GetItemCount SEWeapDaedricWarhammerDurable > 0
+			if Player.GetItemCount WeapDaedricWarhammer > 0
 				set TEQQShrineVanillaWeapon2HThirdQuest.bDaedricWarhammer to 1
 				set TEQQShrineVanillaWeapon2HThirdUpgradeQuest.bDaedricWarhammer to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundThird2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDwarvenWarhammer > 0 || Player.GetItemCount SEWeapDwarvenWarhammerDurable > 0
+			if Player.GetItemCount WeapDwarvenWarhammer > 0
 				set TEQQShrineVanillaWeapon2HThirdQuest.bDwarvenWarhammer to 1
 				set TEQQShrineVanillaWeapon2HThirdUpgradeQuest.bDwarvenWarhammer to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundThird2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapGlassWarhammer > 0 || Player.GetItemCount SEWeapGlassWarhammerDurable > 0
+			if Player.GetItemCount WeapGlassWarhammer > 0
 				set TEQQShrineVanillaWeapon2HThirdQuest.bGlassWarhammer to 1
 				set TEQQShrineVanillaWeapon2HThirdUpgradeQuest.bGlassWarhammer to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundThird2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapEbonyWarhammer > 0 || Player.GetItemCount SEWeapEbonyWarhammerDurable > 0
+			if Player.GetItemCount WeapEbonyWarhammer > 0
 				set TEQQShrineVanillaWeapon2HThirdQuest.bEbonyWarhammer to 1
 				set TEQQShrineVanillaWeapon2HThirdUpgradeQuest.bEbonyWarhammer to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundThird2HWeaponSet to 1
@@ -841,21 +841,21 @@ begin GameMode
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapSilverWarhammer > 0 || Player.GetItemCount SEWeapSilverWarhammerDurable > 0
+			if Player.GetItemCount WeapSilverWarhammer > 0
 				set TEQQShrineVanillaWeapon2HFourthQuest.bSilverWarhammer to 1
 				set TEQQShrineVanillaWeapon2HFourthUpgradeQuest.bSilverWarhammer to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFourth2HWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapElvenBow > 0 || Player.GetItemCount SEWeapElvenBowDurable > 0
+			if Player.GetItemCount WeapElvenBow > 0
 				set TEQQShrineVanillaWeaponBowFirstQuest.bElvenBow to 1
 				set TEQQShrineVanillaWeaponBowFirstUpgradeQuest.bElvenBow to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirstBowWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDaedricBow > 0 || Player.GetItemCount SEWeapDaedricBowDurable > 0
+			if Player.GetItemCount WeapDaedricBow > 0
 				set TEQQShrineVanillaWeaponBowFirstQuest.bDaedricBow to 1
 				set TEQQShrineVanillaWeaponBowFirstUpgradeQuest.bDaedricBow to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirstBowWeaponSet to 1
@@ -869,7 +869,7 @@ begin GameMode
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapDwarvenBow > 0 || Player.GetItemCount SEWeapDwarvenBowDurable > 0
+			if Player.GetItemCount WeapDwarvenBow > 0
 				set TEQQShrineVanillaWeaponBowFirstQuest.bDwarvenBow to 1
 				set TEQQShrineVanillaWeaponBowFirstUpgradeQuest.bDwarvenBow to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundFirstBowWeaponSet to 1
@@ -897,14 +897,14 @@ begin GameMode
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapGlassBow > 0 || Player.GetItemCount SEWeapGlassBowDurable > 0
+			if Player.GetItemCount WeapGlassBow > 0
 				set TEQQShrineVanillaWeaponBowSecondQuest.bGlassBow to 1
 				set TEQQShrineVanillaWeaponBowSecondUpgradeQuest.bGlassBow to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecondBowWeaponSet to 1
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapEbonyBow > 0 || Player.GetItemCount SEWeapEbonyBowDurable > 0
+			if Player.GetItemCount WeapEbonyBow > 0
 				set TEQQShrineVanillaWeaponBowSecondQuest.bEbonyBow to 1
 				set TEQQShrineVanillaWeaponBowSecondUpgradeQuest.bEbonyBow to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecondBowWeaponSet to 1
@@ -925,7 +925,7 @@ begin GameMode
 				set bFoundItem to 1
 				set bFoundWeaponSet to 1
 			endif
-			if Player.GetItemCount WeapSilverBow > 0 || Player.GetItemCount SEWeapSilverBowDurable > 0
+			if Player.GetItemCount WeapSilverBow > 0
 				set TEQQShrineVanillaWeaponBowSecondQuest.bSilverBow to 1
 				set TEQQShrineVanillaWeaponBowSecondUpgradeQuest.bSilverBow to 1
 				set TEQQShrineVanillaCheckWeaponQuest.bFoundSecondBowWeaponSet to 1
