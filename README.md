@@ -10,7 +10,6 @@
 
 * Completed: Upscaled versions of Vanilla Equipment
 * Completed: Equipment upgrade system
-	* In Progress: Add the ability to upgrade vanilla items to their Tier 1 variants
 * Completed: Matching Set Bonuses for the 8 upscaled sets of armor/weapons
 	* 6/6 Bonuses Apply *Debuffs* to Enemies or *Buffs* to allies
 	* Takes full advantage of my [Target Detection System](https://github.com/justv316/Target_Detection)
